@@ -7,6 +7,9 @@ import { analyzeArchitecture, generateArchitectureFile } from "../analyzers/arch
 import { detectTechStack, generateTechStackFile } from "../analyzers/techStack.js";
 import { discoverEntrypoints, generateEntrypointsFile } from "../analyzers/entrypoints.js";
 import { detectConventions, generateConventionsFile } from "../analyzers/conventions.js";
+import { extractSymbols, generateSymbolsJson } from "../analyzers/symbols.js";
+import { analyzeDependencies, generateDependenciesJson } from "../analyzers/dependencies.js";
+import { generateAIRules, generateAIRulesFile } from "../analyzers/aiRules.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 /**
@@ -23,7 +26,7 @@ export async function runAIFirst(options = {}) {
         // Step 2: Create output directory
         console.log(`📁 Creating output directory: ${outputDir}`);
         ensureDir(outputDir);
-        // Step 3: Generate REPO_MAP.md
+        // Step 3: Generate repo_map.md
         console.log("📊 Generating repository map...");
         const repoMap = generateRepoMap(scanResult.files, { sortBy: "directory" });
         const compactMap = generateCompactRepoMap(scanResult.files);
@@ -31,44 +34,72 @@ export async function runAIFirst(options = {}) {
         writeFile(repoMapPath, repoMap + "\n\n" + compactMap);
         filesCreated.push(repoMapPath);
         console.log("   ✅ Created repo_map.md");
-        // Step 4: Generate SUMMARY.md
+        // Step 4: Generate repo_map.json
+        console.log("📊 Generating machine-readable repo map...");
+        const repoMapJson = generateRepoMapJson(scanResult.files);
+        const repoMapJsonPath = path.join(outputDir, "repo_map.json");
+        writeFile(repoMapJsonPath, repoMapJson);
+        filesCreated.push(repoMapJsonPath);
+        console.log("   ✅ Created repo_map.json");
+        // Step 5: Generate summary
         const summary = generateSummary(scanResult.files);
         const summaryPath = path.join(outputDir, "summary.md");
         writeFile(summaryPath, summary);
         filesCreated.push(summaryPath);
         console.log("   ✅ Created summary.md");
-        // Step 5: Analyze and generate architecture.md
+        // Step 6: Analyze architecture
         console.log("🏗️  Analyzing architecture...");
         const architecture = analyzeArchitecture(scanResult.files, rootDir);
         const architecturePath = path.join(outputDir, "architecture.md");
         writeFile(architecturePath, generateArchitectureFile(architecture));
         filesCreated.push(architecturePath);
         console.log("   ✅ Created architecture.md");
-        // Step 6: Detect and generate tech_stack.md
+        // Step 7: Detect tech stack
         console.log("🛠️  Detecting tech stack...");
         const techStack = detectTechStack(scanResult.files, rootDir);
         const techStackPath = path.join(outputDir, "tech_stack.md");
         writeFile(techStackPath, generateTechStackFile(techStack));
         filesCreated.push(techStackPath);
         console.log("   ✅ Created tech_stack.md");
-        // Step 7: Discover and generate entrypoints.md
+        // Step 8: Discover entrypoints
         console.log("🚪 Discovering entrypoints...");
         const entrypoints = discoverEntrypoints(scanResult.files, rootDir);
         const entrypointsPath = path.join(outputDir, "entrypoints.md");
         writeFile(entrypointsPath, generateEntrypointsFile(entrypoints));
         filesCreated.push(entrypointsPath);
         console.log("   ✅ Created entrypoints.md");
-        // Step 8: Detect and generate conventions.md
+        // Step 9: Detect conventions
         console.log("📝 Detecting conventions...");
         const conventions = detectConventions(scanResult.files, rootDir);
         const conventionsPath = path.join(outputDir, "conventions.md");
         writeFile(conventionsPath, generateConventionsFile(conventions));
         filesCreated.push(conventionsPath);
         console.log("   ✅ Created conventions.md");
-        // Step 9: Generate unified ai_context.md
+        // Step 10: Extract symbols
+        console.log("🔎 Extracting symbols...");
+        const symbols = extractSymbols(scanResult.files);
+        const symbolsPath = path.join(outputDir, "symbols.json");
+        writeFile(symbolsPath, generateSymbolsJson(symbols));
+        filesCreated.push(symbolsPath);
+        console.log("   ✅ Created symbols.json");
+        // Step 11: Analyze dependencies
+        console.log("🔗 Analyzing dependencies...");
+        const dependencies = analyzeDependencies(scanResult.files);
+        const depsPath = path.join(outputDir, "dependencies.json");
+        writeFile(depsPath, generateDependenciesJson(dependencies));
+        filesCreated.push(depsPath);
+        console.log("   ✅ Created dependencies.json");
+        // Step 12: Generate AI rules
+        console.log("🤖 Generating AI rules...");
+        const aiRules = generateAIRules(scanResult.files, rootDir);
+        const aiRulesPath = path.join(outputDir, "ai_rules.md");
+        writeFile(aiRulesPath, generateAIRulesFile(aiRules, scanResult.files, rootDir));
+        filesCreated.push(aiRulesPath);
+        console.log("   ✅ Created ai_rules.md");
+        // Step 13: Generate unified ai_context.md
         console.log("📋 Generating unified AI context...");
         const aiContextPath = path.join(outputDir, "ai_context.md");
-        const aiContext = generateUnifiedContext(repoMap, summary, architecture, techStack, entrypoints, conventions);
+        const aiContext = generateUnifiedContext(repoMap, summary, architecture, techStack, entrypoints, conventions, aiRules);
         writeFile(aiContextPath, aiContext);
         filesCreated.push(aiContextPath);
         console.log("   ✅ Created ai_context.md");
@@ -92,9 +123,42 @@ export async function runAIFirst(options = {}) {
     }
 }
 /**
+ * Generate machine-readable repo_map.json
+ */
+function generateRepoMapJson(files) {
+    const tree = {};
+    for (const file of files) {
+        const parts = file.relativePath.split("/");
+        let current = tree;
+        for (let i = 0; i < parts.length; i++) {
+            const part = parts[i];
+            const isFile = i === parts.length - 1;
+            if (isFile) {
+                current[part] = { type: "file", extension: file.extension };
+            }
+            else {
+                if (!current[part]) {
+                    current[part] = { type: "directory", children: {} };
+                }
+                current = current[part].children;
+            }
+        }
+    }
+    return JSON.stringify({
+        generated: new Date().toISOString(),
+        totalFiles: files.length,
+        structure: tree,
+        files: files.map(f => ({
+            path: f.relativePath,
+            name: f.name,
+            extension: f.extension,
+        })),
+    }, null, 2);
+}
+/**
  * Generate unified AI context file
  */
-function generateUnifiedContext(repoMap, summary, architecture, techStack, entrypoints, conventions) {
+function generateUnifiedContext(repoMap, summary, architecture, techStack, entrypoints, conventions, aiRules) {
     const lines = [];
     lines.push("# AI Context");
     lines.push("");
@@ -115,7 +179,8 @@ function generateUnifiedContext(repoMap, summary, architecture, techStack, entry
     lines.push("2. [Architecture](#architecture)");
     lines.push("3. [Key Entrypoints](#key-entrypoints)");
     lines.push("4. [Code Conventions](#code-conventions)");
-    lines.push("5. [Repository Map](#repository-map)");
+    lines.push("5. [AI Rules](#ai-rules)");
+    lines.push("6. [Repository Map](#repository-map)");
     lines.push("");
     lines.push("---\n");
     lines.push("## Tech Stack");
@@ -130,7 +195,6 @@ function generateUnifiedContext(repoMap, summary, architecture, techStack, entry
     lines.push("---\n");
     lines.push("## Key Entrypoints");
     lines.push("");
-    // Group entrypoints by type
     const byType = new Map();
     for (const ep of entrypoints) {
         if (!byType.has(ep.type))
@@ -150,6 +214,13 @@ function generateUnifiedContext(repoMap, summary, architecture, techStack, entry
     lines.push(conventions.description || "See conventions.md for details.");
     lines.push("");
     lines.push("---\n");
+    lines.push("## AI Rules");
+    lines.push("");
+    for (const guideline of aiRules.guidelines.slice(0, 5)) {
+        lines.push(`- ${guideline}`);
+    }
+    lines.push("");
+    lines.push("---\n");
     lines.push("## Repository Map");
     lines.push("");
     lines.push("See repo_map.md for the full structure.");
@@ -161,15 +232,24 @@ function generateUnifiedContext(repoMap, summary, architecture, techStack, entry
     lines.push("2. Use the detected frameworks and libraries");
     lines.push("3. Target the correct entrypoints for modifications");
     lines.push("4. Maintain the detected architecture patterns");
+    lines.push("5. Follow AI rules in ai_rules.md");
     lines.push("");
     lines.push("---\n");
     lines.push("*Generated by ai-first*");
     return lines.join("\n");
 }
 // CLI entry point
-if (import.meta.url === `file://${process.argv[1]}`) {
+// Check if run directly (not imported as module)
+const isMain = !import.meta.url ||
+    process.argv[1]?.includes('ai-first') ||
+    process.argv[1] === undefined;
+if (isMain) {
     const args = process.argv.slice(2);
     const options = {};
+    // Handle 'init' command
+    if (args[0] === 'init') {
+        args.shift();
+    }
     for (let i = 0; i < args.length; i++) {
         const arg = args[i];
         switch (arg) {
@@ -181,20 +261,17 @@ if (import.meta.url === `file://${process.argv[1]}`) {
             case "-o":
                 options.outputDir = args[++i];
                 break;
-            case "--skip-context":
-                options.skipContextGeneration = true;
-                break;
             case "--help":
             case "-h":
                 console.log(`
-ai-first - Generate AI context for your repository
+iai-first - Generate AI context for your repository
 
 Usage: ai-first [options]
 
 Options:
   -r, --root <dir>      Root directory to scan (default: current directory)
-  -o, --output <dir>    Output directory (default: ./ai)
-  -h, --help            Show this help message
+  -o, --output <dir>   Output directory (default: ./ai)
+  -h, --help           Show help message
 `);
                 process.exit(0);
         }

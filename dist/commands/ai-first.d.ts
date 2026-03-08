@@ -3,7 +3,6 @@ export interface AIFirstOptions {
     outputDir?: string;
     excludePatterns?: string[];
     includeExtensions?: string[];
-    skipContextGeneration?: boolean;
 }
 export interface AIFirstResult {
     success: boolean;
