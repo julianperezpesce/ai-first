@@ -3,6 +3,7 @@ import { fileURLToPath } from "url";
 import { scanRepo } from "../core/repoScanner.js";
 import { generateRepoMap, generateCompactRepoMap, generateSummary } from "../core/repoMapper.js";
 import { generateIndex, IncrementalIndexer, EXAMPLE_QUERIES } from "../core/indexer.js";
+import { generateAIContext } from "../core/aiContextGenerator.js";
 import { ensureDir, writeFile } from "../utils/fileUtils.js";
 import { analyzeArchitecture, generateArchitectureFile } from "../analyzers/architecture.js";
 import { detectTechStack, generateTechStackFile } from "../analyzers/techStack.js";
@@ -445,6 +446,66 @@ Features:
     }).catch((error) => {
       console.error("Failed to initialize indexer:", error);
       process.exit(1);
+});
+  } else if (command === 'context') {
+    // Context command - generate AI context files (repo_map.json, symbols.json, dependencies.json, ai_context.md)
+    args.shift();
+    let rootDir = process.cwd();
+    let outputDir = path.join(rootDir, "ai");
+
+    for (let i = 0; i < args.length; i++) {
+      const arg = args[i];
+      switch (arg) {
+        case "--root":
+        case "-r":
+          rootDir = args[++i];
+          break;
+        case "--output":
+        case "-o":
+          outputDir = args[++i];
+          break;
+        case "--help":
+        case "-h":
+          console.log(`
+ai-first context - Generate AI context optimized for LLMs
+
+Usage: ai-first context [options]
+
+Options:
+  -r, --root <dir>      Root directory (default: current directory)
+  -o, --output <dir>   Output directory (default: ./ai)
+  -h, --help           Show help message
+
+Output files:
+  - repo_map.json       Folder structure
+  - symbols.json        Exported symbols
+  - dependencies.json   Import graph
+  - ai_context.md       LLM-optimized summary
+`);
+          process.exit(0);
+      }
+    }
+
+    console.log(`\n🤖 Generating AI context for: ${rootDir}`);
+    console.log(`   Output: ${outputDir}\n`);
+
+    generateAIContext(rootDir, outputDir).then((result) => {
+      if (result.success) {
+        console.log("✅ AI Context generated successfully!");
+        console.log("\n📁 Files created:");
+        for (const file of result.filesCreated) {
+          console.log(`   - ${path.relative(rootDir, file)}`);
+        }
+        console.log("\n📊 Statistics:");
+        console.log(`   Files: ${result.stats.files}`);
+        console.log(`   Folders: ${result.stats.folders}`);
+        console.log(`   Symbols: ${result.stats.symbols}`);
+        console.log(`   Dependencies: ${result.stats.dependencies}`);
+        process.exit(0);
+      } else {
+        console.error(`❌ Error: ${result.error}`);
+        process.exit(1);
+      }
     });
   } else if (command === 'init' || !command) {
     // Init command - generate all context files
@@ -472,6 +533,7 @@ Commands:
   init                 Generate AI context files (default)
   index                Generate SQLite index database
   watch                Watch for file changes (incremental indexing)
+  context              Generate LLM-optimized context (repo_map.json, symbols.json, dependencies.json, ai_context.md)
 
 Options:
   -r, --root <dir>      Root directory to scan (default: current directory)
