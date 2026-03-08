@@ -2,7 +2,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { scanRepo } from "../core/repoScanner.js";
 import { generateRepoMap, generateCompactRepoMap, generateSummary } from "../core/repoMapper.js";
-import { generateIndex } from "../core/indexer.js";
+import { generateIndex, IncrementalIndexer } from "../core/indexer.js";
 import { ensureDir, writeFile } from "../utils/fileUtils.js";
 import { analyzeArchitecture, generateArchitectureFile } from "../analyzers/architecture.js";
 import { detectTechStack, generateTechStackFile } from "../analyzers/techStack.js";
@@ -305,6 +305,76 @@ Example queries (for AI agents):
             }
         });
     }
+    else if (command === 'watch') {
+        // Watch command - incremental indexing
+        args.shift();
+        let rootDir = process.cwd();
+        let outputPath = path.join(rootDir, "ai", "index.db");
+        let debounceMs = 300;
+        for (let i = 0; i < args.length; i++) {
+            const arg = args[i];
+            switch (arg) {
+                case "--root":
+                case "-r":
+                    rootDir = args[++i];
+                    break;
+                case "--output":
+                case "-o":
+                    outputPath = args[++i];
+                    break;
+                case "--debounce":
+                case "-d":
+                    debounceMs = parseInt(args[++i], 10);
+                    break;
+                case "--help":
+                case "-h":
+                    console.log(`
+ai-first watch - Watch for file changes and update index incrementally
+
+Usage: ai-first watch [options]
+
+Options:
+  -r, --root <dir>       Root directory to watch (default: current directory)
+  -o, --output <path>   Output path for index.db (default: ./ai/index.db)
+  -d, --debounce <ms>   Debounce delay in ms (default: 300)
+  -h, --help            Show help message
+
+Features:
+  - Incremental updates (only changed files are re-indexed)
+  - File hash tracking for change detection
+  - Debounced updates to handle rapid file changes
+  - Press Ctrl+C to stop watching
+`);
+                    process.exit(0);
+            }
+        }
+        console.log(`\n🚀 Starting incremental indexer in watch mode...`);
+        const indexer = new IncrementalIndexer(rootDir, outputPath, debounceMs);
+        indexer.initialize().then(async () => {
+            // Build initial index if not exists
+            if (!require('fs').existsSync(outputPath)) {
+                console.log("Building initial index...");
+                await generateIndex(rootDir, outputPath);
+                console.log("Initial index built.\n");
+            }
+            await indexer.watch();
+            // Handle graceful shutdown
+            process.on('SIGINT', () => {
+                console.log("\nSaving changes...");
+                indexer.save();
+                indexer.stop();
+                process.exit(0);
+            });
+            process.on('SIGTERM', () => {
+                indexer.save();
+                indexer.stop();
+                process.exit(0);
+            });
+        }).catch((error) => {
+            console.error("Failed to initialize indexer:", error);
+            process.exit(1);
+        });
+    }
     else if (command === 'init' || !command) {
         // Init command - generate all context files
         if (command === 'init')
@@ -330,6 +400,7 @@ Usage: ai-first [command] [options]
 Commands:
   init                 Generate AI context files (default)
   index                Generate SQLite index database
+  watch                Watch for file changes (incremental indexing)
 
 Options:
   -r, --root <dir>      Root directory to scan (default: current directory)
