@@ -60,12 +60,16 @@ The tool generates the following files in an `ai/` directory:
 ```
 ai/
 ├── ai_context.md      # Unified context for AI agents (most important!)
-├── repo_map.md        # Repository structure (tree view)
+├── repo_map.md        # Repository structure (human-readable)
+├── repo_map.json      # Repository structure (machine-readable)
 ├── summary.md         # Summary by file type and directory
 ├── architecture.md    # Architecture pattern analysis
 ├── tech_stack.md     # Languages, frameworks, libraries detected
 ├── entrypoints.md    # Entry points (CLI, API, server)
-└── conventions.md    # Coding conventions detected
+├── conventions.md    # Coding conventions detected
+├── symbols.json      # Functions, classes, interfaces extracted
+├── dependencies.json # Import/require dependencies between files
+└── ai_rules.md      # Guidelines for AI assistants
 ```
 
 ### ai_context.md Example
