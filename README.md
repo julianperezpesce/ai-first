@@ -43,6 +43,13 @@ ai-first init
 
 This creates an `ai/` folder with all the context files.
 
+### Generate SQLite Index
+```bash
+ai-first index
+```
+
+This creates an `ai/index.db` SQLite database for fast queries.
+
 ### Options
 ```bash
 ai-first --help
@@ -69,7 +76,8 @@ ai/
 ├── conventions.md    # Coding conventions detected
 ├── symbols.json      # Functions, classes, interfaces extracted
 ├── dependencies.json # Import/require dependencies between files
-└── ai_rules.md      # Guidelines for AI assistants
+├── ai_rules.md      # Guidelines for AI assistants
+└── index.db         # SQLite database for fast queries
 ```
 
 ### ai_context.md Example
@@ -186,15 +194,66 @@ ai-first init
 # Generate current state documentation automatically
 ```
 
-## Comparison
+## SQLite Index
 
-| Feature | ai-first | Manual Analysis |
-|---------|----------|-----------------|
-| Speed | Seconds | Minutes/Hours |
-| Consistency | Deterministic | Varies |
-| LLM Required | No | Yes |
-| Offline | Yes | No |
-| Maintenance | Auto-updates | Manual |
+For fast queries, generate an SQLite database:
+
+```bash
+ai-first index
+```
+
+This creates `ai/index.db` with the following tables:
+
+### Tables
+
+| Table | Description |
+|-------|-------------|
+| `files` | All source files with language |
+| `symbols` | Functions, classes, interfaces, exports |
+| `imports` | Import/require statements between files |
+
+### Example Queries
+
+```sql
+-- Find all functions in a file
+SELECT s.name, s.line 
+FROM symbols s
+JOIN files f ON s.file_id = f.id
+WHERE f.path = 'src/index.ts' AND s.type = 'function'
+
+-- Find where a symbol is defined
+SELECT f.path, s.line, s.type
+FROM symbols s
+JOIN files f ON s.file_id = f.id
+WHERE s.name = 'MyClass'
+
+-- Find all files importing a module
+SELECT f.path, i.type
+FROM imports i
+JOIN files f ON i.source_file_id = f.id
+WHERE i.target_file LIKE '%utils%'
+
+-- Find all exported symbols
+SELECT s.name, s.type, f.path
+FROM symbols s
+JOIN files f ON s.file_id = f.id
+WHERE s.exported = 1
+
+-- Search symbols by pattern
+SELECT s.name, s.type, f.path, s.line
+FROM symbols s
+JOIN files f ON s.file_id = f.id
+WHERE s.name LIKE '%Handler%'
+LIMIT 50
+
+-- Get language statistics
+SELECT language, COUNT(*) as count
+FROM files
+GROUP BY language
+ORDER BY count DESC
+```
+
+## Comparison
 
 ## Configuration
 

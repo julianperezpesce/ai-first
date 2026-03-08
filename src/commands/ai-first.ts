@@ -2,6 +2,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { scanRepo } from "../core/repoScanner.js";
 import { generateRepoMap, generateCompactRepoMap, generateSummary } from "../core/repoMapper.js";
+import { generateIndex, EXAMPLE_QUERIES } from "../core/indexer.js";
 import { ensureDir, writeFile } from "../utils/fileUtils.js";
 import { analyzeArchitecture, generateArchitectureFile } from "../analyzers/architecture.js";
 import { detectTechStack, generateTechStackFile } from "../analyzers/techStack.js";
@@ -309,39 +310,107 @@ if (isMain) {
   const args = process.argv.slice(2);
   const options: AIFirstOptions = {};
 
-  // Handle 'init' command
-  if (args[0] === 'init') {
+  // Handle commands
+  const command = args[0];
+  
+  if (command === 'index') {
+    // Index command - generate SQLite database
     args.shift();
-  }
+    let rootDir = process.cwd();
+    let outputPath = path.join(rootDir, "ai", "index.db");
 
-  for (let i = 0; i < args.length; i++) {
-    const arg = args[i];
-    switch (arg) {
-      case "--root":
-      case "-r":
-        options.rootDir = args[++i];
-        break;
-      case "--output":
-      case "-o":
-        options.outputDir = args[++i];
-        break;
-      case "--help":
-      case "-h":
-        console.log(`
+    for (let i = 0; i < args.length; i++) {
+      const arg = args[i];
+      switch (arg) {
+        case "--root":
+        case "-r":
+          rootDir = args[++i];
+          break;
+        case "--output":
+        case "-o":
+          outputPath = args[++i];
+          break;
+        case "--help":
+        case "-h":
+          console.log(`
+ai-first index - Generate SQLite index for the repository
+
+Usage: ai-first index [options]
+
+Options:
+  -r, --root <dir>      Root directory to scan (default: current directory)
+  -o, --output <path>  Output path for index.db (default: ./ai/index.db)
+  -h, --help           Show help message
+
+Example queries (for AI agents):
+  Find functions:    SELECT s.name, s.line FROM symbols s JOIN files f ON s.file_id = f.id WHERE f.path = 'src/index.ts' AND s.type = 'function'
+  Find symbol:       SELECT f.path, s.line FROM symbols s JOIN files f ON s.file_id = f.id WHERE s.name = 'MyClass'
+  Find imports:       SELECT f.path, i.target_file FROM imports i JOIN files f ON i.source_file_id = f.id WHERE f.path = 'src/utils.ts'
+`);
+          process.exit(0);
+      }
+    }
+
+    console.log(`\n🗄️  Generating index for: ${rootDir}\n`);
+    
+    generateIndex(rootDir, outputPath).then((result) => {
+      if (result.success) {
+        console.log(`✅ Index created: ${result.dbPath}`);
+        console.log(`   Files: ${result.stats.files}`);
+        console.log(`   Symbols: ${result.stats.symbols}`);
+        console.log(`   Imports: ${result.stats.imports}`);
+        console.log(`\n📊 Example queries agents can run:`);
+        console.log(`   - Find all functions in a file`);
+        console.log(`   - Find where a symbol is defined`);
+        console.log(`   - Find all files importing a module`);
+        console.log(`   - Search symbols by name pattern`);
+        process.exit(0);
+      } else {
+        console.error(`❌ Error: ${result.error}`);
+        process.exit(1);
+      }
+    });
+  } else if (command === 'init' || !command) {
+    // Init command - generate all context files
+    if (command === 'init') args.shift();
+
+    for (let i = 0; i < args.length; i++) {
+      const arg = args[i];
+      switch (arg) {
+        case "--root":
+        case "-r":
+          options.rootDir = args[++i];
+          break;
+        case "--output":
+        case "-o":
+          options.outputDir = args[++i];
+          break;
+        case "--help":
+        case "-h":
+          console.log(`
 iai-first - Generate AI context for your repository
 
-Usage: ai-first [options]
+Usage: ai-first [command] [options]
+
+Commands:
+  init                 Generate AI context files (default)
+  index                Generate SQLite index database
 
 Options:
   -r, --root <dir>      Root directory to scan (default: current directory)
   -o, --output <dir>   Output directory (default: ./ai)
   -h, --help           Show help message
 `);
-        process.exit(0);
+          process.exit(0);
+      }
     }
-  }
 
-  runAIFirst(options).then((result) => {
-    process.exit(result.success ? 0 : 1);
-  });
+    runAIFirst(options).then((result) => {
+      process.exit(result.success ? 0 : 1);
+    });
+  } else {
+    console.log(`Unknown command: ${command}`);
+    console.log(`Use 'ai-first --help' for usage information`);
+    process.exit(1);
+  }
 }
