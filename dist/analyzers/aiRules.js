@@ -1,0 +1,123 @@
+import { detectConventions } from "./conventions.js";
+import { discoverEntrypoints } from "./entrypoints.js";
+import { detectTechStack } from "./techStack.js";
+import { analyzeArchitecture } from "./architecture.js";
+/**
+ * Generate AI rules based on project analysis
+ */
+export function generateAIRules(files, rootDir) {
+    const conventions = detectConventions(files, rootDir);
+    const entrypoints = discoverEntrypoints(files, rootDir);
+    const techStack = detectTechStack(files, rootDir);
+    const architecture = analyzeArchitecture(files, rootDir);
+    const guidelines = [];
+    const patterns = [];
+    const constraints = [];
+    // Add tech stack guidelines
+    if (techStack.languages.length > 0) {
+        guidelines.push(`Language: Use ${techStack.languages.join(", ")}`);
+    }
+    if (techStack.frameworks.length > 0) {
+        guidelines.push(`Frameworks: ${techStack.frameworks.join(", ")}`);
+    }
+    // Add architecture guidelines
+    if (architecture.pattern !== "Monolithic / Flat") {
+        guidelines.push(`Architecture: Follow ${architecture.pattern} pattern`);
+        patterns.push(`Layer structure: ${architecture.layers.join(" → ")}`);
+    }
+    // Add naming conventions
+    if (conventions.naming.files !== "unknown") {
+        guidelines.push(`File naming: ${conventions.naming.files}`);
+    }
+    if (conventions.naming.tests !== "unknown") {
+        guidelines.push(`Test files: ${conventions.naming.tests}`);
+    }
+    // Add project structure
+    if (conventions.structure.srcDirectory !== "unknown") {
+        guidelines.push(`Source directory: ${conventions.structure.srcDirectory}`);
+    }
+    if (conventions.structure.testDirectory !== "unknown") {
+        guidelines.push(`Test directory: ${conventions.structure.testDirectory}`);
+    }
+    // Add code style
+    if (conventions.codeStyle.indentation !== "unknown") {
+        guidelines.push(`Indentation: ${conventions.codeStyle.indentation}`);
+    }
+    if (conventions.codeStyle.semicolons) {
+        constraints.push("Always use semicolons");
+    }
+    // Add entry point guidelines
+    if (entrypoints.length > 0) {
+        const servers = entrypoints.filter(e => e.type === "server" || e.type === "api");
+        if (servers.length > 0) {
+            guidelines.push(`Main entry: ${servers[0].path}`);
+        }
+    }
+    // Add testing guidelines
+    if (conventions.testing.framework !== "unknown") {
+        guidelines.push(`Testing: Use ${conventions.testing.framework}`);
+    }
+    // Add build/dev commands
+    const devEntry = entrypoints.find(e => e.command?.includes("dev"));
+    const buildEntry = entrypoints.find(e => e.command?.includes("build"));
+    if (devEntry) {
+        guidelines.push(`Dev command: ${devEntry.command}`);
+    }
+    if (buildEntry) {
+        guidelines.push(`Build command: ${buildEntry.command}`);
+    }
+    return { guidelines, patterns, constraints };
+}
+/**
+ * Generate ai_rules.md content
+ */
+export function generateAIRulesFile(rules, files, rootDir) {
+    let content = "# AI Rules\n\n";
+    content += "> Guidelines for AI assistants working on this project\n\n";
+    content += "---\n\n";
+    content += "## Guidelines\n\n";
+    for (const guideline of rules.guidelines) {
+        content += `- ${guideline}\n`;
+    }
+    content += "\n";
+    if (rules.patterns.length > 0) {
+        content += "## Patterns\n\n";
+        for (const pattern of rules.patterns) {
+            content += `- ${pattern}\n`;
+        }
+        content += "\n";
+    }
+    if (rules.constraints.length > 0) {
+        content += "## Constraints\n\n";
+        for (const constraint of rules.constraints) {
+            content += `- ${constraint}\n`;
+        }
+        content += "\n";
+    }
+    content += "---\n\n";
+    content += "## Quick Reference\n\n";
+    content += "| Category | Value |\n";
+    content += "|----------|-------|\n";
+    const techStack = detectTechStack(files, rootDir);
+    const conventions = detectConventions(files, rootDir);
+    const architecture = analyzeArchitecture(files, rootDir);
+    content += `| Language | ${techStack.languages.join(", ") || "N/A"} |\n`;
+    content += `| Framework | ${techStack.frameworks.join(", ") || "N/A"} |\n`;
+    content += `| Architecture | ${architecture.pattern} |\n`;
+    content += `| Naming | ${conventions.naming.files} |\n`;
+    content += `| Indentation | ${conventions.codeStyle.indentation} |\n`;
+    content += "\n---\n\n";
+    content += "## Best Practices\n\n";
+    content += "1. Follow the established naming conventions\n";
+    content += "2. Keep functions small and focused\n";
+    content += "3. Write tests for new features\n";
+    content += "4. Use descriptive variable names\n";
+    content += "5. Keep the architecture consistent\n";
+    content += "6. Document complex logic\n";
+    content += "7. Review code before committing\n";
+    content += "\n";
+    content += "---\n\n";
+    content += "*Generated by ai-first*\n";
+    return content;
+}
+//# sourceMappingURL=aiRules.js.map
