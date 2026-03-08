@@ -8,12 +8,10 @@ export interface AIFirstOptions {
 export interface AIFirstResult {
     success: boolean;
     filesCreated: string[];
-    repoMap: string;
-    summary: string;
     error?: string;
 }
 /**
- * Main function to run /ai-first command
+ * Main function to run ai-first command
  */
 export declare function runAIFirst(options?: AIFirstOptions): Promise<AIFirstResult>;
 //# sourceMappingURL=ai-first.d.ts.map

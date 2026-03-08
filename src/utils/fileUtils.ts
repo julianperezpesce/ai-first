@@ -124,3 +124,11 @@ export function readFile(filePath: string): string {
 export function getRelativePath(basePath: string, filePath: string): string {
   return path.relative(basePath, filePath);
 }
+
+/**
+ * Read and parse JSON file
+ */
+export function readJsonFile(filePath: string): Record<string, unknown> {
+  const content = readFile(filePath);
+  return JSON.parse(content);
+}

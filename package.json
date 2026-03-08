@@ -1,13 +1,28 @@
 {
   "name": "ai-first",
   "version": "1.0.0",
-  "description": "OpenCode command to generate AI context for repositories",
+  "description": "CLI tool that prepares any repository to be used effectively by AI coding agents",
   "main": "dist/index.js",
   "type": "module",
+  "bin": {
+    "ai-first": "dist/commands/ai-first.js"
+  },
   "scripts": {
     "build": "tsc",
-    "run": "node dist/index.js"
+    "run": "node dist/commands/ai-first.js",
+    "dev": "node --loader ts-node/esm src/commands/ai-first.ts"
   },
+  "keywords": [
+    "ai",
+    "context",
+    "opencode",
+    "cursor",
+    "claude",
+    "development",
+    "tool"
+  ],
+  "author": "",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.0.0",
     "typescript": "^5.0.0"

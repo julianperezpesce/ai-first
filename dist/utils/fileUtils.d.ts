@@ -26,4 +26,8 @@ export declare function readFile(filePath: string): string;
  * Get relative path from base directory
  */
 export declare function getRelativePath(basePath: string, filePath: string): string;
+/**
+ * Read and parse JSON file
+ */
+export declare function readJsonFile(filePath: string): Record<string, unknown>;
 //# sourceMappingURL=fileUtils.d.ts.map

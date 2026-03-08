@@ -110,4 +110,11 @@ export function readFile(filePath) {
 export function getRelativePath(basePath, filePath) {
     return path.relative(basePath, filePath);
 }
+/**
+ * Read and parse JSON file
+ */
+export function readJsonFile(filePath) {
+    const content = readFile(filePath);
+    return JSON.parse(content);
+}
 //# sourceMappingURL=fileUtils.js.map
