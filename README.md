@@ -150,14 +150,19 @@ ai/
 
 ### 🌍 Multi-Language Support
 Detects projects in:
-- TypeScript/JavaScript
-- Python
-- Go
-- Rust
-- Ruby
-- Java
-- C#
-- And more...
+- **JavaScript/TypeScript**: .ts, .tsx, .js, .jsx, .mjs, .cjs
+- **Python**: .py
+- **Go**: .go
+- **Rust**: .rs
+- **Ruby**: .rb
+- **PHP**: .php
+- **Java**: .java
+- **C#**: .cs
+- **Kotlin**: .kt
+- **Scala**: .scala
+- **Swift**: .swift
+- **Salesforce Apex**: .cls
+- **Web**: Vue (.vue), Svelte (.svelte), HTML, CSS, SCSS, Less
 
 ### 🔍 Smart Detection
 - **Architecture patterns**: MVC, Clean Architecture, Hexagonal, Microservices, Monorepo, SPA
@@ -211,6 +216,14 @@ This creates `ai/index.db` with the following tables:
 | `files` | All source files with language |
 | `symbols` | Functions, classes, interfaces, exports |
 | `imports` | Import/require statements between files |
+
+### Supported Languages (Index)
+The indexer extracts symbols and imports from:
+- JavaScript/TypeScript, Python, Go, Rust
+- Java, C#, Ruby, PHP, Swift, Kotlin, Scala
+- Salesforce Apex (.cls)
+
+### Example Queries
 
 ### Example Queries
 

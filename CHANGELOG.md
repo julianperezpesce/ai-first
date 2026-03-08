@@ -11,7 +11,14 @@ All notable changes to `ai-first` will be documented in this file.
 - `dependencies.json` - Analyzes import/require dependencies between files
 - `ai_rules.md` - Generates guidelines for AI assistants
 - `repo_map.json` - Machine-readable repository structure
+- `index.db` - SQLite database for fast queries (`ai-first index`)
 - Support for `init` command
+
+### Multi-Language Support
+Added symbol and import parsing for:
+- Java, C#, Ruby, PHP, Swift, Kotlin, Scala, Rust
+- Salesforce Apex (.cls)
+- Vue, Svelte, HTML, CSS, SCSS, Less
 
 ---
 
