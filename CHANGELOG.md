@@ -7,18 +7,22 @@ All notable changes to `ai-first` will be documented in this file.
 ## [Unreleased]
 
 ### Added
-- `symbols.json` - Extracts functions, classes, interfaces from code
-- `dependencies.json` - Analyzes import/require dependencies between files
-- `ai_rules.md` - Generates guidelines for AI assistants
-- `repo_map.json` - Machine-readable repository structure
-- `index.db` - SQLite database for fast queries (`ai-first index`)
-- Support for `init` command
+- `ai-first doctor` - Health check command for repository readiness
+- `ai-first explore <module>` - Navigate module dependencies
+- `ai-first map` - Generate repository architecture map
+- `ai-first index --semantic` - Semantic indexing with embeddings
+- `index-state.json` - Track file changes for incremental indexing
+- `files.json` - List of all indexed files with metadata
+- `modules.json` - Detected modules and their structure
+- `module-graph.json` - Module dependency graph
+- `embeddings.json` - Semantic embeddings for code search
+- SQLite index with adaptive sizing for large repos
 
-### Multi-Language Support
-Added symbol and import parsing for:
-- Java, C#, Ruby, PHP, Swift, Kotlin, Scala, Rust
-- Salesforce Apex (.cls)
-- Vue, Svelte, HTML, CSS, SCSS, Less
+### New Generated Files
+- `ai/files.json` - File inventory with hash, size, line count
+- `ai/modules.json` - Module detection and hierarchy
+- `ai/module-graph.json` - Import-based dependency graph
+- `ai/embeddings.json` - Vector embeddings for semantic search
 
 ---
 
@@ -34,6 +38,11 @@ Added symbol and import parsing for:
   - `entrypoints.md` - CLI, API, server entry points
   - `conventions.md` - Naming, testing, linting conventions
   - `ai_context.md` - Unified AI context
+- `symbols.json` - Extracts functions, classes, interfaces from code
+- `dependencies.json` - Analyzes import/require dependencies between files
+- `ai_rules.md` - Generates guidelines for AI assistants
+- `repo_map.json` - Machine-readable repository structure
+- `index.db` - SQLite database for fast queries (`ai-first index`)
 
 ### Features
 - Multi-language support (TypeScript, Python, Go, Rust, Java, C#, etc.)
@@ -56,11 +65,14 @@ Added symbol and import parsing for:
 - [x] AI rules generation
 - [x] Machine-readable outputs (JSON)
 
-### Phase 3 (Planned)
-- [ ] Support for more languages (PHP, Ruby, Scala)
+### Phase 3 (In Progress)
+- [x] Health check command (`ai-first doctor`)
+- [x] Module exploration (`ai-first explore`)
+- [x] Repository mapping (`ai-first map`)
+- [x] Semantic indexing with embeddings
+- [x] Incremental indexing (track file changes)
 - [ ] Configuration file support (`ai-first.config.json`)
 - [ ] Custom rules/plugins system
-- [ ] CI/CD integration templates
 
 ### Phase 4 (Future)
 - [ ] Git integration (analyze recent changes)
