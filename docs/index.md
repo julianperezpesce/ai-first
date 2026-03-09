@@ -3,8 +3,7 @@ layout: home
 
 hero:
   name: AI-First
-  text: Prepare Your Repository for AI Coding Agents
-  #NN|  tagline: CLI tool that generates instant context for OpenCode, Cursor, Claude Code, and more. Save 50-90% in tokens and get AI agents up to speed in seconds. 
+  tagline: CLI tool that generates instant context for OpenCode, Cursor, Claude Code, and more. Save 50-90% in tokens.
   actions:
     - theme: brand
       text: Get Started
