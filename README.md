@@ -34,56 +34,56 @@ $ npx ai-first init
 <!-- END FIRST 10 SECONDS VALUE -->
 
 ---
-#RB|
-#KB|---
 
-#RR|## ⚡ Quick Start
+---
 
-#KB|Initialize AI-First in your repository:
+## ⚡ Quick Start
 
-#KB|```
-#KB|ai-first init
-#KB|```
+Initialize AI-First in your repository:
 
-#KB|Index the repository so AI agents can understand the codebase:
+```
+ai-first init
+```
 
-#KB|```
-#KB|ai-first index
-#KB|```
+Index the repository so AI agents can understand the codebase:
 
-#KB|Generate a repository architecture map:
+```
+ai-first index
+```
 
-#KB|```
-#KB|ai-first summarize
-#KB|```
+Generate a repository architecture map:
 
-#KB|* `init` generates 11 context files with project metadata
-#KB|* `index` creates a SQLite database for fast symbol queries
-#KB|* `summarize` creates hierarchical summaries for AI navigation
+```
+ai-first summarize
+```
 
-#KB|---
+* `init` generates 11 context files with project metadata
+* `index` creates a SQLite database for fast symbol queries
+* `summarize` creates hierarchical summaries for AI navigation
 
-#RR|## ❓ Why AI-First?
+---
 
-#KB|AI coding assistants often struggle with large repositories.
+## ❓ Why AI-First?
 
-#KB|Common problems:
+AI coding assistants often struggle with large repositories.
 
-#KB|* limited context windows
-#KB|* lack of architectural awareness
-#KB|* difficulty navigating large codebases
-#KB|* missing relationships between modules
+Common problems:
 
-#KB|AI-First solves this by creating a repository intelligence layer.
+* limited context windows
+* lack of architectural awareness
+* difficulty navigating large codebases
+* missing relationships between modules
 
-#KB|This allows AI agents to:
+AI-First solves this by creating a repository intelligence layer.
 
-#KB|* understand project structure
-#KB|* retrieve relevant code
-#KB|* navigate large repositories
-#KB|* maintain architectural context
+This allows AI agents to:
 
-#KB|---
+* understand project structure
+* retrieve relevant code
+* navigate large repositories
+* maintain architectural context
+
+---
 ## 🚀 Why ai-first?
 
 | Before ai-first | After ai-first |
@@ -206,33 +206,33 @@ src/
 │   ├── indexer.ts      # SQLite indexing
 │   └── contextGenerator.ts
 └── utils/
-#TH|```
+```
 
-#KB|### Data Flow
+### Data Flow
 
-#KB|```
-#KB|User CLI
-#KB|   │
-#KB|   ▼
-#KB|AI-First CLI
-#KB|   │
-#KB|   ├── Repository Scanner
-#KB|   │        │
-#KB|   │        ▼
-#KB|   │   File Analysis
-#KB|   │
-#KB|   ├── Index Engine
-#KB|   │        │
-#KB|   │        ▼
-#KB|   │   SQLite Index
-#KB|   │
-#KB|   └── Architecture Mapper
-#KB|            │
-#KB|            ▼
-#KB|     Repository Map
-#KB|```
+```
+User CLI
+   │
+   ▼
+AI-First CLI
+   │
+   ├── Repository Scanner
+   │        │
+   │        ▼
+   │   File Analysis
+   │
+   ├── Index Engine
+   │        │
+   │        ▼
+   │   SQLite Index
+   │
+   └── Architecture Mapper
+            │
+            ▼
+     Repository Map
+```
 
-#ZX|
+
 
 ---
 
@@ -410,16 +410,16 @@ See [docs/architecture.md](./docs/architecture.md) for internal architecture.
 
 Give us a ⭐ if this project helped you!
 
-#PN|---
+---
 
-#RR|## 🌎 Languages
+## 🌎 Languages
 
-#KB|This documentation is available in:
+This documentation is available in:
 
-#KB|* English (default)
-#KB|* Español → [README.es.md](./README.es.md)
+* English (default)
+* Español → [README.es.md](./README.es.md)
 
-#KB|---
+---
 
 ## 📄 License
 
