@@ -7,9 +7,9 @@ on:
       - 'docs/**'
       - 'package.json'
 
-#PR|permissions:
-  #XX|  contents: write
-  #NR|  pages: write
+permissions:
+  contents: write
+  pages: write
 
 concurrency:
   group: pages
