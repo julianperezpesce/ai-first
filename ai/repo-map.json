@@ -1,0 +1,536 @@
+{
+  "generated": "2026-03-09T16:03:35.670Z",
+  "totalFiles": 52,
+  "structure": {
+    ".github": {
+      "type": "directory",
+      "children": {
+        "workflows": {
+          "type": "directory",
+          "children": {
+            "changelog.yml": {
+              "type": "file",
+              "extension": "yml"
+            }
+          }
+        }
+      }
+    },
+    "CHANGELOG.md": {
+      "type": "file",
+      "extension": "md"
+    },
+    "CONTRIBUTING.md": {
+      "type": "file",
+      "extension": "md"
+    },
+    "FLOW.md": {
+      "type": "file",
+      "extension": "md"
+    },
+    "README.es.md": {
+      "type": "file",
+      "extension": "md"
+    },
+    "README.md": {
+      "type": "file",
+      "extension": "md"
+    },
+    "ai": {
+      "type": "directory",
+      "children": {
+        "ai_context.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "ai_rules.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "architecture.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "conventions.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "dependencies.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "entrypoints.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "files.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "graph": {
+          "type": "directory",
+          "children": {
+            "module-graph.json": {
+              "type": "file",
+              "extension": "json"
+            }
+          }
+        },
+        "hierarchy.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "modules.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "repo_map.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "repo_map.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "summary.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "symbols.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "tech_stack.md": {
+          "type": "file",
+          "extension": "md"
+        }
+      }
+    },
+    "docs": {
+      "type": "directory",
+      "children": {
+        "architecture.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "spec.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "user-guide.es.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "user-guide.md": {
+          "type": "file",
+          "extension": "md"
+        }
+      }
+    },
+    "examples": {
+      "type": "directory",
+      "children": {
+        "01-express-api.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "02-react-app.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "03-python-django.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "README.md": {
+          "type": "file",
+          "extension": "md"
+        }
+      }
+    },
+    "package-lock.json": {
+      "type": "file",
+      "extension": "json"
+    },
+    "package.json": {
+      "type": "file",
+      "extension": "json"
+    },
+    "src": {
+      "type": "directory",
+      "children": {
+        "analyzers": {
+          "type": "directory",
+          "children": {
+            "aiRules.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "architecture.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "conventions.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "dependencies.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "entrypoints.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "symbols.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "techStack.ts": {
+              "type": "file",
+              "extension": "ts"
+            }
+          }
+        },
+        "commands": {
+          "type": "directory",
+          "children": {
+            "ai-first.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "doctor.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "explore.ts": {
+              "type": "file",
+              "extension": "ts"
+            }
+          }
+        },
+        "core": {
+          "type": "directory",
+          "children": {
+            "aiContextGenerator.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "contextGenerator.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "hierarchyGenerator.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "indexer.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "moduleGraph.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "repoMapper.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "repoScanner.ts": {
+              "type": "file",
+              "extension": "ts"
+            }
+          }
+        },
+        "index.ts": {
+          "type": "file",
+          "extension": "ts"
+        },
+        "types": {
+          "type": "directory",
+          "children": {
+            "sql.js.d.ts": {
+              "type": "file",
+              "extension": "ts"
+            }
+          }
+        },
+        "utils": {
+          "type": "directory",
+          "children": {
+            "fileUtils.ts": {
+              "type": "file",
+              "extension": "ts"
+            }
+          }
+        }
+      }
+    },
+    "tsconfig.json": {
+      "type": "file",
+      "extension": "json"
+    }
+  },
+  "files": [
+    {
+      "path": ".github/workflows/changelog.yml",
+      "name": "changelog.yml",
+      "extension": "yml"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "name": "CHANGELOG.md",
+      "extension": "md"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "name": "CONTRIBUTING.md",
+      "extension": "md"
+    },
+    {
+      "path": "FLOW.md",
+      "name": "FLOW.md",
+      "extension": "md"
+    },
+    {
+      "path": "README.es.md",
+      "name": "README.es.md",
+      "extension": "md"
+    },
+    {
+      "path": "README.md",
+      "name": "README.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/ai_context.md",
+      "name": "ai_context.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/architecture.md",
+      "name": "architecture.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/conventions.md",
+      "name": "conventions.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/dependencies.json",
+      "name": "dependencies.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/files.json",
+      "name": "files.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/hierarchy.json",
+      "name": "hierarchy.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/modules.json",
+      "name": "modules.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/repo_map.json",
+      "name": "repo_map.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/repo_map.md",
+      "name": "repo_map.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/summary.md",
+      "name": "summary.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/symbols.json",
+      "name": "symbols.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/architecture.md",
+      "name": "architecture.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/spec.md",
+      "name": "spec.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/user-guide.es.md",
+      "name": "user-guide.es.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/user-guide.md",
+      "name": "user-guide.md",
+      "extension": "md"
+    },
+    {
+      "path": "examples/01-express-api.md",
+      "name": "01-express-api.md",
+      "extension": "md"
+    },
+    {
+      "path": "examples/02-react-app.md",
+      "name": "02-react-app.md",
+      "extension": "md"
+    },
+    {
+      "path": "examples/03-python-django.md",
+      "name": "03-python-django.md",
+      "extension": "md"
+    },
+    {
+      "path": "examples/README.md",
+      "name": "README.md",
+      "extension": "md"
+    },
+    {
+      "path": "package-lock.json",
+      "name": "package-lock.json",
+      "extension": "json"
+    },
+    {
+      "path": "package.json",
+      "name": "package.json",
+      "extension": "json"
+    },
+    {
+      "path": "src/analyzers/aiRules.ts",
+      "name": "aiRules.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/analyzers/architecture.ts",
+      "name": "architecture.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/analyzers/conventions.ts",
+      "name": "conventions.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/analyzers/dependencies.ts",
+      "name": "dependencies.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/analyzers/entrypoints.ts",
+      "name": "entrypoints.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/analyzers/symbols.ts",
+      "name": "symbols.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/analyzers/techStack.ts",
+      "name": "techStack.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/commands/ai-first.ts",
+      "name": "ai-first.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/commands/doctor.ts",
+      "name": "doctor.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/commands/explore.ts",
+      "name": "explore.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/aiContextGenerator.ts",
+      "name": "aiContextGenerator.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/contextGenerator.ts",
+      "name": "contextGenerator.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/hierarchyGenerator.ts",
+      "name": "hierarchyGenerator.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/indexer.ts",
+      "name": "indexer.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/moduleGraph.ts",
+      "name": "moduleGraph.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/repoMapper.ts",
+      "name": "repoMapper.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/repoScanner.ts",
+      "name": "repoScanner.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/index.ts",
+      "name": "index.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/types/sql.js.d.ts",
+      "name": "sql.js.d.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/utils/fileUtils.ts",
+      "name": "fileUtils.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "tsconfig.json",
+      "name": "tsconfig.json",
+      "extension": "json"
+    }
+  ]
+}
