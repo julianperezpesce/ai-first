@@ -344,15 +344,20 @@ if (isMain) {
         case "--help":
         case "-h":
           console.log(`
-ai-first index - Generate SQLite index for the repository
+ai-first index - Generate SQLite index with adaptive processing
 
 Usage: ai-first index [options]
 
 Options:
   -r, --root <dir>      Root directory to scan (default: current directory)
   -o, --output <path>  Output path for index.db (default: ./ai/index.db)
-  -s, --semantic       Enable semantic indexing
+  -s, --semantic       Force semantic indexing
   -h, --help           Show help message
+
+Adaptive thresholds:
+  <200 files    → structural index only
+  200-2000     → structural + module graph  
+  >2000        → enable semantic indexing
 
 Example queries (for AI agents):
   Find functions:    SELECT s.name, s.line FROM symbols s JOIN files f ON s.file_id = f.id WHERE f.path = 'src/index.ts' AND s.type = 'function'
@@ -363,11 +368,57 @@ Example queries (for AI agents):
       }
     }
 
-    console.log(`\n🗄️  Generating index for: ${rootDir}\n`);
+    const aiDir = path.join(rootDir, "ai");
     
-    if (semanticMode) {
+    // Scan to detect repo size
+    const scanResult = scanRepo(rootDir);
+    const fileCount = scanResult.totalFiles;
+    
+    // Adaptive indexing based on repo size
+    let useSemantic = semanticMode;
+    if (!useSemantic && fileCount > 2000) {
+      console.log(`⚠️  Large repository detected (${fileCount} files)`);
+      console.log("Enabling semantic indexing...\n");
+      useSemantic = true;
+    }
+    
+    console.log(`\n🗄️  Generating index for: ${rootDir}\n`);
+    console.log(`   Files: ${fileCount}\n`);
+    
+    if (useSemantic) {
       console.log("🔎 Semantic mode enabled.\n");
     }
+    
+    // Generate additional metadata files
+    const filesJson = { files: scanResult.files.map(f => ({ path: f.relativePath, name: f.name, ext: f.extension })) };
+    fs.writeFileSync(path.join(aiDir, "files.json"), JSON.stringify(filesJson, null, 2));
+    console.log("   ✅ Created files.json");
+    
+    // Generate index-state.json for incremental indexing
+    const indexState = {
+      lastIndexed: new Date().toISOString(),
+      fileCount: scanResult.totalFiles,
+      files: scanResult.files.map(f => {
+        try {
+          const stats = fs.statSync(f.path);
+          return { path: f.relativePath, mtime: stats.mtime.toISOString(), size: stats.size };
+        } catch { return { path: f.relativePath }; }
+      })
+    };
+    fs.writeFileSync(path.join(aiDir, "index-state.json"), JSON.stringify(indexState, null, 2));
+    console.log("   ✅ Created index-state.json");
+    
+    // Generate modules.json
+    const modules: Record<string, { path: string; files: string[] }> = {};
+    for (const file of scanResult.files) {
+      const parts = file.relativePath.split('/');
+      if (parts.length > 1 && parts[0] !== 'ai') {
+        if (!modules[parts[0]]) modules[parts[0]] = { path: parts[0], files: [] };
+        modules[parts[0]].files.push(file.relativePath);
+      }
+    }
+    fs.writeFileSync(path.join(aiDir, "modules.json"), JSON.stringify({ modules }, null, 2));
+    console.log("   ✅ Created modules.json");
     
     generateIndex(rootDir, outputPath).then((result) => {
       if (result.success) {
@@ -850,6 +901,7 @@ Commands:
   query                Query the index (symbol, dependents, imports, exports, stats)
   doctor               Check repository health and AI readiness
   explore <module>     Explore module dependencies
+  map                  Generate repository map (files, modules, graph)
 
 Options:
   -r, --root <dir>      Root directory to scan (default: current directory)
@@ -863,6 +915,54 @@ Options:
     runAIFirst(options).then((result) => {
       process.exit(result.success ? 0 : 1);
     });
+  } else if (command === 'map') {
+    // Map command - generate all mapping files
+    args.shift();
+    let rootDir = process.cwd();
+    
+    for (let i = 0; i < args.length; i++) {
+      const arg = args[i];
+      if (arg === "--root" || arg === "-r") rootDir = args[++i];
+      else if (arg === "--help" || arg === "-h") {
+        console.log("\nai-first map - Generate repository map\nUsage: ai-first map [options]\nOptions: -r, --root <dir>\n");
+        process.exit(0);
+      }
+    }
+    
+    
+    console.log("\n🗺️  Generating repository map...\n");
+    const scan = scanRepo(rootDir);
+    const aiDir = path.join(rootDir, "ai");
+    
+    // files.json
+    const filesJson = { files: scan.files.map(f => ({ path: f.relativePath, name: f.name, ext: f.extension })) };
+    fs.writeFileSync(path.join(aiDir, "files.json"), JSON.stringify(filesJson, null, 2));
+    console.log("   ✅ files.json");
+    
+    // modules.json
+    const modules: Record<string, { path: string; files: string[] }> = {};
+    for (const file of scan.files) {
+      const parts = file.relativePath.split('/');
+      if (parts.length > 1 && parts[0] !== 'ai') {
+        if (!modules[parts[0]]) modules[parts[0]] = { path: parts[0], files: [] };
+        modules[parts[0]].files.push(file.relativePath);
+      }
+    }
+    fs.writeFileSync(path.join(aiDir, "modules.json"), JSON.stringify({ modules }, null, 2));
+    console.log("   ✅ modules.json");
+    
+    // repo-map.json (use local generateRepoMapJson function)
+    const repoMapData = JSON.parse(generateRepoMapJson(scan.files.map(f => ({ relativePath: f.relativePath, name: f.name, extension: f.extension }))));
+    fs.writeFileSync(path.join(aiDir, "repo-map.json"), JSON.stringify(repoMapData, null, 2));
+    console.log("   ✅ repo-map.json");
+    
+    // module-graph.json
+    const { generateModuleGraph } = await import("../core/moduleGraph.js");
+    await generateModuleGraph(rootDir, aiDir);
+    console.log("   ✅ module-graph.json");
+    
+    console.log("\n✅ Repository map generated!");
+    process.exit(0);
   } else if (command === 'doctor') {
     doctorMain(args.slice(1));
   } else if (command === 'explore') {
