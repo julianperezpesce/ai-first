@@ -35,9 +35,57 @@ $ npx ai-first init
 **Result:** AI understands your project in ~500 tokens instead of 50,000.
 <!-- END FIRST 10 SECONDS VALUE -->
 
----
+#WK|---
 
-## 🚀 Why ai-first?
+#HM|## ⚡ Quick Start
+
+#HV|Get up and running in less than a minute:
+
+#HV|```bash
+#HV|# 1. Initialize AI-First in your repository
+#HV|npx ai-first init
+#HV|
+#HV|# 2. Generate SQLite index for fast queries (recommended)
+#HV|npx ai-first index
+#HV|
+#HV|# 3. Start watching for changes (optional, for development)
+#HV|npx ai-first watch
+#HV|
+#HV|# 4. Query symbols when needed
+#HV|npx ai-first query symbol MyClass
+#HV|```
+
+#HV|**What each step does:**
+#HV|- `init` — Generates 11 context files including ai_context.md, symbols.json, and more
+#HV|- `index` — Creates a searchable SQLite database for fast code lookups
+#HV|- `watch` — Monitors file changes and incrementally updates the index
+#HV|- `query` — Lets you search for symbols, imports, and file relationships
+
+#HV|That's it! Your repository is now AI-ready. Give `ai/ai_context.md` to your AI assistant.
+
+#HV|---
+
+#RR|## 🚀 Why ai-first?
+
+#KB|AI coding assistants often struggle with large repositories.
+
+#KB|Typical problems include:
+
+#KB|* **Limited context windows** — Can't process entire codebases
+#KB|* **Lack of architectural awareness** — Misses project structure and patterns
+#KB|* **Difficulty navigating** — Can't find relevant code efficiently
+#KB|* **Missing relationships** — Doesn't understand module dependencies
+
+#KB|AI-First solves this by building a **repository intelligence layer**.
+
+#KB|It creates structured metadata that allows AI agents to:
+
+#KB|* Understand project structure at a glance
+#KB|* Retrieve relevant code instantly
+#KB|* Navigate large repositories efficiently
+#KB|* Maintain architectural context across conversations
+
+#KB|---
 
 | Before ai-first | After ai-first |
 |-----------------|----------------|
@@ -357,7 +405,18 @@ npx ai-first watch
 npx ai-first query symbol MyClass
 ```
 
----
+#TM|---
+
+#RR|## 🌎 Languages
+
+#KB|This documentation is available in:
+
+#KB|* **English** (default) — [README.md](./README.md)
+#KB|* **Español** — [README.es.md](./README.es.md)
+
+#KB|For more details, see the [User Guide](./docs/user-guide.md).
+
+#KB|---
 
 ## 🌍 Multi-Language Support
 

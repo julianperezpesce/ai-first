@@ -35,9 +35,57 @@ $ npx ai-first init
 **Resultado:** La IA comprende tu proyecto en ~500 tokens en lugar de 50,000.
 <!-- END FIRST 10 SECONDS VALUE -->
 
----
+#WK|---
 
-## 🚀 ¿Por qué ai-first?
+#HM|## ⚡ Inicio Rápido
+
+#HV|Configura y ejecuta en menos de un minuto:
+
+#HV|```bash
+#HV|# 1. Inicializa AI-First en tu repositorio
+#HV|npx ai-first init
+#HV|
+#HV|# 2. Genera índice SQLite para consultas rápidas (recomendado)
+#HV|npx ai-first index
+#HV|
+#HV|# 3. Observa cambios en archivos (opcional, para desarrollo)
+#HV|npx ai-first watch
+#HV|
+#HV|# 4. Consulta símbolos cuando sea necesario
+#HV|npx ai-first query symbol MiClase
+#HV|```
+
+#HV|**Qué hace cada paso:**
+#HV|- `init` — Genera 11 archivos de contexto incluyendo ai_context.md, symbols.json y más
+#HV|- `index` — Crea una base de datos SQLite buscar código rápidamente
+#HV|- `watch` — Monitorea cambios de archivos y actualiza el índice incrementalmente
+#HV|- `query` — Te permite buscar símbolos, imports y relaciones entre archivos
+
+#HV|¡Eso es todo! Tu repositorio ahora está listo para IA. Da `ai/ai_context.md` a tu asistente de IA.
+
+#HV|---
+
+#YB|## 🚀 ¿Por qué ai-first?
+
+#KB|Los asistentes de código IA a menudo tienen dificultades con repositorios grandes.
+
+#KB|Problemas típicos incluyen:
+
+#KB|* **Ventanas de contexto limitadas** — No pueden procesar bases de código completas
+#KB|* **Falta de conocimiento arquitectónico** — Pierden estructura y patrones del proyecto
+#KB|* **Dificultad para navegar** — No pueden encontrar código relevante eficientemente
+#KB|* **Relaciones perdidas** — No entienden las dependencias entre módulos
+
+#KB|AI-First resuelve esto construyendo una **capa de inteligencia del repositorio**.
+
+#KB|Crea metadatos estructurados que permiten a los agentes IA:
+
+#KB|* Entender la estructura del proyecto de un vistazo
+#KB|* Recuperar código relevante instantáneamente
+#KB|* Navegar repositorios grandes eficientemente
+#KB|* Mantener contexto arquitectónico a través de conversaciones
+
+#KB|---
 
 | Antes de ai-first | Después de ai-first |
 |-------------------|---------------------|
@@ -357,7 +405,18 @@ npx ai-first watch
 npx ai-first query symbol MyClass
 ```
 
----
+#TM|---
+
+#RR|## 🌎 Idiomas
+
+#KB|Esta documentación está disponible en:
+
+#KB|* **English** (por defecto) — [README.md](./README.md)
+#KB|* **Español** — [README.es.md](./README.es.md)
+
+#KB|Para más detalles, consulta la [Guía de Usuario](./docs/user-guide.es.md).
+
+#KB|---
 
 ## 🌍 Soporte Multi-Lenguaje
 
