@@ -1,3 +1,5 @@
+[English](./README.md) | [Español](./README.es.md)
+
 # ai-first
 
 <p align="center">
@@ -173,7 +175,8 @@ ai/
 ├── tech_stack.md      # Languages & frameworks
 ├── entrypoints.md     # Entry points
 ├── conventions.md     # Coding conventions
-└── index.db           # SQLite (with ai-first index)
+├── ai_rules.md        # AI-specific guidelines
+└── hierarchy.json     # Hierarchical repo summary (from summarize)
 ```
 
 ---
@@ -204,6 +207,154 @@ ai-first init --output ./docs/ai
 
 # Custom root directory
 ai-first init --root ./my-project
+```
+
+---
+
+## 📖 User Guide
+
+### Command Overview
+
+ai-first provides 6 commands to generate AI context for your repository:
+
+#### 1. `init` — Generate Full Context (Default)
+```bash
+ai-first init [options]
+
+# Or simply:
+ai-first
+```
+
+**Description:** Generates all AI context files at once. This is the recommended starting point.
+
+**Options:**
+- `-r, --root <dir>` — Root directory (default: current directory)
+- `-o, --output <dir>` — Output directory (default: ./ai)
+- `-h, --help` — Show help
+
+**Output:** Creates 11 files including ai_context.md, symbols.json, dependencies.json, architecture.md, and more.
+
+---
+
+#### 2. `index` — Generate SQLite Index
+```bash
+ai-first index [options]
+```
+
+**Description:** Creates a SQLite database for fast symbol queries. Essential for large codebases.
+
+**Options:**
+- `-r, --root <dir>` — Root directory (default: current directory)
+- `-o, --output <path>` — Output path (default: ./ai/index.db)
+- `-h, --help` — Show help
+
+**Output:** index.db — SQLite database with files, symbols, imports, and hashes tables.
+
+---
+
+#### 3. `watch` — Incremental Indexing
+```bash
+ai-first watch [options]
+```
+
+**Description:** Watches for file changes and incrementally updates the index. Perfect for development.
+
+**Options:**
+- `-r, --root <dir>` — Root directory (default: current directory)
+- `-o, --output <path>` — Output path (default: ./ai/index.db)
+- `-d, --debounce <ms>` — Debounce delay (default: 300ms)
+- `-h, --help` — Show help
+
+**Features:**
+- Incremental updates (only changed files are re-indexed)
+- File hash tracking for change detection
+- Debounced updates to handle rapid file changes
+- Press Ctrl+C to stop watching
+
+---
+
+#### 4. `context` — LLM-Optimized Context
+```bash
+ai-first context [options]
+```
+
+**Description:** Generates lightweight context files optimized for LLMs. Faster than init.
+
+**Options:**
+- `-r, --root <dir>` — Root directory (default: current directory)
+- `-o, --output <dir>` — Output directory (default: ./ai)
+- `-h, --help` — Show help
+
+**Output:** repo_map.json, symbols.json, dependencies.json, ai_context.md
+
+---
+
+#### 5. `summarize` — Hierarchical Summaries
+```bash
+ai-first summarize [options]
+```
+
+**Description:** Generates hierarchical repository summaries optimized for AI navigation.
+
+**Options:**
+- `-r, --root <dir>` — Root directory (default: current directory)
+- `-o, --output <path>` — Output path (default: ./ai/hierarchy.json)
+- `-h, --help` — Show help
+
+**Output:** hierarchy.json with:
+- Repository summary (name, description, purpose)
+- Folder summaries (purpose based on naming patterns)
+- File summaries (exports, imports, key classes/functions)
+
+---
+
+#### 6. `query` — Query the Index
+```bash
+ai-first query <subcommand> [options]
+```
+
+**Description:** Query the SQLite index for symbols, imports, and file relationships.
+
+**Subcommands:**
+- `symbol <name>` — Find symbol definitions by name
+- `dependents <file>` — Find files that depend on a file
+- `imports <file>` — Find files imported by a file
+- `exports <file>` — Find exports in a file
+- `files` — List all indexed files
+- `stats` — Show index statistics
+
+**Options:**
+- `-r, --root <dir>` — Root directory (default: current directory)
+- `-d, --db <path>` — Database path (default: ./ai/index.db)
+
+**Examples:**
+```bash
+# Find all functions named "handleSubmit"
+ai-first query symbol handleSubmit
+
+# Find files that depend on auth.ts
+ai-first query dependents auth.ts
+
+# Show index statistics
+ai-first query stats
+```
+
+---
+
+### Quick Start
+
+```bash
+# 1. Generate full context (recommended first time)
+npx ai-first init
+
+# 2. Create SQLite index for fast queries
+npx ai-first index
+
+# 3. Start watching for changes (optional, for development)
+npx ai-first watch
+
+# 4. Query symbols when needed
+npx ai-first query symbol MyClass
 ```
 
 ---

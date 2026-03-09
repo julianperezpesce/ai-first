@@ -5,6 +5,7 @@ import { scanRepo } from "../core/repoScanner.js";
 import { generateRepoMap, generateCompactRepoMap, generateSummary } from "../core/repoMapper.js";
 import { generateIndex, IncrementalIndexer } from "../core/indexer.js";
 import { generateAIContext } from "../core/aiContextGenerator.js";
+import { generateHierarchy } from "../core/hierarchyGenerator.js";
 import { ensureDir, writeFile } from "../utils/fileUtils.js";
 import { analyzeArchitecture, generateArchitectureFile } from "../analyzers/architecture.js";
 import { detectTechStack, generateTechStackFile } from "../analyzers/techStack.js";
@@ -436,6 +437,57 @@ Output files:
             }
         });
     }
+    else if (command === 'summarize') {
+        // Summarize command - generate hierarchical repository summaries
+        args.shift();
+        let rootDir = process.cwd();
+        let outputPath = path.join(rootDir, "ai", "hierarchy.json");
+        for (let i = 0; i < args.length; i++) {
+            const arg = args[i];
+            switch (arg) {
+                case "--root":
+                case "-r":
+                    rootDir = args[++i];
+                    break;
+                case "--output":
+                case "-o":
+                    outputPath = args[++i];
+                    break;
+                case "--help":
+                case "-h":
+                    console.log(`
+ai-first summarize - Generate hierarchical repository summaries
+
+Usage: ai-first summarize [options]
+
+Options:
+  -r, --root <dir>      Root directory (default: current directory)
+  -o, --output <path>   Output path (default: ./ai/hierarchy.json)
+  -h, --help            Show help message
+
+Output:
+  hierarchy.json with repo, folder, and file summaries optimized for AI navigation.
+`);
+                    process.exit(0);
+            }
+        }
+        console.log(`\n📊 Generating hierarchical summary for: ${rootDir}\n`);
+        generateHierarchy(rootDir, outputPath).then((result) => {
+            if (result.success) {
+                console.log("✅ Hierarchy generated successfully!");
+                console.log("\n📁 Summary:");
+                console.log(`   Repository: ${result.summary.repo}`);
+                console.log(`   Folders: ${Object.keys(result.summary.folders).length}`);
+                console.log(`   Files: ${Object.keys(result.summary.files).length}`);
+                console.log("\nOutput:", outputPath);
+                process.exit(0);
+            }
+            else {
+                console.error(`❌ Error: ${result.error}`);
+                process.exit(1);
+            }
+        });
+    }
     else if (command === 'query') {
         // Query command - query the SQLite index
         args.shift();
@@ -689,6 +741,7 @@ Commands:
   index                Generate SQLite index database
   watch                Watch for file changes (incremental indexing)
   context              Generate LLM-optimized context
+  summarize            Generate hierarchical repository summaries
   query                Query the index (symbol, dependents, imports, exports, stats)
 
 Options:
