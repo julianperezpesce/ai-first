@@ -1,5 +1,27 @@
 import { readFile } from "../utils/fileUtils.js";
 /**
+ * Generate unique symbol ID from file path and symbol name
+ * Format: module.symbolName (e.g., src.utils.parseFile)
+ */
+export function generateSymbolId(filePath, symbolName) {
+    const parts = filePath.split('/');
+    // Get the module (first directory that's not ai, src, test, etc.)
+    let module = 'root';
+    for (const part of parts) {
+        if (part && part !== 'ai' && part !== 'src' && part !== 'lib' && part !== 'test' &&
+            part !== 'tests' && part !== 'index' && !part.endsWith('.ts') &&
+            !part.endsWith('.js') && !part.endsWith('.py') && !part.endsWith('.go')) {
+            module = part;
+            break;
+        }
+    }
+    // If we found src as first dir, use second dir
+    if (parts[0] === 'src' && parts.length > 1) {
+        module = parts[1];
+    }
+    return `${module}.${symbolName}`;
+}
+/**
  * Extract symbols from source files
  */
 export function extractSymbols(files) {
@@ -81,6 +103,7 @@ function parseJavaScriptTypeScript(file, content, lines, symbols) {
                 const name = match[1] || match[2] || match[3];
                 if (name && !name.startsWith("_") && name.length > 1) {
                     symbols.push({
+                        id: generateSymbolId(file.relativePath, name),
                         name,
                         type: p.type,
                         file: file.relativePath,
@@ -102,6 +125,7 @@ function parsePython(file, content, lines, symbols) {
         const classMatch = line.match(/^class\s+(\w+)/);
         if (classMatch) {
             symbols.push({
+                id: generateSymbolId(file.relativePath, classMatch[1]),
                 name: classMatch[1],
                 type: "class",
                 file: file.relativePath,
@@ -114,6 +138,7 @@ function parsePython(file, content, lines, symbols) {
         const funcMatch = line.match(/^def\s+(\w+)/);
         if (funcMatch) {
             symbols.push({
+                id: generateSymbolId(file.relativePath, funcMatch[1]),
                 name: funcMatch[1],
                 type: "function",
                 file: file.relativePath,
@@ -126,6 +151,7 @@ function parsePython(file, content, lines, symbols) {
         const constMatch = line.match(/^([A-Z][A-Z0-9_]*)\s*=/);
         if (constMatch) {
             symbols.push({
+                id: generateSymbolId(file.relativePath, constMatch[1]),
                 name: constMatch[1],
                 type: "const",
                 file: file.relativePath,
@@ -144,6 +170,7 @@ function parseGo(file, content, lines, symbols) {
         const funcMatch = line.match(/^func\s+(?:\(\w+\s+\*?\w+\)\s+)?(\w+)/);
         if (funcMatch && funcMatch[1] !== "init") {
             symbols.push({
+                id: generateSymbolId(file.relativePath, funcMatch[1]),
                 name: funcMatch[1],
                 type: "function",
                 file: file.relativePath,
@@ -155,6 +182,7 @@ function parseGo(file, content, lines, symbols) {
         const typeMatch = line.match(/^type\s+(\w+)/);
         if (typeMatch) {
             symbols.push({
+                id: generateSymbolId(file.relativePath, typeMatch[1]),
                 name: typeMatch[1],
                 type: "type",
                 file: file.relativePath,
@@ -165,6 +193,7 @@ function parseGo(file, content, lines, symbols) {
         const constMatch = line.match(/^const\s+(?:\(\s*)?(\w+)/);
         if (constMatch) {
             symbols.push({
+                id: generateSymbolId(file.relativePath, constMatch[1]),
                 name: constMatch[1],
                 type: "const",
                 file: file.relativePath,
@@ -183,6 +212,7 @@ function parseRust(file, content, lines, symbols) {
         const funcMatch = line.match(/^pub\s+fn\s+(\w+)/);
         if (funcMatch) {
             symbols.push({
+                id: generateSymbolId(file.relativePath, funcMatch[1]),
                 name: funcMatch[1],
                 type: "function",
                 file: file.relativePath,
@@ -194,6 +224,7 @@ function parseRust(file, content, lines, symbols) {
         const structMatch = line.match(/^pub\s+struct\s+(\w+)/);
         if (structMatch) {
             symbols.push({
+                id: generateSymbolId(file.relativePath, structMatch[1]),
                 name: structMatch[1],
                 type: "class",
                 file: file.relativePath,
@@ -205,6 +236,7 @@ function parseRust(file, content, lines, symbols) {
         const enumMatch = line.match(/^pub\s+enum\s+(\w+)/);
         if (enumMatch) {
             symbols.push({
+                id: generateSymbolId(file.relativePath, enumMatch[1]),
                 name: enumMatch[1],
                 type: "enum",
                 file: file.relativePath,
@@ -216,6 +248,7 @@ function parseRust(file, content, lines, symbols) {
         const constMatch = line.match(/^pub\s+const\s+(\w+)/);
         if (constMatch) {
             symbols.push({
+                id: generateSymbolId(file.relativePath, constMatch[1]),
                 name: constMatch[1],
                 type: "const",
                 file: file.relativePath,
@@ -235,6 +268,7 @@ function parseJava(file, content, lines, symbols) {
         const classMatch = line.match(/^(?:public\s+)?class\s+(\w+)/);
         if (classMatch) {
             symbols.push({
+                id: generateSymbolId(file.relativePath, classMatch[1]),
                 name: classMatch[1],
                 type: "class",
                 file: file.relativePath,
@@ -245,6 +279,7 @@ function parseJava(file, content, lines, symbols) {
         const interfaceMatch = line.match(/^(?:public\s+)?interface\s+(\w+)/);
         if (interfaceMatch) {
             symbols.push({
+                id: generateSymbolId(file.relativePath, interfaceMatch[1]),
                 name: interfaceMatch[1],
                 type: "interface",
                 file: file.relativePath,
@@ -255,6 +290,7 @@ function parseJava(file, content, lines, symbols) {
         const methodMatch = line.match(/^(?:public|private|protected)\s+(?:static\s+)?(?:\w+)\s+(\w+)\s*\(/);
         if (methodMatch && methodMatch[1] !== "if" && methodMatch[1] !== "for") {
             symbols.push({
+                id: generateSymbolId(file.relativePath, methodMatch[1]),
                 name: methodMatch[1],
                 type: "function",
                 file: file.relativePath,
@@ -273,6 +309,7 @@ function parseCSharp(file, content, lines, symbols) {
         const classMatch = line.match(/^(?:public\s+)?(?:partial\s+)?class\s+(\w+)/);
         if (classMatch) {
             symbols.push({
+                id: generateSymbolId(file.relativePath, classMatch[1]),
                 name: classMatch[1],
                 type: "class",
                 file: file.relativePath,
@@ -283,6 +320,7 @@ function parseCSharp(file, content, lines, symbols) {
         const interfaceMatch = line.match(/^(?:public\s+)?interface\s+(\w+)/);
         if (interfaceMatch) {
             symbols.push({
+                id: generateSymbolId(file.relativePath, interfaceMatch[1]),
                 name: interfaceMatch[1],
                 type: "interface",
                 file: file.relativePath,
@@ -293,6 +331,7 @@ function parseCSharp(file, content, lines, symbols) {
         const methodMatch = line.match(/^(?:public|private|protected|internal)\s+(?:static\s+)?(?:async\s+)?(?:\w+)\s+(\w+)\s*\(/);
         if (methodMatch) {
             symbols.push({
+                id: generateSymbolId(file.relativePath, methodMatch[1]),
                 name: methodMatch[1],
                 type: "function",
                 file: file.relativePath,

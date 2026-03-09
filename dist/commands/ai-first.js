@@ -479,63 +479,121 @@ Features:
         });
     }
     else if (command === 'context') {
-        // Context command - generate AI context files (repo_map.json, symbols.json, dependencies.json, ai_context.md)
+        // Context command - generate AI context files OR symbol-specific context packet
         args.shift();
         let rootDir = process.cwd();
         let outputDir = path.join(rootDir, "ai");
+        let symbolArg;
         for (let i = 0; i < args.length; i++) {
             const arg = args[i];
-            switch (arg) {
-                case "--root":
-                case "-r":
-                    rootDir = args[++i];
-                    break;
-                case "--output":
-                case "-o":
-                    outputDir = args[++i];
-                    break;
-                case "--help":
-                case "-h":
-                    console.log(`
+            if (arg.startsWith("-")) {
+                // It's an option
+                switch (arg) {
+                    case "--root":
+                    case "-r":
+                        rootDir = args[++i];
+                        outputDir = path.join(rootDir, "ai");
+                        break;
+                    case "--output":
+                    case "-o":
+                        outputDir = args[++i];
+                        break;
+                    case "--help":
+                    case "-h":
+                        console.log(`
 ai-first context - Generate AI context optimized for LLMs
 
-Usage: ai-first context [options]
+Usage: ai-first context [symbol] [options]
+
+Arguments:
+  symbol              Symbol name or ID to generate context for (optional)
 
 Options:
   -r, --root <dir>      Root directory (default: current directory)
   -o, --output <dir>   Output directory (default: ./ai)
+  -s, --save           Save context packet to file
   -h, --help           Show help message
 
-Output files:
+Without symbol:
+  Generates general AI context files:
   - repo_map.json       Folder structure
   - symbols.json        Exported symbols
   - dependencies.json   Import graph
   - ai_context.md       LLM-optimized summary
+
+With symbol:
+  Generates context packet for specific symbol:
+  - ai/context/<symbol>.json
+  Includes: definition, source code, relationships, related symbols
 `);
-                    process.exit(0);
-            }
-        }
-        console.log(`\n🤖 Generating AI context for: ${rootDir}`);
-        console.log(`   Output: ${outputDir}\n`);
-        generateAIContext(rootDir, outputDir).then((result) => {
-            if (result.success) {
-                console.log("✅ AI Context generated successfully!");
-                console.log("\n📁 Files created:");
-                for (const file of result.filesCreated) {
-                    console.log(`   - ${path.relative(rootDir, file)}`);
+                        process.exit(0);
+                    case "--save":
+                    case "-s":
+                        // Flag, no value needed
+                        break;
                 }
-                console.log("\n📊 Statistics:");
-                console.log(`   Files: ${result.stats.files}`);
-                console.log(`   Folders: ${result.stats.folders}`);
-                console.log(`   Symbols: ${result.stats.symbols}`);
-                console.log(`   Dependencies: ${result.stats.dependencies}`);
-                process.exit(0);
             }
             else {
-                console.error(`❌ Error: ${result.error}`);
-                process.exit(1);
+                // It's the symbol argument
+                symbolArg = arg;
             }
-        });
+        }
+        if (symbolArg) {
+            // Generate symbol-specific context packet
+            console.log(`\n🎯 Generating context for symbol: ${symbolArg}`);
+            console.log(`   Root: ${rootDir}`);
+            console.log(`   Output: ${outputDir}\n`);
+            // Import and run context packet generator
+            import("../core/contextPacket.js").then(({ generateContextPacket, saveContextPacket }) => {
+                const packet = generateContextPacket(symbolArg, outputDir, rootDir);
+                if (packet) {
+                    console.log("\n📦 Symbol Context Packet:");
+                    console.log(`   ID: ${packet.symbol.id}`);
+                    console.log(`   Type: ${packet.symbol.type}`);
+                    console.log(`   File: ${packet.symbol.file}:${packet.symbol.line}`);
+                    console.log(`\n📊 Relationships:`);
+                    console.log(`   Calls: ${packet.relationships.calls.length}`);
+                    console.log(`   Called by: ${packet.relationships.calledBy.length}`);
+                    console.log(`   Imports: ${packet.relationships.imports.length}`);
+                    console.log(`\n📝 Summary:`);
+                    console.log(`   ${packet.summary}`);
+                    // Save to file
+                    const savePath = saveContextPacket(packet, outputDir);
+                    console.log(`\n✅ Context saved to: ${path.relative(rootDir, savePath)}`);
+                    process.exit(0);
+                }
+                else {
+                    process.exit(1);
+                }
+            }).catch((error) => {
+                console.error("Error generating context:", error.message);
+                process.exit(1);
+            });
+        }
+        else {
+            // Generate general AI context (original behavior)
+            console.log(`\n🤖 Generating AI context for: ${rootDir}`);
+            console.log(`   Output: ${outputDir}\n`);
+            generateAIContext(rootDir, outputDir).then((result) => {
+                if (result.success) {
+                    console.log("✅ AI Context generated successfully!");
+                    console.log("\n📁 Files created:");
+                    for (const file of result.filesCreated) {
+                        console.log(`   - ${path.relative(rootDir, file)}`);
+                    }
+                    console.log("\n📊 Statistics:");
+                    console.log(`   Files: ${result.stats.files}`);
+                    console.log(`   Folders: ${result.stats.folders}`);
+                    console.log(`   Symbols: ${result.stats.symbols}`);
+                    console.log(`   Dependencies: ${result.stats.dependencies}`);
+                    process.exit(0);
+                }
+                else {
+                    console.error(`❌ Error: ${result.error}`);
+                    process.exit(1);
+                }
+            });
+        }
     }
     else if (command === 'summarize') {
         // Summarize command - generate hierarchical repository summaries
@@ -899,6 +957,10 @@ Options:
         const { generateModuleGraph } = await import("../core/moduleGraph.js");
         await generateModuleGraph(rootDir, aiDir);
         console.log("   ✅ module-graph.json");
+        // symbol-graph.json
+        const { generateSymbolGraph } = await import("../core/symbolGraph.js");
+        await generateSymbolGraph(rootDir, aiDir);
+        console.log("   ✅ symbol-graph.json");
         console.log("\n✅ Repository map generated!");
         process.exit(0);
     }
