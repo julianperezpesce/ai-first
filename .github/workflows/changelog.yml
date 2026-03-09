@@ -32,13 +32,16 @@ jobs:
           # Read current changelog
           CURRENT_CHANGELOG=$(cat CHANGELOG.md 2>/dev/null || echo "")
           
-          # Create new entry
-          NEW_ENTRY="## [Unreleased]
+          # Create new entry using heredoc for proper multiline handling
+          NEW_ENTRY=$(cat <<EOF
+          ## [Unreleased]
 
-### Added
-$COMMITS
+          ### Added
+          $COMMITS
 
-$CURRENT_CHANGELOG"
+          $CURRENT_CHANGELOG
+          EOF
+          )
           
           # Write back if different
           if ! echo "$CURRENT_CHANGELOG" | grep -q "$COMMITS"; then
