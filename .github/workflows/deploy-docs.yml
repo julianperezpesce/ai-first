@@ -1,4 +1,4 @@
-name: Deploy Documentation
+name: Deploy Documentation v1.2
 
 on:
   push:
