@@ -274,12 +274,75 @@ ai-first init
 # Generate SQLite index for fast queries
 ai-first index
 
+# Force semantic indexing (for large repos)
+ai-first index --semantic
+
+# Check repository health
+ai-first doctor
+
+# Explore module dependencies
+ai-first explore all
+ai-first explore src
+
 # Custom output directory
 ai-first init --output ./docs/ai
 
 # Custom root directory
 ai-first init --root ./my-project
 ```
+
+---
+
+## 🩺 Doctor Command
+
+Check repository health and AI readiness:
+
+```bash
+ai-first doctor
+ai-first doctor --fix
+```
+
+The doctor command scans your repository and reports:
+- Files scanned
+- Languages detected
+- Large files (>1MB)
+- AI directory status
+- Semantic index availability
+- Module graph status
+- SQLite index status
+
+---
+
+## 🕸️ Explore Command
+
+Navigate module dependencies:
+
+```bash
+# List all modules
+ai-first explore all
+
+# Explore specific module
+ai-first explore src
+```
+
+The explore command generates a module dependency graph based on imports.
+
+---
+
+## 🔎 Semantic Index
+
+For large repositories (>2000 files), semantic indexing is automatically enabled:
+
+```bash
+# Force semantic indexing
+ai-first index --semantic
+```
+
+Semantic indexing:
+- Chunks files by function/class boundaries
+- Generates embeddings for semantic search
+- Supports repositories up to 100k files
+- Skips binaries and large files (>1MB)
 
 ---
 

@@ -14,6 +14,9 @@ import { detectConventions, generateConventionsFile } from "../analyzers/convent
 import { extractSymbols, generateSymbolsJson } from "../analyzers/symbols.js";
 import { analyzeDependencies, generateDependenciesJson } from "../analyzers/dependencies.js";
 import { generateAIRules, generateAIRulesFile } from "../analyzers/aiRules.js";
+import { generateModuleGraph } from "../core/moduleGraph.js";
+import { doctorMain } from "./doctor.js";
+import { exploreMain } from "./explore.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -321,6 +324,7 @@ if (isMain) {
     args.shift();
     let rootDir = process.cwd();
     let outputPath = path.join(rootDir, "ai", "index.db");
+    let semanticMode = false;
 
     for (let i = 0; i < args.length; i++) {
       const arg = args[i];
@@ -333,6 +337,10 @@ if (isMain) {
         case "-o":
           outputPath = args[++i];
           break;
+        case "--semantic":
+        case "-s":
+          semanticMode = true;
+          break;
         case "--help":
         case "-h":
           console.log(`
@@ -343,6 +351,7 @@ Usage: ai-first index [options]
 Options:
   -r, --root <dir>      Root directory to scan (default: current directory)
   -o, --output <path>  Output path for index.db (default: ./ai/index.db)
+  -s, --semantic       Enable semantic indexing
   -h, --help           Show help message
 
 Example queries (for AI agents):
@@ -355,6 +364,10 @@ Example queries (for AI agents):
     }
 
     console.log(`\n🗄️  Generating index for: ${rootDir}\n`);
+    
+    if (semanticMode) {
+      console.log("🔎 Semantic mode enabled.\n");
+    }
     
     generateIndex(rootDir, outputPath).then((result) => {
       if (result.success) {
@@ -378,6 +391,7 @@ Example queries (for AI agents):
     args.shift();
     let rootDir = process.cwd();
     let outputPath = path.join(rootDir, "ai", "index.db");
+    let semanticMode = false;
     let debounceMs = 300;
 
     for (let i = 0; i < args.length; i++) {
@@ -834,6 +848,8 @@ Commands:
   context              Generate LLM-optimized context
   summarize            Generate hierarchical repository summaries
   query                Query the index (symbol, dependents, imports, exports, stats)
+  doctor               Check repository health and AI readiness
+  explore <module>     Explore module dependencies
 
 Options:
   -r, --root <dir>      Root directory to scan (default: current directory)
@@ -847,6 +863,10 @@ Options:
     runAIFirst(options).then((result) => {
       process.exit(result.success ? 0 : 1);
     });
+  } else if (command === 'doctor') {
+    doctorMain(args.slice(1));
+  } else if (command === 'explore') {
+    exploreMain(args.slice(1));
   } else {
     console.log(`Unknown command: ${command}`);
     console.log(`Use 'ai-first --help' for usage information`);
