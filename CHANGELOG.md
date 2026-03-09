@@ -1,3 +1,17 @@
+## [Unreleased]
+
+### Added
+- feat: Add VitePress documentation site with SEO optimization (e0b3e35)
+- fix: Add permissions and GITHUB_TOKEN to changelog workflow (062d952)
+- chore: Update CHANGELOG with all new features (8c1f6d9)
+- fix: Update roadmap to match planned features from CHANGELOG (7eca761)
+- fix: Remove hash ID markers from README (d05db53)
+- feat: Add incremental indexing and semantic search pipeline (e294a2c)
+- feat: Add improved indexing with adaptive sizing, map command, incremental state (d0a172b)
+- feat: Add doctor, explore commands and semantic indexing (50011da)
+- fix: Correct YAML syntax in changelog workflow (5a1c819)
+- Improve documentation with Quick Start, Why AI-First, Architecture diagram, Languages (7cc8f44)
+
 # Changelog & Roadmap
 
 All notable changes to `ai-first` will be documented in this file.
