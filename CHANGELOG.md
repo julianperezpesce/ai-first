@@ -102,7 +102,29 @@ All notable changes to `ai-first` will be documented in this file.
 - Deterministic analysis (no AI/LLM required)
 - Works offline
 - CLI interface with `--root` and `--output` options
+---
 
+## 📋 Roadmap
+
+See [CHANGELOG.md](./CHANGELOG.md) for the complete roadmap:
+- **Unreleased** section shows what's being worked on
+- Version sections show completed features
+- Future planned features are listed under each phase
+
+---
+
+## How to Update
+
+After each feature release:
+1. Update this changelog with new changes
+2. Update version in `package.json` (semver)
+3. Commit and push
+
+```bash
+git add CHANGELOG.md package.json
+git commit -m "Release v1.x.x"
+git push
+```
 ---
 
 ## Roadmap
