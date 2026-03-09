@@ -1,4 +1,43 @@
+# Changelog & Roadmap
+
+All notable changes to `ai-first` will be documented in this file.
+
+---
+
 ## [Unreleased]
+
+### Added
+- `ai-first context <symbol>` - Generate context packet for specific symbol
+- `ai/graph/symbol-graph.json` - Symbol-level dependency graph with bidirectional relationships
+- `ai/context/<symbol>.json` - Code Context Packets (CCP) for AI agents
+- Unique symbol IDs (format: `module.symbolName`)
+- Symbol relationships: calls, called_by, imports, references
+
+---
+
+## [1.1.0] - 2026-03-09
+
+### Added
+- `ai-first doctor` - Health check command for repository readiness
+- `ai-first explore <module>` - Navigate module dependencies
+- `ai-first map` - Generate repository architecture map
+- `ai-first index --semantic` - Semantic indexing with embeddings
+- `index-state.json` - Track file changes for incremental indexing
+- `files.json` - List of all indexed files with metadata
+- `modules.json` - Detected modules and their structure
+- `module-graph.json` - Module dependency graph
+- `embeddings.json` - Semantic embeddings for code search
+- SQLite index with adaptive sizing for large repos
+
+### New Generated Files
+- `ai/files.json` - File inventory with hash, size, line count
+- `ai/modules.json` - Module detection and hierarchy
+- `ai/module-graph.json` - Import-based dependency graph
+- `ai/embeddings.json` - Vector embeddings for semantic search
+
+---
+
+## [1.0.0] - 2026-03-08
 
 ### Added
 - feat: Add VitePress documentation site with SEO optimization (e0b3e35)

@@ -1,5 +1,6 @@
 import { FileInfo } from "../core/repoScanner.js";
 export interface Symbol {
+    id: string;
     name: string;
     type: "function" | "class" | "interface" | "type" | "const" | "enum" | "module" | "export";
     file: string;
@@ -11,6 +12,11 @@ export interface SymbolsAnalysis {
     byFile: Record<string, Symbol[]>;
     byType: Record<string, Symbol[]>;
 }
+/**
+ * Generate unique symbol ID from file path and symbol name
+ * Format: module.symbolName (e.g., src.utils.parseFile)
+ */
+export declare function generateSymbolId(filePath: string, symbolName: string): string;
 /**
  * Extract symbols from source files
  */
