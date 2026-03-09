@@ -10,7 +10,10 @@
   "scripts": {
     "build": "tsc",
     "run": "node dist/commands/ai-first.js",
-    "dev": "node --loader ts-node/esm src/commands/ai-first.ts"
+    "dev": "node --loader ts-node/esm src/commands/ai-first.ts",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "keywords": [
     "ai",
@@ -21,11 +24,22 @@
     "development",
     "tool"
   ],
-  "author": "",
+  "author": "Julian Perez Pesce <julian@example.com> (https://github.com/julianperezpesce)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/julianperezpesce/ai-first.git"
+  },
+  "homepage": "https://julianperezpesce.github.io/ai-first",
+  "bugs": {
+    "url": "https://github.com/julianperezpesce/ai-first/issues"
+  },
   "devDependencies": {
     "@types/node": "^20.0.0",
-    "typescript": "^5.0.0"
+    "@vitejs/plugin-vue": "^6.0.4",
+    "typescript": "^5.0.0",
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.30"
   },
   "dependencies": {
     "chokidar": "^5.0.0",
