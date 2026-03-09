@@ -1,3 +1,4 @@
+import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { scanRepo } from "../core/repoScanner.js";
@@ -435,6 +436,232 @@ Output files:
             }
         });
     }
+    else if (command === 'query') {
+        // Query command - query the SQLite index
+        args.shift();
+        const queryType = args.shift();
+        let rootDir = process.cwd();
+        let dbPath = path.join(rootDir, "ai", "index.db");
+        for (let i = 0; i < args.length; i++) {
+            const arg = args[i];
+            switch (arg) {
+                case "--root":
+                case "-r":
+                    rootDir = args[++i];
+                    dbPath = path.join(rootDir, "ai", "index.db");
+                    break;
+                case "--db":
+                case "-d":
+                    dbPath = args[++i];
+                    break;
+            }
+        }
+        if (!queryType) {
+            console.log(`
+ai-first query - Query the SQLite index
+
+Usage: ai-first query <subcommand> [options]
+
+Subcommands:
+  symbol <name>        Find symbol definitions
+  dependents <file>   Find files that depend on a file
+  imports <file>       Find files imported by a file
+  exports <file>       Find exports in a file
+  files                List all indexed files
+  stats                Show index statistics
+
+Options:
+  -r, --root <dir>   Root directory (default: current directory)
+  -d, --db <path>    Database path (default: ./ai/index.db)
+  -h, --help         Show help message
+`);
+            process.exit(0);
+        }
+        // Run query
+        import("sql.js").then(({ default: initSqlJs }) => {
+            return initSqlJs();
+        }).then((SQL) => {
+            if (!fs.existsSync(dbPath)) {
+                console.error(`❌ Index not found: ${dbPath}`);
+                console.log(`Run 'ai-first index' first to create the index.`);
+                process.exit(1);
+            }
+            const fileBuffer = fs.readFileSync(dbPath);
+            const db = new SQL.Database(fileBuffer);
+            if (queryType === 'symbol') {
+                const symbolName = args[0];
+                if (!symbolName) {
+                    console.error("Please provide a symbol name");
+                    process.exit(1);
+                }
+                console.log(`\n🔍 Searching for symbol: ${symbolName}\n`);
+                const results = db.exec(`
+          SELECT s.name, s.type, s.line, f.path
+          FROM symbols s
+          JOIN files f ON s.file_id = f.id
+          WHERE s.name LIKE '%' || ? || '%'
+          ORDER BY s.type, f.path, s.line
+          LIMIT 50
+        `, [symbolName]);
+                if (results.length === 0 || results[0].values.length === 0) {
+                    console.log("No symbols found.");
+                }
+                else {
+                    console.log("Found symbols:\n");
+                    console.log("Name                | Type       | File                    | Line");
+                    console.log("-------------------|------------|-------------------------|------");
+                    for (const row of results[0].values) {
+                        console.log(`${String(row[0]).padEnd(19)}| ${String(row[1]).padEnd(10)}| ${String(row[3]).padEnd(24)}| ${row[2]}`);
+                    }
+                    console.log(`\nTotal: ${results[0].values.length} symbols`);
+                }
+            }
+            else if (queryType === 'dependents') {
+                const fileName = args[0];
+                if (!fileName) {
+                    console.error("Please provide a file name");
+                    process.exit(1);
+                }
+                console.log(`\n🔍 Finding files that depend on: ${fileName}\n`);
+                const fileResult = db.exec("SELECT id, path FROM files WHERE path LIKE '%' || ? || '%'", [fileName]);
+                if (fileResult.length === 0 || fileResult[0].values.length === 0) {
+                    console.log("File not found in index.");
+                    db.close();
+                    process.exit(1);
+                }
+                const fileId = fileResult[0].values[0][0];
+                const filePath = fileResult[0].values[0][1];
+                console.log(`File: ${filePath}\n`);
+                const baseName = fileName.replace(/\.[^.]+$/, '');
+                const results = db.exec(`
+          SELECT f.path, i.type, i.target_file
+          FROM imports i
+          JOIN files f ON i.source_file_id = f.id
+          WHERE i.target_file LIKE '%' || ? || '%'
+          ORDER BY f.path
+        `, [baseName]);
+                if (results.length === 0 || results[0].values.length === 0) {
+                    console.log("No dependent files found.");
+                }
+                else {
+                    console.log("Dependent files:\n");
+                    console.log("File                    | Type    | Imports");
+                    console.log("------------------------|---------|-------------------");
+                    for (const row of results[0].values) {
+                        console.log(`${String(row[0]).padEnd(24)}| ${String(row[1]).padEnd(7)}| ${row[2]}`);
+                    }
+                    console.log(`\nTotal: ${results[0].values.length} dependent files`);
+                }
+            }
+            else if (queryType === 'imports') {
+                const fileName = args[0];
+                if (!fileName) {
+                    console.error("Please provide a file name");
+                    process.exit(1);
+                }
+                console.log(`\n🔍 Finding imports in: ${fileName}\n`);
+                const results = db.exec(`
+          SELECT i.target_file, i.type
+          FROM imports i
+          JOIN files f ON i.source_file_id = f.id
+          WHERE f.path LIKE '%' || ? || '%'
+          ORDER BY i.type, i.target_file
+        `, [fileName]);
+                if (results.length === 0 || results[0].values.length === 0) {
+                    console.log("No imports found.");
+                }
+                else {
+                    console.log("Imports:\n");
+                    console.log("Target                     | Type");
+                    console.log("---------------------------|------");
+                    for (const row of results[0].values) {
+                        console.log(`${String(row[0]).padEnd(27)}| ${row[1]}`);
+                    }
+                    console.log(`\nTotal: ${results[0].values.length} imports`);
+                }
+            }
+            else if (queryType === 'exports') {
+                const fileName = args[0];
+                if (!fileName) {
+                    console.error("Please provide a file name");
+                    process.exit(1);
+                }
+                console.log(`\n🔍 Finding exports in: ${fileName}\n`);
+                const results = db.exec(`
+          SELECT s.name, s.type, s.line
+          FROM symbols s
+          JOIN files f ON s.file_id = f.id
+          WHERE f.path LIKE '%' || ? || '%' AND s.exported = 1
+          ORDER BY s.type, s.line
+        `, [fileName]);
+                if (results.length === 0 || results[0].values.length === 0) {
+                    console.log("No exports found.");
+                }
+                else {
+                    console.log("Exports:\n");
+                    console.log("Name                | Type       | Line");
+                    console.log("-------------------|------------|------");
+                    for (const row of results[0].values) {
+                        console.log(`${String(row[0]).padEnd(19)}| ${String(row[1]).padEnd(10)}| ${row[2]}`);
+                    }
+                    console.log(`\nTotal: ${results[0].values.length} exports`);
+                }
+            }
+            else if (queryType === 'files') {
+                console.log("\n📁 Indexed files:\n");
+                const results = db.exec("SELECT path, language FROM files ORDER BY path LIMIT 100");
+                if (results.length > 0 && results[0].values.length > 0) {
+                    console.log("File                              | Language");
+                    console.log("----------------------------------|-----------");
+                    for (const row of results[0].values) {
+                        console.log(`${String(row[0]).padEnd(34)}| ${row[1]}`);
+                    }
+                    const countResult = db.exec("SELECT COUNT(*) FROM files");
+                    const total = countResult[0]?.values[0]?.[0] || 0;
+                    console.log(`\nTotal files: ${total}`);
+                }
+            }
+            else if (queryType === 'stats') {
+                console.log("\n📊 Index Statistics:\n");
+                const fileCount = db.exec("SELECT COUNT(*) FROM files");
+                const symbolCount = db.exec("SELECT COUNT(*) FROM symbols");
+                const importCount = db.exec("SELECT COUNT(*) FROM imports");
+                const hashCount = db.exec("SELECT COUNT(*) FROM file_hashes");
+                console.log(`Files:     ${fileCount[0]?.values[0]?.[0] || 0}`);
+                console.log(`Symbols:   ${symbolCount[0]?.values[0]?.[0] || 0}`);
+                console.log(`Imports:   ${importCount[0]?.values[0]?.[0] || 0}`);
+                console.log(`Hashes:    ${hashCount[0]?.values[0]?.[0] || 0}`);
+                console.log("\n📈 Languages:\n");
+                const langResults = db.exec("SELECT language, COUNT(*) as count FROM files GROUP BY language ORDER BY count DESC");
+                if (langResults.length > 0 && langResults[0].values.length > 0) {
+                    console.log("Language     | Count");
+                    console.log("-------------|-------");
+                    for (const row of langResults[0].values) {
+                        console.log(`${String(row[0]).padEnd(12)}| ${row[1]}`);
+                    }
+                }
+                console.log("\n🔤 Symbol Types:\n");
+                const typeResults = db.exec("SELECT type, COUNT(*) as count FROM symbols GROUP BY type ORDER BY count DESC");
+                if (typeResults.length > 0 && typeResults[0].values.length > 0) {
+                    console.log("Type      | Count");
+                    console.log("----------|-------");
+                    for (const row of typeResults[0].values) {
+                        console.log(`${String(row[0]).padEnd(10)}| ${row[1]}`);
+                    }
+                }
+            }
+            else {
+                console.log(`Unknown query type: ${queryType}`);
+                console.log("Available: symbol, dependents, imports, exports, files, stats");
+                process.exit(1);
+            }
+            db.close();
+            process.exit(0);
+        }).catch((error) => {
+            console.error("Error:", error.message);
+            process.exit(1);
+        });
+    }
     else if (command === 'init' || !command) {
         // Init command - generate all context files
         if (command === 'init')
@@ -461,7 +688,8 @@ Commands:
   init                 Generate AI context files (default)
   index                Generate SQLite index database
   watch                Watch for file changes (incremental indexing)
-  context              Generate LLM-optimized context (repo_map.json, symbols.json, dependencies.json, ai_context.md)
+  context              Generate LLM-optimized context
+  query                Query the index (symbol, dependents, imports, exports, stats)
 
 Options:
   -r, --root <dir>      Root directory to scan (default: current directory)
