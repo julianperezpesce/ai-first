@@ -3,48 +3,28 @@ import { resolve } from 'path'
 
 export default defineConfig({
   title: 'AI-First',
-  description: 'CLI tool that prepares any repository for AI coding agents. Generate instant context for OpenCode, Cursor, Claude Code, and more.',
+  description: 'CLI tool that prepares any repository for AI coding agents.',
   
-  lastUpdated: true,
-  cleanUrls: true,
-  
+  locales: {
+    '/': {
+      label: 'English',
+      lang: 'en',
+      title: 'AI-First',
+      description: 'CLI tool that prepares any repository for AI coding agents'
+    },
+    '/es/': {
+      label: 'Español',
+      lang: 'es',
+      title: 'AI-First',
+      description: 'CLI que prepara cualquier repositorio para agentes de IA'
+    }
+  },
+
+  appearance: 'dark',
+
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['link', { rel: 'canonical', href: 'https://julianperezpesce.github.io/ai-first/' }],
-    
-    // Open Graph
-    ['meta', { property: 'og:title', content: 'AI-First - Prepare Your Repository for AI Coding Agents' }],
-    ['meta', { property: 'og:description', content: 'CLI tool that prepares any repository to be used effectively by AI coding agents. Generate instant context for OpenCode, Cursor, Claude Code, and more.' }],
-    ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:url', content: 'https://julianperezpesce.github.io/ai-first/' }],
-    ['meta', { property: 'og:image', content: 'https://julianperezpesce.github.io/ai-first/og-image.png' }],
-    
-    // Twitter
-    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:title', content: 'AI-First - Prepare Your Repository for AI Coding Agents' }],
-    ['meta', { name: 'twitter:description', content: 'CLI tool that prepares any repository to be used effectively by AI coding agents.' }],
-    ['meta', { name: 'twitter:image', content: 'https://julianperezpesce.github.io/ai-first/og-image.png' }],
-    
-    // Schema.org JSON-LD
-    ['script', { type: 'application/ld+json', children: JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'SoftwareApplication',
-      name: 'AI-First',
-      description: 'CLI tool that prepares any repository for AI coding agents',
-      url: 'https://julianperezpesce.github.io/ai-first/',
-      applicationCategory: 'DeveloperApplication',
-      operatingSystem: 'macOS, Linux, Windows',
-      offers: {
-        '@type': 'Offer',
-        price: '0',
-        priceCurrency: 'USD'
-      },
-      author: {
-        '@type': 'Person',
-        name: 'Julian Perez Pesce',
-        url: 'https://github.com/julianperezpesce'
-      }
-    })}]
+    ['link', { rel: 'canonical', href: 'https://ai-first-cli.netlify.app/' }],
   ],
   
   themeConfig: {
@@ -68,7 +48,7 @@ export default defineConfig({
         rel: 'noopener'
       }
     ],
-    
+
     sidebar: {
       '/guide/': [
         {
