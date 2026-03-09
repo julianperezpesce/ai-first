@@ -484,10 +484,13 @@ Features:
         let rootDir = process.cwd();
         let outputDir = path.join(rootDir, "ai");
         let symbolArg;
+        let depth = 1;
+        let maxSymbols = 50;
+        let format = "json";
+        let save = false;
         for (let i = 0; i < args.length; i++) {
             const arg = args[i];
             if (arg.startsWith("-")) {
-                // It's an option
                 switch (arg) {
                     case "--root":
                     case "-r":
@@ -497,6 +500,21 @@ Features:
                     case "--output":
                     case "-o":
                         outputDir = args[++i];
+                        break;
+                    case "--depth":
+                    case "-d":
+                        depth = parseInt(args[++i], 10) || 1;
+                        break;
+                    case "--max-symbols":
+                    case "-m":
+                        maxSymbols = parseInt(args[++i], 10) || 50;
+                        break;
+                    case "--format":
+                    case "-f":
+                        const fmt = args[++i];
+                        if (["json", "markdown", "text"].includes(fmt)) {
+                            format = fmt;
+                        }
                         break;
                     case "--help":
                     case "-h":
@@ -509,83 +527,74 @@ Arguments:
   symbol              Symbol name or ID to generate context for (optional)
 
 Options:
-  -r, --root <dir>      Root directory (default: current directory)
-  -o, --output <dir>   Output directory (default: ./ai)
-  -s, --save           Save context packet to file
-  -h, --help           Show help message
+  -r, --root <dir>        Root directory (default: current directory)
+  -o, --output <dir>     Output directory (default: ./ai)
+  -d, --depth <n>        Graph traversal depth (default: 1)
+  -m, --max-symbols <n>  Max related symbols (default: 50)
+  -f, --format <fmt>      Output format: json, markdown, text (default: json)
+  -s, --save              Save context packet to file
+  -h, --help              Show help message
 
-Without symbol:
-  Generates general AI context files:
-  - repo_map.json       Folder structure
-  - symbols.json        Exported symbols
-  - dependencies.json   Import graph
-  - ai_context.md       LLM-optimized summary
-
-With symbol:
-  Generates context packet for specific symbol:
-  - ai/context/<symbol>.json
-  Includes: definition, source code, relationships, related symbols
+Examples:
+  ai-first context loginUser
+  ai-first context loginUser --depth 2
+  ai-first context loginUser --format markdown
+  ai-first context loginUser -d 2 -m 100 -f markdown
 `);
                         process.exit(0);
                     case "--save":
                     case "-s":
-                        // Flag, no value needed
+                        save = true;
                         break;
                 }
             }
             else {
-                // It's the symbol argument
                 symbolArg = arg;
             }
         }
         if (symbolArg) {
-            // Generate symbol-specific context packet
             console.log(`\n🎯 Generating context for symbol: ${symbolArg}`);
-            console.log(`   Root: ${rootDir}`);
-            console.log(`   Output: ${outputDir}\n`);
-            // Import and run context packet generator
+            console.log(`   Depth: ${depth}, Max: ${maxSymbols}, Format: ${format}\n`);
             import("../core/contextPacket.js").then(({ generateContextPacket, saveContextPacket }) => {
-                const packet = generateContextPacket(symbolArg, outputDir, rootDir);
+                const packet = generateContextPacket(symbolArg, outputDir, rootDir, { depth, format, maxSymbols });
                 if (packet) {
-                    console.log("\n📦 Symbol Context Packet:");
-                    console.log(`   ID: ${packet.symbol.id}`);
-                    console.log(`   Type: ${packet.symbol.type}`);
-                    console.log(`   File: ${packet.symbol.file}:${packet.symbol.line}`);
-                    console.log(`\n📊 Relationships:`);
-                    console.log(`   Calls: ${packet.relationships.calls.length}`);
-                    console.log(`   Called by: ${packet.relationships.calledBy.length}`);
-                    console.log(`   Imports: ${packet.relationships.imports.length}`);
-                    console.log(`\n📝 Summary:`);
-                    console.log(`   ${packet.summary}`);
-                    // Save to file
-                    const savePath = saveContextPacket(packet, outputDir);
-                    console.log(`\n✅ Context saved to: ${path.relative(rootDir, savePath)}`);
+                    if (format === "markdown" || format === "text") {
+                        console.log(packet);
+                    }
+                    else {
+                        console.log("\n📦 Symbol Context Packet:");
+                        console.log(`   ID: ${packet.symbol.id}`);
+                        console.log(`   Type: ${packet.symbol.type}`);
+                        console.log(`   Module: ${packet.module}`);
+                        console.log(`   File: ${packet.symbol.file}:${packet.symbol.line}`);
+                        console.log(`   Score: ${packet.relevanceScore || 0}`);
+                        console.log(`\n📊 Relationships:`);
+                        console.log(`   Calls: ${packet.relationships.calls.length}`);
+                        console.log(`   Called by: ${packet.callers.length}`);
+                        console.log(`   Imports: ${packet.relationships.imports.length}`);
+                        console.log(`   Instantites: ${packet.relationships.instantiates?.length || 0}`);
+                        console.log(`   Related symbols: ${packet.relatedSymbols.length}`);
+                        console.log(`\n📝 Summary: ${packet.summary}`);
+                    }
+                    if (save) {
+                        const savePath = saveContextPacket(packet, outputDir, format);
+                        console.log(`\n✅ Saved to: ${path.relative(rootDir, savePath)}`);
+                    }
                     process.exit(0);
                 }
                 else {
                     process.exit(1);
                 }
             }).catch((error) => {
-                console.error("Error generating context:", error.message);
+                console.error("Error:", error.message);
                 process.exit(1);
             });
         }
         else {
-            // Generate general AI context (original behavior)
-            console.log(`\n🤖 Generating AI context for: ${rootDir}`);
-            console.log(`   Output: ${outputDir}\n`);
+            console.log(`\n🤖 Generating AI context for: ${rootDir}\n`);
             generateAIContext(rootDir, outputDir).then((result) => {
                 if (result.success) {
-                    console.log("✅ AI Context generated successfully!");
-                    console.log("\n📁 Files created:");
-                    for (const file of result.filesCreated) {
-                        console.log(`   - ${path.relative(rootDir, file)}`);
-                    }
-                    console.log("\n📊 Statistics:");
-                    console.log(`   Files: ${result.stats.files}`);
-                    console.log(`   Folders: ${result.stats.folders}`);
-                    console.log(`   Symbols: ${result.stats.symbols}`);
-                    console.log(`   Dependencies: ${result.stats.dependencies}`);
+                    console.log("✅ AI Context generated!");
                     process.exit(0);
                 }
                 else {

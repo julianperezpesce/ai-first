@@ -7,6 +7,27 @@ All notable changes to `ai-first` will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- Enhanced symbol indexing with `filePath#symbolName` IDs
+- Extended symbol graph relationships: calls, called_by, imports, references, instantiates, extends, implements, exports
+- Reverse symbol references (`ai/graph/symbol-references.json`)
+- File index with symbol mappings (`ai/files.json`)
+- Code Context Packets (CCP) with depth, ranking, and multiple formats
+- Context CLI flags: `--depth`, `--max-symbols`, `--format`, `--save`
+- Incremental indexing with file hash cache (`ai/cache.json`)
+- Context ranking system based on graph distance and relationships
+- Documentation: Architecture guide and Commands reference updated
+
+---
+
+## [1.1.0] - 2026-03-09
+
+All notable changes to `ai-first` will be documented in this file.
+
+---
+
+## [Unreleased]
+
+### Added
 - `ai-first context <symbol>` - Generate context packet for specific symbol
 - `ai/graph/symbol-graph.json` - Symbol-level dependency graph with bidirectional relationships
 - `ai/context/<symbol>.json` - Code Context Packets (CCP) for AI agents

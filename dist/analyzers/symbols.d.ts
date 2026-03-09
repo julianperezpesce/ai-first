@@ -9,12 +9,13 @@ export interface Symbol {
 }
 export interface SymbolsAnalysis {
     symbols: Symbol[];
+    byId: Record<string, Symbol>;
     byFile: Record<string, Symbol[]>;
     byType: Record<string, Symbol[]>;
 }
 /**
  * Generate unique symbol ID from file path and symbol name
- * Format: module.symbolName (e.g., src.utils.parseFile)
+ * Format: filePath#symbolName (e.g., src/auth/login.ts#loginUser)
  */
 export declare function generateSymbolId(filePath: string, symbolName: string): string;
 /**
@@ -22,7 +23,7 @@ export declare function generateSymbolId(filePath: string, symbolName: string): 
  */
 export declare function extractSymbols(files: FileInfo[]): SymbolsAnalysis;
 /**
- * Generate symbols.json
+ * Generate symbols.json with indexed symbols
  */
 export declare function generateSymbolsJson(analysis: SymbolsAnalysis): string;
 //# sourceMappingURL=symbols.d.ts.map

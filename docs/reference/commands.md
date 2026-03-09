@@ -91,7 +91,7 @@ ai-first explore lib
 
 ## map
 
-Generate repository architecture map.
+Generate repository architecture map including symbol graph.
 
 ```bash
 ai-first map [options]
@@ -103,6 +103,73 @@ ai-first map [options]
 |------|-------|-------------|
 | `--root <path>` | `-r` | Root directory |
 | `--output <path>` | `-o` | Output path |
+
+### Output Files
+
+- `ai/files.json` - File index with symbol mappings
+- `ai/graph/module-graph.json` - Module-level dependencies
+- `ai/graph/symbol-graph.json` - Symbol relationships
+- `ai/graph/symbol-references.json` - Reverse references (who calls what)
+- `ai/cache.json` - Incremental indexing state
+
+## context
+
+Generate context for a specific symbol or general AI context.
+
+### Generate Symbol Context (Code Context Packet)
+
+```bash
+ai-first context <symbol> [options]
+```
+
+#### Options
+
+| Flag | Alias | Description | Default |
+|------|-------|-------------|---------|
+| `--depth <n>` | `-d` | Graph traversal depth | 1 |
+| `--max-symbols <n>` | `-m` | Max related symbols | 50 |
+| `--format <fmt>` | `-f` | Output format (json, markdown, text) | json |
+| `--save` | `-s` | Save to file | false |
+| `--root <path>` | `-r` | Root directory | process.cwd() |
+| `--output <path>` | `-o` | Output directory | ./ai |
+
+#### Examples
+
+```bash
+# Basic usage
+ai-first context loginUser
+
+# With depth traversal
+ai-first context loginUser --depth 2
+
+# Markdown output
+ai-first context loginUser --format markdown
+
+# Save to file
+ai-first context loginUser --save
+
+# Full options
+ai-first context loginUser -d 2 -m 100 -f markdown --save
+```
+
+### Generate General Context
+
+```bash
+ai-first context [options]
+```
+
+Without a symbol argument, generates general AI context files.
+
+### Output
+
+Code Context Packet (CCP) includes:
+- Symbol definition and metadata
+- Source code snippet
+- Relationships (calls, imports, extends, implements, etc.)
+- Callers (reverse references)
+- Related symbols with graph distance
+- File neighbors
+- Relevance score
 
 ## summarize
 
@@ -118,14 +185,6 @@ ai-first summarize [options]
 |------|-------|-------------|
 | `--root <path>` | `-r` | Root directory |
 | `--output <path>` | `-o` | Output path |
-
-## context
-
-Generate unified context file.
-
-```bash
-ai-first context [options]
-```
 
 ## Global Options
 

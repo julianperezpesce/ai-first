@@ -2,7 +2,7 @@ import { FileInfo } from "../core/repoScanner.js";
 import { readFile } from "../utils/fileUtils.js";
 
 export interface Symbol {
-  id: string;  // Unique ID: module.symbolName
+  id: string;  // Unique ID: filePath#symbolName (e.g., src/auth/login.ts#loginUser)
   name: string;
   type: "function" | "class" | "interface" | "type" | "const" | "enum" | "module" | "export";
   file: string;
@@ -12,31 +12,17 @@ export interface Symbol {
 
 export interface SymbolsAnalysis {
   symbols: Symbol[];
+  byId: Record<string, Symbol>;
   byFile: Record<string, Symbol[]>;
   byType: Record<string, Symbol[]>;
 }
 
 /**
  * Generate unique symbol ID from file path and symbol name
- * Format: module.symbolName (e.g., src.utils.parseFile)
+ * Format: filePath#symbolName (e.g., src/auth/login.ts#loginUser)
  */
 export function generateSymbolId(filePath: string, symbolName: string): string {
-  const parts = filePath.split('/');
-  // Get the module (first directory that's not ai, src, test, etc.)
-  let module = 'root';
-  for (const part of parts) {
-    if (part && part !== 'ai' && part !== 'src' && part !== 'lib' && part !== 'test' && 
-        part !== 'tests' && part !== 'index' && !part.endsWith('.ts') && 
-        !part.endsWith('.js') && !part.endsWith('.py') && !part.endsWith('.go')) {
-      module = part;
-      break;
-    }
-  }
-  // If we found src as first dir, use second dir
-  if (parts[0] === 'src' && parts.length > 1) {
-    module = parts[1];
-  }
-  return `${module}.${symbolName}`;
+  return `${filePath}#${symbolName}`;
 }
 
 /**
@@ -55,13 +41,19 @@ export function extractSymbols(files: FileInfo[]): SymbolsAnalysis {
     }
   }
 
+  // Build byId index
+  const byId: Record<string, Symbol> = {};
+  for (const sym of symbols) {
+    byId[sym.id] = sym;
+  }
+
   const byType: Record<string, Symbol[]> = {};
   for (const sym of symbols) {
     if (!byType[sym.type]) byType[sym.type] = [];
     byType[sym.type].push(sym);
   }
 
-  return { symbols, byFile, byType };
+  return { symbols, byId, byFile, byType };
 }
 
 /**
@@ -74,7 +66,6 @@ function parseFileForSymbols(file: FileInfo): Symbol[] {
     const content = readFile(file.path);
     const lines = content.split("\n");
     
-    // Determine parser based on extension
     if (file.extension === "ts" || file.extension === "tsx" || file.extension === "js" || file.extension === "jsx") {
       parseJavaScriptTypeScript(file, content, lines, symbols);
     } else if (file.extension === "py") {
@@ -98,21 +89,13 @@ function parseFileForSymbols(file: FileInfo): Symbol[] {
  */
 function parseJavaScriptTypeScript(file: FileInfo, content: string, lines: string[], symbols: Symbol[]): void {
   const patterns = [
-    // Functions: function name() or const name = function
     { regex: /(?:function\s+(\w+)|(?:const|let|var)\s+(\w+)\s*=\s*(?:async\s+)?\(|(\w+)\s*:\s*(?:async\s+)?\()/, type: "function" as const },
-    // Arrow functions: const name = () =>
     { regex: /(?:const|let|var)\s+(\w+)\s*=\s*(?:async\s*)?\([^)]*\)\s*=>/, type: "function" as const },
-    // Classes: class Name
     { regex: /class\s+(\w+)/, type: "class" as const },
-    // Interfaces: interface Name
     { regex: /interface\s+(\w+)/, type: "interface" as const },
-    // Types: type Name =
     { regex: /type\s+(\w+)/, type: "type" as const },
-    // Enums: enum Name
     { regex: /enum\s+(\w+)/, type: "enum" as const },
-    // Constants: export const Name or const Name =
     { regex: /(?:export\s+)?(?:const|let)\s+(\w+)/, type: "const" as const },
-    // Modules: export module Name
     { regex: /export\s+module\s+(\w+)/, type: "module" as const },
   ];
 
@@ -145,7 +128,6 @@ function parsePython(file: FileInfo, content: string, lines: string[], symbols: 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim();
     
-    // Classes: class Name:
     const classMatch = line.match(/^class\s+(\w+)/);
     if (classMatch) {
       symbols.push({
@@ -159,7 +141,6 @@ function parsePython(file: FileInfo, content: string, lines: string[], symbols: 
       continue;
     }
 
-    // Functions: def name(
     const funcMatch = line.match(/^def\s+(\w+)/);
     if (funcMatch) {
       symbols.push({
@@ -173,7 +154,6 @@ function parsePython(file: FileInfo, content: string, lines: string[], symbols: 
       continue;
     }
 
-    // Constants: NAME = or @constant
     const constMatch = line.match(/^([A-Z][A-Z0-9_]*)\s*=/);
     if (constMatch) {
       symbols.push({
@@ -194,7 +174,6 @@ function parseGo(file: FileInfo, content: string, lines: string[], symbols: Symb
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim();
     
-    // Functions: func Name(
     const funcMatch = line.match(/^func\s+(?:\(\w+\s+\*?\w+\)\s+)?(\w+)/);
     if (funcMatch && funcMatch[1] !== "init") {
       symbols.push({
@@ -207,7 +186,6 @@ function parseGo(file: FileInfo, content: string, lines: string[], symbols: Symb
       });
     }
 
-    // Types: type Name
     const typeMatch = line.match(/^type\s+(\w+)/);
     if (typeMatch) {
       symbols.push({
@@ -219,7 +197,6 @@ function parseGo(file: FileInfo, content: string, lines: string[], symbols: Symb
       });
     }
 
-    // Constants: const Name
     const constMatch = line.match(/^const\s+(?:\(\s*)?(\w+)/);
     if (constMatch) {
       symbols.push({
@@ -240,7 +217,6 @@ function parseRust(file: FileInfo, content: string, lines: string[], symbols: Sy
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim();
     
-    // Functions: fn name(
     const funcMatch = line.match(/^pub\s+fn\s+(\w+)/);
     if (funcMatch) {
       symbols.push({
@@ -253,7 +229,6 @@ function parseRust(file: FileInfo, content: string, lines: string[], symbols: Sy
       });
     }
 
-    // Structs: struct Name
     const structMatch = line.match(/^pub\s+struct\s+(\w+)/);
     if (structMatch) {
       symbols.push({
@@ -266,7 +241,6 @@ function parseRust(file: FileInfo, content: string, lines: string[], symbols: Sy
       });
     }
 
-    // Enums: enum Name
     const enumMatch = line.match(/^pub\s+enum\s+(\w+)/);
     if (enumMatch) {
       symbols.push({
@@ -279,7 +253,6 @@ function parseRust(file: FileInfo, content: string, lines: string[], symbols: Sy
       });
     }
 
-    // Constants: const NAME
     const constMatch = line.match(/^pub\s+const\s+(\w+)/);
     if (constMatch) {
       symbols.push({
@@ -301,7 +274,6 @@ function parseJava(file: FileInfo, content: string, lines: string[], symbols: Sy
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim();
     
-    // Classes: public class Name
     const classMatch = line.match(/^(?:public\s+)?class\s+(\w+)/);
     if (classMatch) {
       symbols.push({
@@ -313,7 +285,6 @@ function parseJava(file: FileInfo, content: string, lines: string[], symbols: Sy
       });
     }
 
-    // Interfaces: public interface Name
     const interfaceMatch = line.match(/^(?:public\s+)?interface\s+(\w+)/);
     if (interfaceMatch) {
       symbols.push({
@@ -325,7 +296,6 @@ function parseJava(file: FileInfo, content: string, lines: string[], symbols: Sy
       });
     }
 
-    // Methods: public Type name(
     const methodMatch = line.match(/^(?:public|private|protected)\s+(?:static\s+)?(?:\w+)\s+(\w+)\s*\(/);
     if (methodMatch && methodMatch[1] !== "if" && methodMatch[1] !== "for") {
       symbols.push({
@@ -346,7 +316,6 @@ function parseCSharp(file: FileInfo, content: string, lines: string[], symbols: 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim();
     
-    // Classes: public class Name
     const classMatch = line.match(/^(?:public\s+)?(?:partial\s+)?class\s+(\w+)/);
     if (classMatch) {
       symbols.push({
@@ -358,7 +327,6 @@ function parseCSharp(file: FileInfo, content: string, lines: string[], symbols: 
       });
     }
 
-    // Interfaces: public interface Name
     const interfaceMatch = line.match(/^(?:public\s+)?interface\s+(\w+)/);
     if (interfaceMatch) {
       symbols.push({
@@ -370,7 +338,6 @@ function parseCSharp(file: FileInfo, content: string, lines: string[], symbols: 
       });
     }
 
-    // Methods: public Type Name(
     const methodMatch = line.match(/^(?:public|private|protected|internal)\s+(?:static\s+)?(?:async\s+)?(?:\w+)\s+(\w+)\s*\(/);
     if (methodMatch) {
       symbols.push({
@@ -385,10 +352,24 @@ function parseCSharp(file: FileInfo, content: string, lines: string[], symbols: 
 }
 
 /**
- * Generate symbols.json
+ * Generate symbols.json with indexed symbols
  */
 export function generateSymbolsJson(analysis: SymbolsAnalysis): string {
+  // Build symbols index with new ID format
+  const symbolsIndex: Record<string, any> = {};
+  for (const sym of analysis.symbols) {
+    symbolsIndex[sym.id] = {
+      name: sym.name,
+      type: sym.type,
+      file: sym.file,
+      line: sym.line,
+      module: sym.file.split('/')[0],
+      export: sym.export
+    };
+  }
+
   const output = {
+    symbols: symbolsIndex,
     total: analysis.symbols.length,
     byType: analysis.byType,
     byFile: analysis.byFile,

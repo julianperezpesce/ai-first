@@ -1,18 +1,13 @@
 {
-  "generated": "2026-03-09T15:41:31.172Z",
-  "totalFiles": 50,
+  "generated": "2026-03-09T22:09:44.584Z",
+  "totalFiles": 74,
   "structure": {
-    ".github": {
+    ".netlify": {
       "type": "directory",
       "children": {
-        "workflows": {
-          "type": "directory",
-          "children": {
-            "changelog.yml": {
-              "type": "file",
-              "extension": "yml"
-            }
-          }
+        "state.json": {
+          "type": "file",
+          "extension": "json"
         }
       }
     },
@@ -51,6 +46,19 @@
           "type": "file",
           "extension": "md"
         },
+        "context": {
+          "type": "directory",
+          "children": {
+            "analyzers.Symbol.json": {
+              "type": "file",
+              "extension": "json"
+            },
+            "analyzers.extractSymbols.json": {
+              "type": "file",
+              "extension": "json"
+            }
+          }
+        },
         "conventions.md": {
           "type": "file",
           "extension": "md"
@@ -59,9 +67,17 @@
           "type": "file",
           "extension": "json"
         },
+        "embeddings.json": {
+          "type": "file",
+          "extension": "json"
+        },
         "entrypoints.md": {
           "type": "file",
           "extension": "md"
+        },
+        "files.json": {
+          "type": "file",
+          "extension": "json"
         },
         "graph": {
           "type": "directory",
@@ -69,10 +85,26 @@
             "module-graph.json": {
               "type": "file",
               "extension": "json"
+            },
+            "symbol-graph.json": {
+              "type": "file",
+              "extension": "json"
             }
           }
         },
         "hierarchy.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "index-state.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "modules.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "repo-map.json": {
           "type": "file",
           "extension": "json"
         },
@@ -101,21 +133,100 @@
     "docs": {
       "type": "directory",
       "children": {
-        "architecture.md": {
+        ".vitepress": {
+          "type": "directory",
+          "children": {
+            "config.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "theme": {
+              "type": "directory",
+              "children": {
+                "custom.css": {
+                  "type": "file",
+                  "extension": "css"
+                },
+                "index.ts": {
+                  "type": "file",
+                  "extension": "ts"
+                }
+              }
+            }
+          }
+        },
+        "es": {
+          "type": "directory",
+          "children": {
+            "guide": {
+              "type": "directory",
+              "children": {
+                "getting-started.md": {
+                  "type": "file",
+                  "extension": "md"
+                }
+              }
+            },
+            "index.md": {
+              "type": "file",
+              "extension": "md"
+            }
+          }
+        },
+        "examples": {
+          "type": "directory",
+          "children": {
+            "express-api.md": {
+              "type": "file",
+              "extension": "md"
+            },
+            "index.md": {
+              "type": "file",
+              "extension": "md"
+            },
+            "python-django.md": {
+              "type": "file",
+              "extension": "md"
+            },
+            "react-app.md": {
+              "type": "file",
+              "extension": "md"
+            }
+          }
+        },
+        "guide": {
+          "type": "directory",
+          "children": {
+            "architecture.md": {
+              "type": "file",
+              "extension": "md"
+            },
+            "getting-started.md": {
+              "type": "file",
+              "extension": "md"
+            },
+            "installation.md": {
+              "type": "file",
+              "extension": "md"
+            },
+            "quick-start.md": {
+              "type": "file",
+              "extension": "md"
+            }
+          }
+        },
+        "index.md": {
           "type": "file",
           "extension": "md"
         },
-        "spec.md": {
-          "type": "file",
-          "extension": "md"
-        },
-        "user-guide.es.md": {
-          "type": "file",
-          "extension": "md"
-        },
-        "user-guide.md": {
-          "type": "file",
-          "extension": "md"
+        "reference": {
+          "type": "directory",
+          "children": {
+            "commands.md": {
+              "type": "file",
+              "extension": "md"
+            }
+          }
         }
       }
     },
@@ -208,11 +319,27 @@
               "type": "file",
               "extension": "ts"
             },
+            "chunker.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
             "contextGenerator.ts": {
               "type": "file",
               "extension": "ts"
             },
+            "contextPacket.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "embeddings.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
             "hierarchyGenerator.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "indexState.ts": {
               "type": "file",
               "extension": "ts"
             },
@@ -229,6 +356,10 @@
               "extension": "ts"
             },
             "repoScanner.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "symbolGraph.ts": {
               "type": "file",
               "extension": "ts"
             }
@@ -265,9 +396,9 @@
   },
   "files": [
     {
-      "path": ".github/workflows/changelog.yml",
-      "name": "changelog.yml",
-      "extension": "yml"
+      "path": ".netlify/state.json",
+      "name": "state.json",
+      "extension": "json"
     },
     {
       "path": "CHANGELOG.md",
@@ -310,6 +441,16 @@
       "extension": "md"
     },
     {
+      "path": "ai/context/analyzers.Symbol.json",
+      "name": "analyzers.Symbol.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/analyzers.extractSymbols.json",
+      "name": "analyzers.extractSymbols.json",
+      "extension": "json"
+    },
+    {
       "path": "ai/conventions.md",
       "name": "conventions.md",
       "extension": "md"
@@ -320,9 +461,19 @@
       "extension": "json"
     },
     {
+      "path": "ai/embeddings.json",
+      "name": "embeddings.json",
+      "extension": "json"
+    },
+    {
       "path": "ai/entrypoints.md",
       "name": "entrypoints.md",
       "extension": "md"
+    },
+    {
+      "path": "ai/files.json",
+      "name": "files.json",
+      "extension": "json"
     },
     {
       "path": "ai/graph/module-graph.json",
@@ -330,8 +481,28 @@
       "extension": "json"
     },
     {
+      "path": "ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "extension": "json"
+    },
+    {
       "path": "ai/hierarchy.json",
       "name": "hierarchy.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/index-state.json",
+      "name": "index-state.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/modules.json",
+      "name": "modules.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/repo-map.json",
+      "name": "repo-map.json",
       "extension": "json"
     },
     {
@@ -360,23 +531,78 @@
       "extension": "md"
     },
     {
-      "path": "docs/architecture.md",
+      "path": "docs/.vitepress/config.ts",
+      "name": "config.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "docs/.vitepress/theme/custom.css",
+      "name": "custom.css",
+      "extension": "css"
+    },
+    {
+      "path": "docs/.vitepress/theme/index.ts",
+      "name": "index.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "docs/es/guide/getting-started.md",
+      "name": "getting-started.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/es/index.md",
+      "name": "index.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/examples/express-api.md",
+      "name": "express-api.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/examples/index.md",
+      "name": "index.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/examples/python-django.md",
+      "name": "python-django.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/examples/react-app.md",
+      "name": "react-app.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/guide/architecture.md",
       "name": "architecture.md",
       "extension": "md"
     },
     {
-      "path": "docs/spec.md",
-      "name": "spec.md",
+      "path": "docs/guide/getting-started.md",
+      "name": "getting-started.md",
       "extension": "md"
     },
     {
-      "path": "docs/user-guide.es.md",
-      "name": "user-guide.es.md",
+      "path": "docs/guide/installation.md",
+      "name": "installation.md",
       "extension": "md"
     },
     {
-      "path": "docs/user-guide.md",
-      "name": "user-guide.md",
+      "path": "docs/guide/quick-start.md",
+      "name": "quick-start.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/index.md",
+      "name": "index.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/reference/commands.md",
+      "name": "commands.md",
       "extension": "md"
     },
     {
@@ -465,13 +691,33 @@
       "extension": "ts"
     },
     {
+      "path": "src/core/chunker.ts",
+      "name": "chunker.ts",
+      "extension": "ts"
+    },
+    {
       "path": "src/core/contextGenerator.ts",
       "name": "contextGenerator.ts",
       "extension": "ts"
     },
     {
+      "path": "src/core/contextPacket.ts",
+      "name": "contextPacket.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/embeddings.ts",
+      "name": "embeddings.ts",
+      "extension": "ts"
+    },
+    {
       "path": "src/core/hierarchyGenerator.ts",
       "name": "hierarchyGenerator.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/indexState.ts",
+      "name": "indexState.ts",
       "extension": "ts"
     },
     {
@@ -492,6 +738,11 @@
     {
       "path": "src/core/repoScanner.ts",
       "name": "repoScanner.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/symbolGraph.ts",
+      "name": "symbolGraph.ts",
       "extension": "ts"
     },
     {
