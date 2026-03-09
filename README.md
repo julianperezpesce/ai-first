@@ -360,18 +360,17 @@ Semantic indexing:
 
 ## 📋 Roadmap
 
-### v1.1 (Coming Soon)
-- [ ] Watch mode for auto-regeneration
+### Phase 3 (Planned)
+- [ ] Support for more languages (PHP, Ruby, Scala)
+- [ ] Configuration file support (`ai-first.config.json`)
+- [ ] Custom rules/plugins system
+- [ ] CI/CD integration templates
+
+### Phase 4 (Future)
 - [ ] Git integration (analyze recent changes)
-
-### v1.2 (Planned)
-- [ ] LSP integration for richer symbols
-- [ ] Custom analyzer plugins
-
-### v2.0 (Future)
-- [ ] Multi-repo analysis
-- [ ] IDE extensions (VS Code, JetBrains)
-- [ ] CI/CD integration
+- [ ] Diff-aware context (what changed since last run)
+- [ ] Interactive mode
+- [ ] VS Code extension
 
 ---
 
