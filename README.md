@@ -1,91 +1,71 @@
 # ai-first
 
-> CLI tool that prepares any repository to be used effectively by AI coding agents (OpenCode, Cursor, Claude Code, etc.)
+> CLI tool that prepares any repository to be used effectively by AI coding agents
 
 `ai-first` scans your repository and generates a structured AI context layer, so AI assistants can understand your project quickly without reading the entire codebase.
 
-## Why?
+---
 
-When you give an AI access to your code, it often has to read thousands of files to understand the project. This is slow, expensive, and sometimes the AI misses important context.
+## Problem
 
-**ai-first solves this** by generating structured documentation that tells AI agents:
+When you give an AI access to your code, it often has to read thousands of files to understand the project. This is:
+
+- **Slow** — AI spends valuable tokens reading files
+- **Expensive** — More context = higher API costs
+- **Incomplete** — AI misses important context and conventions
+
+## Solution
+
+**ai-first** generates structured documentation that tells AI agents:
 
 - What languages and frameworks you use
 - How your project is organized
 - Where the entry points are
 - What coding conventions you follow
 
-## Installation
+---
 
-### Quick Start (npx)
+## Quickstart
+
 ```bash
+# Run with npx (no installation)
 npx ai-first init
-```
 
-### Global Installation
-```bash
+# Or install globally
 npm install -g ai-first
 ai-first init
 ```
 
-### Local Installation
-```bash
-npm install ai-first
-npx ai-first init
-```
+This creates an `ai/` folder with all context files.
 
-## Usage
+---
 
-### Basic Usage
-```bash
-ai-first init
-```
+## Example Output
 
-This creates an `ai/` folder with all the context files.
-
-### Generate SQLite Index
-```bash
-ai-first index
-```
-
-This creates an `ai/index.db` SQLite database for fast queries.
-
-### Options
-```bash
-ai-first --help
-
-Options:
-  -r, --root <dir>      Root directory to scan (default: current directory)
-  -o, --output <dir>   Output directory (default: ./ai)
-  -h, --help           Show help message
-```
-
-## Output
-
-The tool generates the following files in an `ai/` directory:
+Running `ai-first init` generates these files in `ai/`:
 
 ```
 ai/
-├── ai_context.md      # Unified context for AI agents (most important!)
+├── ai_context.md      # Unified context (start here!)
 ├── repo_map.md        # Repository structure (human-readable)
 ├── repo_map.json      # Repository structure (machine-readable)
-├── summary.md         # Summary by file type and directory
+├── summary.md         # Files by type and directory
 ├── architecture.md    # Architecture pattern analysis
-├── tech_stack.md     # Languages, frameworks, libraries detected
-├── entrypoints.md    # Entry points (CLI, API, server)
-├── conventions.md    # Coding conventions detected
-├── symbols.json      # Functions, classes, interfaces extracted
-├── dependencies.json # Import/require dependencies between files
-├── ai_rules.md      # Guidelines for AI assistants
-└── index.db         # SQLite database for fast queries
+├── tech_stack.md      # Languages & frameworks detected
+├── entrypoints.md     # Entry points (CLI, API, server)
+├── conventions.md     # Coding conventions
+├── symbols.json       # Functions, classes, interfaces
+├── dependencies.json # Import dependencies
+├── ai_rules.md        # Guidelines for AI assistants
+└── index.db           # SQLite database (with ai-first index)
 ```
 
-### ai_context.md Example
+### Sample `ai_context.md`
 
 ```markdown
 # AI Context
 
-> This file provides a comprehensive overview of the repository for AI coding assistants.
+> Repository context for AI assistants. Generated automatically.
 
 ---
 
@@ -101,19 +81,16 @@ ai/
 ## Tech Stack
 
 **Languages**: TypeScript, JavaScript
-
 **Frameworks**: React, Express.js
-
-**Package Managers**: npm
 
 ---
 
 ## Architecture
 
-## Architectural Pattern
-**Primary**: MVC (Model-View-Controller)
+### Primary: MVC (Model-View-Controller)
 
-## Key Modules
+### Key Modules
+
 | Module | Responsibility |
 |--------|----------------|
 | `src/controllers` | Request handling |
@@ -141,65 +118,71 @@ ai/
 4. Maintain the detected architecture patterns
 ```
 
-## Features
+---
 
-### ✅ Deterministic Analysis
-- No AI/LLM required - works offline
-- Consistent results every time
-- Fast execution
+## Supported AI Agents
 
-### 🌍 Multi-Language Support
-Detects projects in:
-- **JavaScript/TypeScript**: .ts, .tsx, .js, .jsx, .mjs, .cjs
-- **Python**: .py
-- **Go**: .go
-- **Rust**: .rs
-- **Ruby**: .rb
-- **PHP**: .php
-- **Java**: .java
-- **C#**: .cs
-- **Kotlin**: .kt
-- **Scala**: .scala
-- **Swift**: .swift
-- **Salesforce Apex**: .cls
-- **Web**: Vue (.vue), Svelte (.svelte), HTML, CSS, SCSS, Less
+ai-first works with any AI coding assistant:
 
-### 🔍 Smart Detection
-- **Architecture patterns**: MVC, Clean Architecture, Hexagonal, Microservices, Monorepo, SPA
-- **Frameworks**: React, Vue, Next.js, Django, Express, FastAPI, Spring, Rails, etc.
-- **Testing**: Jest, Vitest, pytest, Mocha, RSpec, etc.
-- **Linters/Formatters**: ESLint, Prettier, Pylint, RuboCop, etc.
+| Agent | Integration |
+|-------|-------------|
+| **OpenCode** | Use `ai/ai_context.md` as context |
+| **Cursor** | Reference context files before prompts |
+| **Claude Code** | Include context in prompts |
+| **GitHub Copilot** | Context-aware suggestions |
+| **Windsurf** | Project understanding |
 
-### 🎯 Entry Point Discovery
-Automatically finds:
-- CLI commands
-- API servers
-- Background workers
-- Client entry points
-- Library exports
+### OpenCode Integration
 
-## Use Cases
+Create `~/.config/opencode/commands/ai-first.md`:
 
-### 1. OpenCode / Cursor / Claude Code
-Give the AI context before asking questions:
-```bash
-ai-first init
-# Then ask AI to read ai/ai_context.md
+```markdown
+---
+description: Generate AI context for the repository
+agent: sisyphus
+---
+
+Run `ai-first init` in the current directory to generate AI context files.
 ```
 
-### 2. Onboarding New Developers
-```bash
-ai-first init
-# New developer reads ai/ai_context.md to understand the project
+---
+
+## Architecture Overview
+
+ai-first uses a modular analyzer architecture:
+
+```
+src/
+├── commands/           # CLI entry point
+│   └── ai-first.ts     # Main command handler
+├── analyzers/          # Individual analyzers
+│   ├── architecture.ts # Pattern detection
+│   ├── techStack.ts    # Language/framework detection
+│   ├── entrypoints.ts  # Entry point discovery
+│   ├── conventions.ts  # Convention detection
+│   ├── symbols.ts      # Function/class extraction
+│   ├── dependencies.ts # Import analysis
+│   └── aiRules.ts      # AI guidelines
+├── core/               # Core processing
+│   ├── repoScanner.ts  # File discovery
+│   ├── repoMapper.ts   # Structure mapping
+│   ├── indexer.ts     # SQLite indexing
+│   └── contextGenerator.ts
+└── utils/             # Utilities
+    └── fileUtils.ts
 ```
 
-### 3. Project Documentation
-```bash
-ai-first init
-# Generate current state documentation automatically
-```
+### How It Works
 
-## SQLite Index
+1. **Scan** — Discover all files in the repository
+2. **Analyze** — Run specialized analyzers on each file
+3. **Generate** — Output structured context files
+
+Each analyzer is independent and produces a specific output file.
+
+---
+
+## SQLite Index (Optional)
 
 For fast queries, generate an SQLite database:
 
@@ -207,23 +190,13 @@ For fast queries, generate an SQLite database:
 ai-first index
 ```
 
-This creates `ai/index.db` with the following tables:
-
-### Tables
+This creates `ai/index.db` with:
 
 | Table | Description |
 |-------|-------------|
 | `files` | All source files with language |
 | `symbols` | Functions, classes, interfaces, exports |
-| `imports` | Import/require statements between files |
-
-### Supported Languages (Index)
-The indexer extracts symbols and imports from:
-- JavaScript/TypeScript, Python, Go, Rust
-- Java, C#, Ruby, PHP, Swift, Kotlin, Scala
-- Salesforce Apex (.cls)
-
-### Example Queries
+| `imports` | Import/require statements |
 
 ### Example Queries
 
@@ -245,76 +218,121 @@ SELECT f.path, i.type
 FROM imports i
 JOIN files f ON i.source_file_id = f.id
 WHERE i.target_file LIKE '%utils%'
-
--- Find all exported symbols
-SELECT s.name, s.type, f.path
-FROM symbols s
-JOIN files f ON s.file_id = f.id
-WHERE s.exported = 1
-
--- Search symbols by pattern
-SELECT s.name, s.type, f.path, s.line
-FROM symbols s
-JOIN files f ON s.file_id = f.id
-WHERE s.name LIKE '%Handler%'
-LIMIT 50
-
--- Get language statistics
-SELECT language, COUNT(*) as count
-FROM files
-GROUP BY language
-ORDER BY count DESC
 ```
 
-## Comparison
-
-## Configuration
-
-### Custom Output Directory
-```bash
-ai-first init --output ./docs/ai
-```
-
-### Custom Root Directory
-```bash
-ai-first init --root ./my-project
-```
-
-## Integrations
-
-### OpenCode
-Create `~/.config/opencode/commands/ai-first.md`:
-```markdown
----
-description: Generate AI context for the repository
-agent: sisyphus
 ---
 
-Run `ai-first init` in the current directory to generate AI context files.
+## The `/ai` Folder
 
-Then confirm which files were created.
-```
+After running `ai-first init`, the `ai/` folder contains all generated context:
 
-### VS Code
-Add to `.vscode/tasks.json`:
+| File | Purpose |
+|------|---------|
+| `ai_context.md` | **Start here** — unified overview |
+| `repo_map.json` | Machine-readable file structure |
+| `symbols.json` | Extracted functions/classes/interfaces |
+| `dependencies.json` | Import relationships between files |
+| `ai_context.md` | Combined context for AI agents |
+
+### repo_map.json Structure
+
 ```json
 {
-  "version": "2.0.0",
-  "tasks": [
+  "generated": "2026-03-08T12:00:00Z",
+  "total": 42,
+  "files": [
     {
-      "label": "Generate AI Context",
-      "type": "shell",
-      "command": "npx ai-first init",
-      "problemMatcher": []
+      "path": "src/index.ts",
+      "type": "file",
+      "extension": ".ts"
+    }
+  ],
+  "directories": [
+    {
+      "path": "src",
+      "type": "directory"
     }
   ]
 }
 ```
 
+### symbols.json Structure
+
+```json
+{
+  "generated": "2026-03-08T12:00:00Z",
+  "total": 77,
+  "symbols": [
+    {
+      "name": "MyClass",
+      "type": "class",
+      "file": "src/index.ts",
+      "line": 10,
+      "exportType": "export"
+    }
+  ]
+}
+```
+
+### dependencies.json Structure
+
+```json
+{
+  "generated": "2026-03-08T12:00:00Z",
+  "total": 59,
+  "dependencies": [
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "../core/repoScanner.js",
+      "type": "import"
+    }
+  ]
+}
+```
+
+---
+
+## Features
+
+### Deterministic Analysis
+- No AI/LLM required — works offline
+- Consistent results every time
+- Fast execution
+
+### Multi-Language Support
+Detects projects in:
+- **JavaScript/TypeScript**: .ts, .tsx, .js, .jsx, .mjs, .cjs
+- **Python**: .py
+- **Go**: .go
+- **Rust**: .rs
+- **Ruby**: .rb
+- **PHP**: .php
+- **Java**: .java
+- **C#**: .cs
+- **Kotlin**: .kt
+- **Scala**: .scala
+- **Swift**: .swift
+- **Web**: Vue, Svelte, HTML, CSS, SCSS
+
+### Smart Detection
+- **Architecture patterns**: MVC, Clean Architecture, Hexagonal, Microservices, Monorepo, SPA
+- **Frameworks**: React, Vue, Next.js, Django, Express, FastAPI, Spring, Rails
+- **Testing**: Jest, Vitest, pytest, Mocha, RSpec
+- **Linters/Formatters**: ESLint, Prettier, Pylint, RuboCop
+
+---
+
+## Roadmap
+
+- [ ] Language-server protocol (LSP) integration for richer symbol data
+- [ ] Watch mode for auto-regeneration on file changes
+- [ ] Custom analyzer plugin system
+- [ ] Git integration (analyze commits, PRs)
+- [ ] Multi-repo analysis
+- [ ] IDE extensions (VS Code, JetBrains)
+
+---
+
 ## License
 
 MIT
-
-## Author
-
-Created for AI-assisted development.
