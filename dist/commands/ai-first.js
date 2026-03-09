@@ -14,6 +14,9 @@ import { detectConventions, generateConventionsFile } from "../analyzers/convent
 import { extractSymbols, generateSymbolsJson } from "../analyzers/symbols.js";
 import { analyzeDependencies, generateDependenciesJson } from "../analyzers/dependencies.js";
 import { generateAIRules, generateAIRulesFile } from "../analyzers/aiRules.js";
+import { loadIndexState, computeFileHash, getFilesToIndex } from "../core/indexState.js";
+import { chunkFiles } from "../core/chunker.js";
+import { generateEmbeddings, saveEmbeddings } from "../core/embeddings.js";
 import { doctorMain } from "./doctor.js";
 import { exploreMain } from "./explore.js";
 const __filename = fileURLToPath(import.meta.url);
@@ -302,9 +305,14 @@ Example queries (for AI agents):
             }
         }
         const aiDir = path.join(rootDir, "ai");
-        // Scan to detect repo size
+        // Load existing index state for incremental indexing
+        const existingState = loadIndexState(aiDir);
+        // Scan repository
         const scanResult = scanRepo(rootDir);
         const fileCount = scanResult.totalFiles;
+        // Get list of files that need indexing
+        const allFiles = scanResult.files.map(f => f.path);
+        const { toIndex, unchanged, new: newFiles, deleted } = getFilesToIndex(allFiles, rootDir, existingState);
         // Adaptive indexing based on repo size
         let useSemantic = semanticMode;
         if (!useSemantic && fileCount > 2000) {
@@ -313,30 +321,21 @@ Example queries (for AI agents):
             useSemantic = true;
         }
         console.log(`\n🗄️  Generating index for: ${rootDir}\n`);
-        console.log(`   Files: ${fileCount}\n`);
+        console.log(`   Total files: ${fileCount}`);
+        console.log(`   To index: ${toIndex.length}`);
+        console.log(`   Unchanged: ${unchanged}`);
+        if (existingState && newFiles > 0)
+            console.log(`   New: ${newFiles}`);
+        if (existingState && deleted > 0)
+            console.log(`   Deleted: ${deleted}`);
+        console.log("");
         if (useSemantic) {
             console.log("🔎 Semantic mode enabled.\n");
         }
-        // Generate additional metadata files
+        // Generate files.json
         const filesJson = { files: scanResult.files.map(f => ({ path: f.relativePath, name: f.name, ext: f.extension })) };
         fs.writeFileSync(path.join(aiDir, "files.json"), JSON.stringify(filesJson, null, 2));
         console.log("   ✅ Created files.json");
-        // Generate index-state.json for incremental indexing
-        const indexState = {
-            lastIndexed: new Date().toISOString(),
-            fileCount: scanResult.totalFiles,
-            files: scanResult.files.map(f => {
-                try {
-                    const stats = fs.statSync(f.path);
-                    return { path: f.relativePath, mtime: stats.mtime.toISOString(), size: stats.size };
-                }
-                catch {
-                    return { path: f.relativePath };
-                }
-            })
-        };
-        fs.writeFileSync(path.join(aiDir, "index-state.json"), JSON.stringify(indexState, null, 2));
-        console.log("   ✅ Created index-state.json");
         // Generate modules.json
         const modules = {};
         for (const file of scanResult.files) {
@@ -349,12 +348,52 @@ Example queries (for AI agents):
         }
         fs.writeFileSync(path.join(aiDir, "modules.json"), JSON.stringify({ modules }, null, 2));
         console.log("   ✅ Created modules.json");
-        generateIndex(rootDir, outputPath).then((result) => {
+        // Generate SQL index (only for changed files in incremental mode)
+        generateIndex(rootDir, outputPath).then(async (result) => {
             if (result.success) {
                 console.log(`✅ Index created: ${result.dbPath}`);
                 console.log(`   Files: ${result.stats.files}`);
                 console.log(`   Symbols: ${result.stats.symbols}`);
                 console.log(`   Imports: ${result.stats.imports}`);
+                // Save index state for incremental indexing
+                const fileStates = {};
+                for (const file of scanResult.files) {
+                    const hashData = computeFileHash(file.path);
+                    if (hashData) {
+                        fileStates[file.relativePath] = {
+                            path: file.relativePath,
+                            hash: hashData.hash,
+                            mtime: hashData.mtime,
+                            size: hashData.size,
+                            indexedAt: new Date().toISOString()
+                        };
+                    }
+                }
+                fs.writeFileSync(path.join(aiDir, "index-state.json"), JSON.stringify({
+                    version: "1.0.0",
+                    lastIndexed: new Date().toISOString(),
+                    totalFiles: scanResult.totalFiles,
+                    files: fileStates
+                }, null, 2));
+                console.log("   ✅ Updated index-state.json");
+                // Generate semantic embeddings if requested
+                if (useSemantic) {
+                    console.log("\n🔎 Generating semantic embeddings...");
+                    try {
+                        const filePaths = scanResult.files
+                            .filter(f => f.extension && ['ts', 'js', 'py', 'go', 'rs', 'java'].includes(f.extension))
+                            .map(f => f.path);
+                        console.log(`   Processing ${filePaths.length} code files...`);
+                        const chunks = chunkFiles(filePaths);
+                        console.log(`   Created ${chunks.length} chunks`);
+                        const { embeddings, model } = await generateEmbeddings(chunks);
+                        saveEmbeddings(embeddings, aiDir, model, 384);
+                        console.log("   ✅ Semantic indexing complete");
+                    }
+                    catch (error) {
+                        console.log("   ⚠️  Semantic indexing failed:", error);
+                    }
+                }
                 console.log(`\n📊 Example queries agents can run:`);
                 console.log(`   - Find all functions in a file`);
                 console.log(`   - Find where a symbol is defined`);
