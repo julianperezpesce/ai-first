@@ -63,9 +63,55 @@ $ npx ai-first init
 
 #HV|¡Eso es todo! Tu repositorio ahora está listo para IA. Da `ai/ai_context.md` a tu asistente de IA.
 
-#HV|---
+#KB|---
 
-#YB|## 🚀 ¿Por qué ai-first?
+#RR|## ⚡ Inicio Rápido
+
+#KB|Inicializa AI-First en tu repositorio:
+
+#KB|```
+#KB|ai-first init
+#KB|```
+
+#KB|Indexa el repositorio para que los agentes de IA puedan entender el código:
+
+#KB|```
+#KB|ai-first index
+#KB|```
+
+#KB|Genera un mapa de arquitectura del repositorio:
+
+#KB|```
+#KB|ai-first summarize
+#KB|```
+
+#KB|* `init` genera 11 archivos de contexto con metadatos del proyecto
+#KB|* `index` crea una base de datos SQLite para consultas rápidas de símbolos
+#KB|* `summarize` crea resúmenes jerárquicos para navegación IA
+
+#KB|---
+
+#XN|#YB|## ❓ Por qué AI-First?
+
+#KB|Los asistentes de código IA a menudo tienen dificultades con repositorios grandes.
+
+#KB|Problemas típicos incluyen:
+
+#KB|* ventanas de contexto limitadas
+#KB|* falta de conocimiento arquitectónico
+#KB|* dificultad para navegar bases de código grandes
+#KB|* relaciones perdidas entre módulos
+
+#KB|AI-First resuelve este problema construyendo una **capa de inteligencia del repositorio**.
+
+#KB|Crea metadatos estructurados que permiten a los agentes IA:
+
+#KB|* entender la estructura del proyecto
+#KB|* recuperar código relevante
+#KB|* navegar repositorios grandes
+#KB|* mantener contexto arquitectónico
+
+#KB|---
 
 #KB|Los asistentes de código IA a menudo tienen dificultades con repositorios grandes.
 
