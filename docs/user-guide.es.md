@@ -8,29 +8,7 @@ Esta guía describe los principales comandos CLI disponibles en AI-First.
 
 Inicializa AI-First en el repositorio.
 
-Crea archivos de configuración y prepara el proyecto para navegación IA.
-
-**Qué hace:**
-- Escanea el repositorio
-- Genera archivos de contexto con metadatos del proyecto
-- Crea ai_context.md con vista general unificada
-
-**Archivos creados:**
-- ai_context.md
-- repo_map.json
-- symbols.json
-- dependencies.json
-- architecture.md
-- tech_stack.md
-- entrypoints.md
-- conventions.md
-- ai_rules.md
-- summary.md
-- repo_map.md
-
-**Cuándo usar:**
-- Configuración inicial
-- Cuando necesitas el contexto completo del proyecto
+Crea archivos de configuración y prepara el repositorio para navegación IA.
 
 ---
 
@@ -39,17 +17,10 @@ Crea archivos de configuración y prepara el proyecto para navegación IA.
 Indexa el repositorio para permitir búsquedas inteligentes de código.
 
 **Procesos:**
-- archivos fuente
+- archivos
 - módulos
-- estructura del proyecto
 - dependencias
-
-**Salida:**
-- index.db (base de datos SQLite)
-
-**Cuándo usar:**
-- Bases de código grandes
-- Cuando necesitas consultas rápidas de símbolos
+- estructura
 
 ---
 
@@ -57,65 +28,19 @@ Indexa el repositorio para permitir búsquedas inteligentes de código.
 
 Genera un mapa de arquitectura de alto nivel del repositorio.
 
-**Qué crea:**
-- hierarchy.json con estructura del repositorio
-- Resúmenes de carpetas basados en patrones de nombres
-- Resúmenes de archivos con exports e imports
-
-**Cuándo usar:**
-- Incorporación de desarrolladores
-- Agentes IA
-- Documentación
+**Útil para:**
+- incorporación de desarrolladores
+- agentes IA
+- documentación de arquitectura
 
 ---
 
-## ai-first context
+## Comandos Adicionales
 
-Genera archivos de contexto ligeros optimizados para LLMs.
+Los siguientes comandos también están disponibles:
 
-**Salida:**
-- repo_map.json
-- symbols.json
-- dependencies.json
-- ai_context.md
-
-**Cuándo usar:**
-- Generación de contexto rápido
-- Tareas específicas de IA
-
----
-
-## ai-first watch
-
-Monitorea cambios de archivos y actualiza el índice incrementalmente.
-
-**Características:**
-- Actualizaciones incrementales
-- Seguimiento de hash de archivos
-- Actualizaciones con debounce
-
-**Cuándo usar:**
-- Durante desarrollo activo
-- Sesiones de desarrollo prolongadas
-
----
-
-## ai-first query
-
-Consulta el índice SQLite para símbolos, imports y relaciones de archivos.
-
-**Subcomandos:**
-- symbol <nombre> - Encontrar definiciones de símbolos
-- dependents <archivo> - Encontrar archivos dependientes
-- imports <archivo> - Encontrar archivos importados
-- exports <archivo> - Encontrar exports
-- files - Listar archivos indexados
-- stats - Mostrar estadísticas del índice
-
-**Cuándo usar:**
-- Encontrando funciones o clases específicas
-- Entendiendo relaciones de código
-
----
+- `ai-first context` - Generar contexto optimizado para LLM
+- `ai-first watch` - Monitorear cambios de archivos
+- `ai-first query` - Consultar el índice
 
 Para más información, consulta el [README](../README.es.md).

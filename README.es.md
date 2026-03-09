@@ -35,103 +35,57 @@ $ npx ai-first init
 **Resultado:** La IA comprende tu proyecto en ~500 tokens en lugar de 50,000.
 <!-- END FIRST 10 SECONDS VALUE -->
 
-#WK|---
+---
 
-#HM|## ⚡ Inicio Rápido
+## ⚡ Inicio Rápido
 
-#HV|Configura y ejecuta en menos de un minuto:
+Inicializa AI-First en tu repositorio:
 
-#HV|```bash
-#HV|# 1. Inicializa AI-First en tu repositorio
-#HV|npx ai-first init
-#HV|
-#HV|# 2. Genera índice SQLite para consultas rápidas (recomendado)
-#HV|npx ai-first index
-#HV|
-#HV|# 3. Observa cambios en archivos (opcional, para desarrollo)
-#HV|npx ai-first watch
-#HV|
-#HV|# 4. Consulta símbolos cuando sea necesario
-#HV|npx ai-first query symbol MiClase
-#HV|```
+```
+ai-first init
+```
 
-#HV|**Qué hace cada paso:**
-#HV|- `init` — Genera 11 archivos de contexto incluyendo ai_context.md, symbols.json y más
-#HV|- `index` — Crea una base de datos SQLite buscar código rápidamente
-#HV|- `watch` — Monitorea cambios de archivos y actualiza el índice incrementalmente
-#HV|- `query` — Te permite buscar símbolos, imports y relaciones entre archivos
+Indexa el repositorio para que los agentes de IA puedan entender el código:
 
-#HV|¡Eso es todo! Tu repositorio ahora está listo para IA. Da `ai/ai_context.md` a tu asistente de IA.
+```
+ai-first index
+```
 
-#KB|---
+Genera un mapa de arquitectura del repositorio:
 
-#RR|## ⚡ Inicio Rápido
+```
+ai-first summarize
+```
 
-#KB|Inicializa AI-First en tu repositorio:
+* `init` genera 11 archivos de contexto con metadatos del proyecto
+* `index` crea una base de datos SQLite para consultas rápidas de símbolos
+* `summarize` crea resúmenes jerárquicos para navegación IA
 
-#KB|```
-#KB|ai-first init
-#KB|```
+---
 
-#KB|Indexa el repositorio para que los agentes de IA puedan entender el código:
+## ❓ Por qué AI-First?
 
-#KB|```
-#KB|ai-first index
-#KB|```
+Los asistentes de código IA a menudo tienen dificultades con repositorios grandes.
 
-#KB|Genera un mapa de arquitectura del repositorio:
+**Problemas comunes:**
 
-#KB|```
-#KB|ai-first summarize
-#KB|```
+* ventanas de contexto limitadas
+* falta de conocimiento arquitectónico
+* dificultad para navegar bases de código grandes
+* relaciones perdidas entre módulos
 
-#KB|* `init` genera 11 archivos de contexto con metadatos del proyecto
-#KB|* `index` crea una base de datos SQLite para consultas rápidas de símbolos
-#KB|* `summarize` crea resúmenes jerárquicos para navegación IA
+AI-First resuelve esto creando una capa de inteligencia del repositorio.
 
-#KB|---
+Esto permite a los agentes IA:
 
-#XN|#YB|## ❓ Por qué AI-First?
+* entender la estructura del proyecto
+* recuperar código relevante
+* navegar repositorios grandes
+* mantener contexto arquitectónico
 
-#KB|Los asistentes de código IA a menudo tienen dificultades con repositorios grandes.
+---
 
-#KB|Problemas típicos incluyen:
-
-#KB|* ventanas de contexto limitadas
-#KB|* falta de conocimiento arquitectónico
-#KB|* dificultad para navegar bases de código grandes
-#KB|* relaciones perdidas entre módulos
-
-#KB|AI-First resuelve este problema construyendo una **capa de inteligencia del repositorio**.
-
-#KB|Crea metadatos estructurados que permiten a los agentes IA:
-
-#KB|* entender la estructura del proyecto
-#KB|* recuperar código relevante
-#KB|* navegar repositorios grandes
-#KB|* mantener contexto arquitectónico
-
-#KB|---
-
-#KB|Los asistentes de código IA a menudo tienen dificultades con repositorios grandes.
-
-#KB|Problemas típicos incluyen:
-
-#KB|* **Ventanas de contexto limitadas** — No pueden procesar bases de código completas
-#KB|* **Falta de conocimiento arquitectónico** — Pierden estructura y patrones del proyecto
-#KB|* **Dificultad para navegar** — No pueden encontrar código relevante eficientemente
-#KB|* **Relaciones perdidas** — No entienden las dependencias entre módulos
-
-#KB|AI-First resuelve esto construyendo una **capa de inteligencia del repositorio**.
-
-#KB|Crea metadatos estructurados que permiten a los agentes IA:
-
-#KB|* Entender la estructura del proyecto de un vistazo
-#KB|* Recuperar código relevante instantáneamente
-#KB|* Navegar repositorios grandes eficientemente
-#KB|* Mantener contexto arquitectónico a través de conversaciones
-
-#KB|---
+## 🚀 ¿Por qué ai-first?
 
 | Antes de ai-first | Después de ai-first |
 |-------------------|---------------------|
@@ -242,7 +196,7 @@ src/
 ├── commands/           # Interfaz CLI
 ├── analyzers/          # 7 analizadores independientes
 │   ├── architecture.ts # Detección de patrones
-│   ├── techStack.ts    # Detección de lenguaje/framework
+│   ├── techStack.ts   # Detección de lenguaje/framework
 │   ├── entrypoints.ts  # Descubrimiento de puntos de entrada
 │   ├── conventions.ts  # Detección de convenciones
 │   ├── symbols.ts      # Extracción de funciones/clases
@@ -253,6 +207,30 @@ src/
 │   ├── indexer.ts      # Indexación SQLite
 │   └── contextGenerator.ts
 └── utils/
+```
+
+### Flujo de Datos
+
+```
+Usuario CLI
+   │
+   ▼
+AI-First CLI
+   │
+   ├── Repository Scanner
+   │        │
+   │        ▼
+   │   Análisis de Archivos
+   │
+   ├── Index Engine
+   │        │
+   │        ▼
+   │   Índice SQLite
+   │
+   └── Architecture Mapper
+            │
+            ▼
+     Mapa del Repositorio
 ```
 
 ---
@@ -269,8 +247,7 @@ ai/
 ├── tech_stack.md      # Lenguajes y frameworks
 ├── entrypoints.md     # Puntos de entrada
 ├── conventions.md     # Convenciones de código
-├── ai_rules.md        # Reglas específicas para IA
-└── hierarchy.json    # Resumen jerárquico del repositorio
+└── index.db           # SQLite (con índice ai-first)
 ```
 
 ---
@@ -293,7 +270,7 @@ ai/
 # Generar contexto
 ai-first init
 
-# Generar índice SQLite para consultas rápidas
+# Generar índice SQLite
 ai-first index
 
 # Directorio de salida personalizado
@@ -305,174 +282,12 @@ ai-first init --root ./my-project
 
 ---
 
-## 📖 Guía de Usuario
+## 🌎 Idiomas
 
-### Descripción de Comandos
+Esta documentación está disponible en:
 
-ai-first provee 6 comandos para generar contexto IA para tu repositorio:
-
-#### 1. `init` — Generar Contexto Completo (Predeterminado)
-```bash
-ai-first init [options]
-
-# O simplemente:
-ai-first
-```
-
-**Descripción:** Genera todos los archivos de contexto IA a la vez. Es el punto de partida recomendado.
-
-**Opciones:**
-- `-r, --root <dir>` — Directorio raíz (predeterminado: directorio actual)
-- `-o, --output <dir>` — Directorio de salida (predeterminado: ./ai)
-- `-h, --help` — Mostrar ayuda
-
-**Salida:** Crea 11 archivos incluyendo ai_context.md, symbols.json, dependencies.json, architecture.md, y más.
-
----
-
-#### 2. `index` — Generar Índice SQLite
-```bash
-ai-first index [options]
-```
-
-**Descripción:** Crea una base de datos SQLite para consultas rápidas de símbolos. Esencial para proyectos grandes.
-
-**Opciones:**
-- `-r, --root <dir>` — Directorio raíz (predeterminado: directorio actual)
-- `-o, --output <path>` — Ruta de salida (predeterminado: ./ai/index.db)
-- `-h, --help` — Mostrar ayuda
-
-**Salida:** index.db — Base de datos SQLite con tablas de archivos, símbolos, imports y hashes.
-
----
-
-#### 3. `watch` — Indexación Incremental
-```bash
-ai-first watch [options]
-```
-
-**Descripción:** Observa cambios en archivos y actualiza el índice incrementalmente. Perfecto para desarrollo.
-
-**Opciones:**
-- `-r, --root <dir>` — Directorio raíz (predeterminado: directorio actual)
-- `-o, --output <path>` — Ruta de salida (predeterminado: ./ai/index.db)
-- `-d, --debounce <ms>` — Retraso de debounce (predeterminado: 300ms)
-- `-h, --help` — Mostrar ayuda
-
-**Características:**
-- Actualizaciones incrementales (solo archivos cambiados se re-indexan)
-- Seguimiento de hash de archivos para detección de cambios
-- Actualizaciones con debounce para manejar cambios rápidos
-- Presiona Ctrl+C para dejar de observar
-
----
-
-#### 4. `context` — Contexto Optimizado para LLM
-```bash
-ai-first context [options]
-```
-
-**Descripción:** Genera archivos de contexto ligeros optimizados para LLMs. Más rápido que init.
-
-**Opciones:**
-- `-r, --root <dir>` — Directorio raíz (predeterminado: directorio actual)
-- `-o, --output <dir>` — Directorio de salida (predeterminado: ./ai)
-- `-h, --help` — Mostrar ayuda
-
-**Salida:** repo_map.json, symbols.json, dependencies.json, ai_context.md
-
----
-
-#### 5. `summarize` — Resúmenes Jerárquicos
-```bash
-ai-first summarize [options]
-```
-
-**Descripción:** Genera resúmenes jerárquicos del repositorio optimizados para navegación IA.
-
-**Opciones:**
-- `-r, --root <dir>` — Directorio raíz (predeterminado: directorio actual)
-- `-o, --output <path>` — Ruta de salida (predeterminado: ./ai/hierarchy.json)
-- `-h, --help` — Mostrar ayuda
-
-**Salida:** hierarchy.json con:
-- Resumen del repositorio (nombre, descripción, propósito)
-- Resúmenes de carpetas (propósito basado en nombres)
-- Resúmenes de archivos (exports, imports, clases/funciones clave)
-
----
-
-#### 6. `query` — Consultar el Índice
-```bash
-ai-first query <subcomando> [options]
-```
-
-**Descripción:** Consulta el índice SQLite para símbolos, imports y relaciones de archivos.
-
-**Subcomandos:**
-- `symbol <nombre>` — Encontrar definiciones de símbolos por nombre
-- `dependents <archivo>` — Encontrar archivos que dependen de un archivo
-- `imports <archivo>` — Encontrar archivos importados por un archivo
-- `exports <archivo>` — Encontrar exports en un archivo
-- `files` — Listar todos los archivos indexados
-- `stats` — Mostrar estadísticas del índice
-
-**Opciones:**
-- `-r, --root <dir>` — Directorio raíz (predeterminado: directorio actual)
-- `-d, --db <path>` — Ruta de la base de datos (predeterminado: ./ai/index.db)
-
-**Ejemplos:**
-```bash
-# Encontrar todas las funciones llamadas "handleSubmit"
-ai-first query symbol handleSubmit
-
-# Encontrar archivos que dependen de auth.ts
-ai-first query dependents auth.ts
-
-# Mostrar estadísticas del índice
-ai-first query stats
-```
-
----
-
-### Inicio Rápido
-
-```bash
-# 1. Generar contexto completo (recomendado la primera vez)
-npx ai-first init
-
-# 2. Crear índice SQLite para consultas rápidas
-npx ai-first index
-
-# 3. Observar cambios (opcional, para desarrollo)
-npx ai-first watch
-
-# 4. Consultar símbolos cuando sea necesario
-npx ai-first query symbol MyClass
-```
-
-#TM|---
-
-#RR|## 🌎 Idiomas
-
-#KB|Esta documentación está disponible en:
-
-#KB|* **English** (por defecto) — [README.md](./README.md)
-#KB|* **Español** — [README.es.md](./README.es.md)
-
-#KB|Para más detalles, consulta la [Guía de Usuario](./docs/user-guide.es.md).
-
-#KB|---
-
-## 🌍 Soporte Multi-Lenguaje
-
-| Categoría | Lenguajes |
-|-----------|-----------|
-| **Web** | JavaScript, TypeScript, Python, Go, Rust |
-| **Backend** | Java, C#, PHP, Ruby, Go, Rust, Kotlin |
-| **Móvil** | Swift, Kotlin |
-| **Frontend** | Vue, Svelte, React, HTML, CSS, SCSS |
-| **Testing** | Jest, Vitest, pytest, Mocha, RSpec |
+* English (por defecto)
+* Español
 
 ---
 

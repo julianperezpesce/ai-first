@@ -1,5 +1,3 @@
-[English](./README.md) | [Español](./README.es.md)
-
 # ai-first
 
 <p align="center">
@@ -35,34 +33,8 @@ $ npx ai-first init
 **Result:** AI understands your project in ~500 tokens instead of 50,000.
 <!-- END FIRST 10 SECONDS VALUE -->
 
-#WK|---
-
-#HM|## ⚡ Quick Start
-
-#HV|Get up and running in less than a minute:
-
-#HV|```bash
-#HV|# 1. Initialize AI-First in your repository
-#HV|npx ai-first init
-#HV|
-#HV|# 2. Generate SQLite index for fast queries (recommended)
-#HV|npx ai-first index
-#HV|
-#HV|# 3. Start watching for changes (optional, for development)
-#HV|npx ai-first watch
-#HV|
-#HV|# 4. Query symbols when needed
-#HV|npx ai-first query symbol MyClass
-#HV|```
-
-#HV|**What each step does:**
-#HV|- `init` — Generates 11 context files including ai_context.md, symbols.json, and more
-#HV|- `index` — Creates a searchable SQLite database for fast code lookups
-#HV|- `watch` — Monitors file changes and incrementally updates the index
-#HV|- `query` — Lets you search for symbols, imports, and file relationships
-
-#HV|That's it! Your repository is now AI-ready. Give `ai/ai_context.md` to your AI assistant.
-
+---
+#RB|
 #KB|---
 
 #RR|## ⚡ Quick Start
@@ -86,25 +58,25 @@ $ npx ai-first init
 #KB|```
 
 #KB|* `init` generates 11 context files with project metadata
-#KB|* `index` creates a SQLite database for fast symbol queries  
+#KB|* `index` creates a SQLite database for fast symbol queries
 #KB|* `summarize` creates hierarchical summaries for AI navigation
 
 #KB|---
 
-#MY|#RR|## ❓ Why AI-First?
+#RR|## ❓ Why AI-First?
 
 #KB|AI coding assistants often struggle with large repositories.
 
-#KB|Typical problems include:
+#KB|Common problems:
 
 #KB|* limited context windows
 #KB|* lack of architectural awareness
 #KB|* difficulty navigating large codebases
 #KB|* missing relationships between modules
 
-#KB|AI-First solves this problem by building a **repository intelligence layer**.
+#KB|AI-First solves this by creating a repository intelligence layer.
 
-#KB|It creates structured metadata that allows AI agents to:
+#KB|This allows AI agents to:
 
 #KB|* understand project structure
 #KB|* retrieve relevant code
@@ -112,26 +84,7 @@ $ npx ai-first init
 #KB|* maintain architectural context
 
 #KB|---
-
-#KB|AI coding assistants often struggle with large repositories.
-
-#KB|Typical problems include:
-
-#KB|* **Limited context windows** — Can't process entire codebases
-#KB|* **Lack of architectural awareness** — Misses project structure and patterns
-#KB|* **Difficulty navigating** — Can't find relevant code efficiently
-#KB|* **Missing relationships** — Doesn't understand module dependencies
-
-#KB|AI-First solves this by building a **repository intelligence layer**.
-
-#KB|It creates structured metadata that allows AI agents to:
-
-#KB|* Understand project structure at a glance
-#KB|* Retrieve relevant code instantly
-#KB|* Navigate large repositories efficiently
-#KB|* Maintain architectural context across conversations
-
-#KB|---
+## 🚀 Why ai-first?
 
 | Before ai-first | After ai-first |
 |-----------------|----------------|
@@ -253,7 +206,33 @@ src/
 │   ├── indexer.ts      # SQLite indexing
 │   └── contextGenerator.ts
 └── utils/
-```
+#TH|```
+
+#KB|### Data Flow
+
+#KB|```
+#KB|User CLI
+#KB|   │
+#KB|   ▼
+#KB|AI-First CLI
+#KB|   │
+#KB|   ├── Repository Scanner
+#KB|   │        │
+#KB|   │        ▼
+#KB|   │   File Analysis
+#KB|   │
+#KB|   ├── Index Engine
+#KB|   │        │
+#KB|   │        ▼
+#KB|   │   SQLite Index
+#KB|   │
+#KB|   └── Architecture Mapper
+#KB|            │
+#KB|            ▼
+#KB|     Repository Map
+#KB|```
+
+#ZX|
 
 ---
 
@@ -269,8 +248,7 @@ ai/
 ├── tech_stack.md      # Languages & frameworks
 ├── entrypoints.md     # Entry points
 ├── conventions.md     # Coding conventions
-├── ai_rules.md        # AI-specific guidelines
-└── hierarchy.json     # Hierarchical repo summary (from summarize)
+└── index.db           # SQLite (with ai-first index)
 ```
 
 ---
@@ -304,165 +282,6 @@ ai-first init --root ./my-project
 ```
 
 ---
-
-## 📖 User Guide
-
-### Command Overview
-
-ai-first provides 6 commands to generate AI context for your repository:
-
-#### 1. `init` — Generate Full Context (Default)
-```bash
-ai-first init [options]
-
-# Or simply:
-ai-first
-```
-
-**Description:** Generates all AI context files at once. This is the recommended starting point.
-
-**Options:**
-- `-r, --root <dir>` — Root directory (default: current directory)
-- `-o, --output <dir>` — Output directory (default: ./ai)
-- `-h, --help` — Show help
-
-**Output:** Creates 11 files including ai_context.md, symbols.json, dependencies.json, architecture.md, and more.
-
----
-
-#### 2. `index` — Generate SQLite Index
-```bash
-ai-first index [options]
-```
-
-**Description:** Creates a SQLite database for fast symbol queries. Essential for large codebases.
-
-**Options:**
-- `-r, --root <dir>` — Root directory (default: current directory)
-- `-o, --output <path>` — Output path (default: ./ai/index.db)
-- `-h, --help` — Show help
-
-**Output:** index.db — SQLite database with files, symbols, imports, and hashes tables.
-
----
-
-#### 3. `watch` — Incremental Indexing
-```bash
-ai-first watch [options]
-```
-
-**Description:** Watches for file changes and incrementally updates the index. Perfect for development.
-
-**Options:**
-- `-r, --root <dir>` — Root directory (default: current directory)
-- `-o, --output <path>` — Output path (default: ./ai/index.db)
-- `-d, --debounce <ms>` — Debounce delay (default: 300ms)
-- `-h, --help` — Show help
-
-**Features:**
-- Incremental updates (only changed files are re-indexed)
-- File hash tracking for change detection
-- Debounced updates to handle rapid file changes
-- Press Ctrl+C to stop watching
-
----
-
-#### 4. `context` — LLM-Optimized Context
-```bash
-ai-first context [options]
-```
-
-**Description:** Generates lightweight context files optimized for LLMs. Faster than init.
-
-**Options:**
-- `-r, --root <dir>` — Root directory (default: current directory)
-- `-o, --output <dir>` — Output directory (default: ./ai)
-- `-h, --help` — Show help
-
-**Output:** repo_map.json, symbols.json, dependencies.json, ai_context.md
-
----
-
-#### 5. `summarize` — Hierarchical Summaries
-```bash
-ai-first summarize [options]
-```
-
-**Description:** Generates hierarchical repository summaries optimized for AI navigation.
-
-**Options:**
-- `-r, --root <dir>` — Root directory (default: current directory)
-- `-o, --output <path>` — Output path (default: ./ai/hierarchy.json)
-- `-h, --help` — Show help
-
-**Output:** hierarchy.json with:
-- Repository summary (name, description, purpose)
-- Folder summaries (purpose based on naming patterns)
-- File summaries (exports, imports, key classes/functions)
-
----
-
-#### 6. `query` — Query the Index
-```bash
-ai-first query <subcommand> [options]
-```
-
-**Description:** Query the SQLite index for symbols, imports, and file relationships.
-
-**Subcommands:**
-- `symbol <name>` — Find symbol definitions by name
-- `dependents <file>` — Find files that depend on a file
-- `imports <file>` — Find files imported by a file
-- `exports <file>` — Find exports in a file
-- `files` — List all indexed files
-- `stats` — Show index statistics
-
-**Options:**
-- `-r, --root <dir>` — Root directory (default: current directory)
-- `-d, --db <path>` — Database path (default: ./ai/index.db)
-
-**Examples:**
-```bash
-# Find all functions named "handleSubmit"
-ai-first query symbol handleSubmit
-
-# Find files that depend on auth.ts
-ai-first query dependents auth.ts
-
-# Show index statistics
-ai-first query stats
-```
-
----
-
-### Quick Start
-
-```bash
-# 1. Generate full context (recommended first time)
-npx ai-first init
-
-# 2. Create SQLite index for fast queries
-npx ai-first index
-
-# 3. Start watching for changes (optional, for development)
-npx ai-first watch
-
-# 4. Query symbols when needed
-npx ai-first query symbol MyClass
-```
-
-#TM|---
-
-#RR|## 🌎 Languages
-
-#KB|This documentation is available in:
-
-#KB|* **English** (default) — [README.md](./README.md)
-#KB|* **Español** — [README.es.md](./README.es.md)
-
-#KB|For more details, see the [User Guide](./docs/user-guide.md).
-
-#KB|---
 
 ## 🌍 Multi-Language Support
 
@@ -528,7 +347,16 @@ See [docs/architecture.md](./docs/architecture.md) for internal architecture.
 
 Give us a ⭐ if this project helped you!
 
----
+#PN|---
+
+#RR|## 🌎 Languages
+
+#KB|This documentation is available in:
+
+#KB|* English (default)
+#KB|* Español → [README.es.md](./README.es.md)
+
+#KB|---
 
 ## 📄 License
 
