@@ -28,8 +28,8 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
+      #BS|      - name: Install dependencies
+        #NZ|        run: npm install
 
       - name: Build VitePress
         run: npm run docs:build
