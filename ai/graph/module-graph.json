@@ -1,0 +1,91 @@
+{
+  "modules": [
+    {
+      "name": ".github",
+      "paths": [
+        ".github/workflows/changelog.yml"
+      ]
+    },
+    {
+      "name": "docs",
+      "paths": [
+        "docs/architecture.md",
+        "docs/spec.md",
+        "docs/user-guide.es.md",
+        "docs/user-guide.md"
+      ]
+    },
+    {
+      "name": "examples",
+      "paths": [
+        "examples/01-express-api.md",
+        "examples/02-react-app.md",
+        "examples/03-python-django.md",
+        "examples/README.md"
+      ]
+    },
+    {
+      "name": "src",
+      "paths": [
+        "src/analyzers/aiRules.ts",
+        "src/analyzers/architecture.ts",
+        "src/analyzers/conventions.ts",
+        "src/analyzers/dependencies.ts",
+        "src/analyzers/entrypoints.ts",
+        "src/analyzers/symbols.ts",
+        "src/analyzers/techStack.ts",
+        "src/commands/ai-first.ts",
+        "src/commands/doctor.ts",
+        "src/commands/explore.ts",
+        "src/core/aiContextGenerator.ts",
+        "src/core/contextGenerator.ts",
+        "src/core/hierarchyGenerator.ts",
+        "src/core/indexer.ts",
+        "src/core/moduleGraph.ts",
+        "src/core/repoMapper.ts",
+        "src/core/repoScanner.ts",
+        "src/index.ts",
+        "src/types/sql.js.d.ts",
+        "src/utils/fileUtils.ts"
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "from": "src",
+      "to": "path"
+    },
+    {
+      "from": "src",
+      "to": "x"
+    },
+    {
+      "from": "src",
+      "to": "@alias"
+    },
+    {
+      "from": "src",
+      "to": "package"
+    },
+    {
+      "from": "src",
+      "to": "fs"
+    },
+    {
+      "from": "src",
+      "to": "url"
+    },
+    {
+      "from": "src",
+      "to": "sql.js"
+    },
+    {
+      "from": "src",
+      "to": "crypto"
+    },
+    {
+      "from": "src",
+      "to": "chokidar"
+    }
+  ]
+}

@@ -1,0 +1,950 @@
+{
+  "totalDependencies": 151,
+  "totalModules": 18,
+  "dependencies": [
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "src/analyzers/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "src/analyzers/./conventions.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "src/analyzers/./entrypoints.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "src/analyzers/./techStack.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "src/analyzers/./architecture.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "src/analyzers/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "src/analyzers/./conventions.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "src/analyzers/./entrypoints.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "src/analyzers/./techStack.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "src/analyzers/./architecture.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/architecture.ts",
+      "target": "src/analyzers/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/architecture.ts",
+      "target": "src/analyzers/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/architecture.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/architecture.ts",
+      "target": "src/analyzers/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/architecture.ts",
+      "target": "src/analyzers/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/architecture.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/conventions.ts",
+      "target": "src/analyzers/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/conventions.ts",
+      "target": "src/analyzers/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/conventions.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/conventions.ts",
+      "target": "src/analyzers/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/conventions.ts",
+      "target": "src/analyzers/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/conventions.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/dependencies.ts",
+      "target": "src/analyzers/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/dependencies.ts",
+      "target": "src/analyzers/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/dependencies.ts",
+      "target": "x",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/dependencies.ts",
+      "target": "x",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/dependencies.ts",
+      "target": "@alias/path",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/dependencies.ts",
+      "target": "package",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/dependencies.ts",
+      "target": "x",
+      "type": "require"
+    },
+    {
+      "source": "src/analyzers/dependencies.ts",
+      "target": "src/analyzers/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/dependencies.ts",
+      "target": "src/analyzers/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/dependencies.ts",
+      "target": "x",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/dependencies.ts",
+      "target": "x",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/dependencies.ts",
+      "target": "@alias/path",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/entrypoints.ts",
+      "target": "src/analyzers/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/entrypoints.ts",
+      "target": "src/analyzers/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/entrypoints.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/entrypoints.ts",
+      "target": "src/analyzers/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/entrypoints.ts",
+      "target": "src/analyzers/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/entrypoints.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/symbols.ts",
+      "target": "src/analyzers/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/symbols.ts",
+      "target": "src/analyzers/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/symbols.ts",
+      "target": "src/analyzers/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/symbols.ts",
+      "target": "src/analyzers/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/techStack.ts",
+      "target": "src/analyzers/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/techStack.ts",
+      "target": "src/analyzers/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/techStack.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/techStack.ts",
+      "target": "src/analyzers/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/techStack.ts",
+      "target": "src/analyzers/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/techStack.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "url",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/repoMapper.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/indexer.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/aiContextGenerator.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/hierarchyGenerator.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../analyzers/architecture.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../analyzers/techStack.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../analyzers/entrypoints.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../analyzers/conventions.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../analyzers/symbols.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../analyzers/dependencies.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../analyzers/aiRules.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/moduleGraph.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/./doctor.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/./explore.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "fs",
+      "type": "require"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "url",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/repoMapper.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/indexer.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/aiContextGenerator.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/hierarchyGenerator.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../analyzers/architecture.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../analyzers/techStack.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../analyzers/entrypoints.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../analyzers/conventions.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../analyzers/symbols.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../analyzers/dependencies.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../analyzers/aiRules.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/moduleGraph.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/./doctor.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/./explore.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/doctor.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/doctor.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/doctor.ts",
+      "target": "src/commands/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/doctor.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/doctor.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/doctor.ts",
+      "target": "src/commands/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/explore.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/explore.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/explore.ts",
+      "target": "src/commands/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/explore.ts",
+      "target": "src/commands/../core/moduleGraph.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/explore.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/explore.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/explore.ts",
+      "target": "src/commands/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/explore.ts",
+      "target": "src/commands/../core/moduleGraph.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/aiContextGenerator.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/aiContextGenerator.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/aiContextGenerator.ts",
+      "target": "src/core/./repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/aiContextGenerator.ts",
+      "target": "src/core/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/aiContextGenerator.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/aiContextGenerator.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/aiContextGenerator.ts",
+      "target": "src/core/./repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/aiContextGenerator.ts",
+      "target": "src/core/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/contextGenerator.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/contextGenerator.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/contextGenerator.ts",
+      "target": "url",
+      "type": "import"
+    },
+    {
+      "source": "src/core/contextGenerator.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/contextGenerator.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/contextGenerator.ts",
+      "target": "url",
+      "type": "import"
+    },
+    {
+      "source": "src/core/hierarchyGenerator.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/hierarchyGenerator.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/hierarchyGenerator.ts",
+      "target": "src/core/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/hierarchyGenerator.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/hierarchyGenerator.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/hierarchyGenerator.ts",
+      "target": "src/core/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexer.ts",
+      "target": "sql.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexer.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexer.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexer.ts",
+      "target": "crypto",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexer.ts",
+      "target": "chokidar",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexer.ts",
+      "target": "src/core/./repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexer.ts",
+      "target": "src/core/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexer.ts",
+      "target": "sql.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexer.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexer.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexer.ts",
+      "target": "crypto",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexer.ts",
+      "target": "chokidar",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexer.ts",
+      "target": "src/core/./repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexer.ts",
+      "target": "src/core/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/moduleGraph.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/moduleGraph.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/moduleGraph.ts",
+      "target": "src/core/./repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/moduleGraph.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/moduleGraph.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/moduleGraph.ts",
+      "target": "src/core/./repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/repoMapper.ts",
+      "target": "src/core/./repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/repoMapper.ts",
+      "target": "src/core/./repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/repoScanner.ts",
+      "target": "src/core/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/repoScanner.ts",
+      "target": "src/core/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/utils/fileUtils.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/utils/fileUtils.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/utils/fileUtils.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/utils/fileUtils.ts",
+      "target": "path",
+      "type": "import"
+    }
+  ],
+  "byFile": {
+    "src/analyzers/aiRules.ts": [
+      "src/analyzers/../core/repoScanner.js",
+      "src/analyzers/./conventions.js",
+      "src/analyzers/./entrypoints.js",
+      "src/analyzers/./techStack.js",
+      "src/analyzers/./architecture.js",
+      "src/analyzers/../core/repoScanner.js",
+      "src/analyzers/./conventions.js",
+      "src/analyzers/./entrypoints.js",
+      "src/analyzers/./techStack.js",
+      "src/analyzers/./architecture.js"
+    ],
+    "src/analyzers/architecture.ts": [
+      "src/analyzers/../core/repoScanner.js",
+      "src/analyzers/../utils/fileUtils.js",
+      "path",
+      "src/analyzers/../core/repoScanner.js",
+      "src/analyzers/../utils/fileUtils.js",
+      "path"
+    ],
+    "src/analyzers/conventions.ts": [
+      "src/analyzers/../core/repoScanner.js",
+      "src/analyzers/../utils/fileUtils.js",
+      "path",
+      "src/analyzers/../core/repoScanner.js",
+      "src/analyzers/../utils/fileUtils.js",
+      "path"
+    ],
+    "src/analyzers/dependencies.ts": [
+      "src/analyzers/../core/repoScanner.js",
+      "src/analyzers/../utils/fileUtils.js",
+      "x",
+      "x",
+      "@alias/path",
+      "package",
+      "x",
+      "src/analyzers/../core/repoScanner.js",
+      "src/analyzers/../utils/fileUtils.js",
+      "x",
+      "x",
+      "@alias/path"
+    ],
+    "src/analyzers/entrypoints.ts": [
+      "src/analyzers/../core/repoScanner.js",
+      "src/analyzers/../utils/fileUtils.js",
+      "path",
+      "src/analyzers/../core/repoScanner.js",
+      "src/analyzers/../utils/fileUtils.js",
+      "path"
+    ],
+    "src/analyzers/symbols.ts": [
+      "src/analyzers/../core/repoScanner.js",
+      "src/analyzers/../utils/fileUtils.js",
+      "src/analyzers/../core/repoScanner.js",
+      "src/analyzers/../utils/fileUtils.js"
+    ],
+    "src/analyzers/techStack.ts": [
+      "src/analyzers/../core/repoScanner.js",
+      "src/analyzers/../utils/fileUtils.js",
+      "path",
+      "src/analyzers/../core/repoScanner.js",
+      "src/analyzers/../utils/fileUtils.js",
+      "path"
+    ],
+    "src/commands/ai-first.ts": [
+      "fs",
+      "path",
+      "url",
+      "src/commands/../core/repoScanner.js",
+      "src/commands/../core/repoMapper.js",
+      "src/commands/../core/indexer.js",
+      "src/commands/../core/aiContextGenerator.js",
+      "src/commands/../core/hierarchyGenerator.js",
+      "src/commands/../utils/fileUtils.js",
+      "src/commands/../analyzers/architecture.js",
+      "src/commands/../analyzers/techStack.js",
+      "src/commands/../analyzers/entrypoints.js",
+      "src/commands/../analyzers/conventions.js",
+      "src/commands/../analyzers/symbols.js",
+      "src/commands/../analyzers/dependencies.js",
+      "src/commands/../analyzers/aiRules.js",
+      "src/commands/../core/moduleGraph.js",
+      "src/commands/./doctor.js",
+      "src/commands/./explore.js",
+      "fs",
+      "fs",
+      "path",
+      "url",
+      "src/commands/../core/repoScanner.js",
+      "src/commands/../core/repoMapper.js",
+      "src/commands/../core/indexer.js",
+      "src/commands/../core/aiContextGenerator.js",
+      "src/commands/../core/hierarchyGenerator.js",
+      "src/commands/../utils/fileUtils.js",
+      "src/commands/../analyzers/architecture.js",
+      "src/commands/../analyzers/techStack.js",
+      "src/commands/../analyzers/entrypoints.js",
+      "src/commands/../analyzers/conventions.js",
+      "src/commands/../analyzers/symbols.js",
+      "src/commands/../analyzers/dependencies.js",
+      "src/commands/../analyzers/aiRules.js",
+      "src/commands/../core/moduleGraph.js",
+      "src/commands/./doctor.js",
+      "src/commands/./explore.js"
+    ],
+    "src/commands/doctor.ts": [
+      "fs",
+      "path",
+      "src/commands/../core/repoScanner.js",
+      "fs",
+      "path",
+      "src/commands/../core/repoScanner.js"
+    ],
+    "src/commands/explore.ts": [
+      "fs",
+      "path",
+      "src/commands/../core/repoScanner.js",
+      "src/commands/../core/moduleGraph.js",
+      "fs",
+      "path",
+      "src/commands/../core/repoScanner.js",
+      "src/commands/../core/moduleGraph.js"
+    ],
+    "src/core/aiContextGenerator.ts": [
+      "fs",
+      "path",
+      "src/core/./repoScanner.js",
+      "src/core/../utils/fileUtils.js",
+      "fs",
+      "path",
+      "src/core/./repoScanner.js",
+      "src/core/../utils/fileUtils.js"
+    ],
+    "src/core/contextGenerator.ts": [
+      "fs",
+      "path",
+      "url",
+      "fs",
+      "path",
+      "url"
+    ],
+    "src/core/hierarchyGenerator.ts": [
+      "fs",
+      "path",
+      "src/core/../utils/fileUtils.js",
+      "fs",
+      "path",
+      "src/core/../utils/fileUtils.js"
+    ],
+    "src/core/indexer.ts": [
+      "sql.js",
+      "fs",
+      "path",
+      "crypto",
+      "chokidar",
+      "src/core/./repoScanner.js",
+      "src/core/../utils/fileUtils.js",
+      "sql.js",
+      "fs",
+      "path",
+      "crypto",
+      "chokidar",
+      "src/core/./repoScanner.js",
+      "src/core/../utils/fileUtils.js"
+    ],
+    "src/core/moduleGraph.ts": [
+      "fs",
+      "path",
+      "src/core/./repoScanner.js",
+      "fs",
+      "path",
+      "src/core/./repoScanner.js"
+    ],
+    "src/core/repoMapper.ts": [
+      "src/core/./repoScanner.js",
+      "src/core/./repoScanner.js"
+    ],
+    "src/core/repoScanner.ts": [
+      "src/core/../utils/fileUtils.js",
+      "src/core/../utils/fileUtils.js"
+    ],
+    "src/utils/fileUtils.ts": [
+      "fs",
+      "path",
+      "fs",
+      "path"
+    ]
+  }
+}
