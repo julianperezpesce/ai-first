@@ -1,6 +1,6 @@
 # Repository Map
-## .github
-  - changelog.yml
+## .netlify
+  - state.json
 
 ## CHANGELOG.md
   - CHANGELOG.md
@@ -20,23 +20,42 @@
 ## ai
   - ai_context.md
   - ai_rules.md
+  - analyzers.extractSymbols.json
+  - analyzers.Symbol.json
   - architecture.md
   - conventions.md
   - dependencies.json
+  - embeddings.json
   - entrypoints.md
+  - files.json
   - hierarchy.json
+  - index-state.json
   - module-graph.json
+  - modules.json
   - repo_map.json
   - repo_map.md
+  - repo-map.json
   - summary.md
+  - symbol-graph.json
   - symbols.json
   - tech_stack.md
 
 ## docs
   - architecture.md
-  - spec.md
-  - user-guide.es.md
-  - user-guide.md
+  - commands.md
+  - config.ts
+  - custom.css
+  - express-api.md
+  - getting-started.md
+  - getting-started.md
+  - index.md
+  - index.md
+  - index.md
+  - index.ts
+  - installation.md
+  - python-django.md
+  - quick-start.md
+  - react-app.md
 
 ## examples
   - 01-express-api.md
@@ -55,20 +74,25 @@
   - aiContextGenerator.ts
   - aiRules.ts
   - architecture.ts
+  - chunker.ts
   - contextGenerator.ts
+  - contextPacket.ts
   - conventions.ts
   - dependencies.ts
   - doctor.ts
+  - embeddings.ts
   - entrypoints.ts
   - explore.ts
   - fileUtils.ts
   - hierarchyGenerator.ts
   - index.ts
   - indexer.ts
+  - indexState.ts
   - moduleGraph.ts
   - repoMapper.ts
   - repoScanner.ts
   - sql.js.d.ts
+  - symbolGraph.ts
   - symbols.ts
   - techStack.ts
 
@@ -78,29 +102,55 @@
 
 
 # Repository Structure (Tree View)
-├── .github/
-│   └── workflows/
-│       └── changelog.yml
+├── .netlify/
+│   └── state.json
 ├── ai/
+│   ├── context/
+│   │   ├── analyzers.Symbol.json
+│   │   └── analyzers.extractSymbols.json
 │   ├── graph/
-│   │   └── module-graph.json
+│   │   ├── module-graph.json
+│   │   └── symbol-graph.json
 │   ├── ai_context.md
 │   ├── ai_rules.md
 │   ├── architecture.md
 │   ├── conventions.md
 │   ├── dependencies.json
+│   ├── embeddings.json
 │   ├── entrypoints.md
+│   ├── files.json
 │   ├── hierarchy.json
+│   ├── index-state.json
+│   ├── modules.json
+│   ├── repo-map.json
 │   ├── repo_map.json
 │   ├── repo_map.md
 │   ├── summary.md
 │   ├── symbols.json
 │   └── tech_stack.md
 ├── docs/
-│   ├── architecture.md
-│   ├── spec.md
-│   ├── user-guide.es.md
-│   └── user-guide.md
+│   ├── .vitepress/
+│   │   ├── theme/
+│   │   │   ├── custom.css
+│   │   │   └── index.ts
+│   │   └── config.ts
+│   ├── es/
+│   │   ├── guide/
+│   │   │   └── getting-started.md
+│   │   └── index.md
+│   ├── examples/
+│   │   ├── express-api.md
+│   │   ├── index.md
+│   │   ├── python-django.md
+│   │   └── react-app.md
+│   ├── guide/
+│   │   ├── architecture.md
+│   │   ├── getting-started.md
+│   │   ├── installation.md
+│   │   └── quick-start.md
+│   ├── reference/
+│   │   └── commands.md
+│   └── index.md
 ├── examples/
 │   ├── 01-express-api.md
 │   ├── 02-react-app.md
@@ -121,12 +171,17 @@
 │   │   └── explore.ts
 │   ├── core/
 │   │   ├── aiContextGenerator.ts
+│   │   ├── chunker.ts
 │   │   ├── contextGenerator.ts
+│   │   ├── contextPacket.ts
+│   │   ├── embeddings.ts
 │   │   ├── hierarchyGenerator.ts
+│   │   ├── indexState.ts
 │   │   ├── indexer.ts
 │   │   ├── moduleGraph.ts
 │   │   ├── repoMapper.ts
-│   │   └── repoScanner.ts
+│   │   ├── repoScanner.ts
+│   │   └── symbolGraph.ts
 │   ├── types/
 │   │   └── sql.js.d.ts
 │   ├── utils/

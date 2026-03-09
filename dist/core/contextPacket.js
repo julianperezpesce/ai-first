@@ -1,22 +1,23 @@
 import fs from "fs";
 import path from "path";
-import { loadSymbolGraph } from "./symbolGraph.js";
+import { loadSymbolGraph, loadSymbolReferences, loadFileIndex } from "./symbolGraph.js";
 import { readFile } from "../utils/fileUtils.js";
 /**
- * Generate context packet for a specific symbol
+ * Generate context packet for a specific symbol with depth and ranking
  */
-export function generateContextPacket(symbolName, aiDir, rootDir) {
+export function generateContextPacket(symbolName, aiDir, rootDir, options = {}) {
+    const { depth = 1, format = "json", maxSymbols = 50 } = options;
     const graph = loadSymbolGraph(aiDir);
+    const refs = loadSymbolReferences(aiDir);
+    const fileIndex = loadFileIndex(aiDir);
     if (!graph) {
-        console.error("Symbol graph not found. Run 'ai-first init' first.");
+        console.error("Symbol graph not found. Run 'ai-first map' first.");
         return null;
     }
-    // Find the symbol (try ID first, then name)
-    let symbol = graph.symbols.find(s => s.id === symbolName || s.id.endsWith(`.${symbolName}`));
-    // If not found by ID, try just by name
-    if (!symbol) {
-        symbol = graph.symbols.find(s => s.name === symbolName);
-    }
+    // Find the symbol
+    let symbol = graph.symbols.find(s => s.id === symbolName ||
+        s.id.endsWith(`#${symbolName}`) ||
+        s.name === symbolName);
     if (!symbol) {
         console.error(`Symbol '${symbolName}' not found.`);
         console.log(`\nAvailable symbols (first 20):`);
@@ -30,45 +31,22 @@ export function generateContextPacket(symbolName, aiDir, rootDir) {
     }
     // Get relationships
     const relationships = graph.bySymbol[symbol.id] || [];
-    const calls = relationships
-        .filter(r => r.type === "calls")
-        .map(r => r.targetId);
-    const calledBy = relationships
-        .filter(r => r.type === "called_by")
-        .map(r => r.targetId);
-    const imports = relationships
-        .filter(r => r.type === "imports")
-        .map(r => r.targetId);
-    // Get related symbols
-    const allRelatedIds = new Set([...calls, ...calledBy, ...imports]);
-    const relatedSymbols = graph.symbols.filter(s => allRelatedIds.has(s.id)).map(s => ({
-        id: s.id,
-        name: s.name,
-        type: s.type,
-        file: s.file,
-        line: s.line,
-    }));
+    // Organize relationships by type
+    const relsByType = organizeRelationships(relationships);
+    // Get related symbols with depth
+    const relatedSymbols = getRelatedSymbols(graph, symbol.id, depth, maxSymbols);
+    // Get callers (reverse references)
+    const callers = refs?.[symbol.id] || [];
+    // Get file neighbors
+    const fileNeighbors = getFileNeighbors(symbol.file, fileIndex, graph);
     // Get source code
-    let sourceCode = "";
-    try {
-        const fullPath = path.join(rootDir, symbol.file);
-        if (fs.existsSync(fullPath)) {
-            const content = readFile(fullPath);
-            const lines = content.split("\n");
-            // Get context around the symbol (10 lines before and after)
-            const startLine = Math.max(0, (symbol.line || 1) - 10);
-            const endLine = Math.min(lines.length, (symbol.line || 1) + 10);
-            sourceCode = lines.slice(startLine, endLine).join("\n");
-            // Add line numbers
-            sourceCode = lines.slice(startLine, endLine).map((line, i) => `${startLine + i + 1}: ${line}`).join("\n");
-        }
-    }
-    catch {
-        sourceCode = "[Source code not available]";
-    }
+    const { snippet, fullSource } = getSourceCode(symbol.file, symbol.line, rootDir);
+    // Calculate relevance score
+    const relevanceScore = calculateRelevance(symbol, relationships, callers, relatedSymbols);
     // Generate summary
-    const summary = generateSummary(symbol, calls.length, calledBy.length, imports.length, relatedSymbols.length);
-    return {
+    const summary = generateSummary(symbol, relsByType, callers.length, relatedSymbols.length);
+    const module = symbol.file.split('/')[0];
+    const packet = {
         symbol: {
             id: symbol.id,
             name: symbol.name,
@@ -76,51 +54,269 @@ export function generateContextPacket(symbolName, aiDir, rootDir) {
             file: symbol.file,
             line: symbol.line,
             export: symbol.export,
+            module,
         },
-        sourceCode,
+        snippet,
+        fullSource,
         relationships: {
-            calls,
-            calledBy,
-            imports,
-            references: [],
+            calls: relsByType.calls,
+            calledBy: relsByType.calledBy,
+            imports: relsByType.imports,
+            references: relsByType.references,
+            instantiates: relsByType.instantiates,
+            extends: relsByType.extends,
+            implements: relsByType.implements,
+            exports: relsByType.exports,
         },
-        relatedSymbols,
+        relatedSymbols: relatedSymbols.slice(0, maxSymbols),
+        callers,
+        module,
+        file: symbol.file,
+        fileNeighbors,
         summary,
+        relevanceScore,
     };
+    // Format output
+    if (format === "markdown") {
+        return formatAsMarkdown(packet);
+    }
+    else if (format === "text") {
+        return formatAsText(packet);
+    }
+    return packet;
+}
+/**
+ * Organize relationships by type
+ */
+function organizeRelationships(relationships) {
+    const result = {
+        calls: [],
+        calledBy: [],
+        imports: [],
+        references: [],
+        instantiates: [],
+        extends: [],
+        implements: [],
+        exports: [],
+    };
+    for (const rel of relationships) {
+        if (result[rel.type]) {
+            result[rel.type].push(rel.targetId);
+        }
+    }
+    return result;
+}
+/**
+ * Get related symbols with depth
+ */
+function getRelatedSymbols(graph, symbolId, depth, maxSymbols) {
+    const related = new Map();
+    const visited = new Set();
+    // BFS to find related symbols up to depth
+    const queue = [{ id: symbolId, distance: 0 }];
+    while (queue.length > 0) {
+        const current = queue.shift();
+        if (current.distance > depth || visited.has(current.id))
+            continue;
+        visited.add(current.id);
+        const relationships = graph.bySymbol[current.id] || [];
+        for (const rel of relationships) {
+            if (rel.symbolId === rel.targetId)
+                continue; // Skip self
+            if (!related.has(rel.targetId) || related.get(rel.targetId) > current.distance + 1) {
+                related.set(rel.targetId, current.distance + 1);
+            }
+            if (current.distance < depth) {
+                queue.push({ id: rel.targetId, distance: current.distance + 1 });
+            }
+        }
+    }
+    // Convert to array with symbol info
+    const result = [];
+    for (const [id, distance] of related) {
+        const sym = graph.symbols.find(s => s.id === id);
+        if (sym) {
+            result.push({
+                id: sym.id,
+                name: sym.name,
+                type: sym.type,
+                file: sym.file,
+                line: sym.line,
+                distance,
+            });
+        }
+    }
+    // Sort by distance
+    result.sort((a, b) => a.distance - b.distance);
+    return result;
+}
+/**
+ * Get file neighbors (other files in same module or related modules)
+ */
+function getFileNeighbors(filePath, fileIndex, graph) {
+    if (!fileIndex)
+        return [];
+    const neighbors = [];
+    const module = filePath.split('/')[0];
+    // Find files in same module
+    for (const [otherFile, data] of Object.entries(fileIndex)) {
+        if (otherFile === filePath)
+            continue;
+        if (data.module === module) {
+            neighbors.push({
+                file: otherFile,
+                symbols: data.symbols,
+                relationship: "same-module",
+            });
+        }
+    }
+    return neighbors.slice(0, 10); // Limit to 10 neighbors
+}
+/**
+ * Get source code snippet
+ */
+function getSourceCode(filePath, lineNum, rootDir) {
+    let fullSource = "";
+    let snippet = "";
+    try {
+        const fullPath = path.isAbsolute(filePath) ? filePath : path.join(rootDir || "", filePath);
+        if (fs.existsSync(fullPath)) {
+            fullSource = readFile(fullPath);
+            const lines = fullSource.split("\n");
+            if (lineNum) {
+                // Get context around the symbol
+                const startLine = Math.max(0, lineNum - 10);
+                const endLine = Math.min(lines.length, lineNum + 10);
+                snippet = lines.slice(startLine, endLine).map((line, i) => `${startLine + i + 1}: ${line}`).join("\n");
+            }
+            else {
+                // Return first 50 lines
+                snippet = lines.slice(0, 50).join("\n");
+            }
+        }
+    }
+    catch {
+        snippet = "[Source code not available]";
+    }
+    return { snippet, fullSource };
+}
+/**
+ * Calculate relevance score
+ */
+function calculateRelevance(symbol, relationships, callers, relatedSymbols) {
+    let score = 0;
+    // Base score for exported symbols
+    if (symbol.type === "export")
+        score += 10;
+    // More callers = higher score
+    score += callers.length * 5;
+    // More relationships = higher score
+    score += relationships.length * 2;
+    // Closer related symbols = higher score
+    for (const rel of relatedSymbols) {
+        score += Math.max(0, 10 - rel.distance);
+    }
+    return Math.round(score);
 }
 /**
  * Generate human-readable summary
  */
-function generateSummary(symbol, callsCount, calledByCount, importsCount, relatedCount) {
+function generateSummary(symbol, relsByType, callersCount, relatedCount) {
     const parts = [];
-    parts.push(`**${symbol.name}** is a ${symbol.type} defined as \`${symbol.id}\`.`);
-    if (callsCount > 0) {
-        parts.push(`It calls ${callsCount} other symbol${callsCount > 1 ? 's' : ''}.`);
+    parts.push(`**${symbol.name}** (${symbol.type}) defined as \`${symbol.id}\`.`);
+    if (relsByType.calls.length > 0) {
+        parts.push(`Calls ${relsByType.calls.length} symbol${relsByType.calls.length > 1 ? 's' : ''}.`);
     }
-    if (calledByCount > 0) {
-        parts.push(`It is called by ${calledByCount} other symbol${calledByCount > 1 ? 's' : ''}.`);
+    if (callersCount > 0) {
+        parts.push(`Called by ${callersCount} symbol${callersCount > 1 ? 's' : ''}.`);
     }
-    if (importsCount > 0) {
-        parts.push(`It imports ${importsCount} module${importsCount > 1 ? 's' : ''}.`);
+    if (relsByType.imports.length > 0) {
+        parts.push(`Imports ${relsByType.imports.length} module${relsByType.imports.length > 1 ? 's' : ''}.`);
+    }
+    if (relsByType.instantiates?.length) {
+        parts.push(`Instantiates ${relsByType.instantiates.length} class${relsByType.instantiates.length > 1 ? 'es' : ''}.`);
+    }
+    if (relsByType.extends?.length) {
+        parts.push(`Extends ${relsByType.extends.length} class.`);
+    }
+    if (relsByType.implements?.length) {
+        parts.push(`Implements ${relsByType.implements.length} interface.`);
     }
     if (relatedCount > 0) {
-        parts.push(`There are ${relatedCount} related symbols in the graph.`);
+        parts.push(`${relatedCount} related symbols in graph.`);
     }
     return parts.join(" ");
 }
 /**
+ * Format as markdown
+ */
+function formatAsMarkdown(packet) {
+    let md = `# ${packet.symbol.name}\n\n`;
+    md += `**Type:** ${packet.symbol.type} | **Module:** ${packet.module} | **File:** ${packet.symbol.file}:${packet.symbol.line || '?'}\n\n`;
+    md += `**Relevance Score:** ${packet.relevanceScore || 0}\n\n`;
+    md += `---\n\n`;
+    md += `## Summary\n\n${packet.summary}\n\n`;
+    md += `---\n\n`;
+    md += `## Source Code\n\n\`\`\`\n${packet.snippet}\n\`\`\`\n\n`;
+    if (packet.relationships.calls.length > 0) {
+        md += `---\n\n## Calls\n\n`;
+        for (const call of packet.relationships.calls) {
+            md += `- ${call}\n`;
+        }
+        md += "\n";
+    }
+    if (packet.callers.length > 0) {
+        md += `---\n\n## Called By\n\n`;
+        for (const caller of packet.callers) {
+            md += `- ${caller}\n`;
+        }
+        md += "\n";
+    }
+    if (packet.relatedSymbols.length > 0) {
+        md += `---\n\n## Related Symbols\n\n`;
+        for (const sym of packet.relatedSymbols.slice(0, 20)) {
+            md += `- ${sym.id} (${sym.type}, distance: ${sym.distance})\n`;
+        }
+        md += "\n";
+    }
+    return md;
+}
+/**
+ * Format as plain text
+ */
+function formatAsText(packet) {
+    let text = `${packet.symbol.name} (${packet.symbol.type})\n`;
+    text += `${"=".repeat(packet.symbol.name.length + 4)}\n\n`;
+    text += `ID: ${packet.symbol.id}\n`;
+    text += `File: ${packet.symbol.file}:${packet.symbol.line || '?'}\n`;
+    text += `Module: ${packet.module}\n`;
+    text += `Score: ${packet.relevanceScore || 0}\n\n`;
+    text += `SUMMARY: ${packet.summary}\n\n`;
+    text += `SOURCE:\n${packet.snippet}\n`;
+    return text;
+}
+/**
  * Save context packet to file
  */
-export function saveContextPacket(packet, aiDir) {
+export function saveContextPacket(packet, aiDir, format = "json") {
     const contextDir = path.join(aiDir, "context");
-    // Ensure context directory exists
     if (!fs.existsSync(contextDir)) {
         fs.mkdirSync(contextDir, { recursive: true });
     }
-    // Create safe filename from symbol ID
-    const safeName = packet.symbol.id.replace(/[^a-zA-Z0-9._-]/g, "_");
-    const filePath = path.join(contextDir, `${safeName}.json`);
-    fs.writeFileSync(filePath, JSON.stringify(packet, null, 2));
+    const safeName = packet.symbol.id.replace(/[^a-zA-Z0-9.#_-]/g, "_");
+    const ext = format === "markdown" ? "md" : format === "text" ? "txt" : "json";
+    const filePath = path.join(contextDir, `${safeName}.${ext}`);
+    let content;
+    if (format === "markdown") {
+        content = formatAsMarkdown(packet);
+    }
+    else if (format === "text") {
+        content = formatAsText(packet);
+    }
+    else {
+        content = JSON.stringify(packet, null, 2);
+    }
+    fs.writeFileSync(filePath, content);
     return filePath;
 }
 /**
@@ -132,14 +328,14 @@ export function listContextPackets(aiDir) {
         return [];
     }
     return fs.readdirSync(contextDir)
-        .filter(f => f.endsWith(".json"))
-        .map(f => f.replace(".json", ""));
+        .filter(f => f.endsWith(".json") || f.endsWith(".md") || f.endsWith(".txt"))
+        .map(f => f.replace(/\.(json|md|txt)$/, ""));
 }
 /**
  * Load a context packet from file
  */
 export function loadContextPacket(symbolId, aiDir) {
-    const safeName = symbolId.replace(/[^a-zA-Z0-9._-]/g, "_");
+    const safeName = symbolId.replace(/[^a-zA-Z0-9.#_-]/g, "_");
     const filePath = path.join(aiDir, "context", `${safeName}.json`);
     if (!fs.existsSync(filePath)) {
         return null;

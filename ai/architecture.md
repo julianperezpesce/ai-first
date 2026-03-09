@@ -10,22 +10,22 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `.github` | Contains 1 files |
+| `.netlify` | Contains 1 files |
 | `CHANGELOG.md` | Contains 0 files |
 | `CONTRIBUTING.md` | Contains 0 files |
 | `FLOW.md` | Contains 0 files |
 | `README.es.md` | Contains 0 files |
 | `README.md` | Contains 0 files |
-| `ai` | Contains 13 files |
-| `docs` | Contains 4 files |
+| `ai` | Contains 21 files |
+| `docs` | Contains 15 files |
 | `examples` | Contains 4 files |
 | `package-lock.json` | Contains 0 files |
 
 
 ## Module Details
 
-### .github
-- **Path**: `.github`
+### .netlify
+- **Path**: `.netlify`
 - **Responsibility**: Contains 1 files
 
 
@@ -56,12 +56,12 @@
 
 ### ai
 - **Path**: `ai`
-- **Responsibility**: Contains 13 files
+- **Responsibility**: Contains 21 files
 
 
 ### docs
 - **Path**: `docs`
-- **Responsibility**: Contains 4 files
+- **Responsibility**: Contains 15 files
 
 
 ### examples
@@ -81,7 +81,7 @@
 
 ### src
 - **Path**: `src`
-- **Responsibility**: Contains 20 files
+- **Responsibility**: Contains 25 files
 
 
 ### tsconfig.json

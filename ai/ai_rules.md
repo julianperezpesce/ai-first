@@ -6,8 +6,8 @@
 
 ## Guidelines
 
-- Language: Use YAML, Markdown, JSON, TypeScript
-- Frameworks: TypeScript
+- Language: Use JSON, Markdown, TypeScript, CSS
+- Frameworks: Vue.js, Nuxt.js, TypeScript
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
 - Source directory: src/
@@ -29,8 +29,8 @@
 
 | Category | Value |
 |----------|-------|
-| Language | YAML, Markdown, JSON, TypeScript |
-| Framework | TypeScript |
+| Language | JSON, Markdown, TypeScript, CSS |
+| Framework | Vue.js, Nuxt.js, TypeScript |
 | Architecture | Flat / Simple Structure |
 | Naming | PascalCase |
 | Indentation | unknown |

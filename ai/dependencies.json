@@ -1,7 +1,42 @@
 {
-  "totalDependencies": 151,
-  "totalModules": 18,
+  "totalDependencies": 204,
+  "totalModules": 25,
   "dependencies": [
+    {
+      "source": "docs/.vitepress/config.ts",
+      "target": "vitepress",
+      "type": "import"
+    },
+    {
+      "source": "docs/.vitepress/config.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "docs/.vitepress/config.ts",
+      "target": "vitepress",
+      "type": "import"
+    },
+    {
+      "source": "docs/.vitepress/config.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "docs/.vitepress/theme/index.ts",
+      "target": "vitepress/theme",
+      "type": "import"
+    },
+    {
+      "source": "docs/.vitepress/theme/index.ts",
+      "target": "docs/.vitepress/theme/./custom.css/index",
+      "type": "import"
+    },
+    {
+      "source": "docs/.vitepress/theme/index.ts",
+      "target": "vitepress/theme",
+      "type": "import"
+    },
     {
       "source": "src/analyzers/aiRules.ts",
       "target": "src/analyzers/../core/repoScanner.js",
@@ -339,6 +374,21 @@
     },
     {
       "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/indexState.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/chunker.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/embeddings.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
       "target": "src/commands/./doctor.js",
       "type": "import"
     },
@@ -439,6 +489,21 @@
     },
     {
       "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/indexState.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/chunker.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/embeddings.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
       "target": "src/commands/./doctor.js",
       "type": "import"
     },
@@ -558,6 +623,26 @@
       "type": "import"
     },
     {
+      "source": "src/core/chunker.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/chunker.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/chunker.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/chunker.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
       "source": "src/core/contextGenerator.ts",
       "target": "fs",
       "type": "import"
@@ -588,6 +673,96 @@
       "type": "import"
     },
     {
+      "source": "src/core/contextPacket.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/contextPacket.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/contextPacket.ts",
+      "target": "src/core/./symbolGraph.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/contextPacket.ts",
+      "target": "src/core/../analyzers/symbols.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/contextPacket.ts",
+      "target": "src/core/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/contextPacket.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/contextPacket.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/contextPacket.ts",
+      "target": "src/core/./symbolGraph.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/contextPacket.ts",
+      "target": "src/core/../analyzers/symbols.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/contextPacket.ts",
+      "target": "src/core/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/embeddings.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/embeddings.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/embeddings.ts",
+      "target": "crypto",
+      "type": "import"
+    },
+    {
+      "source": "src/core/embeddings.ts",
+      "target": "src/core/./chunker.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/embeddings.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/embeddings.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/embeddings.ts",
+      "target": "crypto",
+      "type": "import"
+    },
+    {
+      "source": "src/core/embeddings.ts",
+      "target": "src/core/./chunker.js",
+      "type": "import"
+    },
+    {
       "source": "src/core/hierarchyGenerator.ts",
       "target": "fs",
       "type": "import"
@@ -615,6 +790,36 @@
     {
       "source": "src/core/hierarchyGenerator.ts",
       "target": "src/core/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexState.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexState.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexState.ts",
+      "target": "crypto",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexState.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexState.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexState.ts",
+      "target": "crypto",
       "type": "import"
     },
     {
@@ -734,6 +939,66 @@
     },
     {
       "source": "src/core/repoScanner.ts",
+      "target": "src/core/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "src/core/./repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "src/core/../analyzers/symbols.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "src/core/../analyzers/dependencies.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "src/core/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "src/core/./repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "src/core/../analyzers/symbols.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "src/core/../analyzers/dependencies.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
       "target": "src/core/../utils/fileUtils.js",
       "type": "import"
     },
@@ -759,6 +1024,17 @@
     }
   ],
   "byFile": {
+    "docs/.vitepress/config.ts": [
+      "vitepress",
+      "path",
+      "vitepress",
+      "path"
+    ],
+    "docs/.vitepress/theme/index.ts": [
+      "vitepress/theme",
+      "docs/.vitepress/theme/./custom.css/index",
+      "vitepress/theme"
+    ],
     "src/analyzers/aiRules.ts": [
       "src/analyzers/../core/repoScanner.js",
       "src/analyzers/./conventions.js",
@@ -841,6 +1117,9 @@
       "src/commands/../analyzers/dependencies.js",
       "src/commands/../analyzers/aiRules.js",
       "src/commands/../core/moduleGraph.js",
+      "src/commands/../core/indexState.js",
+      "src/commands/../core/chunker.js",
+      "src/commands/../core/embeddings.js",
       "src/commands/./doctor.js",
       "src/commands/./explore.js",
       "fs",
@@ -861,6 +1140,9 @@
       "src/commands/../analyzers/dependencies.js",
       "src/commands/../analyzers/aiRules.js",
       "src/commands/../core/moduleGraph.js",
+      "src/commands/../core/indexState.js",
+      "src/commands/../core/chunker.js",
+      "src/commands/../core/embeddings.js",
       "src/commands/./doctor.js",
       "src/commands/./explore.js"
     ],
@@ -892,6 +1174,12 @@
       "src/core/./repoScanner.js",
       "src/core/../utils/fileUtils.js"
     ],
+    "src/core/chunker.ts": [
+      "fs",
+      "path",
+      "fs",
+      "path"
+    ],
     "src/core/contextGenerator.ts": [
       "fs",
       "path",
@@ -900,6 +1188,28 @@
       "path",
       "url"
     ],
+    "src/core/contextPacket.ts": [
+      "fs",
+      "path",
+      "src/core/./symbolGraph.js",
+      "src/core/../analyzers/symbols.js",
+      "src/core/../utils/fileUtils.js",
+      "fs",
+      "path",
+      "src/core/./symbolGraph.js",
+      "src/core/../analyzers/symbols.js",
+      "src/core/../utils/fileUtils.js"
+    ],
+    "src/core/embeddings.ts": [
+      "fs",
+      "path",
+      "crypto",
+      "src/core/./chunker.js",
+      "fs",
+      "path",
+      "crypto",
+      "src/core/./chunker.js"
+    ],
     "src/core/hierarchyGenerator.ts": [
       "fs",
       "path",
@@ -907,6 +1217,14 @@
       "fs",
       "path",
       "src/core/../utils/fileUtils.js"
+    ],
+    "src/core/indexState.ts": [
+      "fs",
+      "path",
+      "crypto",
+      "fs",
+      "path",
+      "crypto"
     ],
     "src/core/indexer.ts": [
       "sql.js",
@@ -938,6 +1256,20 @@
     ],
     "src/core/repoScanner.ts": [
       "src/core/../utils/fileUtils.js",
+      "src/core/../utils/fileUtils.js"
+    ],
+    "src/core/symbolGraph.ts": [
+      "fs",
+      "path",
+      "src/core/./repoScanner.js",
+      "src/core/../analyzers/symbols.js",
+      "src/core/../analyzers/dependencies.js",
+      "src/core/../utils/fileUtils.js",
+      "fs",
+      "path",
+      "src/core/./repoScanner.js",
+      "src/core/../analyzers/symbols.js",
+      "src/core/../analyzers/dependencies.js",
       "src/core/../utils/fileUtils.js"
     ],
     "src/utils/fileUtils.ts": [

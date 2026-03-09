@@ -1,18 +1,20 @@
 # Technology Stack
 
-**Languages**: YAML, Markdown, JSON, TypeScript
+**Languages**: JSON, Markdown, TypeScript, CSS
 
-**Frameworks**: TypeScript
+**Frameworks**: Vue.js, Nuxt.js, TypeScript
 
 **Package Managers**: npm
 
 ## Languages
-- YAML
-- Markdown
 - JSON
+- Markdown
 - TypeScript
+- CSS
 
 ## Frameworks
+- Vue.js
+- Nuxt.js
 - TypeScript
 
 ## Key Libraries

@@ -1,18 +1,29 @@
 {
   "modules": {
-    ".github": {
-      "path": ".github",
+    ".netlify": {
+      "path": ".netlify",
       "files": [
-        ".github/workflows/changelog.yml"
+        ".netlify/state.json"
       ]
     },
     "docs": {
       "path": "docs",
       "files": [
-        "docs/architecture.md",
-        "docs/spec.md",
-        "docs/user-guide.es.md",
-        "docs/user-guide.md"
+        "docs/.vitepress/config.ts",
+        "docs/.vitepress/theme/custom.css",
+        "docs/.vitepress/theme/index.ts",
+        "docs/es/guide/getting-started.md",
+        "docs/es/index.md",
+        "docs/examples/express-api.md",
+        "docs/examples/index.md",
+        "docs/examples/python-django.md",
+        "docs/examples/react-app.md",
+        "docs/guide/architecture.md",
+        "docs/guide/getting-started.md",
+        "docs/guide/installation.md",
+        "docs/guide/quick-start.md",
+        "docs/index.md",
+        "docs/reference/commands.md"
       ]
     },
     "examples": {
@@ -38,12 +49,17 @@
         "src/commands/doctor.ts",
         "src/commands/explore.ts",
         "src/core/aiContextGenerator.ts",
+        "src/core/chunker.ts",
         "src/core/contextGenerator.ts",
+        "src/core/contextPacket.ts",
+        "src/core/embeddings.ts",
         "src/core/hierarchyGenerator.ts",
+        "src/core/indexState.ts",
         "src/core/indexer.ts",
         "src/core/moduleGraph.ts",
         "src/core/repoMapper.ts",
         "src/core/repoScanner.ts",
+        "src/core/symbolGraph.ts",
         "src/index.ts",
         "src/types/sql.js.d.ts",
         "src/utils/fileUtils.ts"

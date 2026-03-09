@@ -1,3 +1,4 @@
+export type OutputFormat = "json" | "markdown" | "text";
 export interface CodeContextPacket {
     symbol: {
         id: string;
@@ -6,13 +7,19 @@ export interface CodeContextPacket {
         file: string;
         line?: number;
         export?: boolean;
+        module?: string;
     };
-    sourceCode: string;
+    snippet: string;
+    fullSource?: string;
     relationships: {
         calls: string[];
         calledBy: string[];
         imports: string[];
         references: string[];
+        instantiates?: string[];
+        extends?: string[];
+        implements?: string[];
+        exports?: string[];
     };
     relatedSymbols: {
         id: string;
@@ -20,17 +27,31 @@ export interface CodeContextPacket {
         type: string;
         file: string;
         line?: number;
+        distance: number;
+    }[];
+    callers: string[];
+    module: string;
+    file: string;
+    fileNeighbors: {
+        file: string;
+        symbols: string[];
+        relationship: string;
     }[];
     summary: string;
+    relevanceScore?: number;
 }
 /**
- * Generate context packet for a specific symbol
+ * Generate context packet for a specific symbol with depth and ranking
  */
-export declare function generateContextPacket(symbolName: string, aiDir: string, rootDir: string): CodeContextPacket | null;
+export declare function generateContextPacket(symbolName: string, aiDir: string, rootDir: string, options?: {
+    depth?: number;
+    format?: OutputFormat;
+    maxSymbols?: number;
+}): CodeContextPacket | null;
 /**
  * Save context packet to file
  */
-export declare function saveContextPacket(packet: CodeContextPacket, aiDir: string): string;
+export declare function saveContextPacket(packet: CodeContextPacket, aiDir: string, format?: OutputFormat): string;
 /**
  * List all available context packets
  */

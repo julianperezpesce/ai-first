@@ -7,9 +7,9 @@
 ## Quick Overview
 
 - **Pattern**: Flat / Simple Structure
-- **Languages**: YAML, Markdown, JSON, TypeScript
-- **Frameworks**: TypeScript
-- **Total Files**: 50
+- **Languages**: JSON, Markdown, TypeScript, CSS
+- **Frameworks**: Vue.js, Nuxt.js, TypeScript
+- **Total Files**: 74
 
 ---
 
@@ -26,9 +26,9 @@
 
 ## Tech Stack
 
-**Languages**: YAML, Markdown, JSON, TypeScript
+**Languages**: JSON, Markdown, TypeScript, CSS
 
-**Frameworks**: TypeScript
+**Frameworks**: Vue.js, Nuxt.js, TypeScript
 
 **Package Managers**: npm
 
@@ -46,14 +46,14 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `.github` | Contains 1 files |
+| `.netlify` | Contains 1 files |
 | `CHANGELOG.md` | Contains 0 files |
 | `CONTRIBUTING.md` | Contains 0 files |
 | `FLOW.md` | Contains 0 files |
 | `README.es.md` | Contains 0 files |
 | `README.md` | Contains 0 files |
-| `ai` | Contains 13 files |
-| `docs` | Contains 4 files |
+| `ai` | Contains 21 files |
+| `docs` | Contains 15 files |
 | `examples` | Contains 4 files |
 | `package-lock.json` | Contains 0 files |
 
@@ -64,6 +64,7 @@
 
 ### Library
 - `dist/index.js` - Main entry point
+- `docs/.vitepress/theme/index.ts` - Entry point
 - `src/index.ts` - Entry point
 
 ### Cli
@@ -71,9 +72,11 @@
 
 ### Build
 - `package.json#scripts.build` - build: tsc
+- `package.json#scripts.docs:build` - docs:build: vitepress build docs
 
 ### Server
 - `package.json#scripts.dev` - dev: node --loader ts-node/esm src/commands/ai-first.ts
+- `package.json#scripts.docs:dev` - docs:dev: vitepress dev docs
 
 ---
 
@@ -93,8 +96,8 @@
 
 ## AI Rules
 
-- Language: Use YAML, Markdown, JSON, TypeScript
-- Frameworks: TypeScript
+- Language: Use JSON, Markdown, TypeScript, CSS
+- Frameworks: Vue.js, Nuxt.js, TypeScript
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
 - Source directory: src/

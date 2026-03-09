@@ -1,0 +1,301 @@
+{
+  "files": {
+    ".netlify/state.json": {
+      "hash": "18a32a19520dc577b2a8faa5a5b24660",
+      "mtime": 1773089671614.5596
+    },
+    "CHANGELOG.md": {
+      "hash": "5f579aa51da302b20d2d90bd18ea7d2d",
+      "mtime": 1773094964673.0017
+    },
+    "CONTRIBUTING.md": {
+      "hash": "f08bff9a750bbe18e8e2d20a291aea6b",
+      "mtime": 1773008956996.6243
+    },
+    "FLOW.md": {
+      "hash": "3229cb5aed9575b09415c641ffa24a81",
+      "mtime": 1773010195719.8748
+    },
+    "README.es.md": {
+      "hash": "95d68c130d31ecf04a4ca3db024fcaa0",
+      "mtime": 1773020194838.1672
+    },
+    "README.md": {
+      "hash": "fa0351db554837257913ed74e4e8fb35",
+      "mtime": 1773094365878.026
+    },
+    "ai/ai_context.md": {
+      "hash": "253cbb10a65490e44d3ae6ecb4414eac",
+      "mtime": 1773094184621.2178
+    },
+    "ai/ai_rules.md": {
+      "hash": "9db46ea950b6a0fc468fde147dadbd93",
+      "mtime": 1773094184621.2178
+    },
+    "ai/architecture.md": {
+      "hash": "ed874e37e6bb5911648fe6c63d2706da",
+      "mtime": 1773094184586.2173
+    },
+    "ai/context/analyzers.Symbol.json": {
+      "hash": "3f30543dd71a29a0ff3644e5a08f39cc",
+      "mtime": 1773094133874.432
+    },
+    "ai/context/analyzers.extractSymbols.json": {
+      "hash": "40b025c6995d41b312edfc28d329469e",
+      "mtime": 1773094127232.329
+    },
+    "ai/conventions.md": {
+      "hash": "cf36cf015f6c293ebf89ec2c7756bb57",
+      "mtime": 1773094184589.2173
+    },
+    "ai/dependencies.json": {
+      "hash": "62a5d9ecff94c1530c18690da263dbc8",
+      "mtime": 1773094184619.2178
+    },
+    "ai/embeddings.json": {
+      "hash": "26a10d77ee69ae123cc71fee255587c7",
+      "mtime": 1773074029679.9358
+    },
+    "ai/entrypoints.md": {
+      "hash": "656b4b5ac7bc92ad7878efa8190eec57",
+      "mtime": 1773094184588.2173
+    },
+    "ai/files.json": {
+      "hash": "1315ffad7627c81e5ef5d46637ac5e82",
+      "mtime": 1773095750159.667
+    },
+    "ai/graph/module-graph.json": {
+      "hash": "0d94a0d375b733b1d5df9daab5f0eb09",
+      "mtime": 1773095750091.6658
+    },
+    "ai/graph/symbol-graph.json": {
+      "hash": "47789fe155c1782cc2a64edc72d1542f",
+      "mtime": 1773095750156.667
+    },
+    "ai/hierarchy.json": {
+      "hash": "6acd89feb85aa3b73608b4a076062f5a",
+      "mtime": 1773016139926.8276
+    },
+    "ai/index-state.json": {
+      "hash": "1127124c7625ad31df6cb59bdf101d6b",
+      "mtime": 1773072404566.248
+    },
+    "ai/modules.json": {
+      "hash": "89b43f1d38cde0e0965aecc2da64b7f3",
+      "mtime": 1773095750079.6658
+    },
+    "ai/repo-map.json": {
+      "hash": "be1d2ca5badb9a8a7d0a26e130b5d5aa",
+      "mtime": 1773095750080.6658
+    },
+    "ai/repo_map.json": {
+      "hash": "be49ec38b82dc09893c859ad71f7539f",
+      "mtime": 1773094184584.2173
+    },
+    "ai/repo_map.md": {
+      "hash": "2f9d1db6511171b6511b6531e4315d65",
+      "mtime": 1773094184583.2173
+    },
+    "ai/summary.md": {
+      "hash": "e4f4cd9b352537249a489f46c9f79897",
+      "mtime": 1773094184585.2173
+    },
+    "ai/symbols.json": {
+      "hash": "3d664a06e522e0c81fdb7d7de0b22b58",
+      "mtime": 1773094184614.2178
+    },
+    "ai/tech_stack.md": {
+      "hash": "00ba0b64188ca72ae0b3250ba7b2188f",
+      "mtime": 1773094184587.2173
+    },
+    "docs/.vitepress/config.ts": {
+      "hash": "6c53efc8669f87bc9040096b96847be3",
+      "mtime": 1773090332406.6528
+    },
+    "docs/.vitepress/theme/custom.css": {
+      "hash": "924287015c3c64819e66cdfc0f24fa46",
+      "mtime": 1773076171344.3733
+    },
+    "docs/.vitepress/theme/index.ts": {
+      "hash": "a9a72e0000dd7687fd2d899d79e4aee0",
+      "mtime": 1773076127580.8638
+    },
+    "docs/es/guide/getting-started.md": {
+      "hash": "c446f6957beff061b7b41b0ccef510e2",
+      "mtime": 1773090370625.2866
+    },
+    "docs/es/index.md": {
+      "hash": "920ea9e39b01a04495d68306c26d2fe9",
+      "mtime": 1773090256493.4934
+    },
+    "docs/examples/express-api.md": {
+      "hash": "54af0d58910939c041d98437a73cf231",
+      "mtime": 1773076482605.2854
+    },
+    "docs/examples/index.md": {
+      "hash": "67f774e8e8b170d44b51cfcfff9ecdd7",
+      "mtime": 1773076421849.489
+    },
+    "docs/examples/python-django.md": {
+      "hash": "a57217d9a4a0eba7e6750caf75b86aae",
+      "mtime": 1773076518221.758
+    },
+    "docs/examples/react-app.md": {
+      "hash": "c3ae0d56ab0de03f6957a2c3685e2a10",
+      "mtime": 1773076494650.4448
+    },
+    "docs/guide/architecture.md": {
+      "hash": "33d1a686af99e4b4eedbd2508547adde",
+      "mtime": 1773076261345.457
+    },
+    "docs/guide/getting-started.md": {
+      "hash": "b783c85c32dc67ffa2133915b5cd93fb",
+      "mtime": 1773076199524.7075
+    },
+    "docs/guide/installation.md": {
+      "hash": "7926dceb824c696ff79bc357aee27580",
+      "mtime": 1773076224028.002
+    },
+    "docs/guide/quick-start.md": {
+      "hash": "dfa4c6196895c98b84845c138182dae6",
+      "mtime": 1773076244371.249
+    },
+    "docs/index.md": {
+      "hash": "9032437ec565b4935df406022143d2ae",
+      "mtime": 1773089168385.8672
+    },
+    "docs/reference/commands.md": {
+      "hash": "d7a5af304800601a765372b68a07d30c",
+      "mtime": 1773076271511.582
+    },
+    "examples/01-express-api.md": {
+      "hash": "54af0d58910939c041d98437a73cf231",
+      "mtime": 1773014837445.3228
+    },
+    "examples/02-react-app.md": {
+      "hash": "2f1948bf3765228b37697f9f48d37b79",
+      "mtime": 1773014866555.722
+    },
+    "examples/03-python-django.md": {
+      "hash": "fccd23e390a3d29d7d0d5d34a14d8cf3",
+      "mtime": 1773014902647.2178
+    },
+    "examples/README.md": {
+      "hash": "4e8a85046bacda16352b5dff84e3ffe4",
+      "mtime": 1773014931866.6204
+    },
+    "package-lock.json": {
+      "hash": "52220838924486c8aa10ed329be1adf5",
+      "mtime": 1773083490249.47
+    },
+    "package.json": {
+      "hash": "322da667b132a7718f51c0c85cc104f2",
+      "mtime": 1773094377054.1992
+    },
+    "src/analyzers/aiRules.ts": {
+      "hash": "3213f98ebd24246dd24b2c39f696bd14",
+      "mtime": 1773009335276.8303
+    },
+    "src/analyzers/architecture.ts": {
+      "hash": "263e2e84afa0800cd4e95820f7d5aacb",
+      "mtime": 1773007837808.1536
+    },
+    "src/analyzers/conventions.ts": {
+      "hash": "887a991db6e0b9d658046b81cbe719b6",
+      "mtime": 1773008352611.8462
+    },
+    "src/analyzers/dependencies.ts": {
+      "hash": "379b8d64e2ee791aabc15bd0866cb051",
+      "mtime": 1773009309183.553
+    },
+    "src/analyzers/entrypoints.ts": {
+      "hash": "50926ed23cb1e209241bb61e42dfd2a4",
+      "mtime": 1773008283762.7117
+    },
+    "src/analyzers/symbols.ts": {
+      "hash": "47b731c0e9bd4757b6aab646de5249ed",
+      "mtime": 1773095734207.4124
+    },
+    "src/analyzers/techStack.ts": {
+      "hash": "04e93c888be500a6f8a6138aa36d8718",
+      "mtime": 1773008085718.408
+    },
+    "src/commands/ai-first.ts": {
+      "hash": "9449d944df5cf62c1f9155e1f3557b03",
+      "mtime": 1773095632152.7827
+    },
+    "src/commands/doctor.ts": {
+      "hash": "bf877242c2777a92c2c13c6f20952d63",
+      "mtime": 1773072336100.912
+    },
+    "src/commands/explore.ts": {
+      "hash": "684e64267e90e13ff9ae7a7a87deaa5d",
+      "mtime": 1773071610359.5925
+    },
+    "src/core/aiContextGenerator.ts": {
+      "hash": "c520cef1f061e0f8517734b30957b947",
+      "mtime": 1773013859071.9048
+    },
+    "src/core/chunker.ts": {
+      "hash": "7f53952952c9d801672a5a6ad729e7d5",
+      "mtime": 1773073665099.1428
+    },
+    "src/core/contextGenerator.ts": {
+      "hash": "0e3c3077c006ce8092c64f0232f750c0",
+      "mtime": 1773006174980.9766
+    },
+    "src/core/contextPacket.ts": {
+      "hash": "0febc90214d77fc907e412222f94e6c1",
+      "mtime": 1773095515712.9194
+    },
+    "src/core/embeddings.ts": {
+      "hash": "ce1769d7adec0510a295672f69a8ba41",
+      "mtime": 1773073766382.3613
+    },
+    "src/core/hierarchyGenerator.ts": {
+      "hash": "c83b44b554d5aab8759f6a4807985a24",
+      "mtime": 1773016072837.5437
+    },
+    "src/core/indexState.ts": {
+      "hash": "412559800f738abb82e28c9eb71f8a6c",
+      "mtime": 1773073382179.3071
+    },
+    "src/core/indexer.ts": {
+      "hash": "6e5b002d8661cf176d236b2e362db46c",
+      "mtime": 1773012050361.3564
+    },
+    "src/core/moduleGraph.ts": {
+      "hash": "0bf6db06febcf2f929d92fdf569d753b",
+      "mtime": 1773071610359.6934
+    },
+    "src/core/repoMapper.ts": {
+      "hash": "2b5a86b04f99bcbfaa6b29291857a0d4",
+      "mtime": 1773005052293.012
+    },
+    "src/core/repoScanner.ts": {
+      "hash": "78c4baf429b8365b779d779faec6c6f2",
+      "mtime": 1773004069943.8745
+    },
+    "src/core/symbolGraph.ts": {
+      "hash": "2ed7da22206f2833ab0766b144e82f6b",
+      "mtime": 1773095424570.4573
+    },
+    "src/index.ts": {
+      "hash": "f79ef17442d3a4a7a0288a646e2b21b0",
+      "mtime": 1773069735666.7573
+    },
+    "src/types/sql.js.d.ts": {
+      "hash": "5b68823eaec8a56784c956075d1954ce",
+      "mtime": 1773010637558.1929
+    },
+    "src/utils/fileUtils.ts": {
+      "hash": "0f8b254e80a30b65d71ba40798fbcd3f",
+      "mtime": 1773007816979.788
+    },
+    "tsconfig.json": {
+      "hash": "7f7a4bcb349bfbd33e1550e0b02d501b",
+      "mtime": 1773004002782.7
+    }
+  },
+  "lastIndexed": "2026-03-09T22:35:50.161Z"
+}
