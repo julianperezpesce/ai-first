@@ -8,6 +8,9 @@ on:
       - 'dist/**'
       - 'package.json'
 
+permissions:
+  contents: write
+
 jobs:
   update-changelog:
     runs-on: ubuntu-latest
@@ -63,3 +66,5 @@ jobs:
         if: steps.changelog.outputs.changed == 'true'
         run: |
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
