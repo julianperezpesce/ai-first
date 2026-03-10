@@ -209,4 +209,72 @@ AI-First is designed to be extensible:
 
 - Add new analyzers in `src/analyzers/`
 - Custom rules in `ai_rules.md`
-- Configuration file support (planned)
+---
+
+## Feature Detection (`src/core/semanticContexts.ts`)
+
+AI-First automatically detects business features and flows from your codebase structure.
+
+### Feature Detection Rules
+
+**1. Candidate Roots**
+
+Features are scanned inside:
+- `src/*`
+- `app/*`
+- `packages/*`
+- `services/*`
+- `modules/*`
+- `features/*`
+
+**2. Ignored Folders**
+
+Technical folders are excluded:
+- `utils`, `helpers`, `types`, `interfaces`, `constants`
+- `config`, `dto`, `models`, `common`, `shared`
+
+**3. Feature Requirements**
+
+A valid feature must:
+- Contain at least 3 source files
+- Contain at least one entrypoint (Controller, Route, Handler, Command, Service)
+- Exist at depth 1 or 2: `src/auth`, `src/modules/auth`
+
+### Feature Output Format
+
+```json
+{
+  "name": "auth",
+  "path": "src/auth",
+  "files": [
+    "src/auth/authController.ts",
+    "src/auth/authService.ts",
+    "src/auth/authRepository.ts"
+  ],
+  "entrypoints": [
+    "src/auth/authController.ts"
+  ],
+  "dependencies": ["users", "payments"]
+}
+```
+
+### Flow Detection
+
+Flows represent business execution chains starting from entrypoints:
+
+- **Minimum 3 files** per flow
+- **Minimum 2 architectural layers** (api → service → data)
+- Entry points: Controller, Route, Handler, Command
+
+Flows are generated using three fallback methods:
+1. **Symbol Graph** - Uses call/import relationships
+2. **Folder Structure** - Groups by feature prefix
+3. **Import Analysis** - Follows dependency chains
+
+### Output Location
+
+Features and flows are written to:
+```
+ai/context/features/<feature>.json
+ai/context/flows/<flow>.json
+```

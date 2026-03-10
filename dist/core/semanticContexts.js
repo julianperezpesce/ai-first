@@ -1,237 +1,454 @@
 import fs from "fs";
 import path from "path";
 import { ensureDir, writeFile, readJsonFile } from "../utils/fileUtils.js";
-const FEATURE_ROOTS = ["src", "app", "packages", "features", "lib", "modules", "core"];
-const LAYER_ROOTS = ["api", "services", "controllers", "handlers", "data", "repository", "repositories"];
-const EXCLUDED = new Set(["utils", "helpers", "types", "interfaces", "constants", "config", "dto", "models", "common", "node_modules", ".git", "dist", "build", "coverage", "__tests__", "test", "tests", ".next", ".nuxt"]);
-const CONTAINER = new Set(["modules", "lib", "core", "shared", "layouts", "pages", "components"]);
-const ENTRY_PATS = ["controller", "route", "handler", "command", "service", "router", "api", "endpoint"];
-const FLOW_ENTRY_PATS = ["controller", "route", "handler", "command"];
-const FLOW_EXCLUDE = ["repository", "repo", "utils", "helper", "model", "entity", "dto", "type", "interface", "constant", "config"];
-const MAX_DEPTH = 5, MAX_FILES = 30;
-const LAYER_PRIORITY = {
-    api: 1, controller: 1, handler: 1, route: 1, router: 1, service: 2, usecase: 2, interactor: 2,
-    data: 3, repository: 3, repo: 3, dal: 3, dao: 3, persistence: 3, model: 4, entity: 4, domain: 4,
+// ============================================================
+// CONFIGURATION - Feature Detection Rules
+// ============================================================
+// 1. Candidate roots - scan inside these directories
+const CANDIDATE_ROOTS = ["src", "app", "packages", "services", "modules", "features"];
+// 2. Ignore folders - these are technical, not business features
+const IGNORED_FOLDERS = new Set([
+    "utils",
+    "helpers",
+    "types",
+    "interfaces",
+    "constants",
+    "config",
+    "dto",
+    "models",
+    "common",
+    "shared"
+]);
+// 3. Entrypoint patterns - files that indicate a business feature
+const ENTRYPOINT_PATTERNS = [
+    "controller",
+    "route",
+    "handler",
+    "command",
+    "service"
+];
+// 4. Flow-specific patterns
+const FLOW_ENTRY_PATTERNS = ["controller", "route", "handler", "command"];
+// 5. Flow exclusion patterns
+const FLOW_EXCLUDE = new Set([
+    "repository", "repo", "utils", "helper", "model", "entity",
+    "dto", "type", "interface", "constant", "config"
+]);
+// 6. Layer detection
+const LAYER_PATTERNS = {
+    api: ["controller", "handler", "route", "router", "api", "endpoint"],
+    service: ["service", "services", "usecase", "interactor"],
+    data: ["repository", "repo", "dal", "dao", "data", "persistence"],
+    domain: ["model", "entity", "schema", "domain"],
+    util: ["util", "helper", "lib", "common"]
 };
-function isSrc(f) { const e = path.extname(f).toLowerCase(); return [".ts", ".tsx", ".js", ".jsx", ".py", ".java", ".kt", ".go", ".rs", ".rb", ".php", ".cs", ".vue", ".svelte"].includes(e); }
-function isEntry(f) { return ENTRY_PATS.some(p => path.basename(f).toLowerCase().includes(p)); }
-function isFlowEntry(f) { return FLOW_ENTRY_PATS.some(p => path.basename(f).toLowerCase().includes(p)); }
-function isExcl(f) { return EXCLUDED.has(f.toLowerCase()); }
-function isExclFlow(f) { const l = f.toLowerCase(); return FLOW_EXCLUDE.some(p => l.includes("/" + p) || l.includes("\\" + p)); }
-function getLayer(f) {
-    const p = f.split(/[/\\]/).map(s => s.toLowerCase().replace(/\.(ts|js|tsx|jsx)$/, ""));
-    if (p.some(s => ["controller", "handler", "route", "router", "api", "endpoint"].includes(s)))
-        return "api";
-    if (p.some(s => ["service", "services", "usecase", "interactor"].includes(s)))
-        return "service";
-    if (p.some(s => ["repository", "repo", "dal", "dao", "data", "persistence"].includes(s)))
-        return "data";
-    if (p.some(s => ["model", "entity", "schema", "domain"].includes(s)))
-        return "domain";
-    if (p.some(s => ["util", "helper", "lib", "common"].includes(s)))
-        return "util";
+const LAYER_PRIORITY = {
+    api: 1, controller: 1, handler: 1, route: 1, router: 1,
+    service: 2, usecase: 2, interactor: 2,
+    data: 3, repository: 3, repo: 3, dal: 3, dao: 3, persistence: 3,
+    model: 4, entity: 4, domain: 4,
+};
+const MAX_FLOW_DEPTH = 5;
+const MAX_FLOW_FILES = 30;
+// Supported source file extensions
+const SOURCE_EXTENSIONS = new Set([
+    ".ts", ".tsx", ".js", ".jsx", ".py", ".java", ".kt", ".go", ".rs", ".rb", ".php", ".cs", ".vue", ".svelte"
+]);
+// ============================================================
+// HELPER FUNCTIONS
+// ============================================================
+function isSourceFile(filePath) {
+    const ext = path.extname(filePath).toLowerCase();
+    return SOURCE_EXTENSIONS.has(ext);
+}
+function isEntrypoint(filePath) {
+    const basename = path.basename(filePath).toLowerCase();
+    return ENTRYPOINT_PATTERNS.some(pattern => basename.includes(pattern));
+}
+function isFlowEntrypoint(filePath) {
+    const basename = path.basename(filePath).toLowerCase();
+    return FLOW_ENTRY_PATTERNS.some(pattern => basename.includes(pattern));
+}
+function isIgnoredFolder(folderName) {
+    return IGNORED_FOLDERS.has(folderName.toLowerCase());
+}
+function isFlowExcluded(filePath) {
+    const lower = filePath.toLowerCase();
+    return Array.from(FLOW_EXCLUDE).some(p => lower.includes("/" + p) || lower.includes("\\" + p));
+}
+function getLayer(filePath) {
+    const parts = filePath.split(/[/\\]/).map(s => s.toLowerCase().replace(/\.(ts|js|tsx|jsx)$/, ""));
+    for (const [layer, patterns] of Object.entries(LAYER_PATTERNS)) {
+        if (parts.some(s => patterns.includes(s))) {
+            return layer;
+        }
+    }
     return "unknown";
 }
-function getPrio(f) {
-    for (const p of [...f.split(/[/\\]/)].reverse()) {
-        const l = p.replace(/\.(ts|js|tsx|jsx)$/, "").toLowerCase();
-        if (LAYER_PRIORITY[l] !== undefined)
-            return LAYER_PRIORITY[l];
+function getLayerPriority(filePath) {
+    const parts = [...filePath.split(/[/\\]/)].reverse();
+    for (const p of parts) {
+        const name = p.replace(/\.(ts|js|tsx|jsx)$/, "").toLowerCase();
+        if (LAYER_PRIORITY[name] !== undefined) {
+            return LAYER_PRIORITY[name];
+        }
     }
     return 99;
 }
-function getCandidates(files) {
-    const m = new Map();
-    for (const f of files) {
-        const p = f.split("/");
-        const ridx = p.findIndex(x => FEATURE_ROOTS.includes(x.toLowerCase()));
-        if (ridx !== -1) {
-            for (let d = 1; d <= 2; d++) {
-                const fidx = ridx + d;
-                if (fidx >= p.length - 1)
-                    continue;
-                const fn = p[fidx];
-                if (isExcl(fn))
-                    continue;
-                if (d === 1 && CONTAINER.has(fn.toLowerCase()))
-                    continue;
-                const k = p.slice(0, fidx + 1).join("/");
-                if (!m.has(k))
-                    m.set(k, []);
-                m.get(k).push(f);
+// ============================================================
+// FEATURE DETECTION ALGORITHM
+// ============================================================
+/**
+ * Find feature candidates by scanning file paths
+ *
+ * Rules:
+ * - Scan inside: src/*, app/*, packages/*, services/*, modules/*, features/*
+ * - Ignore: utils, helpers, types, interfaces, constants, config, dto, models, common, shared
+ * - Support depth 1 and 2: src/auth, src/modules/auth
+ * - Must have ≥3 source files and ≥1 entrypoint
+ */
+function findFeatureCandidates(files) {
+    const candidates = new Map();
+    for (const file of files) {
+        const parts = file.split("/");
+        // Find candidate root index
+        const rootIdx = parts.findIndex(p => CANDIDATE_ROOTS.includes(p.toLowerCase()));
+        if (rootIdx === -1)
+            continue;
+        // Check depth 1: src/auth
+        for (let depth = 1; depth <= 2; depth++) {
+            const featureIdx = rootIdx + depth;
+            // Don't go beyond array bounds
+            if (featureIdx >= parts.length - 1)
+                continue;
+            const featureName = parts[featureIdx];
+            // Skip ignored folders
+            if (isIgnoredFolder(featureName))
+                continue;
+            // Skip if feature name is a file (depth too deep)
+            if (featureName.includes("."))
+                continue;
+            // Build feature path
+            const featurePath = parts.slice(0, featureIdx + 1).join("/");
+            if (!candidates.has(featurePath)) {
+                candidates.set(featurePath, []);
+            }
+            candidates.get(featurePath).push(file);
+        }
+    }
+    return candidates;
+}
+/**
+ * Extract dependencies from modules.json for a feature
+ */
+function getFeatureDependencies(featurePath, modules) {
+    const deps = [];
+    const featureFiles = Object.values(modules).find(m => m.path === featurePath)?.files || [];
+    // Get all other modules and check if any of their files import from feature files
+    for (const [modName, mod] of Object.entries(modules)) {
+        if (mod.path === featurePath)
+            continue;
+        for (const file of mod.files || []) {
+            // Simple heuristic: if file path contains feature name, it's related
+            const featureName = featurePath.split("/").pop() || "";
+            if (file.toLowerCase().includes(featureName.toLowerCase())) {
+                if (!deps.includes(modName)) {
+                    deps.push(modName);
+                }
             }
         }
-        if (p.length >= 2 && LAYER_ROOTS.includes(p[0].toLowerCase())) {
-            if (!m.has(p[0]))
-                m.set(p[0], []);
-            m.get(p[0]).push(f);
+    }
+    return deps;
+}
+/**
+ * Generate features from modules.json
+ *
+ * Output format:
+ * {
+ *   "name": "auth",
+ *   "path": "src/auth",
+ *   "files": [],
+ *   "entrypoints": [],
+ *   "dependencies": []
+ * }
+ */
+export function generateFeatures(modulesJsonPath, _symbolsJsonPath) {
+    const features = [];
+    // Load modules
+    let modules = {};
+    try {
+        if (fs.existsSync(modulesJsonPath)) {
+            const data = readJsonFile(modulesJsonPath);
+            modules = data.modules || {};
         }
     }
-    return m;
-}
-export function generateFeatures(modulesJson, _symbolsJson) {
-    const feats = [];
-    let mods = {};
-    try {
-        if (fs.existsSync(modulesJson))
-            mods = readJsonFile(modulesJson).modules || {};
+    catch (e) {
+        // Ignore errors, return empty
     }
-    catch { }
-    const allFiles = Object.values(mods).flatMap(m => m.files || []);
-    const cands = getCandidates(allFiles);
-    for (const [fp, files] of cands) {
-        const srcs = files.filter(isSrc);
-        if (srcs.length < 3)
+    // Get all files from modules
+    const allFiles = Object.values(modules).flatMap(m => m.files || []);
+    // Find candidate features
+    const candidates = findFeatureCandidates(allFiles);
+    // Filter and validate candidates
+    for (const [featurePath, files] of candidates) {
+        // Filter to source files only
+        const sourceFiles = files.filter(isSourceFile);
+        // Must have at least 3 source files
+        if (sourceFiles.length < 3)
             continue;
-        const ents = srcs.filter(isEntry);
-        if (ents.length === 0)
+        // Must have at least one entrypoint
+        const entrypoints = sourceFiles.filter(isEntrypoint);
+        if (entrypoints.length === 0)
             continue;
-        feats.push({ feature: fp.split("/").pop() || fp, files: srcs.slice(0, 50), entrypoints: ents.slice(0, 10) });
+        // Extract feature name from path
+        const featureName = featurePath.split("/").pop() || featurePath;
+        // Get dependencies
+        const dependencies = getFeatureDependencies(featurePath, modules);
+        features.push({
+            name: featureName,
+            path: featurePath,
+            files: sourceFiles.slice(0, 50),
+            entrypoints: entrypoints.slice(0, 10),
+            dependencies
+        });
     }
-    return feats;
+    return features;
 }
-function flowsFromGraph(g) {
-    const fl = [];
-    const bySym = {};
-    for (const r of g.relationships || []) {
-        if (!bySym[r.symbolId])
-            bySym[r.symbolId] = [];
-        bySym[r.symbolId].push(r);
+// ============================================================
+// FLOW DETECTION ALGORITHM
+// ============================================================
+/**
+ * Generate flows from symbol graph
+ */
+function flowsFromGraph(graphData) {
+    const flows = [];
+    const { symbols = [], relationships = [] } = graphData;
+    // Build symbol lookup
+    const bySymbol = {};
+    for (const r of relationships) {
+        if (!bySymbol[r.symbolId])
+            bySymbol[r.symbolId] = [];
+        bySymbol[r.symbolId].push(r);
     }
-    const ents = (g.symbols || []).filter((s) => s.file && isFlowEntry(s.file));
-    for (const ep of ents) {
-        const vis = new Set(), fset = new Set(), lset = new Set();
-        const tr = (sid, d) => {
-            if (d > MAX_DEPTH || vis.has(sid) || fset.size >= MAX_FILES)
+    // Find entrypoint symbols
+    const entrypoints = symbols.filter((s) => s.file && isFlowEntrypoint(s.file));
+    for (const ep of entrypoints) {
+        const visited = new Set();
+        const fileSet = new Set();
+        const layerSet = new Set();
+        const traverse = (symbolId, depth) => {
+            if (depth > MAX_FLOW_DEPTH || visited.has(symbolId) || fileSet.size >= MAX_FLOW_FILES) {
                 return;
-            vis.add(sid);
-            const sym = (g.symbols || []).find((s) => s.id === sid);
-            if (!sym?.file || isExclFlow(sym.file))
+            }
+            visited.add(symbolId);
+            const symbol = symbols.find((s) => s.id === symbolId);
+            if (!symbol?.file || isFlowExcluded(symbol.file))
                 return;
-            fset.add(sym.file);
-            lset.add(getLayer(sym.file));
-            for (const r of bySym[sid] || [])
-                if (["calls", "imports", "references"].includes(r.type))
-                    tr(r.targetId, d + 1);
+            fileSet.add(symbol.file);
+            layerSet.add(getLayer(symbol.file));
+            // Follow relationships
+            for (const r of bySymbol[symbolId] || []) {
+                if (["calls", "imports", "references"].includes(r.type)) {
+                    traverse(r.targetId, depth + 1);
+                }
+            }
         };
         if (ep.file) {
-            fset.add(ep.file);
-            lset.add(getLayer(ep.file));
-            for (const r of bySym[ep.id] || [])
-                if (["calls", "imports", "references"].includes(r.type))
-                    tr(r.targetId, 1);
+            fileSet.add(ep.file);
+            layerSet.add(getLayer(ep.file));
+            for (const r of bySymbol[ep.id] || []) {
+                if (["calls", "imports", "references"].includes(r.type)) {
+                    traverse(r.targetId, 1);
+                }
+            }
         }
-        if (fset.size >= 3 && lset.size >= 2)
-            fl.push({ name: path.basename(ep.file || ""), entrypoint: ep.file || "", files: Array.from(fset).slice(0, MAX_FILES), depth: Math.min(MAX_DEPTH, [...vis].length), layers: Array.from(lset) });
+        // Must have at least 3 files and 2 layers
+        if (fileSet.size >= 3 && layerSet.size >= 2) {
+            flows.push({
+                name: path.basename(ep.file || ""),
+                entrypoint: ep.file || "",
+                files: Array.from(fileSet).slice(0, MAX_FLOW_FILES),
+                depth: Math.min(MAX_FLOW_DEPTH, [...visited].length),
+                layers: Array.from(layerSet)
+            });
+        }
     }
-    return fl;
+    return flows;
 }
+/**
+ * Generate flows from folder structure (fallback)
+ */
 function flowsFromFolders(files) {
-    const fl = [];
-    // Group by feature prefix (e.g., auth*, user*, product*)
+    const flows = [];
+    // Group by feature prefix (e.g., authController -> auth)
     const byFeature = new Map();
-    for (const f of files)
-        if (isSrc(f)) {
-            const base = path.basename(f).replace(/\.(ts|js|tsx|jsx)$/, "");
-            // Extract feature name: authController -> auth, userService -> user
-            const feat = base.replace(/(Controller|Service|Repository|Handler|Route|Model|Entity)$/i, "");
-            const key = feat.toLowerCase();
-            if (!byFeature.has(key))
-                byFeature.set(key, []);
-            byFeature.get(key).push(f);
+    for (const file of files) {
+        if (!isSourceFile(file))
+            continue;
+        const baseName = path.basename(file).replace(/\.(ts|js|tsx|jsx)$/, "");
+        // Extract feature: authController -> auth, userService -> user
+        const feature = baseName.replace(/(Controller|Service|Repository|Handler|Route|Model|Entity)$/i, "");
+        const key = feature.toLowerCase();
+        if (!byFeature.has(key)) {
+            byFeature.set(key, []);
         }
-    for (const [feat, fs] of byFeature) {
-        if (fs.length < 3)
-            continue;
-        const lays = new Set(fs.map(getLayer).filter(l => l !== "unknown"));
-        if (lays.size < 2)
-            continue;
-        const sorted = [...fs].sort((a, b) => getPrio(a) - getPrio(b));
-        // Find best entrypoint (controller/handler first)
-        const entry = sorted.find(isFlowEntry) || sorted[0];
-        fl.push({ name: feat, entrypoint: entry, files: sorted.slice(0, MAX_FILES), depth: lays.size, layers: Array.from(lays) });
+        byFeature.get(key).push(file);
     }
-    return fl;
+    for (const [feature, featureFiles] of byFeature) {
+        if (featureFiles.length < 3)
+            continue;
+        const layers = new Set(featureFiles.map(getLayer).filter(l => l !== "unknown"));
+        if (layers.size < 2)
+            continue;
+        const sorted = [...featureFiles].sort((a, b) => getLayerPriority(a) - getLayerPriority(b));
+        const entrypoint = sorted.find(isFlowEntrypoint) || sorted[0];
+        flows.push({
+            name: feature,
+            entrypoint,
+            files: sorted.slice(0, MAX_FLOW_FILES),
+            depth: layers.size,
+            layers: Array.from(layers)
+        });
+    }
+    return flows;
 }
-function flowsFromImports(depsPath, files) {
-    const fl = [];
+/**
+ * Generate flows from dependencies (fallback)
+ */
+function flowsFromImports(dependenciesPath, files) {
+    const flows = [];
     let deps = { byFile: {} };
     try {
-        if (fs.existsSync(depsPath))
-            deps = readJsonFile(depsPath);
+        if (fs.existsSync(dependenciesPath)) {
+            deps = readJsonFile(dependenciesPath);
+        }
     }
     catch {
-        return fl;
+        return flows;
     }
-    const impTo = new Map();
-    for (const [f, imps] of Object.entries(deps.byFile || {})) {
-        if (!impTo.has(f))
-            impTo.set(f, new Set());
-        for (const i of imps)
-            impTo.get(f).add(i);
+    // Build import graph
+    const importsTo = new Map();
+    for (const [file, imports] of Object.entries(deps.byFile || {})) {
+        if (!importsTo.has(file)) {
+            importsTo.set(file, new Set());
+        }
+        for (const imp of imports) {
+            importsTo.get(file).add(imp);
+        }
     }
-    const ents = files.filter(isFlowEntry);
-    for (const ep of ents) {
-        const vis = new Set([ep]), fset = new Set([ep]), lset = new Set();
-        const tr = (f, d) => {
-            if (d > MAX_DEPTH || fset.size >= MAX_FILES)
+    // Find entrypoints
+    const entrypoints = files.filter(isFlowEntrypoint);
+    for (const ep of entrypoints) {
+        const visited = new Set([ep]);
+        const fileSet = new Set([ep]);
+        const layerSet = new Set();
+        const traverse = (file, depth) => {
+            if (depth > MAX_FLOW_DEPTH || fileSet.size >= MAX_FLOW_FILES)
                 return;
-            for (const i of (impTo.get(f) || [])) {
-                if (vis.has(i) || isExclFlow(i))
+            for (const imp of importsTo.get(file) || []) {
+                if (visited.has(imp) || isFlowExcluded(imp))
                     continue;
-                vis.add(i);
-                fset.add(i);
-                lset.add(getLayer(i));
-                tr(i, d + 1);
+                visited.add(imp);
+                fileSet.add(imp);
+                layerSet.add(getLayer(imp));
+                traverse(imp, depth + 1);
             }
         };
-        tr(ep, 1);
-        if (fset.size >= 3 && lset.size >= 2)
-            fl.push({ name: path.basename(ep, path.extname(ep)), entrypoint: ep, files: Array.from(fset), depth: Math.min(MAX_DEPTH, [...vis].length), layers: Array.from(lset) });
+        traverse(ep, 1);
+        if (fileSet.size >= 3 && layerSet.size >= 2) {
+            flows.push({
+                name: path.basename(ep, path.extname(ep)),
+                entrypoint: ep,
+                files: Array.from(fileSet),
+                depth: Math.min(MAX_FLOW_DEPTH, [...visited].length),
+                layers: Array.from(layerSet)
+            });
+        }
     }
-    return fl;
+    return flows;
 }
-export function generateFlows(graphPath, modsPath, depsPath) {
-    let g = { symbols: [], relationships: [] }, mods = {};
+/**
+ * Generate flows using multiple fallback methods
+ */
+export function generateFlows(graphPath, modulesPath, dependenciesPath) {
+    // Load graph data
+    let graphData = { symbols: [], relationships: [] };
     try {
-        if (fs.existsSync(graphPath))
-            g = readJsonFile(graphPath);
+        if (fs.existsSync(graphPath)) {
+            graphData = readJsonFile(graphPath);
+        }
     }
-    catch { }
+    catch {
+        // Ignore
+    }
+    // Load modules
+    let modules = {};
     try {
-        if (fs.existsSync(modsPath))
-            mods = readJsonFile(modsPath).modules || {};
+        if (fs.existsSync(modulesPath)) {
+            modules = readJsonFile(modulesPath).modules || {};
+        }
     }
-    catch { }
-    const allFiles = Object.values(mods).flatMap(m => m.files || []);
-    const density = (g.relationships?.length || 0) / ((g.symbols?.length || 1) || 1);
-    const weak = density < 0.5 || (g.relationships?.length || 0) < 10;
-    const fl = [];
-    if (!weak && g.relationships?.length)
-        fl.push(...flowsFromGraph(g));
-    if (fl.length === 0 || weak)
-        fl.push(...flowsFromFolders(allFiles));
-    if (fl.length === 0 || weak)
-        fl.push(...flowsFromImports(depsPath || "", allFiles));
+    catch {
+        // Ignore
+    }
+    const allFiles = Object.values(modules).flatMap(m => m.files || []);
+    // Determine if graph is weak
+    const relationshipCount = graphData.relationships?.length || 0;
+    const symbolCount = graphData.symbols?.length || 1;
+    const density = relationshipCount / symbolCount;
+    const isWeakGraph = density < 0.5 || relationshipCount < 10;
+    const flows = [];
+    // Try graph-based flow detection first (if graph is strong)
+    if (!isWeakGraph && relationshipCount > 0) {
+        flows.push(...flowsFromGraph(graphData));
+    }
+    // Fallback to folder-based detection
+    if (flows.length === 0 || isWeakGraph) {
+        flows.push(...flowsFromFolders(allFiles));
+    }
+    // Fallback to import-based detection
+    if (flows.length === 0 || isWeakGraph) {
+        flows.push(...flowsFromImports(dependenciesPath || "", allFiles));
+    }
+    // Deduplicate by name
     const seen = new Set();
-    return fl.filter(f => { if (seen.has(f.name))
-        return false; seen.add(f.name); return true; }).slice(0, 20);
+    return flows
+        .filter(f => {
+        if (seen.has(f.name))
+            return false;
+        seen.add(f.name);
+        return true;
+    })
+        .slice(0, 20);
 }
+// ============================================================
+// MAIN ENTRY POINT
+// ============================================================
+/**
+ * Generate all semantic contexts (features and flows)
+ */
 export function generateSemanticContexts(aiDir) {
-    const fDir = path.join(aiDir, "context", "features");
-    const flDir = path.join(aiDir, "context", "flows");
-    const modsP = path.join(aiDir, "modules.json");
-    const symP = path.join(aiDir, "symbols.json");
-    const grP = path.join(aiDir, "graph", "symbol-graph.json");
-    const depP = path.join(aiDir, "dependencies.json");
-    const feats = generateFeatures(modsP, symP);
-    const flows = generateFlows(grP, modsP, depP);
-    ensureDir(fDir);
-    for (const f of feats)
-        writeFile(path.join(fDir, `${f.feature}.json`), JSON.stringify(f, null, 2));
-    ensureDir(flDir);
-    for (const f of flows)
-        writeFile(path.join(flDir, `${f.name}.json`), JSON.stringify(f, null, 2));
-    return { features: feats, flows };
+    const featuresDir = path.join(aiDir, "context", "features");
+    const flowsDir = path.join(aiDir, "context", "flows");
+    const modulesPath = path.join(aiDir, "modules.json");
+    const symbolsPath = path.join(aiDir, "symbols.json");
+    const graphPath = path.join(aiDir, "graph", "symbol-graph.json");
+    const dependenciesPath = path.join(aiDir, "dependencies.json");
+    // Generate features and flows
+    const features = generateFeatures(modulesPath, symbolsPath);
+    const flows = generateFlows(graphPath, modulesPath, dependenciesPath);
+    // Write features
+    ensureDir(featuresDir);
+    for (const feature of features) {
+        const filePath = path.join(featuresDir, `${feature.name}.json`);
+        writeFile(filePath, JSON.stringify(feature, null, 2));
+    }
+    // Write flows
+    ensureDir(flowsDir);
+    for (const flow of flows) {
+        const filePath = path.join(flowsDir, `${flow.name}.json`);
+        writeFile(filePath, JSON.stringify(flow, null, 2));
+    }
+    return { features, flows };
 }
 //# sourceMappingURL=semanticContexts.js.map
