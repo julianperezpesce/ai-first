@@ -12,6 +12,13 @@ export interface TechStack {
   linters: string[];
   formatters: string[];
   description: string;
+  android?: {
+    minSdk?: string;
+    targetSdk?: string;
+    compileSdk?: string;
+    gradleVersion?: string;
+    kotlinVersion?: string;
+  };
 }
 
 /**
@@ -34,6 +41,8 @@ export function detectTechStack(files: FileInfo[], rootDir: string): TechStack {
     languages, frameworks, libraries, tools, packageManagers, testing, linters, formatters
   );
   
+  const android = detectAndroidSDK(files, rootDir);
+  
   return {
     languages,
     frameworks,
@@ -44,6 +53,7 @@ export function detectTechStack(files: FileInfo[], rootDir: string): TechStack {
     linters,
     formatters,
     description,
+    android,
   };
 }
 
@@ -127,6 +137,10 @@ function detectFrameworks(files: FileInfo[], fileNames: Set<string>, rootDir: st
     "postcss.config": "PostCSS",
     "babel.config": "Babel",
     "tsconfig": "TypeScript",
+    "build.gradle": "Android",
+    "build.gradle.kts": "Android",
+    "settings.gradle": "Android",
+    "AndroidManifest.xml": "Android",
   };
   
   for (const [indicator, framework] of Object.entries(frameworkIndicators)) {
@@ -301,6 +315,48 @@ function detectFormatters(files: FileInfo[], fileNames: Set<string>): string[] {
   }
   
   return formatters;
+}
+
+/**
+ * Detect Android SDK versions from build.gradle files
+ */
+function detectAndroidSDK(files: FileInfo[], rootDir: string): TechStack["android"] {
+  const fileNames = files.map(f => f.name);
+  const hasAndroid = fileNames.some(n => 
+    n === "build.gradle" || n === "build.gradle.kts" || 
+    n === "app/build.gradle" || n === "app/build.gradle.kts"
+  );
+  
+  if (!hasAndroid) return undefined;
+  
+  const android: TechStack["android"] = {};
+  
+  const gradleFiles = files.filter(f => 
+    f.name === "build.gradle" || f.name === "build.gradle.kts" ||
+    f.relativePath.includes("app/build.gradle")
+  );
+  
+  for (const gf of gradleFiles) {
+    try {
+      const content = readFile(path.join(rootDir, gf.relativePath));
+      const minSdkMatch = content.match(/minSdk(?:Version)?\s*[=:]\s*(\d+)/);
+      const targetSdkMatch = content.match(/targetSdk(?:Version)?\s*[=:]\s*(\d+)/);
+      const compileSdkMatch = content.match(/compileSdk(?:Version)?\s*[=:]\s*(\d+)/);
+      
+      if (minSdkMatch && !android.minSdk) android.minSdk = minSdkMatch[1];
+      if (targetSdkMatch && !android.targetSdk) android.targetSdk = targetSdkMatch[1];
+      if (compileSdkMatch && !android.compileSdk) android.compileSdk = compileSdkMatch[1];
+    } catch {}
+  }
+  
+  try {
+    const propsPath = path.join(rootDir, "gradle/wrapper/gradle-wrapper.properties");
+    const props = readFile(propsPath);
+    const v = props.match(/gradle-(\d+\.\d+)/);
+    if (v) android.gradleVersion = v[1];
+  } catch {}
+  
+  return (android.minSdk || android.targetSdk || android.compileSdk || android.gradleVersion) ? android : undefined;
 }
 
 /**

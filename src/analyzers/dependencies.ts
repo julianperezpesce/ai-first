@@ -66,6 +66,8 @@ function parseFileForDependencies(file: FileInfo): Dependency[] {
       deps.push(...parseRustImports(content, file.relativePath));
     } else if (file.extension === "java" || file.extension === "cs") {
       deps.push(...parseJavaImports(content, file.relativePath));
+    } else if (file.extension === "gradle" || file.extension === "gradle.kts") {
+      deps.push(...parseGradleDependencies(content, file.relativePath));
     }
   } catch {}
 
@@ -304,4 +306,43 @@ export function generateDependenciesJson(analysis: DependencyAnalysis): string {
     circularDependencies: analysis.circularDeps,
   };
   return JSON.stringify(output, null, 2);
+}
+
+/**
+ * Parse Gradle dependencies from build.gradle files
+ */
+function parseGradleDependencies(content: string, sourceFile: string): Dependency[] {
+  const deps: Dependency[] = [];
+  
+  // implementation "com.example:library:1.0"
+  const implMatches = content.matchAll(/(?:implementation|api|compile|testImplementation|androidTestImplementation)\s+["\']([@\w.\-]+):([@\w.\-]+):([@\w.\-]+)["\']/g);
+  for (const match of implMatches) {
+    deps.push({
+      source: sourceFile,
+      target: `${match[1]}:${match[2]}:${match[3]}`,
+      type: "import",
+    });
+  }
+  
+  // implementation project(":module")
+  const projMatches = content.matchAll(/implementation\s+project\s*\(\s*["\']([@\w.\-]+)["\']\s*\)/g);
+  for (const match of projMatches) {
+    deps.push({
+      source: sourceFile,
+      target: `project:${match[1]}`,
+      type: "import",
+    });
+  }
+  
+  // include ":module"
+  const includeMatches = content.matchAll(/include\s*\(\s*["\']([@\w.\-]+)["\']\s*\)/g);
+  for (const match of includeMatches) {
+    deps.push({
+      source: sourceFile,
+      target: `module:${match[1]}`,
+      type: "include",
+    });
+  }
+  
+  return deps;
 }

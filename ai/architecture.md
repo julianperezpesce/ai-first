@@ -16,7 +16,7 @@
 | `FLOW.md` | Contains 0 files |
 | `README.es.md` | Contains 0 files |
 | `README.md` | Contains 0 files |
-| `ai` | Contains 21 files |
+| `ai` | Contains 23 files |
 | `docs` | Contains 15 files |
 | `examples` | Contains 4 files |
 | `package-lock.json` | Contains 0 files |
@@ -56,7 +56,7 @@
 
 ### ai
 - **Path**: `ai`
-- **Responsibility**: Contains 21 files
+- **Responsibility**: Contains 23 files
 
 
 ### docs
@@ -81,7 +81,7 @@
 
 ### src
 - **Path**: `src`
-- **Responsibility**: Contains 25 files
+- **Responsibility**: Contains 29 files
 
 
 ### tsconfig.json

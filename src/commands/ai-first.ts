@@ -18,6 +18,8 @@ import { generateModuleGraph } from "../core/moduleGraph.js";
 import { loadIndexState, computeFileHash, getFilesToIndex, getChangedFilesGit } from "../core/indexState.js";
 import { chunkFiles } from "../core/chunker.js";
 import { generateEmbeddings, saveEmbeddings } from "../core/embeddings.js";
+import { generateContextModules, createCCP, listCCPs, getCCP } from "../core/ccp.js";
+import { generateSemanticContexts } from "../core/semanticContexts.js";
 import { doctorMain } from "./doctor.js";
 import { exploreMain } from "./explore.js";
 
@@ -146,6 +148,16 @@ export async function runAIFirst(options: AIFirstOptions = {}): Promise<AIFirstR
     writeFile(aiContextPath, aiContext);
     filesCreated.push(aiContextPath);
     console.log("   ✅ Created ai_context.md");
+
+    // Generate semantic contexts (features and flows)
+    try {
+      const { features, flows } = generateSemanticContexts(outputDir);
+      console.log(`   ✅ Created ${features.length} features, ${flows.length} flows`);
+    } catch (e: any) {
+      console.log("   ⚠️  Semantic contexts: " + (e.message || e));
+    }
+
+    console.log("\n✨ Done! Created the following files:");
 
     console.log("\n✨ Done! Created the following files:");
     for (const file of filesCreated) {
@@ -1079,6 +1091,12 @@ Options:
     const { generateSymbolGraph } = await import("../core/symbolGraph.js");
     await generateSymbolGraph(rootDir, aiDir);
     console.log("   ✅ symbol-graph.json");
+    
+    // Generate semantic contexts (features and flows)
+    const { features, flows } = generateSemanticContexts(aiDir);
+    console.log(`   ✅ Created ${features.length} features, ${flows.length} flows`);
+    
+    console.log("\n✅ Repository map generated!");
     
     console.log("\n✅ Repository map generated!");
     process.exit(0);

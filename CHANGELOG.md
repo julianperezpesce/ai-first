@@ -14,7 +14,9 @@ All notable changes to `ai-first` will be documented in this file.
 - Code Context Packets (CCP) with depth, ranking, and multiple formats
 - Context CLI flags: `--depth`, `--max-symbols`, `--format`, `--save`
 - Incremental indexing with file hash cache (`ai/cache.json`)
-- Context ranking system based on graph distance and relationships
+YB|- Context ranking system based on graph distance and relationships
+RR|- Android/Kotlin Support: Android framework detection, SDK version extraction, Gradle dependency parsing, AndroidManifest parsing, Android resources indexing, Gradle multi-module detection
+PY|- Documentation: Architecture guide and Commands reference updated
 - Documentation: Architecture guide and Commands reference updated
 
 ---

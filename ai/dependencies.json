@@ -1,6 +1,6 @@
 {
-  "totalDependencies": 204,
-  "totalModules": 25,
+  "totalDependencies": 230,
+  "totalModules": 29,
   "dependencies": [
     {
       "source": "docs/.vitepress/config.ts",
@@ -85,6 +85,26 @@
     {
       "source": "src/analyzers/aiRules.ts",
       "target": "src/analyzers/./architecture.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/androidResources.ts",
+      "target": "src/analyzers/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/androidResources.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/androidResources.ts",
+      "target": "src/analyzers/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/androidResources.ts",
+      "target": "path",
       "type": "import"
     },
     {
@@ -238,6 +258,36 @@
       "type": "import"
     },
     {
+      "source": "src/analyzers/gradleModules.ts",
+      "target": "src/analyzers/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/gradleModules.ts",
+      "target": "src/analyzers/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/gradleModules.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/gradleModules.ts",
+      "target": "src/analyzers/../core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/gradleModules.ts",
+      "target": "src/analyzers/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/gradleModules.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
       "source": "src/analyzers/symbols.ts",
       "target": "src/analyzers/../core/repoScanner.js",
       "type": "import"
@@ -385,6 +435,16 @@
     {
       "source": "src/commands/ai-first.ts",
       "target": "src/commands/../core/embeddings.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/ccp.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/semanticContexts.js",
       "type": "import"
     },
     {
@@ -504,6 +564,16 @@
     },
     {
       "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/ccp.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/../core/semanticContexts.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
       "target": "src/commands/./doctor.js",
       "type": "import"
     },
@@ -623,6 +693,36 @@
       "type": "import"
     },
     {
+      "source": "src/core/ccp.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/ccp.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/ccp.ts",
+      "target": "src/core/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/ccp.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/ccp.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/ccp.ts",
+      "target": "src/core/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
       "source": "src/core/chunker.ts",
       "target": "fs",
       "type": "import"
@@ -685,11 +785,6 @@
     {
       "source": "src/core/contextPacket.ts",
       "target": "src/core/./symbolGraph.js",
-      "type": "import"
-    },
-    {
-      "source": "src/core/contextPacket.ts",
-      "target": "src/core/../analyzers/symbols.js",
       "type": "import"
     },
     {
@@ -710,11 +805,6 @@
     {
       "source": "src/core/contextPacket.ts",
       "target": "src/core/./symbolGraph.js",
-      "type": "import"
-    },
-    {
-      "source": "src/core/contextPacket.ts",
-      "target": "src/core/../analyzers/symbols.js",
       "type": "import"
     },
     {
@@ -943,6 +1033,36 @@
       "type": "import"
     },
     {
+      "source": "src/core/semanticContexts.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/semanticContexts.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/semanticContexts.ts",
+      "target": "src/core/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/semanticContexts.ts",
+      "target": "fs",
+      "type": "import"
+    },
+    {
+      "source": "src/core/semanticContexts.ts",
+      "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/semanticContexts.ts",
+      "target": "src/core/../utils/fileUtils.js",
+      "type": "import"
+    },
+    {
       "source": "src/core/symbolGraph.ts",
       "target": "fs",
       "type": "import"
@@ -950,6 +1070,11 @@
     {
       "source": "src/core/symbolGraph.ts",
       "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "crypto",
       "type": "import"
     },
     {
@@ -980,6 +1105,11 @@
     {
       "source": "src/core/symbolGraph.ts",
       "target": "path",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "crypto",
       "type": "import"
     },
     {
@@ -1047,6 +1177,12 @@
       "src/analyzers/./techStack.js",
       "src/analyzers/./architecture.js"
     ],
+    "src/analyzers/androidResources.ts": [
+      "src/analyzers/../core/repoScanner.js",
+      "path",
+      "src/analyzers/../core/repoScanner.js",
+      "path"
+    ],
     "src/analyzers/architecture.ts": [
       "src/analyzers/../core/repoScanner.js",
       "src/analyzers/../utils/fileUtils.js",
@@ -1078,6 +1214,14 @@
       "@alias/path"
     ],
     "src/analyzers/entrypoints.ts": [
+      "src/analyzers/../core/repoScanner.js",
+      "src/analyzers/../utils/fileUtils.js",
+      "path",
+      "src/analyzers/../core/repoScanner.js",
+      "src/analyzers/../utils/fileUtils.js",
+      "path"
+    ],
+    "src/analyzers/gradleModules.ts": [
       "src/analyzers/../core/repoScanner.js",
       "src/analyzers/../utils/fileUtils.js",
       "path",
@@ -1120,6 +1264,8 @@
       "src/commands/../core/indexState.js",
       "src/commands/../core/chunker.js",
       "src/commands/../core/embeddings.js",
+      "src/commands/../core/ccp.js",
+      "src/commands/../core/semanticContexts.js",
       "src/commands/./doctor.js",
       "src/commands/./explore.js",
       "fs",
@@ -1143,6 +1289,8 @@
       "src/commands/../core/indexState.js",
       "src/commands/../core/chunker.js",
       "src/commands/../core/embeddings.js",
+      "src/commands/../core/ccp.js",
+      "src/commands/../core/semanticContexts.js",
       "src/commands/./doctor.js",
       "src/commands/./explore.js"
     ],
@@ -1174,6 +1322,14 @@
       "src/core/./repoScanner.js",
       "src/core/../utils/fileUtils.js"
     ],
+    "src/core/ccp.ts": [
+      "fs",
+      "path",
+      "src/core/../utils/fileUtils.js",
+      "fs",
+      "path",
+      "src/core/../utils/fileUtils.js"
+    ],
     "src/core/chunker.ts": [
       "fs",
       "path",
@@ -1192,12 +1348,10 @@
       "fs",
       "path",
       "src/core/./symbolGraph.js",
-      "src/core/../analyzers/symbols.js",
       "src/core/../utils/fileUtils.js",
       "fs",
       "path",
       "src/core/./symbolGraph.js",
-      "src/core/../analyzers/symbols.js",
       "src/core/../utils/fileUtils.js"
     ],
     "src/core/embeddings.ts": [
@@ -1258,15 +1412,25 @@
       "src/core/../utils/fileUtils.js",
       "src/core/../utils/fileUtils.js"
     ],
+    "src/core/semanticContexts.ts": [
+      "fs",
+      "path",
+      "src/core/../utils/fileUtils.js",
+      "fs",
+      "path",
+      "src/core/../utils/fileUtils.js"
+    ],
     "src/core/symbolGraph.ts": [
       "fs",
       "path",
+      "crypto",
       "src/core/./repoScanner.js",
       "src/core/../analyzers/symbols.js",
       "src/core/../analyzers/dependencies.js",
       "src/core/../utils/fileUtils.js",
       "fs",
       "path",
+      "crypto",
       "src/core/./repoScanner.js",
       "src/core/../analyzers/symbols.js",
       "src/core/../analyzers/dependencies.js",

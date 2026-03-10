@@ -1,4 +1,4 @@
-import { readJsonFile } from "../utils/fileUtils.js";
+import { readFile, readJsonFile } from "../utils/fileUtils.js";
 import path from "path";
 /**
  * Detect technology stack from repository
@@ -15,6 +15,7 @@ export function detectTechStack(files, rootDir) {
     const linters = detectLinters(files, fileNames);
     const formatters = detectFormatters(files, fileNames);
     const description = generateTechStackDescription(languages, frameworks, libraries, tools, packageManagers, testing, linters, formatters);
+    const android = detectAndroidSDK(files, rootDir);
     return {
         languages,
         frameworks,
@@ -25,6 +26,7 @@ export function detectTechStack(files, rootDir) {
         linters,
         formatters,
         description,
+        android,
     };
 }
 /**
@@ -102,6 +104,10 @@ function detectFrameworks(files, fileNames, rootDir) {
         "postcss.config": "PostCSS",
         "babel.config": "Babel",
         "tsconfig": "TypeScript",
+        "build.gradle": "Android",
+        "build.gradle.kts": "Android",
+        "settings.gradle": "Android",
+        "AndroidManifest.xml": "Android",
     };
     for (const [indicator, framework] of Object.entries(frameworkIndicators)) {
         if (fileNames.has(indicator) || files.some(f => f.name.includes(indicator))) {
@@ -258,6 +264,43 @@ function detectFormatters(files, fileNames) {
         }
     }
     return formatters;
+}
+/**
+ * Detect Android SDK versions from build.gradle files
+ */
+function detectAndroidSDK(files, rootDir) {
+    const fileNames = files.map(f => f.name);
+    const hasAndroid = fileNames.some(n => n === "build.gradle" || n === "build.gradle.kts" ||
+        n === "app/build.gradle" || n === "app/build.gradle.kts");
+    if (!hasAndroid)
+        return undefined;
+    const android = {};
+    const gradleFiles = files.filter(f => f.name === "build.gradle" || f.name === "build.gradle.kts" ||
+        f.relativePath.includes("app/build.gradle"));
+    for (const gf of gradleFiles) {
+        try {
+            const content = readFile(path.join(rootDir, gf.relativePath));
+            const minSdkMatch = content.match(/minSdk(?:Version)?\s*[=:]\s*(\d+)/);
+            const targetSdkMatch = content.match(/targetSdk(?:Version)?\s*[=:]\s*(\d+)/);
+            const compileSdkMatch = content.match(/compileSdk(?:Version)?\s*[=:]\s*(\d+)/);
+            if (minSdkMatch && !android.minSdk)
+                android.minSdk = minSdkMatch[1];
+            if (targetSdkMatch && !android.targetSdk)
+                android.targetSdk = targetSdkMatch[1];
+            if (compileSdkMatch && !android.compileSdk)
+                android.compileSdk = compileSdkMatch[1];
+        }
+        catch { }
+    }
+    try {
+        const propsPath = path.join(rootDir, "gradle/wrapper/gradle-wrapper.properties");
+        const props = readFile(propsPath);
+        const v = props.match(/gradle-(\d+\.\d+)/);
+        if (v)
+            android.gradleVersion = v[1];
+    }
+    catch { }
+    return (android.minSdk || android.targetSdk || android.compileSdk || android.gradleVersion) ? android : undefined;
 }
 /**
  * Generate tech stack description
