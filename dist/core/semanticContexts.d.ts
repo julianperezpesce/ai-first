@@ -1,7 +1,9 @@
 export interface Feature {
-    feature: string;
+    name: string;
+    path: string;
     files: string[];
     entrypoints: string[];
+    dependencies: string[];
 }
 export interface Flow {
     name: string;
@@ -14,7 +16,25 @@ export interface SemanticContexts {
     features: Feature[];
     flows: Flow[];
 }
-export declare function generateFeatures(modulesJson: string, _symbolsJson: string): Feature[];
-export declare function generateFlows(graphPath: string, modsPath: string, depsPath?: string): Flow[];
+/**
+ * Generate features from modules.json
+ *
+ * Output format:
+ * {
+ *   "name": "auth",
+ *   "path": "src/auth",
+ *   "files": [],
+ *   "entrypoints": [],
+ *   "dependencies": []
+ * }
+ */
+export declare function generateFeatures(modulesJsonPath: string, _symbolsJsonPath: string): Feature[];
+/**
+ * Generate flows using multiple fallback methods
+ */
+export declare function generateFlows(graphPath: string, modulesPath: string, dependenciesPath?: string): Flow[];
+/**
+ * Generate all semantic contexts (features and flows)
+ */
 export declare function generateSemanticContexts(aiDir: string): SemanticContexts;
 //# sourceMappingURL=semanticContexts.d.ts.map

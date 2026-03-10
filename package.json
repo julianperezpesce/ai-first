@@ -1,6 +1,5 @@
 {
   "name": "ai-first-cli",
-
   "version": "1.1.1",
   "description": "CLI tool that prepares any repository to be used effectively by AI coding agents",
   "main": "dist/index.js",
@@ -12,6 +11,8 @@
     "build": "tsc",
     "run": "node dist/commands/ai-first.js",
     "dev": "node --loader ts-node/esm src/commands/ai-first.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
@@ -42,6 +43,7 @@
     "@types/node": "^20.0.0",
     "@vitejs/plugin-vue": "^6.0.4",
     "typescript": "^5.0.0",
+    "vitest": "^2.0.0",
     "vitepress": "^1.6.4",
     "vue": "^3.5.30"
   },
