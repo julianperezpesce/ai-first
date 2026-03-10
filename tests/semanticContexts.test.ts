@@ -278,6 +278,95 @@ describe("Feature Detection", () => {
         expect(flow.entrypoint.length).toBeGreaterThan(0);
       }
     });
+
+    it("should use fallback when symbol graph is weak", () => {
+      // Create minimal graph data (weak graph)
+      const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "ai-first-test-"));
+      const aiDir = path.join(tempDir, "ai");
+      fs.mkdirSync(path.join(aiDir, "graph"), { recursive: true });
+      
+      // Create weak symbol graph (only 1 relationship)
+      const weakGraph = {
+        symbols: [
+          { id: "api/authController.js#AuthController", name: "AuthController", file: "api/authController.js" }
+        ],
+        relationships: [
+          { symbolId: "api/authController.js#AuthController", targetId: "api/authController.js#AuthController", type: "exports" }
+        ]
+      };
+      fs.writeFileSync(
+        path.join(aiDir, "graph", "symbol-graph.json"),
+        JSON.stringify(weakGraph)
+      );
+      
+      // Create modules
+      const modules = {
+        "api": { path: "api", files: ["api/authController.js", "api/userController.js", "api/productController.js"] },
+        "services": { path: "services", files: ["services/authService.js", "services/userService.js"] },
+        "data": { path: "data", files: ["data/authRepository.js", "data/userRepository.js"] }
+      };
+      fs.mkdirSync(aiDir, { recursive: true });
+      fs.writeFileSync(path.join(aiDir, "modules.json"), JSON.stringify({ modules }));
+      
+      const flows = generateFlows(
+        path.join(aiDir, "graph", "symbol-graph.json"),
+        path.join(aiDir, "modules.json")
+      );
+
+      // Should still detect flows via fallback
+      expect(flows.length).toBeGreaterThan(0);
+    });
+
+    it("should respect MAX_FLOW_DEPTH limit", () => {
+      const aiDir = createTempTestDir({
+        "api": ["api/authController.js"],
+        "services": ["services/authService.js"],
+        "data": ["data/authRepository.js"]
+      });
+
+      const flows = generateFlows(
+        path.join(aiDir, "graph", "symbol-graph.json"),
+        path.join(aiDir, "modules.json")
+      );
+
+      for (const flow of flows) {
+        expect(flow.depth).toBeLessThanOrEqual(5); // MAX_FLOW_DEPTH = 5
+      }
+    });
+
+    it("should respect MAX_FLOW_FILES limit", () => {
+      const aiDir = createTempTestDir({
+        "api": ["api/authController.js"],
+        "services": ["services/authService.js"],
+        "data": ["data/authRepository.js"]
+      });
+
+      const flows = generateFlows(
+        path.join(aiDir, "graph", "symbol-graph.json"),
+        path.join(aiDir, "modules.json")
+      );
+
+      for (const flow of flows) {
+        expect(flow.files.length).toBeLessThanOrEqual(30); // MAX_FLOW_FILES = 30
+      }
+    });
+
+    it("should detect flows using folder naming conventions", () => {
+      const aiDir = createTempTestDir({
+        "api": ["api/loginController.js", "api/logoutController.js"],
+        "services": ["services/loginService.js", "services/logoutService.js"],
+        "data": ["data/loginRepository.js", "data/logoutRepository.js"]
+      });
+
+      const flows = generateFlows(
+        path.join(aiDir, "graph", "symbol-graph.json"),
+        path.join(aiDir, "modules.json")
+      );
+
+      // Should group by feature prefix (login, logout)
+      const flowNames = flows.map(f => f.name);
+      expect(flowNames).toContain("login");
+    });
   });
 
   describe("generateSemanticContexts", () => {
