@@ -1,276 +1,539 @@
 {
-  "lastIndexed": "2026-03-09T16:06:44.566Z",
-  "fileCount": 54,
-  "files": [
-    {
-      "path": ".github/workflows/changelog.yml",
-      "mtime": "2026-03-09T01:54:16.244Z",
-      "size": 1857
+  "version": "1.0.0",
+  "lastIndexed": "2026-03-10T15:57:22.304Z",
+  "totalFiles": 76,
+  "files": {
+    ".netlify/state.json": {
+      "path": ".netlify/state.json",
+      "hash": "18a32a19520dc577b2a8faa5a5b24660",
+      "mtime": 1773089671614.5596,
+      "size": 53,
+      "indexedAt": "2026-03-10T15:57:22.297Z"
     },
-    {
+    "CHANGELOG.md": {
       "path": "CHANGELOG.md",
-      "mtime": "2026-03-08T23:11:25.893Z",
-      "size": 2258
+      "hash": "2ecc9875a2e835d92f2e59b3cea4c003",
+      "mtime": 1773155049479.9487,
+      "size": 6680,
+      "indexedAt": "2026-03-10T15:57:22.297Z"
     },
-    {
+    "CONTRIBUTING.md": {
       "path": "CONTRIBUTING.md",
-      "mtime": "2026-03-08T22:29:16.997Z",
-      "size": 1768
+      "hash": "f08bff9a750bbe18e8e2d20a291aea6b",
+      "mtime": 1773008956996.6243,
+      "size": 1768,
+      "indexedAt": "2026-03-10T15:57:22.297Z"
     },
-    {
+    "FLOW.md": {
       "path": "FLOW.md",
-      "mtime": "2026-03-08T22:49:55.720Z",
-      "size": 8721
+      "hash": "3229cb5aed9575b09415c641ffa24a81",
+      "mtime": 1773010195719.8748,
+      "size": 8721,
+      "indexedAt": "2026-03-10T15:57:22.297Z"
     },
-    {
+    "README.es.md": {
       "path": "README.es.md",
-      "mtime": "2026-03-09T01:36:34.838Z",
-      "size": 8702
+      "hash": "1e963dbc24cb46d7e495097a37d65ec4",
+      "mtime": 1773154992628.9292,
+      "size": 9684,
+      "indexedAt": "2026-03-10T15:57:22.297Z"
     },
-    {
+    "README.md": {
       "path": "README.md",
-      "mtime": "2026-03-09T15:44:13.410Z",
-      "size": 9663
+      "hash": "d29a7181460fd6a21e0cd7e2e54d8a10",
+      "mtime": 1773154496028.6777,
+      "size": 10960,
+      "indexedAt": "2026-03-10T15:57:22.297Z"
     },
-    {
+    "ai/ai_context.md": {
       "path": "ai/ai_context.md",
-      "mtime": "2026-03-09T15:41:31.196Z",
-      "size": 2228
+      "hash": "7787cbedd4dda0c26a5b985dc0a38e60",
+      "mtime": 1773158175579.6672,
+      "size": 2463,
+      "indexedAt": "2026-03-10T15:57:22.297Z"
     },
-    {
+    "ai/ai_rules.md": {
       "path": "ai/ai_rules.md",
-      "mtime": "2026-03-09T15:41:31.196Z",
-      "size": 998
+      "hash": "9db46ea950b6a0fc468fde147dadbd93",
+      "mtime": 1773158175579.6672,
+      "size": 1030,
+      "indexedAt": "2026-03-10T15:57:22.297Z"
     },
-    {
+    "ai/architecture.md": {
       "path": "ai/architecture.md",
-      "mtime": "2026-03-09T15:41:31.174Z",
-      "size": 1823
+      "hash": "b3ffc20337f9f5aa678417304cb841c0",
+      "mtime": 1773158175079.659,
+      "size": 1828,
+      "indexedAt": "2026-03-10T15:57:22.297Z"
     },
-    {
+    "ai/cache.json": {
+      "path": "ai/cache.json",
+      "hash": "8d74d54110e5e6abb7245bc6b73f2ba4",
+      "mtime": 1773095750167.667,
+      "size": 9109,
+      "indexedAt": "2026-03-10T15:57:22.297Z"
+    },
+    "ai/conventions.md": {
       "path": "ai/conventions.md",
-      "mtime": "2026-03-09T15:41:31.177Z",
-      "size": 826
+      "hash": "cf36cf015f6c293ebf89ec2c7756bb57",
+      "mtime": 1773158175081.659,
+      "size": 826,
+      "indexedAt": "2026-03-10T15:57:22.297Z"
     },
-    {
+    "ai/dependencies.json": {
       "path": "ai/dependencies.json",
-      "mtime": "2026-03-09T15:41:31.194Z",
-      "size": 23972
+      "hash": "cf9d8516e17d4a30c30b10a9f18074cd",
+      "mtime": 1773158175577.6672,
+      "size": 34464,
+      "indexedAt": "2026-03-10T15:57:22.297Z"
     },
-    {
+    "ai/embeddings.json": {
+      "path": "ai/embeddings.json",
+      "hash": "26a10d77ee69ae123cc71fee255587c7",
+      "mtime": 1773074029679.9358,
+      "size": 706073,
+      "indexedAt": "2026-03-10T15:57:22.298Z"
+    },
+    "ai/entrypoints.md": {
       "path": "ai/entrypoints.md",
-      "mtime": "2026-03-09T15:41:31.177Z",
-      "size": 523
+      "hash": "656b4b5ac7bc92ad7878efa8190eec57",
+      "mtime": 1773158175081.659,
+      "size": 713,
+      "indexedAt": "2026-03-10T15:57:22.298Z"
     },
-    {
+    "ai/files.json": {
       "path": "ai/files.json",
-      "mtime": "2026-03-09T16:06:44.565Z",
-      "size": 5435
+      "hash": "ac5d12fe1032f937b9a879ad8c8174b4",
+      "mtime": 1773158242024.7693,
+      "size": 7769,
+      "indexedAt": "2026-03-10T15:57:22.298Z"
     },
-    {
+    "ai/graph/module-graph.json": {
       "path": "ai/graph/module-graph.json",
-      "mtime": "2026-03-09T16:03:35.679Z",
-      "size": 1804
+      "hash": "0d94a0d375b733b1d5df9daab5f0eb09",
+      "mtime": 1773095750091.6658,
+      "size": 2524,
+      "indexedAt": "2026-03-10T15:57:22.298Z"
     },
-    {
+    "ai/graph/symbol-graph.json": {
+      "path": "ai/graph/symbol-graph.json",
+      "hash": "47789fe155c1782cc2a64edc72d1542f",
+      "mtime": 1773095750156.667,
+      "size": 1476102,
+      "indexedAt": "2026-03-10T15:57:22.301Z"
+    },
+    "ai/graph/symbol-references.json": {
+      "path": "ai/graph/symbol-references.json",
+      "hash": "7e7857c41b4795de3ed3ad856a0dbe8c",
+      "mtime": 1773095750158.667,
+      "size": 67744,
+      "indexedAt": "2026-03-10T15:57:22.301Z"
+    },
+    "ai/hierarchy.json": {
       "path": "ai/hierarchy.json",
-      "mtime": "2026-03-09T00:28:59.927Z",
-      "size": 1976
+      "hash": "6acd89feb85aa3b73608b4a076062f5a",
+      "mtime": 1773016139926.8276,
+      "size": 1976,
+      "indexedAt": "2026-03-10T15:57:22.301Z"
     },
-    {
+    "ai/index-state.json": {
       "path": "ai/index-state.json",
-      "mtime": "2026-03-09T16:03:42.662Z",
-      "size": 6057
+      "hash": "1127124c7625ad31df6cb59bdf101d6b",
+      "mtime": 1773072404566.248,
+      "size": 6169,
+      "indexedAt": "2026-03-10T15:57:22.301Z"
     },
-    {
+    "ai/modules.json": {
       "path": "ai/modules.json",
-      "mtime": "2026-03-09T16:03:42.662Z",
-      "size": 1334
+      "hash": "6e8a10677427c7ff5e602e6c685ef24f",
+      "mtime": 1773158242025.7693,
+      "size": 2056,
+      "indexedAt": "2026-03-10T15:57:22.301Z"
     },
-    {
-      "path": "ai/repo-map.json",
-      "mtime": "2026-03-09T16:03:35.670Z",
-      "size": 11707
-    },
-    {
+    "ai/repo_map.json": {
       "path": "ai/repo_map.json",
-      "mtime": "2026-03-09T15:41:31.172Z",
-      "size": 11323
+      "hash": "89c331ec2443c409fbf70fb71d84090c",
+      "mtime": 1773158175077.659,
+      "size": 17650,
+      "indexedAt": "2026-03-10T15:57:22.301Z"
     },
-    {
+    "ai/repo_map.md": {
       "path": "ai/repo_map.md",
-      "mtime": "2026-03-09T15:41:31.172Z",
-      "size": 2987
+      "hash": "bdc9a0359a0fb98b7b62b59a506baefd",
+      "mtime": 1773158175076.659,
+      "size": 4552,
+      "indexedAt": "2026-03-10T15:57:22.301Z"
     },
-    {
+    "ai/summary.md": {
       "path": "ai/summary.md",
-      "mtime": "2026-03-09T15:41:31.173Z",
-      "size": 365
+      "hash": "88aa00ea5477361bf395edffb3b4e97e",
+      "mtime": 1773158175077.659,
+      "size": 368,
+      "indexedAt": "2026-03-10T15:57:22.301Z"
     },
-    {
+    "ai/symbols.json": {
       "path": "ai/symbols.json",
-      "mtime": "2026-03-09T15:41:31.191Z",
-      "size": 323104
+      "hash": "a6a6ebc2947e15ede4d1d781642acf70",
+      "mtime": 1773158175569.667,
+      "size": 859191,
+      "indexedAt": "2026-03-10T15:57:22.302Z"
     },
-    {
+    "ai/tech_stack.md": {
       "path": "ai/tech_stack.md",
-      "mtime": "2026-03-09T15:41:31.175Z",
-      "size": 418
+      "hash": "00ba0b64188ca72ae0b3250ba7b2188f",
+      "mtime": 1773158175080.659,
+      "size": 452,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
     },
-    {
-      "path": "docs/architecture.md",
-      "mtime": "2026-03-09T01:22:24.242Z",
-      "size": 7078
+    "docs/.vitepress/config.ts": {
+      "path": "docs/.vitepress/config.ts",
+      "hash": "6c53efc8669f87bc9040096b96847be3",
+      "mtime": 1773090332406.6528,
+      "size": 3219,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
     },
-    {
-      "path": "docs/spec.md",
-      "mtime": "2026-03-09T01:22:24.242Z",
-      "size": 7917
+    "docs/.vitepress/theme/custom.css": {
+      "path": "docs/.vitepress/theme/custom.css",
+      "hash": "924287015c3c64819e66cdfc0f24fa46",
+      "mtime": 1773076171344.3733,
+      "size": 4021,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
     },
-    {
-      "path": "docs/user-guide.es.md",
-      "mtime": "2026-03-09T01:37:06.694Z",
-      "size": 903
+    "docs/.vitepress/theme/index.ts": {
+      "path": "docs/.vitepress/theme/index.ts",
+      "hash": "a9a72e0000dd7687fd2d899d79e4aee0",
+      "mtime": 1773076127580.8638,
+      "size": 182,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
     },
-    {
-      "path": "docs/user-guide.md",
-      "mtime": "2026-03-09T01:26:07.285Z",
-      "size": 2188
+    "docs/es/guide/getting-started.md": {
+      "path": "docs/es/guide/getting-started.md",
+      "hash": "c446f6957beff061b7b41b0ccef510e2",
+      "mtime": 1773090370625.2866,
+      "size": 619,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
     },
-    {
+    "docs/es/index.md": {
+      "path": "docs/es/index.md",
+      "hash": "920ea9e39b01a04495d68306c26d2fe9",
+      "mtime": 1773090256493.4934,
+      "size": 3121,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
+    },
+    "docs/examples/express-api.md": {
+      "path": "docs/examples/express-api.md",
+      "hash": "54af0d58910939c041d98437a73cf231",
+      "mtime": 1773076482605.2854,
+      "size": 2665,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
+    },
+    "docs/examples/index.md": {
+      "path": "docs/examples/index.md",
+      "hash": "67f774e8e8b170d44b51cfcfff9ecdd7",
+      "mtime": 1773076421849.489,
+      "size": 738,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
+    },
+    "docs/examples/python-django.md": {
+      "path": "docs/examples/python-django.md",
+      "hash": "a57217d9a4a0eba7e6750caf75b86aae",
+      "mtime": 1773076518221.758,
+      "size": 1926,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
+    },
+    "docs/examples/react-app.md": {
+      "path": "docs/examples/react-app.md",
+      "hash": "c3ae0d56ab0de03f6957a2c3685e2a10",
+      "mtime": 1773076494650.4448,
+      "size": 2305,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
+    },
+    "docs/guide/architecture.md": {
+      "path": "docs/guide/architecture.md",
+      "hash": "1045ecab928d43a93a55add6ab7ebdd7",
+      "mtime": 1773095880814.749,
+      "size": 11049,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
+    },
+    "docs/guide/getting-started.md": {
+      "path": "docs/guide/getting-started.md",
+      "hash": "b783c85c32dc67ffa2133915b5cd93fb",
+      "mtime": 1773076199524.7075,
+      "size": 2315,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
+    },
+    "docs/guide/installation.md": {
+      "path": "docs/guide/installation.md",
+      "hash": "7926dceb824c696ff79bc357aee27580",
+      "mtime": 1773076224028.002,
+      "size": 1276,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
+    },
+    "docs/guide/quick-start.md": {
+      "path": "docs/guide/quick-start.md",
+      "hash": "dfa4c6196895c98b84845c138182dae6",
+      "mtime": 1773076244371.249,
+      "size": 1732,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
+    },
+    "docs/index.md": {
+      "path": "docs/index.md",
+      "hash": "9032437ec565b4935df406022143d2ae",
+      "mtime": 1773089168385.8672,
+      "size": 3163,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
+    },
+    "docs/reference/commands.md": {
+      "path": "docs/reference/commands.md",
+      "hash": "f9b509d9a44a4a8ffebc433d4adb07c5",
+      "mtime": 1773095909341.2031,
+      "size": 3817,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
+    },
+    "examples/01-express-api.md": {
       "path": "examples/01-express-api.md",
-      "mtime": "2026-03-09T00:07:17.445Z",
-      "size": 2665
+      "hash": "54af0d58910939c041d98437a73cf231",
+      "mtime": 1773014837445.3228,
+      "size": 2665,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
     },
-    {
+    "examples/02-react-app.md": {
       "path": "examples/02-react-app.md",
-      "mtime": "2026-03-09T00:07:46.556Z",
-      "size": 2702
+      "hash": "2f1948bf3765228b37697f9f48d37b79",
+      "mtime": 1773014866555.722,
+      "size": 2702,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
     },
-    {
+    "examples/03-python-django.md": {
       "path": "examples/03-python-django.md",
-      "mtime": "2026-03-09T00:08:22.647Z",
-      "size": 2947
+      "hash": "fccd23e390a3d29d7d0d5d34a14d8cf3",
+      "mtime": 1773014902647.2178,
+      "size": 2947,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
     },
-    {
+    "examples/README.md": {
       "path": "examples/README.md",
-      "mtime": "2026-03-09T00:08:51.867Z",
-      "size": 1660
+      "hash": "4e8a85046bacda16352b5dff84e3ffe4",
+      "mtime": 1773014931866.6204,
+      "size": 1660,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
     },
-    {
+    "package-lock.json": {
       "path": "package-lock.json",
-      "mtime": "2026-03-08T23:16:32.478Z",
-      "size": 2817
+      "hash": "52220838924486c8aa10ed329be1adf5",
+      "mtime": 1773083490249.47,
+      "size": 126683,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
     },
-    {
+    "package.json": {
       "path": "package.json",
-      "mtime": "2026-03-08T23:16:32.473Z",
-      "size": 720
+      "hash": "093048a5be61e4b19bc5fc5989326027",
+      "mtime": 1773097716407.745,
+      "size": 1440,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
     },
-    {
+    "src/analyzers/aiRules.ts": {
       "path": "src/analyzers/aiRules.ts",
-      "mtime": "2026-03-08T22:35:35.277Z",
-      "size": 4961
+      "hash": "3213f98ebd24246dd24b2c39f696bd14",
+      "mtime": 1773009335276.8303,
+      "size": 4961,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
     },
-    {
+    "src/analyzers/androidResources.ts": {
+      "path": "src/analyzers/androidResources.ts",
+      "hash": "d260211a62c187920db680c232367505",
+      "mtime": 1773153784923.4502,
+      "size": 3203,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
+    },
+    "src/analyzers/architecture.ts": {
       "path": "src/analyzers/architecture.ts",
-      "mtime": "2026-03-08T22:10:37.808Z",
-      "size": 9551
+      "hash": "263e2e84afa0800cd4e95820f7d5aacb",
+      "mtime": 1773007837808.1536,
+      "size": 9551,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
     },
-    {
+    "src/analyzers/conventions.ts": {
       "path": "src/analyzers/conventions.ts",
-      "mtime": "2026-03-08T22:19:12.612Z",
-      "size": 7412
+      "hash": "887a991db6e0b9d658046b81cbe719b6",
+      "mtime": 1773008352611.8462,
+      "size": 7412,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
     },
-    {
+    "src/analyzers/dependencies.ts": {
       "path": "src/analyzers/dependencies.ts",
-      "mtime": "2026-03-08T22:35:09.184Z",
-      "size": 8089
+      "hash": "bc4bab37ede63c8518d9b856ca587a9c",
+      "mtime": 1773153614988.8157,
+      "size": 9390,
+      "indexedAt": "2026-03-10T15:57:22.303Z"
     },
-    {
+    "src/analyzers/entrypoints.ts": {
       "path": "src/analyzers/entrypoints.ts",
-      "mtime": "2026-03-08T22:18:03.763Z",
-      "size": 3862
+      "hash": "c4a26db8302561ab46319ed6ba9019be",
+      "mtime": 1773153667235.145,
+      "size": 6659,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
     },
-    {
+    "src/analyzers/gradleModules.ts": {
+      "path": "src/analyzers/gradleModules.ts",
+      "hash": "fd4d77c29f554bf967e2ce4a05574497",
+      "mtime": 1773153804000.0356,
+      "size": 2761,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
+    },
+    "src/analyzers/symbols.ts": {
       "path": "src/analyzers/symbols.ts",
-      "mtime": "2026-03-08T22:34:16.840Z",
-      "size": 9729
+      "hash": "47b731c0e9bd4757b6aab646de5249ed",
+      "mtime": 1773095734207.4124,
+      "size": 10850,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
     },
-    {
+    "src/analyzers/techStack.ts": {
       "path": "src/analyzers/techStack.ts",
-      "mtime": "2026-03-08T22:14:45.718Z",
-      "size": 11373
+      "hash": "64ef322c5475e2b0ef1d95eab41b6b4c",
+      "mtime": 1773153400053.8142,
+      "size": 13336,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
     },
-    {
+    "src/commands/ai-first.ts": {
       "path": "src/commands/ai-first.ts",
-      "mtime": "2026-03-09T16:03:20.915Z",
-      "size": 34796
+      "hash": "fb0a72ba6e1378cfc0a937b4482c772a",
+      "mtime": 1773157611935.3733,
+      "size": 43410,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
     },
-    {
+    "src/commands/doctor.ts": {
       "path": "src/commands/doctor.ts",
-      "mtime": "2026-03-09T16:05:36.101Z",
-      "size": 3599
+      "hash": "bf877242c2777a92c2c13c6f20952d63",
+      "mtime": 1773072336100.912,
+      "size": 3599,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
     },
-    {
+    "src/commands/explore.ts": {
       "path": "src/commands/explore.ts",
-      "mtime": "2026-03-09T15:53:30.360Z",
-      "size": 2787
+      "hash": "684e64267e90e13ff9ae7a7a87deaa5d",
+      "mtime": 1773071610359.5925,
+      "size": 2787,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
     },
-    {
+    "src/core/aiContextGenerator.ts": {
       "path": "src/core/aiContextGenerator.ts",
-      "mtime": "2026-03-08T23:50:59.072Z",
-      "size": 30018
+      "hash": "c520cef1f061e0f8517734b30957b947",
+      "mtime": 1773013859071.9048,
+      "size": 30018,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
     },
-    {
+    "src/core/ccp.ts": {
+      "path": "src/core/ccp.ts",
+      "hash": "cdab3bf243f95155d0a15e26b6582afb",
+      "mtime": 1773157731340.6924,
+      "size": 6267,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
+    },
+    "src/core/chunker.ts": {
+      "path": "src/core/chunker.ts",
+      "hash": "7f53952952c9d801672a5a6ad729e7d5",
+      "mtime": 1773073665099.1428,
+      "size": 9678,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
+    },
+    "src/core/contextGenerator.ts": {
       "path": "src/core/contextGenerator.ts",
-      "mtime": "2026-03-08T21:42:54.981Z",
-      "size": 8351
+      "hash": "0e3c3077c006ce8092c64f0232f750c0",
+      "mtime": 1773006174980.9766,
+      "size": 8351,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
     },
-    {
+    "src/core/contextPacket.ts": {
+      "path": "src/core/contextPacket.ts",
+      "hash": "0febc90214d77fc907e412222f94e6c1",
+      "mtime": 1773095515712.9194,
+      "size": 13322,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
+    },
+    "src/core/embeddings.ts": {
+      "path": "src/core/embeddings.ts",
+      "hash": "ce1769d7adec0510a295672f69a8ba41",
+      "mtime": 1773073766382.3613,
+      "size": 4541,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
+    },
+    "src/core/hierarchyGenerator.ts": {
       "path": "src/core/hierarchyGenerator.ts",
-      "mtime": "2026-03-09T00:27:52.838Z",
-      "size": 10914
+      "hash": "c83b44b554d5aab8759f6a4807985a24",
+      "mtime": 1773016072837.5437,
+      "size": 10914,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
     },
-    {
+    "src/core/indexState.ts": {
+      "path": "src/core/indexState.ts",
+      "hash": "412559800f738abb82e28c9eb71f8a6c",
+      "mtime": 1773073382179.3071,
+      "size": 4850,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
+    },
+    "src/core/indexer.ts": {
       "path": "src/core/indexer.ts",
-      "mtime": "2026-03-08T23:20:50.361Z",
-      "size": 25617
+      "hash": "6e5b002d8661cf176d236b2e362db46c",
+      "mtime": 1773012050361.3564,
+      "size": 25617,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
     },
-    {
+    "src/core/moduleGraph.ts": {
       "path": "src/core/moduleGraph.ts",
-      "mtime": "2026-03-09T15:53:30.360Z",
-      "size": 5256
+      "hash": "0bf6db06febcf2f929d92fdf569d753b",
+      "mtime": 1773071610359.6934,
+      "size": 5256,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
     },
-    {
+    "src/core/repoMapper.ts": {
       "path": "src/core/repoMapper.ts",
-      "mtime": "2026-03-08T21:24:12.293Z",
-      "size": 4464
+      "hash": "2b5a86b04f99bcbfaa6b29291857a0d4",
+      "mtime": 1773005052293.012,
+      "size": 4464,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
     },
-    {
+    "src/core/repoScanner.ts": {
       "path": "src/core/repoScanner.ts",
-      "mtime": "2026-03-08T21:07:49.944Z",
-      "size": 2351
+      "hash": "78c4baf429b8365b779d779faec6c6f2",
+      "mtime": 1773004069943.8745,
+      "size": 2351,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
     },
-    {
+    "src/core/symbolGraph.ts": {
+      "path": "src/core/symbolGraph.ts",
+      "hash": "2ed7da22206f2833ab0766b144e82f6b",
+      "mtime": 1773095424570.4573,
+      "size": 17247,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
+    },
+    "src/index.ts": {
       "path": "src/index.ts",
-      "mtime": "2026-03-09T15:22:15.667Z",
-      "size": 556
+      "hash": "f79ef17442d3a4a7a0288a646e2b21b0",
+      "mtime": 1773069735666.7573,
+      "size": 556,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
     },
-    {
+    "src/types/sql.js.d.ts": {
       "path": "src/types/sql.js.d.ts",
-      "mtime": "2026-03-08T22:57:17.558Z",
-      "size": 515
+      "hash": "5b68823eaec8a56784c956075d1954ce",
+      "mtime": 1773010637558.1929,
+      "size": 515,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
     },
-    {
+    "src/utils/fileUtils.ts": {
       "path": "src/utils/fileUtils.ts",
-      "mtime": "2026-03-08T22:10:16.980Z",
-      "size": 2682
+      "hash": "0f8b254e80a30b65d71ba40798fbcd3f",
+      "mtime": 1773007816979.788,
+      "size": 2682,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
     },
-    {
+    "tsconfig.json": {
       "path": "tsconfig.json",
-      "mtime": "2026-03-08T21:06:42.783Z",
-      "size": 475
+      "hash": "7f7a4bcb349bfbd33e1550e0b02d501b",
+      "mtime": 1773004002782.7,
+      "size": 475,
+      "indexedAt": "2026-03-10T15:57:22.304Z"
     }
-  ]
+  }
 }

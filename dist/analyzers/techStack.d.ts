@@ -9,6 +9,13 @@ export interface TechStack {
     linters: string[];
     formatters: string[];
     description: string;
+    android?: {
+        minSdk?: string;
+        targetSdk?: string;
+        compileSdk?: string;
+        gradleVersion?: string;
+        kotlinVersion?: string;
+    };
 }
 /**
  * Detect technology stack from repository

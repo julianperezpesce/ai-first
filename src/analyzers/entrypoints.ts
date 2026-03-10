@@ -1,5 +1,5 @@
 import { FileInfo } from "../core/repoScanner.js";
-import { readJsonFile } from "../utils/fileUtils.js";
+import { readJsonFile, readFile } from "../utils/fileUtils.js";
 import path from "path";
 
 export interface Entrypoint {
@@ -67,6 +67,85 @@ export function discoverEntrypoints(files: FileInfo[], rootDir: string): Entrypo
     if (p && !entrypoints.some(e => e.path === file.relativePath)) {
       entrypoints.push({ name: file.name, path: file.relativePath, type: p.type, description: p.desc });
     }
+  }
+  
+  // Detect Android entrypoints from AndroidManifest.xml
+  const androidManifests = files.filter(f => f.name === "AndroidManifest.xml");
+  for (const manifest of androidManifests) {
+    try {
+      const manifestContent = readFile(path.join(rootDir, manifest.relativePath));
+      const androidEntrypoints = parseAndroidManifest(manifestContent, manifest.relativePath);
+      entrypoints.push(...androidEntrypoints);
+    } catch {}
+  }
+  
+  return entrypoints;
+}
+
+/**
+ * Parse AndroidManifest.xml to extract entrypoints
+ */
+function parseAndroidManifest(content: string, manifestPath: string): Entrypoint[] {
+  const entrypoints: Entrypoint[] = [];
+  
+  // Extract package name
+  const packageMatch = content.match(/package="([^"]+)"/);
+  const packageName = packageMatch ? packageMatch[1] : "unknown";
+  
+  // Extract activities
+  const activityRegex = /<activity[^>]+android:name="([^"]+)"[^>]*>/g;
+  let match;
+  while ((match = activityRegex.exec(content)) !== null) {
+    const activityName = match[1];
+    const isMain = content.includes(`android:name="${activityName}"`) && 
+                   content.includes("android.intent.action.MAIN") &&
+                   content.includes("android.intent.category.LAUNCHER");
+    
+    entrypoints.push({
+      name: activityName.split('.').pop() || activityName,
+      path: `${manifestPath}#${activityName}`,
+      type: isMain ? "client" : "other",
+      description: isMain ? `Main Activity (${packageName})` : `Activity: ${activityName}`,
+      command: isMain ? `adb shell am start -n ${packageName}/${activityName}` : undefined,
+    });
+  }
+  
+  // Extract services
+  const serviceRegex = /<service[^>]+android:name="([^"]+)"[^>]*>/g;
+  while ((match = serviceRegex.exec(content)) !== null) {
+    entrypoints.push({
+      name: match[1].split('.').pop() || match[1],
+      path: `${manifestPath}#service.${match[1]}`,
+      type: "other",
+      description: `Service: ${match[1]}`,
+    });
+  }
+  
+  // Extract receivers
+  const receiverRegex = /<receiver[^>]+android:name="([^"]+)"[^>]*>/g;
+  while ((match = receiverRegex.exec(content)) !== null) {
+    entrypoints.push({
+      name: match[1].split('.').pop() || match[1],
+      path: `${manifestPath}#receiver.${match[1]}`,
+      type: "other",
+      description: `BroadcastReceiver: ${match[1]}`,
+    });
+  }
+  
+  // Extract permissions
+  const permissionRegex = /<uses-permission[^>]+android:name="([^"]+)"[^>]*>/g;
+  const permissions: string[] = [];
+  while ((match = permissionRegex.exec(content)) !== null) {
+    permissions.push(match[1]);
+  }
+  
+  if (permissions.length > 0) {
+    entrypoints.push({
+      name: "Permissions",
+      path: `${manifestPath}#permissions`,
+      type: "config",
+      description: `${permissions.length} permissions declared`,
+    });
   }
   
   return entrypoints;

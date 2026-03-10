@@ -5,8 +5,8 @@
       "mtime": 1773089671614.5596
     },
     "CHANGELOG.md": {
-      "hash": "5f579aa51da302b20d2d90bd18ea7d2d",
-      "mtime": 1773094964673.0017
+      "hash": "2ecc9875a2e835d92f2e59b3cea4c003",
+      "mtime": 1773155049479.9487
     },
     "CONTRIBUTING.md": {
       "hash": "f08bff9a750bbe18e8e2d20a291aea6b",
@@ -17,40 +17,48 @@
       "mtime": 1773010195719.8748
     },
     "README.es.md": {
-      "hash": "95d68c130d31ecf04a4ca3db024fcaa0",
-      "mtime": 1773020194838.1672
+      "hash": "01dec2cc8fb7dd7d1a4812f42b193d07",
+      "mtime": 1773165384491.799
     },
     "README.md": {
-      "hash": "fa0351db554837257913ed74e4e8fb35",
-      "mtime": 1773094365878.026
+      "hash": "9712f00575eb69d064e44c9ca7f12097",
+      "mtime": 1773165282282.2097
     },
     "ai/ai_context.md": {
-      "hash": "253cbb10a65490e44d3ae6ecb4414eac",
-      "mtime": 1773094184621.2178
+      "hash": "3584bb05674983ecac4ea480b2f46b14",
+      "mtime": 1773172325716.2263
     },
     "ai/ai_rules.md": {
       "hash": "9db46ea950b6a0fc468fde147dadbd93",
-      "mtime": 1773094184621.2178
+      "mtime": 1773172325716.2263
     },
     "ai/architecture.md": {
-      "hash": "ed874e37e6bb5911648fe6c63d2706da",
-      "mtime": 1773094184586.2173
+      "hash": "1002cbd5001edccae71a7c6f9631bc0f",
+      "mtime": 1773172325660.2253
     },
-    "ai/context/analyzers.Symbol.json": {
-      "hash": "3f30543dd71a29a0ff3644e5a08f39cc",
-      "mtime": 1773094133874.432
+    "ai/cache.json": {
+      "hash": "8d74d54110e5e6abb7245bc6b73f2ba4",
+      "mtime": 1773095750167.667
     },
-    "ai/context/analyzers.extractSymbols.json": {
-      "hash": "40b025c6995d41b312edfc28d329469e",
-      "mtime": 1773094127232.329
+    "ai/ccp/jira-123/context.json": {
+      "hash": "60531ec055a219c58dfde8ae0d511c8a",
+      "mtime": 1773162450033.8916
+    },
+    "ai/context/repo.json": {
+      "hash": "bd1c6fa8dd53ef2812310be1b0fb660c",
+      "mtime": 1773162421927.4534
+    },
+    "ai/context/utils.json": {
+      "hash": "1e24ba3674bfffeb902de264f3bfe104",
+      "mtime": 1773162421927.4534
     },
     "ai/conventions.md": {
       "hash": "cf36cf015f6c293ebf89ec2c7756bb57",
-      "mtime": 1773094184589.2173
+      "mtime": 1773172325665.2256
     },
     "ai/dependencies.json": {
-      "hash": "62a5d9ecff94c1530c18690da263dbc8",
-      "mtime": 1773094184619.2178
+      "hash": "7272f8651551378806eeed33ddcf0526",
+      "mtime": 1773172325713.2263
     },
     "ai/embeddings.json": {
       "hash": "26a10d77ee69ae123cc71fee255587c7",
@@ -58,55 +66,59 @@
     },
     "ai/entrypoints.md": {
       "hash": "656b4b5ac7bc92ad7878efa8190eec57",
-      "mtime": 1773094184588.2173
+      "mtime": 1773172325663.2253
     },
     "ai/files.json": {
-      "hash": "1315ffad7627c81e5ef5d46637ac5e82",
-      "mtime": 1773095750159.667
+      "hash": "f18893ae88e91746b7d6a2672313a169",
+      "mtime": 1773172325885.2288
     },
     "ai/graph/module-graph.json": {
-      "hash": "0d94a0d375b733b1d5df9daab5f0eb09",
-      "mtime": 1773095750091.6658
+      "hash": "aae0e6a64c9fb810ee7abb77653b47e4",
+      "mtime": 1773172325800.2275
     },
     "ai/graph/symbol-graph.json": {
-      "hash": "47789fe155c1782cc2a64edc72d1542f",
-      "mtime": 1773095750156.667
+      "hash": "0f9768c3944ee9c4e7a49307005a0000",
+      "mtime": 1773172325881.2288
+    },
+    "ai/graph/symbol-references.json": {
+      "hash": "0ce98723fb65b6f78967e0f0187b3099",
+      "mtime": 1773172325885.2288
     },
     "ai/hierarchy.json": {
       "hash": "6acd89feb85aa3b73608b4a076062f5a",
       "mtime": 1773016139926.8276
     },
     "ai/index-state.json": {
-      "hash": "1127124c7625ad31df6cb59bdf101d6b",
-      "mtime": 1773072404566.248
+      "hash": "703ee5118b9e6ac8566973322533e881",
+      "mtime": 1773158242303.774
     },
     "ai/modules.json": {
-      "hash": "89b43f1d38cde0e0965aecc2da64b7f3",
-      "mtime": 1773095750079.6658
+      "hash": "5e44f37e165bea9b6cdd0c751ceaebc0",
+      "mtime": 1773172325788.2273
     },
     "ai/repo-map.json": {
-      "hash": "be1d2ca5badb9a8a7d0a26e130b5d5aa",
-      "mtime": 1773095750080.6658
+      "hash": "b78d118db8f2539c61f5ad87c9b5c3f2",
+      "mtime": 1773172325789.2273
     },
     "ai/repo_map.json": {
-      "hash": "be49ec38b82dc09893c859ad71f7539f",
-      "mtime": 1773094184584.2173
+      "hash": "42804efbbd0f77ef3691083b8bd194b0",
+      "mtime": 1773172325658.2253
     },
     "ai/repo_map.md": {
-      "hash": "2f9d1db6511171b6511b6531e4315d65",
-      "mtime": 1773094184583.2173
+      "hash": "26e5c9b97baac1b4b70589c3b4d5ff08",
+      "mtime": 1773172325657.2253
     },
     "ai/summary.md": {
-      "hash": "e4f4cd9b352537249a489f46c9f79897",
-      "mtime": 1773094184585.2173
+      "hash": "f70e1f1aae6f64d693955862d691a86d",
+      "mtime": 1773172325658.2253
     },
     "ai/symbols.json": {
-      "hash": "3d664a06e522e0c81fdb7d7de0b22b58",
-      "mtime": 1773094184614.2178
+      "hash": "e580e14993a69d9b25237eb2975b269e",
+      "mtime": 1773172325706.226
     },
     "ai/tech_stack.md": {
       "hash": "00ba0b64188ca72ae0b3250ba7b2188f",
-      "mtime": 1773094184587.2173
+      "mtime": 1773172325662.2253
     },
     "docs/.vitepress/config.ts": {
       "hash": "6c53efc8669f87bc9040096b96847be3",
@@ -145,8 +157,8 @@
       "mtime": 1773076494650.4448
     },
     "docs/guide/architecture.md": {
-      "hash": "33d1a686af99e4b4eedbd2508547adde",
-      "mtime": 1773076261345.457
+      "hash": "1045ecab928d43a93a55add6ab7ebdd7",
+      "mtime": 1773095880814.749
     },
     "docs/guide/getting-started.md": {
       "hash": "b783c85c32dc67ffa2133915b5cd93fb",
@@ -165,8 +177,8 @@
       "mtime": 1773089168385.8672
     },
     "docs/reference/commands.md": {
-      "hash": "d7a5af304800601a765372b68a07d30c",
-      "mtime": 1773076271511.582
+      "hash": "f9b509d9a44a4a8ffebc433d4adb07c5",
+      "mtime": 1773095909341.2031
     },
     "examples/01-express-api.md": {
       "hash": "54af0d58910939c041d98437a73cf231",
@@ -189,12 +201,16 @@
       "mtime": 1773083490249.47
     },
     "package.json": {
-      "hash": "322da667b132a7718f51c0c85cc104f2",
-      "mtime": 1773094377054.1992
+      "hash": "093048a5be61e4b19bc5fc5989326027",
+      "mtime": 1773097716407.745
     },
     "src/analyzers/aiRules.ts": {
       "hash": "3213f98ebd24246dd24b2c39f696bd14",
       "mtime": 1773009335276.8303
+    },
+    "src/analyzers/androidResources.ts": {
+      "hash": "d260211a62c187920db680c232367505",
+      "mtime": 1773153784923.4502
     },
     "src/analyzers/architecture.ts": {
       "hash": "263e2e84afa0800cd4e95820f7d5aacb",
@@ -205,24 +221,28 @@
       "mtime": 1773008352611.8462
     },
     "src/analyzers/dependencies.ts": {
-      "hash": "379b8d64e2ee791aabc15bd0866cb051",
-      "mtime": 1773009309183.553
+      "hash": "bc4bab37ede63c8518d9b856ca587a9c",
+      "mtime": 1773153614988.8157
     },
     "src/analyzers/entrypoints.ts": {
-      "hash": "50926ed23cb1e209241bb61e42dfd2a4",
-      "mtime": 1773008283762.7117
+      "hash": "c4a26db8302561ab46319ed6ba9019be",
+      "mtime": 1773153667235.145
+    },
+    "src/analyzers/gradleModules.ts": {
+      "hash": "fd4d77c29f554bf967e2ce4a05574497",
+      "mtime": 1773153804000.0356
     },
     "src/analyzers/symbols.ts": {
       "hash": "47b731c0e9bd4757b6aab646de5249ed",
       "mtime": 1773095734207.4124
     },
     "src/analyzers/techStack.ts": {
-      "hash": "04e93c888be500a6f8a6138aa36d8718",
-      "mtime": 1773008085718.408
+      "hash": "64ef322c5475e2b0ef1d95eab41b6b4c",
+      "mtime": 1773153400053.8142
     },
     "src/commands/ai-first.ts": {
-      "hash": "9449d944df5cf62c1f9155e1f3557b03",
-      "mtime": 1773095632152.7827
+      "hash": "af915da67be6d9be11b89dedd52fe58b",
+      "mtime": 1773164926035.65
     },
     "src/commands/doctor.ts": {
       "hash": "bf877242c2777a92c2c13c6f20952d63",
@@ -235,6 +255,10 @@
     "src/core/aiContextGenerator.ts": {
       "hash": "c520cef1f061e0f8517734b30957b947",
       "mtime": 1773013859071.9048
+    },
+    "src/core/ccp.ts": {
+      "hash": "cdab3bf243f95155d0a15e26b6582afb",
+      "mtime": 1773157731340.6924
     },
     "src/core/chunker.ts": {
       "hash": "7f53952952c9d801672a5a6ad729e7d5",
@@ -276,6 +300,10 @@
       "hash": "78c4baf429b8365b779d779faec6c6f2",
       "mtime": 1773004069943.8745
     },
+    "src/core/semanticContexts.ts": {
+      "hash": "0eb76e45b19c9838edde16030d323ef5",
+      "mtime": 1773172115611.023
+    },
     "src/core/symbolGraph.ts": {
       "hash": "2ed7da22206f2833ab0766b144e82f6b",
       "mtime": 1773095424570.4573
@@ -297,5 +325,5 @@
       "mtime": 1773004002782.7
     }
   },
-  "lastIndexed": "2026-03-09T22:35:50.161Z"
+  "lastIndexed": "2026-03-10T19:52:05.887Z"
 }

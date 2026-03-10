@@ -20,9 +20,9 @@
 ## ai
   - ai_context.md
   - ai_rules.md
-  - analyzers.extractSymbols.json
-  - analyzers.Symbol.json
   - architecture.md
+  - cache.json
+  - context.json
   - conventions.md
   - dependencies.json
   - embeddings.json
@@ -34,11 +34,13 @@
   - modules.json
   - repo_map.json
   - repo_map.md
-  - repo-map.json
+  - repo.json
   - summary.md
   - symbol-graph.json
+  - symbol-references.json
   - symbols.json
   - tech_stack.md
+  - utils.json
 
 ## docs
   - architecture.md
@@ -73,7 +75,9 @@
   - ai-first.ts
   - aiContextGenerator.ts
   - aiRules.ts
+  - androidResources.ts
   - architecture.ts
+  - ccp.ts
   - chunker.ts
   - contextGenerator.ts
   - contextPacket.ts
@@ -84,6 +88,7 @@
   - entrypoints.ts
   - explore.ts
   - fileUtils.ts
+  - gradleModules.ts
   - hierarchyGenerator.ts
   - index.ts
   - indexer.ts
@@ -91,6 +96,7 @@
   - moduleGraph.ts
   - repoMapper.ts
   - repoScanner.ts
+  - semanticContexts.ts
   - sql.js.d.ts
   - symbolGraph.ts
   - symbols.ts
@@ -105,15 +111,20 @@
 ├── .netlify/
 │   └── state.json
 ├── ai/
+│   ├── ccp/
+│   │   └── jira-123/
+│   │       └── context.json
 │   ├── context/
-│   │   ├── analyzers.Symbol.json
-│   │   └── analyzers.extractSymbols.json
+│   │   ├── repo.json
+│   │   └── utils.json
 │   ├── graph/
 │   │   ├── module-graph.json
-│   │   └── symbol-graph.json
+│   │   ├── symbol-graph.json
+│   │   └── symbol-references.json
 │   ├── ai_context.md
 │   ├── ai_rules.md
 │   ├── architecture.md
+│   ├── cache.json
 │   ├── conventions.md
 │   ├── dependencies.json
 │   ├── embeddings.json
@@ -122,7 +133,6 @@
 │   ├── hierarchy.json
 │   ├── index-state.json
 │   ├── modules.json
-│   ├── repo-map.json
 │   ├── repo_map.json
 │   ├── repo_map.md
 │   ├── summary.md
@@ -159,10 +169,12 @@
 ├── src/
 │   ├── analyzers/
 │   │   ├── aiRules.ts
+│   │   ├── androidResources.ts
 │   │   ├── architecture.ts
 │   │   ├── conventions.ts
 │   │   ├── dependencies.ts
 │   │   ├── entrypoints.ts
+│   │   ├── gradleModules.ts
 │   │   ├── symbols.ts
 │   │   └── techStack.ts
 │   ├── commands/
@@ -171,6 +183,7 @@
 │   │   └── explore.ts
 │   ├── core/
 │   │   ├── aiContextGenerator.ts
+│   │   ├── ccp.ts
 │   │   ├── chunker.ts
 │   │   ├── contextGenerator.ts
 │   │   ├── contextPacket.ts
@@ -181,6 +194,7 @@
 │   │   ├── moduleGraph.ts
 │   │   ├── repoMapper.ts
 │   │   ├── repoScanner.ts
+│   │   ├── semanticContexts.ts
 │   │   └── symbolGraph.ts
 │   ├── types/
 │   │   └── sql.js.d.ts

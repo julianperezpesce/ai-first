@@ -1,6 +1,6 @@
 {
-  "generated": "2026-03-09T22:09:44.584Z",
-  "totalFiles": 74,
+  "generated": "2026-03-10T19:52:05.658Z",
+  "totalFiles": 80,
   "structure": {
     ".netlify": {
       "type": "directory",
@@ -46,14 +46,32 @@
           "type": "file",
           "extension": "md"
         },
+        "cache.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "ccp": {
+          "type": "directory",
+          "children": {
+            "jira-123": {
+              "type": "directory",
+              "children": {
+                "context.json": {
+                  "type": "file",
+                  "extension": "json"
+                }
+              }
+            }
+          }
+        },
         "context": {
           "type": "directory",
           "children": {
-            "analyzers.Symbol.json": {
+            "repo.json": {
               "type": "file",
               "extension": "json"
             },
-            "analyzers.extractSymbols.json": {
+            "utils.json": {
               "type": "file",
               "extension": "json"
             }
@@ -89,6 +107,10 @@
             "symbol-graph.json": {
               "type": "file",
               "extension": "json"
+            },
+            "symbol-references.json": {
+              "type": "file",
+              "extension": "json"
             }
           }
         },
@@ -101,10 +123,6 @@
           "extension": "json"
         },
         "modules.json": {
-          "type": "file",
-          "extension": "json"
-        },
-        "repo-map.json": {
           "type": "file",
           "extension": "json"
         },
@@ -269,6 +287,10 @@
               "type": "file",
               "extension": "ts"
             },
+            "androidResources.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
             "architecture.ts": {
               "type": "file",
               "extension": "ts"
@@ -282,6 +304,10 @@
               "extension": "ts"
             },
             "entrypoints.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "gradleModules.ts": {
               "type": "file",
               "extension": "ts"
             },
@@ -316,6 +342,10 @@
           "type": "directory",
           "children": {
             "aiContextGenerator.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "ccp.ts": {
               "type": "file",
               "extension": "ts"
             },
@@ -356,6 +386,10 @@
               "extension": "ts"
             },
             "repoScanner.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "semanticContexts.ts": {
               "type": "file",
               "extension": "ts"
             },
@@ -441,13 +475,23 @@
       "extension": "md"
     },
     {
-      "path": "ai/context/analyzers.Symbol.json",
-      "name": "analyzers.Symbol.json",
+      "path": "ai/cache.json",
+      "name": "cache.json",
       "extension": "json"
     },
     {
-      "path": "ai/context/analyzers.extractSymbols.json",
-      "name": "analyzers.extractSymbols.json",
+      "path": "ai/ccp/jira-123/context.json",
+      "name": "context.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/repo.json",
+      "name": "repo.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/utils.json",
+      "name": "utils.json",
       "extension": "json"
     },
     {
@@ -486,6 +530,11 @@
       "extension": "json"
     },
     {
+      "path": "ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "extension": "json"
+    },
+    {
       "path": "ai/hierarchy.json",
       "name": "hierarchy.json",
       "extension": "json"
@@ -498,11 +547,6 @@
     {
       "path": "ai/modules.json",
       "name": "modules.json",
-      "extension": "json"
-    },
-    {
-      "path": "ai/repo-map.json",
-      "name": "repo-map.json",
       "extension": "json"
     },
     {
@@ -641,6 +685,11 @@
       "extension": "ts"
     },
     {
+      "path": "src/analyzers/androidResources.ts",
+      "name": "androidResources.ts",
+      "extension": "ts"
+    },
+    {
       "path": "src/analyzers/architecture.ts",
       "name": "architecture.ts",
       "extension": "ts"
@@ -658,6 +707,11 @@
     {
       "path": "src/analyzers/entrypoints.ts",
       "name": "entrypoints.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/analyzers/gradleModules.ts",
+      "name": "gradleModules.ts",
       "extension": "ts"
     },
     {
@@ -688,6 +742,11 @@
     {
       "path": "src/core/aiContextGenerator.ts",
       "name": "aiContextGenerator.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/ccp.ts",
+      "name": "ccp.ts",
       "extension": "ts"
     },
     {
@@ -738,6 +797,11 @@
     {
       "path": "src/core/repoScanner.ts",
       "name": "repoScanner.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/semanticContexts.ts",
+      "name": "semanticContexts.ts",
       "extension": "ts"
     },
     {

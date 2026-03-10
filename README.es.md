@@ -247,6 +247,17 @@ ai/
 ├── tech_stack.md      # Lenguajes y frameworks
 ├── entrypoints.md     # Puntos de entrada
 ├── conventions.md     # Convenciones de código
+├── index.db           # SQLite (con índice ai-first)
+│
+├── graph/             # Generado por `ai-first map`
+│   ├── module-graph.json   # Grafo de dependencias a nivel de módulo
+│   └── symbol-graph.json   # Relaciones a nivel de símbolo (calls, imports, etc.)
+│
+└── context/           # Generado por `ai-first init` o `map`
+    ├── features/      # Features de negocio detectados
+    │   └── <modulo>.json
+    └── flows/         # Cadenas de ejecución de negocio
+        └── <flujo>.json
 └── index.db           # SQLite (con índice ai-first)
 ```
 
@@ -278,7 +289,112 @@ ai-first init --output ./docs/ai
 
 # Directorio raíz personalizado
 ai-first init --root ./my-project
+TH|```
+TH|
+TH|## 📦 Context Control Packs (CCP)
+TH|
+TH|CCP (Context Control Packs) te permite crear contextos reutilizables y específicos para diferentes flujos de trabajo de IA.
+TH|
+TH|### Cómo Funciona
+TH|
+TH|1. **Generar Módulos de Contexto**: `ai-first init` crea módulos en `ai/context/`
+TH|2. **Crear un CCP**: Define qué módulos incluir para una tarea específica
+TH|3. **Usar en IA**: Referencia el CCP al trabajar con agentes de IA
+TH|
+TH|### Comandos CCP
+TH|
+TH|```bash
+TH|# Crear un nuevo CCP con módulos de contexto específicos
+TH|ai-first ccp create tarea-auth --include repo,auth,api --description "Trabajo en autenticación"
+TH|
+TH|# Listar todos los CCPs disponibles
+TH|ai-first ccp list
+TH|
+TH|# Mostrar detalles del CCP
+TH|ai-first ccp show tarea-auth
+TH|```
+TH|
+TH|### Estructura CCP
+TH|
+TH|```
+TH|ai/
+TH|├── context/           # Módulos de contexto (auto-generados)
+TH|│   ├── repo.json      # Contexto base del repositorio
+TH|│   ├── auth.json      # Contexto de autenticación
+TH|│   └── <feature>.json
+TH|│
+TH|└── ccp/              # Definiciones de CCP
+TH|    └── <nombre>/
+TH|        └── context.json
+TH|```
+TH|
+TH|Ejemplo CCP (context.json)
+TH|
+TH|```json
+TH|{
+TH|  "task": "auth-feature",
+TH|  "description": "Trabajo en autenticación",
+TH|  "includes": [
+TH|    "../../context/repo.json",
+TH|    "../../context/auth.json",
+TH|    "../../context/api.json"
+TH|  ]
+TH|}
+TH|```
+TH|
+Caso de uso: Crea contextos específicos como `"fix-bug"`, `"add-feature"`, `"refactor"`, etc.
+
+---
+
+## 🎯 Contextos Semánticos (Features & Flows)
+
+Los contextos semánticos son comprensión automática a nivel de negocio de tu código.
+
+### Features
+
+Los features representan módulos de negocio detectados desde la estructura del proyecto.
+
+**Filtros de calidad:**
+- Debe tener ≥ 3 archivos fuente
+- Debe contener un entrypoint (Controller, Route, Handler, Command, Service)
+- Excluidos: utils, helpers, types, interfaces, constants, config, models, dto, common
+
+```json
+// ai/context/features/<modulo>.json
+{
+  "feature": "auth",
+  "files": ["src/auth/controller.js", "src/auth/service.js"],
+  "entrypoints": ["src/auth/controller.js"]
+}
 ```
+
+### Flows
+
+Los flows representan cadenas de ejecución de negocio desde entrypoints.
+
+**Filtros de calidad:**
+- Debe abarcar ≥ 3 archivos
+- Debe cruzar ≥ 2 capas arquitectónicas (api → service → data)
+- Debe iniciar desde un entrypoint (Controller, Route, Command, Handler)
+
+```json
+// ai/context/flows/<nombre>.json
+{
+  "name": "login",
+  "entrypoint": "src/auth/controller.js",
+  "files": ["controller.js", "service.js", "repository.js"],
+  "depth": 3,
+  "layers": ["api", "service", "data"]
+}
+```
+
+**Generado por:** `ai-first init` o `ai-first map`
+
+---
+
+## 🌎 Idiomas
+TH|
+TH|---
 
 ---
 
@@ -344,7 +460,27 @@ Ver [docs/architecture.md](./docs/architecture.md) para arquitectura interna.
 ¡Danos una ⭐ si este proyecto te ayudó!
 
 ---
-
+KP|
+VT|## 🤖 Soporte Android/Kotlin
+HB|
+XZ|ai-first detecta e indexa automáticamente proyectos Android/Kotlin:
+HB|
+RV|- **Detección de lenguaje**: Kotlin (.kt)
+- **Detección de framework**: Android (vía build.gradle, AndroidManifest.xml)
+- **Análisis de dependencias**: Dependencias Gradle (implementation, api, compile)
+- **Puntos de entrada**: Activities, Services, BroadcastReceivers desde AndroidManifest.xml
+- **Recursos**: Indexa res/layout, res/drawable, res/values
+- **Multi-módulo**: Detecta módulos Gradle desde settings.gradle
+HB|
+XZ|### Archivos generados para proyectos Android
+HB|
+XZ|- `ai/tech_stack.md` - Muestra Android con versiones de SDK
+- `ai/dependencies.json` - Dependencias Gradle en formato group:artifact:version
+- `ai/entrypoints.md` - Activities, services, permisos de Android
+- `ai/android-resources.json` - Layouts, drawables, values (si existe res/)
+- `ai/gradle-modules.json` - Estructura multi-módulo (si existe settings.gradle)
+HB|
+VT|---
 ## 📄 Licencia
 
 MIT © [Julian Perez Pesce](https://github.com/julianperezpesce)

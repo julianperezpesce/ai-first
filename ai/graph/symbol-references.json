@@ -112,7 +112,7 @@
     "src/commands/ai-first.ts#scan",
     "src/commands/ai-first.ts#repoMapData"
   ],
-  "src/commands/ai-first.ts#entrypoints": [
+  "src/core/semanticContexts.ts#entrypoints": [
     "src/analyzers/aiRules.ts#AIRules",
     "src/analyzers/aiRules.ts#generateAIRules",
     "src/analyzers/aiRules.ts#conventions",
@@ -147,6 +147,7 @@
     "src/commands/ai-first.ts#architecturePath",
     "src/commands/ai-first.ts#techStack",
     "src/commands/ai-first.ts#techStackPath",
+    "src/commands/ai-first.ts#entrypoints",
     "src/commands/ai-first.ts#entrypointsPath",
     "src/commands/ai-first.ts#conventions",
     "src/commands/ai-first.ts#conventionsPath",
@@ -1203,6 +1204,31 @@
     "src/core/indexer.ts#EXAMPLE_QUERIES",
     "src/core/indexer.ts#FROM"
   ],
+  "src/core/symbolGraph.ts#file": [
+    "src/analyzers/androidResources.ts#relativePath",
+    "src/analyzers/androidResources.ts#resourceName",
+    "src/commands/ai-first.ts#parts",
+    "src/commands/doctor.ts#ext",
+    "src/core/aiContextGenerator.ts#parts",
+    "src/core/aiContextGenerator.ts#ext",
+    "src/core/aiContextGenerator.ts#name",
+    "src/core/ccp.ts#parts",
+    "src/core/hierarchyGenerator.ts#parts",
+    "src/core/moduleGraph.ts#parts",
+    "src/core/moduleGraph.ts#ext",
+    "src/core/repoMapper.ts#nameWithoutExt",
+    "src/core/repoMapper.ts#parts",
+    "src/core/repoScanner.ts#ext",
+    "src/core/repoScanner.ts#parts",
+    "src/core/semanticContexts.ts#parts",
+    "src/core/semanticContexts.ts#fileLower",
+    "src/core/symbolGraph.ts#filePath"
+  ],
+  "src/core/repoScanner.ts#relativePath": [
+    "src/analyzers/androidResources.ts#parts",
+    "src/core/aiContextGenerator.ts#parts",
+    "src/core/repoScanner.ts#parts"
+  ],
   "src/analyzers/architecture.ts#detectPatterns": [
     "src/analyzers/architecture.ts#patterns"
   ],
@@ -1236,6 +1262,7 @@
   ],
   "src/core/repoMapper.ts#dir": [
     "src/analyzers/architecture.ts#name",
+    "src/core/ccp.ts#lowerDir",
     "src/core/repoMapper.ts#indent"
   ],
   "src/analyzers/conventions.ts#detectNamingConventions": [
@@ -1273,7 +1300,15 @@
     "src/analyzers/dependencies.ts#externMatches",
     "src/analyzers/dependencies.ts#javaMatches",
     "src/analyzers/dependencies.ts#csharpMatches",
+    "src/analyzers/dependencies.ts#implMatches",
+    "src/analyzers/dependencies.ts#projMatches",
+    "src/analyzers/dependencies.ts#includeMatches",
+    "src/analyzers/entrypoints.ts#packageMatch",
+    "src/analyzers/entrypoints.ts#isMain",
     "src/analyzers/symbols.ts#lines",
+    "src/analyzers/techStack.ts#minSdkMatch",
+    "src/analyzers/techStack.ts#targetSdkMatch",
+    "src/analyzers/techStack.ts#compileSdkMatch",
     "src/core/aiContextGenerator.ts#lines",
     "src/core/aiContextGenerator.ts#es6Matches",
     "src/core/aiContextGenerator.ts#requireMatches",
@@ -1308,11 +1343,37 @@
   "src/analyzers/dependencies.ts#sourceDir": [
     "src/analyzers/dependencies.ts#target"
   ],
-  "src/core/aiContextGenerator.ts#byFile": [
+  "src/core/ccp.ts#byFile": [
     "src/analyzers/dependencies.ts#deps"
   ],
   "src/analyzers/entrypoints.ts#getScriptType": [
     "src/analyzers/entrypoints.ts#type"
+  ],
+  "src/analyzers/entrypoints.ts#parseAndroidManifest": [
+    "src/analyzers/entrypoints.ts#androidEntrypoints"
+  ],
+  "src/analyzers/entrypoints.ts#packageMatch": [
+    "src/analyzers/entrypoints.ts#packageName"
+  ],
+  "src/core/symbolGraph.ts#match": [
+    "src/analyzers/entrypoints.ts#activityName",
+    "src/analyzers/gradleModules.ts#modulePath",
+    "src/analyzers/symbols.ts#name",
+    "src/core/indexer.ts#name",
+    "src/core/symbolGraph.ts#callee",
+    "src/core/symbolGraph.ts#varName",
+    "src/core/symbolGraph.ts#value"
+  ],
+  "src/analyzers/gradleModules.ts#settingsFiles": [
+    "src/analyzers/gradleModules.ts#settingsFile"
+  ],
+  "src/analyzers/gradleModules.ts#settingsContent": [
+    "src/analyzers/gradleModules.ts#includeMatches",
+    "src/analyzers/gradleModules.ts#projectMatches",
+    "src/analyzers/gradleModules.ts#rootNameMatch"
+  ],
+  "src/analyzers/gradleModules.ts#modulePath": [
+    "src/analyzers/gradleModules.ts#moduleName"
   ],
   "src/core/indexer.ts#parseFileForSymbols": [
     "src/analyzers/symbols.ts#fileSymbols",
@@ -1363,13 +1424,6 @@
     "src/core/indexer.ts#interfaceMatch",
     "src/core/indexer.ts#structMatch"
   ],
-  "src/core/symbolGraph.ts#match": [
-    "src/analyzers/symbols.ts#name",
-    "src/core/indexer.ts#name",
-    "src/core/symbolGraph.ts#callee",
-    "src/core/symbolGraph.ts#varName",
-    "src/core/symbolGraph.ts#value"
-  ],
   "src/analyzers/techStack.ts#detectLanguages": [
     "src/analyzers/techStack.ts#languages"
   ],
@@ -1397,6 +1451,12 @@
   "src/analyzers/techStack.ts#generateTechStackDescription": [
     "src/analyzers/techStack.ts#description"
   ],
+  "src/analyzers/techStack.ts#detectAndroidSDK": [
+    "src/analyzers/techStack.ts#android"
+  ],
+  "src/core/aiContextGenerator.ts#fileNames": [
+    "src/analyzers/techStack.ts#hasAndroid"
+  ],
   "src/core/aiContextGenerator.ts#generateRepoMapJson": [
     "src/commands/ai-first.ts#repoMapJson",
     "src/core/aiContextGenerator.ts#repoMap"
@@ -1404,36 +1464,25 @@
   "src/commands/ai-first.ts#generateUnifiedContext": [
     "src/commands/ai-first.ts#aiContext"
   ],
-  "src/core/symbolGraph.ts#file": [
-    "src/commands/ai-first.ts#parts",
-    "src/commands/doctor.ts#ext",
-    "src/core/aiContextGenerator.ts#parts",
-    "src/core/aiContextGenerator.ts#ext",
-    "src/core/aiContextGenerator.ts#name",
-    "src/core/hierarchyGenerator.ts#parts",
-    "src/core/moduleGraph.ts#parts",
-    "src/core/moduleGraph.ts#ext",
-    "src/core/repoMapper.ts#nameWithoutExt",
-    "src/core/repoMapper.ts#parts",
-    "src/core/repoScanner.ts#ext",
-    "src/core/repoScanner.ts#parts",
-    "src/core/symbolGraph.ts#filePath"
-  ],
   "src/core/repoMapper.ts#tree": [
     "src/commands/ai-first.ts#current",
     "src/core/aiContextGenerator.ts#current"
   ],
-  "src/core/repoScanner.ts#parts": [
+  "src/core/semanticContexts.ts#parts": [
     "src/commands/ai-first.ts#part",
     "src/core/aiContextGenerator.ts#fileName",
     "src/core/aiContextGenerator.ts#part",
     "src/core/aiContextGenerator.ts#dir",
+    "src/core/ccp.ts#dir",
     "src/core/hierarchyGenerator.ts#folder",
     "src/core/moduleGraph.ts#moduleName",
     "src/core/repoMapper.ts#part",
     "src/core/repoScanner.ts#fileName",
     "src/core/repoScanner.ts#dirPath",
-    "src/core/repoScanner.ts#topDir"
+    "src/core/repoScanner.ts#topDir",
+    "src/core/semanticContexts.ts#rootIndex",
+    "src/core/semanticContexts.ts#featureName",
+    "src/core/semanticContexts.ts#key"
   ],
   "src/commands/ai-first.ts#args": [
     "src/commands/ai-first.ts#command",
@@ -1488,13 +1537,9 @@
     "src/commands/doctor.ts#warnCount",
     "src/commands/doctor.ts#failCount"
   ],
-  "src/core/indexer.ts#data": [
+  "src/core/semanticContexts.ts#data": [
     "src/commands/explore.ts#mod",
     "src/commands/explore.ts#deps"
-  ],
-  "src/core/repoScanner.ts#relativePath": [
-    "src/core/aiContextGenerator.ts#parts",
-    "src/core/repoScanner.ts#parts"
   ],
   "src/core/repoScanner.ts#lastDot": [
     "src/core/aiContextGenerator.ts#extension",
@@ -1538,6 +1583,18 @@
     "src/core/aiContextGenerator.ts#paths",
     "src/core/repoMapper.ts#total"
   ],
+  "src/core/ccp.ts#detectFeatureDirectories": [
+    "src/core/ccp.ts#featureDirs"
+  ],
+  "src/core/ccp.ts#repoFiles": [
+    "src/core/ccp.ts#featureFiles"
+  ],
+  "src/core/ccp.ts#depsData": [
+    "src/core/ccp.ts#byFile"
+  ],
+  "src/core/ccp.ts#contextFiles": [
+    "src/core/ccp.ts#availableModules"
+  ],
   "src/core/chunker.ts#getLanguage": [
     "src/core/chunker.ts#language"
   ],
@@ -1577,7 +1634,7 @@
   "src/core/repoMapper.ts#generateSummary": [
     "src/core/contextPacket.ts#summary"
   ],
-  "src/core/contextPacket.ts#symbol": [
+  "src/core/semanticContexts.ts#symbol": [
     "src/core/contextPacket.ts#module"
   ],
   "src/core/contextPacket.ts#queue": [
@@ -1648,6 +1705,36 @@
   ],
   "src/core/repoMapper.ts#isLast": [
     "src/core/repoMapper.ts#connector"
+  ],
+  "src/core/semanticContexts.ts#rootIndex": [
+    "src/core/semanticContexts.ts#featureIdx"
+  ],
+  "src/core/semanticContexts.ts#part": [
+    "src/core/semanticContexts.ts#lower"
+  ],
+  "src/core/semanticContexts.ts#detectArchitecturalLayers": [
+    "src/core/semanticContexts.ts#layers"
+  ],
+  "src/core/semanticContexts.ts#getCandidateFeatures": [
+    "src/core/semanticContexts.ts#candidates"
+  ],
+  "src/core/semanticContexts.ts#sourceFiles": [
+    "src/core/semanticContexts.ts#entrypoints"
+  ],
+  "src/core/semanticContexts.ts#featurePath": [
+    "src/core/semanticContexts.ts#featureName"
+  ],
+  "src/core/semanticContexts.ts#relationshipsBySymbol": [
+    "src/core/semanticContexts.ts#rels"
+  ],
+  "src/core/semanticContexts.ts#entrypointSymbol": [
+    "src/core/semanticContexts.ts#entrypointFile"
+  ],
+  "src/core/semanticContexts.ts#generateFeatures": [
+    "src/core/semanticContexts.ts#features"
+  ],
+  "src/core/semanticContexts.ts#generateFlows": [
+    "src/core/semanticContexts.ts#flows"
   ],
   "src/core/symbolGraph.ts#loadCache": [
     "src/core/symbolGraph.ts#cache"
