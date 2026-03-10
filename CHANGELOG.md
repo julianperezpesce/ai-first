@@ -13,6 +13,28 @@ All notable changes to `ai-first` will be documented in this file.
 - File index with symbol mappings (`ai/files.json`)
 - Code Context Packets (CCP) with depth, ranking, and multiple formats
 - Context CLI flags: `--depth`, `--max-symbols`, `--format`, `--save`
+- Incremental indexing with file hash cache (`ai/index-state.json`)
+- Context ranking system based on graph distance and relationships
+- Android/Kotlin Support: Android framework detection, SDK version extraction, Gradle dependency parsing, AndroidManifest parsing, Android resources indexing, Gradle multi-module detection
+- **Business Feature Detection**: Auto-detect business modules (auth, users, payments) from codebase structure
+- **Flow Detection**: Generate execution chains spanning multiple architectural layers (api → service → data)
+- Feature output: `ai/context/features/<feature>.json` with path, files, entrypoints, dependencies
+- Flow output: `ai/context/flows/<flow>.json` with depth, layers, entrypoint
+- Support for nested features at depth 1 and 2 (src/auth, src/modules/auth)
+- **Performance Documentation**: Complete guide to incremental analysis and optimization
+- **Spanish Documentation**: Complete translation for all guides
+
+### Improved
+- Incremental repository analysis with change detection
+- Performance benchmarks for various repository sizes
+
+### Added
+- Enhanced symbol indexing with `filePath#symbolName` IDs
+- Extended symbol graph relationships: calls, called_by, imports, references, instantiates, extends, implements, exports
+- Reverse symbol references (`ai/graph/symbol-references.json`)
+- File index with symbol mappings (`ai/files.json`)
+- Code Context Packets (CCP) with depth, ranking, and multiple formats
+- Context CLI flags: `--depth`, `--max-symbols`, `--format`, `--save`
 - Incremental indexing with file hash cache (`ai/cache.json`)
 - Context ranking system based on graph distance and relationships
 - Android/Kotlin Support: Android framework detection, SDK version extraction, Gradle dependency parsing, AndroidManifest parsing, Android resources indexing, Gradle multi-module detection
