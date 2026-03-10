@@ -23,6 +23,8 @@ All notable changes to `ai-first` will be documented in this file.
 - Support for nested features at depth 1 and 2 (src/auth, src/modules/auth)
 - **Performance Documentation**: Complete guide to incremental analysis and optimization
 - **Spanish Documentation**: Complete translation for all guides
+- **Adapter System**: Multi-language/framework support (JavaScript, Python, Django, Flask, Rails, Salesforce, .NET)
+- **Spanish Documentation**: Complete translation for all guides
 
 ### Improved
 - Incremental repository analysis with change detection
