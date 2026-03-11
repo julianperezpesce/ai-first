@@ -7,6 +7,12 @@ All notable changes to `ai-first` will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- **AI Repository Schema**: Standardized schema system for AI-First metadata (schema.json, project.json, tools.json)
+- **Schema CLI Integration**: Schema automatically generated with `ai-first init`
+- **Schema Validation**: Programmatic schema validation API
+- **Schema Tests**: Comprehensive test suite for schema generation and validation
+- **Schema Documentation**: English and Spanish guides for AI Repository Schema
+- **Incremental Analysis**: Update repository context incrementally when files change
 - **Incremental Analysis**: Update repository context incrementally when files change
 - **Update CLI Command**: `ai-first update` to perform incremental updates
 - **Self-Healing Context**: AI context updates automatically when files change
