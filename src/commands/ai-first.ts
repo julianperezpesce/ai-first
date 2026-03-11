@@ -26,6 +26,7 @@ import { listAdapters } from "../core/adapters/index.js";
 import { detectGitRepository, generateGitContext, analyzeGitActivity, getRecentFiles } from "../core/gitAnalyzer.js";
 import { buildKnowledgeGraph, loadKnowledgeGraph } from "../core/knowledgeGraphBuilder.js";
 import { runIncrementalUpdate, detectChangedFiles } from "../core/incrementalAnalyzer.js";
+import { generateAllSchema } from "../core/schema.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -160,6 +161,16 @@ export async function runAIFirst(options: AIFirstOptions = {}): Promise<AIFirstR
     } catch (e: any) {
       console.log("   ⚠️  Semantic contexts: " + (e.message || e));
     }
+
+    // Generate AI Repository Schema (schema.json, project.json, tools.json)
+    try {
+      generateAllSchema(rootDir, outputDir);
+      console.log("   ✅ Created schema.json, project.json, tools.json");
+    } catch (e: any) {
+      console.log("   ⚠️  Schema generation: " + (e.message || e));
+    }
+
+    console.log("\n✨ Done! Created the following files:");
 
     console.log("\n✨ Done! Created the following files:");
 
