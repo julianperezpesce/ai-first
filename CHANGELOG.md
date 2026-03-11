@@ -7,6 +7,11 @@ All notable changes to `ai-first` will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- **Incremental Analysis**: Update repository context incrementally when files change
+- **Update CLI Command**: `ai-first update` to perform incremental updates
+- **Self-Healing Context**: AI context updates automatically when files change
+- **Repository Knowledge Graph**: Unify all repository intelligence into a single navigable graph
+- **Graph CLI Command**: `ai-first graph` to generate knowledge graph
 - **Repository Knowledge Graph**: Unify all repository intelligence into a single navigable graph
 - **Graph CLI Command**: `ai-first graph` to generate knowledge graph
 - **Graph Output**: `ai/graph/knowledge-graph.json` with nodes and edges
