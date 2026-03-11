@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -27,6 +28,8 @@ import { detectGitRepository, generateGitContext, analyzeGitActivity, getRecentF
 import { buildKnowledgeGraph, loadKnowledgeGraph } from "../core/knowledgeGraphBuilder.js";
 import { runIncrementalUpdate, detectChangedFiles } from "../core/incrementalAnalyzer.js";
 import { generateAllSchema } from "../core/schema.js";
+import ora from "ora";
+import process from "process";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
