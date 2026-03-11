@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "lastIndexed": "2026-03-10T15:57:22.304Z",
-  "totalFiles": 76,
+  "lastIndexed": "2026-03-11T19:50:01.981Z",
+  "totalFiles": 132,
   "files": {
     ".netlify/state.json": {
       "path": ".netlify/state.json",
@@ -12,10 +12,10 @@
     },
     "CHANGELOG.md": {
       "path": "CHANGELOG.md",
-      "hash": "2ecc9875a2e835d92f2e59b3cea4c003",
-      "mtime": 1773155049479.9487,
-      "size": 6680,
-      "indexedAt": "2026-03-10T15:57:22.297Z"
+      "hash": "f72229ac7e9949de6ebbd8c2f3d3599c",
+      "mtime": 1773252024284.6418,
+      "size": 11977,
+      "indexedAt": "2026-03-11T18:01:22.437Z"
     },
     "CONTRIBUTING.md": {
       "path": "CONTRIBUTING.md",
@@ -82,10 +82,10 @@
     },
     "ai/dependencies.json": {
       "path": "ai/dependencies.json",
-      "hash": "cf9d8516e17d4a30c30b10a9f18074cd",
-      "mtime": 1773158175577.6672,
-      "size": 34464,
-      "indexedAt": "2026-03-10T15:57:22.297Z"
+      "hash": "429415c0f4f7ad8a7eb2f182944b7b6f",
+      "mtime": 1773258601943.5815,
+      "size": 8336,
+      "indexedAt": "2026-03-11T19:50:01.967Z"
     },
     "ai/embeddings.json": {
       "path": "ai/embeddings.json",
@@ -138,10 +138,10 @@
     },
     "ai/index-state.json": {
       "path": "ai/index-state.json",
-      "hash": "1127124c7625ad31df6cb59bdf101d6b",
-      "mtime": 1773072404566.248,
-      "size": 6169,
-      "indexedAt": "2026-03-10T15:57:22.301Z"
+      "hash": "119f98f186e4069030d39dbdd19832cf",
+      "mtime": 1773252082450.5886,
+      "size": 32035,
+      "indexedAt": "2026-03-11T19:50:01.967Z"
     },
     "ai/modules.json": {
       "path": "ai/modules.json",
@@ -173,10 +173,10 @@
     },
     "ai/symbols.json": {
       "path": "ai/symbols.json",
-      "hash": "a6a6ebc2947e15ede4d1d781642acf70",
-      "mtime": 1773158175569.667,
-      "size": 859191,
-      "indexedAt": "2026-03-10T15:57:22.302Z"
+      "hash": "d751713988987e9331980363e24189ce",
+      "mtime": 1773258601942.5815,
+      "size": 2,
+      "indexedAt": "2026-03-11T19:50:01.967Z"
     },
     "ai/tech_stack.md": {
       "path": "ai/tech_stack.md",
@@ -327,10 +327,10 @@
     },
     "package.json": {
       "path": "package.json",
-      "hash": "093048a5be61e4b19bc5fc5989326027",
-      "mtime": 1773097716407.745,
-      "size": 1440,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "hash": "14fe71f476664b2e608bf1d2c2fdcd7b",
+      "mtime": 1773255231667.2507,
+      "size": 1538,
+      "indexedAt": "2026-03-11T19:50:01.979Z"
     },
     "src/analyzers/aiRules.ts": {
       "path": "src/analyzers/aiRules.ts",
@@ -397,10 +397,10 @@
     },
     "src/commands/ai-first.ts": {
       "path": "src/commands/ai-first.ts",
-      "hash": "fb0a72ba6e1378cfc0a937b4482c772a",
-      "mtime": 1773157611935.3733,
-      "size": 43410,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "hash": "c3d16139076959c74fd4c2324a2d6c66",
+      "mtime": 1773256012369.3918,
+      "size": 50418,
+      "indexedAt": "2026-03-11T19:50:01.979Z"
     },
     "src/commands/doctor.ts": {
       "path": "src/commands/doctor.ts",
@@ -534,6 +534,398 @@
       "mtime": 1773004002782.7,
       "size": 475,
       "indexedAt": "2026-03-10T15:57:22.304Z"
+    },
+    "dist/commands/ai-first.d.ts.map": {
+      "path": "dist/commands/ai-first.d.ts.map",
+      "hash": "f6770875a016eb96042319d822bc2d93",
+      "mtime": 1773257824232.4495,
+      "size": 479,
+      "indexedAt": "2026-03-11T19:50:01.967Z"
+    },
+    "dist/commands/ai-first.js": {
+      "path": "dist/commands/ai-first.js",
+      "hash": "8e9bc91dae5b77d492dfee56d4f675d9",
+      "mtime": 1773257824232.4495,
+      "size": 55502,
+      "indexedAt": "2026-03-11T19:50:01.967Z"
+    },
+    "dist/commands/ai-first.js.map": {
+      "path": "dist/commands/ai-first.js.map",
+      "hash": "4a398030559a6187ea12a214d6eeb086",
+      "mtime": 1773257824231.4495,
+      "size": 47232,
+      "indexedAt": "2026-03-11T19:50:01.967Z"
+    },
+    "node_modules/.package-lock.json": {
+      "path": "node_modules/.package-lock.json",
+      "hash": "74218c4f44d0c516e25767d6cf17a631",
+      "mtime": 1773255231697.2512,
+      "size": 126050,
+      "indexedAt": "2026-03-11T19:50:01.967Z"
+    },
+    "node_modules/@iconify-json/simple-icons/icons.json": {
+      "path": "node_modules/@iconify-json/simple-icons/icons.json",
+      "hash": "2ddd130f595681edf72dc61b17ebc4d9",
+      "mtime": 1773255231633.2502,
+      "size": 4742480,
+      "indexedAt": "2026-03-11T19:50:01.975Z"
+    },
+    "node_modules/@iconify-json/simple-icons/info.json": {
+      "path": "node_modules/@iconify-json/simple-icons/info.json",
+      "hash": "945d5bdfbc6526f334f48bec72d050db",
+      "mtime": 1773255231633.2502,
+      "size": 502,
+      "indexedAt": "2026-03-11T19:50:01.975Z"
+    },
+    "node_modules/@iconify-json/simple-icons/package.json": {
+      "path": "node_modules/@iconify-json/simple-icons/package.json",
+      "hash": "7014c1a26d4188bc794ac7bf2e5d1295",
+      "mtime": 1773255231634.022,
+      "size": 677,
+      "indexedAt": "2026-03-11T19:50:01.975Z"
+    },
+    "node_modules/bare-stream/package.json": {
+      "path": "node_modules/bare-stream/package.json",
+      "hash": "f1f0c4c0a0ae319b54133c406dd15cb1",
+      "mtime": 1773255231587.3245,
+      "size": 1330,
+      "indexedAt": "2026-03-11T19:50:01.975Z"
+    },
+    "node_modules/bare-stream/web.js": {
+      "path": "node_modules/bare-stream/web.js",
+      "hash": "813cec46ba0e1ca646cce4761f14df97",
+      "mtime": 1773255231585.2495,
+      "size": 10809,
+      "indexedAt": "2026-03-11T19:50:01.975Z"
+    },
+    "node_modules/estree-walker/README.md": {
+      "path": "node_modules/estree-walker/README.md",
+      "hash": "5f9f4c15b1e6b440b3aa4823ea00102b",
+      "mtime": 1773255231592.2498,
+      "size": 1591,
+      "indexedAt": "2026-03-11T19:50:01.975Z"
+    },
+    "node_modules/estree-walker/package.json": {
+      "path": "node_modules/estree-walker/package.json",
+      "hash": "2aad9549ac50c68535376606fc432447",
+      "mtime": 1773255231591.2498,
+      "size": 720,
+      "indexedAt": "2026-03-11T19:50:01.975Z"
+    },
+    "node_modules/estree-walker/src/async.js": {
+      "path": "node_modules/estree-walker/src/async.js",
+      "hash": "dc39d8d0ac14f7f715ed8d4fafdc0e8a",
+      "mtime": 1773255231574.2495,
+      "size": 3474,
+      "indexedAt": "2026-03-11T19:50:01.975Z"
+    },
+    "node_modules/estree-walker/src/index.js": {
+      "path": "node_modules/estree-walker/src/index.js",
+      "hash": "9b6f26f366d15e040471e3293d14d542",
+      "mtime": 1773255231581.2495,
+      "size": 806,
+      "indexedAt": "2026-03-11T19:50:01.975Z"
+    },
+    "node_modules/estree-walker/src/sync.js": {
+      "path": "node_modules/estree-walker/src/sync.js",
+      "hash": "962561751bf71b557617efa5a502a464",
+      "mtime": 1773255231586.2498,
+      "size": 3418,
+      "indexedAt": "2026-03-11T19:50:01.976Z"
+    },
+    "node_modules/estree-walker/src/walker.js": {
+      "path": "node_modules/estree-walker/src/walker.js",
+      "hash": "e202e77221195e3c5ea9287ad2b1b77b",
+      "mtime": 1773255231589.2498,
+      "size": 1393,
+      "indexedAt": "2026-03-11T19:50:01.976Z"
+    },
+    "node_modules/estree-walker/types/async.d.ts": {
+      "path": "node_modules/estree-walker/types/async.d.ts",
+      "hash": "651825d9064839c1fdeee83756536c0e",
+      "mtime": 1773255231596.2498,
+      "size": 1455,
+      "indexedAt": "2026-03-11T19:50:01.976Z"
+    },
+    "node_modules/estree-walker/types/index.d.ts": {
+      "path": "node_modules/estree-walker/types/index.d.ts",
+      "hash": "68c13af0ee8ef9f0ac54d1655f402094",
+      "mtime": 1773255231598.2498,
+      "size": 858,
+      "indexedAt": "2026-03-11T19:50:01.976Z"
+    },
+    "node_modules/estree-walker/types/sync.d.ts": {
+      "path": "node_modules/estree-walker/types/sync.d.ts",
+      "hash": "d293f438b8e9f975bda0a80f85ae0eff",
+      "mtime": 1773255231600.2498,
+      "size": 1408,
+      "indexedAt": "2026-03-11T19:50:01.976Z"
+    },
+    "node_modules/estree-walker/types/walker.d.ts": {
+      "path": "node_modules/estree-walker/types/walker.d.ts",
+      "hash": "42a219a4529f7481d67fd48542b2985d",
+      "mtime": 1773255231601.2498,
+      "size": 1350,
+      "indexedAt": "2026-03-11T19:50:01.976Z"
+    },
+    "node_modules/preact/compat/dist/compat.js": {
+      "path": "node_modules/preact/compat/dist/compat.js",
+      "hash": "2f27022c8de6a048f1dc7eab1c4111e0",
+      "mtime": 1773255231603.2498,
+      "size": 11446,
+      "indexedAt": "2026-03-11T19:50:01.976Z"
+    },
+    "node_modules/preact/compat/dist/compat.js.map": {
+      "path": "node_modules/preact/compat/dist/compat.js.map",
+      "hash": "3c15890bcc5c75a2583e9ce2b62e9893",
+      "mtime": 1773255231634.2502,
+      "size": 54612,
+      "indexedAt": "2026-03-11T19:50:01.976Z"
+    },
+    "node_modules/preact/compat/dist/compat.mjs": {
+      "path": "node_modules/preact/compat/dist/compat.mjs",
+      "hash": "1c025777a1270e4d8679822768819900",
+      "mtime": 1773255231640.3076,
+      "size": 10281,
+      "indexedAt": "2026-03-11T19:50:01.976Z"
+    },
+    "node_modules/preact/compat/dist/compat.module.js": {
+      "path": "node_modules/preact/compat/dist/compat.module.js",
+      "hash": "1c025777a1270e4d8679822768819900",
+      "mtime": 1773255231606.25,
+      "size": 10281,
+      "indexedAt": "2026-03-11T19:50:01.976Z"
+    },
+    "node_modules/preact/compat/dist/compat.module.js.map": {
+      "path": "node_modules/preact/compat/dist/compat.module.js.map",
+      "hash": "d2a064fd536167f973dac598db49fb33",
+      "mtime": 1773255231635.0017,
+      "size": 54228,
+      "indexedAt": "2026-03-11T19:50:01.976Z"
+    },
+    "node_modules/preact/compat/dist/compat.umd.js": {
+      "path": "node_modules/preact/compat/dist/compat.umd.js",
+      "hash": "2cb20cab3642f6cbe70ebc8d9e822c35",
+      "mtime": 1773255231608.25,
+      "size": 11468,
+      "indexedAt": "2026-03-11T19:50:01.976Z"
+    },
+    "node_modules/preact/compat/dist/compat.umd.js.map": {
+      "path": "node_modules/preact/compat/dist/compat.umd.js.map",
+      "hash": "81d431b61217bc14dd75413bd41fddde",
+      "mtime": 1773255231635.0017,
+      "size": 54617,
+      "indexedAt": "2026-03-11T19:50:01.977Z"
+    },
+    "node_modules/preact/compat/src/index.js": {
+      "path": "node_modules/preact/compat/src/index.js",
+      "hash": "e001456de452b5f5c7199dc2b4d3c457",
+      "mtime": 1773255231624.1016,
+      "size": 5264,
+      "indexedAt": "2026-03-11T19:50:01.977Z"
+    },
+    "node_modules/preact/compat/src/memo.js": {
+      "path": "node_modules/preact/compat/src/memo.js",
+      "hash": "36ba277087ab25a3717f297f887170ae",
+      "mtime": 1773255231628.0076,
+      "size": 1043,
+      "indexedAt": "2026-03-11T19:50:01.977Z"
+    },
+    "node_modules/preact/compat/src/render.js": {
+      "path": "node_modules/preact/compat/src/render.js",
+      "hash": "d8838b04e9818b3ca541dbcecb6ed650",
+      "mtime": 1773255231630.7095,
+      "size": 8747,
+      "indexedAt": "2026-03-11T19:50:01.977Z"
+    },
+    "node_modules/preact/compat/src/suspense.js": {
+      "path": "node_modules/preact/compat/src/suspense.js",
+      "hash": "b0759855f9b44c51b94c6850c79fcaad",
+      "mtime": 1773255231631.796,
+      "size": 8295,
+      "indexedAt": "2026-03-11T19:50:01.977Z"
+    },
+    "node_modules/preact/devtools/dist/devtools.js": {
+      "path": "node_modules/preact/devtools/dist/devtools.js",
+      "hash": "539572da21c0d8ae973f87587548d3ba",
+      "mtime": 1773255231618.7239,
+      "size": 357,
+      "indexedAt": "2026-03-11T19:50:01.977Z"
+    },
+    "node_modules/preact/devtools/dist/devtools.js.map": {
+      "path": "node_modules/preact/devtools/dist/devtools.js.map",
+      "hash": "e0f71b8d0b041e0d190273e99fd766fe",
+      "mtime": 1773255231636.0386,
+      "size": 1341,
+      "indexedAt": "2026-03-11T19:50:01.977Z"
+    },
+    "node_modules/preact/devtools/dist/devtools.mjs": {
+      "path": "node_modules/preact/devtools/dist/devtools.mjs",
+      "hash": "965287dcf264d6ba53ef7a84c323f2b6",
+      "mtime": 1773255231640.3076,
+      "size": 369,
+      "indexedAt": "2026-03-11T19:50:01.977Z"
+    },
+    "node_modules/preact/devtools/dist/devtools.module.js": {
+      "path": "node_modules/preact/devtools/dist/devtools.module.js",
+      "hash": "965287dcf264d6ba53ef7a84c323f2b6",
+      "mtime": 1773255231619.8484,
+      "size": 369,
+      "indexedAt": "2026-03-11T19:50:01.977Z"
+    },
+    "node_modules/preact/devtools/dist/devtools.module.js.map": {
+      "path": "node_modules/preact/devtools/dist/devtools.module.js.map",
+      "hash": "577d94f007cff118fe02d0c728e955ca",
+      "mtime": 1773255231636.3538,
+      "size": 1343,
+      "indexedAt": "2026-03-11T19:50:01.977Z"
+    },
+    "node_modules/preact/devtools/dist/devtools.umd.js": {
+      "path": "node_modules/preact/devtools/dist/devtools.umd.js",
+      "hash": "72cbb69c1f9988850a6bf1be6ceb11c7",
+      "mtime": 1773255231620.6755,
+      "size": 563,
+      "indexedAt": "2026-03-11T19:50:01.977Z"
+    },
+    "node_modules/preact/devtools/dist/devtools.umd.js.map": {
+      "path": "node_modules/preact/devtools/dist/devtools.umd.js.map",
+      "hash": "8c218c7f723c69bfb4743751ac061edb",
+      "mtime": 1773255231636.6292,
+      "size": 1351,
+      "indexedAt": "2026-03-11T19:50:01.977Z"
+    },
+    "node_modules/preact/devtools/src/devtools.js": {
+      "path": "node_modules/preact/devtools/src/devtools.js",
+      "hash": "3a3cb275f70f987700c9c584edd06f08",
+      "mtime": 1773255231619.25,
+      "size": 426,
+      "indexedAt": "2026-03-11T19:50:01.977Z"
+    },
+    "node_modules/preact/dist/preact.js": {
+      "path": "node_modules/preact/dist/preact.js",
+      "hash": "a9b5a3edd4b143c5b3a4d3480d8eac91",
+      "mtime": 1773255231628.772,
+      "size": 11504,
+      "indexedAt": "2026-03-11T19:50:01.977Z"
+    },
+    "node_modules/preact/dist/preact.js.map": {
+      "path": "node_modules/preact/dist/preact.js.map",
+      "hash": "0d693299b8022c668bc7738e4ba0b062",
+      "mtime": 1773255231638.3586,
+      "size": 84365,
+      "indexedAt": "2026-03-11T19:50:01.977Z"
+    },
+    "node_modules/preact/dist/preact.min.js": {
+      "path": "node_modules/preact/dist/preact.min.js",
+      "hash": "01b261bbb786e5dbd4f50d98bc53caf3",
+      "mtime": 1773255231629.043,
+      "size": 11125,
+      "indexedAt": "2026-03-11T19:50:01.977Z"
+    },
+    "node_modules/preact/dist/preact.min.js.map": {
+      "path": "node_modules/preact/dist/preact.min.js.map",
+      "hash": "9299a5f519784062fcc618e67f610f7b",
+      "mtime": 1773255231638.668,
+      "size": 84729,
+      "indexedAt": "2026-03-11T19:50:01.978Z"
+    },
+    "node_modules/preact/dist/preact.min.module.js": {
+      "path": "node_modules/preact/dist/preact.min.module.js",
+      "hash": "581b51684ed5a22705b8b881e21b0760",
+      "mtime": 1773255231629.3286,
+      "size": 11489,
+      "indexedAt": "2026-03-11T19:50:01.978Z"
+    },
+    "node_modules/preact/dist/preact.min.module.js.map": {
+      "path": "node_modules/preact/dist/preact.min.module.js.map",
+      "hash": "5087781f545d08572d4e886278ddd910",
+      "mtime": 1773255231638.824,
+      "size": 84600,
+      "indexedAt": "2026-03-11T19:50:01.978Z"
+    },
+    "node_modules/preact/dist/preact.min.umd.js": {
+      "path": "node_modules/preact/dist/preact.min.umd.js",
+      "hash": "0da89f57ed55322bd126b1142f8ce3f6",
+      "mtime": 1773255231629.3286,
+      "size": 11193,
+      "indexedAt": "2026-03-11T19:50:01.978Z"
+    },
+    "node_modules/preact/dist/preact.min.umd.js.map": {
+      "path": "node_modules/preact/dist/preact.min.umd.js.map",
+      "hash": "4ea38b0e880dfb6d1b50e3796d340ac8",
+      "mtime": 1773255231639.3254,
+      "size": 84733,
+      "indexedAt": "2026-03-11T19:50:01.978Z"
+    },
+    "node_modules/preact/dist/preact.mjs": {
+      "path": "node_modules/preact/dist/preact.mjs",
+      "hash": "db794ebf4acf76cff301017e447df12a",
+      "mtime": 1773255231641.4036,
+      "size": 11470,
+      "indexedAt": "2026-03-11T19:50:01.978Z"
+    },
+    "node_modules/preact/dist/preact.module.js": {
+      "path": "node_modules/preact/dist/preact.module.js",
+      "hash": "db794ebf4acf76cff301017e447df12a",
+      "mtime": 1773255231629.6626,
+      "size": 11470,
+      "indexedAt": "2026-03-11T19:50:01.978Z"
+    },
+    "node_modules/preact/dist/preact.module.js.map": {
+      "path": "node_modules/preact/dist/preact.module.js.map",
+      "hash": "dddc98c569500e8800a8220b43741640",
+      "mtime": 1773255231639.3254,
+      "size": 84449,
+      "indexedAt": "2026-03-11T19:50:01.979Z"
+    },
+    "node_modules/preact/dist/preact.umd.js": {
+      "path": "node_modules/preact/dist/preact.umd.js",
+      "hash": "7d35b7b19668b7642a744dfe33dd8163",
+      "mtime": 1773255231629.8672,
+      "size": 11246,
+      "indexedAt": "2026-03-11T19:50:01.979Z"
+    },
+    "node_modules/preact/dist/preact.umd.js.map": {
+      "path": "node_modules/preact/dist/preact.umd.js.map",
+      "hash": "88468b65eb8cf706330e4fc39ff62dba",
+      "mtime": 1773255231639.777,
+      "size": 84505,
+      "indexedAt": "2026-03-11T19:50:01.979Z"
+    },
+    "node_modules/preact/package.json": {
+      "path": "node_modules/preact/package.json",
+      "hash": "d913bad577b0324a56c30202ab8af546",
+      "mtime": 1773255231634.022,
+      "size": 9042,
+      "indexedAt": "2026-03-11T19:50:01.979Z"
+    },
+    "node_modules/preact/src/component.js": {
+      "path": "node_modules/preact/src/component.js",
+      "hash": "661edfeedff96a9aa10fb8cfe0d1cfc7",
+      "mtime": 1773255231611.3528,
+      "size": 7625,
+      "indexedAt": "2026-03-11T19:50:01.979Z"
+    },
+    "node_modules/preact/src/diff/index.js": {
+      "path": "node_modules/preact/src/diff/index.js",
+      "hash": "7f843865b3012d6e9268cc8d25b55d10",
+      "mtime": 1773255231625.8462,
+      "size": 18824,
+      "indexedAt": "2026-03-11T19:50:01.979Z"
+    },
+    "node_modules/node-abi/abi_registry.json": {
+      "path": "node_modules/node-abi/abi_registry.json",
+      "hash": "c7138a2c35d36842db35dd945e7cd92e",
+      "mtime": 1773255231580.2495,
+      "size": 7280,
+      "indexedAt": "2026-03-11T19:50:01.976Z"
+    },
+    "node_modules/node-abi/package.json": {
+      "path": "node_modules/node-abi/package.json",
+      "hash": "aa4467cd8e738526c581655d2aa97202",
+      "mtime": 1773255231584.2495,
+      "size": 1164,
+      "indexedAt": "2026-03-11T19:50:01.976Z"
     }
   }
 }

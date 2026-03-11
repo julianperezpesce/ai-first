@@ -20,6 +20,12 @@ import { generateEmbeddings, saveEmbeddings } from "../core/embeddings.js";
 import { generateSemanticContexts } from "../core/semanticContexts.js";
 import { doctorMain } from "./doctor.js";
 import { exploreMain } from "./explore.js";
+import { listAdapters } from "../core/adapters/index.js";
+import { detectGitRepository, generateGitContext } from "../core/gitAnalyzer.js";
+import { buildKnowledgeGraph } from "../core/knowledgeGraphBuilder.js";
+import { runIncrementalUpdate } from "../core/incrementalAnalyzer.js";
+import { generateAllSchema } from "../core/schema.js";
+import process from "process";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 /**
@@ -121,6 +127,15 @@ export async function runAIFirst(options = {}) {
         catch (e) {
             console.log("   ⚠️  Semantic contexts: " + (e.message || e));
         }
+        // Generate AI Repository Schema (schema.json, project.json, tools.json)
+        try {
+            generateAllSchema(rootDir, outputDir);
+            console.log("   ✅ Created schema.json, project.json, tools.json");
+        }
+        catch (e) {
+            console.log("   ⚠️  Schema generation: " + (e.message || e));
+        }
+        console.log("\n✨ Done! Created the following files:");
         console.log("\n✨ Done! Created the following files:");
         console.log("\n✨ Done! Created the following files:");
         for (const file of filesCreated) {
@@ -923,6 +938,9 @@ Commands:
   doctor               Check repository health and AI readiness
   explore <module>     Explore module dependencies
   map                  Generate repository map (files, modules, graph)
+  adapters              List available adapters
+  explore <module>     Explore module dependencies
+  map                  Generate repository map (files, modules, graph)
 
 Options:
   -r, --root <dir>      Root directory to scan (default: current directory)
@@ -983,8 +1001,6 @@ Options:
         // Generate semantic contexts (features and flows)
         const { features, flows } = generateSemanticContexts(aiDir);
         console.log(`   ✅ Created ${features.length} features, ${flows.length} flows`);
-        console.log("\n✅ Repository map generated!");
-        console.log("\n✅ Repository map generated!");
         process.exit(0);
     }
     else if (command === 'doctor') {
@@ -992,6 +1008,286 @@ Options:
     }
     else if (command === 'explore') {
         exploreMain(args.slice(1));
+    }
+    else if (command === 'adapters') {
+        // Adapters command - list available adapters
+        args.shift();
+        const showJson = args.includes('--json');
+        if (args.includes('--help') || args.includes('-h')) {
+            console.log(`
+adapters - List available adapters
+
+Usage: ai-first adapters [options]
+
+Options:
+  --json        Output as JSON
+  -h, --help    Show help message
+
+Examples:
+  ai-first adapters
+  ai-first adapters --json
+`);
+            process.exit(0);
+        }
+        const adapters = listAdapters();
+        if (showJson) {
+            console.log(JSON.stringify(adapters, null, 2));
+        }
+        else {
+            console.log("\n📦 Available adapters:\n");
+            console.log("Name                | Display Name");
+            console.log("--------------------|-------------------");
+            for (const adapter of adapters) {
+                console.log(`${adapter.name.padEnd(18)}| ${adapter.displayName}`);
+            }
+            console.log(`\nTotal: ${adapters.length} adapters`);
+        }
+        process.exit(0);
+    }
+    else if (command === 'git') {
+        // Git intelligence command
+        args.shift();
+        let rootDir = process.cwd();
+        let aiDir = path.join(rootDir, "ai");
+        let limit = 50;
+        let showActivity = false;
+        let showJson = false;
+        for (let i = 0; i < args.length; i++) {
+            const arg = args[i];
+            switch (arg) {
+                case "--root":
+                case "-r":
+                    rootDir = args[++i];
+                    aiDir = path.join(rootDir, "ai");
+                    break;
+                case "--limit":
+                case "-n":
+                    limit = parseInt(args[++i], 10) || 50;
+                    break;
+                case "--activity":
+                case "-a":
+                    showActivity = true;
+                    break;
+                case "--json":
+                    showJson = true;
+                    break;
+                case "--help":
+                case "-h":
+                    console.log(`
+git - Analyze recent git activity
+
+Usage: ai-first git [options]
+
+Options:
+  -r, --root <dir>     Root directory (default: current directory)
+  -n, --limit <n>      Number of commits to analyze (default: 50)
+  -a, --activity       Show commit activity details
+  --json               Output as JSON
+  -h, --help           Show help message
+
+Examples:
+  ai-first git
+  ai-first git --limit 100
+  ai-first git --activity
+`);
+                    process.exit(0);
+            }
+        }
+        if (!detectGitRepository(rootDir)) {
+            console.log("❌ Not a git repository");
+            process.exit(1);
+        }
+        console.log(`\n📊 Analyzing git activity in: ${rootDir}\n`);
+        const result = generateGitContext(rootDir, aiDir);
+        if (showJson) {
+            console.log(JSON.stringify(result, null, 2));
+        }
+        else {
+            console.log("📁 Recent files:");
+            for (const file of result.recentFiles.slice(0, 10)) {
+                console.log(`   - ${file}`);
+            }
+            if (result.recentFiles.length > 10) {
+                console.log(`   ... and ${result.recentFiles.length - 10} more`);
+            }
+            if (result.recentFeatures.length > 0) {
+                console.log("\n🎯 Recent features:");
+                console.log(`   ${result.recentFeatures.join(", ")}`);
+            }
+            if (result.recentFlows.length > 0) {
+                console.log("\n🔄 Recent flows:");
+                console.log(`   ${result.recentFlows.join(", ")}`);
+            }
+            if (showActivity && result.activity) {
+                console.log("\n📈 Commit activity:");
+                console.log(`   Total commits: ${result.activity.totalCommits}`);
+                console.log(`   Date range: ${result.activity.dateRange.start.slice(0, 10)} - ${result.activity.dateRange.end.slice(0, 10)}`);
+                const topFiles = Object.entries(result.activity.files)
+                    .sort((a, b) => b[1] - a[1])
+                    .slice(0, 5);
+                if (topFiles.length > 0) {
+                    console.log("\n   Most changed files:");
+                    for (const [file, count] of topFiles) {
+                        console.log(`   - ${file}: ${count} commits`);
+                    }
+                }
+            }
+            console.log("\n✅ Generated:");
+            console.log("   - ai/git/recent-files.json");
+            console.log("   - ai/git/recent-features.json");
+            console.log("   - ai/git/recent-flows.json");
+            if (result.activity) {
+                console.log("   - ai/git/commit-activity.json");
+            }
+        }
+        process.exit(0);
+    }
+    else if (command === 'graph') {
+        // Knowledge Graph command
+        args.shift();
+        let rootDir = process.cwd();
+        let aiDir = path.join(rootDir, "ai");
+        let showJson = false;
+        let showStats = false;
+        for (let i = 0; i < args.length; i++) {
+            const arg = args[i];
+            switch (arg) {
+                case "--root":
+                case "-r":
+                    rootDir = args[++i];
+                    aiDir = path.join(rootDir, "ai");
+                    break;
+                case "--json":
+                    showJson = true;
+                    break;
+                case "--stats":
+                case "-s":
+                    showStats = true;
+                    break;
+                case "--help":
+                case "-h":
+                    console.log(`
+graph - Generate repository knowledge graph
+
+Usage: ai-first graph [options]
+
+Options:
+  -r, --root <dir>   Root directory (default: current directory)
+  -s, --stats        Show graph statistics
+  --json              Output as JSON
+  -h, --help         Show help message
+
+Examples:
+  ai-first graph
+  ai-first graph --stats
+`);
+                    process.exit(0);
+            }
+        }
+        if (!detectGitRepository(rootDir)) {
+            console.log("❌ Not a git repository");
+            process.exit(1);
+        }
+        console.log(`\n🕸️  Building knowledge graph in: ${rootDir}\n`);
+        const graph = buildKnowledgeGraph(rootDir, aiDir);
+        if (showJson) {
+            console.log(JSON.stringify(graph, null, 2));
+        }
+        else {
+            console.log("📊 Graph Statistics:");
+            console.log(`   Nodes: ${graph.nodes.length}`);
+            console.log(`   Edges: ${graph.edges.length}`);
+            console.log(`   Sources: ${graph.metadata.sources.join(", ") || "none"}`);
+            const nodeTypes = graph.nodes.reduce((acc, n) => { acc[n.type] = (acc[n.type] || 0) + 1; return acc; }, {});
+            const edgeTypes = graph.edges.reduce((acc, e) => { acc[e.type] = (acc[e.type] || 0) + 1; return acc; }, {});
+            console.log("\n📍 Node Types:");
+            for (const [type, count] of Object.entries(nodeTypes)) {
+                console.log(`   ${type}: ${count}`);
+            }
+            console.log("\n🔗 Edge Types:");
+            for (const [type, count] of Object.entries(edgeTypes)) {
+                console.log(`   ${type}: ${count}`);
+            }
+            console.log("\n✅ Generated:");
+            console.log("   - ai/graph/knowledge-graph.json");
+        }
+        process.exit(0);
+    }
+    else if (command === 'update') {
+        // Incremental update command
+        args.shift();
+        let rootDir = process.cwd();
+        let aiDir = path.join(rootDir, "ai");
+        let useGit = true;
+        let showJson = false;
+        for (let i = 0; i < args.length; i++) {
+            const arg = args[i];
+            switch (arg) {
+                case "--root":
+                case "-r":
+                    rootDir = args[++i];
+                    aiDir = path.join(rootDir, "ai");
+                    break;
+                case "--no-git":
+                    useGit = false;
+                    break;
+                case "--json":
+                    showJson = true;
+                    break;
+                case "--help":
+                case "-h":
+                    console.log(`
+update - Incrementally update repository context
+
+Usage: ai-first update [options]
+
+Options:
+  -r, --root <dir>   Root directory (default: current directory)
+  --no-git            Use filesystem timestamps instead of git
+  --json             Output as JSON
+  -h, --help         Show help message
+
+Examples:
+  ai-first update
+  ai-first update --no-git
+`);
+                    process.exit(0);
+            }
+        }
+        if (!fs.existsSync(aiDir)) {
+            console.log("❌ AI context not found. Run 'ai-first init' first.");
+            process.exit(1);
+        }
+        console.log(`\n🔄 Running incremental update in: ${rootDir}\n`);
+        const result = runIncrementalUpdate(rootDir, aiDir);
+        if (result.errors.length > 0) {
+            console.log("⚠️  Errors:");
+            for (const error of result.errors) {
+                console.log(`   - ${error}`);
+            }
+        }
+        if (showJson) {
+            console.log(JSON.stringify(result, null, 2));
+        }
+        else {
+            console.log(`📁 Changed files: ${result.changedFiles.length}`);
+            if (result.changedFiles.length > 0) {
+                for (const file of result.changedFiles.slice(0, 5)) {
+                    console.log(`   ${file.status}: ${file.path}`);
+                }
+                if (result.changedFiles.length > 5) {
+                    console.log(`   ... and ${result.changedFiles.length - 5} more`);
+                }
+            }
+            console.log(`\n🔧 Updated:`);
+            console.log(`   Symbols: ${result.updatedSymbols}`);
+            console.log(`   Dependencies: ${result.updatedDependencies}`);
+            console.log(`   Features: ${result.updatedFeatures.join(", ") || "none"}`);
+            console.log(`   Flows: ${result.updatedFlows.join(", ") || "none"}`);
+            console.log(`   Knowledge Graph: ${result.graphUpdated ? "✅" : "❌"}`);
+        }
+        process.exit(0);
+        process.exit(0);
     }
     else {
         console.log(`Unknown command: ${command}`);
