@@ -6,28 +6,40 @@ import { pythonAdapter, djangoAdapter, flaskAdapter } from "./pythonAdapter.js";
 import { railsAdapter, rubyAdapter } from "./railsAdapter.js";
 import { salesforceAdapter, sfdxAdapter } from "./salesforceAdapter.js";
 import { dotnetAdapter, aspnetCoreAdapter, blazorAdapter } from "./dotnetAdapter.js";
+import { laravelAdapter, nestjsAdapter, springBootAdapter, phoenixAdapter, fastapiAdapter } from "./community/index.js";
 
 /**
  * Registry of all available adapters
  */
 export const ADAPTERS: AnalysisAdapter[] = [
-  // JavaScript/TypeScript (most specific first)
+  // JavaScript/TypeScript
   javascriptAdapter,
+  nestjsAdapter,
   
-  // Python (most specific first)
+  // Ruby (must be before Python to detect Gemfile correctly)
+  railsAdapter,
+  rubyAdapter,
+  
+  // Python
   djangoAdapter,
   flaskAdapter,
   pythonAdapter,
+  fastapiAdapter,
   
-  // Ruby
-  railsAdapter,
-  rubyAdapter,
+  // PHP
+  laravelAdapter,
+  
+  // Elixir
+  phoenixAdapter,
+  
+  // Java/Kotlin
+  springBootAdapter,
   
   // Salesforce
   sfdxAdapter,
   salesforceAdapter,
   
-  // .NET (most specific first)
+  // .NET
   blazorAdapter,
   aspnetCoreAdapter,
   dotnetAdapter
