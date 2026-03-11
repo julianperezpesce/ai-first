@@ -25,6 +25,7 @@ import { exploreMain } from "./explore.js";
 import { listAdapters } from "../core/adapters/index.js";
 import { detectGitRepository, generateGitContext, analyzeGitActivity, getRecentFiles } from "../core/gitAnalyzer.js";
 import { buildKnowledgeGraph, loadKnowledgeGraph } from "../core/knowledgeGraphBuilder.js";
+import { runIncrementalUpdate, detectChangedFiles } from "../core/incrementalAnalyzer.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -1329,7 +1330,89 @@ Examples:
       console.log("\n✅ Generated:");
       console.log("   - ai/graph/knowledge-graph.json");
     }
+    process.exit(0);
+  } else if (command === 'update') {
+    // Incremental update command
+    args.shift();
     
+    let rootDir = process.cwd();
+    let aiDir = path.join(rootDir, "ai");
+    let useGit = true;
+    let showJson = false;
+    
+    for (let i = 0; i < args.length; i++) {
+      const arg = args[i];
+      switch (arg) {
+        case "--root":
+        case "-r":
+          rootDir = args[++i];
+          aiDir = path.join(rootDir, "ai");
+          break;
+        case "--no-git":
+          useGit = false;
+          break;
+        case "--json":
+          showJson = true;
+          break;
+        case "--help":
+        case "-h":
+          console.log(`
+update - Incrementally update repository context
+
+Usage: ai-first update [options]
+
+Options:
+  -r, --root <dir>   Root directory (default: current directory)
+  --no-git            Use filesystem timestamps instead of git
+  --json             Output as JSON
+  -h, --help         Show help message
+
+Examples:
+  ai-first update
+  ai-first update --no-git
+`);
+          process.exit(0);
+      }
+    }
+    
+    if (!fs.existsSync(aiDir)) {
+      console.log("❌ AI context not found. Run 'ai-first init' first.");
+      process.exit(1);
+    }
+    
+    console.log(`\n🔄 Running incremental update in: ${rootDir}\n`);
+    
+    const result = runIncrementalUpdate(rootDir, aiDir);
+    
+    if (result.errors.length > 0) {
+      console.log("⚠️  Errors:");
+      for (const error of result.errors) {
+        console.log(`   - ${error}`);
+      }
+    }
+    
+    if (showJson) {
+      console.log(JSON.stringify(result, null, 2));
+    } else {
+      console.log(`📁 Changed files: ${result.changedFiles.length}`);
+      if (result.changedFiles.length > 0) {
+        for (const file of result.changedFiles.slice(0, 5)) {
+          console.log(`   ${file.status}: ${file.path}`);
+        }
+        if (result.changedFiles.length > 5) {
+          console.log(`   ... and ${result.changedFiles.length - 5} more`);
+        }
+      }
+      
+      console.log(`\n🔧 Updated:`);
+      console.log(`   Symbols: ${result.updatedSymbols}`);
+      console.log(`   Dependencies: ${result.updatedDependencies}`);
+      console.log(`   Features: ${result.updatedFeatures.join(", ") || "none"}`);
+      console.log(`   Flows: ${result.updatedFlows.join(", ") || "none"}`);
+      console.log(`   Knowledge Graph: ${result.graphUpdated ? "✅" : "❌"}`);
+    }
+    
+    process.exit(0);
     process.exit(0);
   } else {
     console.log(`Unknown command: ${command}`);
