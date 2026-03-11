@@ -24,6 +24,7 @@ import { doctorMain } from "./doctor.js";
 import { exploreMain } from "./explore.js";
 import { listAdapters } from "../core/adapters/index.js";
 import { detectGitRepository, generateGitContext, analyzeGitActivity, getRecentFiles } from "../core/gitAnalyzer.js";
+import { buildKnowledgeGraph, loadKnowledgeGraph } from "../core/knowledgeGraphBuilder.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -1249,9 +1250,87 @@ Examples:
         console.log("   - ai/git/commit-activity.json");
       }
     }
+    process.exit(0);
+  } else if (command === 'graph') {
+    // Knowledge Graph command
+    args.shift();
+    
+    let rootDir = process.cwd();
+    let aiDir = path.join(rootDir, "ai");
+    let showJson = false;
+    let showStats = false;
+    
+    for (let i = 0; i < args.length; i++) {
+      const arg = args[i];
+      switch (arg) {
+        case "--root":
+        case "-r":
+          rootDir = args[++i];
+          aiDir = path.join(rootDir, "ai");
+          break;
+        case "--json":
+          showJson = true;
+          break;
+        case "--stats":
+        case "-s":
+          showStats = true;
+          break;
+        case "--help":
+        case "-h":
+          console.log(`
+graph - Generate repository knowledge graph
+
+Usage: ai-first graph [options]
+
+Options:
+  -r, --root <dir>   Root directory (default: current directory)
+  -s, --stats        Show graph statistics
+  --json              Output as JSON
+  -h, --help         Show help message
+
+Examples:
+  ai-first graph
+  ai-first graph --stats
+`);
+          process.exit(0);
+      }
+    }
+    
+    if (!detectGitRepository(rootDir)) {
+      console.log("❌ Not a git repository");
+      process.exit(1);
+    }
+    
+    console.log(`\n🕸️  Building knowledge graph in: ${rootDir}\n`);
+    
+    const graph = buildKnowledgeGraph(rootDir, aiDir);
+    
+    if (showJson) {
+      console.log(JSON.stringify(graph, null, 2));
+    } else {
+      console.log("📊 Graph Statistics:");
+      console.log(`   Nodes: ${graph.nodes.length}`);
+      console.log(`   Edges: ${graph.edges.length}`);
+      console.log(`   Sources: ${graph.metadata.sources.join(", ") || "none"}`);
+      
+      const nodeTypes = graph.nodes.reduce((acc, n) => { acc[n.type] = (acc[n.type] || 0) + 1; return acc; }, {} as Record<string, number>);
+      const edgeTypes = graph.edges.reduce((acc, e) => { acc[e.type] = (acc[e.type] || 0) + 1; return acc; }, {} as Record<string, number>);
+      
+      console.log("\n📍 Node Types:");
+      for (const [type, count] of Object.entries(nodeTypes)) {
+        console.log(`   ${type}: ${count}`);
+      }
+      
+      console.log("\n🔗 Edge Types:");
+      for (const [type, count] of Object.entries(edgeTypes)) {
+        console.log(`   ${type}: ${count}`);
+      }
+      
+      console.log("\n✅ Generated:");
+      console.log("   - ai/graph/knowledge-graph.json");
+    }
     
     process.exit(0);
-    exploreMain(args.slice(1));
   } else {
     console.log(`Unknown command: ${command}`);
     console.log(`Use 'ai-first --help' for usage information`);
