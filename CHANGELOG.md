@@ -7,6 +7,12 @@ All notable changes to `ai-first` will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- **Git Intelligence**: Analyze git activity to provide AI context about recently changed files, features, and flows
+- **Git CLI Command**: `ai-first git` to analyze repository activity and generate metadata
+- **Git Context Files**: `ai/git/recent-files.json`, `ai/git/recent-features.json`, `ai/git/recent-flows.json`, `ai/git/commit-activity.json`
+- **Adapter SDK**: Developer-friendly `createAdapter()` API for creating custom ecosystem adapters
+- **Community Adapters**: Pre-built adapters for Laravel, NestJS, Spring Boot, Phoenix, FastAPI
+- **Adapter CLI Command**: `ai-first adapters` to list all available adapters
 - **Adapter SDK**: Developer-friendly `createAdapter()` API for creating custom ecosystem adapters
 - **Community Adapters**: Pre-built adapters for Laravel, NestJS, Spring Boot, Phoenix, FastAPI
 - **Adapter CLI Command**: `ai-first adapters` to list all available adapters

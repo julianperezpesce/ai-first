@@ -23,6 +23,7 @@ import { generateSemanticContexts } from "../core/semanticContexts.js";
 import { doctorMain } from "./doctor.js";
 import { exploreMain } from "./explore.js";
 import { listAdapters } from "../core/adapters/index.js";
+import { detectGitRepository, generateGitContext, analyzeGitActivity, getRecentFiles } from "../core/gitAnalyzer.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -1141,6 +1142,114 @@ Examples:
       }
       console.log(`\nTotal: ${adapters.length} adapters`);
     }
+    process.exit(0);
+  } else if (command === 'git') {
+    // Git intelligence command
+    args.shift();
+    
+    let rootDir = process.cwd();
+    let aiDir = path.join(rootDir, "ai");
+    let limit = 50;
+    let showActivity = false;
+    let showJson = false;
+    
+    for (let i = 0; i < args.length; i++) {
+      const arg = args[i];
+      switch (arg) {
+        case "--root":
+        case "-r":
+          rootDir = args[++i];
+          aiDir = path.join(rootDir, "ai");
+          break;
+        case "--limit":
+        case "-n":
+          limit = parseInt(args[++i], 10) || 50;
+          break;
+        case "--activity":
+        case "-a":
+          showActivity = true;
+          break;
+        case "--json":
+          showJson = true;
+          break;
+        case "--help":
+        case "-h":
+          console.log(`
+git - Analyze recent git activity
+
+Usage: ai-first git [options]
+
+Options:
+  -r, --root <dir>     Root directory (default: current directory)
+  -n, --limit <n>      Number of commits to analyze (default: 50)
+  -a, --activity       Show commit activity details
+  --json               Output as JSON
+  -h, --help           Show help message
+
+Examples:
+  ai-first git
+  ai-first git --limit 100
+  ai-first git --activity
+`);
+          process.exit(0);
+      }
+    }
+    
+    if (!detectGitRepository(rootDir)) {
+      console.log("❌ Not a git repository");
+      process.exit(1);
+    }
+    
+    console.log(`\n📊 Analyzing git activity in: ${rootDir}\n`);
+    
+    const result = generateGitContext(rootDir, aiDir);
+    
+    if (showJson) {
+      console.log(JSON.stringify(result, null, 2));
+    } else {
+      console.log("📁 Recent files:");
+      for (const file of result.recentFiles.slice(0, 10)) {
+        console.log(`   - ${file}`);
+      }
+      if (result.recentFiles.length > 10) {
+        console.log(`   ... and ${result.recentFiles.length - 10} more`);
+      }
+      
+      if (result.recentFeatures.length > 0) {
+        console.log("\n🎯 Recent features:");
+        console.log(`   ${result.recentFeatures.join(", ")}`);
+      }
+      
+      if (result.recentFlows.length > 0) {
+        console.log("\n🔄 Recent flows:");
+        console.log(`   ${result.recentFlows.join(", ")}`);
+      }
+      
+      if (showActivity && result.activity) {
+        console.log("\n📈 Commit activity:");
+        console.log(`   Total commits: ${result.activity.totalCommits}`);
+        console.log(`   Date range: ${result.activity.dateRange.start.slice(0, 10)} - ${result.activity.dateRange.end.slice(0, 10)}`);
+        
+        const topFiles = Object.entries(result.activity.files)
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, 5);
+        if (topFiles.length > 0) {
+          console.log("\n   Most changed files:");
+          for (const [file, count] of topFiles) {
+            console.log(`   - ${file}: ${count} commits`);
+          }
+        }
+      }
+      
+      console.log("\n✅ Generated:");
+      console.log("   - ai/git/recent-files.json");
+      console.log("   - ai/git/recent-features.json");
+      console.log("   - ai/git/recent-flows.json");
+      if (result.activity) {
+        console.log("   - ai/git/commit-activity.json");
+      }
+    }
+    
     process.exit(0);
     exploreMain(args.slice(1));
   } else {
