@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 export interface AIFirstOptions {
     rootDir?: string;
     outputDir?: string;
