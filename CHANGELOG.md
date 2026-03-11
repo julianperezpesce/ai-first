@@ -7,6 +7,12 @@ All notable changes to `ai-first` will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- **CLI Progress Feedback**: Added ora-based progress indicators for repository analysis
+- **Lazy Context Generation**: Staged indexing for faster CLI startup (Stage 1 minimal, Stage 2 on-demand)
+- **Lazy Analyzer Module**: `src/core/lazyAnalyzer.ts` with buildMinimalIndex, expandFeatureContext, expandFlowContext
+- **Lazy Indexing Tests**: Comprehensive test suite for lazy context generation
+- **Lazy Indexing Documentation**: English and Spanish guides for lazy context generation
+- **AI Repository Schema**: Standardized schema system for AI-First metadata (schema.json, project.json, tools.json)
 - **AI Repository Schema**: Standardized schema system for AI-First metadata (schema.json, project.json, tools.json)
 - **Schema CLI Integration**: Schema automatically generated with `ai-first init`
 - **Schema Validation**: Programmatic schema validation API
