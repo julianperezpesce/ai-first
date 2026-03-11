@@ -7,6 +7,11 @@ All notable changes to `ai-first` will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- **Repository Knowledge Graph**: Unify all repository intelligence into a single navigable graph
+- **Graph CLI Command**: `ai-first graph` to generate knowledge graph
+- **Graph Output**: `ai/graph/knowledge-graph.json` with nodes and edges
+- **Git Intelligence**: Analyze git activity to provide AI context about recently changed files, features, and flows
+- **Git CLI Command**: `ai-first git` to analyze repository activity and generate metadata
 - **Git Intelligence**: Analyze git activity to provide AI context about recently changed files, features, and flows
 - **Git CLI Command**: `ai-first git` to analyze repository activity and generate metadata
 - **Git Context Files**: `ai/git/recent-files.json`, `ai/git/recent-features.json`, `ai/git/recent-flows.json`, `ai/git/commit-activity.json`
