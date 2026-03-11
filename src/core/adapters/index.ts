@@ -11,5 +11,14 @@ export { pythonAdapter, djangoAdapter, flaskAdapter } from './pythonAdapter.js';
 export { railsAdapter, rubyAdapter } from './railsAdapter.js';
 export { salesforceAdapter, sfdxAdapter } from './salesforceAdapter.js';
 export { dotnetAdapter, aspnetCoreAdapter, blazorAdapter } from './dotnetAdapter.js';
+
+// SDK exports
+export { createAdapter, validateAdapter, fileSignal, directorySignal, contentSignal, layerRule } from './sdk.js';
+export type { AdapterConfig } from './sdk.js';
+
+// Community adapters
+export { laravelAdapter, nestjsAdapter, springBootAdapter, phoenixAdapter, fastapiAdapter } from './community/index.js';
+
+// Registry
 export { detectAdapter, detectAllAdapters, getAdapter, listAdapters, ADAPTERS } from './adapterRegistry.js';
 export type { AdapterDetectionResult } from './adapterRegistry.js';

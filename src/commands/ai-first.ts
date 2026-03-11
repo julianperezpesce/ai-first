@@ -22,6 +22,7 @@ import { generateContextModules, createCCP, listCCPs, getCCP } from "../core/ccp
 import { generateSemanticContexts } from "../core/semanticContexts.js";
 import { doctorMain } from "./doctor.js";
 import { exploreMain } from "./explore.js";
+import { listAdapters } from "../core/adapters/index.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -1028,6 +1029,9 @@ Commands:
   doctor               Check repository health and AI readiness
   explore <module>     Explore module dependencies
   map                  Generate repository map (files, modules, graph)
+  adapters              List available adapters
+  explore <module>     Explore module dependencies
+  map                  Generate repository map (files, modules, graph)
 
 Options:
   -r, --root <dir>      Root directory to scan (default: current directory)
@@ -1096,13 +1100,48 @@ Options:
     const { features, flows } = generateSemanticContexts(aiDir);
     console.log(`   ✅ Created ${features.length} features, ${flows.length} flows`);
     
-    console.log("\n✅ Repository map generated!");
-    
-    console.log("\n✅ Repository map generated!");
     process.exit(0);
   } else if (command === 'doctor') {
     doctorMain(args.slice(1));
   } else if (command === 'explore') {
+    exploreMain(args.slice(1));
+  } else if (command === 'adapters') {
+    // Adapters command - list available adapters
+    args.shift();
+    
+    const showJson = args.includes('--json');
+    
+    if (args.includes('--help') || args.includes('-h')) {
+      console.log(`
+adapters - List available adapters
+
+Usage: ai-first adapters [options]
+
+Options:
+  --json        Output as JSON
+  -h, --help    Show help message
+
+Examples:
+  ai-first adapters
+  ai-first adapters --json
+`);
+      process.exit(0);
+    }
+    
+    const adapters = listAdapters();
+    
+    if (showJson) {
+      console.log(JSON.stringify(adapters, null, 2));
+    } else {
+      console.log("\n📦 Available adapters:\n");
+      console.log("Name                | Display Name");
+      console.log("--------------------|-------------------");
+      for (const adapter of adapters) {
+        console.log(`${adapter.name.padEnd(18)}| ${adapter.displayName}`);
+      }
+      console.log(`\nTotal: ${adapters.length} adapters`);
+    }
+    process.exit(0);
     exploreMain(args.slice(1));
   } else {
     console.log(`Unknown command: ${command}`);

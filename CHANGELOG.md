@@ -7,6 +7,10 @@ All notable changes to `ai-first` will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- **Adapter SDK**: Developer-friendly `createAdapter()` API for creating custom ecosystem adapters
+- **Community Adapters**: Pre-built adapters for Laravel, NestJS, Spring Boot, Phoenix, FastAPI
+- **Adapter CLI Command**: `ai-first adapters` to list all available adapters
+- Enhanced symbol indexing with `filePath#symbolName` IDs
 - Enhanced symbol indexing with `filePath#symbolName` IDs
 - Extended symbol graph relationships: calls, called_by, imports, references, instantiates, extends, implements, exports
 - Reverse symbol references (`ai/graph/symbol-references.json`)

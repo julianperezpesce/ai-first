@@ -13,6 +13,22 @@ Adapters customize how AI-First detects:
 ## Supported Adapters
 
 | Adapter | Detection Signals |
+|---------|-------------------|
+| JavaScript/TypeScript | `package.json`, `tsconfig.json`, `vite.config.ts` |
+| NestJS | `nest-cli.json`, `main.ts` |
+| Django | `manage.py`, `settings.py` |
+| Flask/FastAPI | `app.py`, `main.py`, `requirements.txt` |
+| FastAPI | `main.py`, `app.py` |
+| Ruby on Rails | `Gemfile`, `config.ru` |
+| Laravel | `artisan`, `composer.json` |
+| Elixir Phoenix | `mix.exs`, `phoenix` |
+| Spring Boot | `pom.xml`, `build.gradle`, `application.java` |
+| Salesforce | `sfdx-project.json`, `force-app/` |
+| .NET | `*.csproj`, `Program.cs` |
+| ASP.NET Core | `Startup.cs`, `Program.cs` |
+| Blazor | `_Imports.razor`, `@page` |
+
+| Adapter | Detection Signals |
 |---------|------------------|
 | JavaScript/TypeScript | `package.json`, `tsconfig.json`, `vite.config.ts` |
 | Django | `manage.py`, `settings.py` |
@@ -126,7 +142,73 @@ export const myAdapter: AnalysisAdapter = {
   flowEntrypointPatterns: ['controller'],
   flowExcludePatterns: ['test', 'spec']
 };
+3. Register in `adapterRegistry.ts`
+4. Add tests
+
+## Using the Adapter SDK
+
+AI-First provides a developer-friendly SDK for creating custom adapters:
+
+```typescript
+import { createAdapter, validateAdapter, fileSignal, directorySignal } from './core/adapters/sdk.js';
+
+// Create adapter with sensible defaults
+export const myAdapter = createAdapter({
+  name: 'myframework',
+  displayName: 'My Framework',
+  detectionSignals: [
+    fileSignal('my-framework.config.js'),
+    directorySignal('src')
+  ],
+  featureRoots: ['src', 'lib', 'app'],
+  entrypointPatterns: ['Controller', 'Service', 'Handler']
+});
+
+// Validate your adapter
+const result = validateAdapter(myAdapter);
+if (!result.valid) {
+  console.error('Adapter errors:', result.errors);
+}
 ```
+
+### SDK Functions
+
+- `createAdapter(config)` - Create adapter with defaults
+- `validateAdapter(adapter)` - Validate adapter configuration
+- `fileSignal(pattern)` - Create file detection signal
+- `directorySignal(pattern)` - Create directory detection signal
+- `contentSignal(pattern, contentPattern?)` - Create content-based signal
+- `layerRule(name, priority, patterns)` - Create layer rule
+
+## Community Adapters
+
+Community adapters are located in `src/core/adapters/community/`:
+
+- **Laravel** - PHP Laravel framework
+- **NestJS** - Node.js progressive framework
+- **Spring Boot** - Java/Kotlin framework
+- **Phoenix** - Elixir web framework
+- **FastAPI** - Python modern framework
+
+### Listing Available Adapters
+
+```bash
+ai-first adapters
+```
+
+Output:
+```
+📦 Available adapters:
+
+Name                | Display Name
+--------------------|---
+javascript        | JavaScript / TypeScript
+nestjs            | NestJS
+django            | Django
+...
+```
+
+## Integration
 
 3. Register in `adapterRegistry.ts`
 4. Add tests
