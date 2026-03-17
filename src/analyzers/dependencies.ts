@@ -233,14 +233,14 @@ function parseJavaImports(content: string, sourceFile: string): Dependency[] {
  * Normalize import path to relative file path
  */
 function normalizeImportPath(importPath: string, sourceFile: string): string | null {
-  // Skip node_modules and external packages
   if (!importPath.startsWith(".")) {
-    return importPath;
+    return null;
   }
 
-  // Relative import - convert to file path
   const sourceDir = sourceFile.split("/").slice(0, -1).join("/");
-  const target = path.join(sourceDir, importPath);
+  let target = path.join(sourceDir, importPath);
+  target = path.normalize(target);
+  target = target.replace(/^\//, "");
 
   return target;
 }

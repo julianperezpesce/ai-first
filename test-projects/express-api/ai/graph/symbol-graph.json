@@ -396,247 +396,187 @@
   "relationships": [
     {
       "symbolId": "controllers/authController.js#jwt",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "controllers/authController.js#authService",
       "type": "imports"
     },
     {
       "symbolId": "controllers/authController.js#authService",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "controllers/authController.js#authService",
       "type": "imports"
     },
     {
       "symbolId": "controllers/authController.js#SECRET",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "controllers/authController.js#authService",
       "type": "imports"
     },
     {
       "symbolId": "controllers/authController.js#login",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "controllers/authController.js#authService",
       "type": "imports"
     },
     {
       "symbolId": "controllers/authController.js#user",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "controllers/authController.js#authService",
       "type": "imports"
     },
     {
       "symbolId": "controllers/authController.js#token",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "controllers/authController.js#authService",
       "type": "imports"
     },
     {
       "symbolId": "controllers/authController.js#register",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "controllers/authController.js#authService",
       "type": "imports"
     },
     {
       "symbolId": "controllers/authController.js#user",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "controllers/authController.js#authService",
       "type": "imports"
     },
     {
       "symbolId": "controllers/userController.js#userService",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "controllers/userController.js#userService",
       "type": "imports"
     },
     {
       "symbolId": "controllers/userController.js#getAll",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "controllers/userController.js#userService",
       "type": "imports"
     },
     {
       "symbolId": "controllers/userController.js#users",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "controllers/userController.js#userService",
       "type": "imports"
     },
     {
       "symbolId": "controllers/userController.js#getById",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "controllers/userController.js#userService",
       "type": "imports"
     },
     {
       "symbolId": "controllers/userController.js#user",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "controllers/userController.js#userService",
       "type": "imports"
     },
     {
       "symbolId": "controllers/userController.js#create",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "controllers/userController.js#userService",
       "type": "imports"
     },
     {
       "symbolId": "controllers/userController.js#user",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "controllers/userController.js#userService",
       "type": "imports"
     },
     {
       "symbolId": "controllers/userController.js#update",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "controllers/userController.js#userService",
       "type": "imports"
     },
     {
       "symbolId": "controllers/userController.js#user",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "controllers/userController.js#userService",
       "type": "imports"
     },
     {
       "symbolId": "controllers/userController.js#remove",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "controllers/userController.js#userService",
       "type": "imports"
     },
     {
       "symbolId": "index.js#express",
-      "targetId": "index.js#express",
+      "targetId": "index.js#authController",
       "type": "imports"
     },
     {
       "symbolId": "index.js#authController",
-      "targetId": "index.js#express",
+      "targetId": "index.js#authController",
       "type": "imports"
     },
     {
       "symbolId": "index.js#userController",
-      "targetId": "index.js#express",
+      "targetId": "index.js#authController",
       "type": "imports"
     },
     {
       "symbolId": "index.js#app",
-      "targetId": "index.js#express",
+      "targetId": "index.js#authController",
       "type": "imports"
     },
     {
       "symbolId": "index.js#PORT",
-      "targetId": "index.js#express",
+      "targetId": "index.js#authController",
       "type": "imports"
     },
     {
       "symbolId": "index.js#express",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "index.js#userController",
       "type": "imports"
     },
     {
       "symbolId": "index.js#authController",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "index.js#userController",
       "type": "imports"
     },
     {
       "symbolId": "index.js#userController",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "index.js#userController",
       "type": "imports"
     },
     {
       "symbolId": "index.js#app",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "index.js#userController",
       "type": "imports"
     },
     {
       "symbolId": "index.js#PORT",
-      "targetId": "models/userRepository.js#index",
-      "type": "imports"
-    },
-    {
-      "symbolId": "index.js#express",
-      "targetId": "models/userRepository.js#index",
-      "type": "imports"
-    },
-    {
-      "symbolId": "index.js#authController",
-      "targetId": "models/userRepository.js#index",
-      "type": "imports"
-    },
-    {
-      "symbolId": "index.js#userController",
-      "targetId": "models/userRepository.js#index",
-      "type": "imports"
-    },
-    {
-      "symbolId": "index.js#app",
-      "targetId": "models/userRepository.js#index",
-      "type": "imports"
-    },
-    {
-      "symbolId": "index.js#PORT",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "index.js#userController",
       "type": "imports"
     },
     {
       "symbolId": "services/authService.js#bcrypt",
-      "targetId": "services/authService.js#bcrypt",
+      "targetId": "services/authService.js#userRepository",
       "type": "imports"
     },
     {
       "symbolId": "services/authService.js#userRepository",
-      "targetId": "services/authService.js#bcrypt",
+      "targetId": "services/authService.js#userRepository",
       "type": "imports"
     },
     {
       "symbolId": "services/authService.js#verifyCredentials",
-      "targetId": "services/authService.js#bcrypt",
+      "targetId": "services/authService.js#userRepository",
       "type": "imports"
     },
     {
       "symbolId": "services/authService.js#user",
-      "targetId": "services/authService.js#bcrypt",
+      "targetId": "services/authService.js#userRepository",
       "type": "imports"
     },
     {
       "symbolId": "services/authService.js#valid",
-      "targetId": "services/authService.js#bcrypt",
+      "targetId": "services/authService.js#userRepository",
       "type": "imports"
     },
     {
       "symbolId": "services/authService.js#createUser",
-      "targetId": "services/authService.js#bcrypt",
+      "targetId": "services/authService.js#userRepository",
       "type": "imports"
     },
     {
       "symbolId": "services/authService.js#hashedPassword",
-      "targetId": "services/authService.js#bcrypt",
-      "type": "imports"
-    },
-    {
-      "symbolId": "services/authService.js#bcrypt",
-      "targetId": "models/userRepository.js#index",
-      "type": "imports"
-    },
-    {
-      "symbolId": "services/authService.js#userRepository",
-      "targetId": "models/userRepository.js#index",
-      "type": "imports"
-    },
-    {
-      "symbolId": "services/authService.js#verifyCredentials",
-      "targetId": "models/userRepository.js#index",
-      "type": "imports"
-    },
-    {
-      "symbolId": "services/authService.js#user",
-      "targetId": "models/userRepository.js#index",
-      "type": "imports"
-    },
-    {
-      "symbolId": "services/authService.js#valid",
-      "targetId": "models/userRepository.js#index",
-      "type": "imports"
-    },
-    {
-      "symbolId": "services/authService.js#createUser",
-      "targetId": "models/userRepository.js#index",
-      "type": "imports"
-    },
-    {
-      "symbolId": "services/authService.js#hashedPassword",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "services/authService.js#userRepository",
       "type": "imports"
     },
     {
       "symbolId": "services/userService.js#UserService",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "services/authService.js#userRepository",
       "type": "imports"
     },
     {
       "symbolId": "services/userService.js#repository",
-      "targetId": "models/userRepository.js#index",
+      "targetId": "services/authService.js#userRepository",
       "type": "imports"
     },
     {
@@ -669,47 +609,47 @@
     "controllers/authController.js#jwt": [
       {
         "symbolId": "controllers/authController.js#jwt",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "controllers/authController.js#authService",
         "type": "imports"
       }
     ],
     "controllers/authController.js#authService": [
       {
         "symbolId": "controllers/authController.js#authService",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "controllers/authController.js#authService",
         "type": "imports"
       }
     ],
     "controllers/authController.js#SECRET": [
       {
         "symbolId": "controllers/authController.js#SECRET",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "controllers/authController.js#authService",
         "type": "imports"
       }
     ],
     "controllers/authController.js#login": [
       {
         "symbolId": "controllers/authController.js#login",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "controllers/authController.js#authService",
         "type": "imports"
       }
     ],
     "controllers/authController.js#user": [
       {
         "symbolId": "controllers/authController.js#user",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "controllers/authController.js#authService",
         "type": "imports"
       },
       {
         "symbolId": "controllers/authController.js#user",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "controllers/authController.js#authService",
         "type": "imports"
       }
     ],
     "controllers/authController.js#token": [
       {
         "symbolId": "controllers/authController.js#token",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "controllers/authController.js#authService",
         "type": "imports"
       },
       {
@@ -721,141 +661,121 @@
     "controllers/authController.js#register": [
       {
         "symbolId": "controllers/authController.js#register",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "controllers/authController.js#authService",
         "type": "imports"
       }
     ],
     "controllers/userController.js#userService": [
       {
         "symbolId": "controllers/userController.js#userService",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "controllers/userController.js#userService",
         "type": "imports"
       }
     ],
     "controllers/userController.js#getAll": [
       {
         "symbolId": "controllers/userController.js#getAll",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "controllers/userController.js#userService",
         "type": "imports"
       }
     ],
     "controllers/userController.js#users": [
       {
         "symbolId": "controllers/userController.js#users",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "controllers/userController.js#userService",
         "type": "imports"
       }
     ],
     "controllers/userController.js#getById": [
       {
         "symbolId": "controllers/userController.js#getById",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "controllers/userController.js#userService",
         "type": "imports"
       }
     ],
     "controllers/userController.js#user": [
       {
         "symbolId": "controllers/userController.js#user",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "controllers/userController.js#userService",
         "type": "imports"
       },
       {
         "symbolId": "controllers/userController.js#user",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "controllers/userController.js#userService",
         "type": "imports"
       },
       {
         "symbolId": "controllers/userController.js#user",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "controllers/userController.js#userService",
         "type": "imports"
       }
     ],
     "controllers/userController.js#create": [
       {
         "symbolId": "controllers/userController.js#create",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "controllers/userController.js#userService",
         "type": "imports"
       }
     ],
     "controllers/userController.js#update": [
       {
         "symbolId": "controllers/userController.js#update",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "controllers/userController.js#userService",
         "type": "imports"
       }
     ],
     "controllers/userController.js#remove": [
       {
         "symbolId": "controllers/userController.js#remove",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "controllers/userController.js#userService",
         "type": "imports"
       }
     ],
     "index.js#express": [
       {
         "symbolId": "index.js#express",
-        "targetId": "index.js#express",
+        "targetId": "index.js#authController",
         "type": "imports"
       },
       {
         "symbolId": "index.js#express",
-        "targetId": "models/userRepository.js#index",
-        "type": "imports"
-      },
-      {
-        "symbolId": "index.js#express",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "index.js#userController",
         "type": "imports"
       }
     ],
     "index.js#authController": [
       {
         "symbolId": "index.js#authController",
-        "targetId": "index.js#express",
+        "targetId": "index.js#authController",
         "type": "imports"
       },
       {
         "symbolId": "index.js#authController",
-        "targetId": "models/userRepository.js#index",
-        "type": "imports"
-      },
-      {
-        "symbolId": "index.js#authController",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "index.js#userController",
         "type": "imports"
       }
     ],
     "index.js#userController": [
       {
         "symbolId": "index.js#userController",
-        "targetId": "index.js#express",
+        "targetId": "index.js#authController",
         "type": "imports"
       },
       {
         "symbolId": "index.js#userController",
-        "targetId": "models/userRepository.js#index",
-        "type": "imports"
-      },
-      {
-        "symbolId": "index.js#userController",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "index.js#userController",
         "type": "imports"
       }
     ],
     "index.js#app": [
       {
         "symbolId": "index.js#app",
-        "targetId": "index.js#express",
+        "targetId": "index.js#authController",
         "type": "imports"
       },
       {
         "symbolId": "index.js#app",
-        "targetId": "models/userRepository.js#index",
-        "type": "imports"
-      },
-      {
-        "symbolId": "index.js#app",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "index.js#userController",
         "type": "imports"
       },
       {
@@ -867,115 +787,75 @@
     "index.js#PORT": [
       {
         "symbolId": "index.js#PORT",
-        "targetId": "index.js#express",
+        "targetId": "index.js#authController",
         "type": "imports"
       },
       {
         "symbolId": "index.js#PORT",
-        "targetId": "models/userRepository.js#index",
-        "type": "imports"
-      },
-      {
-        "symbolId": "index.js#PORT",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "index.js#userController",
         "type": "imports"
       }
     ],
     "services/authService.js#bcrypt": [
       {
         "symbolId": "services/authService.js#bcrypt",
-        "targetId": "services/authService.js#bcrypt",
-        "type": "imports"
-      },
-      {
-        "symbolId": "services/authService.js#bcrypt",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "services/authService.js#userRepository",
         "type": "imports"
       }
     ],
     "services/authService.js#userRepository": [
       {
         "symbolId": "services/authService.js#userRepository",
-        "targetId": "services/authService.js#bcrypt",
-        "type": "imports"
-      },
-      {
-        "symbolId": "services/authService.js#userRepository",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "services/authService.js#userRepository",
         "type": "imports"
       }
     ],
     "services/authService.js#verifyCredentials": [
       {
         "symbolId": "services/authService.js#verifyCredentials",
-        "targetId": "services/authService.js#bcrypt",
-        "type": "imports"
-      },
-      {
-        "symbolId": "services/authService.js#verifyCredentials",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "services/authService.js#userRepository",
         "type": "imports"
       }
     ],
     "services/authService.js#user": [
       {
         "symbolId": "services/authService.js#user",
-        "targetId": "services/authService.js#bcrypt",
-        "type": "imports"
-      },
-      {
-        "symbolId": "services/authService.js#user",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "services/authService.js#userRepository",
         "type": "imports"
       }
     ],
     "services/authService.js#valid": [
       {
         "symbolId": "services/authService.js#valid",
-        "targetId": "services/authService.js#bcrypt",
-        "type": "imports"
-      },
-      {
-        "symbolId": "services/authService.js#valid",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "services/authService.js#userRepository",
         "type": "imports"
       }
     ],
     "services/authService.js#createUser": [
       {
         "symbolId": "services/authService.js#createUser",
-        "targetId": "services/authService.js#bcrypt",
-        "type": "imports"
-      },
-      {
-        "symbolId": "services/authService.js#createUser",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "services/authService.js#userRepository",
         "type": "imports"
       }
     ],
     "services/authService.js#hashedPassword": [
       {
         "symbolId": "services/authService.js#hashedPassword",
-        "targetId": "services/authService.js#bcrypt",
-        "type": "imports"
-      },
-      {
-        "symbolId": "services/authService.js#hashedPassword",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "services/authService.js#userRepository",
         "type": "imports"
       }
     ],
     "services/userService.js#UserService": [
       {
         "symbolId": "services/userService.js#UserService",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "services/authService.js#userRepository",
         "type": "imports"
       }
     ],
     "services/userService.js#repository": [
       {
         "symbolId": "services/userService.js#repository",
-        "targetId": "models/userRepository.js#index",
+        "targetId": "services/authService.js#userRepository",
         "type": "imports"
       }
     ],
