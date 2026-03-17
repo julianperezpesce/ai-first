@@ -145,7 +145,7 @@ function buildSymbolRelationships(
   // 1. Process imports relationships
   for (const dep of depsAnalysis.dependencies) {
     const sourceSymbols = symbols.filter(s => s.file === dep.source);
-    let targetSymbol = findTargetSymbol(dep.target, symbolMap);
+    let targetSymbol = findTargetSymbol(dep.target, symbolMap, symbols);
 
     if (targetSymbol && sourceSymbols.length > 0) {
       for (const source of sourceSymbols) {
@@ -185,7 +185,7 @@ function buildSymbolRelationships(
 /**
  * Find target symbol from import path
  */
-function findTargetSymbol(targetPath: string, symbolMap: Map<string, Symbol>): Symbol | undefined {
+function findTargetSymbol(targetPath: string, symbolMap: Map<string, Symbol>, allSymbols?: Symbol[]): Symbol | undefined {
   // Try exact match
   let target = symbolMap.get(targetPath);
   
@@ -205,6 +205,20 @@ function findTargetSymbol(targetPath: string, symbolMap: Map<string, Symbol>): S
           break;
         }
       }
+    }
+  }
+
+  // Try to find any symbol in the target file
+  if (!target && allSymbols) {
+    const targetFile = targetPath.replace(/\.[^.]+$/, '');
+    const fileSymbols = allSymbols.filter(s => {
+      const symFile = s.file.replace(/\.[^.]+$/, '');
+      return symFile === targetFile || symFile.endsWith('/' + targetFile) || symFile.endsWith('/' + targetPath.replace(/\.[^.]+$/, ''));
+    });
+    
+    if (fileSymbols.length > 0) {
+      // Return the first exported symbol, or just the first one
+      target = fileSymbols.find(s => s.export) || fileSymbols[0];
     }
   }
 

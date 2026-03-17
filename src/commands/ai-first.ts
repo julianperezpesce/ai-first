@@ -158,6 +158,20 @@ export async function runAIFirst(options: AIFirstOptions = {}): Promise<AIFirstR
     console.log("   ✅ Created ai_context.md");
 
     // Generate semantic contexts (features and flows)
+    // First generate modules.json which is required for feature/flow detection
+    console.log("📦 Generating modules...");
+    const modules: Record<string, { path: string; files: string[] }> = {};
+    for (const file of scanResult.files) {
+      const parts = file.relativePath.split('/');
+      if (parts.length > 1 && parts[0] !== 'ai') {
+        if (!modules[parts[0]]) modules[parts[0]] = { path: parts[0], files: [] };
+        modules[parts[0]].files.push(file.relativePath);
+      }
+    }
+    const modulesPath = path.join(outputDir, "modules.json");
+    fs.writeFileSync(modulesPath, JSON.stringify({ modules }, null, 2));
+    console.log("   ✅ modules.json");
+    
     try {
       const { features, flows } = generateSemanticContexts(outputDir);
       console.log(`   ✅ Created ${features.length} features, ${flows.length} flows`);
@@ -688,7 +702,8 @@ Examples:
             console.log(`   Calls: ${packet.relationships.calls.length}`);
             console.log(`   Called by: ${packet.callers.length}`);
             console.log(`   Imports: ${packet.relationships.imports.length}`);
-            console.log(`   Instantites: ${packet.relationships.instantiates?.length || 0}`);
+            console.log(`   Exports: ${packet.relationships.exports?.length || 0}`);
+            console.log(`   References: ${packet.relationships.references?.length || 0}`);
             console.log(`   Related symbols: ${packet.relatedSymbols.length}`);
             console.log(`\n📝 Summary: ${packet.summary}`);
           }

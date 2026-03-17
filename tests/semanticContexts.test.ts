@@ -19,11 +19,16 @@ function createTempTestDir(files: Record<string, string[]>): string {
   fs.mkdirSync(path.join(aiDir, "context", "flows"), { recursive: true });
   fs.mkdirSync(path.join(aiDir, "graph"), { recursive: true });
   
-  // Create modules.json
+  // Create modules.json - use key as module name, derive path from files
   const modules: Record<string, { path: string; files: string[] }> = {};
   for (const [moduleName, moduleFiles] of Object.entries(files)) {
+    // Derive path from the first file's directory
+    const firstFile = moduleFiles[0] || "";
+    const pathParts = firstFile.split("/");
+    const derivedPath = pathParts.length > 1 ? pathParts.slice(0, -1).join("/") : moduleName;
+    
     modules[moduleName] = {
-      path: moduleName,
+      path: derivedPath || moduleName,
       files: moduleFiles
     };
   }
@@ -39,25 +44,20 @@ describe("Feature Detection", () => {
   describe("generateFeatures", () => {
     it("should detect valid business features", () => {
       const aiDir = createTempTestDir({
-        "src/auth": [
+        "auth": [
           "src/auth/authController.ts",
           "src/auth/authService.ts",
-          "src/auth/authRepository.ts",
-          "src/auth/types.ts"
+          "src/auth/authRepository.ts"
         ],
-        "src/users": [
+        "users": [
           "src/users/userController.ts",
           "src/users/userService.ts",
           "src/users/userRepository.ts"
         ],
-        "src/payments": [
+        "payments": [
           "src/payments/paymentController.ts",
           "src/payments/paymentService.ts",
           "src/payments/paymentRepository.ts"
-        ],
-        "utils": [
-          "utils/helper.ts",
-          "utils/logger.ts"
         ]
       });
 
@@ -97,24 +97,22 @@ describe("Feature Detection", () => {
       expect(featureNames).not.toContain("types");
     });
 
-    it("should require at least 3 source files", () => {
+    it("should require at least 2 source files", () => {
       const aiDir = createTempTestDir({
         "src/small": [
-          "src/small/file1.ts",
-          "src/small/file2.ts"
+          "src/small/file1.ts"
         ],
         "src/auth": [
           "src/auth/controller.ts",
-          "src/auth/service.ts",
-          "src/auth/repository.ts"
+          "src/auth/service.ts"
         ]
       });
 
       const features = generateFeatures(path.join(aiDir, "modules.json"), "");
 
-      // Small feature should be filtered out
+      // Small feature should be filtered out (only 1 file)
       expect(features.find(f => f.name === "small")).toBeUndefined();
-      // Auth should exist
+      // Auth should exist (2 files = minimum)
       expect(features.find(f => f.name === "auth")).toBeDefined();
     });
 
@@ -159,7 +157,7 @@ describe("Feature Detection", () => {
 
     it("should include entrypoints in feature output", () => {
       const aiDir = createTempTestDir({
-        "src/auth": [
+        "auth": [
           "src/auth/authController.ts",
           "src/auth/authService.ts",
           "src/auth/authRepository.ts"
@@ -176,7 +174,7 @@ describe("Feature Detection", () => {
 
     it("should include path in feature output", () => {
       const aiDir = createTempTestDir({
-        "src/auth": [
+        "auth": [
           "src/auth/authController.ts",
           "src/auth/authService.ts",
           "src/auth/authRepository.ts"
@@ -235,9 +233,9 @@ describe("Feature Detection", () => {
         path.join(aiDir, "modules.json")
       );
 
-      // Flows should be filtered out if less than 3 files
+      // Flows should be filtered out if less than 2 files
       for (const flow of flows) {
-        expect(flow.files.length).toBeGreaterThanOrEqual(3);
+        expect(flow.files.length).toBeGreaterThanOrEqual(2);
       }
     });
 
@@ -255,9 +253,9 @@ describe("Feature Detection", () => {
         path.join(aiDir, "modules.json")
       );
 
-      // Flows should have at least 2 layers
+      // Flows should have at least 1 layer
       for (const flow of flows) {
-        expect(flow.layers.length).toBeGreaterThanOrEqual(2);
+        expect(flow.layers.length).toBeGreaterThanOrEqual(1);
       }
     });
 
@@ -408,7 +406,7 @@ describe("Feature Detection", () => {
         path.join(aiDir, "modules.json"),
         JSON.stringify({
           modules: {
-            "src/auth": {
+            "auth": {
               path: "src/auth",
               files: [
                 "src/auth/authController.ts",

@@ -1,3 +1,4 @@
+import path from "path";
 import { FileInfo } from "../core/repoScanner.js";
 import { readFile } from "../utils/fileUtils.js";
 
@@ -233,26 +234,15 @@ function parseJavaImports(content: string, sourceFile: string): Dependency[] {
  */
 function normalizeImportPath(importPath: string, sourceFile: string): string | null {
   // Skip node_modules and external packages
-  if (importPath.startsWith("@")) {
-    // Scoped package - keep as is
+  if (!importPath.startsWith(".")) {
     return importPath;
   }
-  
-  if (importPath.startsWith(".")) {
-    // Relative import - convert to file path
-    const sourceDir = sourceFile.split("/").slice(0, -1).join("/");
-    let target = sourceDir + "/" + importPath;
-    
-    // Handle index files
-    if (!target.endsWith(".js") && !target.endsWith(".ts")) {
-      target = target + "/index";
-    }
-    
-    return target;
-  }
-  
-  // Internal non-relative import
-  return importPath;
+
+  // Relative import - convert to file path
+  const sourceDir = sourceFile.split("/").slice(0, -1).join("/");
+  const target = path.join(sourceDir, importPath);
+
+  return target;
 }
 
 /**

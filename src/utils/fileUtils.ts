@@ -51,6 +51,11 @@ export const DEFAULT_INCLUDE_EXTENSIONS = [
   ".yaml",
   ".yml",
   ".md",
+  // Salesforce
+  ".cls",
+  ".trigger",
+  ".apex",
+  ".object",
 ];
 
 /**
