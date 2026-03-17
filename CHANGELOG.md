@@ -35,6 +35,11 @@ All notable changes to `ai-first` will be documented in this file.
 - Added `controllers`, `routes`, `handlers`, `views`, `pages` to candidate roots
 - Removed `models`, `services` from ignored folders (now detected as features)
 
+### Security
+- **Bug 4**: Reduced npm vulnerabilities from 6 to 3 (dev dependencies only)
+- Updated `vitest` from 2.x to 4.x to resolve security issues
+- Remaining 3 vulnerabilities in `esbuild` (via vitepress) - low risk, dev-only
+
 ---
 
 ## [1.1.3] - 2026-03-11

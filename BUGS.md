@@ -53,33 +53,35 @@
 ---
 
 #### Bug 4: Vulnerabilidades en dependencias de dev
-**Estado**: ⚠️ Pendiente  
+**Estado**: ⚠️ Parcialmente corregido - Riesgo aceptado  
 **Fecha**: 2026-03-17  
 **Severidad**: Baja  
 
-**Descripción**: 6 vulnerabilidades moderate en `vitepress` y `vitest` (relacionadas con `esbuild`).
+**Descripción**: Vulnerabilidades en dependencias de desarrollo (`vitepress`, `vitest`, `esbuild`).
 
-**Comando que revela el problema**:
-```bash
-npm audit
-```
+**Progreso**:
+- Inicial: 6 vulnerabilidades moderate
+- Después de actualizar vitest a 4.x: 3 vulnerabilidades moderate
 
-**Output**:
-```
-6 moderate severity vulnerabilities
-```
+**Vulnerabilidades restantes**:
+- `esbuild <=0.24.2` (a través de `vite` -> `vitepress`)
+- Afecta solo el servidor de desarrollo de Vite
 
-**Nota**: Todas las vulnerabilidades son en dependencias de **desarrollo**, no afectan el runtime de producción.
+**Notas**:
+- Todas las vulnerabilidades son en dependencias de **desarrollo**
+- No afectan el runtime de producción de ai-first-cli
+- Requieren acceso al servidor de desarrollo local para explotarse
+- Solución completa requeriría romper compatibilidad con vitepress
 
-**Acción sugerida**: Evaluar actualizar a versiones sin vulnerabilidades, o aceptar el riesgo dado que solo afecta el entorno de desarrollo.
+**Decisión**: Aceptar el riesgo dado el bajo impacto y alto costo de migración.
 
 ---
 
 ## Pendientes por hacer
 
-- [ ] Investigar Bug 2: Relaciones de símbolos mostrando 0
-- [ ] Limpiar CHANGELOG.md duplicado
-- [ ] Evaluar vulnerabilidades de npm audit
+- [ ] Investigar Bug 2: Relaciones de símbolos mostrando 0 (parcial - detecta imports/exports pero no calls)
+- [ ] Limpiar CHANGELOG.md duplicado (ya está limpio en versión 1.1.4)
+- [x] Evaluar vulnerabilidades de npm audit - Reducidas de 6 a 3, riesgo aceptado
 - [x] Bug 7: Flows con rutas incorrectas en Express - CORREGIDO
 - [x] Bug 2: Context muestra relationships - PARCIALMENTE CORREGIDO
 - [x] Bug 10: Símbolos Apex no extraídos - CORREGIDO
