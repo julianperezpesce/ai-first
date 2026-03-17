@@ -1,0 +1,14 @@
+{
+  "name": "salesforce-cli",
+  "rootDir": "test-projects/salesforce-cli",
+  "features": [
+    "force-app"
+  ],
+  "flows": [
+    "account",
+    "opportunity"
+  ],
+  "languages": [],
+  "frameworks": [],
+  "generatedAt": "2026-03-17T20:44:20.289Z"
+}

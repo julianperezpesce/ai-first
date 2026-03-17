@@ -1,0 +1,117 @@
+{
+  "files": {
+    "ai/ai_context.md": {
+      "hash": "f038c6e81ed1afc0b5582c214b42fe69",
+      "mtime": 1773780260286.3303
+    },
+    "ai/ai_rules.md": {
+      "hash": "d6864e4c14fb24f5b12fc0dbc5fe50f7",
+      "mtime": 1773780260286.3303
+    },
+    "ai/architecture.md": {
+      "hash": "587f3de6d1623a0fc13d924503ab2ad9",
+      "mtime": 1773780260282.33
+    },
+    "ai/cache.json": {
+      "hash": "eefa5ea7f17da4d52a8f0e76bd706b14",
+      "mtime": 1773781577046.942
+    },
+    "ai/context/features/force-app.json": {
+      "hash": "05a59b12f59343ac6550313514d26378",
+      "mtime": 1773781577048.942
+    },
+    "ai/context/flows/account.json": {
+      "hash": "b598b9ea1bc7ba8e8220ce3861cd9a6b",
+      "mtime": 1773781577048.942
+    },
+    "ai/context/flows/opportunity.json": {
+      "hash": "ac8e6a6f053bb84d99784bd2e4556e90",
+      "mtime": 1773781577048.942
+    },
+    "ai/conventions.md": {
+      "hash": "d11ac646a8916e3c6cc376f610368317",
+      "mtime": 1773780260284.3303
+    },
+    "ai/dependencies.json": {
+      "hash": "038f80a99cbcc45991786b645398758e",
+      "mtime": 1773780260285.3303
+    },
+    "ai/entrypoints.md": {
+      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
+      "mtime": 1773780260284.3303
+    },
+    "ai/files.json": {
+      "hash": "99914b932bd37a50b983c5e7c90ae93b",
+      "mtime": 1773783350536.3306
+    },
+    "ai/graph/module-graph.json": {
+      "hash": "6848d665199d24a321d36d4e96e9dd90",
+      "mtime": 1773783350531.3303
+    },
+    "ai/graph/symbol-graph.json": {
+      "hash": "79a11e66d1c9ebdbec716c31b9eb11db",
+      "mtime": 1773783350536.3306
+    },
+    "ai/graph/symbol-references.json": {
+      "hash": "99914b932bd37a50b983c5e7c90ae93b",
+      "mtime": 1773783350536.3306
+    },
+    "ai/modules.json": {
+      "hash": "1d0ec72acc3fc6e1c8c1c28b1ad87252",
+      "mtime": 1773783350529.3303
+    },
+    "ai/project.json": {
+      "hash": "de8dcae01581a166e605720419782e81",
+      "mtime": 1773780260288.3303
+    },
+    "ai/repo-map.json": {
+      "hash": "aad9448574bb364c7baf94e63504ec02",
+      "mtime": 1773783350530.3303
+    },
+    "ai/repo_map.json": {
+      "hash": "8acf4ab9bc359d96240514f1e5e315ff",
+      "mtime": 1773780260281.33
+    },
+    "ai/repo_map.md": {
+      "hash": "612c1b7f776ec7f0e02e6a2a80bafe3b",
+      "mtime": 1773780260280.33
+    },
+    "ai/schema.json": {
+      "hash": "a757dca2fda36f996bbf8cd2c5a3a3f5",
+      "mtime": 1773780260288.3303
+    },
+    "ai/summary.md": {
+      "hash": "52c99c74210210438e7bf314915ef872",
+      "mtime": 1773780260281.33
+    },
+    "ai/symbols.json": {
+      "hash": "6edde050dc3089a9e15bf3934226a7c4",
+      "mtime": 1773780260285.3303
+    },
+    "ai/tech_stack.md": {
+      "hash": "4f67b75666a8dab1f2f82196130ab030",
+      "mtime": 1773780260283.33
+    },
+    "ai/tools.json": {
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773780260288.3303
+    },
+    "force-app/main/default/classes/AccountController.cls": {
+      "hash": "f42a5c32b2194cf4c6227503ba00f6fe",
+      "mtime": 1773777904495.204
+    },
+    "force-app/main/default/classes/OpportunityController.cls": {
+      "hash": "27984b63f77bef40953426e0a6b0c685",
+      "mtime": 1773777913625.33
+    },
+    "force-app/main/default/triggers/AccountTrigger.trigger": {
+      "hash": "84c54cb056848e844af710a70c5ef243",
+      "mtime": 1773777952108.863
+    },
+    "sfdx-project.json": {
+      "hash": "d2a50cc298ee84931caa1b54ae8b18ed",
+      "mtime": 1773777895732.083
+    }
+  },
+  "lastIndexed": "2026-03-17T21:35:50.537Z"
+}

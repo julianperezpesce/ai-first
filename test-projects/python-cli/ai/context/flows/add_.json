@@ -1,0 +1,9 @@
+{
+  "name": "add_",
+  "entrypoint": "cli/add_command.py",
+  "files": [
+    "cli/add_command.py"
+  ],
+  "depth": 0,
+  "layers": []
+}

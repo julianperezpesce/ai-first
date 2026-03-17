@@ -1,0 +1,69 @@
+{
+  "src/App.tsx": {
+    "symbols": [
+      "src/App.tsx#App"
+    ],
+    "module": "src"
+  },
+  "src/context/AuthContext.tsx": {
+    "symbols": [
+      "src/context/AuthContext.tsx#User",
+      "src/context/AuthContext.tsx#AuthContextType",
+      "src/context/AuthContext.tsx#login",
+      "src/context/AuthContext.tsx#logout",
+      "src/context/AuthContext.tsx#AuthContext",
+      "src/context/AuthContext.tsx#AuthProvider",
+      "src/context/AuthContext.tsx#response",
+      "src/context/AuthContext.tsx#data"
+    ],
+    "module": "src"
+  },
+  "src/hooks/useAuth.ts": {
+    "symbols": [
+      "src/hooks/useAuth.ts#useAuth",
+      "src/hooks/useAuth.ts#context"
+    ],
+    "module": "src"
+  },
+  "src/main.tsx": {
+    "symbols": [
+      "src/main.tsx#root"
+    ],
+    "module": "src"
+  },
+  "src/pages/DashboardPage.tsx": {
+    "symbols": [
+      "src/pages/DashboardPage.tsx#DashboardPage"
+    ],
+    "module": "src"
+  },
+  "src/pages/LoginPage.tsx": {
+    "symbols": [
+      "src/pages/LoginPage.tsx#LoginPage",
+      "src/pages/LoginPage.tsx#navigate",
+      "src/pages/LoginPage.tsx#handleSubmit"
+    ],
+    "module": "src"
+  },
+  "src/pages/UsersPage.tsx": {
+    "symbols": [
+      "src/pages/UsersPage.tsx#UsersPage",
+      "src/pages/UsersPage.tsx#fetchUsers",
+      "src/pages/UsersPage.tsx#response",
+      "src/pages/UsersPage.tsx#data"
+    ],
+    "module": "src"
+  },
+  "src/services/userService.ts": {
+    "symbols": [
+      "src/services/userService.ts#User",
+      "src/services/userService.ts#fetchUsers",
+      "src/services/userService.ts#response",
+      "src/services/userService.ts#fetchUser",
+      "src/services/userService.ts#createUser",
+      "src/services/userService.ts#updateUser",
+      "src/services/userService.ts#deleteUser"
+    ],
+    "module": "src"
+  }
+}

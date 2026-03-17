@@ -1,0 +1,68 @@
+{
+  "src/app.module.ts": {
+    "symbols": [
+      "src/app.module.ts#AppModule"
+    ],
+    "module": "src"
+  },
+  "src/auth/auth.controller.ts": {
+    "symbols": [
+      "src/auth/auth.controller.ts#AuthController",
+      "src/auth/auth.controller.ts#user"
+    ],
+    "module": "src"
+  },
+  "src/auth/auth.module.ts": {
+    "symbols": [
+      "src/auth/auth.module.ts#AuthModule"
+    ],
+    "module": "src"
+  },
+  "src/auth/auth.service.ts": {
+    "symbols": [
+      "src/auth/auth.service.ts#AuthService",
+      "src/auth/auth.service.ts#payload"
+    ],
+    "module": "src"
+  },
+  "src/auth/dto/login.dto.ts": {
+    "symbols": [
+      "src/auth/dto/login.dto.ts#LoginDto"
+    ],
+    "module": "src"
+  },
+  "src/auth/strategies/jwt.strategy.ts": {
+    "symbols": [
+      "src/auth/strategies/jwt.strategy.ts#JwtStrategy"
+    ],
+    "module": "src"
+  },
+  "src/main.ts": {
+    "symbols": [
+      "src/main.ts#bootstrap",
+      "src/main.ts#app"
+    ],
+    "module": "src"
+  },
+  "src/users/users.controller.ts": {
+    "symbols": [
+      "src/users/users.controller.ts#UsersController"
+    ],
+    "module": "src"
+  },
+  "src/users/users.module.ts": {
+    "symbols": [
+      "src/users/users.module.ts#UsersModule"
+    ],
+    "module": "src"
+  },
+  "src/users/users.service.ts": {
+    "symbols": [
+      "src/users/users.service.ts#User",
+      "src/users/users.service.ts#UsersService",
+      "src/users/users.service.ts#user",
+      "src/users/users.service.ts#index"
+    ],
+    "module": "src"
+  }
+}
