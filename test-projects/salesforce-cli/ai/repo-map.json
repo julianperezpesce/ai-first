@@ -1,6 +1,6 @@
 {
-  "generated": "2026-03-17T21:35:50.530Z",
-  "totalFiles": 28,
+  "generated": "2026-03-17T23:27:59.449Z",
+  "totalFiles": 22,
   "structure": {
     "ai": {
       "type": "directory",
@@ -16,10 +16,6 @@
         "architecture.md": {
           "type": "file",
           "extension": "md"
-        },
-        "cache.json": {
-          "type": "file",
-          "extension": "json"
         },
         "context": {
           "type": "directory",
@@ -60,36 +56,11 @@
           "type": "file",
           "extension": "md"
         },
-        "files.json": {
-          "type": "file",
-          "extension": "json"
-        },
-        "graph": {
-          "type": "directory",
-          "children": {
-            "module-graph.json": {
-              "type": "file",
-              "extension": "json"
-            },
-            "symbol-graph.json": {
-              "type": "file",
-              "extension": "json"
-            },
-            "symbol-references.json": {
-              "type": "file",
-              "extension": "json"
-            }
-          }
-        },
         "modules.json": {
           "type": "file",
           "extension": "json"
         },
         "project.json": {
-          "type": "file",
-          "extension": "json"
-        },
-        "repo-map.json": {
           "type": "file",
           "extension": "json"
         },
@@ -182,11 +153,6 @@
       "extension": "md"
     },
     {
-      "path": "ai/cache.json",
-      "name": "cache.json",
-      "extension": "json"
-    },
-    {
       "path": "ai/context/features/force-app.json",
       "name": "force-app.json",
       "extension": "json"
@@ -217,26 +183,6 @@
       "extension": "md"
     },
     {
-      "path": "ai/files.json",
-      "name": "files.json",
-      "extension": "json"
-    },
-    {
-      "path": "ai/graph/module-graph.json",
-      "name": "module-graph.json",
-      "extension": "json"
-    },
-    {
-      "path": "ai/graph/symbol-graph.json",
-      "name": "symbol-graph.json",
-      "extension": "json"
-    },
-    {
-      "path": "ai/graph/symbol-references.json",
-      "name": "symbol-references.json",
-      "extension": "json"
-    },
-    {
       "path": "ai/modules.json",
       "name": "modules.json",
       "extension": "json"
@@ -244,11 +190,6 @@
     {
       "path": "ai/project.json",
       "name": "project.json",
-      "extension": "json"
-    },
-    {
-      "path": "ai/repo-map.json",
-      "name": "repo-map.json",
       "extension": "json"
     },
     {

@@ -1,1 +1,24 @@
-{}
+{
+  "force-app/main/default/classes/AccountController.cls": {
+    "symbols": [
+      "force-app/main/default/classes/AccountController.cls#AccountController",
+      "force-app/main/default/classes/AccountController.cls#createAccount",
+      "force-app/main/default/classes/AccountController.cls#updateAccountRating"
+    ],
+    "module": "force-app"
+  },
+  "force-app/main/default/classes/OpportunityController.cls": {
+    "symbols": [
+      "force-app/main/default/classes/OpportunityController.cls#OpportunityController",
+      "force-app/main/default/classes/OpportunityController.cls#closeWon",
+      "force-app/main/default/classes/OpportunityController.cls#validateOpportunity"
+    ],
+    "module": "force-app"
+  },
+  "force-app/main/default/triggers/AccountTrigger.trigger": {
+    "symbols": [
+      "force-app/main/default/triggers/AccountTrigger.trigger#AccountTrigger"
+    ],
+    "module": "force-app"
+  }
+}
