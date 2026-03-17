@@ -80,7 +80,7 @@ npm audit
 - [ ] Investigar Bug 2: Relaciones de símbolos mostrando 0
 - [ ] Limpiar CHANGELOG.md duplicado
 - [ ] Evaluar vulnerabilidades de npm audit
-- [ ] Bug 7: Flows con rutas incorrectas en Express (pendiente)
+- [x] Bug 7: Flows con rutas incorrectas en Express - CORREGIDO
 - [x] Bug 2: Context muestra relationships - PARCIALMENTE CORREGIDO
 - [x] Bug 10: Símbolos Apex no extraídos - CORREGIDO
 - [x] Bug 11: Python/JSX no detectan imports - CORREGIDO
@@ -172,27 +172,36 @@ node dist/commands/ai-first.js map --root test-projects/salesforce-cli
 ---
 
 ### Bug 7: Flows con rutas incorrectas en Express
-**Estado**: ⚠️ Pendiente  
+**Estado**: ✅ Corregido  
+**Fecha**: 2026-03-17  
 **Severidad**: Media  
 
-**Descripción**: Los flows generados para Express tienen rutas incorrectas.
+**Descripción**: Los flows generados para Express tenían rutas incorrectas y dependencias npm.
 
-**Archivo problematico**: `test-projects/express-api/ai/context/flows/authController.json`
+**Problema**:
+- Dependencias npm como `jsonwebtoken` aparecían en los flows
+- Rutas mal formadas como `controllers/../services/authService/index`
 
-**Contenido actual**:
+**Causa raíz**: La función `normalizeImportPath` no filtraba dependencias npm y no normalizaba rutas correctamente.
+
+**Solución implementada**:
+- Modificada `normalizeImportPath` para retornar `null` en lugar del path para dependencias npm
+- Agregada normalización de rutas con `path.normalize()` para eliminar `.` y `..`
+- Eliminado slash inicial si está presente
+
+**Archivo modificado**: `src/analyzers/dependencies.ts`
+
+**Verificación**:
 ```json
 {
-  "name": "authController",
+  "name": "auth",
   "entrypoint": "controllers/authController.js",
   "files": [
     "controllers/authController.js",
-    "jsonwebtoken",  ← INCORRECTO: es una dependencia npm
-    "controllers/../services/authService/index"  ← INCORRECTO: ruta mal formada
+    "services/authService.js"
   ]
 }
 ```
-
-**Solución sugerida**: Revisar el código de generación de flows en `src/core/semanticContexts.ts` para filtrar dependencias npm y corregir rutas.
 
 ---
 

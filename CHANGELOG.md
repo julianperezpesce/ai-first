@@ -15,6 +15,7 @@ All notable changes to `ai-first` will be documented in this file.
 - **Bug 2**: Context command now displays all relationship types (Exports, References) in addition to Calls, Called by, Imports
 - **Bug 5**: `init` command now generates `modules.json`, required for feature/flow detection
 - **Bug 6**: Features now detected in projects without `src/` prefix (Express, React, etc.)
+- **Bug 7**: Fixed incorrect paths in flows (removed npm dependencies and normalized paths)
 - **Bug 8**: Salesforce extensions (`.cls`, `.trigger`, `.apex`) added to file scanner
 - **Bug 10**: Added Apex symbol parser to extract classes, methods, and triggers from Salesforce files
 - **Bug 11**: Fixed import detection in Python and React/JSX projects (was only detecting exports)
