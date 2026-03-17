@@ -1,0 +1,57 @@
+{
+  "files": {
+    "__init__.py": {
+      "hash": "b8e919564af9b6e38c79d449bb77a7b5",
+      "mtime": 1773777152897.4336
+    },
+    "ai/files.json": {
+      "hash": "c82d9d1331bd255fc43be845aa368725",
+      "mtime": 1773783873602.761
+    },
+    "ai/graph/module-graph.json": {
+      "hash": "54539a6536c57542d107b5e587852d21",
+      "mtime": 1773783873597.7607
+    },
+    "ai/modules.json": {
+      "hash": "366ccb4be2fcb4b7098548e68cee7a06",
+      "mtime": 1773783873589.7607
+    },
+    "ai/repo-map.json": {
+      "hash": "d69f73250cea151ebef88e78f50ae286",
+      "mtime": 1773783873589.7607
+    },
+    "cli/__init__.py": {
+      "hash": "a3b6d5054e9628836636cf4d6927e33a",
+      "mtime": 1773777227193.3157
+    },
+    "cli/add_command.py": {
+      "hash": "d9b48d790c714aebf7b29db0f8aa3464",
+      "mtime": 1773777196493.9478
+    },
+    "cli/list_command.py": {
+      "hash": "fd7ca8830013f013e16afd191e6c5c75",
+      "mtime": 1773777202889.024
+    },
+    "cli/remove_command.py": {
+      "hash": "1209f465970ad86ef87ed6c0409cef50",
+      "mtime": 1773777208836.0952
+    },
+    "main.py": {
+      "hash": "8e7d98c3b644a2b27f760c017100e886",
+      "mtime": 1773777186036.8235
+    },
+    "models/__init__.py": {
+      "hash": "a99db8f336d72b5c5700545705baf7de",
+      "mtime": 1773777266541.7935
+    },
+    "models/task.py": {
+      "hash": "95274739cbb686a2f8c661836623c692",
+      "mtime": 1773777234068.3987
+    },
+    "models/task_repository.py": {
+      "hash": "68215671f3b74e5dbd6fdc06671b08b1",
+      "mtime": 1773777261367.7302
+    }
+  },
+  "lastIndexed": "2026-03-17T21:44:33.607Z"
+}

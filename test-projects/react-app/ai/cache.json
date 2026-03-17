@@ -1,0 +1,133 @@
+{
+  "files": {
+    "ai/ai_context.md": {
+      "hash": "4866a92297737fd2e34fabcd82b4974f",
+      "mtime": 1773784081724.758
+    },
+    "ai/ai_rules.md": {
+      "hash": "187ea54135fe8b42b7d38acb8c45ace3",
+      "mtime": 1773784081724.758
+    },
+    "ai/architecture.md": {
+      "hash": "e8662d770fe3c6360a9fc9b20c341266",
+      "mtime": 1773784081718.7578
+    },
+    "ai/context/features/src.json": {
+      "hash": "2d248c2486297a3db63103469fcb4d7b",
+      "mtime": 1773784081725.758
+    },
+    "ai/context/flows/UsersPage.json": {
+      "hash": "9c80be1645cd69f5ad66d24ba46e8b85",
+      "mtime": 1773784081726.758
+    },
+    "ai/context/flows/dashboard.json": {
+      "hash": "0fbc56b67033373bb6157659552c82d9",
+      "mtime": 1773784081726.758
+    },
+    "ai/context/flows/login.json": {
+      "hash": "9311af687ac6a30df3de225f1e18f879",
+      "mtime": 1773784081726.758
+    },
+    "ai/context/flows/users.json": {
+      "hash": "b5ee48090ea670d1afe36d1fa13500b7",
+      "mtime": 1773784081726.758
+    },
+    "ai/conventions.md": {
+      "hash": "cf36cf015f6c293ebf89ec2c7756bb57",
+      "mtime": 1773784081720.758
+    },
+    "ai/dependencies.json": {
+      "hash": "93a2fe3aec79aca7e1253533cae99f12",
+      "mtime": 1773784081723.758
+    },
+    "ai/entrypoints.md": {
+      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
+      "mtime": 1773784081719.7578
+    },
+    "ai/files.json": {
+      "hash": "48ab393f8b9df782ab081eeb57c5147d",
+      "mtime": 1773784088365.8538
+    },
+    "ai/graph/module-graph.json": {
+      "hash": "3599338f9de3043664fde3c5ca8bc1ca",
+      "mtime": 1773784088357.8538
+    },
+    "ai/modules.json": {
+      "hash": "c539e0624fa9a288ddfb14bd48b5587e",
+      "mtime": 1773784088354.8538
+    },
+    "ai/project.json": {
+      "hash": "e916a42c2cd97173f16f2f82189d5986",
+      "mtime": 1773784081726.758
+    },
+    "ai/repo-map.json": {
+      "hash": "b0821a6572790fc16e5270c4c5e9276e",
+      "mtime": 1773784088355.8538
+    },
+    "ai/repo_map.json": {
+      "hash": "7cd5df100b5acc9f5c96d3d51e55347e",
+      "mtime": 1773784081717.7578
+    },
+    "ai/repo_map.md": {
+      "hash": "f3361ccec5c3c9c2b4ead2c27b5fd571",
+      "mtime": 1773784081716.7578
+    },
+    "ai/schema.json": {
+      "hash": "96136c4559dbd4fb396d07196c0158ad",
+      "mtime": 1773784081726.758
+    },
+    "ai/summary.md": {
+      "hash": "6c7df62f23d13a49598c071057253eae",
+      "mtime": 1773784081717.7578
+    },
+    "ai/symbols.json": {
+      "hash": "ad94b9b17ac8aee49fe27f0113994ceb",
+      "mtime": 1773784081722.758
+    },
+    "ai/tech_stack.md": {
+      "hash": "d7e224852b6ec88de645453bfb065c40",
+      "mtime": 1773784081719.7578
+    },
+    "ai/tools.json": {
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773784081726.758
+    },
+    "package.json": {
+      "hash": "12744c74a0278dc2edfb68294b9b9125",
+      "mtime": 1773777304827.265
+    },
+    "src/App.tsx": {
+      "hash": "1bd200aa3ea7b4e1175a07d0f26f8dc4",
+      "mtime": 1773777339360.6953
+    },
+    "src/context/AuthContext.tsx": {
+      "hash": "4113336d7e2eb6ac2b78cebe8464276e",
+      "mtime": 1773777350783.8386
+    },
+    "src/hooks/useAuth.ts": {
+      "hash": "036b7295855cbd8214eb4653954f10cc",
+      "mtime": 1773777417490.685
+    },
+    "src/main.tsx": {
+      "hash": "283000b4b4218c8dc8b4e634a70bbbe3",
+      "mtime": 1773777310472.335
+    },
+    "src/pages/DashboardPage.tsx": {
+      "hash": "4c9a9c8fc6a53db6bdbb4d0de6561baf",
+      "mtime": 1773777385566.278
+    },
+    "src/pages/LoginPage.tsx": {
+      "hash": "16a9451aafa3dd13e3c62b8816ab98d6",
+      "mtime": 1773777377789.1794
+    },
+    "src/pages/UsersPage.tsx": {
+      "hash": "e24caa3c7d598228c36600eb1ca95b30",
+      "mtime": 1773777394130.387
+    },
+    "src/services/userService.ts": {
+      "hash": "78df2c3240cd630cedb2095347616301",
+      "mtime": 1773777428144.8215
+    }
+  },
+  "lastIndexed": "2026-03-17T21:48:08.366Z"
+}

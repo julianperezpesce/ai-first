@@ -1,0 +1,527 @@
+{
+  "symbols": {
+    "src/app.module.ts#AppModule": {
+      "name": "AppModule",
+      "type": "class",
+      "file": "src/app.module.ts",
+      "line": 8,
+      "module": "src",
+      "export": true
+    },
+    "src/auth/auth.controller.ts#AuthController": {
+      "name": "AuthController",
+      "type": "class",
+      "file": "src/auth/auth.controller.ts",
+      "line": 6,
+      "module": "src",
+      "export": true
+    },
+    "src/auth/auth.controller.ts#user": {
+      "name": "user",
+      "type": "const",
+      "file": "src/auth/auth.controller.ts",
+      "line": 11,
+      "module": "src",
+      "export": false
+    },
+    "src/auth/auth.module.ts#AuthModule": {
+      "name": "AuthModule",
+      "type": "class",
+      "file": "src/auth/auth.module.ts",
+      "line": 11,
+      "module": "src",
+      "export": true
+    },
+    "src/auth/auth.service.ts#AuthService": {
+      "name": "AuthService",
+      "type": "class",
+      "file": "src/auth/auth.service.ts",
+      "line": 5,
+      "module": "src",
+      "export": true
+    },
+    "src/auth/auth.service.ts#payload": {
+      "name": "payload",
+      "type": "const",
+      "file": "src/auth/auth.service.ts",
+      "line": 17,
+      "module": "src",
+      "export": false
+    },
+    "src/auth/dto/login.dto.ts#LoginDto": {
+      "name": "LoginDto",
+      "type": "class",
+      "file": "src/auth/dto/login.dto.ts",
+      "line": 1,
+      "module": "src",
+      "export": true
+    },
+    "src/auth/strategies/jwt.strategy.ts#JwtStrategy": {
+      "name": "JwtStrategy",
+      "type": "class",
+      "file": "src/auth/strategies/jwt.strategy.ts",
+      "line": 6,
+      "module": "src",
+      "export": true
+    },
+    "src/main.ts#bootstrap": {
+      "name": "bootstrap",
+      "type": "function",
+      "file": "src/main.ts",
+      "line": 4,
+      "module": "src",
+      "export": false
+    },
+    "src/main.ts#app": {
+      "name": "app",
+      "type": "const",
+      "file": "src/main.ts",
+      "line": 5,
+      "module": "src",
+      "export": false
+    },
+    "src/users/users.controller.ts#UsersController": {
+      "name": "UsersController",
+      "type": "class",
+      "file": "src/users/users.controller.ts",
+      "line": 5,
+      "module": "src",
+      "export": true
+    },
+    "src/users/users.module.ts#UsersModule": {
+      "name": "UsersModule",
+      "type": "class",
+      "file": "src/users/users.module.ts",
+      "line": 10,
+      "module": "src",
+      "export": true
+    },
+    "src/users/users.service.ts#User": {
+      "name": "User",
+      "type": "interface",
+      "file": "src/users/users.service.ts",
+      "line": 3,
+      "module": "src",
+      "export": false
+    },
+    "src/users/users.service.ts#UsersService": {
+      "name": "UsersService",
+      "type": "class",
+      "file": "src/users/users.service.ts",
+      "line": 10,
+      "module": "src",
+      "export": true
+    },
+    "src/users/users.service.ts#user": {
+      "name": "user",
+      "type": "const",
+      "file": "src/users/users.service.ts",
+      "line": 26,
+      "module": "src",
+      "export": false
+    },
+    "src/users/users.service.ts#index": {
+      "name": "index",
+      "type": "const",
+      "file": "src/users/users.service.ts",
+      "line": 39,
+      "module": "src",
+      "export": false
+    }
+  },
+  "total": 18,
+  "byType": {
+    "class": [
+      {
+        "id": "src/app.module.ts#AppModule",
+        "name": "AppModule",
+        "type": "class",
+        "file": "src/app.module.ts",
+        "line": 8,
+        "export": true
+      },
+      {
+        "id": "src/auth/auth.controller.ts#AuthController",
+        "name": "AuthController",
+        "type": "class",
+        "file": "src/auth/auth.controller.ts",
+        "line": 6,
+        "export": true
+      },
+      {
+        "id": "src/auth/auth.module.ts#AuthModule",
+        "name": "AuthModule",
+        "type": "class",
+        "file": "src/auth/auth.module.ts",
+        "line": 11,
+        "export": true
+      },
+      {
+        "id": "src/auth/auth.service.ts#AuthService",
+        "name": "AuthService",
+        "type": "class",
+        "file": "src/auth/auth.service.ts",
+        "line": 5,
+        "export": true
+      },
+      {
+        "id": "src/auth/dto/login.dto.ts#LoginDto",
+        "name": "LoginDto",
+        "type": "class",
+        "file": "src/auth/dto/login.dto.ts",
+        "line": 1,
+        "export": true
+      },
+      {
+        "id": "src/auth/strategies/jwt.strategy.ts#JwtStrategy",
+        "name": "JwtStrategy",
+        "type": "class",
+        "file": "src/auth/strategies/jwt.strategy.ts",
+        "line": 6,
+        "export": true
+      },
+      {
+        "id": "src/users/users.controller.ts#UsersController",
+        "name": "UsersController",
+        "type": "class",
+        "file": "src/users/users.controller.ts",
+        "line": 5,
+        "export": true
+      },
+      {
+        "id": "src/users/users.module.ts#UsersModule",
+        "name": "UsersModule",
+        "type": "class",
+        "file": "src/users/users.module.ts",
+        "line": 10,
+        "export": true
+      },
+      {
+        "id": "src/users/users.service.ts#UsersService",
+        "name": "UsersService",
+        "type": "class",
+        "file": "src/users/users.service.ts",
+        "line": 10,
+        "export": true
+      }
+    ],
+    "const": [
+      {
+        "id": "src/auth/auth.controller.ts#user",
+        "name": "user",
+        "type": "const",
+        "file": "src/auth/auth.controller.ts",
+        "line": 11,
+        "export": false
+      },
+      {
+        "id": "src/auth/auth.service.ts#payload",
+        "name": "payload",
+        "type": "const",
+        "file": "src/auth/auth.service.ts",
+        "line": 17,
+        "export": false
+      },
+      {
+        "id": "src/main.ts#app",
+        "name": "app",
+        "type": "const",
+        "file": "src/main.ts",
+        "line": 5,
+        "export": false
+      },
+      {
+        "id": "src/users/users.service.ts#user",
+        "name": "user",
+        "type": "const",
+        "file": "src/users/users.service.ts",
+        "line": 20,
+        "export": false
+      },
+      {
+        "id": "src/users/users.service.ts#user",
+        "name": "user",
+        "type": "const",
+        "file": "src/users/users.service.ts",
+        "line": 26,
+        "export": false
+      },
+      {
+        "id": "src/users/users.service.ts#index",
+        "name": "index",
+        "type": "const",
+        "file": "src/users/users.service.ts",
+        "line": 32,
+        "export": false
+      },
+      {
+        "id": "src/users/users.service.ts#index",
+        "name": "index",
+        "type": "const",
+        "file": "src/users/users.service.ts",
+        "line": 39,
+        "export": false
+      }
+    ],
+    "function": [
+      {
+        "id": "src/main.ts#bootstrap",
+        "name": "bootstrap",
+        "type": "function",
+        "file": "src/main.ts",
+        "line": 4,
+        "export": false
+      }
+    ],
+    "interface": [
+      {
+        "id": "src/users/users.service.ts#User",
+        "name": "User",
+        "type": "interface",
+        "file": "src/users/users.service.ts",
+        "line": 3,
+        "export": false
+      }
+    ]
+  },
+  "byFile": {
+    "src/app.module.ts": [
+      {
+        "id": "src/app.module.ts#AppModule",
+        "name": "AppModule",
+        "type": "class",
+        "file": "src/app.module.ts",
+        "line": 8,
+        "export": true
+      }
+    ],
+    "src/auth/auth.controller.ts": [
+      {
+        "id": "src/auth/auth.controller.ts#AuthController",
+        "name": "AuthController",
+        "type": "class",
+        "file": "src/auth/auth.controller.ts",
+        "line": 6,
+        "export": true
+      },
+      {
+        "id": "src/auth/auth.controller.ts#user",
+        "name": "user",
+        "type": "const",
+        "file": "src/auth/auth.controller.ts",
+        "line": 11,
+        "export": false
+      }
+    ],
+    "src/auth/auth.module.ts": [
+      {
+        "id": "src/auth/auth.module.ts#AuthModule",
+        "name": "AuthModule",
+        "type": "class",
+        "file": "src/auth/auth.module.ts",
+        "line": 11,
+        "export": true
+      }
+    ],
+    "src/auth/auth.service.ts": [
+      {
+        "id": "src/auth/auth.service.ts#AuthService",
+        "name": "AuthService",
+        "type": "class",
+        "file": "src/auth/auth.service.ts",
+        "line": 5,
+        "export": true
+      },
+      {
+        "id": "src/auth/auth.service.ts#payload",
+        "name": "payload",
+        "type": "const",
+        "file": "src/auth/auth.service.ts",
+        "line": 17,
+        "export": false
+      }
+    ],
+    "src/auth/dto/login.dto.ts": [
+      {
+        "id": "src/auth/dto/login.dto.ts#LoginDto",
+        "name": "LoginDto",
+        "type": "class",
+        "file": "src/auth/dto/login.dto.ts",
+        "line": 1,
+        "export": true
+      }
+    ],
+    "src/auth/strategies/jwt.strategy.ts": [
+      {
+        "id": "src/auth/strategies/jwt.strategy.ts#JwtStrategy",
+        "name": "JwtStrategy",
+        "type": "class",
+        "file": "src/auth/strategies/jwt.strategy.ts",
+        "line": 6,
+        "export": true
+      }
+    ],
+    "src/main.ts": [
+      {
+        "id": "src/main.ts#bootstrap",
+        "name": "bootstrap",
+        "type": "function",
+        "file": "src/main.ts",
+        "line": 4,
+        "export": false
+      },
+      {
+        "id": "src/main.ts#app",
+        "name": "app",
+        "type": "const",
+        "file": "src/main.ts",
+        "line": 5,
+        "export": false
+      }
+    ],
+    "src/users/users.controller.ts": [
+      {
+        "id": "src/users/users.controller.ts#UsersController",
+        "name": "UsersController",
+        "type": "class",
+        "file": "src/users/users.controller.ts",
+        "line": 5,
+        "export": true
+      }
+    ],
+    "src/users/users.module.ts": [
+      {
+        "id": "src/users/users.module.ts#UsersModule",
+        "name": "UsersModule",
+        "type": "class",
+        "file": "src/users/users.module.ts",
+        "line": 10,
+        "export": true
+      }
+    ],
+    "src/users/users.service.ts": [
+      {
+        "id": "src/users/users.service.ts#User",
+        "name": "User",
+        "type": "interface",
+        "file": "src/users/users.service.ts",
+        "line": 3,
+        "export": false
+      },
+      {
+        "id": "src/users/users.service.ts#UsersService",
+        "name": "UsersService",
+        "type": "class",
+        "file": "src/users/users.service.ts",
+        "line": 10,
+        "export": true
+      },
+      {
+        "id": "src/users/users.service.ts#user",
+        "name": "user",
+        "type": "const",
+        "file": "src/users/users.service.ts",
+        "line": 20,
+        "export": false
+      },
+      {
+        "id": "src/users/users.service.ts#user",
+        "name": "user",
+        "type": "const",
+        "file": "src/users/users.service.ts",
+        "line": 26,
+        "export": false
+      },
+      {
+        "id": "src/users/users.service.ts#index",
+        "name": "index",
+        "type": "const",
+        "file": "src/users/users.service.ts",
+        "line": 32,
+        "export": false
+      },
+      {
+        "id": "src/users/users.service.ts#index",
+        "name": "index",
+        "type": "const",
+        "file": "src/users/users.service.ts",
+        "line": 39,
+        "export": false
+      }
+    ]
+  },
+  "exported": [
+    {
+      "id": "src/app.module.ts#AppModule",
+      "name": "AppModule",
+      "type": "class",
+      "file": "src/app.module.ts",
+      "line": 8,
+      "export": true
+    },
+    {
+      "id": "src/auth/auth.controller.ts#AuthController",
+      "name": "AuthController",
+      "type": "class",
+      "file": "src/auth/auth.controller.ts",
+      "line": 6,
+      "export": true
+    },
+    {
+      "id": "src/auth/auth.module.ts#AuthModule",
+      "name": "AuthModule",
+      "type": "class",
+      "file": "src/auth/auth.module.ts",
+      "line": 11,
+      "export": true
+    },
+    {
+      "id": "src/auth/auth.service.ts#AuthService",
+      "name": "AuthService",
+      "type": "class",
+      "file": "src/auth/auth.service.ts",
+      "line": 5,
+      "export": true
+    },
+    {
+      "id": "src/auth/dto/login.dto.ts#LoginDto",
+      "name": "LoginDto",
+      "type": "class",
+      "file": "src/auth/dto/login.dto.ts",
+      "line": 1,
+      "export": true
+    },
+    {
+      "id": "src/auth/strategies/jwt.strategy.ts#JwtStrategy",
+      "name": "JwtStrategy",
+      "type": "class",
+      "file": "src/auth/strategies/jwt.strategy.ts",
+      "line": 6,
+      "export": true
+    },
+    {
+      "id": "src/users/users.controller.ts#UsersController",
+      "name": "UsersController",
+      "type": "class",
+      "file": "src/users/users.controller.ts",
+      "line": 5,
+      "export": true
+    },
+    {
+      "id": "src/users/users.module.ts#UsersModule",
+      "name": "UsersModule",
+      "type": "class",
+      "file": "src/users/users.module.ts",
+      "line": 10,
+      "export": true
+    },
+    {
+      "id": "src/users/users.service.ts#UsersService",
+      "name": "UsersService",
+      "type": "class",
+      "file": "src/users/users.service.ts",
+      "line": 10,
+      "export": true
+    }
+  ]
+}

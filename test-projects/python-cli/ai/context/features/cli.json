@@ -1,0 +1,16 @@
+{
+  "name": "cli",
+  "path": "cli",
+  "files": [
+    "cli/__init__.py",
+    "cli/add_command.py",
+    "cli/list_command.py",
+    "cli/remove_command.py"
+  ],
+  "entrypoints": [
+    "cli/add_command.py",
+    "cli/list_command.py",
+    "cli/remove_command.py"
+  ],
+  "dependencies": []
+}

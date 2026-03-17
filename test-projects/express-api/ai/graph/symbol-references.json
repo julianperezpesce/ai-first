@@ -1,0 +1,54 @@
+{
+  "models/userRepository.js#index": [
+    "controllers/authController.js#jwt",
+    "controllers/authController.js#authService",
+    "controllers/authController.js#SECRET",
+    "controllers/authController.js#login",
+    "controllers/authController.js#user",
+    "controllers/authController.js#token",
+    "controllers/authController.js#register",
+    "controllers/userController.js#userService",
+    "controllers/userController.js#getAll",
+    "controllers/userController.js#users",
+    "controllers/userController.js#getById",
+    "controllers/userController.js#user",
+    "controllers/userController.js#create",
+    "controllers/userController.js#update",
+    "controllers/userController.js#remove",
+    "index.js#express",
+    "index.js#authController",
+    "index.js#userController",
+    "index.js#app",
+    "index.js#PORT",
+    "services/authService.js#bcrypt",
+    "services/authService.js#userRepository",
+    "services/authService.js#verifyCredentials",
+    "services/authService.js#user",
+    "services/authService.js#valid",
+    "services/authService.js#createUser",
+    "services/authService.js#hashedPassword",
+    "services/userService.js#UserService",
+    "services/userService.js#repository"
+  ],
+  "index.js#express": [
+    "index.js#authController",
+    "index.js#userController",
+    "index.js#app",
+    "index.js#PORT"
+  ],
+  "services/authService.js#bcrypt": [
+    "services/authService.js#userRepository",
+    "services/authService.js#verifyCredentials",
+    "services/authService.js#user",
+    "services/authService.js#valid",
+    "services/authService.js#createUser",
+    "services/authService.js#hashedPassword"
+  ],
+  "middleware/authMiddleware.js#jwt": [
+    "controllers/authController.js#token",
+    "middleware/authMiddleware.js#decoded"
+  ],
+  "models/userRepository.js#users": [
+    "models/userRepository.js#index"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "auth.",
+  "entrypoint": "src/auth/auth.controller.ts",
+  "files": [
+    "src/auth/auth.controller.ts",
+    "src/auth/auth.service.ts"
+  ],
+  "depth": 0,
+  "layers": []
+}

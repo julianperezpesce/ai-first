@@ -1,0 +1,18 @@
+{
+  "name": "src",
+  "path": "src",
+  "files": [
+    "src/App.tsx",
+    "src/context/AuthContext.tsx",
+    "src/hooks/useAuth.ts",
+    "src/main.tsx",
+    "src/pages/DashboardPage.tsx",
+    "src/pages/LoginPage.tsx",
+    "src/pages/UsersPage.tsx",
+    "src/services/userService.ts"
+  ],
+  "entrypoints": [
+    "src/services/userService.ts"
+  ],
+  "dependencies": []
+}

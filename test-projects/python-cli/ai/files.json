@@ -1,0 +1,46 @@
+{
+  "cli/add_command.py": {
+    "symbols": [
+      "cli/add_command.py#execute"
+    ],
+    "module": "cli"
+  },
+  "cli/list_command.py": {
+    "symbols": [
+      "cli/list_command.py#execute"
+    ],
+    "module": "cli"
+  },
+  "cli/remove_command.py": {
+    "symbols": [
+      "cli/remove_command.py#execute"
+    ],
+    "module": "cli"
+  },
+  "main.py": {
+    "symbols": [
+      "main.py#main"
+    ],
+    "module": "main.py"
+  },
+  "models/task.py": {
+    "symbols": [
+      "models/task.py#Task",
+      "models/task.py#__init__",
+      "models/task.py#to_dict"
+    ],
+    "module": "models"
+  },
+  "models/task_repository.py": {
+    "symbols": [
+      "models/task_repository.py#TaskRepository",
+      "models/task_repository.py#__init__",
+      "models/task_repository.py#create",
+      "models/task_repository.py#find_all",
+      "models/task_repository.py#find_by_id",
+      "models/task_repository.py#update",
+      "models/task_repository.py#delete"
+    ],
+    "module": "models"
+  }
+}

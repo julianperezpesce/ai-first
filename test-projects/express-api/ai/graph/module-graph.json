@@ -1,0 +1,44 @@
+{
+  "modules": [
+    {
+      "name": "controllers",
+      "paths": [
+        "controllers/authController.js",
+        "controllers/userController.js"
+      ]
+    },
+    {
+      "name": "middleware",
+      "paths": [
+        "middleware/authMiddleware.js"
+      ]
+    },
+    {
+      "name": "models",
+      "paths": [
+        "models/userRepository.js"
+      ]
+    },
+    {
+      "name": "services",
+      "paths": [
+        "services/authService.js",
+        "services/userService.js"
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "from": "controllers",
+      "to": "jsonwebtoken"
+    },
+    {
+      "from": "middleware",
+      "to": "jsonwebtoken"
+    },
+    {
+      "from": "services",
+      "to": "bcrypt"
+    }
+  ]
+}

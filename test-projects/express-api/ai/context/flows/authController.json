@@ -1,0 +1,14 @@
+{
+  "name": "authController",
+  "entrypoint": "controllers/authController.js",
+  "files": [
+    "controllers/authController.js",
+    "jsonwebtoken",
+    "controllers/../services/authService/index"
+  ],
+  "depth": 3,
+  "layers": [
+    "unknown",
+    "service"
+  ]
+}

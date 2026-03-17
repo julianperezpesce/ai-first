@@ -1,0 +1,80 @@
+{
+  "totalDependencies": 10,
+  "totalModules": 6,
+  "dependencies": [
+    {
+      "source": "controllers/authController.js",
+      "target": "jsonwebtoken",
+      "type": "require"
+    },
+    {
+      "source": "controllers/authController.js",
+      "target": "controllers/../services/authService/index",
+      "type": "require"
+    },
+    {
+      "source": "controllers/userController.js",
+      "target": "controllers/../services/userService/index",
+      "type": "require"
+    },
+    {
+      "source": "index.js",
+      "target": "express",
+      "type": "require"
+    },
+    {
+      "source": "index.js",
+      "target": "/./controllers/authController/index",
+      "type": "require"
+    },
+    {
+      "source": "index.js",
+      "target": "/./controllers/userController/index",
+      "type": "require"
+    },
+    {
+      "source": "middleware/authMiddleware.js",
+      "target": "jsonwebtoken",
+      "type": "require"
+    },
+    {
+      "source": "services/authService.js",
+      "target": "bcrypt",
+      "type": "require"
+    },
+    {
+      "source": "services/authService.js",
+      "target": "services/../models/userRepository/index",
+      "type": "require"
+    },
+    {
+      "source": "services/userService.js",
+      "target": "services/../models/userRepository/index",
+      "type": "require"
+    }
+  ],
+  "byFile": {
+    "controllers/authController.js": [
+      "jsonwebtoken",
+      "controllers/../services/authService/index"
+    ],
+    "controllers/userController.js": [
+      "controllers/../services/userService/index"
+    ],
+    "index.js": [
+      "express",
+      "/./controllers/authController/index",
+      "/./controllers/userController/index"
+    ],
+    "middleware/authMiddleware.js": [
+      "jsonwebtoken"
+    ],
+    "services/authService.js": [
+      "bcrypt",
+      "services/../models/userRepository/index"
+    ],
+    "services/userService.js": [
+      "services/../models/userRepository/index"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "nestjs-backend",
+  "rootDir": "test-projects/nestjs-backend",
+  "features": [
+    "src"
+  ],
+  "flows": [
+    "auth.",
+    "auth.controller",
+    "users.",
+    "users.controller"
+  ],
+  "languages": [],
+  "frameworks": [],
+  "generatedAt": "2026-03-17T20:44:20.003Z"
+}
