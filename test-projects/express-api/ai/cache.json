@@ -2,95 +2,91 @@
   "files": {
     "ai/ai_context.md": {
       "hash": "286f0083010c4a66f3906b020b9cc7b4",
-      "mtime": 1773780259902.3242
+      "mtime": 1773790808212.411
     },
     "ai/ai_rules.md": {
       "hash": "fa1a632e71f5b7055dee7d1368600ce0",
-      "mtime": 1773780259901.3242
+      "mtime": 1773790808211.0957
     },
     "ai/architecture.md": {
       "hash": "5e9f157447aac07a89cf6fe7bffcdad4",
-      "mtime": 1773780259894.3242
+      "mtime": 1773790808206.2236
     },
     "ai/context/features/controllers.json": {
       "hash": "65a9f94a405e51bd65bd7a5378dbb164",
-      "mtime": 1773780259903.3242
+      "mtime": 1773790808212.5125
     },
     "ai/context/features/services.json": {
       "hash": "113525da53ad952071cca194ba355d48",
-      "mtime": 1773780259903.3242
+      "mtime": 1773790808212.5125
     },
     "ai/context/flows/auth.json": {
       "hash": "a6200259a521a38e08dc6396d870a633",
-      "mtime": 1773780259903.3242
-    },
-    "ai/context/flows/authController.json": {
-      "hash": "055ec4c463c9ed9ea4977b90ec6e15a6",
-      "mtime": 1773780259903.3242
+      "mtime": 1773790808212.5125
     },
     "ai/context/flows/user.json": {
       "hash": "af049ebfc3b8ce808e6091ac96a651ee",
-      "mtime": 1773780259903.3242
+      "mtime": 1773790808212.5125
     },
     "ai/conventions.md": {
       "hash": "fa8f117204dbd53d6b787e6ec1791dbf",
-      "mtime": 1773780259897.3242
+      "mtime": 1773790808208.4985
     },
     "ai/dependencies.json": {
-      "hash": "fd3a0a18b6d99f3e19494e6673b298a8",
-      "mtime": 1773780259900.3242
+      "hash": "b59a369568a90136bf6d54a022aae411",
+      "mtime": 1773790808210.9893
     },
     "ai/entrypoints.md": {
       "hash": "17b75097fff8baf7e8218553431dad64",
-      "mtime": 1773780259896.3242
+      "mtime": 1773790808207.832
     },
     "ai/files.json": {
       "hash": "4041be286c1f3bef227566eb3131babc",
-      "mtime": 1773781576626.936
+      "mtime": 1773790815994.207
     },
     "ai/graph/module-graph.json": {
       "hash": "43383456483e635b66ff8960f3b39f03",
-      "mtime": 1773781576619.936
+      "mtime": 1773790815986.207
     },
     "ai/modules.json": {
       "hash": "52396bb2eb3346493e373bf55805ef90",
-      "mtime": 1773781576610.9358
+      "mtime": 1773790815978.2068
     },
     "ai/project.json": {
-      "hash": "8a72c2ffacfc01f8fa718452544b587f",
-      "mtime": 1773780259904.3242
+      "hash": "1bb817bdbded1961f92fd41ff357d31b",
+      "mtime": 1773790808214.527
     },
     "ai/repo-map.json": {
-      "hash": "868c86cf93af09487c5f8ced18b08e37",
-      "mtime": 1773781576611.9358
+      "hash": "d59ff56ea2af1192014b5a9977c3cc01",
+      "mtime": 1773790815979.9211
     },
     "ai/repo_map.json": {
-      "hash": "93577c606ba5a2a923362d308515341d",
-      "mtime": 1773780259893.324
+      "hash": "2c931b22a4f0555492ca98f0e74d0511",
+      "mtime": 1773790808204.0955
     },
     "ai/repo_map.md": {
       "hash": "35963e46f602438bc7b1318c630c9616",
-      "mtime": 1773780259893.324
+      "mtime": 1773790808203.0955
     },
     "ai/schema.json": {
-      "hash": "2529ada7b8d94813445044f50fa33a41",
-      "mtime": 1773780259904.3242
+      "hash": "13d7dee9946a2959f9b7309ee88b23f6",
+      "mtime": 1773790808213.0957
     },
     "ai/summary.md": {
       "hash": "792c7fa8536cdf57b7506a5b4390e1fd",
-      "mtime": 1773780259894.3242
+      "mtime": 1773790808205.3403
     },
     "ai/symbols.json": {
       "hash": "55f09cedb48590dcdc4c0a4506026d52",
-      "mtime": 1773780259899.3242
+      "mtime": 1773790808209.0957
     },
     "ai/tech_stack.md": {
       "hash": "bce98c307ddce9864d341031c914ba8a",
-      "mtime": 1773780259896.3242
+      "mtime": 1773790808207.4128
     },
     "ai/tools.json": {
       "hash": "b1356e52c74e9b3b6a0d397b790a4968",
-      "mtime": 1773780259904.3242
+      "mtime": 1773790808214.62
     },
     "controllers/authController.js": {
       "hash": "7354721b063c069c013d70e04f4bee0f",
@@ -125,5 +121,5 @@
       "mtime": 1773776865182.3455
     }
   },
-  "lastIndexed": "2026-03-17T21:06:16.627Z"
+  "lastIndexed": "2026-03-17T23:40:15.995Z"
 }

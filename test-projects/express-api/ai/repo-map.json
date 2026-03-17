@@ -1,6 +1,6 @@
 {
-  "generated": "2026-03-17T21:06:16.611Z",
-  "totalFiles": 28,
+  "generated": "2026-03-17T23:40:15.979Z",
+  "totalFiles": 27,
   "structure": {
     "ai": {
       "type": "directory",
@@ -37,10 +37,6 @@
               "type": "directory",
               "children": {
                 "auth.json": {
-                  "type": "file",
-                  "extension": "json"
-                },
-                "authController.json": {
                   "type": "file",
                   "extension": "json"
                 },
@@ -184,11 +180,6 @@
     {
       "path": "ai/context/flows/auth.json",
       "name": "auth.json",
-      "extension": "json"
-    },
-    {
-      "path": "ai/context/flows/authController.json",
-      "name": "authController.json",
       "extension": "json"
     },
     {

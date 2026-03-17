@@ -1,80 +1,54 @@
 {
-  "totalDependencies": 10,
-  "totalModules": 6,
+  "totalDependencies": 6,
+  "totalModules": 5,
   "dependencies": [
     {
       "source": "controllers/authController.js",
-      "target": "jsonwebtoken",
-      "type": "require"
-    },
-    {
-      "source": "controllers/authController.js",
-      "target": "controllers/../services/authService/index",
+      "target": "services/authService",
       "type": "require"
     },
     {
       "source": "controllers/userController.js",
-      "target": "controllers/../services/userService/index",
+      "target": "services/userService",
       "type": "require"
     },
     {
       "source": "index.js",
-      "target": "express",
+      "target": "controllers/authController",
       "type": "require"
     },
     {
       "source": "index.js",
-      "target": "/./controllers/authController/index",
-      "type": "require"
-    },
-    {
-      "source": "index.js",
-      "target": "/./controllers/userController/index",
-      "type": "require"
-    },
-    {
-      "source": "middleware/authMiddleware.js",
-      "target": "jsonwebtoken",
+      "target": "controllers/userController",
       "type": "require"
     },
     {
       "source": "services/authService.js",
-      "target": "bcrypt",
-      "type": "require"
-    },
-    {
-      "source": "services/authService.js",
-      "target": "services/../models/userRepository/index",
+      "target": "models/userRepository",
       "type": "require"
     },
     {
       "source": "services/userService.js",
-      "target": "services/../models/userRepository/index",
+      "target": "models/userRepository",
       "type": "require"
     }
   ],
   "byFile": {
     "controllers/authController.js": [
-      "jsonwebtoken",
-      "controllers/../services/authService/index"
+      "services/authService"
     ],
     "controllers/userController.js": [
-      "controllers/../services/userService/index"
+      "services/userService"
     ],
     "index.js": [
-      "express",
-      "/./controllers/authController/index",
-      "/./controllers/userController/index"
-    ],
-    "middleware/authMiddleware.js": [
-      "jsonwebtoken"
+      "controllers/authController",
+      "controllers/userController"
     ],
     "services/authService.js": [
-      "bcrypt",
-      "services/../models/userRepository/index"
+      "models/userRepository"
     ],
     "services/userService.js": [
-      "services/../models/userRepository/index"
+      "models/userRepository"
     ]
   }
 }
