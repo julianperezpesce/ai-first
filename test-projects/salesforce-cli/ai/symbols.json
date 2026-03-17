@@ -1,7 +1,245 @@
 {
-  "symbols": {},
-  "total": 0,
-  "byType": {},
-  "byFile": {},
-  "exported": []
+  "symbols": {
+    "force-app/main/default/classes/AccountController.cls#AccountController": {
+      "name": "AccountController",
+      "type": "class",
+      "file": "force-app/main/default/classes/AccountController.cls",
+      "line": 1,
+      "module": "force-app",
+      "export": true
+    },
+    "force-app/main/default/classes/AccountController.cls#createAccount": {
+      "name": "createAccount",
+      "type": "function",
+      "file": "force-app/main/default/classes/AccountController.cls",
+      "line": 12,
+      "module": "force-app",
+      "export": true
+    },
+    "force-app/main/default/classes/AccountController.cls#updateAccountRating": {
+      "name": "updateAccountRating",
+      "type": "function",
+      "file": "force-app/main/default/classes/AccountController.cls",
+      "line": 19,
+      "module": "force-app",
+      "export": true
+    },
+    "force-app/main/default/classes/OpportunityController.cls#OpportunityController": {
+      "name": "OpportunityController",
+      "type": "class",
+      "file": "force-app/main/default/classes/OpportunityController.cls",
+      "line": 1,
+      "module": "force-app",
+      "export": true
+    },
+    "force-app/main/default/classes/OpportunityController.cls#closeWon": {
+      "name": "closeWon",
+      "type": "function",
+      "file": "force-app/main/default/classes/OpportunityController.cls",
+      "line": 13,
+      "module": "force-app",
+      "export": true
+    },
+    "force-app/main/default/classes/OpportunityController.cls#validateOpportunity": {
+      "name": "validateOpportunity",
+      "type": "function",
+      "file": "force-app/main/default/classes/OpportunityController.cls",
+      "line": 20,
+      "module": "force-app",
+      "export": true
+    },
+    "force-app/main/default/triggers/AccountTrigger.trigger#AccountTrigger": {
+      "name": "AccountTrigger",
+      "type": "function",
+      "file": "force-app/main/default/triggers/AccountTrigger.trigger",
+      "line": 1,
+      "module": "force-app",
+      "export": true
+    }
+  },
+  "total": 7,
+  "byType": {
+    "class": [
+      {
+        "id": "force-app/main/default/classes/AccountController.cls#AccountController",
+        "name": "AccountController",
+        "type": "class",
+        "file": "force-app/main/default/classes/AccountController.cls",
+        "line": 1,
+        "export": true
+      },
+      {
+        "id": "force-app/main/default/classes/OpportunityController.cls#OpportunityController",
+        "name": "OpportunityController",
+        "type": "class",
+        "file": "force-app/main/default/classes/OpportunityController.cls",
+        "line": 1,
+        "export": true
+      }
+    ],
+    "function": [
+      {
+        "id": "force-app/main/default/classes/AccountController.cls#createAccount",
+        "name": "createAccount",
+        "type": "function",
+        "file": "force-app/main/default/classes/AccountController.cls",
+        "line": 12,
+        "export": true
+      },
+      {
+        "id": "force-app/main/default/classes/AccountController.cls#updateAccountRating",
+        "name": "updateAccountRating",
+        "type": "function",
+        "file": "force-app/main/default/classes/AccountController.cls",
+        "line": 19,
+        "export": true
+      },
+      {
+        "id": "force-app/main/default/classes/OpportunityController.cls#closeWon",
+        "name": "closeWon",
+        "type": "function",
+        "file": "force-app/main/default/classes/OpportunityController.cls",
+        "line": 13,
+        "export": true
+      },
+      {
+        "id": "force-app/main/default/classes/OpportunityController.cls#validateOpportunity",
+        "name": "validateOpportunity",
+        "type": "function",
+        "file": "force-app/main/default/classes/OpportunityController.cls",
+        "line": 20,
+        "export": true
+      },
+      {
+        "id": "force-app/main/default/triggers/AccountTrigger.trigger#AccountTrigger",
+        "name": "AccountTrigger",
+        "type": "function",
+        "file": "force-app/main/default/triggers/AccountTrigger.trigger",
+        "line": 1,
+        "export": true
+      }
+    ]
+  },
+  "byFile": {
+    "force-app/main/default/classes/AccountController.cls": [
+      {
+        "id": "force-app/main/default/classes/AccountController.cls#AccountController",
+        "name": "AccountController",
+        "type": "class",
+        "file": "force-app/main/default/classes/AccountController.cls",
+        "line": 1,
+        "export": true
+      },
+      {
+        "id": "force-app/main/default/classes/AccountController.cls#createAccount",
+        "name": "createAccount",
+        "type": "function",
+        "file": "force-app/main/default/classes/AccountController.cls",
+        "line": 12,
+        "export": true
+      },
+      {
+        "id": "force-app/main/default/classes/AccountController.cls#updateAccountRating",
+        "name": "updateAccountRating",
+        "type": "function",
+        "file": "force-app/main/default/classes/AccountController.cls",
+        "line": 19,
+        "export": true
+      }
+    ],
+    "force-app/main/default/classes/OpportunityController.cls": [
+      {
+        "id": "force-app/main/default/classes/OpportunityController.cls#OpportunityController",
+        "name": "OpportunityController",
+        "type": "class",
+        "file": "force-app/main/default/classes/OpportunityController.cls",
+        "line": 1,
+        "export": true
+      },
+      {
+        "id": "force-app/main/default/classes/OpportunityController.cls#closeWon",
+        "name": "closeWon",
+        "type": "function",
+        "file": "force-app/main/default/classes/OpportunityController.cls",
+        "line": 13,
+        "export": true
+      },
+      {
+        "id": "force-app/main/default/classes/OpportunityController.cls#validateOpportunity",
+        "name": "validateOpportunity",
+        "type": "function",
+        "file": "force-app/main/default/classes/OpportunityController.cls",
+        "line": 20,
+        "export": true
+      }
+    ],
+    "force-app/main/default/triggers/AccountTrigger.trigger": [
+      {
+        "id": "force-app/main/default/triggers/AccountTrigger.trigger#AccountTrigger",
+        "name": "AccountTrigger",
+        "type": "function",
+        "file": "force-app/main/default/triggers/AccountTrigger.trigger",
+        "line": 1,
+        "export": true
+      }
+    ]
+  },
+  "exported": [
+    {
+      "id": "force-app/main/default/classes/AccountController.cls#AccountController",
+      "name": "AccountController",
+      "type": "class",
+      "file": "force-app/main/default/classes/AccountController.cls",
+      "line": 1,
+      "export": true
+    },
+    {
+      "id": "force-app/main/default/classes/AccountController.cls#createAccount",
+      "name": "createAccount",
+      "type": "function",
+      "file": "force-app/main/default/classes/AccountController.cls",
+      "line": 12,
+      "export": true
+    },
+    {
+      "id": "force-app/main/default/classes/AccountController.cls#updateAccountRating",
+      "name": "updateAccountRating",
+      "type": "function",
+      "file": "force-app/main/default/classes/AccountController.cls",
+      "line": 19,
+      "export": true
+    },
+    {
+      "id": "force-app/main/default/classes/OpportunityController.cls#OpportunityController",
+      "name": "OpportunityController",
+      "type": "class",
+      "file": "force-app/main/default/classes/OpportunityController.cls",
+      "line": 1,
+      "export": true
+    },
+    {
+      "id": "force-app/main/default/classes/OpportunityController.cls#closeWon",
+      "name": "closeWon",
+      "type": "function",
+      "file": "force-app/main/default/classes/OpportunityController.cls",
+      "line": 13,
+      "export": true
+    },
+    {
+      "id": "force-app/main/default/classes/OpportunityController.cls#validateOpportunity",
+      "name": "validateOpportunity",
+      "type": "function",
+      "file": "force-app/main/default/classes/OpportunityController.cls",
+      "line": 20,
+      "export": true
+    },
+    {
+      "id": "force-app/main/default/triggers/AccountTrigger.trigger#AccountTrigger",
+      "name": "AccountTrigger",
+      "type": "function",
+      "file": "force-app/main/default/triggers/AccountTrigger.trigger",
+      "line": 1,
+      "export": true
+    }
+  ]
 }
