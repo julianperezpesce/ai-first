@@ -6,62 +6,63 @@ All notable changes to `ai-first` will be documented in this file.
 
 ## [Unreleased]
 
+---
+
+## [1.1.4] - 2026-03-17
+
+### Fixed
+- **Bug 1**: Features and flows were empty because `isEntrypoint` only checked file names, not directory paths (e.g., `/commands/`, `/handlers/`)
+- **Bug 2**: Context command now displays all relationship types (Exports, References) in addition to Calls, Called by, Imports
+- **Bug 5**: `init` command now generates `modules.json`, required for feature/flow detection
+- **Bug 6**: Features now detected in projects without `src/` prefix (Express, React, etc.)
+- **Bug 8**: Salesforce extensions (`.cls`, `.trigger`, `.apex`) added to file scanner
+- **Bug 11**: Fixed import detection in Python and React/JSX projects (was only detecting exports)
+
+### Added
+- **Functional Test Suite**: Added test projects for multiple frameworks:
+  - `express-api` (Express.js)
+  - `nestjs-backend` (NestJS)
+  - `python-cli` (Python)
+  - `react-app` (React + Vite)
+  - `salesforce-cli` (Salesforce DX)
+- **E2E Tests**: Test runner script and documentation in `tests/e2e/`
+- **BUGS.md**: Tracking file for known issues and their status
+
+### Changed
+- Reduced minimum files for features from 3 to 2 (for small projects)
+- Added `controllers`, `routes`, `handlers`, `views`, `pages` to candidate roots
+- Removed `models`, `services` from ignored folders (now detected as features)
+
+---
+
+## [1.1.3] - 2026-03-11
+
 ### Added
 - **CLI Progress Feedback**: Added ora-based progress indicators for repository analysis
-- **Lazy Context Generation**: Staged indexing for faster CLI startup (Stage 1 minimal, Stage 2 on-demand)
+- **Lazy Context Generation**: Staged indexing for faster CLI startup
 - **Lazy Analyzer Module**: `src/core/lazyAnalyzer.ts` with buildMinimalIndex, expandFeatureContext, expandFlowContext
-- **Lazy Indexing Tests**: Comprehensive test suite for lazy context generation
-- **Lazy Indexing Documentation**: English and Spanish guides for lazy context generation
-- **AI Repository Schema**: Standardized schema system for AI-First metadata (schema.json, project.json, tools.json)
-- **AI Repository Schema**: Standardized schema system for AI-First metadata (schema.json, project.json, tools.json)
-- **Schema CLI Integration**: Schema automatically generated with `ai-first init`
+- **AI Repository Schema**: Standardized schema system (schema.json, project.json, tools.json)
 - **Schema Validation**: Programmatic schema validation API
-- **Schema Tests**: Comprehensive test suite for schema generation and validation
-- **Schema Documentation**: English and Spanish guides for AI Repository Schema
-- **Incremental Analysis**: Update repository context incrementally when files change
 - **Incremental Analysis**: Update repository context incrementally when files change
 - **Update CLI Command**: `ai-first update` to perform incremental updates
-- **Self-Healing Context**: AI context updates automatically when files change
 - **Repository Knowledge Graph**: Unify all repository intelligence into a single navigable graph
 - **Graph CLI Command**: `ai-first graph` to generate knowledge graph
-- **Repository Knowledge Graph**: Unify all repository intelligence into a single navigable graph
-- **Graph CLI Command**: `ai-first graph` to generate knowledge graph
-- **Graph Output**: `ai/graph/knowledge-graph.json` with nodes and edges
-- **Git Intelligence**: Analyze git activity to provide AI context about recently changed files, features, and flows
-- **Git CLI Command**: `ai-first git` to analyze repository activity and generate metadata
-- **Git Intelligence**: Analyze git activity to provide AI context about recently changed files, features, and flows
-- **Git CLI Command**: `ai-first git` to analyze repository activity and generate metadata
-- **Git Context Files**: `ai/git/recent-files.json`, `ai/git/recent-features.json`, `ai/git/recent-flows.json`, `ai/git/commit-activity.json`
-- **Adapter SDK**: Developer-friendly `createAdapter()` API for creating custom ecosystem adapters
+- **Git Intelligence**: Analyze git activity for AI context
+- **Git CLI Command**: `ai-first git` to analyze repository activity
+- **Adapter SDK**: Developer-friendly `createAdapter()` API for custom ecosystem adapters
 - **Community Adapters**: Pre-built adapters for Laravel, NestJS, Spring Boot, Phoenix, FastAPI
-- **Adapter CLI Command**: `ai-first adapters` to list all available adapters
-- **Adapter SDK**: Developer-friendly `createAdapter()` API for creating custom ecosystem adapters
-- **Community Adapters**: Pre-built adapters for Laravel, NestJS, Spring Boot, Phoenix, FastAPI
-- **Adapter CLI Command**: `ai-first adapters` to list all available adapters
-- Enhanced symbol indexing with `filePath#symbolName` IDs
-- Enhanced symbol indexing with `filePath#symbolName` IDs
-- Extended symbol graph relationships: calls, called_by, imports, references, instantiates, extends, implements, exports
-- Reverse symbol references (`ai/graph/symbol-references.json`)
-- File index with symbol mappings (`ai/files.json`)
-- Code Context Packets (CCP) with depth, ranking, and multiple formats
-- Context CLI flags: `--depth`, `--max-symbols`, `--format`, `--save`
-- Incremental indexing with file hash cache (`ai/index-state.json`)
-- Context ranking system based on graph distance and relationships
-- Android/Kotlin Support: Android framework detection, SDK version extraction, Gradle dependency parsing, AndroidManifest parsing, Android resources indexing, Gradle multi-module detection
-- **Business Feature Detection**: Auto-detect business modules (auth, users, payments) from codebase structure
-- **Flow Detection**: Generate execution chains spanning multiple architectural layers (api → service → data)
-- Feature output: `ai/context/features/<feature>.json` with path, files, entrypoints, dependencies
-- Flow output: `ai/context/flows/<flow>.json` with depth, layers, entrypoint
-- Support for nested features at depth 1 and 2 (src/auth, src/modules/auth)
-- **Performance Documentation**: Complete guide to incremental analysis and optimization
-- **Spanish Documentation**: Complete translation for all guides
-- **Adapter System**: Multi-language/framework support (JavaScript, Python, Django, Flask, Rails, Salesforce, .NET)
-- **Spanish Documentation**: Complete translation for all guides
+- **Business Feature Detection**: Auto-detect business modules (auth, users, payments)
+- **Flow Detection**: Generate execution chains spanning multiple architectural layers
+- **Android/Kotlin Support**: Android framework detection, SDK version extraction, Gradle parsing
 
 ### Improved
 - Incremental repository analysis with change detection
 - Performance benchmarks for various repository sizes
 
+---
+
+## [1.1.0] - 2026-03-09
+
 ### Added
 - Enhanced symbol indexing with `filePath#symbolName` IDs
 - Extended symbol graph relationships: calls, called_by, imports, references, instantiates, extends, implements, exports
@@ -71,200 +72,46 @@ All notable changes to `ai-first` will be documented in this file.
 - Context CLI flags: `--depth`, `--max-symbols`, `--format`, `--save`
 - Incremental indexing with file hash cache (`ai/cache.json`)
 - Context ranking system based on graph distance and relationships
-- Android/Kotlin Support: Android framework detection, SDK version extraction, Gradle dependency parsing, AndroidManifest parsing, Android resources indexing, Gradle multi-module detection
-- **Business Feature Detection**: Auto-detect business modules (auth, users, payments) from codebase structure
-- **Flow Detection**: Generate execution chains spanning multiple architectural layers (api → service → data)
-- Feature output: `ai/context/features/<feature>.json` with path, files, entrypoints, dependencies
-- Flow output: `ai/context/flows/<flow>.json` with depth, layers, entrypoint
-- Support for nested features at depth 1 and 2 (src/auth, src/modules/auth)
+- Documentation: Architecture guide and Commands reference
 
 ---
 
-## [1.1.0] - 2026-03-09
-
-### Added
-- Enhanced symbol indexing with `filePath#symbolName` IDs
-- Extended symbol graph relationships: calls, called_by, imports, references, instantiates, extends, implements, exports
-- Reverse symbol references (`ai/graph/symbol-references.json`)
-- File index with symbol mappings (`ai/files.json`)
-- Code Context Packets (CCP) with depth, ranking, and multiple formats
-- Context CLI flags: `--depth`, `--max-symbols`, `--format`, `--save`
-- Incremental indexing with file hash cache (`ai/cache.json`)
-YB|- Context ranking system based on graph distance and relationships
-RR|- Android/Kotlin Support: Android framework detection, SDK version extraction, Gradle dependency parsing, AndroidManifest parsing, Android resources indexing, Gradle multi-module detection
-PY|- Documentation: Architecture guide and Commands reference updated
-- Documentation: Architecture guide and Commands reference updated
-
----
-
-## [1.1.0] - 2026-03-09
-
-All notable changes to `ai-first` will be documented in this file.
-
----
-
-## [Unreleased]
-
-### Added
-- `ai-first context <symbol>` - Generate context packet for specific symbol
-- `ai/graph/symbol-graph.json` - Symbol-level dependency graph with bidirectional relationships
-- `ai/context/<symbol>.json` - Code Context Packets (CCP) for AI agents
-- Unique symbol IDs (format: `module.symbolName`)
-- Symbol relationships: calls, called_by, imports, references
-
----
-
-## [1.1.0] - 2026-03-09
-
-### Added
-- `ai-first doctor` - Health check command for repository readiness
-- `ai-first explore <module>` - Navigate module dependencies
-- `ai-first map` - Generate repository architecture map
-- `ai-first index --semantic` - Semantic indexing with embeddings
-- `index-state.json` - Track file changes for incremental indexing
-- `files.json` - List of all indexed files with metadata
-- `modules.json` - Detected modules and their structure
-- `module-graph.json` - Module dependency graph
-- `embeddings.json` - Semantic embeddings for code search
-- SQLite index with adaptive sizing for large repos
-
-### New Generated Files
-- `ai/files.json` - File inventory with hash, size, line count
-- `ai/modules.json` - Module detection and hierarchy
-- `ai/module-graph.json` - Import-based dependency graph
-- `ai/embeddings.json` - Vector embeddings for semantic search
-
----
-
-## [1.0.0] - 2026-03-08
-
-### Added
-- feat: Add VitePress documentation site with SEO optimization (e0b3e35)
-- fix: Add permissions and GITHUB_TOKEN to changelog workflow (062d952)
-- chore: Update CHANGELOG with all new features (8c1f6d9)
-- fix: Update roadmap to match planned features from CHANGELOG (7eca761)
-- fix: Remove hash ID markers from README (d05db53)
-- feat: Add incremental indexing and semantic search pipeline (e294a2c)
-- feat: Add improved indexing with adaptive sizing, map command, incremental state (d0a172b)
-- feat: Add doctor, explore commands and semantic indexing (50011da)
-- fix: Correct YAML syntax in changelog workflow (5a1c819)
-- Improve documentation with Quick Start, Why AI-First, Architecture diagram, Languages (7cc8f44)
-
-# Changelog & Roadmap
-
-All notable changes to `ai-first` will be documented in this file.
-
----
-
-## [Unreleased]
-
-### Added
-- `ai-first doctor` - Health check command for repository readiness
-- `ai-first explore <module>` - Navigate module dependencies
-- `ai-first map` - Generate repository architecture map
-- `ai-first index --semantic` - Semantic indexing with embeddings
-- `index-state.json` - Track file changes for incremental indexing
-- `files.json` - List of all indexed files with metadata
-- `modules.json` - Detected modules and their structure
-- `module-graph.json` - Module dependency graph
-- `embeddings.json` - Semantic embeddings for code search
-- SQLite index with adaptive sizing for large repos
-
-### New Generated Files
-- `ai/files.json` - File inventory with hash, size, line count
-- `ai/modules.json` - Module detection and hierarchy
-- `ai/module-graph.json` - Import-based dependency graph
-- `ai/embeddings.json` - Vector embeddings for semantic search
-
----
-
-## [1.0.0] - 2026-03-08
+## [1.0.0] - 2026-03-01
 
 ### Added
 - Initial release
-- Core analyzers:
-  - `repo_map.md` - Repository structure tree view
-  - `summary.md` - Files by extension and directory
-  - `architecture.md` - Pattern detection (MVC, Clean Architecture, etc.)
-  - `tech_stack.md` - Languages, frameworks, libraries
-  - `entrypoints.md` - CLI, API, server entry points
-  - `conventions.md` - Naming, testing, linting conventions
-  - `ai_context.md` - Unified AI context
-- `symbols.json` - Extracts functions, classes, interfaces from code
-- `dependencies.json` - Analyzes import/require dependencies between files
-- `ai_rules.md` - Generates guidelines for AI assistants
-- `repo_map.json` - Machine-readable repository structure
-- `index.db` - SQLite database for fast queries (`ai-first index`)
+- Repository scanning and structure analysis
+- Symbol extraction for multiple languages
+- Dependency analysis
+- AI context generation
+- Architecture pattern detection
+- Tech stack detection
 
-### Features
-- Multi-language support (TypeScript, Python, Go, Rust, Java, C#, etc.)
-- Deterministic analysis (no AI/LLM required)
-- Works offline
-- CLI interface with `--root` and `--output` options
----
-
-## 📋 Roadmap
-
-See [CHANGELOG.md](./CHANGELOG.md) for the complete roadmap:
-- **Unreleased** section shows what's being worked on
-- Version sections show completed features
-- Future planned features are listed under each phase
-
----
-
-## How to Update
-
-After each feature release:
-1. Update this changelog with new changes
-2. Update version in `package.json` (semver)
-3. Commit and push
-
-```bash
-git add CHANGELOG.md package.json
-git commit -m "Release v1.x.x"
-git push
-```
 ---
 
 ## Roadmap
 
-### Phase 1 (Done ✅)
-- [x] Core CLI structure
-- [x] Basic analyzers (architecture, tech stack, entrypoints, conventions)
-- [x] Unified context generation
+### Phase 1: Core Infrastructure ✅
+- Repository scanning
+- Symbol extraction
+- Dependency analysis
 
-### Phase 2 (Done ✅)
-- [x] Symbol extraction (functions, classes, interfaces)
-- [x] Dependency analysis
-- [x] AI rules generation
-- [x] Machine-readable outputs (JSON)
+### Phase 2: Intelligence ✅
+- Symbol graph
+- Context packets
+- Feature/flow detection
 
-### Phase 3 (In Progress)
-- [x] Health check command (`ai-first doctor`)
-- [x] Module exploration (`ai-first explore`)
-- [x] Repository mapping (`ai-first map`)
-- [x] Semantic indexing with embeddings
-- [x] Incremental indexing (track file changes)
-- [ ] Configuration file support (`ai-first.config.json`)
-- [ ] Custom rules/plugins system
+### Phase 3: Ecosystem ✅
+- Adapters for popular frameworks
+- Multi-language support
+- Salesforce/Apex support (partial)
 
-### Phase 4 (Future)
-- [ ] Git integration (analyze recent changes)
-- [ ] Diff-aware context (what changed since last run)
-- [ ] Interactive mode
-- [ ] VS Code extension
+### Phase 4: Optimization (In Progress)
+- Incremental updates
+- Lazy loading
+- Performance improvements
 
----
-
-## How to Update
-
-After each push to GitHub:
-1. Update this changelog with new changes
-2. Update version if needed (semver)
-3. Push changes
-
-```bash
-git add CHANGELOG.md
-git commit -m "Update changelog"
-git push
-```
+### Phase 5: Community (Planned)
+- Plugin system
+- Custom rules
+- CI/CD integration
