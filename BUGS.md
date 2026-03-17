@@ -82,7 +82,7 @@ npm audit
 - [ ] Evaluar vulnerabilidades de npm audit
 - [ ] Bug 7: Flows con rutas incorrectas en Express (pendiente)
 - [x] Bug 2: Context muestra relationships - PARCIALMENTE CORREGIDO
-- [ ] Bug 10: Símbolos Apex no extraídos (0 símbolos en Salesforce)
+- [x] Bug 10: Símbolos Apex no extraídos - CORREGIDO
 - [x] Bug 11: Python/JSX no detectan imports - CORREGIDO
 
 ---
@@ -114,21 +114,28 @@ npm audit
 ---
 
 ### Bug 10: Analyzer de símbolos no soporta Apex
-**Estado**: ⚠️ Pendiente  
+**Estado**: ✅ Corregido  
 **Fecha**: 2026-03-17  
 **Severidad**: Alta  
 
 **Descripción**: El archivo `symbols.json` no extrae símbolos de archivos Apex (.cls). El comando `map` genera 0 símbolos para proyectos Salesforce.
 
-**Comando**:
+**Causa raíz**: El analyzer `src/analyzers/symbols.ts` no incluye lógica para parsear Apex. No había un parser para las extensiones `.cls` y `.trigger`.
+
+**Solución implementada**: 
+- Se agregó la función `parseApex()` en `src/analyzers/symbols.ts`
+- Se agregaron las extensiones `.cls` y `.trigger` al switch de `parseFileForSymbols()`
+- El parser detecta: clases (con `with sharing`, `without sharing`), interfaces, métodos (con `@AuraEnabled`), y triggers
+
+**Archivo modificado**: `src/analyzers/symbols.ts`
+
+**Verificación**:
 ```bash
 node dist/commands/ai-first.js map --root test-projects/salesforce-cli
-# Output: "Symbols: 0"
+# Output: "Symbols: 7"
+# Extrae: AccountController, createAccount, updateAccountRating, 
+#          OpportunityController, closeWon, validateOpportunity, AccountTrigger
 ```
-
-**Causa raíz**: El analyzer `src/analyzers/symbols.ts` no incluye lógica para parsear Apex. Aunque `aiContextGenerator.ts` tiene soporte para Apex, no se usa para generar symbols.json.
-
-**Solución sugerida**: Agregar soporte para Apex en `src/analyzers/symbols.ts` para extraer clases, métodos y triggers de archivos .cls.
 
 ### Bug 5: Features vacíos con comando `init`
 **Estado**: ✅ Corregido  
