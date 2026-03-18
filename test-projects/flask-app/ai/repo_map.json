@@ -1,0 +1,159 @@
+{
+  "generated": "2026-03-18T15:42:16.620Z",
+  "totalFiles": 14,
+  "structure": {
+    "README.md": {
+      "type": "file",
+      "extension": "md"
+    },
+    "app": {
+      "type": "directory",
+      "children": {
+        "__init__.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "api": {
+          "type": "directory",
+          "children": {
+            "__init__.py": {
+              "type": "file",
+              "extension": "py"
+            },
+            "routes.py": {
+              "type": "file",
+              "extension": "py"
+            }
+          }
+        },
+        "auth": {
+          "type": "directory",
+          "children": {
+            "__init__.py": {
+              "type": "file",
+              "extension": "py"
+            },
+            "forms.py": {
+              "type": "file",
+              "extension": "py"
+            },
+            "routes.py": {
+              "type": "file",
+              "extension": "py"
+            }
+          }
+        },
+        "blog": {
+          "type": "directory",
+          "children": {
+            "__init__.py": {
+              "type": "file",
+              "extension": "py"
+            },
+            "forms.py": {
+              "type": "file",
+              "extension": "py"
+            },
+            "routes.py": {
+              "type": "file",
+              "extension": "py"
+            }
+          }
+        },
+        "main": {
+          "type": "directory",
+          "children": {
+            "__init__.py": {
+              "type": "file",
+              "extension": "py"
+            },
+            "routes.py": {
+              "type": "file",
+              "extension": "py"
+            }
+          }
+        },
+        "models.py": {
+          "type": "file",
+          "extension": "py"
+        }
+      }
+    },
+    "config.py": {
+      "type": "file",
+      "extension": "py"
+    }
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "name": "README.md",
+      "extension": "md"
+    },
+    {
+      "path": "app/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "app/api/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "app/api/routes.py",
+      "name": "routes.py",
+      "extension": "py"
+    },
+    {
+      "path": "app/auth/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "app/auth/forms.py",
+      "name": "forms.py",
+      "extension": "py"
+    },
+    {
+      "path": "app/auth/routes.py",
+      "name": "routes.py",
+      "extension": "py"
+    },
+    {
+      "path": "app/blog/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "app/blog/forms.py",
+      "name": "forms.py",
+      "extension": "py"
+    },
+    {
+      "path": "app/blog/routes.py",
+      "name": "routes.py",
+      "extension": "py"
+    },
+    {
+      "path": "app/main/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "app/main/routes.py",
+      "name": "routes.py",
+      "extension": "py"
+    },
+    {
+      "path": "app/models.py",
+      "name": "models.py",
+      "extension": "py"
+    },
+    {
+      "path": "config.py",
+      "name": "config.py",
+      "extension": "py"
+    }
+  ]
+}
