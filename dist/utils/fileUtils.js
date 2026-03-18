@@ -49,6 +49,11 @@ export const DEFAULT_INCLUDE_EXTENSIONS = [
     ".yaml",
     ".yml",
     ".md",
+    // Salesforce
+    ".cls",
+    ".trigger",
+    ".apex",
+    ".object",
 ];
 /**
  * Get all files in a directory recursively

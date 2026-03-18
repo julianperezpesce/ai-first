@@ -58,6 +58,9 @@ function parseFileForSymbols(file) {
         else if (file.extension === "cs") {
             parseCSharp(file, content, lines, symbols);
         }
+        else if (file.extension === "cls" || file.extension === "trigger") {
+            parseApex(file, content, lines, symbols);
+        }
     }
     catch { }
     return symbols;
@@ -263,6 +266,63 @@ function parseJava(file, content, lines, symbols) {
                 type: "function",
                 file: file.relativePath,
                 line: i + 1,
+            });
+        }
+    }
+}
+/**
+ * Parse Apex (Salesforce) files
+ */
+function parseApex(file, content, lines, symbols) {
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+        // Classes: public with sharing class ClassName, public class ClassName, etc.
+        const classMatch = line.match(/^(?:public\s+(?:with\s+sharing|without\s+sharing|inherited\s+sharing)\s+)?class\s+(\w+)/);
+        if (classMatch) {
+            symbols.push({
+                id: generateSymbolId(file.relativePath, classMatch[1]),
+                name: classMatch[1],
+                type: "class",
+                file: file.relativePath,
+                line: i + 1,
+                export: true,
+            });
+        }
+        // Interfaces
+        const interfaceMatch = line.match(/^(?:public\s+)?interface\s+(\w+)/);
+        if (interfaceMatch) {
+            symbols.push({
+                id: generateSymbolId(file.relativePath, interfaceMatch[1]),
+                name: interfaceMatch[1],
+                type: "interface",
+                file: file.relativePath,
+                line: i + 1,
+                export: true,
+            });
+        }
+        // Methods: public static ReturnType methodName(
+        // Also handles @AuraEnabled public static ReturnType methodName(
+        const methodMatch = line.match(/^(?:@\w+\s+)?(?:public|private|protected|global)\s+(?:static\s+)?(?:\w+)\s+(\w+)\s*\(/);
+        if (methodMatch && !["if", "for", "while", "switch"].includes(methodMatch[1])) {
+            symbols.push({
+                id: generateSymbolId(file.relativePath, methodMatch[1]),
+                name: methodMatch[1],
+                type: "function",
+                file: file.relativePath,
+                line: i + 1,
+                export: line.includes("public") || line.includes("global"),
+            });
+        }
+        // Triggers: trigger TriggerName on ObjectName
+        const triggerMatch = line.match(/^trigger\s+(\w+)\s+on\s+(\w+)/);
+        if (triggerMatch) {
+            symbols.push({
+                id: generateSymbolId(file.relativePath, triggerMatch[1]),
+                name: triggerMatch[1],
+                type: "function",
+                file: file.relativePath,
+                line: i + 1,
+                export: true,
             });
         }
     }
