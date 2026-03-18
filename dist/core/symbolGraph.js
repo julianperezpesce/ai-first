@@ -78,7 +78,7 @@ function buildSymbolRelationships(symbols, depsAnalysis, files) {
     // 1. Process imports relationships
     for (const dep of depsAnalysis.dependencies) {
         const sourceSymbols = symbols.filter(s => s.file === dep.source);
-        let targetSymbol = findTargetSymbol(dep.target, symbolMap);
+        let targetSymbol = findTargetSymbol(dep.target, symbolMap, symbols);
         if (targetSymbol && sourceSymbols.length > 0) {
             for (const source of sourceSymbols) {
                 relationships.push({
@@ -112,7 +112,7 @@ function buildSymbolRelationships(symbols, depsAnalysis, files) {
 /**
  * Find target symbol from import path
  */
-function findTargetSymbol(targetPath, symbolMap) {
+function findTargetSymbol(targetPath, symbolMap, allSymbols) {
     // Try exact match
     let target = symbolMap.get(targetPath);
     // Try filename without extension
@@ -131,6 +131,18 @@ function findTargetSymbol(targetPath, symbolMap) {
                     break;
                 }
             }
+        }
+    }
+    // Try to find any symbol in the target file
+    if (!target && allSymbols) {
+        const targetFile = targetPath.replace(/\.[^.]+$/, '');
+        const fileSymbols = allSymbols.filter(s => {
+            const symFile = s.file.replace(/\.[^.]+$/, '');
+            return symFile === targetFile || symFile.endsWith('/' + targetFile) || symFile.endsWith('/' + targetPath.replace(/\.[^.]+$/, ''));
+        });
+        if (fileSymbols.length > 0) {
+            // Return the first exported symbol, or just the first one
+            target = fileSymbols.find(s => s.export) || fileSymbols[0];
         }
     }
     return target;

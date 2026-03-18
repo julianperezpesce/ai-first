@@ -328,3 +328,128 @@ ai-first query symbol login --root test-projects/express-api
 
 - [ ] Bug 2 (Parcial): Calls/Called by detection requiere AST parser completo (limitación aceptada)
 - [ ] Bug 4 (Parcial): 3 vulnerabilidades npm restantes (riesgo aceptado - dev only)
+
+---
+
+## Nuevos Issues Identificados (Para futuras versiones)
+
+### Issue 1: Testing de proyectos diversos
+**Estado**: ⚠️ Pendiente
+**Severidad**: Media
+
+**Problema**: Actualmente solo se testean 5 tipos de proyectos (Express, NestJS, Python, React, Salesforce). Hay muchos más frameworks/lenguajes soportados que no tienen tests:
+- Laravel (PHP)
+- Django/Flask (Python web)
+- Rails (Ruby)
+- Spring Boot (Java)
+- Phoenix (Elixir)
+- ASP.NET Core (C#)
+- Blazor (.NET)
+- FastAPI (Python)
+- Y más...
+
+**Solución sugerida**: Crear test projects para cada framework soportado y automatizar las pruebas.
+
+---
+
+### Issue 2: Archivos duplicados
+**Estado**: ⚠️ Pendiente
+**Severidad**: Media
+
+**Problema**: Se generan archivos duplicados con diferentes convenciones de nombre:
+- `repo-map.json` (kebab-case)
+- `repo_map.json` (snake_case)
+- `repo_map.md` (snake_case)
+
+**Impacto**: Confusión para usuarios, archivos innecesarios que ocupan espacio.
+
+**Solución sugerida**: Consolidar en un solo archivo usando snake_case consistente: `repo_map.json`.
+
+---
+
+### Issue 3: Inconsistencias en convenciones de nomenclatura
+**Estado**: ⚠️ Pendiente
+**Severidad**: Baja-Media
+
+**Problema**: Mezcla de convenciones de nombre en archivos generados:
+- Kebab-case: `repo-map.json`, `module-graph.json`, `symbol-graph.json`
+- Snake_case: `repo_map.md`, `ai_context.md`, `tech_stack.md`
+- CamelCase: `aiContext` (en código), `contextPacket`
+
+**Impacto**: Dificulta recordar nombres de archivos, inconsistencia visual.
+
+**Solución sugerida**: Estandarizar todo a snake_case:
+- `repo_map.json` (no `repo-map.json`)
+- `module_graph.json` (no `module-graph.json`)
+- `symbol_graph.json` (no `symbol-graph.json`)
+- `ai_context.md` (ya está bien)
+
+---
+
+### Issue 4: Organización de carpeta ai/
+**Estado**: ⚠️ Pendiente
+**Severidad**: Media
+
+**Problema**: La carpeta `ai/` contiene archivos que NO son generados por el CLI:
+- `ai/` en el repositorio contiene archivos del propio proyecto (meta)
+- Los usuarios esperan que `ai/` solo contenga archivos generados por `ai-first`
+- Mezcla de archivos de ejemplo/documentación con archivos de análisis real
+
+**Impacto**: Confusión sobre qué archivos deberían versionarse vs ignorarse.
+
+**Solución sugerida**:
+1. Renombrar la carpeta de ejemplo/documentación a `.ai-example/` o `ai-example/`
+2. O mover los archivos de ejemplo a `docs/examples/ai/`
+3. Agregar `.ai/` a `.gitignore` para que los usuarios no versionen archivos generados
+4. Documentar claramente qué archivos son generados vs manuales
+
+---
+
+### Issue 5: Limpieza de archivos temporales/cache
+**Estado**: ⚠️ Pendiente
+**Severidad**: Baja
+
+**Problema**: Archivos temporales y de caché se acumulan en `ai/`:
+- `cache.json` - puede ser grande
+- `index-state.json` - estado interno
+- `embeddings.json` - muy grande (706KB en ejemplo)
+
+**Solución sugerida**:
+1. Crear subcarpeta `ai/.cache/` para archivos temporales
+2. Agregar `ai/.cache/` a `.gitignore` por defecto
+3. Documentar qué archivos son seguros para versionar
+
+---
+
+### Issue 6: Documentación desactualizada
+**Estado**: ⚠️ Pendiente
+**Severidad**: Baja
+
+**Problema**: Algunos archivos README tienen información desactualizada:
+- Referencias a comandos que cambiaron de nombre
+- Ejemplos con rutas antiguas
+- Badge links que podrían estar rotos
+
+**Solución sugerida**: Revisión completa de documentación en inglés y español.
+
+---
+
+### Issue 7: Mejorar manejo de errores en git command
+**Estado**: ⚠️ Pendiente  
+**Severidad**: Baja
+
+**Problema**: El comando `git` muestra error crudo cuando no hay repositorio:
+```
+❌ Not a git repository
+EXIT_CODE: 1
+```
+
+**Solución sugerida**: Mostrar mensaje más amigable:
+```
+⚠️  No git repository found in <path>
+💡  Run 'git init' first to enable git analysis
+```
+
+---
+
+*Documento actualizado: 2026-03-17*

@@ -8,6 +8,27 @@ All notable changes to `ai-first` will be documented in this file.
 
 ---
 
+## [1.1.5] - 2026-03-17
+
+### Fixed
+- **Bug A**: `index` command now correctly generates `index.db` in the `--root/ai/` directory instead of current working directory
+- **Bug B**: `graph` command now works without git repository (uses static analysis fallback)
+- **Bug C**: `query` command now correctly finds symbols (depends on Bug A fix)
+- **Comprehensive Testing**: All 11 commands tested on 5 different project types (55/55 tests passing)
+  - Express.js API
+  - NestJS Backend
+  - Python CLI
+  - React App
+  - Salesforce CLI
+
+### Verified
+- All JSON output files are valid
+- All SQLite databases are properly formatted
+- All Markdown files are properly generated
+- Exit codes are correct for all scenarios
+
+---
+
 ## [1.1.4] - 2026-03-17
 
 ### Fixed

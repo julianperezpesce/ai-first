@@ -1,3 +1,4 @@
+import path from "path";
 import { readFile } from "../utils/fileUtils.js";
 /**
  * Analyze dependencies between files
@@ -192,23 +193,14 @@ function parseJavaImports(content, sourceFile) {
  * Normalize import path to relative file path
  */
 function normalizeImportPath(importPath, sourceFile) {
-    // Skip node_modules and external packages
-    if (importPath.startsWith("@")) {
-        // Scoped package - keep as is
-        return importPath;
+    if (!importPath.startsWith(".")) {
+        return null;
     }
-    if (importPath.startsWith(".")) {
-        // Relative import - convert to file path
-        const sourceDir = sourceFile.split("/").slice(0, -1).join("/");
-        let target = sourceDir + "/" + importPath;
-        // Handle index files
-        if (!target.endsWith(".js") && !target.endsWith(".ts")) {
-            target = target + "/index";
-        }
-        return target;
-    }
-    // Internal non-relative import
-    return importPath;
+    const sourceDir = sourceFile.split("/").slice(0, -1).join("/");
+    let target = path.join(sourceDir, importPath);
+    target = path.normalize(target);
+    target = target.replace(/^\//, "");
+    return target;
 }
 /**
  * Detect circular dependencies

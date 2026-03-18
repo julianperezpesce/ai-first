@@ -121,6 +121,20 @@ export async function runAIFirst(options = {}) {
         filesCreated.push(aiContextPath);
         console.log("   ✅ Created ai_context.md");
         // Generate semantic contexts (features and flows)
+        // First generate modules.json which is required for feature/flow detection
+        console.log("📦 Generating modules...");
+        const modules = {};
+        for (const file of scanResult.files) {
+            const parts = file.relativePath.split('/');
+            if (parts.length > 1 && parts[0] !== 'ai') {
+                if (!modules[parts[0]])
+                    modules[parts[0]] = { path: parts[0], files: [] };
+                modules[parts[0]].files.push(file.relativePath);
+            }
+        }
+        const modulesPath = path.join(outputDir, "modules.json");
+        fs.writeFileSync(modulesPath, JSON.stringify({ modules }, null, 2));
+        console.log("   ✅ modules.json");
         try {
             const { features, flows } = generateSemanticContexts(outputDir);
             console.log(`   ✅ Created ${features.length} features, ${flows.length} flows`);
@@ -287,7 +301,7 @@ if (isMain) {
         // Index command - generate SQLite database
         args.shift();
         let rootDir = process.cwd();
-        let outputPath = path.join(rootDir, "ai", "index.db");
+        let outputPath = null;
         let semanticMode = false;
         for (let i = 0; i < args.length; i++) {
             const arg = args[i];
@@ -329,6 +343,9 @@ Example queries (for AI agents):
 `);
                     process.exit(0);
             }
+        }
+        if (!outputPath) {
+            outputPath = path.join(rootDir, "ai", "index.db");
         }
         const aiDir = path.join(rootDir, "ai");
         // Load existing index state for incremental indexing
@@ -598,7 +615,8 @@ Examples:
                         console.log(`   Calls: ${packet.relationships.calls.length}`);
                         console.log(`   Called by: ${packet.callers.length}`);
                         console.log(`   Imports: ${packet.relationships.imports.length}`);
-                        console.log(`   Instantites: ${packet.relationships.instantiates?.length || 0}`);
+                        console.log(`   Exports: ${packet.relationships.exports?.length || 0}`);
+                        console.log(`   References: ${packet.relationships.references?.length || 0}`);
                         console.log(`   Related symbols: ${packet.relatedSymbols.length}`);
                         console.log(`\n📝 Summary: ${packet.summary}`);
                     }
@@ -1165,6 +1183,8 @@ Examples:
                 case "-s":
                     showStats = true;
                     break;
+                case "--no-git":
+                    break;
                 case "--help":
                 case "-h":
                     console.log(`
@@ -1175,19 +1195,21 @@ Usage: ai-first graph [options]
 Options:
   -r, --root <dir>   Root directory (default: current directory)
   -s, --stats        Show graph statistics
-  --json              Output as JSON
+  --no-git           Skip git history analysis
+  --json             Output as JSON
   -h, --help         Show help message
 
 Examples:
   ai-first graph
   ai-first graph --stats
+  ai-first graph --no-git
 `);
                     process.exit(0);
             }
         }
-        if (!detectGitRepository(rootDir)) {
-            console.log("❌ Not a git repository");
-            process.exit(1);
+        const hasGit = detectGitRepository(rootDir);
+        if (!hasGit) {
+            console.log("⚠️  Not a git repository - generating graph from static analysis only");
         }
         console.log(`\n🕸️  Building knowledge graph in: ${rootDir}\n`);
         const graph = buildKnowledgeGraph(rootDir, aiDir);

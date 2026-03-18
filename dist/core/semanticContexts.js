@@ -5,7 +5,11 @@ import { ensureDir, writeFile, readJsonFile } from "../utils/fileUtils.js";
 // CONFIGURATION - Feature Detection Rules
 // ============================================================
 // 1. Candidate roots - scan inside these directories
-const CANDIDATE_ROOTS = ["src", "app", "packages", "services", "modules", "features"];
+const CANDIDATE_ROOTS = [
+    "src", "app", "packages", "services", "modules", "features",
+    // MVC patterns - for projects without src/ prefix
+    "controllers", "routes", "handlers", "views", "pages"
+];
 // 2. Ignore folders - these are technical, not business features
 const IGNORED_FOLDERS = new Set([
     "utils",
@@ -15,7 +19,6 @@ const IGNORED_FOLDERS = new Set([
     "constants",
     "config",
     "dto",
-    "models",
     "common",
     "shared"
 ]);
@@ -28,7 +31,11 @@ const ENTRYPOINT_PATTERNS = [
     "service"
 ];
 // 4. Flow-specific patterns
-const FLOW_ENTRY_PATTERNS = ["controller", "route", "handler", "command"];
+const FLOW_ENTRY_PATTERNS = [
+    "controller", "route", "handler", "command",
+    // Frontend patterns
+    "page", "screen", "view", "component"
+];
 // 5. Flow exclusion patterns
 const FLOW_EXCLUDE = new Set([
     "repository", "repo", "utils", "helper", "model", "entity",
@@ -52,7 +59,9 @@ const MAX_FLOW_DEPTH = 5;
 const MAX_FLOW_FILES = 30;
 // Supported source file extensions
 const SOURCE_EXTENSIONS = new Set([
-    ".ts", ".tsx", ".js", ".jsx", ".py", ".java", ".kt", ".go", ".rs", ".rb", ".php", ".cs", ".vue", ".svelte"
+    ".ts", ".tsx", ".js", ".jsx", ".py", ".java", ".kt", ".go", ".rs", ".rb", ".php", ".cs", ".vue", ".svelte",
+    // Salesforce/Apex
+    ".cls", ".trigger", ".apex", ".object"
 ]);
 // ============================================================
 // HELPER FUNCTIONS
@@ -62,12 +71,15 @@ function isSourceFile(filePath) {
     return SOURCE_EXTENSIONS.has(ext);
 }
 function isEntrypoint(filePath) {
+    const lower = filePath.toLowerCase();
+    // Check both filename and directory path
     const basename = path.basename(filePath).toLowerCase();
-    return ENTRYPOINT_PATTERNS.some(pattern => basename.includes(pattern));
+    return ENTRYPOINT_PATTERNS.some(pattern => basename.includes(pattern) || lower.includes("/" + pattern + "s/"));
 }
 function isFlowEntrypoint(filePath) {
+    const lower = filePath.toLowerCase();
     const basename = path.basename(filePath).toLowerCase();
-    return FLOW_ENTRY_PATTERNS.some(pattern => basename.includes(pattern));
+    return FLOW_ENTRY_PATTERNS.some(pattern => basename.includes(pattern) || lower.includes("/" + pattern + "s/"));
 }
 function isIgnoredFolder(folderName) {
     return IGNORED_FOLDERS.has(folderName.toLowerCase());
@@ -115,7 +127,19 @@ function findFeatureCandidates(files) {
         const rootIdx = parts.findIndex(p => CANDIDATE_ROOTS.includes(p.toLowerCase()));
         if (rootIdx === -1)
             continue;
-        // Check depth 1: src/auth
+        // Check depth 0: controllers/ itself is a feature (when file is directly in root)
+        const depth0FeatureIdx = rootIdx;
+        if (depth0FeatureIdx < parts.length - 1) {
+            const featureName0 = parts[depth0FeatureIdx];
+            if (!isIgnoredFolder(featureName0) && !featureName0.includes(".")) {
+                const featurePath0 = parts.slice(0, depth0FeatureIdx + 1).join("/");
+                if (!candidates.has(featurePath0)) {
+                    candidates.set(featurePath0, []);
+                }
+                candidates.get(featurePath0).push(file);
+            }
+        }
+        // Check depth 1 and 2: src/auth, src/modules/auth
         for (let depth = 1; depth <= 2; depth++) {
             const featureIdx = rootIdx + depth;
             // Don't go beyond array bounds
@@ -185,31 +209,26 @@ export function generateFeatures(modulesJsonPath, _symbolsJsonPath) {
     catch (e) {
         // Ignore errors, return empty
     }
-    // Get all files from modules
-    const allFiles = Object.values(modules).flatMap(m => m.files || []);
-    // Find candidate features
-    const candidates = findFeatureCandidates(allFiles);
-    // Filter and validate candidates
-    for (const [featurePath, files] of candidates) {
+    // Use modules directly from modules.json
+    for (const [moduleName, mod] of Object.entries(modules)) {
+        const files = mod.files || [];
         // Filter to source files only
         const sourceFiles = files.filter(isSourceFile);
-        // Must have at least 3 source files
-        if (sourceFiles.length < 3)
+        // Must have at least 2 source files (relaxed from 3 for smaller projects)
+        if (sourceFiles.length < 2)
             continue;
         // Must have at least one entrypoint
         const entrypoints = sourceFiles.filter(isEntrypoint);
         if (entrypoints.length === 0)
             continue;
-        // Extract feature name from path
-        const featureName = featurePath.split("/").pop() || featurePath;
-        // Get dependencies
-        const dependencies = getFeatureDependencies(featurePath, modules);
+        // Extract feature name from path - get the last segment
+        const featureName = mod.path.split("/").pop() || moduleName;
         features.push({
             name: featureName,
-            path: featurePath,
+            path: mod.path,
             files: sourceFiles.slice(0, 50),
             entrypoints: entrypoints.slice(0, 10),
-            dependencies
+            dependencies: []
         });
     }
     return features;
@@ -285,9 +304,9 @@ function flowsFromFolders(files) {
     for (const file of files) {
         if (!isSourceFile(file))
             continue;
-        const baseName = path.basename(file).replace(/\.(ts|js|tsx|jsx)$/, "");
-        // Extract feature: authController -> auth, userService -> user
-        const feature = baseName.replace(/(Controller|Service|Repository|Handler|Route|Model|Entity)$/i, "");
+        const baseName = path.basename(file).replace(/\.[^.]+$/, "");
+        // Extract feature: authController -> auth, userService -> user, LoginPage -> login, Dashboard -> dashboard
+        const feature = baseName.replace(/(Controller|Service|Repository|Handler|Route|Model|Entity|Command|Page|Screen|View|Component)$/i, "");
         const key = feature.toLowerCase();
         if (!byFeature.has(key)) {
             byFeature.set(key, []);
@@ -295,10 +314,13 @@ function flowsFromFolders(files) {
         byFeature.get(key).push(file);
     }
     for (const [feature, featureFiles] of byFeature) {
-        if (featureFiles.length < 3)
+        // Relaxed: allow flows with 2+ files OR files that match entrypoint patterns
+        const hasEntrypoint = featureFiles.some(f => isFlowEntrypoint(f));
+        if (featureFiles.length < 2 && !hasEntrypoint)
             continue;
         const layers = new Set(featureFiles.map(getLayer).filter(l => l !== "unknown"));
-        if (layers.size < 2)
+        // Relaxed: allow single layer if files match entrypoint patterns
+        if (layers.size < 2 && !hasEntrypoint)
             continue;
         const sorted = [...featureFiles].sort((a, b) => getLayerPriority(a) - getLayerPriority(b));
         const entrypoint = sorted.find(isFlowEntrypoint) || sorted[0];
