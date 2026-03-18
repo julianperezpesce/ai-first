@@ -22,6 +22,30 @@
 
 ---
 
+## ⚠️ BUGS ENCONTRADOS EN PRUEBAS POSTERIORES
+
+### 4. Update Command - Símbolos no se Actualizan ❌
+**Fecha:** 2026-03-18
+**Problema:** El comando `update` no extrae nuevos símbolos cuando se modifica un archivo
+**Prueba realizada:**
+1. Se añadió una nueva función `healthCheck()` a `index.js`
+2. Se ejecutó `ai-first update --no-git`
+3. El output mostró:
+   ```
+   📁 Changed files: 4
+   modified: index.js
+   🔧 Updated:
+      Symbols: 0  ← INCORRECTO
+      Dependencies: 6
+   ```
+4. Se verificó en `symbols.json` - la función `healthCheck` NO aparece
+
+**Comportamiento esperado:** Symbols debería mostrar "1" y la función debería estar en symbols.json
+**Comportamiento real:** Symbols muestra "0" y el nuevo símbolo no se añade
+**Severidad:** 🔴 Alta - El update command no funciona correctamente para símbolos
+
+---
+
 ## 📊 RESULTADOS ESPERADOS VS OBTENIDOS - FINAL
 
 | Proyecto | Símbolos (Esp) | Símbolos (Obt) | Relaciones (Esp) | Relaciones (Obt) | Estado |
@@ -239,16 +263,26 @@
 
 | Proyecto | Esperado | Obtenido | Estado |
 |----------|----------|----------|--------|
-| express-api | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
-| nestjs-backend | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
-| python-cli | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
-| react-app | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
-| salesforce-cli | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
-| django-app | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
-| laravel-app | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
-| fastapi-app | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
-| flask-app | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
-| rails-app | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
+| express-api (sin cambios) | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
+| nestjs-backend (sin cambios) | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
+| python-cli (sin cambios) | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
+| react-app (sin cambios) | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
+| salesforce-cli (sin cambios) | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
+| django-app (sin cambios) | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
+| laravel-app (sin cambios) | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
+| fastapi-app (sin cambios) | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
+| flask-app (sin cambios) | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
+| rails-app (sin cambios) | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
+| spring-boot-app (sin cambios) | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
+
+**Resultado:** 11/11 PASS (sin cambios) ✅
+
+**⚠️ PRUEBA INCREMENTAL FALLIDA:**
+| Proyecto | Acción | Esperado | Obtenido | Estado |
+|----------|--------|----------|----------|--------|
+| express-api | Añadir función `healthCheck()` a index.js | Nuevo símbolo detectado | Symbols: 0, función NO en symbols.json | ❌ FAIL |
+
+**Conclusión:** El comando `update` detecta archivos modificados pero NO extrae nuevos símbolos. Bug encontrado.
 | spring-boot-app | No errors, 0 files changed | ✅ 0 files changed | ✅ PASS |
 
 **Resultado:** 11/11 PASS ✅
