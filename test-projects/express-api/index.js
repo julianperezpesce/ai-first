@@ -23,3 +23,8 @@ function finalTest() {
 }
 
 module.exports = app;
+
+function nuevaFuncionTest() {
+  return 'test';
+}
+
