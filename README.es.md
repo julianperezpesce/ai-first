@@ -407,6 +407,36 @@ Esta documentación está disponible en:
 
 ---
 
+## 🌍 Soporte Multi-Idioma y Frameworks
+
+### Lenguajes
+
+| Categoría | Lenguajes |
+|-----------|-----------|
+| **Web** | JavaScript, TypeScript, Python, Go, Rust |
+| **Backend** | Java, C#, PHP, Ruby, Go, Rust, Kotlin |
+| **Móvil** | Swift, Kotlin, Android |
+| **Frontend** | Vue, Svelte, React, HTML, CSS, SCSS |
+| **Testing** | Jest, Vitest, pytest, Mocha, RSpec |
+
+### Frameworks (Probados)
+
+| Framework | Lenguaje | Proyecto de Test |
+|-----------|----------|------------------|
+| **Django** | Python | `test-projects/django-app` |
+| **FastAPI** | Python | `test-projects/fastapi-app` |
+| **Flask** | Python | `test-projects/flask-app` |
+| **Laravel** | PHP | `test-projects/laravel-app` |
+| **Rails** | Ruby | `test-projects/rails-app` |
+| **Spring Boot** | Java | `test-projects/spring-boot-app` |
+| Express.js | JavaScript | `test-projects/express-api` |
+| NestJS | TypeScript | `test-projects/nestjs-backend` |
+| React | JavaScript | `test-projects/react-app` |
+| Python CLI | Python | `test-projects/python-cli` |
+| Salesforce DX | Apex | `test-projects/salesforce-cli` |
+
+---
+
 ## 📋 Roadmap
 
 ### v1.1 (Próximamente)
@@ -414,6 +444,9 @@ Esta documentación está disponible en:
 - [ ] Integración con Git (analizar cambios recientes)
 
 ### v1.2 (Planificado)
+- [x] Soporte PHP (Laravel test project)
+- [x] Soporte Ruby (Rails test project)
+- [ ] Soporte Scala
 - [ ] Integración LSP para símbolos más ricos
 - [ ] Plugins de analizadores personalizados
 

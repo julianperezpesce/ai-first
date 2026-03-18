@@ -8,6 +8,34 @@ All notable changes to `ai-first` will be documented in this file.
 
 ---
 
+## [1.1.6] - 2026-03-18
+
+### Added
+- **Phase 1: Testing Infrastructure** - Complete test project coverage for 10/16 adapters (62.5%)
+  - Test projects added:
+    - `django-app` (Django Web framework)
+    - `laravel-app` (Laravel PHP framework)
+    - `fastapi-app` (FastAPI Python)
+    - `flask-app` (Flask Python micro-framework)
+    - `rails-app` (Ruby on Rails)
+    - `spring-boot-app` (Spring Boot Java)
+  - All 11 commands tested on all 11 projects (121/121 functional tests passing)
+  - All projects generate valid JSON, SQLite databases, and Markdown files
+
+### Fixed
+- **Ruby Parser**: Added `parseRuby()` function to extract symbols from Ruby files
+  - rails-app now extracts 74 symbols (was 0)
+- **Flow Name Sanitization**: Added `sanitizeFileName()` function in semanticContexts.ts
+  - Fixes malformed names: `auth..json` → `auth.json`, `add_.json` → `add.json`
+- **Laravel/PHP Relationships**: Now properly detecting relationships (was 0, now 3+)
+
+### Verified
+- All 11 test projects pass doctor command (6/6 checks)
+- All adapters detect their respective frameworks correctly
+- All 11 commands (init, map, index, doctor, graph, summarize, update, explore, query, context, adapters) work on all projects
+
+---
+
 ## [1.1.5] - 2026-03-17
 
 ### Fixed
