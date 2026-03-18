@@ -80,6 +80,10 @@ function parseFileForSymbols(file: FileInfo): Symbol[] {
       parseCSharp(file, content, lines, symbols);
     } else if (file.extension === ".cls" || file.extension === ".trigger") {
       parseApex(file, content, lines, symbols);
+    } else if (file.extension === ".php") {
+      parsePHP(file, content, lines, symbols);
+    } else if (file.extension === ".rb") {
+      parseRuby(file, content, lines, symbols);
     }
   } catch {}
 
@@ -306,6 +310,139 @@ function parseJava(file: FileInfo, content: string, lines: string[], symbols: Sy
         type: "function",
         file: file.relativePath,
         line: i + 1,
+      });
+    }
+  }
+}
+
+/**
+ * Parse PHP files
+ */
+function parsePHP(file: FileInfo, content: string, lines: string[], symbols: Symbol[]): void {
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    
+    // Classes: class ClassName, public class ClassName
+    const classMatch = line.match(/^(?:public\s+|private\s+|protected\s+)?class\s+(\w+)/);
+    if (classMatch) {
+      symbols.push({
+        id: generateSymbolId(file.relativePath, classMatch[1]),
+        name: classMatch[1],
+        type: "class",
+        file: file.relativePath,
+        line: i + 1,
+        export: true,
+      });
+    }
+
+    // Interfaces: interface InterfaceName
+    const interfaceMatch = line.match(/^(?:public\s+)?interface\s+(\w+)/);
+    if (interfaceMatch) {
+      symbols.push({
+        id: generateSymbolId(file.relativePath, interfaceMatch[1]),
+        name: interfaceMatch[1],
+        type: "interface",
+        file: file.relativePath,
+        line: i + 1,
+        export: true,
+      });
+    }
+
+    // Functions: function functionName
+    const funcMatch = line.match(/^(?:public\s+|private\s+|protected\s+)?function\s+(\w+)/);
+    if (funcMatch) {
+      symbols.push({
+        id: generateSymbolId(file.relativePath, funcMatch[1]),
+        name: funcMatch[1],
+        type: "function",
+        file: file.relativePath,
+        line: i + 1,
+        export: true,
+      });
+    }
+
+    // Constants: const CONST_NAME
+    const constMatch = line.match(/^const\s+(\w+)/);
+    if (constMatch) {
+      symbols.push({
+        id: generateSymbolId(file.relativePath, constMatch[1]),
+        name: constMatch[1],
+        type: "const",
+        file: file.relativePath,
+        line: i + 1,
+        export: true,
+      });
+    }
+  }
+}
+
+/**
+ * Parse Ruby files
+ */
+function parseRuby(file: FileInfo, content: string, lines: string[], symbols: Symbol[]): void {
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    
+    // Classes: class ClassName
+    const classMatch = line.match(/^class\s+(\w+)/);
+    if (classMatch) {
+      symbols.push({
+        id: generateSymbolId(file.relativePath, classMatch[1]),
+        name: classMatch[1],
+        type: "class",
+        file: file.relativePath,
+        line: i + 1,
+        export: true,
+      });
+    }
+
+    // Modules: module ModuleName
+    const moduleMatch = line.match(/^module\s+(\w+)/);
+    if (moduleMatch) {
+      symbols.push({
+        id: generateSymbolId(file.relativePath, moduleMatch[1]),
+        name: moduleMatch[1],
+        type: "module",
+        file: file.relativePath,
+        line: i + 1,
+        export: true,
+      });
+    }
+
+    const methodMatch = line.match(/^def\s+(\w+)/);
+    if (methodMatch) {
+      symbols.push({
+        id: generateSymbolId(file.relativePath, methodMatch[1]),
+        name: methodMatch[1],
+        type: "function",
+        file: file.relativePath,
+        line: i + 1,
+        export: true,
+      });
+    }
+
+    const classMethodMatch = line.match(/^def\s+self\.(\w+)/);
+    if (classMethodMatch) {
+      symbols.push({
+        id: generateSymbolId(file.relativePath, classMethodMatch[1]),
+        name: classMethodMatch[1],
+        type: "function",
+        file: file.relativePath,
+        line: i + 1,
+        export: true,
+      });
+    }
+
+    // Constants: CONST_NAME =
+    const constMatch = line.match(/^([A-Z][A-Z0-9_]*)\s*=/);
+    if (constMatch) {
+      symbols.push({
+        id: generateSymbolId(file.relativePath, constMatch[1]),
+        name: constMatch[1],
+        type: "const",
+        file: file.relativePath,
+        line: i + 1,
+        export: true,
       });
     }
   }
