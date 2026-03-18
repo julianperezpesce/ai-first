@@ -6,7 +6,7 @@
 
 ## Guidelines
 
-- Language: Use JSON
+- Language: Use Markdown, JSON
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
 
@@ -24,7 +24,7 @@
 
 | Category | Value |
 |----------|-------|
-| Language | JSON |
+| Language | Markdown, JSON |
 | Framework | N/A |
 | Architecture | Flat / Simple Structure |
 | Naming | PascalCase |

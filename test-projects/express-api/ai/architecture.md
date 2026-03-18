@@ -11,6 +11,7 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
+| `ai` | Contains 22 files |
 | `controllers` | API endpoints and request handling |
 | `index.js` | Contains 0 files |
 | `middleware` | Request/response middleware |
@@ -20,6 +21,11 @@
 
 
 ## Module Details
+
+### ai
+- **Path**: `ai`
+- **Responsibility**: Contains 22 files
+
 
 ### controllers
 - **Path**: `controllers`

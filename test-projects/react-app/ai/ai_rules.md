@@ -6,7 +6,7 @@
 
 ## Guidelines
 
-- Language: Use JSON, TypeScript (React), TypeScript
+- Language: Use Markdown, JSON, TypeScript (React), TypeScript
 - Frameworks: React, Next.js, Remix
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
@@ -26,7 +26,7 @@
 
 | Category | Value |
 |----------|-------|
-| Language | JSON, TypeScript (React), TypeScript |
+| Language | Markdown, JSON, TypeScript (React), TypeScript |
 | Framework | React, Next.js, Remix |
 | Architecture | Flat / Simple Structure |
 | Naming | PascalCase |

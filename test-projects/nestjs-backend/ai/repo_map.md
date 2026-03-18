@@ -1,4 +1,35 @@
 # Repository Map
+## ai
+  - ai_context.md
+  - ai_rules.md
+  - architecture.md
+  - auth..json
+  - auth.controller.json
+  - auth.json
+  - cache.json
+  - conventions.md
+  - dependencies.json
+  - entrypoints.md
+  - files.json
+  - index-state.json
+  - module-graph.json
+  - modules.json
+  - project.json
+  - repo_map.json
+  - repo_map.md
+  - repo-map.json
+  - schema.json
+  - src.json
+  - summary.md
+  - symbol-graph.json
+  - symbol-references.json
+  - symbols.json
+  - tech_stack.md
+  - tools.json
+  - users..json
+  - users.controller.json
+  - users.json
+
 ## package.json
   - package.json
 
@@ -20,6 +51,40 @@
 
 
 # Repository Structure (Tree View)
+├── ai/
+│   ├── context/
+│   │   ├── features/
+│   │   │   └── src.json
+│   │   └── flows/
+│   │       ├── auth..json
+│   │       ├── auth.controller.json
+│   │       ├── auth.json
+│   │       ├── users..json
+│   │       ├── users.controller.json
+│   │       └── users.json
+│   ├── graph/
+│   │   ├── module-graph.json
+│   │   ├── symbol-graph.json
+│   │   └── symbol-references.json
+│   ├── ai_context.md
+│   ├── ai_rules.md
+│   ├── architecture.md
+│   ├── cache.json
+│   ├── conventions.md
+│   ├── dependencies.json
+│   ├── entrypoints.md
+│   ├── files.json
+│   ├── index-state.json
+│   ├── modules.json
+│   ├── project.json
+│   ├── repo-map.json
+│   ├── repo_map.json
+│   ├── repo_map.md
+│   ├── schema.json
+│   ├── summary.md
+│   ├── symbols.json
+│   ├── tech_stack.md
+│   └── tools.json
 ├── src/
 │   ├── auth/
 │   │   ├── dto/

@@ -76,6 +76,11 @@
       "ext": "json"
     },
     {
+      "path": "ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "ext": "json"
+    },
+    {
       "path": "ai/graph/module-graph.json",
       "name": "module-graph.json",
       "ext": "json"
@@ -88,6 +93,11 @@
     {
       "path": "ai/graph/symbol-references.json",
       "name": "symbol-references.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/index-state.json",
+      "name": "index-state.json",
       "ext": "json"
     },
     {

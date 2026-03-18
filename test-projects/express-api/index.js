@@ -18,4 +18,8 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
+function finalTest() {
+  return 'final';
+}
+
 module.exports = app;

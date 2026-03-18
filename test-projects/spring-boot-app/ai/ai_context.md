@@ -7,9 +7,9 @@
 ## Quick Overview
 
 - **Pattern**: Flat / Simple Structure
-- **Languages**: Markdown, Java
+- **Languages**: Markdown, JSON, Java
 - **Frameworks**: None
-- **Total Files**: 13
+- **Total Files**: 42
 
 ---
 
@@ -26,7 +26,7 @@
 
 ## Tech Stack
 
-**Languages**: Markdown, Java
+**Languages**: Markdown, JSON, Java
 
 ---
 
@@ -39,6 +39,7 @@
 | Module | Responsibility |
 |--------|----------------|
 | `README.md` | Contains 0 files |
+| `ai` | Contains 29 files |
 | `src` | Contains 12 files |
 
 
@@ -64,7 +65,7 @@
 
 ## AI Rules
 
-- Language: Use Markdown, Java
+- Language: Use Markdown, JSON, Java
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
 - Source directory: src/

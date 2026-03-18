@@ -7,9 +7,9 @@
 ## Quick Overview
 
 - **Pattern**: Flat / Simple Structure
-- **Languages**: Markdown, PHP, JSON
+- **Languages**: Markdown, JSON, PHP
 - **Frameworks**: None
-- **Total Files**: 12
+- **Total Files**: 39
 
 ---
 
@@ -26,7 +26,7 @@
 
 ## Tech Stack
 
-**Languages**: Markdown, PHP, JSON
+**Languages**: Markdown, JSON, PHP
 
 **Package Managers**: Composer
 
@@ -44,6 +44,7 @@
 | Module | Responsibility |
 |--------|----------------|
 | `README.md` | Contains 0 files |
+| `ai` | Contains 27 files |
 | `app` | Contains 8 files |
 | `bootstrap` | Contains 1 files |
 | `composer.json` | Contains 0 files |
@@ -71,7 +72,7 @@
 
 ## AI Rules
 
-- Language: Use Markdown, PHP, JSON
+- Language: Use Markdown, JSON, PHP
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
 

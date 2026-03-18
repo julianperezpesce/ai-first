@@ -10,12 +10,18 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
+| `ai` | Contains 29 files |
 | `package.json` | Contains 0 files |
 | `src` | Contains 10 files |
 | `tsconfig.json` | Configuration management |
 
 
 ## Module Details
+
+### ai
+- **Path**: `ai`
+- **Responsibility**: Contains 29 files
+
 
 ### package.json
 - **Path**: `package.json`

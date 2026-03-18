@@ -7,9 +7,9 @@
 ## Quick Overview
 
 - **Pattern**: Flat / Simple Structure
-- **Languages**: JSON
+- **Languages**: Markdown, JSON
 - **Frameworks**: None
-- **Total Files**: 4
+- **Total Files**: 30
 
 ---
 
@@ -26,7 +26,7 @@
 
 ## Tech Stack
 
-**Languages**: JSON
+**Languages**: Markdown, JSON
 
 ---
 
@@ -38,6 +38,7 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
+| `ai` | Contains 26 files |
 | `force-app` | Contains 3 files |
 | `sfdx-project.json` | Contains 0 files |
 
@@ -63,7 +64,7 @@
 
 ## AI Rules
 
-- Language: Use JSON
+- Language: Use Markdown, JSON
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
 
