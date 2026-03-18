@@ -1,1253 +1,2944 @@
 {
-  "src/analyzers/aiRules.ts": {
-    "symbols": [
-      "src/analyzers/aiRules.ts#AIRules",
-      "src/analyzers/aiRules.ts#generateAIRules",
-      "src/analyzers/aiRules.ts#conventions",
-      "src/analyzers/aiRules.ts#entrypoints",
-      "src/analyzers/aiRules.ts#techStack",
-      "src/analyzers/aiRules.ts#architecture",
-      "src/analyzers/aiRules.ts#guidelines",
-      "src/analyzers/aiRules.ts#patterns",
-      "src/analyzers/aiRules.ts#constraints",
-      "src/analyzers/aiRules.ts#servers",
-      "src/analyzers/aiRules.ts#devEntry",
-      "src/analyzers/aiRules.ts#buildEntry",
-      "src/analyzers/aiRules.ts#generateAIRulesFile",
-      "src/analyzers/aiRules.ts#content",
-      "src/analyzers/aiRules.ts#guideline",
-      "src/analyzers/aiRules.ts#pattern",
-      "src/analyzers/aiRules.ts#constraint"
-    ],
-    "module": "src"
-  },
-  "src/analyzers/androidResources.ts": {
-    "symbols": [
-      "src/analyzers/androidResources.ts#AndroidResource",
-      "src/analyzers/androidResources.ts#AndroidResourcesAnalysis",
-      "src/analyzers/androidResources.ts#analyzeAndroidResources",
-      "src/analyzers/androidResources.ts#resFiles",
-      "src/analyzers/androidResources.ts#resources",
-      "src/analyzers/androidResources.ts#layouts",
-      "src/analyzers/androidResources.ts#drawables",
-      "src/analyzers/androidResources.ts#values",
-      "src/analyzers/androidResources.ts#file",
-      "src/analyzers/androidResources.ts#relativePath",
-      "src/analyzers/androidResources.ts#parts",
-      "src/analyzers/androidResources.ts#type",
-      "src/analyzers/androidResources.ts#resourceName",
-      "src/analyzers/androidResources.ts#generateAndroidResourcesJson",
-      "src/analyzers/androidResources.ts#output"
-    ],
-    "module": "src"
-  },
-  "src/analyzers/architecture.ts": {
-    "symbols": [
-      "src/analyzers/architecture.ts#ArchitectureAnalysis",
-      "src/analyzers/architecture.ts#ModuleInfo",
-      "src/analyzers/architecture.ts#analyzeArchitecture",
-      "src/analyzers/architecture.ts#directories",
-      "src/analyzers/architecture.ts#extensions",
-      "src/analyzers/architecture.ts#patterns",
-      "src/analyzers/architecture.ts#layers",
-      "src/analyzers/architecture.ts#modules",
-      "src/analyzers/architecture.ts#description",
-      "src/analyzers/architecture.ts#detectPatterns",
-      "src/analyzers/architecture.ts#dirs",
-      "src/analyzers/architecture.ts#hasSrc",
-      "src/analyzers/architecture.ts#hasTest",
-      "src/analyzers/architecture.ts#hasLib",
-      "src/analyzers/architecture.ts#hasInternal",
-      "src/analyzers/architecture.ts#hasPackages",
-      "src/analyzers/architecture.ts#hasApps",
-      "src/analyzers/architecture.ts#detectLayers",
-      "src/analyzers/architecture.ts#layerMap",
-      "src/analyzers/architecture.ts#detectModules",
-      "src/analyzers/architecture.ts#dir",
-      "src/analyzers/architecture.ts#moduleFiles",
-      "src/analyzers/architecture.ts#mainFiles",
-      "src/analyzers/architecture.ts#name",
-      "src/analyzers/architecture.ts#responsibility",
-      "src/analyzers/architecture.ts#inferModuleResponsibility",
-      "src/analyzers/architecture.ts#inferDependencies",
-      "src/analyzers/architecture.ts#deps",
-      "src/analyzers/architecture.ts#generateArchitectureDescription",
-      "src/analyzers/architecture.ts#lines",
-      "src/analyzers/architecture.ts#mod",
-      "src/analyzers/architecture.ts#generateArchitectureFile"
-    ],
-    "module": "src"
-  },
-  "src/analyzers/conventions.ts": {
-    "symbols": [
-      "src/analyzers/conventions.ts#Conventions",
-      "src/analyzers/conventions.ts#NamingConventions",
-      "src/analyzers/conventions.ts#StructureConventions",
-      "src/analyzers/conventions.ts#TestingConventions",
-      "src/analyzers/conventions.ts#GitConventions",
-      "src/analyzers/conventions.ts#CodeStyleConventions",
-      "src/analyzers/conventions.ts#detectConventions",
-      "src/analyzers/conventions.ts#fileNames",
-      "src/analyzers/conventions.ts#naming",
-      "src/analyzers/conventions.ts#structure",
-      "src/analyzers/conventions.ts#testing",
-      "src/analyzers/conventions.ts#git",
-      "src/analyzers/conventions.ts#codeStyle",
-      "src/analyzers/conventions.ts#description",
-      "src/analyzers/conventions.ts#detectNamingConventions",
-      "src/analyzers/conventions.ts#conv",
-      "src/analyzers/conventions.ts#names",
-      "src/analyzers/conventions.ts#dirs",
-      "src/analyzers/conventions.ts#detectStructureConventions",
-      "src/analyzers/conventions.ts#str",
-      "src/analyzers/conventions.ts#detectTestingConventions",
-      "src/analyzers/conventions.ts#test",
-      "src/analyzers/conventions.ts#patterns",
-      "src/analyzers/conventions.ts#detectGitConventions",
-      "src/analyzers/conventions.ts#pkg",
-      "src/analyzers/conventions.ts#deps",
-      "src/analyzers/conventions.ts#detectCodeStyle",
-      "src/analyzers/conventions.ts#style",
-      "src/analyzers/conventions.ts#content",
-      "src/analyzers/conventions.ts#generateConventionsDescription",
-      "src/analyzers/conventions.ts#generateConventionsFile"
-    ],
-    "module": "src"
-  },
-  "src/analyzers/dependencies.ts": {
-    "symbols": [
-      "src/analyzers/dependencies.ts#Dependency",
-      "src/analyzers/dependencies.ts#DependencyAnalysis",
-      "src/analyzers/dependencies.ts#analyzeDependencies",
-      "src/analyzers/dependencies.ts#dependencies",
-      "src/analyzers/dependencies.ts#byFile",
-      "src/analyzers/dependencies.ts#modules",
-      "src/analyzers/dependencies.ts#file",
-      "src/analyzers/dependencies.ts#fileDeps",
-      "src/analyzers/dependencies.ts#circularDeps",
-      "src/analyzers/dependencies.ts#parseFileForDependencies",
-      "src/analyzers/dependencies.ts#deps",
-      "src/analyzers/dependencies.ts#content",
-      "src/analyzers/dependencies.ts#parseJavaScriptImports",
-      "src/analyzers/dependencies.ts#es6Matches",
-      "src/analyzers/dependencies.ts#match",
-      "src/analyzers/dependencies.ts#target",
-      "src/analyzers/dependencies.ts#requireMatches",
-      "src/analyzers/dependencies.ts#pathMatches",
-      "src/analyzers/dependencies.ts#parsePythonImports",
-      "src/analyzers/dependencies.ts#fromMatches",
-      "src/analyzers/dependencies.ts#importMatches",
-      "src/analyzers/dependencies.ts#parseGoImports",
-      "src/analyzers/dependencies.ts#aliasMatches",
-      "src/analyzers/dependencies.ts#parseRustImports",
-      "src/analyzers/dependencies.ts#useMatches",
-      "src/analyzers/dependencies.ts#externMatches",
-      "src/analyzers/dependencies.ts#parseJavaImports",
-      "src/analyzers/dependencies.ts#javaMatches",
-      "src/analyzers/dependencies.ts#csharpMatches",
-      "src/analyzers/dependencies.ts#normalizeImportPath",
-      "src/analyzers/dependencies.ts#sourceDir",
-      "src/analyzers/dependencies.ts#detectCircularDependencies",
-      "src/analyzers/dependencies.ts#circular",
-      "src/analyzers/dependencies.ts#visited",
-      "src/analyzers/dependencies.ts#recursionStack",
-      "src/analyzers/dependencies.ts#dfs",
-      "src/analyzers/dependencies.ts#dep",
-      "src/analyzers/dependencies.ts#generateDependenciesJson",
-      "src/analyzers/dependencies.ts#output",
-      "src/analyzers/dependencies.ts#parseGradleDependencies",
-      "src/analyzers/dependencies.ts#implMatches",
-      "src/analyzers/dependencies.ts#projMatches",
-      "src/analyzers/dependencies.ts#includeMatches"
-    ],
-    "module": "src"
-  },
-  "src/analyzers/entrypoints.ts": {
-    "symbols": [
-      "src/analyzers/entrypoints.ts#Entrypoint",
-      "src/analyzers/entrypoints.ts#discoverEntrypoints",
-      "src/analyzers/entrypoints.ts#entrypoints",
-      "src/analyzers/entrypoints.ts#pkgPath",
-      "src/analyzers/entrypoints.ts#pkg",
-      "src/analyzers/entrypoints.ts#bins",
-      "src/analyzers/entrypoints.ts#type",
-      "src/analyzers/entrypoints.ts#patterns",
-      "src/analyzers/entrypoints.ts#file",
-      "src/analyzers/entrypoints.ts#androidManifests",
-      "src/analyzers/entrypoints.ts#manifest",
-      "src/analyzers/entrypoints.ts#manifestContent",
-      "src/analyzers/entrypoints.ts#androidEntrypoints",
-      "src/analyzers/entrypoints.ts#parseAndroidManifest",
-      "src/analyzers/entrypoints.ts#packageMatch",
-      "src/analyzers/entrypoints.ts#packageName",
-      "src/analyzers/entrypoints.ts#activityRegex",
-      "src/analyzers/entrypoints.ts#match",
-      "src/analyzers/entrypoints.ts#activityName",
-      "src/analyzers/entrypoints.ts#isMain",
-      "src/analyzers/entrypoints.ts#serviceRegex",
-      "src/analyzers/entrypoints.ts#receiverRegex",
-      "src/analyzers/entrypoints.ts#permissionRegex",
-      "src/analyzers/entrypoints.ts#permissions",
-      "src/analyzers/entrypoints.ts#getScriptType",
-      "src/analyzers/entrypoints.ts#generateEntrypointsFile",
-      "src/analyzers/entrypoints.ts#grouped",
-      "src/analyzers/entrypoints.ts#ep",
-      "src/analyzers/entrypoints.ts#content",
-      "src/analyzers/entrypoints.ts#labels"
-    ],
-    "module": "src"
-  },
-  "src/analyzers/gradleModules.ts": {
-    "symbols": [
-      "src/analyzers/gradleModules.ts#GradleModule",
-      "src/analyzers/gradleModules.ts#GradleModulesAnalysis",
-      "src/analyzers/gradleModules.ts#analyzeGradleModules",
-      "src/analyzers/gradleModules.ts#settingsFiles",
-      "src/analyzers/gradleModules.ts#modules",
-      "src/analyzers/gradleModules.ts#rootProjectName",
-      "src/analyzers/gradleModules.ts#settingsContent",
-      "src/analyzers/gradleModules.ts#settingsFile",
-      "src/analyzers/gradleModules.ts#includeMatches",
-      "src/analyzers/gradleModules.ts#match",
-      "src/analyzers/gradleModules.ts#modulePath",
-      "src/analyzers/gradleModules.ts#projectMatches",
-      "src/analyzers/gradleModules.ts#moduleName",
-      "src/analyzers/gradleModules.ts#rootNameMatch",
-      "src/analyzers/gradleModules.ts#generateGradleModulesJson",
-      "src/analyzers/gradleModules.ts#output"
-    ],
-    "module": "src"
-  },
-  "src/analyzers/symbols.ts": {
-    "symbols": [
-      "src/analyzers/symbols.ts#Symbol",
-      "src/analyzers/symbols.ts#SymbolsAnalysis",
-      "src/analyzers/symbols.ts#generateSymbolId",
-      "src/analyzers/symbols.ts#extractSymbols",
-      "src/analyzers/symbols.ts#symbols",
-      "src/analyzers/symbols.ts#byFile",
-      "src/analyzers/symbols.ts#file",
-      "src/analyzers/symbols.ts#fileSymbols",
-      "src/analyzers/symbols.ts#byId",
-      "src/analyzers/symbols.ts#sym",
-      "src/analyzers/symbols.ts#byType",
-      "src/analyzers/symbols.ts#parseFileForSymbols",
-      "src/analyzers/symbols.ts#content",
-      "src/analyzers/symbols.ts#lines",
-      "src/analyzers/symbols.ts#parseJavaScriptTypeScript",
-      "src/analyzers/symbols.ts#patterns",
-      "src/analyzers/symbols.ts#line",
-      "src/analyzers/symbols.ts#match",
-      "src/analyzers/symbols.ts#name",
-      "src/analyzers/symbols.ts#parsePython",
-      "src/analyzers/symbols.ts#classMatch",
-      "src/analyzers/symbols.ts#funcMatch",
-      "src/analyzers/symbols.ts#constMatch",
-      "src/analyzers/symbols.ts#parseGo",
-      "src/analyzers/symbols.ts#typeMatch",
-      "src/analyzers/symbols.ts#parseRust",
-      "src/analyzers/symbols.ts#structMatch",
-      "src/analyzers/symbols.ts#enumMatch",
-      "src/analyzers/symbols.ts#parseJava",
-      "src/analyzers/symbols.ts#interfaceMatch",
-      "src/analyzers/symbols.ts#methodMatch",
-      "src/analyzers/symbols.ts#parseCSharp",
-      "src/analyzers/symbols.ts#generateSymbolsJson",
-      "src/analyzers/symbols.ts#symbolsIndex",
-      "src/analyzers/symbols.ts#output"
-    ],
-    "module": "src"
-  },
-  "src/analyzers/techStack.ts": {
-    "symbols": [
-      "src/analyzers/techStack.ts#TechStack",
-      "src/analyzers/techStack.ts#detectTechStack",
-      "src/analyzers/techStack.ts#extensions",
-      "src/analyzers/techStack.ts#fileNames",
-      "src/analyzers/techStack.ts#languages",
-      "src/analyzers/techStack.ts#frameworks",
-      "src/analyzers/techStack.ts#libraries",
-      "src/analyzers/techStack.ts#tools",
-      "src/analyzers/techStack.ts#packageManagers",
-      "src/analyzers/techStack.ts#testing",
-      "src/analyzers/techStack.ts#linters",
-      "src/analyzers/techStack.ts#formatters",
-      "src/analyzers/techStack.ts#description",
-      "src/analyzers/techStack.ts#android",
-      "src/analyzers/techStack.ts#detectLanguages",
-      "src/analyzers/techStack.ts#langMap",
-      "src/analyzers/techStack.ts#detected",
-      "src/analyzers/techStack.ts#ext",
-      "src/analyzers/techStack.ts#detectFrameworks",
-      "src/analyzers/techStack.ts#pkgPath",
-      "src/analyzers/techStack.ts#pkg",
-      "src/analyzers/techStack.ts#deps",
-      "src/analyzers/techStack.ts#frameworkMap",
-      "src/analyzers/techStack.ts#frameworkIndicators",
-      "src/analyzers/techStack.ts#detectLibraries",
-      "src/analyzers/techStack.ts#libMap",
-      "src/analyzers/techStack.ts#detectTools",
-      "src/analyzers/techStack.ts#toolIndicators",
-      "src/analyzers/techStack.ts#detectPackageManagers",
-      "src/analyzers/techStack.ts#managers",
-      "src/analyzers/techStack.ts#detectTesting",
-      "src/analyzers/techStack.ts#testIndicators",
-      "src/analyzers/techStack.ts#detectLinters",
-      "src/analyzers/techStack.ts#lintIndicators",
-      "src/analyzers/techStack.ts#detectFormatters",
-      "src/analyzers/techStack.ts#formatIndicators",
-      "src/analyzers/techStack.ts#detectAndroidSDK",
-      "src/analyzers/techStack.ts#hasAndroid",
-      "src/analyzers/techStack.ts#gradleFiles",
-      "src/analyzers/techStack.ts#gf",
-      "src/analyzers/techStack.ts#content",
-      "src/analyzers/techStack.ts#minSdkMatch",
-      "src/analyzers/techStack.ts#targetSdkMatch",
-      "src/analyzers/techStack.ts#compileSdkMatch",
-      "src/analyzers/techStack.ts#propsPath",
-      "src/analyzers/techStack.ts#props",
-      "src/analyzers/techStack.ts#generateTechStackDescription",
-      "src/analyzers/techStack.ts#lines",
-      "src/analyzers/techStack.ts#generateTechStackFile"
-    ],
-    "module": "src"
-  },
-  "src/commands/ai-first.ts": {
-    "symbols": [
-      "src/commands/ai-first.ts#AIFirstOptions",
-      "src/commands/ai-first.ts#AIFirstResult",
-      "src/commands/ai-first.ts#to",
-      "src/commands/ai-first.ts#runAIFirst",
-      "src/commands/ai-first.ts#filesCreated",
-      "src/commands/ai-first.ts#scanResult",
-      "src/commands/ai-first.ts#repoMap",
-      "src/commands/ai-first.ts#compactMap",
-      "src/commands/ai-first.ts#repoMapPath",
-      "src/commands/ai-first.ts#repoMapJson",
-      "src/commands/ai-first.ts#repoMapJsonPath",
-      "src/commands/ai-first.ts#summary",
-      "src/commands/ai-first.ts#summaryPath",
-      "src/commands/ai-first.ts#architecture",
-      "src/commands/ai-first.ts#architecturePath",
-      "src/commands/ai-first.ts#techStack",
-      "src/commands/ai-first.ts#techStackPath",
-      "src/commands/ai-first.ts#entrypoints",
-      "src/commands/ai-first.ts#entrypointsPath",
-      "src/commands/ai-first.ts#conventions",
-      "src/commands/ai-first.ts#conventionsPath",
-      "src/commands/ai-first.ts#symbols",
-      "src/commands/ai-first.ts#symbolsPath",
-      "src/commands/ai-first.ts#dependencies",
-      "src/commands/ai-first.ts#depsPath",
-      "src/commands/ai-first.ts#aiRules",
-      "src/commands/ai-first.ts#aiRulesPath",
-      "src/commands/ai-first.ts#aiContextPath",
-      "src/commands/ai-first.ts#aiContext",
-      "src/commands/ai-first.ts#file",
-      "src/commands/ai-first.ts#errorMessage",
-      "src/commands/ai-first.ts#generateRepoMapJson",
-      "src/commands/ai-first.ts#tree",
-      "src/commands/ai-first.ts#parts",
-      "src/commands/ai-first.ts#current",
-      "src/commands/ai-first.ts#part",
-      "src/commands/ai-first.ts#isFile",
-      "src/commands/ai-first.ts#generateUnifiedContext",
-      "src/commands/ai-first.ts#lines",
-      "src/commands/ai-first.ts#byType",
-      "src/commands/ai-first.ts#ep",
-      "src/commands/ai-first.ts#guideline",
-      "src/commands/ai-first.ts#isMain",
-      "src/commands/ai-first.ts#args",
-      "src/commands/ai-first.ts#options",
-      "src/commands/ai-first.ts#command",
-      "src/commands/ai-first.ts#rootDir",
-      "src/commands/ai-first.ts#outputPath",
-      "src/commands/ai-first.ts#semanticMode",
-      "src/commands/ai-first.ts#arg",
-      "src/commands/ai-first.ts#aiDir",
-      "src/commands/ai-first.ts#existingState",
-      "src/commands/ai-first.ts#fileCount",
-      "src/commands/ai-first.ts#allFiles",
-      "src/commands/ai-first.ts#useSemantic",
-      "src/commands/ai-first.ts#filesJson",
-      "src/commands/ai-first.ts#modules",
-      "src/commands/ai-first.ts#fileStates",
-      "src/commands/ai-first.ts#hashData",
-      "src/commands/ai-first.ts#filePaths",
-      "src/commands/ai-first.ts#chunks",
-      "src/commands/ai-first.ts#debounceMs",
-      "src/commands/ai-first.ts#indexer",
-      "src/commands/ai-first.ts#outputDir",
-      "src/commands/ai-first.ts#symbolArg",
-      "src/commands/ai-first.ts#depth",
-      "src/commands/ai-first.ts#maxSymbols",
-      "src/commands/ai-first.ts#format",
-      "src/commands/ai-first.ts#save",
-      "src/commands/ai-first.ts#fmt",
-      "src/commands/ai-first.ts#packet",
-      "src/commands/ai-first.ts#savePath",
-      "src/commands/ai-first.ts#queryType",
-      "src/commands/ai-first.ts#dbPath",
-      "src/commands/ai-first.ts#fileBuffer",
-      "src/commands/ai-first.ts#db",
-      "src/commands/ai-first.ts#symbolName",
-      "src/commands/ai-first.ts#results",
-      "src/commands/ai-first.ts#row",
-      "src/commands/ai-first.ts#fileName",
-      "src/commands/ai-first.ts#fileResult",
-      "src/commands/ai-first.ts#fileId",
-      "src/commands/ai-first.ts#filePath",
-      "src/commands/ai-first.ts#baseName",
-      "src/commands/ai-first.ts#countResult",
-      "src/commands/ai-first.ts#total",
-      "src/commands/ai-first.ts#symbolCount",
-      "src/commands/ai-first.ts#importCount",
-      "src/commands/ai-first.ts#hashCount",
-      "src/commands/ai-first.ts#langResults",
-      "src/commands/ai-first.ts#ORDER",
-      "src/commands/ai-first.ts#typeResults",
-      "src/commands/ai-first.ts#scan",
-      "src/commands/ai-first.ts#repoMapData"
-    ],
-    "module": "src"
-  },
-  "src/commands/doctor.ts": {
-    "symbols": [
-      "src/commands/doctor.ts#DoctorResult",
-      "src/commands/doctor.ts#runDoctor",
-      "src/commands/doctor.ts#checks",
-      "src/commands/doctor.ts#issues",
-      "src/commands/doctor.ts#warnings",
-      "src/commands/doctor.ts#scanResult",
-      "src/commands/doctor.ts#languageCount",
-      "src/commands/doctor.ts#file",
-      "src/commands/doctor.ts#ext",
-      "src/commands/doctor.ts#topLanguages",
-      "src/commands/doctor.ts#largeFiles",
-      "src/commands/doctor.ts#aiDir",
-      "src/commands/doctor.ts#check",
-      "src/commands/doctor.ts#icon",
-      "src/commands/doctor.ts#passCount",
-      "src/commands/doctor.ts#warnCount",
-      "src/commands/doctor.ts#failCount",
-      "src/commands/doctor.ts#doctorMain",
-      "src/commands/doctor.ts#rootDir",
-      "src/commands/doctor.ts#fixMode",
-      "src/commands/doctor.ts#arg"
-    ],
-    "module": "src"
-  },
-  "src/commands/explore.ts": {
-    "symbols": [
-      "src/commands/explore.ts#ExploreResult",
-      "src/commands/explore.ts#runExplore",
-      "src/commands/explore.ts#aiDir",
-      "src/commands/explore.ts#graphFile",
-      "src/commands/explore.ts#data",
-      "src/commands/explore.ts#mod",
-      "src/commands/explore.ts#scan",
-      "src/commands/explore.ts#modules",
-      "src/commands/explore.ts#deps",
-      "src/commands/explore.ts#exploreMain",
-      "src/commands/explore.ts#rootDir",
-      "src/commands/explore.ts#moduleName"
-    ],
-    "module": "src"
-  },
-  "src/core/aiContextGenerator.ts": {
-    "symbols": [
-      "src/core/aiContextGenerator.ts#AIContextResult",
-      "src/core/aiContextGenerator.ts#TreeNode",
-      "src/core/aiContextGenerator.ts#SymbolEntry",
-      "src/core/aiContextGenerator.ts#DependencyEntry",
-      "src/core/aiContextGenerator.ts#generateAIContext",
-      "src/core/aiContextGenerator.ts#filesCreated",
-      "src/core/aiContextGenerator.ts#allFiles",
-      "src/core/aiContextGenerator.ts#files",
-      "src/core/aiContextGenerator.ts#folders",
-      "src/core/aiContextGenerator.ts#filePath",
-      "src/core/aiContextGenerator.ts#relativePath",
-      "src/core/aiContextGenerator.ts#parts",
-      "src/core/aiContextGenerator.ts#fileName",
-      "src/core/aiContextGenerator.ts#lastDot",
-      "src/core/aiContextGenerator.ts#extension",
-      "src/core/aiContextGenerator.ts#part",
-      "src/core/aiContextGenerator.ts#repoMap",
-      "src/core/aiContextGenerator.ts#repoMapPath",
-      "src/core/aiContextGenerator.ts#symbols",
-      "src/core/aiContextGenerator.ts#symbolsPath",
-      "src/core/aiContextGenerator.ts#dependencies",
-      "src/core/aiContextGenerator.ts#depsPath",
-      "src/core/aiContextGenerator.ts#aiContext",
-      "src/core/aiContextGenerator.ts#aiContextPath",
-      "src/core/aiContextGenerator.ts#generateRepoMapJson",
-      "src/core/aiContextGenerator.ts#tree",
-      "src/core/aiContextGenerator.ts#file",
-      "src/core/aiContextGenerator.ts#current",
-      "src/core/aiContextGenerator.ts#isFile",
-      "src/core/aiContextGenerator.ts#generateSymbolsJson",
-      "src/core/aiContextGenerator.ts#allSymbols",
-      "src/core/aiContextGenerator.ts#ext",
-      "src/core/aiContextGenerator.ts#content",
-      "src/core/aiContextGenerator.ts#lines",
-      "src/core/aiContextGenerator.ts#byFile",
-      "src/core/aiContextGenerator.ts#sym",
-      "src/core/aiContextGenerator.ts#extractJsTsSymbols",
-      "src/core/aiContextGenerator.ts#line",
-      "src/core/aiContextGenerator.ts#lineNum",
-      "src/core/aiContextGenerator.ts#name",
-      "src/core/aiContextGenerator.ts#funcMatch",
-      "src/core/aiContextGenerator.ts#Name",
-      "src/core/aiContextGenerator.ts#classMatch",
-      "src/core/aiContextGenerator.ts#interfaceMatch",
-      "src/core/aiContextGenerator.ts#constMatch",
-      "src/core/aiContextGenerator.ts#namedExport",
-      "src/core/aiContextGenerator.ts#exports",
-      "src/core/aiContextGenerator.ts#exp",
-      "src/core/aiContextGenerator.ts#defaultMatch",
-      "src/core/aiContextGenerator.ts#extractPythonSymbols",
-      "src/core/aiContextGenerator.ts#allMatch",
-      "src/core/aiContextGenerator.ts#extractGoSymbols",
-      "src/core/aiContextGenerator.ts#typeMatch",
-      "src/core/aiContextGenerator.ts#extractJavaSymbols",
-      "src/core/aiContextGenerator.ts#methodMatch",
-      "src/core/aiContextGenerator.ts#extractRubySymbols",
-      "src/core/aiContextGenerator.ts#moduleMatch",
-      "src/core/aiContextGenerator.ts#extractPHPSymbols",
-      "src/core/aiContextGenerator.ts#functionMatch",
-      "src/core/aiContextGenerator.ts#extractSwiftSymbols",
-      "src/core/aiContextGenerator.ts#structMatch",
-      "src/core/aiContextGenerator.ts#protocolMatch",
-      "src/core/aiContextGenerator.ts#extractKotlinSymbols",
-      "src/core/aiContextGenerator.ts#extractRustSymbols",
-      "src/core/aiContextGenerator.ts#enumMatch",
-      "src/core/aiContextGenerator.ts#traitMatch",
-      "src/core/aiContextGenerator.ts#extractApexSymbols",
-      "src/core/aiContextGenerator.ts#triggerMatch",
-      "src/core/aiContextGenerator.ts#generateDependenciesJson",
-      "src/core/aiContextGenerator.ts#es6Matches",
-      "src/core/aiContextGenerator.ts#match",
-      "src/core/aiContextGenerator.ts#requireMatches",
-      "src/core/aiContextGenerator.ts#fromMatches",
-      "src/core/aiContextGenerator.ts#importMatches",
-      "src/core/aiContextGenerator.ts#javaMatches",
-      "src/core/aiContextGenerator.ts#useMatches",
-      "src/core/aiContextGenerator.ts#dep",
-      "src/core/aiContextGenerator.ts#generateAIContextMarkdown",
-      "src/core/aiContextGenerator.ts#extStats",
-      "src/core/aiContextGenerator.ts#languages",
-      "src/core/aiContextGenerator.ts#topDirs",
-      "src/core/aiContextGenerator.ts#entryPoints",
-      "src/core/aiContextGenerator.ts#ep",
-      "src/core/aiContextGenerator.ts#conventions",
-      "src/core/aiContextGenerator.ts#conv",
-      "src/core/aiContextGenerator.ts#modules",
-      "src/core/aiContextGenerator.ts#mod",
-      "src/core/aiContextGenerator.ts#archHints",
-      "src/core/aiContextGenerator.ts#hint",
-      "src/core/aiContextGenerator.ts#getExtensionStats",
-      "src/core/aiContextGenerator.ts#stats",
-      "src/core/aiContextGenerator.ts#buildSimpleTree",
-      "src/core/aiContextGenerator.ts#dirs",
-      "src/core/aiContextGenerator.ts#dir",
-      "src/core/aiContextGenerator.ts#sub",
-      "src/core/aiContextGenerator.ts#findEntrypoints",
-      "src/core/aiContextGenerator.ts#detectConventions",
-      "src/core/aiContextGenerator.ts#fileNames",
-      "src/core/aiContextGenerator.ts#detectModules",
-      "src/core/aiContextGenerator.ts#dirCounts",
-      "src/core/aiContextGenerator.ts#sortedDirs",
-      "src/core/aiContextGenerator.ts#descriptions",
-      "src/core/aiContextGenerator.ts#detectArchitectureHints",
-      "src/core/aiContextGenerator.ts#hints",
-      "src/core/aiContextGenerator.ts#paths",
-      "src/core/aiContextGenerator.ts#countSymbols",
-      "src/core/aiContextGenerator.ts#data",
-      "src/core/aiContextGenerator.ts#countDependencies"
-    ],
-    "module": "src"
-  },
-  "src/core/ccp.ts": {
-    "symbols": [
-      "src/core/ccp.ts#ContextModule",
-      "src/core/ccp.ts#CCPContext",
-      "src/core/ccp.ts#SymbolsData",
-      "src/core/ccp.ts#DependenciesData",
-      "src/core/ccp.ts#generateContextModules",
-      "src/core/ccp.ts#modules",
-      "src/core/ccp.ts#contextDir",
-      "src/core/ccp.ts#symbolsData",
-      "src/core/ccp.ts#depsData",
-      "src/core/ccp.ts#repoFiles",
-      "src/core/ccp.ts#symbolsPath",
-      "src/core/ccp.ts#depsPath",
-      "src/core/ccp.ts#filesPath",
-      "src/core/ccp.ts#repoMap",
-      "src/core/ccp.ts#repoModule",
-      "src/core/ccp.ts#featureDirs",
-      "src/core/ccp.ts#feature",
-      "src/core/ccp.ts#featureFiles",
-      "src/core/ccp.ts#featureSymbols",
-      "src/core/ccp.ts#byFile",
-      "src/core/ccp.ts#featureDeps",
-      "src/core/ccp.ts#mod",
-      "src/core/ccp.ts#modPath",
-      "src/core/ccp.ts#detectFeatureDirectories",
-      "src/core/ccp.ts#dirs",
-      "src/core/ccp.ts#file",
-      "src/core/ccp.ts#parts",
-      "src/core/ccp.ts#dir",
-      "src/core/ccp.ts#lowerDir",
-      "src/core/ccp.ts#createCCP",
-      "src/core/ccp.ts#aiDir",
-      "src/core/ccp.ts#ccpDir",
-      "src/core/ccp.ts#contextFiles",
-      "src/core/ccp.ts#availableModules",
-      "src/core/ccp.ts#includes",
-      "src/core/ccp.ts#ccpContent",
-      "src/core/ccp.ts#contextPath",
-      "src/core/ccp.ts#listCCPs",
-      "src/core/ccp.ts#fullPath",
-      "src/core/ccp.ts#getCCP",
-      "src/core/ccp.ts#data"
-    ],
-    "module": "src"
-  },
-  "src/core/chunker.ts": {
-    "symbols": [
-      "src/core/chunker.ts#Chunk",
-      "src/core/chunker.ts#ChunkOptions",
-      "src/core/chunker.ts#getLanguage",
-      "src/core/chunker.ts#langMap",
-      "src/core/chunker.ts#chunkJS",
-      "src/core/chunker.ts#chunks",
-      "src/core/chunker.ts#lines",
-      "src/core/chunker.ts#ext",
-      "src/core/chunker.ts#language",
-      "src/core/chunker.ts#maxSize",
-      "src/core/chunker.ts#detection",
-      "src/core/chunker.ts#patterns",
-      "src/core/chunker.ts#name",
-      "src/core/chunker.ts#boundaries",
-      "src/core/chunker.ts#line",
-      "src/core/chunker.ts#match",
-      "src/core/chunker.ts#as",
-      "src/core/chunker.ts#startLine",
-      "src/core/chunker.ts#endLine",
-      "src/core/chunker.ts#chunkContent",
-      "src/core/chunker.ts#chunkPython",
-      "src/core/chunker.ts#chunkGo",
-      "src/core/chunker.ts#chunkBySize",
-      "src/core/chunker.ts#overlap",
-      "src/core/chunker.ts#chunkLines",
-      "src/core/chunker.ts#overlapStart",
-      "src/core/chunker.ts#chunkFile",
-      "src/core/chunker.ts#content",
-      "src/core/chunker.ts#chunkFiles",
-      "src/core/chunker.ts#allChunks",
-      "src/core/chunker.ts#filePath"
-    ],
-    "module": "src"
-  },
-  "src/core/contextGenerator.ts": {
-    "symbols": [
-      "src/core/contextGenerator.ts#getApiKeyFromConfig",
-      "src/core/contextGenerator.ts#configPath",
-      "src/core/contextGenerator.ts#config",
-      "src/core/contextGenerator.ts#apiKey",
-      "src/core/contextGenerator.ts#apiHost",
-      "src/core/contextGenerator.ts#SYSTEM_PROMPT",
-      "src/core/contextGenerator.ts#naming",
-      "src/core/contextGenerator.ts#ContextGenerationOptions",
-      "src/core/contextGenerator.ts#generateAIContext",
-      "src/core/contextGenerator.ts#userPrompt",
-      "src/core/contextGenerator.ts#callModel",
-      "src/core/contextGenerator.ts#response",
-      "src/core/contextGenerator.ts#data",
-      "src/core/contextGenerator.ts#generateBasicAnalysis",
-      "src/core/contextGenerator.ts#lines",
-      "src/core/contextGenerator.ts#totalFiles",
-      "src/core/contextGenerator.ts#extensions",
-      "src/core/contextGenerator.ts#directories",
-      "src/core/contextGenerator.ts#line",
-      "src/core/contextGenerator.ts#fileMatch",
-      "src/core/contextGenerator.ts#extMatch",
-      "src/core/contextGenerator.ts#dirMatch",
-      "src/core/contextGenerator.ts#techStack",
-      "src/core/contextGenerator.ts#extMap",
-      "src/core/contextGenerator.ts#architecture",
-      "src/core/contextGenerator.ts#dirs",
-      "src/core/contextGenerator.ts#generateTaskTemplate",
-      "src/core/contextGenerator.ts#generateCurrentFocus"
-    ],
-    "module": "src"
-  },
-  "src/core/contextPacket.ts": {
-    "symbols": [
-      "src/core/contextPacket.ts#OutputFormat",
-      "src/core/contextPacket.ts#CodeContextPacket",
-      "src/core/contextPacket.ts#generateContextPacket",
-      "src/core/contextPacket.ts#graph",
-      "src/core/contextPacket.ts#refs",
-      "src/core/contextPacket.ts#fileIndex",
-      "src/core/contextPacket.ts#symbol",
-      "src/core/contextPacket.ts#relationships",
-      "src/core/contextPacket.ts#relsByType",
-      "src/core/contextPacket.ts#relatedSymbols",
-      "src/core/contextPacket.ts#callers",
-      "src/core/contextPacket.ts#fileNeighbors",
-      "src/core/contextPacket.ts#relevanceScore",
-      "src/core/contextPacket.ts#summary",
-      "src/core/contextPacket.ts#module",
-      "src/core/contextPacket.ts#packet",
-      "src/core/contextPacket.ts#organizeRelationships",
-      "src/core/contextPacket.ts#result",
-      "src/core/contextPacket.ts#rel",
-      "src/core/contextPacket.ts#getRelatedSymbols",
-      "src/core/contextPacket.ts#related",
-      "src/core/contextPacket.ts#visited",
-      "src/core/contextPacket.ts#queue",
-      "src/core/contextPacket.ts#current",
-      "src/core/contextPacket.ts#sym",
-      "src/core/contextPacket.ts#getFileNeighbors",
-      "src/core/contextPacket.ts#neighbors",
-      "src/core/contextPacket.ts#getSourceCode",
-      "src/core/contextPacket.ts#fullSource",
-      "src/core/contextPacket.ts#snippet",
-      "src/core/contextPacket.ts#fullPath",
-      "src/core/contextPacket.ts#lines",
-      "src/core/contextPacket.ts#startLine",
-      "src/core/contextPacket.ts#endLine",
-      "src/core/contextPacket.ts#calculateRelevance",
-      "src/core/contextPacket.ts#score",
-      "src/core/contextPacket.ts#generateSummary",
-      "src/core/contextPacket.ts#parts",
-      "src/core/contextPacket.ts#formatAsMarkdown",
-      "src/core/contextPacket.ts#md",
-      "src/core/contextPacket.ts#call",
-      "src/core/contextPacket.ts#caller",
-      "src/core/contextPacket.ts#formatAsText",
-      "src/core/contextPacket.ts#text",
-      "src/core/contextPacket.ts#saveContextPacket",
-      "src/core/contextPacket.ts#contextDir",
-      "src/core/contextPacket.ts#safeName",
-      "src/core/contextPacket.ts#ext",
-      "src/core/contextPacket.ts#filePath",
-      "src/core/contextPacket.ts#content",
-      "src/core/contextPacket.ts#listContextPackets",
-      "src/core/contextPacket.ts#loadContextPacket"
-    ],
-    "module": "src"
-  },
-  "src/core/embeddings.ts": {
-    "symbols": [
-      "src/core/embeddings.ts#Embedding",
-      "src/core/embeddings.ts#EmbeddingsIndex",
-      "src/core/embeddings.ts#generateSimpleEmbedding",
-      "src/core/embeddings.ts#hash",
-      "src/core/embeddings.ts#vector",
-      "src/core/embeddings.ts#byteIndex",
-      "src/core/embeddings.ts#value",
-      "src/core/embeddings.ts#magnitude",
-      "src/core/embeddings.ts#generateEmbeddings",
-      "src/core/embeddings.ts#dimensions",
-      "src/core/embeddings.ts#model",
-      "src/core/embeddings.ts#embeddings",
-      "src/core/embeddings.ts#chunk",
-      "src/core/embeddings.ts#saveEmbeddings",
-      "src/core/embeddings.ts#index",
-      "src/core/embeddings.ts#embeddingsPath",
-      "src/core/embeddings.ts#loadEmbeddings",
-      "src/core/embeddings.ts#data",
-      "src/core/embeddings.ts#cosineSimilarity",
-      "src/core/embeddings.ts#dotProduct",
-      "src/core/embeddings.ts#normA",
-      "src/core/embeddings.ts#normB",
-      "src/core/embeddings.ts#searchEmbeddings",
-      "src/core/embeddings.ts#queryEmbedding",
-      "src/core/embeddings.ts#results"
-    ],
-    "module": "src"
-  },
-  "src/core/hierarchyGenerator.ts": {
-    "symbols": [
-      "src/core/hierarchyGenerator.ts#HierarchyResult",
-      "src/core/hierarchyGenerator.ts#RepoSummary",
-      "src/core/hierarchyGenerator.ts#detectRepoPurpose",
-      "src/core/hierarchyGenerator.ts#packagePath",
-      "src/core/hierarchyGenerator.ts#pkg",
-      "src/core/hierarchyGenerator.ts#readmeNames",
-      "src/core/hierarchyGenerator.ts#name",
-      "src/core/hierarchyGenerator.ts#readmePath",
-      "src/core/hierarchyGenerator.ts#content",
-      "src/core/hierarchyGenerator.ts#lines",
-      "src/core/hierarchyGenerator.ts#line",
-      "src/core/hierarchyGenerator.ts#trimmed",
-      "src/core/hierarchyGenerator.ts#indicators",
-      "src/core/hierarchyGenerator.ts#ind",
-      "src/core/hierarchyGenerator.ts#files",
-      "src/core/hierarchyGenerator.ts#getFolderDescription",
-      "src/core/hierarchyGenerator.ts#descriptions",
-      "src/core/hierarchyGenerator.ts#lower",
-      "src/core/hierarchyGenerator.ts#summarizeFile",
-      "src/core/hierarchyGenerator.ts#fileName",
-      "src/core/hierarchyGenerator.ts#ext",
-      "src/core/hierarchyGenerator.ts#exports",
-      "src/core/hierarchyGenerator.ts#importMatches",
-      "src/core/hierarchyGenerator.ts#definitions",
-      "src/core/hierarchyGenerator.ts#classes",
-      "src/core/hierarchyGenerator.ts#functions",
-      "src/core/hierarchyGenerator.ts#interfaces",
-      "src/core/hierarchyGenerator.ts#commentMatch",
-      "src/core/hierarchyGenerator.ts#comment",
-      "src/core/hierarchyGenerator.ts#firstLine",
-      "src/core/hierarchyGenerator.ts#descMatch",
-      "src/core/hierarchyGenerator.ts#parts",
-      "src/core/hierarchyGenerator.ts#fnNames",
-      "src/core/hierarchyGenerator.ts#extDescriptions",
-      "src/core/hierarchyGenerator.ts#generateHierarchy",
-      "src/core/hierarchyGenerator.ts#allFiles",
-      "src/core/hierarchyGenerator.ts#filePath",
-      "src/core/hierarchyGenerator.ts#relativePath",
-      "src/core/hierarchyGenerator.ts#repoPurpose",
-      "src/core/hierarchyGenerator.ts#folderCounts",
-      "src/core/hierarchyGenerator.ts#folderDescriptions",
-      "src/core/hierarchyGenerator.ts#file",
-      "src/core/hierarchyGenerator.ts#folder",
-      "src/core/hierarchyGenerator.ts#folders",
-      "src/core/hierarchyGenerator.ts#sourceExtensions",
-      "src/core/hierarchyGenerator.ts#filesSummaries",
-      "src/core/hierarchyGenerator.ts#summary",
-      "src/core/hierarchyGenerator.ts#outputDir"
-    ],
-    "module": "src"
-  },
-  "src/core/indexState.ts": {
-    "symbols": [
-      "src/core/indexState.ts#FileState",
-      "src/core/indexState.ts#IndexState",
-      "src/core/indexState.ts#STATE_VERSION",
-      "src/core/indexState.ts#loadIndexState",
-      "src/core/indexState.ts#statePath",
-      "src/core/indexState.ts#data",
-      "src/core/indexState.ts#state",
-      "src/core/indexState.ts#saveIndexState",
-      "src/core/indexState.ts#computeFileHash",
-      "src/core/indexState.ts#stats",
-      "src/core/indexState.ts#content",
-      "src/core/indexState.ts#hash",
-      "src/core/indexState.ts#needsReindex",
-      "src/core/indexState.ts#relativePath",
-      "src/core/indexState.ts#previousState",
-      "src/core/indexState.ts#hashData",
-      "src/core/indexState.ts#getFilesToIndex",
-      "src/core/indexState.ts#toIndex",
-      "src/core/indexState.ts#unchanged",
-      "src/core/indexState.ts#newFiles",
-      "src/core/indexState.ts#currentPaths",
-      "src/core/indexState.ts#filePath",
-      "src/core/indexState.ts#deleted",
-      "src/core/indexState.ts#existingPath",
-      "src/core/indexState.ts#getChangedFilesGit",
-      "src/core/indexState.ts#changed",
-      "src/core/indexState.ts#output",
-      "src/core/indexState.ts#file",
-      "src/core/indexState.ts#untracked"
-    ],
-    "module": "src"
-  },
-  "src/core/indexer.ts": {
-    "symbols": [
-      "src/core/indexer.ts#SQL",
-      "src/core/indexer.ts#getSql",
-      "src/core/indexer.ts#LANGUAGE_MAP",
-      "src/core/indexer.ts#detectLanguage",
-      "src/core/indexer.ts#IndexResult",
-      "src/core/indexer.ts#WatchOptions",
-      "src/core/indexer.ts#FileHash",
-      "src/core/indexer.ts#for",
-      "src/core/indexer.ts#IncrementalIndexer",
-      "src/core/indexer.ts#sql",
-      "src/core/indexer.ts#fileBuffer",
-      "src/core/indexer.ts#TEXT",
-      "src/core/indexer.ts#ON",
-      "src/core/indexer.ts#result",
-      "src/core/indexer.ts#row",
-      "src/core/indexer.ts#stats",
-      "src/core/indexer.ts#content",
-      "src/core/indexer.ts#hash",
-      "src/core/indexer.ts#current",
-      "src/core/indexer.ts#existing",
-      "src/core/indexer.ts#relativePath",
-      "src/core/indexer.ts#fileName",
-      "src/core/indexer.ts#lastDot",
-      "src/core/indexer.ts#extension",
-      "src/core/indexer.ts#language",
-      "src/core/indexer.ts#fileId",
-      "src/core/indexer.ts#existingFile",
-      "src/core/indexer.ts#symbols",
-      "src/core/indexer.ts#sym",
-      "src/core/indexer.ts#imports",
-      "src/core/indexer.ts#imp",
-      "src/core/indexer.ts#data",
-      "src/core/indexer.ts#buffer",
-      "src/core/indexer.ts#outputDir",
-      "src/core/indexer.ts#defaultIgnored",
-      "src/core/indexer.ts#existingTimer",
-      "src/core/indexer.ts#timer",
-      "src/core/indexer.ts#parseFileForSymbols",
-      "src/core/indexer.ts#lines",
-      "src/core/indexer.ts#parseJsTs",
-      "src/core/indexer.ts#patterns",
-      "src/core/indexer.ts#line",
-      "src/core/indexer.ts#match",
-      "src/core/indexer.ts#name",
-      "src/core/indexer.ts#parsePython",
-      "src/core/indexer.ts#classMatch",
-      "src/core/indexer.ts#funcMatch",
-      "src/core/indexer.ts#parseGo",
-      "src/core/indexer.ts#typeMatch",
-      "src/core/indexer.ts#parseJava",
-      "src/core/indexer.ts#interfaceMatch",
-      "src/core/indexer.ts#parseCSharp",
-      "src/core/indexer.ts#parseRuby",
-      "src/core/indexer.ts#parsePHP",
-      "src/core/indexer.ts#parseSwift",
-      "src/core/indexer.ts#parseKotlin",
-      "src/core/indexer.ts#parseScala",
-      "src/core/indexer.ts#parseRust",
-      "src/core/indexer.ts#structMatch",
-      "src/core/indexer.ts#parseApex",
-      "src/core/indexer.ts#parseFileForImports",
-      "src/core/indexer.ts#es6Matches",
-      "src/core/indexer.ts#requireMatches",
-      "src/core/indexer.ts#fromMatches",
-      "src/core/indexer.ts#importMatches",
-      "src/core/indexer.ts#computeFileHash",
-      "src/core/indexer.ts#generateIndex",
-      "src/core/indexer.ts#db",
-      "src/core/indexer.ts#allFiles",
-      "src/core/indexer.ts#fileIdMap",
-      "src/core/indexer.ts#fileCount",
-      "src/core/indexer.ts#filePath",
-      "src/core/indexer.ts#hashData",
-      "src/core/indexer.ts#EXAMPLE_QUERIES",
-      "src/core/indexer.ts#FROM"
-    ],
-    "module": "src"
-  },
-  "src/core/moduleGraph.ts": {
-    "symbols": [
-      "src/core/moduleGraph.ts#Module",
-      "src/core/moduleGraph.ts#Dependency",
-      "src/core/moduleGraph.ts#ModuleGraph",
-      "src/core/moduleGraph.ts#generateModuleGraph",
-      "src/core/moduleGraph.ts#graphDir",
-      "src/core/moduleGraph.ts#scanResult",
-      "src/core/moduleGraph.ts#files",
-      "src/core/moduleGraph.ts#moduleFiles",
-      "src/core/moduleGraph.ts#moduleDeps",
-      "src/core/moduleGraph.ts#file",
-      "src/core/moduleGraph.ts#parts",
-      "src/core/moduleGraph.ts#moduleName",
-      "src/core/moduleGraph.ts#deps",
-      "src/core/moduleGraph.ts#dep",
-      "src/core/moduleGraph.ts#depModule",
-      "src/core/moduleGraph.ts#modules",
-      "src/core/moduleGraph.ts#dependencies",
-      "src/core/moduleGraph.ts#to",
-      "src/core/moduleGraph.ts#graph",
-      "src/core/moduleGraph.ts#graphFile",
-      "src/core/moduleGraph.ts#parseFileImports",
-      "src/core/moduleGraph.ts#imports",
-      "src/core/moduleGraph.ts#content",
-      "src/core/moduleGraph.ts#ext",
-      "src/core/moduleGraph.ts#es6Matches",
-      "src/core/moduleGraph.ts#match",
-      "src/core/moduleGraph.ts#requireMatches",
-      "src/core/moduleGraph.ts#fromMatches",
-      "src/core/moduleGraph.ts#importMatches",
-      "src/core/moduleGraph.ts#useMatches",
-      "src/core/moduleGraph.ts#getModuleFromPath",
-      "src/core/moduleGraph.ts#loadModuleGraph"
-    ],
-    "module": "src"
-  },
-  "src/core/repoMapper.ts": {
-    "symbols": [
-      "src/core/repoMapper.ts#RepoMapOptions",
-      "src/core/repoMapper.ts#generateRepoMap",
-      "src/core/repoMapper.ts#lines",
-      "src/core/repoMapper.ts#grouped",
-      "src/core/repoMapper.ts#sortedDirs",
-      "src/core/repoMapper.ts#dir",
-      "src/core/repoMapper.ts#dirFiles",
-      "src/core/repoMapper.ts#file",
-      "src/core/repoMapper.ts#ext",
-      "src/core/repoMapper.ts#nameWithoutExt",
-      "src/core/repoMapper.ts#indent",
-      "src/core/repoMapper.ts#sortedExts",
-      "src/core/repoMapper.ts#extFiles",
-      "src/core/repoMapper.ts#generateCompactRepoMap",
-      "src/core/repoMapper.ts#tree",
-      "src/core/repoMapper.ts#TreeNode",
-      "src/core/repoMapper.ts#buildTree",
-      "src/core/repoMapper.ts#root",
-      "src/core/repoMapper.ts#parts",
-      "src/core/repoMapper.ts#current",
-      "src/core/repoMapper.ts#part",
-      "src/core/repoMapper.ts#isFile",
-      "src/core/repoMapper.ts#renderTree",
-      "src/core/repoMapper.ts#entries",
-      "src/core/repoMapper.ts#dirs",
-      "src/core/repoMapper.ts#files",
-      "src/core/repoMapper.ts#allEntries",
-      "src/core/repoMapper.ts#key",
-      "src/core/repoMapper.ts#isLast",
-      "src/core/repoMapper.ts#isDir",
-      "src/core/repoMapper.ts#connector",
-      "src/core/repoMapper.ts#newPrefix",
-      "src/core/repoMapper.ts#generateSummary",
-      "src/core/repoMapper.ts#total",
-      "src/core/repoMapper.ts#byExt",
-      "src/core/repoMapper.ts#extCounts",
-      "src/core/repoMapper.ts#byDir",
-      "src/core/repoMapper.ts#dirCounts"
-    ],
-    "module": "src"
-  },
-  "src/core/repoScanner.ts": {
-    "symbols": [
-      "src/core/repoScanner.ts#FileInfo",
-      "src/core/repoScanner.ts#ScanResult",
-      "src/core/repoScanner.ts#scanRepo",
-      "src/core/repoScanner.ts#absoluteFiles",
-      "src/core/repoScanner.ts#files",
-      "src/core/repoScanner.ts#directoryStructure",
-      "src/core/repoScanner.ts#filePath",
-      "src/core/repoScanner.ts#relativePath",
-      "src/core/repoScanner.ts#parts",
-      "src/core/repoScanner.ts#fileName",
-      "src/core/repoScanner.ts#dirPath",
-      "src/core/repoScanner.ts#getExtension",
-      "src/core/repoScanner.ts#lastDot",
-      "src/core/repoScanner.ts#groupByExtension",
-      "src/core/repoScanner.ts#grouped",
-      "src/core/repoScanner.ts#file",
-      "src/core/repoScanner.ts#ext",
-      "src/core/repoScanner.ts#groupByDirectory",
-      "src/core/repoScanner.ts#topDir"
-    ],
-    "module": "src"
-  },
-  "src/core/semanticContexts.ts": {
-    "symbols": [
-      "src/core/semanticContexts.ts#Feature",
-      "src/core/semanticContexts.ts#Flow",
-      "src/core/semanticContexts.ts#SemanticContexts",
-      "src/core/semanticContexts.ts#FEATURE_ROOTS",
-      "src/core/semanticContexts.ts#EXCLUDED_FOLDER_NAMES",
-      "src/core/semanticContexts.ts#CONTAINER_FOLDERS",
-      "src/core/semanticContexts.ts#ENTRYPOINT_PATTERNS",
-      "src/core/semanticContexts.ts#FLOW_ENTRYPOINT_PATTERNS",
-      "src/core/semanticContexts.ts#FLOW_EXCLUDE_PATTERNS",
-      "src/core/semanticContexts.ts#MAX_FLOW_DEPTH",
-      "src/core/semanticContexts.ts#MAX_FLOW_FILES",
-      "src/core/semanticContexts.ts#isSourceFile",
-      "src/core/semanticContexts.ts#ext",
-      "src/core/semanticContexts.ts#isEntrypoint",
-      "src/core/semanticContexts.ts#basename",
-      "src/core/semanticContexts.ts#pattern",
-      "src/core/semanticContexts.ts#isExcludedFolder",
-      "src/core/semanticContexts.ts#getCandidateFeatures",
-      "src/core/semanticContexts.ts#candidates",
-      "src/core/semanticContexts.ts#file",
-      "src/core/semanticContexts.ts#parts",
-      "src/core/semanticContexts.ts#rootIndex",
-      "src/core/semanticContexts.ts#depth",
-      "src/core/semanticContexts.ts#featureIdx",
-      "src/core/semanticContexts.ts#featureName",
-      "src/core/semanticContexts.ts#key",
-      "src/core/semanticContexts.ts#isFlowEntrypoint",
-      "src/core/semanticContexts.ts#isExcludedForFlow",
-      "src/core/semanticContexts.ts#fileLower",
-      "src/core/semanticContexts.ts#detectArchitecturalLayers",
-      "src/core/semanticContexts.ts#layers",
-      "src/core/semanticContexts.ts#part",
-      "src/core/semanticContexts.ts#lower",
-      "src/core/semanticContexts.ts#getFileLayer",
-      "src/core/semanticContexts.ts#generateFeatures",
-      "src/core/semanticContexts.ts#features",
-      "src/core/semanticContexts.ts#modules",
-      "src/core/semanticContexts.ts#data",
-      "src/core/semanticContexts.ts#allFiles",
-      "src/core/semanticContexts.ts#mod",
-      "src/core/semanticContexts.ts#sourceFiles",
-      "src/core/semanticContexts.ts#entrypoints",
-      "src/core/semanticContexts.ts#generateFlows",
-      "src/core/semanticContexts.ts#flows",
-      "src/core/semanticContexts.ts#graph",
-      "src/core/semanticContexts.ts#relationshipsBySymbol",
-      "src/core/semanticContexts.ts#rel",
-      "src/core/semanticContexts.ts#entrypointSymbols",
-      "src/core/semanticContexts.ts#symbol",
-      "src/core/semanticContexts.ts#entrypointId",
-      "src/core/semanticContexts.ts#visited",
-      "src/core/semanticContexts.ts#filesInFlow",
-      "src/core/semanticContexts.ts#layersInFlow",
-      "src/core/semanticContexts.ts#traverse",
-      "src/core/semanticContexts.ts#rels",
-      "src/core/semanticContexts.ts#entrypointSymbol",
-      "src/core/semanticContexts.ts#entrypointFile",
-      "src/core/semanticContexts.ts#flowName",
-      "src/core/semanticContexts.ts#uniqueFlows",
-      "src/core/semanticContexts.ts#seenNames",
-      "src/core/semanticContexts.ts#flow",
-      "src/core/semanticContexts.ts#generateSemanticContexts",
-      "src/core/semanticContexts.ts#contextDir",
-      "src/core/semanticContexts.ts#featuresDir",
-      "src/core/semanticContexts.ts#flowsDir",
-      "src/core/semanticContexts.ts#modulesJsonPath",
-      "src/core/semanticContexts.ts#symbolsPath",
-      "src/core/semanticContexts.ts#symbolGraphPath",
-      "src/core/semanticContexts.ts#feature",
-      "src/core/semanticContexts.ts#featurePath",
-      "src/core/semanticContexts.ts#flowPath"
-    ],
-    "module": "src"
-  },
-  "src/core/symbolGraph.ts": {
-    "symbols": [
-      "src/core/symbolGraph.ts#RelationshipType",
-      "src/core/symbolGraph.ts#SymbolRelationship",
-      "src/core/symbolGraph.ts#SymbolGraph",
-      "src/core/symbolGraph.ts#SymbolReferences",
-      "src/core/symbolGraph.ts#FileIndex",
-      "src/core/symbolGraph.ts#IndexCache",
-      "src/core/symbolGraph.ts#generateSymbolGraph",
-      "src/core/symbolGraph.ts#graphDir",
-      "src/core/symbolGraph.ts#scanResult",
-      "src/core/symbolGraph.ts#files",
-      "src/core/symbolGraph.ts#cache",
-      "src/core/symbolGraph.ts#changedFiles",
-      "src/core/symbolGraph.ts#symbolsAnalysis",
-      "src/core/symbolGraph.ts#symbols",
-      "src/core/symbolGraph.ts#depsAnalysis",
-      "src/core/symbolGraph.ts#relationships",
-      "src/core/symbolGraph.ts#bySymbol",
-      "src/core/symbolGraph.ts#rel",
-      "src/core/symbolGraph.ts#graph",
-      "src/core/symbolGraph.ts#graphFile",
-      "src/core/symbolGraph.ts#reverseRefs",
-      "src/core/symbolGraph.ts#refsFile",
-      "src/core/symbolGraph.ts#fileIndex",
-      "src/core/symbolGraph.ts#filesIndexFile",
-      "src/core/symbolGraph.ts#buildSymbolRelationships",
-      "src/core/symbolGraph.ts#symbolMap",
-      "src/core/symbolGraph.ts#sym",
-      "src/core/symbolGraph.ts#dep",
-      "src/core/symbolGraph.ts#sourceSymbols",
-      "src/core/symbolGraph.ts#targetSymbol",
-      "src/core/symbolGraph.ts#source",
-      "src/core/symbolGraph.ts#calls",
-      "src/core/symbolGraph.ts#file",
-      "src/core/symbolGraph.ts#content",
-      "src/core/symbolGraph.ts#fileSymbols",
-      "src/core/symbolGraph.ts#foundRelationships",
-      "src/core/symbolGraph.ts#exportsRels",
-      "src/core/symbolGraph.ts#findTargetSymbol",
-      "src/core/symbolGraph.ts#target",
-      "src/core/symbolGraph.ts#targetName",
-      "src/core/symbolGraph.ts#fileName",
-      "src/core/symbolGraph.ts#analyzeFileRelationships",
-      "src/core/symbolGraph.ts#ext",
-      "src/core/symbolGraph.ts#call",
-      "src/core/symbolGraph.ts#caller",
-      "src/core/symbolGraph.ts#callee",
-      "src/core/symbolGraph.ts#instantiates",
-      "src/core/symbolGraph.ts#inst",
-      "src/core/symbolGraph.ts#instantiated",
-      "src/core/symbolGraph.ts#extendsRels",
-      "src/core/symbolGraph.ts#subclass",
-      "src/core/symbolGraph.ts#superclass",
-      "src/core/symbolGraph.ts#implementsRels",
-      "src/core/symbolGraph.ts#impl",
-      "src/core/symbolGraph.ts#implClass",
-      "src/core/symbolGraph.ts#interfaceSym",
-      "src/core/symbolGraph.ts#references",
-      "src/core/symbolGraph.ts#ref",
-      "src/core/symbolGraph.ts#referencer",
-      "src/core/symbolGraph.ts#referenced",
-      "src/core/symbolGraph.ts#findFunctionCalls",
-      "src/core/symbolGraph.ts#callMatches",
-      "src/core/symbolGraph.ts#match",
-      "src/core/symbolGraph.ts#findInstantiates",
-      "src/core/symbolGraph.ts#matches",
-      "src/core/symbolGraph.ts#findExtends",
-      "src/core/symbolGraph.ts#findImplements",
-      "src/core/symbolGraph.ts#findReferences",
-      "src/core/symbolGraph.ts#definedNames",
-      "src/core/symbolGraph.ts#varUsages",
-      "src/core/symbolGraph.ts#varName",
-      "src/core/symbolGraph.ts#value",
-      "src/core/symbolGraph.ts#buildBidirectionalRelationships",
-      "src/core/symbolGraph.ts#callsMap",
-      "src/core/symbolGraph.ts#callerId",
-      "src/core/symbolGraph.ts#exists",
-      "src/core/symbolGraph.ts#buildExportRelationships",
-      "src/core/symbolGraph.ts#exportedSymbols",
-      "src/core/symbolGraph.ts#generateReverseReferences",
-      "src/core/symbolGraph.ts#refs",
-      "src/core/symbolGraph.ts#generateFileIndex",
-      "src/core/symbolGraph.ts#index",
-      "src/core/symbolGraph.ts#filePath",
-      "src/core/symbolGraph.ts#module",
-      "src/core/symbolGraph.ts#loadCache",
-      "src/core/symbolGraph.ts#cacheFile",
-      "src/core/symbolGraph.ts#getChangedFiles",
-      "src/core/symbolGraph.ts#changed",
-      "src/core/symbolGraph.ts#cached",
-      "src/core/symbolGraph.ts#stats",
-      "src/core/symbolGraph.ts#currentHash",
-      "src/core/symbolGraph.ts#saveCache",
-      "src/core/symbolGraph.ts#hashData",
-      "src/core/symbolGraph.ts#computeFileHash",
-      "src/core/symbolGraph.ts#loadSymbolGraph",
-      "src/core/symbolGraph.ts#loadSymbolReferences",
-      "src/core/symbolGraph.ts#loadFileIndex",
-      "src/core/symbolGraph.ts#indexFile",
-      "src/core/symbolGraph.ts#getSymbolContext",
-      "src/core/symbolGraph.ts#getSymbolReferrers"
-    ],
-    "module": "src"
-  },
-  "src/types/sql.js.d.ts": {
-    "symbols": [
-      "src/types/sql.js.d.ts#Database",
-      "src/types/sql.js.d.ts#QueryExecResult",
-      "src/types/sql.js.d.ts#SqlJsStatic",
-      "src/types/sql.js.d.ts#initSqlJs"
-    ],
-    "module": "src"
-  },
-  "src/utils/fileUtils.ts": {
-    "symbols": [
-      "src/utils/fileUtils.ts#DEFAULT_EXCLUDE_PATTERNS",
-      "src/utils/fileUtils.ts#DEFAULT_INCLUDE_EXTENSIONS",
-      "src/utils/fileUtils.ts#getAllFiles",
-      "src/utils/fileUtils.ts#files",
-      "src/utils/fileUtils.ts#walk",
-      "src/utils/fileUtils.ts#entries",
-      "src/utils/fileUtils.ts#entry",
-      "src/utils/fileUtils.ts#fullPath",
-      "src/utils/fileUtils.ts#ext",
-      "src/utils/fileUtils.ts#ensureDir",
-      "src/utils/fileUtils.ts#writeFile",
-      "src/utils/fileUtils.ts#readFile",
-      "src/utils/fileUtils.ts#getRelativePath",
-      "src/utils/fileUtils.ts#readJsonFile",
-      "src/utils/fileUtils.ts#content"
-    ],
-    "module": "src"
-  }
+  "files": [
+    {
+      "path": ".netlify/state.json",
+      "name": "state.json",
+      "ext": "json"
+    },
+    {
+      "path": "ANALISIS_COMPLETO.md",
+      "name": "ANALISIS_COMPLETO.md",
+      "ext": "md"
+    },
+    {
+      "path": "ANALISIS_MEJORAS.md",
+      "name": "ANALISIS_MEJORAS.md",
+      "ext": "md"
+    },
+    {
+      "path": "BUGS.md",
+      "name": "BUGS.md",
+      "ext": "md"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "name": "CHANGELOG.md",
+      "ext": "md"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "name": "CONTRIBUTING.md",
+      "ext": "md"
+    },
+    {
+      "path": "FLOW.md",
+      "name": "FLOW.md",
+      "ext": "md"
+    },
+    {
+      "path": "PLAN_MEJORAS.md",
+      "name": "PLAN_MEJORAS.md",
+      "ext": "md"
+    },
+    {
+      "path": "README.es.md",
+      "name": "README.es.md",
+      "ext": "md"
+    },
+    {
+      "path": "README.md",
+      "name": "README.md",
+      "ext": "md"
+    },
+    {
+      "path": "TEST_RESULTS.md",
+      "name": "TEST_RESULTS.md",
+      "ext": "md"
+    },
+    {
+      "path": "TEST_RESULTS_COMPARATIVE.md",
+      "name": "TEST_RESULTS_COMPARATIVE.md",
+      "ext": "md"
+    },
+    {
+      "path": "TEST_RESULTS_COMPLETE.md",
+      "name": "TEST_RESULTS_COMPLETE.md",
+      "ext": "md"
+    },
+    {
+      "path": "TEST_RESULTS_COMPREHENSIVE.md",
+      "name": "TEST_RESULTS_COMPREHENSIVE.md",
+      "ext": "md"
+    },
+    {
+      "path": "TEST_RESULTS_PHASE1.md",
+      "name": "TEST_RESULTS_PHASE1.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/ai_context.md",
+      "name": "ai_context.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/architecture.md",
+      "name": "architecture.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/cache.json",
+      "name": "cache.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/ccp/jira-123/context.json",
+      "name": "context.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/features/commands.json",
+      "name": "commands.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/features/src.json",
+      "name": "src.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/features/test-projects.json",
+      "name": "test-projects.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/account.json",
+      "name": "account.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/add_.json",
+      "name": "add_.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/ai-first.json",
+      "name": "ai-first.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/api.json",
+      "name": "api.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/auth..json",
+      "name": "auth..json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/auth.json",
+      "name": "auth.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/category.json",
+      "name": "category.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/comment.json",
+      "name": "comment.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/comments_.json",
+      "name": "comments_.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/dashboard.json",
+      "name": "dashboard.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/doctor.json",
+      "name": "doctor.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/explore.json",
+      "name": "explore.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/list_.json",
+      "name": "list_.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/login.json",
+      "name": "login.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/opportunity.json",
+      "name": "opportunity.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/post.json",
+      "name": "post.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/posts_.json",
+      "name": "posts_.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/remove_.json",
+      "name": "remove_.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/routes.json",
+      "name": "routes.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/routes.py.json",
+      "name": "routes.py.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/user.json",
+      "name": "user.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/users..json",
+      "name": "users..json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/users.json",
+      "name": "users.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/users_.json",
+      "name": "users_.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/views.json",
+      "name": "views.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/views.py.json",
+      "name": "views.py.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/repo.json",
+      "name": "repo.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/utils.json",
+      "name": "utils.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/conventions.md",
+      "name": "conventions.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/dependencies.json",
+      "name": "dependencies.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/embeddings.json",
+      "name": "embeddings.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/files.json",
+      "name": "files.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/git/commit-activity.json",
+      "name": "commit-activity.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/git/recent-features.json",
+      "name": "recent-features.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/git/recent-files.json",
+      "name": "recent-files.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/git/recent-flows.json",
+      "name": "recent-flows.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/hierarchy.json",
+      "name": "hierarchy.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/index-state.json",
+      "name": "index-state.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/modules.json",
+      "name": "modules.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/project.json",
+      "name": "project.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/repo-map.json",
+      "name": "repo-map.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/repo_map.json",
+      "name": "repo_map.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/repo_map.md",
+      "name": "repo_map.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/schema.json",
+      "name": "schema.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/summary.md",
+      "name": "summary.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/symbols.json",
+      "name": "symbols.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/tools.json",
+      "name": "tools.json",
+      "ext": "json"
+    },
+    {
+      "path": "docs/.vitepress/config.ts",
+      "name": "config.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "docs/.vitepress/theme/custom.css",
+      "name": "custom.css",
+      "ext": "css"
+    },
+    {
+      "path": "docs/.vitepress/theme/index.ts",
+      "name": "index.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "docs/es/guide/adapters.md",
+      "name": "adapters.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/es/guide/ai-repository-schema.md",
+      "name": "ai-repository-schema.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/es/guide/features.md",
+      "name": "features.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/es/guide/flows.md",
+      "name": "flows.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/es/guide/getting-started.md",
+      "name": "getting-started.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/es/guide/git-intelligence.md",
+      "name": "git-intelligence.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/es/guide/incremental-analysis.md",
+      "name": "incremental-analysis.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/es/guide/knowledge-graph.md",
+      "name": "knowledge-graph.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/es/guide/lazy-indexing.md",
+      "name": "lazy-indexing.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/es/guide/performance.md",
+      "name": "performance.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/es/index.md",
+      "name": "index.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/examples/express-api.md",
+      "name": "express-api.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/examples/index.md",
+      "name": "index.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/examples/python-django.md",
+      "name": "python-django.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/examples/react-app.md",
+      "name": "react-app.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/guide/adapters.md",
+      "name": "adapters.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/guide/ai-repository-schema.md",
+      "name": "ai-repository-schema.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/guide/architecture.md",
+      "name": "architecture.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/guide/flows.md",
+      "name": "flows.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/guide/getting-started.md",
+      "name": "getting-started.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/guide/git-intelligence.md",
+      "name": "git-intelligence.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/guide/incremental-analysis.md",
+      "name": "incremental-analysis.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/guide/installation.md",
+      "name": "installation.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/guide/knowledge-graph.md",
+      "name": "knowledge-graph.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/guide/lazy-indexing.md",
+      "name": "lazy-indexing.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/guide/performance.md",
+      "name": "performance.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/guide/quick-start.md",
+      "name": "quick-start.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/index.md",
+      "name": "index.md",
+      "ext": "md"
+    },
+    {
+      "path": "docs/reference/commands.md",
+      "name": "commands.md",
+      "ext": "md"
+    },
+    {
+      "path": "examples/01-express-api.md",
+      "name": "01-express-api.md",
+      "ext": "md"
+    },
+    {
+      "path": "examples/02-react-app.md",
+      "name": "02-react-app.md",
+      "ext": "md"
+    },
+    {
+      "path": "examples/03-python-django.md",
+      "name": "03-python-django.md",
+      "ext": "md"
+    },
+    {
+      "path": "examples/README.md",
+      "name": "README.md",
+      "ext": "md"
+    },
+    {
+      "path": "package-lock.json",
+      "name": "package-lock.json",
+      "ext": "json"
+    },
+    {
+      "path": "package.json",
+      "name": "package.json",
+      "ext": "json"
+    },
+    {
+      "path": "src/analyzers/aiRules.ts",
+      "name": "aiRules.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/analyzers/androidResources.ts",
+      "name": "androidResources.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/analyzers/architecture.ts",
+      "name": "architecture.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/analyzers/conventions.ts",
+      "name": "conventions.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/analyzers/dependencies.ts",
+      "name": "dependencies.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/analyzers/entrypoints.ts",
+      "name": "entrypoints.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/analyzers/gradleModules.ts",
+      "name": "gradleModules.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/analyzers/symbols.ts",
+      "name": "symbols.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/analyzers/techStack.ts",
+      "name": "techStack.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/commands/ai-first.ts",
+      "name": "ai-first.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/commands/doctor.ts",
+      "name": "doctor.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/commands/explore.ts",
+      "name": "explore.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/adapters/adapterRegistry.ts",
+      "name": "adapterRegistry.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/adapters/baseAdapter.ts",
+      "name": "baseAdapter.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/adapters/community/fastapiAdapter.ts",
+      "name": "fastapiAdapter.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/adapters/community/index.ts",
+      "name": "index.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/adapters/community/laravelAdapter.ts",
+      "name": "laravelAdapter.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/adapters/community/nestjsAdapter.ts",
+      "name": "nestjsAdapter.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/adapters/community/phoenixAdapter.ts",
+      "name": "phoenixAdapter.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/adapters/community/springBootAdapter.ts",
+      "name": "springBootAdapter.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/adapters/dotnetAdapter.ts",
+      "name": "dotnetAdapter.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/adapters/index.ts",
+      "name": "index.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/adapters/javascriptAdapter.ts",
+      "name": "javascriptAdapter.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/adapters/pythonAdapter.ts",
+      "name": "pythonAdapter.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/adapters/railsAdapter.ts",
+      "name": "railsAdapter.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/adapters/salesforceAdapter.ts",
+      "name": "salesforceAdapter.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/adapters/sdk.ts",
+      "name": "sdk.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/aiContextGenerator.ts",
+      "name": "aiContextGenerator.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/ccp.ts",
+      "name": "ccp.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/chunker.ts",
+      "name": "chunker.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/contextGenerator.ts",
+      "name": "contextGenerator.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/contextPacket.ts",
+      "name": "contextPacket.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/embeddings.ts",
+      "name": "embeddings.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/gitAnalyzer.ts",
+      "name": "gitAnalyzer.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/hierarchyGenerator.ts",
+      "name": "hierarchyGenerator.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/incrementalAnalyzer.ts",
+      "name": "incrementalAnalyzer.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/indexState.ts",
+      "name": "indexState.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/indexer.ts",
+      "name": "indexer.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/knowledgeGraphBuilder.ts",
+      "name": "knowledgeGraphBuilder.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/lazyAnalyzer.ts",
+      "name": "lazyAnalyzer.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/moduleGraph.ts",
+      "name": "moduleGraph.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/repoMapper.ts",
+      "name": "repoMapper.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/repoScanner.ts",
+      "name": "repoScanner.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/schema.ts",
+      "name": "schema.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/semanticContexts.ts",
+      "name": "semanticContexts.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/core/symbolGraph.ts",
+      "name": "symbolGraph.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/index.ts",
+      "name": "index.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/types/sql.js.d.ts",
+      "name": "sql.js.d.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/utils/fileUtils.ts",
+      "name": "fileUtils.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "test-projects/django-app/README.md",
+      "name": "README.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/django-app/ai/ai_context.md",
+      "name": "ai_context.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/django-app/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/django-app/ai/architecture.md",
+      "name": "architecture.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/django-app/ai/cache.json",
+      "name": "cache.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/context/flows/views.json",
+      "name": "views.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/conventions.md",
+      "name": "conventions.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/django-app/ai/dependencies.json",
+      "name": "dependencies.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/django-app/ai/files.json",
+      "name": "files.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/index-state.json",
+      "name": "index-state.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/modules.json",
+      "name": "modules.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/project.json",
+      "name": "project.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/repo-map.json",
+      "name": "repo-map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/repo_map.json",
+      "name": "repo_map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/repo_map.md",
+      "name": "repo_map.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/django-app/ai/schema.json",
+      "name": "schema.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/summary.md",
+      "name": "summary.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/django-app/ai/symbols.json",
+      "name": "symbols.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/django-app/ai/tools.json",
+      "name": "tools.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/django-app/blog/__init__.py",
+      "name": "__init__.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/django-app/blog/admin.py",
+      "name": "admin.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/django-app/blog/models.py",
+      "name": "models.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/django-app/blog/serializers.py",
+      "name": "serializers.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/django-app/blog/urls.py",
+      "name": "urls.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/django-app/blog/views.py",
+      "name": "views.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/django-app/django_app/__init__.py",
+      "name": "__init__.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/django-app/django_app/settings.py",
+      "name": "settings.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/django-app/django_app/urls.py",
+      "name": "urls.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/django-app/django_app/wsgi.py",
+      "name": "wsgi.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/django-app/manage.py",
+      "name": "manage.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/django-app/users/__init__.py",
+      "name": "__init__.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/django-app/users/admin.py",
+      "name": "admin.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/django-app/users/models.py",
+      "name": "models.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/django-app/users/serializers.py",
+      "name": "serializers.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/django-app/users/urls.py",
+      "name": "urls.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/django-app/users/views.py",
+      "name": "views.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/express-api/ai/ai_context.md",
+      "name": "ai_context.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/express-api/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/express-api/ai/architecture.md",
+      "name": "architecture.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/express-api/ai/cache.json",
+      "name": "cache.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/context/features/controllers.json",
+      "name": "controllers.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/context/features/services.json",
+      "name": "services.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/context/flows/auth.json",
+      "name": "auth.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/context/flows/user.json",
+      "name": "user.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/conventions.md",
+      "name": "conventions.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/express-api/ai/dependencies.json",
+      "name": "dependencies.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/express-api/ai/files.json",
+      "name": "files.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/index-state.json",
+      "name": "index-state.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/modules.json",
+      "name": "modules.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/project.json",
+      "name": "project.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/repo-map.json",
+      "name": "repo-map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/repo_map.json",
+      "name": "repo_map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/repo_map.md",
+      "name": "repo_map.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/express-api/ai/schema.json",
+      "name": "schema.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/summary.md",
+      "name": "summary.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/express-api/ai/symbols.json",
+      "name": "symbols.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/express-api/ai/tools.json",
+      "name": "tools.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/express-api/controllers/authController.js",
+      "name": "authController.js",
+      "ext": "js"
+    },
+    {
+      "path": "test-projects/express-api/controllers/userController.js",
+      "name": "userController.js",
+      "ext": "js"
+    },
+    {
+      "path": "test-projects/express-api/index.js",
+      "name": "index.js",
+      "ext": "js"
+    },
+    {
+      "path": "test-projects/express-api/middleware/authMiddleware.js",
+      "name": "authMiddleware.js",
+      "ext": "js"
+    },
+    {
+      "path": "test-projects/express-api/models/userRepository.js",
+      "name": "userRepository.js",
+      "ext": "js"
+    },
+    {
+      "path": "test-projects/express-api/package.json",
+      "name": "package.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/express-api/services/authService.js",
+      "name": "authService.js",
+      "ext": "js"
+    },
+    {
+      "path": "test-projects/express-api/services/userService.js",
+      "name": "userService.js",
+      "ext": "js"
+    },
+    {
+      "path": "test-projects/fastapi-app/README.md",
+      "name": "README.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/ai_context.md",
+      "name": "ai_context.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/architecture.md",
+      "name": "architecture.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/cache.json",
+      "name": "cache.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/conventions.md",
+      "name": "conventions.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/dependencies.json",
+      "name": "dependencies.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/files.json",
+      "name": "files.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/index-state.json",
+      "name": "index-state.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/modules.json",
+      "name": "modules.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/project.json",
+      "name": "project.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/repo-map.json",
+      "name": "repo-map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/repo_map.json",
+      "name": "repo_map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/repo_map.md",
+      "name": "repo_map.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/schema.json",
+      "name": "schema.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/summary.md",
+      "name": "summary.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/symbols.json",
+      "name": "symbols.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/tools.json",
+      "name": "tools.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/app/database.py",
+      "name": "database.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/fastapi-app/app/dependencies.py",
+      "name": "dependencies.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/fastapi-app/app/main.py",
+      "name": "main.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/fastapi-app/app/models.py",
+      "name": "models.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/fastapi-app/app/routers/auth.py",
+      "name": "auth.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/fastapi-app/app/routers/posts.py",
+      "name": "posts.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/fastapi-app/app/schemas.py",
+      "name": "schemas.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/flask-app/README.md",
+      "name": "README.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/flask-app/ai/ai_context.md",
+      "name": "ai_context.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/flask-app/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/flask-app/ai/architecture.md",
+      "name": "architecture.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/flask-app/ai/cache.json",
+      "name": "cache.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/context/features/app.json",
+      "name": "app.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/context/flows/routes.json",
+      "name": "routes.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/conventions.md",
+      "name": "conventions.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/flask-app/ai/dependencies.json",
+      "name": "dependencies.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/flask-app/ai/files.json",
+      "name": "files.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/index-state.json",
+      "name": "index-state.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/modules.json",
+      "name": "modules.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/project.json",
+      "name": "project.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/repo-map.json",
+      "name": "repo-map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/repo_map.json",
+      "name": "repo_map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/repo_map.md",
+      "name": "repo_map.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/flask-app/ai/schema.json",
+      "name": "schema.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/summary.md",
+      "name": "summary.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/flask-app/ai/symbols.json",
+      "name": "symbols.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/flask-app/ai/tools.json",
+      "name": "tools.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/flask-app/app/__init__.py",
+      "name": "__init__.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/api/__init__.py",
+      "name": "__init__.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/api/routes.py",
+      "name": "routes.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/auth/__init__.py",
+      "name": "__init__.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/auth/forms.py",
+      "name": "forms.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/auth/routes.py",
+      "name": "routes.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/blog/__init__.py",
+      "name": "__init__.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/blog/forms.py",
+      "name": "forms.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/blog/routes.py",
+      "name": "routes.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/main/__init__.py",
+      "name": "__init__.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/main/routes.py",
+      "name": "routes.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/models.py",
+      "name": "models.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/flask-app/config.py",
+      "name": "config.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/laravel-app/README.md",
+      "name": "README.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/ai_context.md",
+      "name": "ai_context.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/architecture.md",
+      "name": "architecture.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/cache.json",
+      "name": "cache.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/context/features/app.json",
+      "name": "app.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/context/flows/category.json",
+      "name": "category.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/context/flows/comment.json",
+      "name": "comment.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/context/flows/post.json",
+      "name": "post.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/context/flows/unnamed.json",
+      "name": "unnamed.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/conventions.md",
+      "name": "conventions.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/dependencies.json",
+      "name": "dependencies.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/files.json",
+      "name": "files.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/index-state.json",
+      "name": "index-state.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/modules.json",
+      "name": "modules.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/project.json",
+      "name": "project.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/repo-map.json",
+      "name": "repo-map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/repo_map.json",
+      "name": "repo_map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/repo_map.md",
+      "name": "repo_map.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/schema.json",
+      "name": "schema.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/summary.md",
+      "name": "summary.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/symbols.json",
+      "name": "symbols.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/tools.json",
+      "name": "tools.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/app/Http/Controllers/Api/CategoryController.php",
+      "name": "CategoryController.php",
+      "ext": "php"
+    },
+    {
+      "path": "test-projects/laravel-app/app/Http/Controllers/Api/CommentController.php",
+      "name": "CommentController.php",
+      "ext": "php"
+    },
+    {
+      "path": "test-projects/laravel-app/app/Http/Controllers/Api/PostController.php",
+      "name": "PostController.php",
+      "ext": "php"
+    },
+    {
+      "path": "test-projects/laravel-app/app/Http/Controllers/Controller.php",
+      "name": "Controller.php",
+      "ext": "php"
+    },
+    {
+      "path": "test-projects/laravel-app/app/Models/Category.php",
+      "name": "Category.php",
+      "ext": "php"
+    },
+    {
+      "path": "test-projects/laravel-app/app/Models/Comment.php",
+      "name": "Comment.php",
+      "ext": "php"
+    },
+    {
+      "path": "test-projects/laravel-app/app/Models/Post.php",
+      "name": "Post.php",
+      "ext": "php"
+    },
+    {
+      "path": "test-projects/laravel-app/app/Models/User.php",
+      "name": "User.php",
+      "ext": "php"
+    },
+    {
+      "path": "test-projects/laravel-app/bootstrap/app.php",
+      "name": "app.php",
+      "ext": "php"
+    },
+    {
+      "path": "test-projects/laravel-app/composer.json",
+      "name": "composer.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/routes/api.php",
+      "name": "api.php",
+      "ext": "php"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/ai_context.md",
+      "name": "ai_context.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/architecture.md",
+      "name": "architecture.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/cache.json",
+      "name": "cache.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/context/features/src.json",
+      "name": "src.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/context/flows/auth..json",
+      "name": "auth..json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/context/flows/auth.controller.json",
+      "name": "auth.controller.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/context/flows/auth.json",
+      "name": "auth.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/context/flows/users..json",
+      "name": "users..json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/context/flows/users.controller.json",
+      "name": "users.controller.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/context/flows/users.json",
+      "name": "users.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/conventions.md",
+      "name": "conventions.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/dependencies.json",
+      "name": "dependencies.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/files.json",
+      "name": "files.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/index-state.json",
+      "name": "index-state.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/modules.json",
+      "name": "modules.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/project.json",
+      "name": "project.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/repo-map.json",
+      "name": "repo-map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/repo_map.json",
+      "name": "repo_map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/repo_map.md",
+      "name": "repo_map.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/schema.json",
+      "name": "schema.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/summary.md",
+      "name": "summary.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/symbols.json",
+      "name": "symbols.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/tools.json",
+      "name": "tools.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/package.json",
+      "name": "package.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/src/app.module.ts",
+      "name": "app.module.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "test-projects/nestjs-backend/src/auth/auth.controller.ts",
+      "name": "auth.controller.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "test-projects/nestjs-backend/src/auth/auth.module.ts",
+      "name": "auth.module.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "test-projects/nestjs-backend/src/auth/auth.service.ts",
+      "name": "auth.service.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "test-projects/nestjs-backend/src/auth/dto/login.dto.ts",
+      "name": "login.dto.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "test-projects/nestjs-backend/src/auth/strategies/jwt.strategy.ts",
+      "name": "jwt.strategy.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "test-projects/nestjs-backend/src/main.ts",
+      "name": "main.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "test-projects/nestjs-backend/src/users/users.controller.ts",
+      "name": "users.controller.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "test-projects/nestjs-backend/src/users/users.module.ts",
+      "name": "users.module.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "test-projects/nestjs-backend/src/users/users.service.ts",
+      "name": "users.service.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "test-projects/nestjs-backend/tsconfig.json",
+      "name": "tsconfig.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/python-cli/__init__.py",
+      "name": "__init__.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/python-cli/ai/ai_context.md",
+      "name": "ai_context.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/python-cli/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/python-cli/ai/architecture.md",
+      "name": "architecture.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/python-cli/ai/cache.json",
+      "name": "cache.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/context/features/cli.json",
+      "name": "cli.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/context/flows/add_.json",
+      "name": "add_.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/context/flows/list_.json",
+      "name": "list_.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/context/flows/remove_.json",
+      "name": "remove_.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/conventions.md",
+      "name": "conventions.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/python-cli/ai/dependencies.json",
+      "name": "dependencies.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/python-cli/ai/files.json",
+      "name": "files.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/index-state.json",
+      "name": "index-state.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/modules.json",
+      "name": "modules.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/project.json",
+      "name": "project.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/repo-map.json",
+      "name": "repo-map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/repo_map.json",
+      "name": "repo_map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/repo_map.md",
+      "name": "repo_map.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/python-cli/ai/schema.json",
+      "name": "schema.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/summary.md",
+      "name": "summary.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/python-cli/ai/symbols.json",
+      "name": "symbols.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/python-cli/ai/tools.json",
+      "name": "tools.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/python-cli/cli/__init__.py",
+      "name": "__init__.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/python-cli/cli/add_command.py",
+      "name": "add_command.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/python-cli/cli/list_command.py",
+      "name": "list_command.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/python-cli/cli/remove_command.py",
+      "name": "remove_command.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/python-cli/main.py",
+      "name": "main.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/python-cli/models/__init__.py",
+      "name": "__init__.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/python-cli/models/task.py",
+      "name": "task.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/python-cli/models/task_repository.py",
+      "name": "task_repository.py",
+      "ext": "py"
+    },
+    {
+      "path": "test-projects/rails-app/README.md",
+      "name": "README.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/rails-app/ai/ai_context.md",
+      "name": "ai_context.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/rails-app/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/rails-app/ai/architecture.md",
+      "name": "architecture.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/rails-app/ai/cache.json",
+      "name": "cache.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/features/app.json",
+      "name": "app.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/features/config.json",
+      "name": "config.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/flows/application.json",
+      "name": "application.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/flows/application_.json",
+      "name": "application_.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/flows/comments.json",
+      "name": "comments.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/flows/comments_.json",
+      "name": "comments_.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/flows/posts.json",
+      "name": "posts.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/flows/posts_.json",
+      "name": "posts_.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/flows/routes.json",
+      "name": "routes.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/flows/users.json",
+      "name": "users.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/flows/users_.json",
+      "name": "users_.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/conventions.md",
+      "name": "conventions.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/rails-app/ai/dependencies.json",
+      "name": "dependencies.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/rails-app/ai/files.json",
+      "name": "files.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/index-state.json",
+      "name": "index-state.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/modules.json",
+      "name": "modules.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/project.json",
+      "name": "project.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/repo-map.json",
+      "name": "repo-map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/repo_map.json",
+      "name": "repo_map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/repo_map.md",
+      "name": "repo_map.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/rails-app/ai/schema.json",
+      "name": "schema.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/summary.md",
+      "name": "summary.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/rails-app/ai/symbols.json",
+      "name": "symbols.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/rails-app/ai/tools.json",
+      "name": "tools.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/rails-app/app/controllers/api/comments_controller.rb",
+      "name": "comments_controller.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/app/controllers/api/posts_controller.rb",
+      "name": "posts_controller.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/app/controllers/api/users_controller.rb",
+      "name": "users_controller.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/app/controllers/application_controller.rb",
+      "name": "application_controller.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/app/models/comment.rb",
+      "name": "comment.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/app/models/post.rb",
+      "name": "post.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/app/models/user.rb",
+      "name": "user.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/app/services/post_service.rb",
+      "name": "post_service.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/app/services/user_service.rb",
+      "name": "user_service.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/config/application.rb",
+      "name": "application.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/config/environment.rb",
+      "name": "environment.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/config/routes.rb",
+      "name": "routes.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "test-projects/react-app/ai/ai_context.md",
+      "name": "ai_context.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/react-app/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/react-app/ai/architecture.md",
+      "name": "architecture.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/react-app/ai/cache.json",
+      "name": "cache.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/context/features/src.json",
+      "name": "src.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/context/flows/UsersPage.json",
+      "name": "UsersPage.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/context/flows/dashboard.json",
+      "name": "dashboard.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/context/flows/login.json",
+      "name": "login.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/context/flows/users.json",
+      "name": "users.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/conventions.md",
+      "name": "conventions.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/react-app/ai/dependencies.json",
+      "name": "dependencies.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/react-app/ai/files.json",
+      "name": "files.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/index-state.json",
+      "name": "index-state.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/modules.json",
+      "name": "modules.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/project.json",
+      "name": "project.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/repo-map.json",
+      "name": "repo-map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/repo_map.json",
+      "name": "repo_map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/repo_map.md",
+      "name": "repo_map.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/react-app/ai/schema.json",
+      "name": "schema.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/summary.md",
+      "name": "summary.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/react-app/ai/symbols.json",
+      "name": "symbols.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/react-app/ai/tools.json",
+      "name": "tools.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/package.json",
+      "name": "package.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/react-app/src/App.tsx",
+      "name": "App.tsx",
+      "ext": "tsx"
+    },
+    {
+      "path": "test-projects/react-app/src/context/AuthContext.tsx",
+      "name": "AuthContext.tsx",
+      "ext": "tsx"
+    },
+    {
+      "path": "test-projects/react-app/src/hooks/useAuth.ts",
+      "name": "useAuth.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "test-projects/react-app/src/main.tsx",
+      "name": "main.tsx",
+      "ext": "tsx"
+    },
+    {
+      "path": "test-projects/react-app/src/pages/DashboardPage.tsx",
+      "name": "DashboardPage.tsx",
+      "ext": "tsx"
+    },
+    {
+      "path": "test-projects/react-app/src/pages/LoginPage.tsx",
+      "name": "LoginPage.tsx",
+      "ext": "tsx"
+    },
+    {
+      "path": "test-projects/react-app/src/pages/UsersPage.tsx",
+      "name": "UsersPage.tsx",
+      "ext": "tsx"
+    },
+    {
+      "path": "test-projects/react-app/src/services/userService.ts",
+      "name": "userService.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/ai_context.md",
+      "name": "ai_context.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/architecture.md",
+      "name": "architecture.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/cache.json",
+      "name": "cache.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/context/features/force-app.json",
+      "name": "force-app.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/context/flows/account.json",
+      "name": "account.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/context/flows/opportunity.json",
+      "name": "opportunity.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/conventions.md",
+      "name": "conventions.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/dependencies.json",
+      "name": "dependencies.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/files.json",
+      "name": "files.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/index-state.json",
+      "name": "index-state.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/modules.json",
+      "name": "modules.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/project.json",
+      "name": "project.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/repo-map.json",
+      "name": "repo-map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/repo_map.json",
+      "name": "repo_map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/repo_map.md",
+      "name": "repo_map.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/schema.json",
+      "name": "schema.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/summary.md",
+      "name": "summary.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/symbols.json",
+      "name": "symbols.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/tools.json",
+      "name": "tools.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/force-app/main/default/classes/AccountController.cls",
+      "name": "AccountController.cls",
+      "ext": "cls"
+    },
+    {
+      "path": "test-projects/salesforce-cli/force-app/main/default/classes/OpportunityController.cls",
+      "name": "OpportunityController.cls",
+      "ext": "cls"
+    },
+    {
+      "path": "test-projects/salesforce-cli/force-app/main/default/triggers/AccountTrigger.trigger",
+      "name": "AccountTrigger.trigger",
+      "ext": "trigger"
+    },
+    {
+      "path": "test-projects/salesforce-cli/sfdx-project.json",
+      "name": "sfdx-project.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/README.md",
+      "name": "README.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/ai_context.md",
+      "name": "ai_context.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/architecture.md",
+      "name": "architecture.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/cache.json",
+      "name": "cache.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/context/features/src.json",
+      "name": "src.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/context/flows/PostController.json",
+      "name": "PostController.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/context/flows/UserController.json",
+      "name": "UserController.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/context/flows/comment.json",
+      "name": "comment.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/context/flows/post.json",
+      "name": "post.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/context/flows/user.json",
+      "name": "user.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/conventions.md",
+      "name": "conventions.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/dependencies.json",
+      "name": "dependencies.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/files.json",
+      "name": "files.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/index-state.json",
+      "name": "index-state.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/modules.json",
+      "name": "modules.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/project.json",
+      "name": "project.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/repo-map.json",
+      "name": "repo-map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/repo_map.json",
+      "name": "repo_map.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/repo_map.md",
+      "name": "repo_map.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/schema.json",
+      "name": "schema.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/summary.md",
+      "name": "summary.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/symbols.json",
+      "name": "symbols.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "ext": "md"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/tools.json",
+      "name": "tools.json",
+      "ext": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/DemoApplication.java",
+      "name": "DemoApplication.java",
+      "ext": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/CommentController.java",
+      "name": "CommentController.java",
+      "ext": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/PostController.java",
+      "name": "PostController.java",
+      "ext": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/UserController.java",
+      "name": "UserController.java",
+      "ext": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/models/Comment.java",
+      "name": "Comment.java",
+      "ext": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/models/Post.java",
+      "name": "Post.java",
+      "ext": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/models/User.java",
+      "name": "User.java",
+      "ext": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/CommentRepository.java",
+      "name": "CommentRepository.java",
+      "ext": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/PostRepository.java",
+      "name": "PostRepository.java",
+      "ext": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/UserRepository.java",
+      "name": "UserRepository.java",
+      "ext": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/services/PostService.java",
+      "name": "PostService.java",
+      "ext": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/services/UserService.java",
+      "name": "UserService.java",
+      "ext": "java"
+    },
+    {
+      "path": "tests/adapters.test.ts",
+      "name": "adapters.test.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "tests/e2e/README.md",
+      "name": "README.md",
+      "ext": "md"
+    },
+    {
+      "path": "tests/gitAnalyzer.test.ts",
+      "name": "gitAnalyzer.test.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "tests/incrementalAnalyzer.test.ts",
+      "name": "incrementalAnalyzer.test.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "tests/knowledgeGraph.test.ts",
+      "name": "knowledgeGraph.test.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "tests/lazyAnalyzer.test.ts",
+      "name": "lazyAnalyzer.test.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "tests/schema.test.ts",
+      "name": "schema.test.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "tests/semanticContexts.test.ts",
+      "name": "semanticContexts.test.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "tsconfig.json",
+      "name": "tsconfig.json",
+      "ext": "json"
+    }
+  ]
 }

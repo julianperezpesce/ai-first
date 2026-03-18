@@ -5,21 +5,22 @@
 
 ## Layers Identified
 - Infrastructure
+- Tests
 - Config
 
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
 | `.netlify` | Contains 1 files |
+| `ANALISIS_COMPLETO.md` | Contains 0 files |
+| `ANALISIS_MEJORAS.md` | Contains 0 files |
+| `BUGS.md` | Contains 0 files |
 | `CHANGELOG.md` | Contains 0 files |
 | `CONTRIBUTING.md` | Contains 0 files |
 | `FLOW.md` | Contains 0 files |
+| `PLAN_MEJORAS.md` | Contains 0 files |
 | `README.es.md` | Contains 0 files |
 | `README.md` | Contains 0 files |
-| `ai` | Contains 23 files |
-| `docs` | Contains 15 files |
-| `examples` | Contains 4 files |
-| `package-lock.json` | Contains 0 files |
 
 
 ## Module Details
@@ -27,6 +28,21 @@
 ### .netlify
 - **Path**: `.netlify`
 - **Responsibility**: Contains 1 files
+
+
+### ANALISIS_COMPLETO.md
+- **Path**: `ANALISIS_COMPLETO.md`
+- **Responsibility**: Contains 0 files
+
+
+### ANALISIS_MEJORAS.md
+- **Path**: `ANALISIS_MEJORAS.md`
+- **Responsibility**: Contains 0 files
+
+
+### BUGS.md
+- **Path**: `BUGS.md`
+- **Responsibility**: Contains 0 files
 
 
 ### CHANGELOG.md
@@ -44,6 +60,11 @@
 - **Responsibility**: Contains 0 files
 
 
+### PLAN_MEJORAS.md
+- **Path**: `PLAN_MEJORAS.md`
+- **Responsibility**: Contains 0 files
+
+
 ### README.es.md
 - **Path**: `README.es.md`
 - **Responsibility**: Contains 0 files
@@ -54,14 +75,39 @@
 - **Responsibility**: Contains 0 files
 
 
+### TEST_RESULTS.md
+- **Path**: `TEST_RESULTS.md`
+- **Responsibility**: Testing utilities and mocks
+
+
+### TEST_RESULTS_COMPARATIVE.md
+- **Path**: `TEST_RESULTS_COMPARATIVE.md`
+- **Responsibility**: Testing utilities and mocks
+
+
+### TEST_RESULTS_COMPLETE.md
+- **Path**: `TEST_RESULTS_COMPLETE.md`
+- **Responsibility**: Testing utilities and mocks
+
+
+### TEST_RESULTS_COMPREHENSIVE.md
+- **Path**: `TEST_RESULTS_COMPREHENSIVE.md`
+- **Responsibility**: Testing utilities and mocks
+
+
+### TEST_RESULTS_PHASE1.md
+- **Path**: `TEST_RESULTS_PHASE1.md`
+- **Responsibility**: Testing utilities and mocks
+
+
 ### ai
 - **Path**: `ai`
-- **Responsibility**: Contains 23 files
+- **Responsibility**: Contains 50 files
 
 
 ### docs
 - **Path**: `docs`
-- **Responsibility**: Contains 15 files
+- **Responsibility**: Contains 32 files
 
 
 ### examples
@@ -77,16 +123,6 @@
 ### package.json
 - **Path**: `package.json`
 - **Responsibility**: Contains 0 files
-
-
-### src
-- **Path**: `src`
-- **Responsibility**: Contains 29 files
-
-
-### tsconfig.json
-- **Path**: `tsconfig.json`
-- **Responsibility**: Configuration management
 
 
 

@@ -1,0 +1,9 @@
+{
+  "name": "dashboard",
+  "entrypoint": "test-projects/react-app/src/pages/DashboardPage.tsx",
+  "files": [
+    "test-projects/react-app/src/pages/DashboardPage.tsx"
+  ],
+  "depth": 0,
+  "layers": []
+}
