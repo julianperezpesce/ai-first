@@ -6,18 +6,20 @@
 
 ## Guidelines
 
-- Language: Use JSON, Markdown, TypeScript, CSS
+- Language: Use JSON, Markdown, TypeScript, CSS, Python, JavaScript, PHP, Ruby, TypeScript (React), Java
 - Frameworks: Vue.js, Nuxt.js, TypeScript
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
+- Test files: *.test.{ts,js}
 - Source directory: src/
+- Test directory: test/
 - Main entry: package.json#scripts.dev
 - Dev command: npm run dev
 - Build command: npm run build
 
 ## Patterns
 
-- Layer structure: infrastructure → config
+- Layer structure: infrastructure → tests → config
 
 ## Constraints
 
@@ -29,7 +31,7 @@
 
 | Category | Value |
 |----------|-------|
-| Language | JSON, Markdown, TypeScript, CSS |
+| Language | JSON, Markdown, TypeScript, CSS, Python, JavaScript, PHP, Ruby, TypeScript (React), Java |
 | Framework | Vue.js, Nuxt.js, TypeScript |
 | Architecture | Flat / Simple Structure |
 | Naming | PascalCase |

@@ -1,0 +1,9 @@
+{
+  "name": "ai-first",
+  "entrypoint": "src/commands/ai-first.ts",
+  "files": [
+    "src/commands/ai-first.ts"
+  ],
+  "depth": 0,
+  "layers": []
+}

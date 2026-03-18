@@ -1,6 +1,267 @@
 {
   "nodes": [
     {
+      "id": "commands",
+      "type": "feature",
+      "label": "commands",
+      "metadata": {
+        "path": "src/commands",
+        "fileCount": 3
+      }
+    },
+    {
+      "id": "src",
+      "type": "feature",
+      "label": "src",
+      "metadata": {
+        "path": "src",
+        "fileCount": 49
+      }
+    },
+    {
+      "id": "test-projects",
+      "type": "feature",
+      "label": "test-projects",
+      "metadata": {
+        "path": "test-projects",
+        "fileCount": 50
+      }
+    },
+    {
+      "id": "account",
+      "type": "flow",
+      "label": "account",
+      "metadata": {
+        "entrypoint": "test-projects/salesforce-cli/force-app/main/default/classes/AccountController.cls",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "add_",
+      "type": "flow",
+      "label": "add_",
+      "metadata": {
+        "entrypoint": "test-projects/python-cli/cli/add_command.py",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "ai-first",
+      "type": "flow",
+      "label": "ai-first",
+      "metadata": {
+        "entrypoint": "src/commands/ai-first.ts",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "api",
+      "type": "flow",
+      "label": "api",
+      "metadata": {
+        "entrypoint": "test-projects/laravel-app/routes/api.php",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "auth.",
+      "type": "flow",
+      "label": "auth.",
+      "metadata": {
+        "entrypoint": "test-projects/nestjs-backend/src/auth/auth.controller.ts",
+        "fileCount": 2
+      }
+    },
+    {
+      "id": "auth",
+      "type": "flow",
+      "label": "auth",
+      "metadata": {
+        "entrypoint": "test-projects/express-api/controllers/authController.js",
+        "fileCount": 3
+      }
+    },
+    {
+      "id": "category",
+      "type": "flow",
+      "label": "category",
+      "metadata": {
+        "entrypoint": "test-projects/laravel-app/app/Http/Controllers/Api/CategoryController.php",
+        "fileCount": 2
+      }
+    },
+    {
+      "id": "comment",
+      "type": "flow",
+      "label": "comment",
+      "metadata": {
+        "entrypoint": "test-projects/laravel-app/app/Http/Controllers/Api/CommentController.php",
+        "fileCount": 6
+      }
+    },
+    {
+      "id": "comments_",
+      "type": "flow",
+      "label": "comments_",
+      "metadata": {
+        "entrypoint": "test-projects/rails-app/app/controllers/api/comments_controller.rb",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "dashboard",
+      "type": "flow",
+      "label": "dashboard",
+      "metadata": {
+        "entrypoint": "test-projects/react-app/src/pages/DashboardPage.tsx",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "doctor",
+      "type": "flow",
+      "label": "doctor",
+      "metadata": {
+        "entrypoint": "src/commands/doctor.ts",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "explore",
+      "type": "flow",
+      "label": "explore",
+      "metadata": {
+        "entrypoint": "src/commands/explore.ts",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "list_",
+      "type": "flow",
+      "label": "list_",
+      "metadata": {
+        "entrypoint": "test-projects/python-cli/cli/list_command.py",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "login",
+      "type": "flow",
+      "label": "login",
+      "metadata": {
+        "entrypoint": "test-projects/react-app/src/pages/LoginPage.tsx",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "opportunity",
+      "type": "flow",
+      "label": "opportunity",
+      "metadata": {
+        "entrypoint": "test-projects/salesforce-cli/force-app/main/default/classes/OpportunityController.cls",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "post",
+      "type": "flow",
+      "label": "post",
+      "metadata": {
+        "entrypoint": "test-projects/laravel-app/app/Http/Controllers/Api/PostController.php",
+        "fileCount": 7
+      }
+    },
+    {
+      "id": "posts_",
+      "type": "flow",
+      "label": "posts_",
+      "metadata": {
+        "entrypoint": "test-projects/rails-app/app/controllers/api/posts_controller.rb",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "remove_",
+      "type": "flow",
+      "label": "remove_",
+      "metadata": {
+        "entrypoint": "test-projects/python-cli/cli/remove_command.py",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "routes",
+      "type": "flow",
+      "label": "routes",
+      "metadata": {
+        "entrypoint": "test-projects/flask-app/app/api/routes.py",
+        "fileCount": 5
+      }
+    },
+    {
+      "id": "routes.py",
+      "type": "flow",
+      "label": "routes.py",
+      "metadata": {
+        "entrypoint": "test-projects/flask-app/app/api/routes.py",
+        "fileCount": 8
+      }
+    },
+    {
+      "id": "user",
+      "type": "flow",
+      "label": "user",
+      "metadata": {
+        "entrypoint": "test-projects/express-api/controllers/userController.js",
+        "fileCount": 10
+      }
+    },
+    {
+      "id": "users.",
+      "type": "flow",
+      "label": "users.",
+      "metadata": {
+        "entrypoint": "test-projects/nestjs-backend/src/users/users.controller.ts",
+        "fileCount": 2
+      }
+    },
+    {
+      "id": "users",
+      "type": "flow",
+      "label": "users",
+      "metadata": {
+        "entrypoint": "test-projects/react-app/src/pages/UsersPage.tsx",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "users_",
+      "type": "flow",
+      "label": "users_",
+      "metadata": {
+        "entrypoint": "test-projects/rails-app/app/controllers/api/users_controller.rb",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "views",
+      "type": "flow",
+      "label": "views",
+      "metadata": {
+        "entrypoint": "test-projects/django-app/blog/views.py",
+        "fileCount": 2
+      }
+    },
+    {
+      "id": "views.py",
+      "type": "flow",
+      "label": "views.py",
+      "metadata": {
+        "entrypoint": "test-projects/django-app/blog/views.py",
+        "fileCount": 3
+      }
+    },
+    {
       "id": "commit:CHANGELOG.md",
       "type": "commit",
       "label": "CHANGELOG.md",
@@ -452,6 +713,416 @@
     }
   ],
   "edges": [
+    {
+      "from": "commands",
+      "to": "ai-first",
+      "type": "contains"
+    },
+    {
+      "from": "src",
+      "to": "ai-first",
+      "type": "contains"
+    },
+    {
+      "from": "test-projects",
+      "to": "auth",
+      "type": "contains"
+    },
+    {
+      "from": "test-projects",
+      "to": "category",
+      "type": "contains"
+    },
+    {
+      "from": "test-projects",
+      "to": "comment",
+      "type": "contains"
+    },
+    {
+      "from": "commands",
+      "to": "doctor",
+      "type": "contains"
+    },
+    {
+      "from": "src",
+      "to": "doctor",
+      "type": "contains"
+    },
+    {
+      "from": "commands",
+      "to": "explore",
+      "type": "contains"
+    },
+    {
+      "from": "src",
+      "to": "explore",
+      "type": "contains"
+    },
+    {
+      "from": "test-projects",
+      "to": "post",
+      "type": "contains"
+    },
+    {
+      "from": "test-projects",
+      "to": "routes",
+      "type": "contains"
+    },
+    {
+      "from": "src",
+      "to": "routes.py",
+      "type": "contains"
+    },
+    {
+      "from": "test-projects",
+      "to": "routes.py",
+      "type": "contains"
+    },
+    {
+      "from": "test-projects",
+      "to": "user",
+      "type": "contains"
+    },
+    {
+      "from": "test-projects",
+      "to": "views",
+      "type": "contains"
+    },
+    {
+      "from": "src",
+      "to": "views.py",
+      "type": "contains"
+    },
+    {
+      "from": "test-projects",
+      "to": "views.py",
+      "type": "contains"
+    },
+    {
+      "from": "account",
+      "to": "test-projects/salesforce-cli/force-app/main/default/classes/AccountController.cls",
+      "type": "implements"
+    },
+    {
+      "from": "add_",
+      "to": "test-projects/python-cli/cli/add_command.py",
+      "type": "implements"
+    },
+    {
+      "from": "ai-first",
+      "to": "src/commands/ai-first.ts",
+      "type": "implements"
+    },
+    {
+      "from": "api",
+      "to": "test-projects/laravel-app/routes/api.php",
+      "type": "implements"
+    },
+    {
+      "from": "auth.",
+      "to": "test-projects/nestjs-backend/src/auth/auth.controller.ts",
+      "type": "implements"
+    },
+    {
+      "from": "auth.",
+      "to": "test-projects/nestjs-backend/src/auth/auth.service.ts",
+      "type": "implements"
+    },
+    {
+      "from": "auth",
+      "to": "test-projects/express-api/controllers/authController.js",
+      "type": "implements"
+    },
+    {
+      "from": "auth",
+      "to": "test-projects/express-api/services/authService.js",
+      "type": "implements"
+    },
+    {
+      "from": "auth",
+      "to": "test-projects/fastapi-app/app/routers/auth.py",
+      "type": "implements"
+    },
+    {
+      "from": "category",
+      "to": "test-projects/laravel-app/app/Http/Controllers/Api/CategoryController.php",
+      "type": "implements"
+    },
+    {
+      "from": "category",
+      "to": "test-projects/laravel-app/app/Models/Category.php",
+      "type": "implements"
+    },
+    {
+      "from": "comment",
+      "to": "test-projects/laravel-app/app/Http/Controllers/Api/CommentController.php",
+      "type": "implements"
+    },
+    {
+      "from": "comment",
+      "to": "test-projects/laravel-app/app/Models/Comment.php",
+      "type": "implements"
+    },
+    {
+      "from": "comment",
+      "to": "test-projects/rails-app/app/models/comment.rb",
+      "type": "implements"
+    },
+    {
+      "from": "comment",
+      "to": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/CommentController.java",
+      "type": "implements"
+    },
+    {
+      "from": "comment",
+      "to": "test-projects/spring-boot-app/src/main/java/com/example/demo/models/Comment.java",
+      "type": "implements"
+    },
+    {
+      "from": "comment",
+      "to": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/CommentRepository.java",
+      "type": "implements"
+    },
+    {
+      "from": "comments_",
+      "to": "test-projects/rails-app/app/controllers/api/comments_controller.rb",
+      "type": "implements"
+    },
+    {
+      "from": "dashboard",
+      "to": "test-projects/react-app/src/pages/DashboardPage.tsx",
+      "type": "implements"
+    },
+    {
+      "from": "doctor",
+      "to": "src/commands/doctor.ts",
+      "type": "implements"
+    },
+    {
+      "from": "explore",
+      "to": "src/commands/explore.ts",
+      "type": "implements"
+    },
+    {
+      "from": "list_",
+      "to": "test-projects/python-cli/cli/list_command.py",
+      "type": "implements"
+    },
+    {
+      "from": "login",
+      "to": "test-projects/react-app/src/pages/LoginPage.tsx",
+      "type": "implements"
+    },
+    {
+      "from": "opportunity",
+      "to": "test-projects/salesforce-cli/force-app/main/default/classes/OpportunityController.cls",
+      "type": "implements"
+    },
+    {
+      "from": "post",
+      "to": "test-projects/laravel-app/app/Http/Controllers/Api/PostController.php",
+      "type": "implements"
+    },
+    {
+      "from": "post",
+      "to": "test-projects/laravel-app/app/Models/Post.php",
+      "type": "implements"
+    },
+    {
+      "from": "post",
+      "to": "test-projects/rails-app/app/models/post.rb",
+      "type": "implements"
+    },
+    {
+      "from": "post",
+      "to": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/PostController.java",
+      "type": "implements"
+    },
+    {
+      "from": "post",
+      "to": "test-projects/spring-boot-app/src/main/java/com/example/demo/models/Post.java",
+      "type": "implements"
+    },
+    {
+      "from": "post",
+      "to": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/PostRepository.java",
+      "type": "implements"
+    },
+    {
+      "from": "post",
+      "to": "test-projects/spring-boot-app/src/main/java/com/example/demo/services/PostService.java",
+      "type": "implements"
+    },
+    {
+      "from": "posts_",
+      "to": "test-projects/rails-app/app/controllers/api/posts_controller.rb",
+      "type": "implements"
+    },
+    {
+      "from": "remove_",
+      "to": "test-projects/python-cli/cli/remove_command.py",
+      "type": "implements"
+    },
+    {
+      "from": "routes",
+      "to": "test-projects/flask-app/app/api/routes.py",
+      "type": "implements"
+    },
+    {
+      "from": "routes",
+      "to": "test-projects/flask-app/app/auth/routes.py",
+      "type": "implements"
+    },
+    {
+      "from": "routes",
+      "to": "test-projects/flask-app/app/blog/routes.py",
+      "type": "implements"
+    },
+    {
+      "from": "routes",
+      "to": "test-projects/flask-app/app/main/routes.py",
+      "type": "implements"
+    },
+    {
+      "from": "routes",
+      "to": "test-projects/rails-app/config/routes.rb",
+      "type": "implements"
+    },
+    {
+      "from": "routes.py",
+      "to": "test-projects/flask-app/app/api/routes.py",
+      "type": "implements"
+    },
+    {
+      "from": "routes.py",
+      "to": "tests/lazyAnalyzer.test.ts",
+      "type": "implements"
+    },
+    {
+      "from": "routes.py",
+      "to": "src/core/lazyAnalyzer.ts",
+      "type": "implements"
+    },
+    {
+      "from": "routes.py",
+      "to": "src/core/semanticContexts.ts",
+      "type": "implements"
+    },
+    {
+      "from": "routes.py",
+      "to": "tests/gitAnalyzer.test.ts",
+      "type": "implements"
+    },
+    {
+      "from": "routes.py",
+      "to": "src/core/symbolGraph.ts",
+      "type": "implements"
+    },
+    {
+      "from": "routes.py",
+      "to": "src/core/moduleGraph.ts",
+      "type": "implements"
+    },
+    {
+      "from": "routes.py",
+      "to": "src/core/knowledgeGraphBuilder.ts",
+      "type": "implements"
+    },
+    {
+      "from": "user",
+      "to": "test-projects/express-api/controllers/userController.js",
+      "type": "implements"
+    },
+    {
+      "from": "user",
+      "to": "test-projects/express-api/models/userRepository.js",
+      "type": "implements"
+    },
+    {
+      "from": "user",
+      "to": "test-projects/express-api/services/userService.js",
+      "type": "implements"
+    },
+    {
+      "from": "user",
+      "to": "test-projects/laravel-app/app/Models/User.php",
+      "type": "implements"
+    },
+    {
+      "from": "user",
+      "to": "test-projects/rails-app/app/models/user.rb",
+      "type": "implements"
+    },
+    {
+      "from": "user",
+      "to": "test-projects/react-app/src/services/userService.ts",
+      "type": "implements"
+    },
+    {
+      "from": "user",
+      "to": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/UserController.java",
+      "type": "implements"
+    },
+    {
+      "from": "user",
+      "to": "test-projects/spring-boot-app/src/main/java/com/example/demo/models/User.java",
+      "type": "implements"
+    },
+    {
+      "from": "user",
+      "to": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/UserRepository.java",
+      "type": "implements"
+    },
+    {
+      "from": "user",
+      "to": "test-projects/spring-boot-app/src/main/java/com/example/demo/services/UserService.java",
+      "type": "implements"
+    },
+    {
+      "from": "users.",
+      "to": "test-projects/nestjs-backend/src/users/users.controller.ts",
+      "type": "implements"
+    },
+    {
+      "from": "users.",
+      "to": "test-projects/nestjs-backend/src/users/users.service.ts",
+      "type": "implements"
+    },
+    {
+      "from": "users",
+      "to": "test-projects/react-app/src/pages/UsersPage.tsx",
+      "type": "implements"
+    },
+    {
+      "from": "users_",
+      "to": "test-projects/rails-app/app/controllers/api/users_controller.rb",
+      "type": "implements"
+    },
+    {
+      "from": "views",
+      "to": "test-projects/django-app/blog/views.py",
+      "type": "implements"
+    },
+    {
+      "from": "views",
+      "to": "test-projects/django-app/users/views.py",
+      "type": "implements"
+    },
+    {
+      "from": "views.py",
+      "to": "test-projects/django-app/blog/views.py",
+      "type": "implements"
+    },
+    {
+      "from": "views.py",
+      "to": "test-projects/react-app/src/services/userService.ts",
+      "type": "implements"
+    },
+    {
+      "from": "views.py",
+      "to": "src/analyzers/entrypoints.ts",
+      "type": "implements"
+    },
     {
       "from": "commit:CHANGELOG.md",
       "to": "CHANGELOG.md",
@@ -43629,7 +44300,7 @@
     }
   ],
   "metadata": {
-    "generated": "2026-03-11T19:50:01.995Z",
+    "generated": "2026-03-18T19:21:24.773Z",
     "sources": [
       "features",
       "flows",
@@ -43637,7 +44308,7 @@
       "symbols",
       "dependencies"
     ],
-    "nodeCount": 50,
-    "edgeCount": 8635
+    "nodeCount": 79,
+    "edgeCount": 8717
   }
 }

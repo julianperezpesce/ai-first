@@ -1,28 +1,20 @@
 {
-  "repo": "ai-first",
+  "repo": "Spring Boot REST API Blog Application",
   "folders": {
-    ".github": "GitHub configuration",
-    "docs": "Documentation",
-    "examples": "Example code",
     "src": "Source code"
   },
   "files": {
-    "src/analyzers/aiRules.ts": "/** | functions: generateAIRules, generateAIRulesFile",
-    "src/analyzers/architecture.ts": "/** | functions: analyzeArchitecture, detectPatterns, detectLayers",
-    "src/analyzers/conventions.ts": "functions: detectConventions, detectNamingConventions, detectStructureConventions | interfaces: interface Conventions, interface NamingConventions, interface StructureConventions",
-    "src/analyzers/dependencies.ts": "/** | functions: analyzeDependencies, parseFileForDependencies, parseJavaScriptImports",
-    "src/analyzers/entrypoints.ts": "functions: discoverEntrypoints, getScriptType, generateEntrypointsFile | interface: interface Entrypoint",
-    "src/analyzers/symbols.ts": "/** | classes: class Name, class Name, class _",
-    "src/analyzers/techStack.ts": "/** | functions: detectTechStack, detectLanguages, detectFrameworks",
-    "src/commands/ai-first.ts": "/** | functions: to, runAIFirst, generateRepoMapJson",
-    "src/core/aiContextGenerator.ts": "/** | classes: class Name, class Name, class Name",
-    "src/core/contextGenerator.ts": "/** | functions: getApiKeyFromConfig, naming, generateAIContext",
-    "src/core/hierarchyGenerator.ts": "/** | functions: detectRepoPurpose, getFolderDescription, summarizeFile",
-    "src/core/indexer.ts": "/** | classes: class for, class IncrementalIndexer",
-    "src/core/repoMapper.ts": "/** | functions: generateRepoMap, generateCompactRepoMap, buildTree",
-    "src/core/repoScanner.ts": "/** | functions: scanRepo, getExtension, groupByExtension",
-    "src/index.ts": "entry point",
-    "src/types/sql.js.d.ts": "function: initSqlJs | interfaces: interface Database, interface QueryExecResult, interface SqlJsStatic",
-    "src/utils/fileUtils.ts": "/** | functions: getAllFiles, walk, ensureDir"
+    "src/main/java/com/example/demo/DemoApplication.java": "class: class DemoApplication",
+    "src/main/java/com/example/demo/controllers/CommentController.java": "class: class CommentController",
+    "src/main/java/com/example/demo/controllers/PostController.java": "class: class PostController",
+    "src/main/java/com/example/demo/controllers/UserController.java": "class: class UserController",
+    "src/main/java/com/example/demo/models/Comment.java": "class: class Comment",
+    "src/main/java/com/example/demo/models/Post.java": "class: class Post",
+    "src/main/java/com/example/demo/models/User.java": "class: class User",
+    "src/main/java/com/example/demo/repositories/CommentRepository.java": "interface: interface CommentRepository",
+    "src/main/java/com/example/demo/repositories/PostRepository.java": "interface: interface PostRepository",
+    "src/main/java/com/example/demo/repositories/UserRepository.java": "interface: interface UserRepository",
+    "src/main/java/com/example/demo/services/PostService.java": "class: class PostService",
+    "src/main/java/com/example/demo/services/UserService.java": "class: class UserService"
   }
 }

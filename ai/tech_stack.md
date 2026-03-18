@@ -1,16 +1,22 @@
 # Technology Stack
 
-**Languages**: JSON, Markdown, TypeScript, CSS
+**Languages**: JSON, Markdown, TypeScript, CSS, Python, JavaScript, PHP, Ruby, TypeScript (React), Java
 
 **Frameworks**: Vue.js, Nuxt.js, TypeScript
 
-**Package Managers**: npm
+**Package Managers**: npm, Composer
 
 ## Languages
 - JSON
 - Markdown
 - TypeScript
 - CSS
+- Python
+- JavaScript
+- PHP
+- Ruby
+- TypeScript (React)
+- Java
 
 ## Frameworks
 - Vue.js
@@ -25,6 +31,7 @@
 
 ## Package Managers
 - npm
+- Composer
 
 ## Testing
 - None detected
