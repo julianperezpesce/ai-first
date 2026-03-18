@@ -351,62 +351,10 @@ ai-first explore src
 ```
 
 The explore command generates a module dependency graph based on imports.
-QB|---
-QB|
-QB|## 📦 Context Control Packs (CCP)
-QB|
-QB|CCP (Context Control Packs) allow you to create reusable, task-specific contexts for different AI workflows.
-QB|
-QB|### How It Works
-QB|
-QB|1. **Generate Context Modules**: `ai-first init` creates context modules in `ai/context/`
-QB|2. **Create a CCP**: Define which modules to include for a specific task
-QB|3. **Use in AI**: Reference the CCP when working with AI agents
-QB|
-QB|### CCP Commands
-QB|
-QB|```bash
-QB|# Create a new CCP with specific context modules
-QB|ai-first ccp create auth-task --include repo,auth,api --description "Authentication feature work"
-QB|
-QB|# List all available CCPs
-QB|ai-first ccp list
-QB|
-QB|# Show CCP details
-QB|ai-first ccp show auth-task
-QB|```
-QB|
-QB|### CCP Structure
-QB|
-QB|```
-QB|ai/
-QB|├── context/           # Context modules (auto-generated)
-QB|│   ├── repo.json      # Base repository context
-QB|│   ├── auth.json      # Auth feature context
-QB|│   └── <feature>.json
-QB|│
-QB|└── ccp/              # CCP definitions
-QB|    └── <name>/
-QB|        └── context.json
-QB|```
-QB|
-QB|### Example CCP (context.json)
-QB|
-QB|```json
-QB|{
-QB|  "task": "auth-feature",
-QB|  "description": "Work on authentication feature",
-QB|  "includes": [
-QB|    "../../context/repo.json",
-QB|    "../../context/auth.json",
-QB|    "../../context/api.json"
-QB|  ]
-QB|}
-QB|```
-QB|
-QB|Use case: Create task-specific contexts like `"fix-bug"`, `"add-feature"`, `"refactor"`, etc.
-QB|
-QB|---
+
+---
+
+## 📦 Context Control Packs (CCP)
 QB|
 ---
 
@@ -419,7 +367,14 @@ For large repositories (>2000 files), semantic indexing is automatically enabled
 ai-first index --semantic
 ```
 
-NP|---
+For large repositories (>2000 files), semantic indexing is automatically enabled:
+
+```bash
+# Force semantic indexing
+ai-first index --semantic
+```
+
+---
 
 ## 🎯 Semantic Contexts (Features & Flows)
 
@@ -498,37 +453,41 @@ Flows represent business execution chains starting from entrypoints.
 | React | JavaScript | `test-projects/react-app` |
 | Python CLI | Python | `test-projects/python-cli` |
 | Salesforce DX | Apex | `test-projects/salesforce-cli` |
-HM|
-XZ|ai-first automatically detects and indexes Android/Kotlin projects:
-HM|
-RV|- **Language Detection**: Kotlin (.kt files)
+
+ai-first automatically detects and indexes Android/Kotlin projects:
+
+- **Language Detection**: Kotlin (.kt files)
 - **Framework Detection**: Android (via build.gradle, AndroidManifest.xml)
 - **Dependency Parsing**: Gradle dependencies (implementation, api, compile)
 - **Entry Points**: Activities, Services, BroadcastReceivers from AndroidManifest.xml
 - **Resources**: Indexes res/layout, res/drawable, res/values
 - **Multi-module**: Detects Gradle modules from settings.gradle
-HM|
-XZ|### Generated Files for Android Projects
-HM|
-XZ|- `ai/tech_stack.md` - Shows Android framework with SDK versions
+
+### Generated Files for Android Projects
+
+- `ai/tech_stack.md` - Shows Android framework with SDK versions
 - `ai/dependencies.json` - Gradle dependencies with group:artifact:version
 - `ai/entrypoints.md` - Android activities, services, permissions
 - `ai/android-resources.json` - Layouts, drawables, values (if res/ exists)
 - `ai/gradle-modules.json` - Multi-module structure (if settings.gradle exists)
-HM|
-NM|---
 
 ---
 
 ## 📋 Roadmap
 
-### Phase 2 (In Progress)
-- [ ] Enhanced semantic indexing
-- [ ] Plugin system for custom analyzers
+### Phase 1 ✅ (Completed)
+- Testing infrastructure with 11 test projects
+
+### Phase 2 ✅ (Completed)
+- Code quality fixes: symbol extraction, flow name sanitization
+- PHP and Ruby parser support added
+- All 11 adapters now working (100% coverage)
 
 ### Phase 3 (Planned)
-- [x] PHP support (Laravel test project)
-- [x] Ruby support (Rails test project)
+- [ ] Enhanced semantic indexing
+- [ ] Plugin system for custom analyzers
+- [ ] PHP support (Laravel test project)
+- [ ] Ruby support (Rails test project)
 - [ ] Scala support
 - [ ] Configuration file support (`ai-first.config.json`)
 - [ ] Custom rules/plugins system
