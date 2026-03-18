@@ -20,19 +20,36 @@
 
 ---
 
-#### Bug 2: Relaciones de símbolos muestran 0
-**Estado**: ✅ Corregido  
+#### Bug 2: Relaciones de símbolos (Parcial - Limitación conocida)
+**Estado**: ⚠️ Parcialmente corregido - Limitación arquitectónica  
 **Fecha**: 2026-03-17  
 **Severidad**: Media  
 
-**Descripción**: El comando `context` no mostraba todos los tipos de relaciones disponibles. Solo mostraba: Calls, Called by, Imports, Instantites. Pero el graph tiene más tipos: Exports, References.
+**Problema original**: El comando `context` no mostraba todos los tipos de relaciones disponibles.
 
-**Solución implementada**: Se modificó `src/commands/ai-first.ts` para mostrar también Exports y References.
+**Progreso**:
+- ✅ FIXED: Ahora muestra todos los tipos: Calls, Called by, Imports, Exports, References
+- ✅ FIXED: Imports/Exports se detectan correctamente (resuelto en Bug 11)
+- ⚠️ KNOWN LIMITATION: Calls y Called by siempre muestran 0
 
-**Nota**: Los problemas de detección de imports en Python y React se resolvieron en el Bug 11.
+**Limitación técnica**:
+El sistema actual NO puede detectar relaciones de llamada (calls/called_by) porque:
+1. Requiere análisis del AST (Abstract Syntax Tree) completo
+2. Necesita resolver scopes, imports, y referencias de variables
+3. El parser actual es basado en regex, no en AST real
+4. Para implementarlo completamente se necesitaría:
+   - Integrar TypeScript compiler API o Babel
+   - Reconstruir el grafo de llamadas completo
+   - Mapear cada llamada de función a su símbolo correspondiente
+   - **Esfuerzo estimado**: 3-5 días de desarrollo intensivo
 
-**Archivos modificados**:
-- `src/commands/ai-first.ts`
+**Impacto**: Bajo-Medio. Las relaciones imports/exports funcionan correctamente y son las más importantes para entender dependencias.
+
+**Decisión**: Aceptar como limitación conocida. El 80% del valor está en imports/exports que funcionan correctamente.
+
+**Archivos involucrados**:
+- `src/commands/ai-first.ts` (muestra los tipos)
+- `src/core/symbolGraph.ts` (necesitaría AST parser para calls)
 
 ---
 
@@ -229,3 +246,85 @@ node dist/commands/ai-first.js map --root test-projects/salesforce-cli
 **Verificación**:
 - python-cli: 7 imports, 14 exports ✅
 - react-app: 38 imports, 12 exports ✅
+
+---
+
+### Bug A: index command no genera index.db
+**Estado**: ✅ Corregido  
+**Fecha**: 2026-03-17  
+**Severidad**: Alta  
+
+**Descripción**: El comando `index` generaba el archivo `index.db` en el directorio actual en lugar de en el directorio especificado por `--root`.
+
+**Causa raíz**: El `outputPath` se inicializaba con `process.cwd()` antes de parsear los argumentos, y no se actualizaba cuando se especificaba `--root`.
+
+**Solución implementada**: Se modificó el comando `index` para que:
+1. El `outputPath` sea `null` inicialmente
+2. Se calcule el path por defecto basado en `rootDir` después de parsear todos los argumentos
+3. Solo si no se especificó `--output` explícitamente
+
+**Archivos modificados**:
+- `src/commands/ai-first.ts`
+
+**Verificación**: 
+```bash
+ai-first index --root test-projects/express-api
+# Ahora genera: test-projects/express-api/ai/index.db ✅
+```
+
+---
+
+### Bug B: graph command falla sin repositorio git
+**Estado**: ✅ Corregido  
+**Fecha**: 2026-03-17  
+**Severidad**: Alta  
+
+**Descripción**: El comando `graph` fallaba con exit code 1 si el proyecto no era un repositorio git.
+
+**Causa raíz**: El comando requería explícitamente un repositorio git y hacía `process.exit(1)` si no lo encontraba.
+
+**Solución implementada**: 
+1. Se cambió el error fatal a un warning
+2. Se permite generar el knowledge graph sin información git
+3. Se usa la información disponible (features, flows, symbols, dependencies)
+4. Se agregó la opción `--no-git` para forzar modo sin git
+
+**Archivos modificados**:
+- `src/commands/ai-first.ts`
+
+**Verificación**:
+```bash
+ai-first graph --root test-projects/express-api
+# Antes: ❌ Exit 1 - "Not a git repository"
+# Después: ✅ Exit 0 - Genera knowledge-graph.json
+```
+
+---
+
+### Bug C: query command falla
+**Estado**: ✅ Corregido  
+**Fecha**: 2026-03-17  
+**Severidad**: Media  
+
+**Descripción**: El comando `query` fallaba con exit code 1 porque no encontraba el archivo `index.db`.
+
+**Causa raíz**: Era un efecto secundario del Bug A. Como `index` no generaba `index.db` en la ubicación correcta, `query` no podía encontrarlo.
+
+**Solución implementada**: Se corrigió el Bug A, lo cual resolvió automáticamente el Bug C.
+
+**Archivos involucrados**:
+- `src/commands/ai-first.ts` (mismo fix que Bug A)
+
+**Verificación**:
+```bash
+ai-first query symbol login --root test-projects/express-api
+# Antes: ❌ Exit 1 - "Index not found"
+# Después: ✅ Exit 0 - Encuentra símbolos
+```
+
+---
+
+## Bugs Pendientes
+
+- [ ] Bug 2 (Parcial): Calls/Called by detection requiere AST parser completo (limitación aceptada)
+- [ ] Bug 4 (Parcial): 3 vulnerabilidades npm restantes (riesgo aceptado - dev only)
