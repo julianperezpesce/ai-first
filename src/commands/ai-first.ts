@@ -370,7 +370,7 @@ if (isMain) {
     // Index command - generate SQLite database
     args.shift();
     let rootDir = process.cwd();
-    let outputPath = path.join(rootDir, "ai", "index.db");
+    let outputPath: string | null = null;
     let semanticMode = false;
 
     for (let i = 0; i < args.length; i++) {
@@ -415,8 +415,12 @@ Example queries (for AI agents):
       }
     }
 
+    if (!outputPath) {
+      outputPath = path.join(rootDir, "ai", "index.db");
+    }
+
     const aiDir = path.join(rootDir, "ai");
-    
+
     // Load existing index state for incremental indexing
     const existingState = loadIndexState(aiDir);
     
@@ -1305,6 +1309,8 @@ Examples:
         case "-s":
           showStats = true;
           break;
+        case "--no-git":
+          break;
         case "--help":
         case "-h":
           console.log(`
@@ -1315,20 +1321,22 @@ Usage: ai-first graph [options]
 Options:
   -r, --root <dir>   Root directory (default: current directory)
   -s, --stats        Show graph statistics
-  --json              Output as JSON
+  --no-git           Skip git history analysis
+  --json             Output as JSON
   -h, --help         Show help message
 
 Examples:
   ai-first graph
   ai-first graph --stats
+  ai-first graph --no-git
 `);
           process.exit(0);
       }
     }
-    
-    if (!detectGitRepository(rootDir)) {
-      console.log("❌ Not a git repository");
-      process.exit(1);
+
+    const hasGit = detectGitRepository(rootDir);
+    if (!hasGit) {
+      console.log("⚠️  Not a git repository - generating graph from static analysis only");
     }
     
     console.log(`\n🕸️  Building knowledge graph in: ${rootDir}\n`);
