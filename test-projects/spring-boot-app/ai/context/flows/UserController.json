@@ -1,0 +1,19 @@
+{
+  "name": "UserController",
+  "entrypoint": "src/main/java/com/example/demo/controllers/UserController.java",
+  "files": [
+    "src/main/java/com/example/demo/controllers/UserController.java",
+    "com/example/demo/services/UserService.java",
+    "jakarta/validation/Valid.java",
+    "jakarta/validation/constraints/Email.java",
+    "jakarta/validation/constraints/NotBlank.java",
+    "lombok/RequiredArgsConstructor.java",
+    "org/springframework/http/HttpStatus.java",
+    "org/springframework/http/ResponseEntity.java"
+  ],
+  "depth": 5,
+  "layers": [
+    "service",
+    "unknown"
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "generated": "2026-03-18T17:09:30.793Z",
+  "totalFiles": 13,
+  "structure": {
+    "README.md": {
+      "type": "file",
+      "extension": "md"
+    },
+    "src": {
+      "type": "directory",
+      "children": {
+        "main": {
+          "type": "directory",
+          "children": {
+            "java": {
+              "type": "directory",
+              "children": {
+                "com": {
+                  "type": "directory",
+                  "children": {
+                    "example": {
+                      "type": "directory",
+                      "children": {
+                        "demo": {
+                          "type": "directory",
+                          "children": {
+                            "DemoApplication.java": {
+                              "type": "file",
+                              "extension": "java"
+                            },
+                            "controllers": {
+                              "type": "directory",
+                              "children": {
+                                "CommentController.java": {
+                                  "type": "file",
+                                  "extension": "java"
+                                },
+                                "PostController.java": {
+                                  "type": "file",
+                                  "extension": "java"
+                                },
+                                "UserController.java": {
+                                  "type": "file",
+                                  "extension": "java"
+                                }
+                              }
+                            },
+                            "models": {
+                              "type": "directory",
+                              "children": {
+                                "Comment.java": {
+                                  "type": "file",
+                                  "extension": "java"
+                                },
+                                "Post.java": {
+                                  "type": "file",
+                                  "extension": "java"
+                                },
+                                "User.java": {
+                                  "type": "file",
+                                  "extension": "java"
+                                }
+                              }
+                            },
+                            "repositories": {
+                              "type": "directory",
+                              "children": {
+                                "CommentRepository.java": {
+                                  "type": "file",
+                                  "extension": "java"
+                                },
+                                "PostRepository.java": {
+                                  "type": "file",
+                                  "extension": "java"
+                                },
+                                "UserRepository.java": {
+                                  "type": "file",
+                                  "extension": "java"
+                                }
+                              }
+                            },
+                            "services": {
+                              "type": "directory",
+                              "children": {
+                                "PostService.java": {
+                                  "type": "file",
+                                  "extension": "java"
+                                },
+                                "UserService.java": {
+                                  "type": "file",
+                                  "extension": "java"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "name": "README.md",
+      "extension": "md"
+    },
+    {
+      "path": "src/main/java/com/example/demo/DemoApplication.java",
+      "name": "DemoApplication.java",
+      "extension": "java"
+    },
+    {
+      "path": "src/main/java/com/example/demo/controllers/CommentController.java",
+      "name": "CommentController.java",
+      "extension": "java"
+    },
+    {
+      "path": "src/main/java/com/example/demo/controllers/PostController.java",
+      "name": "PostController.java",
+      "extension": "java"
+    },
+    {
+      "path": "src/main/java/com/example/demo/controllers/UserController.java",
+      "name": "UserController.java",
+      "extension": "java"
+    },
+    {
+      "path": "src/main/java/com/example/demo/models/Comment.java",
+      "name": "Comment.java",
+      "extension": "java"
+    },
+    {
+      "path": "src/main/java/com/example/demo/models/Post.java",
+      "name": "Post.java",
+      "extension": "java"
+    },
+    {
+      "path": "src/main/java/com/example/demo/models/User.java",
+      "name": "User.java",
+      "extension": "java"
+    },
+    {
+      "path": "src/main/java/com/example/demo/repositories/CommentRepository.java",
+      "name": "CommentRepository.java",
+      "extension": "java"
+    },
+    {
+      "path": "src/main/java/com/example/demo/repositories/PostRepository.java",
+      "name": "PostRepository.java",
+      "extension": "java"
+    },
+    {
+      "path": "src/main/java/com/example/demo/repositories/UserRepository.java",
+      "name": "UserRepository.java",
+      "extension": "java"
+    },
+    {
+      "path": "src/main/java/com/example/demo/services/PostService.java",
+      "name": "PostService.java",
+      "extension": "java"
+    },
+    {
+      "path": "src/main/java/com/example/demo/services/UserService.java",
+      "name": "UserService.java",
+      "extension": "java"
+    }
+  ]
+}

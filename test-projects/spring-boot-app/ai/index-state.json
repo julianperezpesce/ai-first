@@ -1,0 +1,287 @@
+{
+  "version": "1.0.0",
+  "lastIndexed": "2026-03-18T17:09:42.035Z",
+  "totalFiles": 40,
+  "files": {
+    "README.md": {
+      "path": "README.md",
+      "hash": "ee92d7e508c3afd9aed6198088189034",
+      "mtime": 1773853695476.1587,
+      "size": 3702,
+      "indexedAt": "2026-03-18T17:09:42.033Z"
+    },
+    "ai/ai_context.md": {
+      "path": "ai/ai_context.md",
+      "hash": "805894557ce87043443bf9a93a34fd4d",
+      "mtime": 1773853770800.222,
+      "size": 1461,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/ai_rules.md": {
+      "path": "ai/ai_rules.md",
+      "hash": "dd94e2e76a4b44d39e6094e0d9d2f59b",
+      "mtime": 1773853770799.222,
+      "size": 808,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/architecture.md": {
+      "path": "ai/architecture.md",
+      "hash": "b39463d4712f6ea781823c9a5165b0c4",
+      "mtime": 1773853770794.222,
+      "size": 588,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/cache.json": {
+      "path": "ai/cache.json",
+      "hash": "cbd7f7b4ef78c0be59cec53e1fc5eb96",
+      "mtime": 1773853776316.2998,
+      "size": 4947,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/context/features/src.json": {
+      "path": "ai/context/features/src.json",
+      "hash": "42a60c161a5bf54c5d33ef364591c4f7",
+      "mtime": 1773853776318.3,
+      "size": 1223,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/context/flows/PostController.json": {
+      "path": "ai/context/flows/PostController.json",
+      "hash": "2f5e73a2ec99953c3b007452cc7bdba9",
+      "mtime": 1773853770802.222,
+      "size": 594,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/context/flows/UserController.json": {
+      "path": "ai/context/flows/UserController.json",
+      "hash": "3edb3f6c856c098b62f7375a3b9780fa",
+      "mtime": 1773853770802.222,
+      "size": 592,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/context/flows/comment.json": {
+      "path": "ai/context/flows/comment.json",
+      "hash": "913f7e2f07c4a16cdf4fd01cfb8b433a",
+      "mtime": 1773853776318.3,
+      "size": 360,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/context/flows/post.json": {
+      "path": "ai/context/flows/post.json",
+      "hash": "0aedae49606deeece03d0356244cac8a",
+      "mtime": 1773853776319.3,
+      "size": 426,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/context/flows/user.json": {
+      "path": "ai/context/flows/user.json",
+      "hash": "e5a3d93f3de0265263bcf0de1d02bb44",
+      "mtime": 1773853776319.3,
+      "size": 426,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/conventions.md": {
+      "path": "ai/conventions.md",
+      "hash": "cf36cf015f6c293ebf89ec2c7756bb57",
+      "mtime": 1773853770796.222,
+      "size": 826,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/dependencies.json": {
+      "path": "ai/dependencies.json",
+      "hash": "231ca459d245c614550189bfdfc8aa31",
+      "mtime": 1773853770798.222,
+      "size": 12317,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/entrypoints.md": {
+      "path": "ai/entrypoints.md",
+      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
+      "mtime": 1773853770795.222,
+      "size": 43,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/files.json": {
+      "path": "ai/files.json",
+      "hash": "b038e97b87e805d6554aa6bcdd5541c8",
+      "mtime": 1773853781975.38,
+      "size": 4561,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/graph/module-graph.json": {
+      "path": "ai/graph/module-graph.json",
+      "hash": "bcdee278b7c197c3fdd8cc05e248bd69",
+      "mtime": 1773853776307.2998,
+      "size": 933,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/graph/symbol-graph.json": {
+      "path": "ai/graph/symbol-graph.json",
+      "hash": "af3b7eee071f51f7751d2e9c06c34ca4",
+      "mtime": 1773853776314.2998,
+      "size": 32701,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/graph/symbol-references.json": {
+      "path": "ai/graph/symbol-references.json",
+      "hash": "d2b999dd64f0a7f70cc7fcb11a1d0450",
+      "mtime": 1773853776314.2998,
+      "size": 4794,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/modules.json": {
+      "path": "ai/modules.json",
+      "hash": "8822d383d8a69f12aac8593ec2382889",
+      "mtime": 1773853781975.38,
+      "size": 918,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/project.json": {
+      "path": "ai/project.json",
+      "hash": "1690f6494c5f4774a4b9f9937c5c94ce",
+      "mtime": 1773853770802.222,
+      "size": 292,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/repo-map.json": {
+      "path": "ai/repo-map.json",
+      "hash": "b23ef3b9d1a9158da820bb92f19c40ef",
+      "mtime": 1773853776306.2998,
+      "size": 10702,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/repo_map.json": {
+      "path": "ai/repo_map.json",
+      "hash": "357e0755e2fc4ae9a135b0a786fedc44",
+      "mtime": 1773853770793.2217,
+      "size": 5918,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/repo_map.md": {
+      "path": "ai/repo_map.md",
+      "hash": "81ca0a8d506c9bbd24021116386e18c1",
+      "mtime": 1773853770792.2217,
+      "size": 1440,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/schema.json": {
+      "path": "ai/schema.json",
+      "hash": "cd1991ee7fb126511c11bd77a822164f",
+      "mtime": 1773853770802.222,
+      "size": 102,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/summary.md": {
+      "path": "ai/summary.md",
+      "hash": "b0b1433dd60af9373e118e7c6b018601",
+      "mtime": 1773853770793.2217,
+      "size": 143,
+      "indexedAt": "2026-03-18T17:09:42.034Z"
+    },
+    "ai/symbols.json": {
+      "path": "ai/symbols.json",
+      "hash": "b2578a94b3c80dfdfc14b3ea4d083b90",
+      "mtime": 1773853770797.222,
+      "size": 25556,
+      "indexedAt": "2026-03-18T17:09:42.035Z"
+    },
+    "ai/tech_stack.md": {
+      "path": "ai/tech_stack.md",
+      "hash": "5c79ac677f9fab6c1558ed3e32f1bd85",
+      "mtime": 1773853770795.222,
+      "size": 338,
+      "indexedAt": "2026-03-18T17:09:42.035Z"
+    },
+    "ai/tools.json": {
+      "path": "ai/tools.json",
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773853770803.222,
+      "size": 138,
+      "indexedAt": "2026-03-18T17:09:42.035Z"
+    },
+    "src/main/java/com/example/demo/DemoApplication.java": {
+      "path": "src/main/java/com/example/demo/DemoApplication.java",
+      "hash": "2d75ac141d2c8033430f3380b665baa2",
+      "mtime": 1773853571729.4216,
+      "size": 315,
+      "indexedAt": "2026-03-18T17:09:42.035Z"
+    },
+    "src/main/java/com/example/demo/controllers/CommentController.java": {
+      "path": "src/main/java/com/example/demo/controllers/CommentController.java",
+      "hash": "5b6b97f35e3c2776a8beb278db3fb9aa",
+      "mtime": 1773853662865.6997,
+      "size": 3158,
+      "indexedAt": "2026-03-18T17:09:42.035Z"
+    },
+    "src/main/java/com/example/demo/controllers/PostController.java": {
+      "path": "src/main/java/com/example/demo/controllers/PostController.java",
+      "hash": "17440d8fbbd9b6ac6f72df6f8549beae",
+      "mtime": 1773853649501.512,
+      "size": 2944,
+      "indexedAt": "2026-03-18T17:09:42.035Z"
+    },
+    "src/main/java/com/example/demo/controllers/UserController.java": {
+      "path": "src/main/java/com/example/demo/controllers/UserController.java",
+      "hash": "f6250869c401aa8a10575ed850358ff3",
+      "mtime": 1773853637492.3433,
+      "size": 2725,
+      "indexedAt": "2026-03-18T17:09:42.035Z"
+    },
+    "src/main/java/com/example/demo/models/Comment.java": {
+      "path": "src/main/java/com/example/demo/models/Comment.java",
+      "hash": "a9a5d05a4b9d9f84ab9f414f44b35e87",
+      "mtime": 1773853589658.6726,
+      "size": 793,
+      "indexedAt": "2026-03-18T17:09:42.035Z"
+    },
+    "src/main/java/com/example/demo/models/Post.java": {
+      "path": "src/main/java/com/example/demo/models/Post.java",
+      "hash": "88f4abb8eeed067c6de4ee4d2771d607",
+      "mtime": 1773853585054.6082,
+      "size": 1234,
+      "indexedAt": "2026-03-18T17:09:42.035Z"
+    },
+    "src/main/java/com/example/demo/models/User.java": {
+      "path": "src/main/java/com/example/demo/models/User.java",
+      "hash": "b2dfa90af2b99d773e509ff41b449377",
+      "mtime": 1773853578068.5103,
+      "size": 979,
+      "indexedAt": "2026-03-18T17:09:42.035Z"
+    },
+    "src/main/java/com/example/demo/repositories/CommentRepository.java": {
+      "path": "src/main/java/com/example/demo/repositories/CommentRepository.java",
+      "hash": "8f53f0b36acfeae6e976c59947225b0a",
+      "mtime": 1773853599958.817,
+      "size": 554,
+      "indexedAt": "2026-03-18T17:09:42.035Z"
+    },
+    "src/main/java/com/example/demo/repositories/PostRepository.java": {
+      "path": "src/main/java/com/example/demo/repositories/PostRepository.java",
+      "hash": "71da6b918547e00329c3417841fa1f1e",
+      "mtime": 1773853597248.7788,
+      "size": 480,
+      "indexedAt": "2026-03-18T17:09:42.035Z"
+    },
+    "src/main/java/com/example/demo/repositories/UserRepository.java": {
+      "path": "src/main/java/com/example/demo/repositories/UserRepository.java",
+      "hash": "e8578153133af2fec45af59a695abcb5",
+      "mtime": 1773853592037.7058,
+      "size": 388,
+      "indexedAt": "2026-03-18T17:09:42.035Z"
+    },
+    "src/main/java/com/example/demo/services/PostService.java": {
+      "path": "src/main/java/com/example/demo/services/PostService.java",
+      "hash": "cceae946c06807fb78b1a5427deb098e",
+      "mtime": 1773853621141.1138,
+      "size": 2535,
+      "indexedAt": "2026-03-18T17:09:42.035Z"
+    },
+    "src/main/java/com/example/demo/services/UserService.java": {
+      "path": "src/main/java/com/example/demo/services/UserService.java",
+      "hash": "fb164c2fa54b3195392774a0ca15d740",
+      "mtime": 1773853608542.937,
+      "size": 1907,
+      "indexedAt": "2026-03-18T17:09:42.035Z"
+    }
+  }
+}
