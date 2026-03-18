@@ -1,0 +1,21 @@
+{
+  "modules": {
+    "src": {
+      "path": "src",
+      "files": [
+        "src/main/java/com/example/demo/DemoApplication.java",
+        "src/main/java/com/example/demo/controllers/CommentController.java",
+        "src/main/java/com/example/demo/controllers/PostController.java",
+        "src/main/java/com/example/demo/controllers/UserController.java",
+        "src/main/java/com/example/demo/models/Comment.java",
+        "src/main/java/com/example/demo/models/Post.java",
+        "src/main/java/com/example/demo/models/User.java",
+        "src/main/java/com/example/demo/repositories/CommentRepository.java",
+        "src/main/java/com/example/demo/repositories/PostRepository.java",
+        "src/main/java/com/example/demo/repositories/UserRepository.java",
+        "src/main/java/com/example/demo/services/PostService.java",
+        "src/main/java/com/example/demo/services/UserService.java"
+      ]
+    }
+  }
+}

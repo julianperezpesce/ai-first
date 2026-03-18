@@ -1,0 +1,19 @@
+{
+  "name": "PostController",
+  "entrypoint": "src/main/java/com/example/demo/controllers/PostController.java",
+  "files": [
+    "src/main/java/com/example/demo/controllers/PostController.java",
+    "com/example/demo/services/PostService.java",
+    "jakarta/validation/Valid.java",
+    "jakarta/validation/constraints/NotBlank.java",
+    "jakarta/validation/constraints/NotNull.java",
+    "lombok/RequiredArgsConstructor.java",
+    "org/springframework/http/HttpStatus.java",
+    "org/springframework/http/ResponseEntity.java"
+  ],
+  "depth": 5,
+  "layers": [
+    "service",
+    "unknown"
+  ]
+}
