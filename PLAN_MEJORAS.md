@@ -250,6 +250,21 @@ Ambos existen simultáneamente.
 | `knowledge-graph.json` | kebab-case |
 | `index-state.json` | kebab-case |
 
+### 4. Comando `update` no Extrae Nuevos Símbolos
+```
+Problema: El comando 'update' detecta archivos modificados pero NO extrae nuevos símbolos
+Severidad: 🔴 Alta
+Fecha обнаружения: 2026-03-18
+
+Prueba realizada:
+1. Se añadió función healthCheck() a index.js
+2. Se ejecutó: ai-first update --no-git
+3. Output mostró: Symbols: 0 (incorrecto)
+4. Verificación: symbols.json NO contenía la nueva función
+
+El comando marca symbols.json como modificado pero no añade el nuevo símbolo.
+```
+
 ---
 
 ## 📁 DOCUMENTACIÓN CREADA DURANTE PHASE 1
