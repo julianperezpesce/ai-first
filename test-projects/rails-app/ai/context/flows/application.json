@@ -1,0 +1,9 @@
+{
+  "name": "application_",
+  "entrypoint": "app/controllers/application_controller.rb",
+  "files": [
+    "app/controllers/application_controller.rb"
+  ],
+  "depth": 0,
+  "layers": []
+}
