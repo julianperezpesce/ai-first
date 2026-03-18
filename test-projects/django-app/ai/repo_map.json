@@ -1,0 +1,185 @@
+{
+  "generated": "2026-03-18T15:25:24.416Z",
+  "totalFiles": 18,
+  "structure": {
+    "README.md": {
+      "type": "file",
+      "extension": "md"
+    },
+    "blog": {
+      "type": "directory",
+      "children": {
+        "__init__.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "admin.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "models.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "serializers.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "urls.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "views.py": {
+          "type": "file",
+          "extension": "py"
+        }
+      }
+    },
+    "django_app": {
+      "type": "directory",
+      "children": {
+        "__init__.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "settings.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "urls.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "wsgi.py": {
+          "type": "file",
+          "extension": "py"
+        }
+      }
+    },
+    "manage.py": {
+      "type": "file",
+      "extension": "py"
+    },
+    "users": {
+      "type": "directory",
+      "children": {
+        "__init__.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "admin.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "models.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "serializers.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "urls.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "views.py": {
+          "type": "file",
+          "extension": "py"
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "name": "README.md",
+      "extension": "md"
+    },
+    {
+      "path": "blog/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "blog/admin.py",
+      "name": "admin.py",
+      "extension": "py"
+    },
+    {
+      "path": "blog/models.py",
+      "name": "models.py",
+      "extension": "py"
+    },
+    {
+      "path": "blog/serializers.py",
+      "name": "serializers.py",
+      "extension": "py"
+    },
+    {
+      "path": "blog/urls.py",
+      "name": "urls.py",
+      "extension": "py"
+    },
+    {
+      "path": "blog/views.py",
+      "name": "views.py",
+      "extension": "py"
+    },
+    {
+      "path": "django_app/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "django_app/settings.py",
+      "name": "settings.py",
+      "extension": "py"
+    },
+    {
+      "path": "django_app/urls.py",
+      "name": "urls.py",
+      "extension": "py"
+    },
+    {
+      "path": "django_app/wsgi.py",
+      "name": "wsgi.py",
+      "extension": "py"
+    },
+    {
+      "path": "manage.py",
+      "name": "manage.py",
+      "extension": "py"
+    },
+    {
+      "path": "users/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "users/admin.py",
+      "name": "admin.py",
+      "extension": "py"
+    },
+    {
+      "path": "users/models.py",
+      "name": "models.py",
+      "extension": "py"
+    },
+    {
+      "path": "users/serializers.py",
+      "name": "serializers.py",
+      "extension": "py"
+    },
+    {
+      "path": "users/urls.py",
+      "name": "urls.py",
+      "extension": "py"
+    },
+    {
+      "path": "users/views.py",
+      "name": "views.py",
+      "extension": "py"
+    }
+  ]
+}
