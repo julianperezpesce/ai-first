@@ -1,0 +1,90 @@
+{
+  "generated": "2026-03-18T15:36:20.009Z",
+  "totalFiles": 8,
+  "structure": {
+    "README.md": {
+      "type": "file",
+      "extension": "md"
+    },
+    "app": {
+      "type": "directory",
+      "children": {
+        "database.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "dependencies.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "main.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "models.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "routers": {
+          "type": "directory",
+          "children": {
+            "auth.py": {
+              "type": "file",
+              "extension": "py"
+            },
+            "posts.py": {
+              "type": "file",
+              "extension": "py"
+            }
+          }
+        },
+        "schemas.py": {
+          "type": "file",
+          "extension": "py"
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "name": "README.md",
+      "extension": "md"
+    },
+    {
+      "path": "app/database.py",
+      "name": "database.py",
+      "extension": "py"
+    },
+    {
+      "path": "app/dependencies.py",
+      "name": "dependencies.py",
+      "extension": "py"
+    },
+    {
+      "path": "app/main.py",
+      "name": "main.py",
+      "extension": "py"
+    },
+    {
+      "path": "app/models.py",
+      "name": "models.py",
+      "extension": "py"
+    },
+    {
+      "path": "app/routers/auth.py",
+      "name": "auth.py",
+      "extension": "py"
+    },
+    {
+      "path": "app/routers/posts.py",
+      "name": "posts.py",
+      "extension": "py"
+    },
+    {
+      "path": "app/schemas.py",
+      "name": "schemas.py",
+      "extension": "py"
+    }
+  ]
+}
