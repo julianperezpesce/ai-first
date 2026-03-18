@@ -6,11 +6,17 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
+| `ai` | Contains 26 files |
 | `force-app` | Contains 3 files |
 | `sfdx-project.json` | Contains 0 files |
 
 
 ## Module Details
+
+### ai
+- **Path**: `ai`
+- **Responsibility**: Contains 26 files
+
 
 ### force-app
 - **Path**: `force-app`

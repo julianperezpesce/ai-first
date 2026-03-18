@@ -7,6 +7,7 @@
 | Module | Responsibility |
 |--------|----------------|
 | `README.md` | Contains 0 files |
+| `ai` | Contains 22 files |
 | `app` | Contains 7 files |
 
 
@@ -15,6 +16,11 @@
 ### README.md
 - **Path**: `README.md`
 - **Responsibility**: Contains 0 files
+
+
+### ai
+- **Path**: `ai`
+- **Responsibility**: Contains 22 files
 
 
 ### app

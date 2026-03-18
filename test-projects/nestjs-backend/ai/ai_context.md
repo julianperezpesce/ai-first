@@ -7,9 +7,9 @@
 ## Quick Overview
 
 - **Pattern**: Flat / Simple Structure
-- **Languages**: JSON, TypeScript
+- **Languages**: Markdown, JSON, TypeScript
 - **Frameworks**: TypeScript
-- **Total Files**: 12
+- **Total Files**: 41
 
 ---
 
@@ -26,7 +26,7 @@
 
 ## Tech Stack
 
-**Languages**: JSON, TypeScript
+**Languages**: Markdown, JSON, TypeScript
 
 **Frameworks**: TypeScript
 
@@ -48,6 +48,7 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
+| `ai` | Contains 29 files |
 | `package.json` | Contains 0 files |
 | `src` | Contains 10 files |
 | `tsconfig.json` | Configuration management |
@@ -70,7 +71,7 @@
 ## Code Conventions
 
 ## Naming Conventions
-- **Files**: camelCase
+- **Files**: kebab-case or snake_case
 
 ## Project Structure
 - **Source**: src/
@@ -83,10 +84,10 @@
 
 ## AI Rules
 
-- Language: Use JSON, TypeScript
+- Language: Use Markdown, JSON, TypeScript
 - Frameworks: TypeScript
 - Architecture: Follow Flat / Simple Structure pattern
-- File naming: camelCase
+- File naming: kebab-case or snake_case
 - Source directory: src/
 
 ---

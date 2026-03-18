@@ -1,0 +1,132 @@
+{
+  "nodes": [
+    {
+      "id": "src",
+      "type": "feature",
+      "label": "src",
+      "metadata": {
+        "path": "src",
+        "fileCount": 10
+      }
+    },
+    {
+      "id": "auth.",
+      "type": "flow",
+      "label": "auth.",
+      "metadata": {
+        "entrypoint": "src/auth/auth.controller.ts",
+        "fileCount": 2
+      }
+    },
+    {
+      "id": "auth.controller",
+      "type": "flow",
+      "label": "auth.controller",
+      "metadata": {
+        "entrypoint": "src/auth/auth.controller.ts",
+        "fileCount": 3
+      }
+    },
+    {
+      "id": "users.",
+      "type": "flow",
+      "label": "users.",
+      "metadata": {
+        "entrypoint": "src/users/users.controller.ts",
+        "fileCount": 2
+      }
+    },
+    {
+      "id": "users.controller",
+      "type": "flow",
+      "label": "users.controller",
+      "metadata": {
+        "entrypoint": "src/users/users.controller.ts",
+        "fileCount": 3
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "src",
+      "to": "auth.",
+      "type": "contains"
+    },
+    {
+      "from": "src",
+      "to": "auth.controller",
+      "type": "contains"
+    },
+    {
+      "from": "src",
+      "to": "users.",
+      "type": "contains"
+    },
+    {
+      "from": "src",
+      "to": "users.controller",
+      "type": "contains"
+    },
+    {
+      "from": "auth.",
+      "to": "src/auth/auth.controller.ts",
+      "type": "implements"
+    },
+    {
+      "from": "auth.",
+      "to": "src/auth/auth.service.ts",
+      "type": "implements"
+    },
+    {
+      "from": "auth.controller",
+      "to": "src/auth/auth.controller.ts",
+      "type": "implements"
+    },
+    {
+      "from": "auth.controller",
+      "to": "@nestjs/common",
+      "type": "implements"
+    },
+    {
+      "from": "auth.controller",
+      "to": "src/auth/./auth.service/index",
+      "type": "implements"
+    },
+    {
+      "from": "users.",
+      "to": "src/users/users.controller.ts",
+      "type": "implements"
+    },
+    {
+      "from": "users.",
+      "to": "src/users/users.service.ts",
+      "type": "implements"
+    },
+    {
+      "from": "users.controller",
+      "to": "src/users/users.controller.ts",
+      "type": "implements"
+    },
+    {
+      "from": "users.controller",
+      "to": "@nestjs/common",
+      "type": "implements"
+    },
+    {
+      "from": "users.controller",
+      "to": "src/users/./users.service/index",
+      "type": "implements"
+    }
+  ],
+  "metadata": {
+    "generated": "2026-03-18T19:21:52.796Z",
+    "sources": [
+      "features",
+      "flows",
+      "symbols",
+      "dependencies"
+    ],
+    "nodeCount": 5,
+    "edgeCount": 14
+  }
+}

@@ -5,92 +5,112 @@
       "mtime": 1773847786371.1416
     },
     "ai/ai_context.md": {
-      "hash": "15ab5feae2638cabf3a2685cfe7f8ee4",
-      "mtime": 1773847829915.7458
+      "hash": "d86085a2b3eef3cc32c82e7ce97a97f0",
+      "mtime": 1773861711501.377
     },
     "ai/ai_rules.md": {
-      "hash": "2e09780ab0f6bb945f7401219fe243d4",
-      "mtime": 1773847829915.7458
+      "hash": "5af221d928c5336c36d50512370227e3",
+      "mtime": 1773861711501.377
     },
     "ai/architecture.md": {
-      "hash": "6c860fc433c730671d752ddf9f58cbca",
-      "mtime": 1773847829911.7458
+      "hash": "975b4cc2773637c327c10fb1c7c488b1",
+      "mtime": 1773861711496.377
+    },
+    "ai/cache.json": {
+      "hash": "b753a30235e999795838c0d5cb154c66",
+      "mtime": 1773854929730.0337
     },
     "ai/context/features/app.json": {
       "hash": "48ed0274a6a81b1c50955d402b3c2695",
-      "mtime": 1773847829917.7458
+      "mtime": 1773861711503.377
     },
     "ai/context/flows/category.json": {
       "hash": "437bcbd406d6d1288bd16213b6be4767",
-      "mtime": 1773847829920.7458
+      "mtime": 1773861711503.377
     },
     "ai/context/flows/comment.json": {
       "hash": "c2ebad5e63035bae2fde39e9f863e9cb",
-      "mtime": 1773847829920.7458
+      "mtime": 1773861711503.377
     },
     "ai/context/flows/post.json": {
       "hash": "f704d1cdb7823ec237964b578e9935b7",
-      "mtime": 1773847829920.7458
+      "mtime": 1773861711503.377
+    },
+    "ai/context/flows/unnamed.json": {
+      "hash": "0d3ba6968f125bdddd28f7b908d4c9e0",
+      "mtime": 1773854736911.5452
     },
     "ai/conventions.md": {
       "hash": "d11ac646a8916e3c6cc376f610368317",
-      "mtime": 1773847829913.7458
+      "mtime": 1773861711498.377
     },
     "ai/dependencies.json": {
       "hash": "038f80a99cbcc45991786b645398758e",
-      "mtime": 1773847829914.7458
+      "mtime": 1773861711500.377
     },
     "ai/entrypoints.md": {
       "hash": "34c8965a66697d9f1d428bb0904f5d8d",
-      "mtime": 1773847829912.7458
+      "mtime": 1773861711497.377
     },
     "ai/files.json": {
       "hash": "99914b932bd37a50b983c5e7c90ae93b",
-      "mtime": 1773847838532.8655
+      "mtime": 1773861711587.3784
     },
     "ai/graph/module-graph.json": {
       "hash": "08886f9cf775a3e58668f9c166b6f1ae",
-      "mtime": 1773847838529.8655
+      "mtime": 1773861711581.3782
+    },
+    "ai/graph/symbol-graph.json": {
+      "hash": "79a11e66d1c9ebdbec716c31b9eb11db",
+      "mtime": 1773861711587.3784
+    },
+    "ai/graph/symbol-references.json": {
+      "hash": "99914b932bd37a50b983c5e7c90ae93b",
+      "mtime": 1773861711587.3784
+    },
+    "ai/index-state.json": {
+      "hash": "e7da95c458fbcbf04c7d84fc58575b42",
+      "mtime": 1773854929730.0337
     },
     "ai/modules.json": {
       "hash": "2a7554702c3a5bcd823e4c634f012bb7",
-      "mtime": 1773847838520.8652
+      "mtime": 1773861711572.3782
     },
     "ai/project.json": {
-      "hash": "4f84fe1080f4b75b4285e8c8e1bcca0a",
-      "mtime": 1773847829921.7458
+      "hash": "be6566712acac8596c31c67859b10b67",
+      "mtime": 1773861711504.377
     },
     "ai/repo-map.json": {
-      "hash": "e3eef6b0e39948ede51b992e3fd98afb",
-      "mtime": 1773847838521.8652
+      "hash": "51544ee73ec58dc7f97b3a744757c4b6",
+      "mtime": 1773861711573.3782
     },
     "ai/repo_map.json": {
-      "hash": "fbfd40643cc587d96742b7d25f11a4e8",
-      "mtime": 1773847829910.7458
+      "hash": "f47a48aa19e41f4511993fad9befd33a",
+      "mtime": 1773861711494.377
     },
     "ai/repo_map.md": {
-      "hash": "9ee5fd15680ac4effd4398914d3b698c",
-      "mtime": 1773847829909.7456
+      "hash": "3eb00bcd4302149b347a5007060b9929",
+      "mtime": 1773861711494.377
     },
     "ai/schema.json": {
-      "hash": "827bc0de2e5f071098e8ec8a65b30211",
-      "mtime": 1773847829921.7458
+      "hash": "9b5cbdb447d61923413f6a64d7be0935",
+      "mtime": 1773861711503.377
     },
     "ai/summary.md": {
-      "hash": "9dbbf46bbf4b35c92e5294250b50a54b",
-      "mtime": 1773847829910.7458
+      "hash": "af28a79156d8952da4b7c3970375a4db",
+      "mtime": 1773861711495.377
     },
     "ai/symbols.json": {
       "hash": "6edde050dc3089a9e15bf3934226a7c4",
-      "mtime": 1773847829913.7458
+      "mtime": 1773861711499.377
     },
     "ai/tech_stack.md": {
-      "hash": "fd84b9bddb9a4ced339df8f8eec6abe1",
-      "mtime": 1773847829912.7458
+      "hash": "698c9093c45a5cd2a2d6433067ee212a",
+      "mtime": 1773861711497.377
     },
     "ai/tools.json": {
       "hash": "b1356e52c74e9b3b6a0d397b790a4968",
-      "mtime": 1773847829921.7458
+      "mtime": 1773861711504.377
     },
     "app/Http/Controllers/Api/CategoryController.php": {
       "hash": "eae63919c19317d673da75fae862ac1b",
@@ -137,5 +157,5 @@
       "mtime": 1773847757081.7354
     }
   },
-  "lastIndexed": "2026-03-18T15:30:38.533Z"
+  "lastIndexed": "2026-03-18T19:21:51.588Z"
 }

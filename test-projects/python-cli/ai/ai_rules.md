@@ -6,7 +6,7 @@
 
 ## Guidelines
 
-- Language: Use Python
+- Language: Use Python, Markdown, JSON
 - Architecture: Follow MVC (Model-View-Controller) pattern
 - File naming: kebab-case or snake_case
 
@@ -24,7 +24,7 @@
 
 | Category | Value |
 |----------|-------|
-| Language | Python |
+| Language | Python, Markdown, JSON |
 | Framework | N/A |
 | Architecture | MVC (Model-View-Controller) |
 | Naming | kebab-case or snake_case |

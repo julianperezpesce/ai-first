@@ -1,13 +1,14 @@
 # Repository Summary
-- **Total files**: 12
+- **Total files**: 39
 
 ## Files by Extension
-  - .json: 1
-  - .md: 1
+  - .json: 20
+  - .md: 9
   - .php: 10
 
 ## Files by Directory
   - README.md: 1
+  - ai: 27
   - app: 8
   - bootstrap: 1
   - composer.json: 1

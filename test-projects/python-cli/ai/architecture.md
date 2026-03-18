@@ -11,6 +11,7 @@
 | Module | Responsibility |
 |--------|----------------|
 | `__init__.py` | Contains 0 files |
+| `ai` | Contains 27 files |
 | `cli` | Contains 4 files |
 | `main.py` | Contains 0 files |
 | `models` | Data models and entities |
@@ -21,6 +22,11 @@
 ### __init__.py
 - **Path**: `__init__.py`
 - **Responsibility**: Contains 0 files
+
+
+### ai
+- **Path**: `ai`
+- **Responsibility**: Contains 27 files
 
 
 ### cli

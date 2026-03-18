@@ -1,13 +1,13 @@
 # Technology Stack
 
-**Languages**: Markdown, PHP, JSON
+**Languages**: Markdown, JSON, PHP
 
 **Package Managers**: Composer
 
 ## Languages
 - Markdown
-- PHP
 - JSON
+- PHP
 
 ## Frameworks
 - None detected

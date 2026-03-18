@@ -6,7 +6,7 @@
 
 ## Guidelines
 
-- Language: Use Markdown, Python
+- Language: Use Markdown, JSON, Python
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
 
@@ -24,7 +24,7 @@
 
 | Category | Value |
 |----------|-------|
-| Language | Markdown, Python |
+| Language | Markdown, JSON, Python |
 | Framework | N/A |
 | Architecture | Flat / Simple Structure |
 | Naming | PascalCase |

@@ -1,8 +1,9 @@
 # Technology Stack
 
-**Languages**: JSON
+**Languages**: Markdown, JSON
 
 ## Languages
+- Markdown
 - JSON
 
 ## Frameworks

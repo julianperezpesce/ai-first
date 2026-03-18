@@ -1,10 +1,25 @@
 {
-  "totalDependencies": 34,
-  "totalModules": 7,
+  "totalDependencies": 18,
+  "totalModules": 6,
   "dependencies": [
     {
       "source": "src/App.tsx",
-      "target": "react-router-dom",
+      "target": "src/context/AuthContext",
+      "type": "import"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/pages/LoginPage",
+      "type": "import"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/pages/DashboardPage",
+      "type": "import"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/pages/UsersPage",
       "type": "import"
     },
     {
@@ -28,83 +43,18 @@
       "type": "import"
     },
     {
-      "source": "src/App.tsx",
-      "target": "react-router-dom",
-      "type": "import"
-    },
-    {
-      "source": "src/App.tsx",
-      "target": "src/context/AuthContext",
-      "type": "import"
-    },
-    {
-      "source": "src/App.tsx",
-      "target": "src/pages/LoginPage",
-      "type": "import"
-    },
-    {
-      "source": "src/App.tsx",
-      "target": "src/pages/DashboardPage",
-      "type": "import"
-    },
-    {
-      "source": "src/App.tsx",
-      "target": "src/pages/UsersPage",
-      "type": "import"
-    },
-    {
-      "source": "src/context/AuthContext.tsx",
-      "target": "react",
-      "type": "import"
-    },
-    {
-      "source": "src/context/AuthContext.tsx",
-      "target": "react",
-      "type": "import"
-    },
-    {
-      "source": "src/hooks/useAuth.ts",
-      "target": "react",
-      "type": "import"
-    },
-    {
       "source": "src/hooks/useAuth.ts",
       "target": "src/context/AuthContext",
       "type": "import"
     },
     {
       "source": "src/hooks/useAuth.ts",
-      "target": "react",
-      "type": "import"
-    },
-    {
-      "source": "src/hooks/useAuth.ts",
       "target": "src/context/AuthContext",
-      "type": "import"
-    },
-    {
-      "source": "src/main.tsx",
-      "target": "react",
-      "type": "import"
-    },
-    {
-      "source": "src/main.tsx",
-      "target": "react-dom/client",
       "type": "import"
     },
     {
       "source": "src/main.tsx",
       "target": "src/App",
-      "type": "import"
-    },
-    {
-      "source": "src/main.tsx",
-      "target": "react",
-      "type": "import"
-    },
-    {
-      "source": "src/main.tsx",
-      "target": "react-dom/client",
       "type": "import"
     },
     {
@@ -124,47 +74,17 @@
     },
     {
       "source": "src/pages/LoginPage.tsx",
-      "target": "react",
-      "type": "import"
-    },
-    {
-      "source": "src/pages/LoginPage.tsx",
       "target": "src/hooks/useAuth",
       "type": "import"
     },
     {
       "source": "src/pages/LoginPage.tsx",
-      "target": "react-router-dom",
-      "type": "import"
-    },
-    {
-      "source": "src/pages/LoginPage.tsx",
-      "target": "react",
-      "type": "import"
-    },
-    {
-      "source": "src/pages/LoginPage.tsx",
       "target": "src/hooks/useAuth",
-      "type": "import"
-    },
-    {
-      "source": "src/pages/LoginPage.tsx",
-      "target": "react-router-dom",
-      "type": "import"
-    },
-    {
-      "source": "src/pages/UsersPage.tsx",
-      "target": "react",
       "type": "import"
     },
     {
       "source": "src/pages/UsersPage.tsx",
       "target": "src/services/userService",
-      "type": "import"
-    },
-    {
-      "source": "src/pages/UsersPage.tsx",
-      "target": "react",
       "type": "import"
     },
     {
@@ -175,33 +95,21 @@
   ],
   "byFile": {
     "src/App.tsx": [
-      "react-router-dom",
       "src/context/AuthContext",
       "src/pages/LoginPage",
       "src/pages/DashboardPage",
       "src/pages/UsersPage",
-      "react-router-dom",
       "src/context/AuthContext",
       "src/pages/LoginPage",
       "src/pages/DashboardPage",
       "src/pages/UsersPage"
     ],
-    "src/context/AuthContext.tsx": [
-      "react",
-      "react"
-    ],
     "src/hooks/useAuth.ts": [
-      "react",
       "src/context/AuthContext",
-      "react",
       "src/context/AuthContext"
     ],
     "src/main.tsx": [
-      "react",
-      "react-dom/client",
       "src/App",
-      "react",
-      "react-dom/client",
       "src/App"
     ],
     "src/pages/DashboardPage.tsx": [
@@ -209,17 +117,11 @@
       "src/hooks/useAuth"
     ],
     "src/pages/LoginPage.tsx": [
-      "react",
       "src/hooks/useAuth",
-      "react-router-dom",
-      "react",
-      "src/hooks/useAuth",
-      "react-router-dom"
+      "src/hooks/useAuth"
     ],
     "src/pages/UsersPage.tsx": [
-      "react",
       "src/services/userService",
-      "react",
       "src/services/userService"
     ]
   }

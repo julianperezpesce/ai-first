@@ -1,12 +1,4 @@
 {
-  "src/users/users.service.ts#index": [
-    "src/app.module.ts#AppModule",
-    "src/auth/auth.controller.ts#AuthController",
-    "src/auth/auth.controller.ts#user",
-    "src/auth/auth.module.ts#AuthModule",
-    "src/users/users.controller.ts#UsersController",
-    "src/users/users.module.ts#UsersModule"
-  ],
   "src/main.ts#app": [
     "src/main.ts#bootstrap"
   ]

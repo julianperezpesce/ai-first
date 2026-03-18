@@ -1,0 +1,60 @@
+{
+  "nodes": [
+    {
+      "id": "app",
+      "type": "feature",
+      "label": "app",
+      "metadata": {
+        "path": "app",
+        "fileCount": 12
+      }
+    },
+    {
+      "id": "routes",
+      "type": "flow",
+      "label": "routes",
+      "metadata": {
+        "entrypoint": "app/api/routes.py",
+        "fileCount": 4
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "app",
+      "to": "routes",
+      "type": "contains"
+    },
+    {
+      "from": "routes",
+      "to": "app/api/routes.py",
+      "type": "implements"
+    },
+    {
+      "from": "routes",
+      "to": "app/auth/routes.py",
+      "type": "implements"
+    },
+    {
+      "from": "routes",
+      "to": "app/blog/routes.py",
+      "type": "implements"
+    },
+    {
+      "from": "routes",
+      "to": "app/main/routes.py",
+      "type": "implements"
+    }
+  ],
+  "metadata": {
+    "generated": "2026-03-18T19:21:51.357Z",
+    "sources": [
+      "features",
+      "flows",
+      "symbols",
+      "dependencies"
+    ],
+    "nodeCount": 2,
+    "edgeCount": 5
+  }
+}
