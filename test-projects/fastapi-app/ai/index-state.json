@@ -1,0 +1,210 @@
+{
+  "version": "1.0.0",
+  "lastIndexed": "2026-03-18T15:36:37.924Z",
+  "totalFiles": 29,
+  "files": {
+    "README.md": {
+      "path": "README.md",
+      "hash": "bf26100b42bb769b5067306a5fb0a830",
+      "mtime": 1773848160010.3352,
+      "size": 3195,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/ai_context.md": {
+      "path": "ai/ai_context.md",
+      "hash": "06b0588ccaa38e93b82047e29c26dbf4",
+      "mtime": 1773848180015.6138,
+      "size": 1421,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/ai_rules.md": {
+      "path": "ai/ai_rules.md",
+      "hash": "b7db08ce64e7b0afd2e515992bc0a561",
+      "mtime": 1773848180015.6138,
+      "size": 787,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/architecture.md": {
+      "path": "ai/architecture.md",
+      "hash": "423f9f9db4f90e3e12c8aab7f022ef98",
+      "mtime": 1773848180010.6138,
+      "size": 586,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/cache.json": {
+      "path": "ai/cache.json",
+      "hash": "429adfe1177228af3779a24147bc7e1b",
+      "mtime": 1773848188957.7383,
+      "size": 3095,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/conventions.md": {
+      "path": "ai/conventions.md",
+      "hash": "d11ac646a8916e3c6cc376f610368317",
+      "mtime": 1773848180012.6138,
+      "size": 813,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/dependencies.json": {
+      "path": "ai/dependencies.json",
+      "hash": "246c5a632d3afd7fd186dc0f028157f6",
+      "mtime": 1773848180014.6138,
+      "size": 5060,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/entrypoints.md": {
+      "path": "ai/entrypoints.md",
+      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
+      "mtime": 1773848180011.6138,
+      "size": 43,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/files.json": {
+      "path": "ai/files.json",
+      "hash": "2e3b91dd5469562139f75f79287027d8",
+      "mtime": 1773848197846.862,
+      "size": 2819,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/graph/module-graph.json": {
+      "path": "ai/graph/module-graph.json",
+      "hash": "dccb5b1211bf9c438fefd949ef8d280d",
+      "mtime": 1773848188949.738,
+      "size": 1223,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/graph/symbol-graph.json": {
+      "path": "ai/graph/symbol-graph.json",
+      "hash": "dacfe5d47c55c042e7a83e970b975fd2",
+      "mtime": 1773848188955.7383,
+      "size": 44539,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/graph/symbol-references.json": {
+      "path": "ai/graph/symbol-references.json",
+      "hash": "1cac27d66672fe0c2cf2c0f030e38795",
+      "mtime": 1773848188956.7383,
+      "size": 1791,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/modules.json": {
+      "path": "ai/modules.json",
+      "hash": "1c7630ab9b91c57c6cb9ccb384cc3f4e",
+      "mtime": 1773848197846.862,
+      "size": 281,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/project.json": {
+      "path": "ai/project.json",
+      "hash": "1067d825cc4be093755993728968ba7f",
+      "mtime": 1773848180017.6138,
+      "size": 186,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/repo-map.json": {
+      "path": "ai/repo-map.json",
+      "hash": "618ba6fae84d28fb96cfad500fb0b32a",
+      "mtime": 1773848188947.738,
+      "size": 4769,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/repo_map.json": {
+      "path": "ai/repo_map.json",
+      "hash": "01a62da84320e9b5989803f90799e278",
+      "mtime": 1773848180009.6135,
+      "size": 1778,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/repo_map.md": {
+      "path": "ai/repo_map.md",
+      "hash": "e6e7d946bb0e4408e4e373f5b8fd6a74",
+      "mtime": 1773848180008.6135,
+      "size": 450,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/schema.json": {
+      "path": "ai/schema.json",
+      "hash": "da47e464464bc5767261d258df5b17c4",
+      "mtime": 1773848180017.6138,
+      "size": 102,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/summary.md": {
+      "path": "ai/summary.md",
+      "hash": "9a081d026396cae093add00fc2c34320",
+      "mtime": 1773848180009.6135,
+      "size": 138,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/symbols.json": {
+      "path": "ai/symbols.json",
+      "hash": "a89ac8114a5482c6128299186c367207",
+      "mtime": 1773848180013.6138,
+      "size": 47762,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/tech_stack.md": {
+      "path": "ai/tech_stack.md",
+      "hash": "f5d7720e17390f42b9f81c4b3c0d1bdf",
+      "mtime": 1773848180011.6138,
+      "size": 342,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "ai/tools.json": {
+      "path": "ai/tools.json",
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773848180017.6138,
+      "size": 138,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "app/database.py": {
+      "path": "app/database.py",
+      "hash": "119e69e1cbb98dd5dbad6dd6667c31c8",
+      "mtime": 1773847938779.2578,
+      "size": 534,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "app/dependencies.py": {
+      "path": "app/dependencies.py",
+      "hash": "a4bcf7c973d54dfba67718f52c0d1e9b",
+      "mtime": 1773848033913.5806,
+      "size": 3402,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "app/main.py": {
+      "path": "app/main.py",
+      "hash": "19a812c3ee021a6e96bdf3aee822ac95",
+      "mtime": 1773848130927.9304,
+      "size": 1043,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "app/models.py": {
+      "path": "app/models.py",
+      "hash": "a246bcc28f34e2ea398115358f06ec1e",
+      "mtime": 1773847967580.6582,
+      "size": 4875,
+      "indexedAt": "2026-03-18T15:36:37.923Z"
+    },
+    "app/routers/auth.py": {
+      "path": "app/routers/auth.py",
+      "hash": "7f51218c007b8f521b149f0801d8b145",
+      "mtime": 1773848061086.9585,
+      "size": 3508,
+      "indexedAt": "2026-03-18T15:36:37.924Z"
+    },
+    "app/routers/posts.py": {
+      "path": "app/routers/posts.py",
+      "hash": "f8db1a2d760c7e611af7c610dbab4162",
+      "mtime": 1773848113520.6882,
+      "size": 7555,
+      "indexedAt": "2026-03-18T15:36:37.924Z"
+    },
+    "app/schemas.py": {
+      "path": "app/schemas.py",
+      "hash": "4049102356e992bc2c4442d589cd2ced",
+      "mtime": 1773848005561.1863,
+      "size": 3996,
+      "indexedAt": "2026-03-18T15:36:37.924Z"
+    }
+  }
+}
