@@ -66,6 +66,14 @@ const SOURCE_EXTENSIONS = new Set([
 // ============================================================
 // HELPER FUNCTIONS
 // ============================================================
+function sanitizeFlowName(name) {
+    return name
+        .replace(/\.\.+/g, ".")
+        .replace(/_+$/g, "")
+        .replace(/[^\w\-]/g, "_")
+        .replace(/_+/g, "_")
+        .replace(/^_+|_+$/g, "") || "unnamed";
+}
 function isSourceFile(filePath) {
     const ext = path.extname(filePath).toLowerCase();
     return SOURCE_EXTENSIONS.has(ext);
@@ -284,7 +292,7 @@ function flowsFromGraph(graphData) {
         // Must have at least 3 files and 2 layers
         if (fileSet.size >= 3 && layerSet.size >= 2) {
             flows.push({
-                name: path.basename(ep.file || ""),
+                name: sanitizeFlowName(path.basename(ep.file || "").replace(/\.[^.]+$/, "")),
                 entrypoint: ep.file || "",
                 files: Array.from(fileSet).slice(0, MAX_FLOW_FILES),
                 depth: Math.min(MAX_FLOW_DEPTH, [...visited].length),
@@ -325,7 +333,7 @@ function flowsFromFolders(files) {
         const sorted = [...featureFiles].sort((a, b) => getLayerPriority(a) - getLayerPriority(b));
         const entrypoint = sorted.find(isFlowEntrypoint) || sorted[0];
         flows.push({
-            name: feature,
+            name: sanitizeFlowName(feature),
             entrypoint,
             files: sorted.slice(0, MAX_FLOW_FILES),
             depth: layers.size,
@@ -379,7 +387,7 @@ function flowsFromImports(dependenciesPath, files) {
         traverse(ep, 1);
         if (fileSet.size >= 3 && layerSet.size >= 2) {
             flows.push({
-                name: path.basename(ep, path.extname(ep)),
+                name: sanitizeFlowName(path.basename(ep, path.extname(ep))),
                 entrypoint: ep,
                 files: Array.from(fileSet),
                 depth: Math.min(MAX_FLOW_DEPTH, [...visited].length),
@@ -468,7 +476,8 @@ export function generateSemanticContexts(aiDir) {
     // Write flows
     ensureDir(flowsDir);
     for (const flow of flows) {
-        const filePath = path.join(flowsDir, `${flow.name}.json`);
+        const safeName = sanitizeFlowName(flow.name);
+        const filePath = path.join(flowsDir, `${safeName}.json`);
         writeFile(filePath, JSON.stringify(flow, null, 2));
     }
     return { features, flows };

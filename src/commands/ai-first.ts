@@ -1119,8 +1119,8 @@ Options:
     
     // repo-map.json (use local generateRepoMapJson function)
     const repoMapData = JSON.parse(generateRepoMapJson(scan.files.map(f => ({ relativePath: f.relativePath, name: f.name, extension: f.extension }))));
-    fs.writeFileSync(path.join(aiDir, "repo-map.json"), JSON.stringify(repoMapData, null, 2));
-    console.log("   ✅ repo-map.json");
+    fs.writeFileSync(path.join(aiDir, "repo_map.json"), JSON.stringify(repoMapData, null, 2));
+    console.log("   ✅ repo_map.json");
     
     // module-graph.json
     const { generateModuleGraph } = await import("../core/moduleGraph.js");
