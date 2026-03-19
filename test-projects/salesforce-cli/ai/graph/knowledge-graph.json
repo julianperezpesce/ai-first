@@ -1,0 +1,64 @@
+{
+  "nodes": [
+    {
+      "id": "force-app",
+      "type": "feature",
+      "label": "force-app",
+      "metadata": {
+        "path": "force-app",
+        "fileCount": 3
+      }
+    },
+    {
+      "id": "account",
+      "type": "flow",
+      "label": "account",
+      "metadata": {
+        "entrypoint": "force-app/main/default/classes/AccountController.cls",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "opportunity",
+      "type": "flow",
+      "label": "opportunity",
+      "metadata": {
+        "entrypoint": "force-app/main/default/classes/OpportunityController.cls",
+        "fileCount": 1
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "force-app",
+      "to": "account",
+      "type": "contains"
+    },
+    {
+      "from": "force-app",
+      "to": "opportunity",
+      "type": "contains"
+    },
+    {
+      "from": "account",
+      "to": "force-app/main/default/classes/AccountController.cls",
+      "type": "implements"
+    },
+    {
+      "from": "opportunity",
+      "to": "force-app/main/default/classes/OpportunityController.cls",
+      "type": "implements"
+    }
+  ],
+  "metadata": {
+    "generated": "2026-03-18T01:15:49.609Z",
+    "sources": [
+      "features",
+      "flows",
+      "symbols",
+      "dependencies"
+    ],
+    "nodeCount": 3,
+    "edgeCount": 4
+  }
+}

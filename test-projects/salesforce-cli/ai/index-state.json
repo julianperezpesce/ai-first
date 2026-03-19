@@ -1,0 +1,217 @@
+{
+  "version": "1.0.0",
+  "lastIndexed": "2026-03-18T17:27:13.298Z",
+  "totalFiles": 30,
+  "files": {
+    "ai/ai_context.md": {
+      "path": "ai/ai_context.md",
+      "hash": "f038c6e81ed1afc0b5582c214b42fe69",
+      "mtime": 1773796492673.4075,
+      "size": 1399,
+      "indexedAt": "2026-03-18T17:27:13.297Z"
+    },
+    "ai/ai_rules.md": {
+      "path": "ai/ai_rules.md",
+      "hash": "d6864e4c14fb24f5b12fc0dbc5fe50f7",
+      "mtime": 1773796492673.4075,
+      "size": 763,
+      "indexedAt": "2026-03-18T17:27:13.297Z"
+    },
+    "ai/architecture.md": {
+      "path": "ai/architecture.md",
+      "hash": "587f3de6d1623a0fc13d924503ab2ad9",
+      "mtime": 1773796492669.4075,
+      "size": 628,
+      "indexedAt": "2026-03-18T17:27:13.297Z"
+    },
+    "ai/cache.json": {
+      "path": "ai/cache.json",
+      "hash": "8ce78f24c309e81f7914c81e1e7d75c7",
+      "mtime": 1773796517713.798,
+      "size": 3146,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/context/features/force-app.json": {
+      "path": "ai/context/features/force-app.json",
+      "hash": "05a59b12f59343ac6550313514d26378",
+      "mtime": 1773796517714.798,
+      "size": 420,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/context/flows/account.json": {
+      "path": "ai/context/flows/account.json",
+      "hash": "b598b9ea1bc7ba8e8220ce3861cd9a6b",
+      "mtime": 1773796517714.798,
+      "size": 202,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/context/flows/opportunity.json": {
+      "path": "ai/context/flows/opportunity.json",
+      "hash": "ac8e6a6f053bb84d99784bd2e4556e90",
+      "mtime": 1773796517715.798,
+      "size": 214,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/conventions.md": {
+      "path": "ai/conventions.md",
+      "hash": "d11ac646a8916e3c6cc376f610368317",
+      "mtime": 1773796492671.4075,
+      "size": 813,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/dependencies.json": {
+      "path": "ai/dependencies.json",
+      "hash": "038f80a99cbcc45991786b645398758e",
+      "mtime": 1773796492672.4075,
+      "size": 87,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/entrypoints.md": {
+      "path": "ai/entrypoints.md",
+      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
+      "mtime": 1773796492670.4075,
+      "size": 43,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/files.json": {
+      "path": "ai/files.json",
+      "hash": "3bccb8181178cb2af62a7d965cb92a27",
+      "mtime": 1773854833245.3142,
+      "size": 3195,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/graph/knowledge-graph.json": {
+      "path": "ai/graph/knowledge-graph.json",
+      "hash": "70dfef7b797d97d5df2254beabc335c3",
+      "mtime": 1773796549609.295,
+      "size": 1299,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/graph/module-graph.json": {
+      "path": "ai/graph/module-graph.json",
+      "hash": "6848d665199d24a321d36d4e96e9dd90",
+      "mtime": 1773796517707.7979,
+      "size": 305,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/graph/symbol-graph.json": {
+      "path": "ai/graph/symbol-graph.json",
+      "hash": "fbd7cdd87c277789096aeeb23182dd5e",
+      "mtime": 1773796517711.798,
+      "size": 5748,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/graph/symbol-references.json": {
+      "path": "ai/graph/symbol-references.json",
+      "hash": "99914b932bd37a50b983c5e7c90ae93b",
+      "mtime": 1773796517711.798,
+      "size": 2,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/index-state.json": {
+      "path": "ai/index-state.json",
+      "hash": "03dd1d2671aa3ef674dec4120c5273bf",
+      "mtime": 1773796526485.9348,
+      "size": 6543,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/modules.json": {
+      "path": "ai/modules.json",
+      "hash": "1d0ec72acc3fc6e1c8c1c28b1ad87252",
+      "mtime": 1773854833246.3142,
+      "size": 296,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/project.json": {
+      "path": "ai/project.json",
+      "hash": "295b4cc3d9224937904a0270cc234dc2",
+      "mtime": 1773796492675.4075,
+      "size": 247,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/repo-map.json": {
+      "path": "ai/repo-map.json",
+      "hash": "4f16721f87196949948475fda1bbb92b",
+      "mtime": 1773796517706.8672,
+      "size": 5843,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/repo_map.json": {
+      "path": "ai/repo_map.json",
+      "hash": "d2f687f4d05e38731e8b4fa2b4481178",
+      "mtime": 1773796492668.4075,
+      "size": 1775,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/repo_map.md": {
+      "path": "ai/repo_map.md",
+      "hash": "612c1b7f776ec7f0e02e6a2a80bafe3b",
+      "mtime": 1773796492667.4075,
+      "size": 521,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/schema.json": {
+      "path": "ai/schema.json",
+      "hash": "972220a7d47c9f782cd74798554d2cc4",
+      "mtime": 1773796492675.4075,
+      "size": 102,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/summary.md": {
+      "path": "ai/summary.md",
+      "hash": "52c99c74210210438e7bf314915ef872",
+      "mtime": 1773796492668.4075,
+      "size": 171,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/symbols.json": {
+      "path": "ai/symbols.json",
+      "hash": "e3c31bde2bfd56e085f689eb750aa93e",
+      "mtime": 1773796492672.4075,
+      "size": 8233,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/tech_stack.md": {
+      "path": "ai/tech_stack.md",
+      "hash": "4f67b75666a8dab1f2f82196130ab030",
+      "mtime": 1773796492670.4075,
+      "size": 317,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "ai/tools.json": {
+      "path": "ai/tools.json",
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773796492675.4075,
+      "size": 138,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "force-app/main/default/classes/AccountController.cls": {
+      "path": "force-app/main/default/classes/AccountController.cls",
+      "hash": "f42a5c32b2194cf4c6227503ba00f6fe",
+      "mtime": 1773777904495.204,
+      "size": 719,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "force-app/main/default/classes/OpportunityController.cls": {
+      "path": "force-app/main/default/classes/OpportunityController.cls",
+      "hash": "27984b63f77bef40953426e0a6b0c685",
+      "mtime": 1773777913625.33,
+      "size": 872,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "force-app/main/default/triggers/AccountTrigger.trigger": {
+      "path": "force-app/main/default/triggers/AccountTrigger.trigger",
+      "hash": "84c54cb056848e844af710a70c5ef243",
+      "mtime": 1773777952108.863,
+      "size": 1058,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    },
+    "sfdx-project.json": {
+      "path": "sfdx-project.json",
+      "hash": "d2a50cc298ee84931caa1b54ae8b18ed",
+      "mtime": 1773777895732.083,
+      "size": 194,
+      "indexedAt": "2026-03-18T17:27:13.298Z"
+    }
+  }
+}

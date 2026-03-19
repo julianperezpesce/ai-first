@@ -471,17 +471,33 @@ Flows represent business execution chains starting from entrypoints.
 
 ---
 
-## 🌍 Multi-Language Support
+## 🌍 Multi-Language & Framework Support
+
+### Languages
 
 | Category | Languages |
 |----------|-----------|
 | **Web** | JavaScript, TypeScript, Python, Go, Rust |
 | **Backend** | Java, C#, PHP, Ruby, Go, Rust, Kotlin |
-NW|| **Mobile** | Swift, Kotlin, Android |
+| **Mobile** | Swift, Kotlin, Android |
 | **Frontend** | Vue, Svelte, React, HTML, CSS, SCSS |
-TK|  Testing | Jest, Vitest, pytest, Mocha, RSpec |
-MV|
-NM|## 🤖 Android/Kotlin Support
+| **Testing** | Jest, Vitest, pytest, Mocha, RSpec |
+
+### Frameworks (Tested)
+
+| Framework | Language | Test Project |
+|-----------|----------|-------------|
+| **Django** | Python | `test-projects/django-app` |
+| **FastAPI** | Python | `test-projects/fastapi-app` |
+| **Flask** | Python | `test-projects/flask-app` |
+| **Laravel** | PHP | `test-projects/laravel-app` |
+| **Rails** | Ruby | `test-projects/rails-app` |
+| **Spring Boot** | Java | `test-projects/spring-boot-app` |
+| Express.js | JavaScript | `test-projects/express-api` |
+| NestJS | TypeScript | `test-projects/nestjs-backend` |
+| React | JavaScript | `test-projects/react-app` |
+| Python CLI | Python | `test-projects/python-cli` |
+| Salesforce DX | Apex | `test-projects/salesforce-cli` |
 HM|
 XZ|ai-first automatically detects and indexes Android/Kotlin projects:
 HM|
@@ -506,8 +522,14 @@ NM|---
 
 ## 📋 Roadmap
 
+### Phase 2 (In Progress)
+- [ ] Enhanced semantic indexing
+- [ ] Plugin system for custom analyzers
+
 ### Phase 3 (Planned)
-- [ ] Support for more languages (PHP, Ruby, Scala)
+- [x] PHP support (Laravel test project)
+- [x] Ruby support (Rails test project)
+- [ ] Scala support
 - [ ] Configuration file support (`ai-first.config.json`)
 - [ ] Custom rules/plugins system
 - [ ] CI/CD integration templates

@@ -1,0 +1,16 @@
+{
+  "modules": {
+    "app": {
+      "path": "app",
+      "files": [
+        "app/database.py",
+        "app/dependencies.py",
+        "app/main.py",
+        "app/models.py",
+        "app/routers/auth.py",
+        "app/routers/posts.py",
+        "app/schemas.py"
+      ]
+    }
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "version": "1.0.0",
+  "lastIndexed": "2026-03-18T17:09:41.396Z",
+  "totalFiles": 41,
+  "files": {
+    "README.md": {
+      "path": "README.md",
+      "hash": "3ef44ec9e999fbbf4cc8576bd9996e24",
+      "mtime": 1773853678950.926,
+      "size": 3820,
+      "indexedAt": "2026-03-18T17:09:41.394Z"
+    },
+    "ai/ai_context.md": {
+      "path": "ai/ai_context.md",
+      "hash": "2b88de40fafdef3feb62eb1bdc9d1450",
+      "mtime": 1773853770296.2148,
+      "size": 1504,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/ai_rules.md": {
+      "path": "ai/ai_rules.md",
+      "hash": "b34350fb34dabf766cc8425b6a5c32cb",
+      "mtime": 1773853770296.2148,
+      "size": 808,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/architecture.md": {
+      "path": "ai/architecture.md",
+      "hash": "c2692ffcacf44f02742598328eaa2329",
+      "mtime": 1773853770290.2146,
+      "size": 755,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/cache.json": {
+      "path": "ai/cache.json",
+      "hash": "e4d6d1eda920d24846bd61736d855d14",
+      "mtime": 1773853776117.297,
+      "size": 4733,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/context/features/app.json": {
+      "path": "ai/context/features/app.json",
+      "hash": "3bf2bb6ca87e997141474e32fa2986fa",
+      "mtime": 1773853776119.297,
+      "size": 709,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/context/features/config.json": {
+      "path": "ai/context/features/config.json",
+      "hash": "db2ab595087aba40287ee15c6d79552c",
+      "mtime": 1773853776119.297,
+      "size": 210,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/context/flows/application_.json": {
+      "path": "ai/context/flows/application_.json",
+      "hash": "b796ad3fa8bca08e15dcbade1439944c",
+      "mtime": 1773853776119.297,
+      "size": 185,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/context/flows/comments_.json": {
+      "path": "ai/context/flows/comments_.json",
+      "hash": "d90ee6034c82ea59410cc3da7471901d",
+      "mtime": 1773853776119.297,
+      "size": 197,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/context/flows/posts_.json": {
+      "path": "ai/context/flows/posts_.json",
+      "hash": "a4142ffe2c2908069728bfd86d73d8a3",
+      "mtime": 1773853776119.297,
+      "size": 188,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/context/flows/routes.json": {
+      "path": "ai/context/flows/routes.json",
+      "hash": "c63b4ddeccd3090f084d1e090cdc2cad",
+      "mtime": 1773853776119.297,
+      "size": 129,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/context/flows/users_.json": {
+      "path": "ai/context/flows/users_.json",
+      "hash": "6ec4411b509c8d1d063bd0228a9fc186",
+      "mtime": 1773853776119.297,
+      "size": 188,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/conventions.md": {
+      "path": "ai/conventions.md",
+      "hash": "271252881dc9d70018eda35db35449ef",
+      "mtime": 1773853770294.2148,
+      "size": 813,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/dependencies.json": {
+      "path": "ai/dependencies.json",
+      "hash": "038f80a99cbcc45991786b645398758e",
+      "mtime": 1773853770295.2148,
+      "size": 87,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/entrypoints.md": {
+      "path": "ai/entrypoints.md",
+      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
+      "mtime": 1773853770293.2148,
+      "size": 43,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/files.json": {
+      "path": "ai/files.json",
+      "hash": "8b503e51fdc90b73d0c02e481e65ab3f",
+      "mtime": 1773853781326.3708,
+      "size": 4258,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/graph/module-graph.json": {
+      "path": "ai/graph/module-graph.json",
+      "hash": "1ec6b5cded4704395df625458db3360e",
+      "mtime": 1773853776112.297,
+      "size": 638,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/graph/symbol-graph.json": {
+      "path": "ai/graph/symbol-graph.json",
+      "hash": "79a11e66d1c9ebdbec716c31b9eb11db",
+      "mtime": 1773853776115.297,
+      "size": 60,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/graph/symbol-references.json": {
+      "path": "ai/graph/symbol-references.json",
+      "hash": "99914b932bd37a50b983c5e7c90ae93b",
+      "mtime": 1773853776115.297,
+      "size": 2,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/modules.json": {
+      "path": "ai/modules.json",
+      "hash": "b86162ee33ceced7d087170aeb03bae5",
+      "mtime": 1773853781326.3708,
+      "size": 633,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/project.json": {
+      "path": "ai/project.json",
+      "hash": "8320f4be11fc7ac2d8a77f01e2fb1bf1",
+      "mtime": 1773853770299.2148,
+      "size": 290,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/repo-map.json": {
+      "path": "ai/repo-map.json",
+      "hash": "a02197cb10fa510fc230f7f0f480028e",
+      "mtime": 1773853776104.2969,
+      "size": 8542,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/repo_map.json": {
+      "path": "ai/repo_map.json",
+      "hash": "e1a4828e985e97f765bc36bd71b14323",
+      "mtime": 1773853770289.2146,
+      "size": 3529,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/repo_map.md": {
+      "path": "ai/repo_map.md",
+      "hash": "6be292d9062029469958f996ab4b05cc",
+      "mtime": 1773853770288.2146,
+      "size": 944,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/schema.json": {
+      "path": "ai/schema.json",
+      "hash": "aa050d62e0686ae90b5f60ed7969e3b9",
+      "mtime": 1773853770299.2148,
+      "size": 102,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/summary.md": {
+      "path": "ai/summary.md",
+      "hash": "87c1c31c6bc816e49363f4406c287ed5",
+      "mtime": 1773853770289.2146,
+      "size": 154,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/symbols.json": {
+      "path": "ai/symbols.json",
+      "hash": "6edde050dc3089a9e15bf3934226a7c4",
+      "mtime": 1773853770294.2148,
+      "size": 83,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/tech_stack.md": {
+      "path": "ai/tech_stack.md",
+      "hash": "eaaa6e1eb439a6bd2f1b510ca4f72f32",
+      "mtime": 1773853770292.2146,
+      "size": 338,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "ai/tools.json": {
+      "path": "ai/tools.json",
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773853770299.2148,
+      "size": 138,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "app/controllers/api/comments_controller.rb": {
+      "path": "app/controllers/api/comments_controller.rb",
+      "hash": "e3b584186544ce602aad545c965bc2a2",
+      "mtime": 1773853631697.262,
+      "size": 1899,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "app/controllers/api/posts_controller.rb": {
+      "path": "app/controllers/api/posts_controller.rb",
+      "hash": "b1de2ba0bc7c211e7d9835e6774c679b",
+      "mtime": 1773853614445.0198,
+      "size": 1586,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "app/controllers/api/users_controller.rb": {
+      "path": "app/controllers/api/users_controller.rb",
+      "hash": "af3c6c69f25f83ba384a677b2f1509ff",
+      "mtime": 1773853603625.8682,
+      "size": 1101,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "app/controllers/application_controller.rb": {
+      "path": "app/controllers/application_controller.rb",
+      "hash": "6b9ad7e9ab66ff26949ecd46168804fa",
+      "mtime": 1773853593748.7297,
+      "size": 997,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "app/models/comment.rb": {
+      "path": "app/models/comment.rb",
+      "hash": "a4948b0d232cea2dec83a7bea2e94c75",
+      "mtime": 1773853587660.6445,
+      "size": 694,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "app/models/post.rb": {
+      "path": "app/models/post.rb",
+      "hash": "1a970d5c75d2ffcf23b797d8da78018a",
+      "mtime": 1773853581771.5623,
+      "size": 812,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "app/models/user.rb": {
+      "path": "app/models/user.rb",
+      "hash": "c31306e81cef27073eabae95167c2fe9",
+      "mtime": 1773853574668.463,
+      "size": 609,
+      "indexedAt": "2026-03-18T17:09:41.395Z"
+    },
+    "app/services/post_service.rb": {
+      "path": "app/services/post_service.rb",
+      "hash": "8b168ea13fd7490330796c9427513d88",
+      "mtime": 1773853657349.6223,
+      "size": 2145,
+      "indexedAt": "2026-03-18T17:09:41.396Z"
+    },
+    "app/services/user_service.rb": {
+      "path": "app/services/user_service.rb",
+      "hash": "ad982de5fd4fb6d6bf56ae11786085eb",
+      "mtime": 1773853643398.4263,
+      "size": 1649,
+      "indexedAt": "2026-03-18T17:09:41.396Z"
+    },
+    "config/application.rb": {
+      "path": "config/application.rb",
+      "hash": "6f483e86399f29d8459f5395025fa916",
+      "mtime": 1773853559786.255,
+      "size": 844,
+      "indexedAt": "2026-03-18T17:09:41.396Z"
+    },
+    "config/environment.rb": {
+      "path": "config/environment.rb",
+      "hash": "591ba809105639f0e8706132656ae120",
+      "mtime": 1773853561174.2742,
+      "size": 158,
+      "indexedAt": "2026-03-18T17:09:41.396Z"
+    },
+    "config/routes.rb": {
+      "path": "config/routes.rb",
+      "hash": "3b60545df1ace195b9ce879b79b6638f",
+      "mtime": 1773853565362.3328,
+      "size": 409,
+      "indexedAt": "2026-03-18T17:09:41.396Z"
+    }
+  }
+}

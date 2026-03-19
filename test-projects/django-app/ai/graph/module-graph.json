@@ -1,0 +1,145 @@
+{
+  "modules": [
+    {
+      "name": "blog",
+      "paths": [
+        "blog/__init__.py",
+        "blog/admin.py",
+        "blog/models.py",
+        "blog/serializers.py",
+        "blog/urls.py",
+        "blog/views.py"
+      ]
+    },
+    {
+      "name": "django_app",
+      "paths": [
+        "django_app/__init__.py",
+        "django_app/settings.py",
+        "django_app/urls.py",
+        "django_app/wsgi.py"
+      ]
+    },
+    {
+      "name": "users",
+      "paths": [
+        "users/__init__.py",
+        "users/admin.py",
+        "users/models.py",
+        "users/serializers.py",
+        "users/urls.py",
+        "users/views.py"
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "from": "blog",
+      "to": "django.contrib"
+    },
+    {
+      "from": "blog",
+      "to": "django.db"
+    },
+    {
+      "from": "blog",
+      "to": "django.contrib.auth.models"
+    },
+    {
+      "from": "blog",
+      "to": "rest_framework"
+    },
+    {
+      "from": "blog",
+      "to": "django.urls"
+    },
+    {
+      "from": "blog",
+      "to": "rest_framework.routers"
+    },
+    {
+      "from": "blog",
+      "to": "rest_framework.decorators"
+    },
+    {
+      "from": "blog",
+      "to": "rest_framework.response"
+    },
+    {
+      "from": "blog",
+      "to": "rest_framework.permissions"
+    },
+    {
+      "from": "django_app",
+      "to": "pathlib"
+    },
+    {
+      "from": "django_app",
+      "to": "django.contrib"
+    },
+    {
+      "from": "django_app",
+      "to": "django.urls"
+    },
+    {
+      "from": "django_app",
+      "to": "django.core.wsgi"
+    },
+    {
+      "from": "django_app",
+      "to": "os"
+    },
+    {
+      "from": "users",
+      "to": "django.contrib"
+    },
+    {
+      "from": "users",
+      "to": "django.contrib.auth.admin"
+    },
+    {
+      "from": "users",
+      "to": "django.contrib.auth.models"
+    },
+    {
+      "from": "users",
+      "to": "django.db"
+    },
+    {
+      "from": "users",
+      "to": "django.db.models.signals"
+    },
+    {
+      "from": "users",
+      "to": "django.dispatch"
+    },
+    {
+      "from": "users",
+      "to": "rest_framework"
+    },
+    {
+      "from": "users",
+      "to": "django.urls"
+    },
+    {
+      "from": "users",
+      "to": "rest_framework.routers"
+    },
+    {
+      "from": "users",
+      "to": "rest_framework.decorators"
+    },
+    {
+      "from": "users",
+      "to": "rest_framework.response"
+    },
+    {
+      "from": "users",
+      "to": "rest_framework.permissions"
+    },
+    {
+      "from": "users",
+      "to": "django.contrib.auth"
+    }
+  ]
+}

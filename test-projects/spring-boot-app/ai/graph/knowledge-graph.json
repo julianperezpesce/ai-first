@@ -1,0 +1,231 @@
+{
+  "nodes": [
+    {
+      "id": "src",
+      "type": "feature",
+      "label": "src",
+      "metadata": {
+        "path": "src",
+        "fileCount": 12
+      }
+    },
+    {
+      "id": "PostController",
+      "type": "flow",
+      "label": "PostController",
+      "metadata": {
+        "entrypoint": "src/main/java/com/example/demo/controllers/PostController.java",
+        "fileCount": 8
+      }
+    },
+    {
+      "id": "UserController",
+      "type": "flow",
+      "label": "UserController",
+      "metadata": {
+        "entrypoint": "src/main/java/com/example/demo/controllers/UserController.java",
+        "fileCount": 8
+      }
+    },
+    {
+      "id": "comment",
+      "type": "flow",
+      "label": "comment",
+      "metadata": {
+        "entrypoint": "src/main/java/com/example/demo/controllers/CommentController.java",
+        "fileCount": 3
+      }
+    },
+    {
+      "id": "post",
+      "type": "flow",
+      "label": "post",
+      "metadata": {
+        "entrypoint": "src/main/java/com/example/demo/controllers/PostController.java",
+        "fileCount": 4
+      }
+    },
+    {
+      "id": "user",
+      "type": "flow",
+      "label": "user",
+      "metadata": {
+        "entrypoint": "src/main/java/com/example/demo/controllers/UserController.java",
+        "fileCount": 4
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "src",
+      "to": "PostController",
+      "type": "contains"
+    },
+    {
+      "from": "src",
+      "to": "UserController",
+      "type": "contains"
+    },
+    {
+      "from": "src",
+      "to": "comment",
+      "type": "contains"
+    },
+    {
+      "from": "src",
+      "to": "post",
+      "type": "contains"
+    },
+    {
+      "from": "src",
+      "to": "user",
+      "type": "contains"
+    },
+    {
+      "from": "PostController",
+      "to": "src/main/java/com/example/demo/controllers/PostController.java",
+      "type": "implements"
+    },
+    {
+      "from": "PostController",
+      "to": "com/example/demo/services/PostService.java",
+      "type": "implements"
+    },
+    {
+      "from": "PostController",
+      "to": "jakarta/validation/Valid.java",
+      "type": "implements"
+    },
+    {
+      "from": "PostController",
+      "to": "jakarta/validation/constraints/NotBlank.java",
+      "type": "implements"
+    },
+    {
+      "from": "PostController",
+      "to": "jakarta/validation/constraints/NotNull.java",
+      "type": "implements"
+    },
+    {
+      "from": "PostController",
+      "to": "lombok/RequiredArgsConstructor.java",
+      "type": "implements"
+    },
+    {
+      "from": "PostController",
+      "to": "org/springframework/http/HttpStatus.java",
+      "type": "implements"
+    },
+    {
+      "from": "PostController",
+      "to": "org/springframework/http/ResponseEntity.java",
+      "type": "implements"
+    },
+    {
+      "from": "UserController",
+      "to": "src/main/java/com/example/demo/controllers/UserController.java",
+      "type": "implements"
+    },
+    {
+      "from": "UserController",
+      "to": "com/example/demo/services/UserService.java",
+      "type": "implements"
+    },
+    {
+      "from": "UserController",
+      "to": "jakarta/validation/Valid.java",
+      "type": "implements"
+    },
+    {
+      "from": "UserController",
+      "to": "jakarta/validation/constraints/Email.java",
+      "type": "implements"
+    },
+    {
+      "from": "UserController",
+      "to": "jakarta/validation/constraints/NotBlank.java",
+      "type": "implements"
+    },
+    {
+      "from": "UserController",
+      "to": "lombok/RequiredArgsConstructor.java",
+      "type": "implements"
+    },
+    {
+      "from": "UserController",
+      "to": "org/springframework/http/HttpStatus.java",
+      "type": "implements"
+    },
+    {
+      "from": "UserController",
+      "to": "org/springframework/http/ResponseEntity.java",
+      "type": "implements"
+    },
+    {
+      "from": "comment",
+      "to": "src/main/java/com/example/demo/controllers/CommentController.java",
+      "type": "implements"
+    },
+    {
+      "from": "comment",
+      "to": "src/main/java/com/example/demo/models/Comment.java",
+      "type": "implements"
+    },
+    {
+      "from": "comment",
+      "to": "src/main/java/com/example/demo/repositories/CommentRepository.java",
+      "type": "implements"
+    },
+    {
+      "from": "post",
+      "to": "src/main/java/com/example/demo/controllers/PostController.java",
+      "type": "implements"
+    },
+    {
+      "from": "post",
+      "to": "src/main/java/com/example/demo/models/Post.java",
+      "type": "implements"
+    },
+    {
+      "from": "post",
+      "to": "src/main/java/com/example/demo/repositories/PostRepository.java",
+      "type": "implements"
+    },
+    {
+      "from": "post",
+      "to": "src/main/java/com/example/demo/services/PostService.java",
+      "type": "implements"
+    },
+    {
+      "from": "user",
+      "to": "src/main/java/com/example/demo/controllers/UserController.java",
+      "type": "implements"
+    },
+    {
+      "from": "user",
+      "to": "src/main/java/com/example/demo/models/User.java",
+      "type": "implements"
+    },
+    {
+      "from": "user",
+      "to": "src/main/java/com/example/demo/repositories/UserRepository.java",
+      "type": "implements"
+    },
+    {
+      "from": "user",
+      "to": "src/main/java/com/example/demo/services/UserService.java",
+      "type": "implements"
+    }
+  ],
+  "metadata": {
+    "generated": "2026-03-18T17:10:07.663Z",
+    "sources": [
+      "features",
+      "flows",
+      "symbols",
+      "dependencies"
+    ],
+    "nodeCount": 6,
+    "edgeCount": 32
+  }
+}
