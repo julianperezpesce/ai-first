@@ -18,7 +18,7 @@ import { generateAIRules, generateAIRulesFile } from "../analyzers/aiRules.js";
 import { generateModuleGraph } from "../core/moduleGraph.js";
 import { loadIndexState, computeFileHash, getFilesToIndex, getChangedFilesGit } from "../core/indexState.js";
 import { chunkFiles } from "../core/chunker.js";
-import { generateEmbeddings, saveEmbeddings } from "../core/embeddings.js";
+import { generateEmbeddings, saveEmbeddings, createEmbeddingsTable } from "../core/embeddings.js";
 import { generateContextModules, createCCP, listCCPs, getCCP } from "../core/ccp.js";
 import { generateSemanticContexts } from "../core/semanticContexts.js";
 import { doctorMain } from "./doctor.js";
@@ -28,6 +28,7 @@ import { detectGitRepository, generateGitContext, analyzeGitActivity, getRecentF
 import { buildKnowledgeGraph, loadKnowledgeGraph } from "../core/knowledgeGraphBuilder.js";
 import { runIncrementalUpdate, detectChangedFiles } from "../core/incrementalAnalyzer.js";
 import { generateAllSchema } from "../core/schema.js";
+import { Database } from "sql.js";
 import ora from "ora";
 import process from "process";
 
@@ -420,6 +421,11 @@ Example queries (for AI agents):
     }
 
     const aiDir = path.join(rootDir, "ai-context");
+    
+    // Create output directory if it doesn't exist
+    if (!fs.existsSync(aiDir)) {
+      fs.mkdirSync(aiDir, { recursive: true });
+    }
 
     // Load existing index state for incremental indexing
     const existingState = loadIndexState(aiDir);
@@ -516,7 +522,23 @@ Example queries (for AI agents):
             console.log(`   Created ${chunks.length} chunks`);
             
             const { embeddings, model } = await generateEmbeddings(chunks);
-            saveEmbeddings(embeddings, aiDir, model, 384);
+            
+            const initSqlJs = (await import("sql.js")).default;
+            const SQL = await initSqlJs();
+            const dbPath = outputPath || path.join(rootDir, "ai", "index.db");
+            let db: Database;
+            if (fs.existsSync(dbPath)) {
+              const fileBuffer = fs.readFileSync(dbPath);
+              db = new SQL.Database(fileBuffer);
+            } else {
+              db = new SQL.Database();
+            }
+            createEmbeddingsTable(db);
+            saveEmbeddings(db, embeddings, model, 384);
+            const data = db.export();
+            const buffer = Buffer.from(data);
+            fs.writeFileSync(dbPath, buffer);
+            db.close();
             console.log("   ✅ Semantic indexing complete");
           } catch (error) {
             console.log("   ⚠️  Semantic indexing failed:", error);
