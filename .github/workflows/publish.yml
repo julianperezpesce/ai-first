@@ -14,7 +14,8 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -46,9 +47,9 @@ jobs:
       - name: Create GitHub Release
         if: success()
         uses: softprops/action-gh-release@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: v${{ github.event.inputs.version || 'patch' }}
-          release_name: Release v${{ github.event.inputs.version || 'patch' }}
+          name: Release v${{ github.event.inputs.version || 'patch' }}
           generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
