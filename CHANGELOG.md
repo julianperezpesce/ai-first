@@ -91,6 +91,18 @@ All notable changes to `ai-first` will be documented in this file.
 - Vector and metadata stored as JSON strings
 - Same `index.db` used for files, symbols, imports, and embeddings
 
+### Phase 5: Documentation - Completed (v1.2.0)
+
+**Date:** 2026-03-19
+
+#### Changed
+
+- **Documentation consistency fixed**
+  - Updated all documentation files to use `ai-context/` instead of `ai/`
+  - Files updated: README.md, README.es.md, tests/e2e/README.md, examples/README.md
+  - Files updated: docs/guide/quick-start.md, docs/guide/getting-started.md
+  - Examples updated: examples/01-express-api.md, examples/02-react-app.md, examples/03-python-django.md
+
 ---
 
 ## [1.1.6] - 2026-03-18

@@ -43,27 +43,27 @@ node dist/commands/ai-first.js map --root test-projects/react-app
 
 ### init command should generate:
 
-- [x] `ai/repo_map.md`
-- [x] `ai/repo_map.json`
-- [x] `ai/summary.md`
-- [x] `ai/architecture.md`
-- [x] `ai/tech_stack.md`
-- [x] `ai/entrypoints.md`
-- [x] `ai/conventions.md`
-- [x] `ai/symbols.json`
-- [x] `ai/dependencies.json`
-- [x] `ai/ai_rules.md`
-- [x] `ai/ai_context.md`
-- [ ] `ai/context/features/*.json` ← NOT WORKING
-- [ ] `ai/context/flows/*.json` ← NOT WORKING (except NestJS with map)
+- [x] `ai-context/repo_map.md`
+- [x] `ai-context/repo_map.json`
+- [x] `ai-context/summary.md`
+- [x] `ai-context/architecture.md`
+- [x] `ai-context/tech_stack.md`
+- [x] `ai-context/entrypoints.md`
+- [x] `ai-context/conventions.md`
+- [x] `ai-context/symbols.json`
+- [x] `ai-context/dependencies.json`
+- [x] `ai-context/ai_rules.md`
+- [x] `ai-context/ai_context.md`
+- [ ] `ai-context/context/features/*.json` ← NOT WORKING
+- [ ] `ai-context/context/flows/*.json` ← NOT WORKING (except NestJS with map)
 
 ### map command should generate:
 
-- [x] `ai/graph/module-graph.json`
-- [x] `ai/graph/symbol-graph.json`
-- [x] `ai/files.json`
-- [ ] `ai/context/features/*.json` ← NOT WORKING for JS/Python/React
-- [x] `ai/context/flows/*.json` ← Only works for NestJS
+- [x] `ai-context/graph/module-graph.json`
+- [x] `ai-context/graph/symbol-graph.json`
+- [x] `ai-context/files.json`
+- [ ] `ai-context/context/features/*.json` ← NOT WORKING for JS/Python/React
+- [x] `ai-context/context/flows/*.json` ← Only works for NestJS
 
 ## Running Tests
 
@@ -73,13 +73,13 @@ npm run build
 
 # Run init tests
 for project in express-api nestjs-backend python-cli react-app; do
-  rm -rf test-projects/$project/ai
+  rm -rf test-projects/$project/ai-context test-projects/$project/ai
   node dist/commands/ai-first.js init --root test-projects/$project
 done
 
 # Run map tests
 for project in express-api nestjs-backend python-cli react-app; do
-  rm -rf test-projects/$project/ai
+  rm -rf test-projects/$project/ai-context test-projects/$project/ai
   node dist/commands/ai-first.js map --root test-projects/$project
 done
 ```
