@@ -1,7 +1,7 @@
 {
-  "name": "af",
+  "name": "ai-first-cli",
   "version": "1.2.1",
-  "description": "AI-First: Generate instant project context for AI coding agents",
+  "description": "CLI tool that prepares any repository to be used effectively by AI coding agents",
   "main": "dist/index.js",
   "type": "module",
   "bin": {
