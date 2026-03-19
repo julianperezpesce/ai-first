@@ -1,6 +1,23 @@
-import fs from "fs";
-import path from "path";
 import crypto from "crypto";
+/**
+ * Create embeddings table in the database
+ */
+export function createEmbeddingsTable(db) {
+    db.run(`
+    CREATE TABLE IF NOT EXISTS embeddings (
+      id TEXT PRIMARY KEY,
+      vector TEXT NOT NULL,
+      metadata TEXT NOT NULL,
+      chunk_id TEXT,
+      file_path TEXT,
+      start_line INTEGER,
+      end_line INTEGER,
+      type TEXT,
+      language TEXT
+    )
+  `);
+    db.run("CREATE INDEX IF NOT EXISTS idx_embeddings_file_path ON embeddings(file_path)");
+}
 /**
  * Generate a simple hash-based embedding (for testing/fallback)
  * This creates a deterministic embedding based on content
@@ -48,31 +65,55 @@ export async function generateEmbeddings(chunks, options = {}) {
     return { embeddings, model };
 }
 /**
- * Save embeddings to file
+ * Save embeddings to SQLite database
  */
-export function saveEmbeddings(embeddings, aiDir, model, dimensions) {
-    const index = {
-        version: "1.0.0",
-        model,
-        dimensions,
-        generated: new Date().toISOString(),
-        embeddings
-    };
-    const embeddingsPath = path.join(aiDir, "embeddings.json");
-    fs.writeFileSync(embeddingsPath, JSON.stringify(index, null, 2));
-    console.log(`   ✅ Saved ${embeddings.length} embeddings to ${embeddingsPath}`);
+export function saveEmbeddings(db, embeddings, model, dimensions) {
+    db.run("DELETE FROM embeddings");
+    for (const embedding of embeddings) {
+        const vectorJson = JSON.stringify(embedding.vector);
+        const metadataJson = JSON.stringify(embedding.metadata);
+        db.run(`INSERT INTO embeddings (id, vector, metadata, chunk_id, file_path, start_line, end_line, type, language) 
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`, [
+            embedding.id,
+            vectorJson,
+            metadataJson,
+            embedding.metadata.chunkId,
+            embedding.metadata.filePath,
+            embedding.metadata.startLine,
+            embedding.metadata.endLine,
+            embedding.metadata.type,
+            embedding.metadata.language
+        ]);
+    }
+    console.log(`   ✅ Saved ${embeddings.length} embeddings to database`);
 }
 /**
- * Load embeddings from file
+ * Load embeddings from SQLite database
  */
-export function loadEmbeddings(aiDir) {
-    const embeddingsPath = path.join(aiDir, "embeddings.json");
-    if (!fs.existsSync(embeddingsPath)) {
-        return null;
-    }
+export function loadEmbeddings(db) {
     try {
-        const data = fs.readFileSync(embeddingsPath, "utf-8");
-        return JSON.parse(data);
+        const result = db.exec("SELECT id, vector, metadata FROM embeddings");
+        if (result.length === 0 || result[0].values.length === 0) {
+            return null;
+        }
+        const embeddings = [];
+        for (const row of result[0].values) {
+            const id = row[0];
+            const vectorJson = row[1];
+            const metadataJson = row[2];
+            embeddings.push({
+                id,
+                vector: JSON.parse(vectorJson),
+                metadata: JSON.parse(metadataJson)
+            });
+        }
+        return {
+            version: "1.0.0",
+            model: "simple-fallback",
+            dimensions: embeddings.length > 0 ? embeddings[0].vector.length : 384,
+            generated: new Date().toISOString(),
+            embeddings
+        };
     }
     catch {
         return null;
@@ -93,23 +134,32 @@ function cosineSimilarity(a, b) {
     return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
 }
 /**
- * Search embeddings for similar chunks
+ * Search embeddings for similar chunks using SQLite database
  */
-export function searchEmbeddings(query, embeddingsIndex, topK = 5) {
-    // Generate embedding for query
-    const queryEmbedding = generateSimpleEmbedding(query, embeddingsIndex.dimensions);
-    // Calculate similarities
-    const results = embeddingsIndex.embeddings.map(embedding => ({
-        chunkId: embedding.id,
-        filePath: embedding.metadata.filePath,
-        score: cosineSimilarity(queryEmbedding, embedding.vector),
-        startLine: embedding.metadata.startLine,
-        endLine: embedding.metadata.endLine,
-        type: embedding.metadata.type
-    }));
-    // Sort by score and return top K
-    results.sort((a, b) => b.score - a.score);
-    return results.slice(0, topK).map(r => ({
+export function searchEmbeddings(db, query, dimensions = 384, topK = 5) {
+    const queryEmbedding = generateSimpleEmbedding(query, dimensions);
+    const result = db.exec("SELECT id, vector, metadata FROM embeddings");
+    if (result.length === 0 || result[0].values.length === 0) {
+        return [];
+    }
+    const searchResults = [];
+    for (const row of result[0].values) {
+        const id = row[0];
+        const vectorJson = row[1];
+        const metadataJson = row[2];
+        const vector = JSON.parse(vectorJson);
+        const metadata = JSON.parse(metadataJson);
+        searchResults.push({
+            chunkId: id,
+            filePath: metadata.filePath,
+            score: cosineSimilarity(queryEmbedding, vector),
+            startLine: metadata.startLine,
+            endLine: metadata.endLine,
+            type: metadata.type
+        });
+    }
+    searchResults.sort((a, b) => b.score - a.score);
+    return searchResults.slice(0, topK).map(r => ({
         chunkId: r.chunkId,
         filePath: r.filePath,
         score: r.score,

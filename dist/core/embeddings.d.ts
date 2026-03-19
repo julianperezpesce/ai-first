@@ -1,3 +1,4 @@
+import { Database } from "sql.js";
 import { Chunk } from "./chunker.js";
 export interface Embedding {
     id: string;
@@ -19,6 +20,10 @@ export interface EmbeddingsIndex {
     embeddings: Embedding[];
 }
 /**
+ * Create embeddings table in the database
+ */
+export declare function createEmbeddingsTable(db: Database): void;
+/**
  * Generate embeddings using local model (sentence-transformers)
  * or fallback to simple embeddings
  */
@@ -31,17 +36,17 @@ export declare function generateEmbeddings(chunks: Chunk[], options?: {
     model: string;
 }>;
 /**
- * Save embeddings to file
+ * Save embeddings to SQLite database
  */
-export declare function saveEmbeddings(embeddings: Embedding[], aiDir: string, model: string, dimensions: number): void;
+export declare function saveEmbeddings(db: Database, embeddings: Embedding[], model: string, dimensions: number): void;
 /**
- * Load embeddings from file
+ * Load embeddings from SQLite database
  */
-export declare function loadEmbeddings(aiDir: string): EmbeddingsIndex | null;
+export declare function loadEmbeddings(db: Database): EmbeddingsIndex | null;
 /**
- * Search embeddings for similar chunks
+ * Search embeddings for similar chunks using SQLite database
  */
-export declare function searchEmbeddings(query: string, embeddingsIndex: EmbeddingsIndex, topK?: number): {
+export declare function searchEmbeddings(db: Database, query: string, dimensions?: number, topK?: number): {
     chunkId: string;
     filePath: string;
     score: number;
