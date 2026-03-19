@@ -6,8 +6,8 @@
   <a href="https://github.com/julianperezpesce/ai-first/stargazers">
     <img src="https://img.shields.io/github/stars/julianperezpesce/ai-first?style=flat&color=ffd700" alt="Stars">
   </a>
-  <a href="https://www.npmjs.com/package/ai-first-cli">
-    <img src="https://img.shields.io/npm/dt/ai-first-cli?color=blue" alt="NPM Downloads">
+  <a href="https://www.npmjs.com/package/af">
+    <img src="https://img.shields.io/npm/dt/af?color=blue" alt="NPM Downloads">
   </a>
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
@@ -23,7 +23,7 @@
 ## ⚡ En 10 Segundos
 
 ```
-$ npx ai-first init
+$ npx af init
 ✅ Generated ai-context/ai_context.md (0.3s)
 ✅ Generated ai-context/symbols.json (0.1s)  
 ✅ Generated ai-context/dependencies.json (0.1s)
@@ -42,13 +42,13 @@ $ npx ai-first init
 Inicializa AI-First en tu repositorio:
 
 ```
-ai-first init
+af init
 ```
 
 Indexa el repositorio para que los agentes de IA puedan entender el código:
 
 ```
-ai-first index
+af index
 ```
 
 * `init` genera 11 archivos de contexto con metadatos del proyecto
@@ -60,11 +60,22 @@ ai-first index
 
 ```bash
 # Inicio rápido (sin instalación)
-npx ai-first init
+npx af init
 
 # O instalar globalmente
-npm install -g ai-first
-ai-first init
+npm install -g af
+af init
+```
+
+### Otros Métodos de Instalación
+
+```bash
+# Homebrew (macOS/Linux)
+brew tap julianperezpesce/tap
+brew install af
+
+# Script de instalación (Linux/macOS/WSL)
+curl -fsSL https://raw.githubusercontent.com/julianperezpesce/ai-first/master/install.sh | bash
 ```
 
 ---
@@ -73,19 +84,19 @@ ai-first init
 
 ### 1. Agentes de Código IA (OpenCode, Cursor, Claude Code)
 ```bash
-ai-first init
+af init
 # Luego pregunta a la IA: "Lee ai-context/ai_context.md y ayúdame a agregar una característica"
 ```
 
 ### 2. Incorporación de Nuevos Desarrolladores
 ```bash
-ai-first init
+af init
 # El nuevo desarrollador lee ai-context/ai_context.md → comprende el proyecto en 2 minutos
 ```
 
 ### 3. Documentación del Proyecto
 ```bash
-ai-first init
+af init
 # Documentación automática instantánea siempre actualizada
 ```
 
@@ -106,7 +117,7 @@ Resultado: Código roto, tokens desperdiciados
 ### Después: IA Ilustrada
 
 ```
-$ ai-first init
+$ af init
 
 Tú: "Lee ai-context/ai_context.md, luego agrega autenticación"
 IA: *lee 1 archivo (0.5s)*
@@ -207,11 +218,11 @@ ai-context/
 ├── tech_stack.md      # Lenguajes y frameworks
 ├── entrypoints.md     # Puntos de entrada
 ├── conventions.md     # Convenciones de código
-├── index.db           # Índice SQLite (generado por `ai-first index`)
-├── graph/             # Grafos de dependencias (generado por `ai-first map`)
+├── index.db           # Índice SQLite (generado por `af index`)
+├── graph/             # Grafos de dependencias (generado por `af map`)
 │   ├── module-graph.json
 │   └── symbol-graph.json
-└── context/           # Contexto de negocio (generado por `ai-first init`)
+└── context/           # Contexto de negocio (generado por `af init`)
     ├── features/      # Features de negocio detectados
     │   └── <modulo>.json
     └── flows/         # Cadenas de ejecución de negocio
@@ -236,16 +247,16 @@ ai-context/
 
 ```bash
 # Generar contexto
-ai-first init
+af init
 
 # Generar índice SQLite
-ai-first index
+af index
 
 # Directorio de salida personalizado
-ai-first init --output ./docs/ai
+af init --output ./docs/ai
 
 # Directorio raíz personalizado
-ai-first init --root ./my-project
+af init --root ./my-project
 ```
 
 ---
@@ -256,14 +267,14 @@ CCP (Context Control Packs) te permite crear contextos reutilizables y específi
 
 ### Cómo Funciona
 
-1. **Generar Módulos de Contexto**: `ai-first init` crea módulos en `ai-context/context/`
+1. **Generar Módulos de Contexto**: `af init` crea módulos en `ai-context/context/`
 2. **Crear un CCP**: Define qué módulos incluir para una tarea específica
 3. **Usar en IA**: Referencia el CCP al trabajar con agentes de IA
 
 ### Ejemplo
 
 ```bash
-ai-first ccp create tarea-auth --include repo,auth,api --description "Trabajo en autenticación"
+af ccp create tarea-auth --include repo,auth,api --description "Trabajo en autenticación"
 ```
 
 ---
@@ -310,13 +321,13 @@ Los flows representan cadenas de ejecución de negocio desde entrypoints.
 }
 ```
 
-**Generado por:** `ai-first init` o `ai-first map`
+**Generado por:** `af init` o `af map`
 
 ---
 
 ## 🤖 Soporte Android/Kotlin
 
-ai-first detecta e indexa automáticamente proyectos Android/Kotlin:
+af detecta e indexa automáticamente proyectos Android/Kotlin:
 
 - **Detección de lenguaje**: Kotlin (.kt)
 - **Detección de framework**: Android (vía build.gradle, AndroidManifest.xml)
@@ -404,7 +415,7 @@ Ver [docs/architecture.md](./docs/architecture.md) para arquitectura interna.
 
 ## 🤖 Soporte Android/Kotlin
 
-ai-first detecta e indexa automáticamente proyectos Android/Kotlin:
+af detecta e indexa automáticamente proyectos Android/Kotlin:
 
 - **Detección de lenguaje**: Kotlin (.kt)
 - **Detección de framework**: Android (vía build.gradle, AndroidManifest.xml)

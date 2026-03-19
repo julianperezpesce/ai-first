@@ -291,6 +291,7 @@ function generateUnifiedContext(repoMap, summary, architecture, techStack, entry
 // Check if run directly (not imported as module)
 const isMain = !import.meta.url ||
     process.argv[1]?.includes('ai-first') ||
+    process.argv[1]?.includes('af') ||
     process.argv[1] === undefined;
 if (isMain) {
     const args = process.argv.slice(2);
