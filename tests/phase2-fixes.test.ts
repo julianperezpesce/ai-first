@@ -34,7 +34,7 @@ module.exports = app;
     const fileInfo = {
       path: testFilePath,
       relativePath: "test.js",
-      extension: ".js",
+      extension: "js",
       name: "test"
     };
     
@@ -62,7 +62,7 @@ export const MAX_USERS = 100;
     const fileInfo = {
       path: tsFilePath,
       relativePath: "test.ts",
-      extension: ".ts",
+      extension: "ts",
       name: "test"
     };
     
@@ -75,7 +75,7 @@ export const MAX_USERS = 100;
     fs.unlinkSync(tsFilePath);
   });
 
-  it("should NOT extract symbols if extension is passed without dot", () => {
+  it("should extract symbols when extension is passed without dot", () => {
     const fileInfo = {
       path: testFilePath,
       relativePath: "test.js",
@@ -85,7 +85,7 @@ export const MAX_USERS = 100;
     
     const result = extractSymbols([fileInfo]);
     
-    expect(result.symbols.length).toBe(0);
+    expect(result.symbols.length).toBeGreaterThan(0);
   });
 });
 
