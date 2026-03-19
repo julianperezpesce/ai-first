@@ -39,7 +39,7 @@ npx ai-first init
 
 ## Output: Generated Files
 
-### ai/ai_context.md
+### ai-context/ai_context.md
 
 ```markdown
 # AI Context
@@ -100,7 +100,7 @@ npx ai-first init
 5. CSS: Use existing styling approach
 ```
 
-### ai/tech_stack.md
+### ai-context/tech_stack.md
 
 ```markdown
 # Technology Stack
@@ -131,7 +131,7 @@ Result: Wrong approach, conflicts with existing code
 
 **With ai-first:**
 ```
-You: "Read ai/ai_context.md. Add a dark mode toggle using Zustand store following existing patterns."
+You: "Read ai-context/ai_context.md. Add a dark mode toggle using Zustand store following existing patterns."
 AI: *reads context, uses Zustand, follows component patterns*
 ✅ Working toggle, integrated with store
 ```
