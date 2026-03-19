@@ -6,8 +6,8 @@
   <a href="https://github.com/julianperezpesce/ai-first/stargazers">
     <img src="https://img.shields.io/github/stars/julianperezpesce/ai-first?style=flat&color=ffd700" alt="Stars">
   </a>
-  <a href="https://www.npmjs.com/package/af">
-    <img src="https://img.shields.io/npm/dt/af?color=blue" alt="NPM Downloads">
+  <a href="https://www.npmjs.com/package/ai-first-cli">
+    <img src="https://img.shields.io/npm/dt/ai-first-cli?color=blue" alt="NPM Downloads">
   </a>
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
@@ -19,11 +19,50 @@
 
 > **Dale superpoderes a tu asistente de código IA.** Genera contexto instantáneo del proyecto para que los agentes IA comprendan tu código en segundos, no en minutos.
 
-<!-- START FIRST 10 SECONDS VALUE -->
+---
+
+## 📋 Tabla de Contenidos
+
+- [Comandos](#-referencia-de-comandos)
+- [Inicio Rápido](#-inicio-rápido)
+- [Instalación](#-instalación)
+- [Casos de Uso](#-casos-de-uso)
+- [Benchmark](#-benchmark)
+- [Cómo Funciona](#-cómo-funciona)
+- [Archivos Generados](#-archivos-generados)
+- [Agentes IA](#-agentes-ia-soportados)
+- [Roadmap](#-roadmap)
+- [Contribuir](#-para-contribuidores)
+
+---
+
+## ⚡ Referencia de Comandos
+
+| Comando | Descripción |
+|---------|-------------|
+| `af init` | Genera todos los archivos de contexto (símbolos, dependencias, arquitectura, etc.) |
+| `af index` | Crea base de datos SQLite para consultas rápidas de símbolos |
+| `af update` | Actualiza incrementally el contexto cuando archivos cambian |
+| `af watch` | Observa cambios y actualiza el índice automáticamente |
+| `af context` | Extrae contexto alrededor de un símbolo o función específica |
+| `af explore` | Explora dependencias de módulos interactivamente |
+| `af map` | Genera mapa del repositorio con todas las relaciones |
+| `af doctor` | Verifica salud del repositorio y preparación para IA |
+| `af query` | Consulta el índice (símbolos, imports, exports, stats) |
+| `af adapters` | Lista adaptadores de lenguajes/frameworks soportados |
+| `af git` | Muestra actividad reciente de git y archivos cambiados |
+| `af graph` | Muestra visualización del grafo de conocimiento |
+| `af --completions` | Genera script de autocompletado para shell |
+
+> **Nota:** Todos los comandos funcionan con `af` (recomendado) o `ai-first` (legacy).
+
+---
+
 ## ⚡ En 10 Segundos
 
 ```
-$ npx af init
+$ npm install -g ai-first-cli
+$ af init
 ✅ Generated ai-context/ai_context.md (0.3s)
 ✅ Generated ai-context/symbols.json (0.1s)  
 ✅ Generated ai-context/dependencies.json (0.1s)
@@ -33,7 +72,6 @@ $ npx af init
 ```
 
 **Resultado:** La IA comprende tu proyecto en ~500 tokens en lugar de 50,000.
-<!-- END FIRST 10 SECONDS VALUE -->
 
 ---
 
@@ -58,13 +96,19 @@ af index
 
 ## 📦 Instalación
 
-```bash
-# Inicio rápido (sin instalación)
-npx af init
+### Requisitos
+- Node.js 18+ (para indexación semántica opcional)
 
-# O instalar globalmente
-npm install -g af
+### Instalar
+
+```bash
+# Instalar globalmente (recomendado)
+npm install -g ai-first-cli
+
+# Ahora puedes usar el comando 'af'
 af init
+af index
+af doctor
 ```
 
 ### Otros Métodos de Instalación
@@ -72,10 +116,18 @@ af init
 ```bash
 # Homebrew (macOS/Linux)
 brew tap julianperezpesce/tap
-brew install af
+brew install ai-first-cli
 
 # Script de instalación (Linux/macOS/WSL)
 curl -fsSL https://raw.githubusercontent.com/julianperezpesce/ai-first/master/install.sh | bash
+```
+
+### Autocompletado de Shell
+
+```bash
+# Para bash
+af --completions > /usr/local/etc/bash_completion.d/af.bash
+source /usr/local/etc/bash_completion.d/af.bash
 ```
 
 ---
