@@ -238,7 +238,7 @@ AI-First CLI
 ## 📁 Archivos Generados
 
 ```
-ai/
+ai-context/
 ├── ai_context.md      # ⭐ Empieza aquí — vista general unificada
 ├── repo_map.json      # Estructura legible por máquina
 ├── symbols.json       # Funciones/clases extraídas
@@ -268,7 +268,7 @@ ai/
 | Agente | Cómo Usarlo |
 |--------|-------------|
 | **OpenCode** | `~/.config/opencode/commands/ai-first.md` |
-| **Cursor** | Referencia `ai/ai_context.md` en prompts |
+| **Cursor** | Referencia `ai-context/ai_context.md` en prompts |
 | **Claude Code** | Incluye contexto en el prompt del sistema |
 | **Windsurf** | Comprensión del proyecto |
 | **GitHub Copilot** | Sugerencias conscientes del contexto |
@@ -299,7 +299,7 @@ CCP (Context Control Packs) te permite crear contextos reutilizables y específi
 
 ### Cómo Funciona
 
-1. **Generar Módulos de Contexto**: `ai-first init` crea módulos en `ai/context/`
+1. **Generar Módulos de Contexto**: `ai-first init` crea módulos en `ai-context/context/`
 2. **Crear un CCP**: Define qué módulos incluir para una tarea específica
 3. **Usar en IA**: Referencia el CCP al trabajar con agentes de IA
 
@@ -325,7 +325,7 @@ Los features representan módulos de negocio detectados desde la estructura del 
 - Excluidos: utils, helpers, types, interfaces, constants, config, models, dto, common
 
 ```json
-// ai/context/features/<modulo>.json
+// ai-context/context/features/<modulo>.json
 {
   "feature": "auth",
   "files": ["src/auth/controller.js", "src/auth/service.js"],
@@ -343,7 +343,7 @@ Los flows representan cadenas de ejecución de negocio desde entrypoints.
 - Debe iniciar desde un entrypoint (Controller, Route, Command, Handler)
 
 ```json
-// ai/context/flows/<nombre>.json
+// ai-context/context/flows/<nombre>.json
 {
   "name": "login",
   "entrypoint": "src/auth/controller.js",
@@ -370,11 +370,11 @@ ai-first detecta e indexa automáticamente proyectos Android/Kotlin:
 
 ### Archivos generados para proyectos Android
 
-- `ai/tech_stack.md` - Muestra Android con versiones de SDK
-- `ai/dependencies.json` - Dependencias Gradle en formato group:artifact:version
-- `ai/entrypoints.md` - Activities, services, permisos de Android
-- `ai/android-resources.json` - Layouts, drawables, values (si existe res/)
-- `ai/gradle-modules.json` - Estructura multi-módulo (si existe settings.gradle)
+- `ai-context/tech_stack.md` - Muestra Android con versiones de SDK
+- `ai-context/dependencies.json` - Dependencias Gradle en formato group:artifact:version
+- `ai-context/entrypoints.md` - Activities, services, permisos de Android
+- `ai-context/android-resources.json` - Layouts, drawables, values (si existe res/)
+- `ai-context/gradle-modules.json` - Estructura multi-módulo (si existe settings.gradle)
 
 ---
 
@@ -454,11 +454,11 @@ ai-first detecta e indexa automáticamente proyectos Android/Kotlin:
 
 ### Archivos generados para proyectos Android
 
-- `ai/tech_stack.md` - Muestra Android con versiones de SDK
-- `ai/dependencies.json` - Dependencias Gradle en formato group:artifact:version
-- `ai/entrypoints.md` - Activities, services, permisos de Android
-- `ai/android-resources.json` - Layouts, drawables, values (si existe res/)
-- `ai/gradle-modules.json` - Estructura multi-módulo (si existe settings.gradle)
+- `ai-context/tech_stack.md` - Muestra Android con versiones de SDK
+- `ai-context/dependencies.json` - Dependencias Gradle en formato group:artifact:version
+- `ai-context/entrypoints.md` - Activities, services, permisos de Android
+- `ai-context/android-resources.json` - Layouts, drawables, values (si existe res/)
+- `ai-context/gradle-modules.json` - Estructura multi-módulo (si existe settings.gradle)
 
 ---
 
