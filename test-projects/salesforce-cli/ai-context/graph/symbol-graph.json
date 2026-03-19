@@ -1,0 +1,148 @@
+{
+  "symbols": [
+    {
+      "id": "force-app/main/default/classes/AccountController.cls#AccountController",
+      "name": "AccountController",
+      "type": "class",
+      "file": "force-app/main/default/classes/AccountController.cls",
+      "line": 1,
+      "export": true
+    },
+    {
+      "id": "force-app/main/default/classes/AccountController.cls#createAccount",
+      "name": "createAccount",
+      "type": "function",
+      "file": "force-app/main/default/classes/AccountController.cls",
+      "line": 12,
+      "export": true
+    },
+    {
+      "id": "force-app/main/default/classes/AccountController.cls#updateAccountRating",
+      "name": "updateAccountRating",
+      "type": "function",
+      "file": "force-app/main/default/classes/AccountController.cls",
+      "line": 19,
+      "export": true
+    },
+    {
+      "id": "force-app/main/default/classes/OpportunityController.cls#OpportunityController",
+      "name": "OpportunityController",
+      "type": "class",
+      "file": "force-app/main/default/classes/OpportunityController.cls",
+      "line": 1,
+      "export": true
+    },
+    {
+      "id": "force-app/main/default/classes/OpportunityController.cls#closeWon",
+      "name": "closeWon",
+      "type": "function",
+      "file": "force-app/main/default/classes/OpportunityController.cls",
+      "line": 13,
+      "export": true
+    },
+    {
+      "id": "force-app/main/default/classes/OpportunityController.cls#validateOpportunity",
+      "name": "validateOpportunity",
+      "type": "function",
+      "file": "force-app/main/default/classes/OpportunityController.cls",
+      "line": 20,
+      "export": true
+    },
+    {
+      "id": "force-app/main/default/triggers/AccountTrigger.trigger#AccountTrigger",
+      "name": "AccountTrigger",
+      "type": "function",
+      "file": "force-app/main/default/triggers/AccountTrigger.trigger",
+      "line": 1,
+      "export": true
+    }
+  ],
+  "relationships": [
+    {
+      "symbolId": "force-app/main/default/classes/AccountController.cls#AccountController",
+      "targetId": "force-app/main/default/classes/AccountController.cls#AccountController",
+      "type": "exports"
+    },
+    {
+      "symbolId": "force-app/main/default/classes/AccountController.cls#createAccount",
+      "targetId": "force-app/main/default/classes/AccountController.cls#createAccount",
+      "type": "exports"
+    },
+    {
+      "symbolId": "force-app/main/default/classes/AccountController.cls#updateAccountRating",
+      "targetId": "force-app/main/default/classes/AccountController.cls#updateAccountRating",
+      "type": "exports"
+    },
+    {
+      "symbolId": "force-app/main/default/classes/OpportunityController.cls#OpportunityController",
+      "targetId": "force-app/main/default/classes/OpportunityController.cls#OpportunityController",
+      "type": "exports"
+    },
+    {
+      "symbolId": "force-app/main/default/classes/OpportunityController.cls#closeWon",
+      "targetId": "force-app/main/default/classes/OpportunityController.cls#closeWon",
+      "type": "exports"
+    },
+    {
+      "symbolId": "force-app/main/default/classes/OpportunityController.cls#validateOpportunity",
+      "targetId": "force-app/main/default/classes/OpportunityController.cls#validateOpportunity",
+      "type": "exports"
+    },
+    {
+      "symbolId": "force-app/main/default/triggers/AccountTrigger.trigger#AccountTrigger",
+      "targetId": "force-app/main/default/triggers/AccountTrigger.trigger#AccountTrigger",
+      "type": "exports"
+    }
+  ],
+  "bySymbol": {
+    "force-app/main/default/classes/AccountController.cls#AccountController": [
+      {
+        "symbolId": "force-app/main/default/classes/AccountController.cls#AccountController",
+        "targetId": "force-app/main/default/classes/AccountController.cls#AccountController",
+        "type": "exports"
+      }
+    ],
+    "force-app/main/default/classes/AccountController.cls#createAccount": [
+      {
+        "symbolId": "force-app/main/default/classes/AccountController.cls#createAccount",
+        "targetId": "force-app/main/default/classes/AccountController.cls#createAccount",
+        "type": "exports"
+      }
+    ],
+    "force-app/main/default/classes/AccountController.cls#updateAccountRating": [
+      {
+        "symbolId": "force-app/main/default/classes/AccountController.cls#updateAccountRating",
+        "targetId": "force-app/main/default/classes/AccountController.cls#updateAccountRating",
+        "type": "exports"
+      }
+    ],
+    "force-app/main/default/classes/OpportunityController.cls#OpportunityController": [
+      {
+        "symbolId": "force-app/main/default/classes/OpportunityController.cls#OpportunityController",
+        "targetId": "force-app/main/default/classes/OpportunityController.cls#OpportunityController",
+        "type": "exports"
+      }
+    ],
+    "force-app/main/default/classes/OpportunityController.cls#closeWon": [
+      {
+        "symbolId": "force-app/main/default/classes/OpportunityController.cls#closeWon",
+        "targetId": "force-app/main/default/classes/OpportunityController.cls#closeWon",
+        "type": "exports"
+      }
+    ],
+    "force-app/main/default/classes/OpportunityController.cls#validateOpportunity": [
+      {
+        "symbolId": "force-app/main/default/classes/OpportunityController.cls#validateOpportunity",
+        "targetId": "force-app/main/default/classes/OpportunityController.cls#validateOpportunity",
+        "type": "exports"
+      }
+    ],
+    "force-app/main/default/triggers/AccountTrigger.trigger#AccountTrigger": [
+      {
+        "symbolId": "force-app/main/default/triggers/AccountTrigger.trigger#AccountTrigger",
+        "targetId": "force-app/main/default/triggers/AccountTrigger.trigger#AccountTrigger",
+        "type": "exports"
+      }
+    ]
+  }
+}

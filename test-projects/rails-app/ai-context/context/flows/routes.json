@@ -1,0 +1,9 @@
+{
+  "name": "routes",
+  "entrypoint": "config/routes.rb",
+  "files": [
+    "config/routes.rb"
+  ],
+  "depth": 0,
+  "layers": []
+}

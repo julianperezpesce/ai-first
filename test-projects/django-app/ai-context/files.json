@@ -1,0 +1,209 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "name": "README.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/ai_context.md",
+      "name": "ai_context.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/architecture.md",
+      "name": "architecture.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/cache.json",
+      "name": "cache.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/views.json",
+      "name": "views.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/conventions.md",
+      "name": "conventions.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/dependencies.json",
+      "name": "dependencies.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/files.json",
+      "name": "files.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/index-state.json",
+      "name": "index-state.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/modules.json",
+      "name": "modules.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/project.json",
+      "name": "project.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/repo-map.json",
+      "name": "repo-map.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/repo_map.json",
+      "name": "repo_map.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/repo_map.md",
+      "name": "repo_map.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/schema.json",
+      "name": "schema.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/summary.md",
+      "name": "summary.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/symbols.json",
+      "name": "symbols.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/tools.json",
+      "name": "tools.json",
+      "ext": "json"
+    },
+    {
+      "path": "blog/__init__.py",
+      "name": "__init__.py",
+      "ext": "py"
+    },
+    {
+      "path": "blog/admin.py",
+      "name": "admin.py",
+      "ext": "py"
+    },
+    {
+      "path": "blog/models.py",
+      "name": "models.py",
+      "ext": "py"
+    },
+    {
+      "path": "blog/serializers.py",
+      "name": "serializers.py",
+      "ext": "py"
+    },
+    {
+      "path": "blog/urls.py",
+      "name": "urls.py",
+      "ext": "py"
+    },
+    {
+      "path": "blog/views.py",
+      "name": "views.py",
+      "ext": "py"
+    },
+    {
+      "path": "django_app/__init__.py",
+      "name": "__init__.py",
+      "ext": "py"
+    },
+    {
+      "path": "django_app/settings.py",
+      "name": "settings.py",
+      "ext": "py"
+    },
+    {
+      "path": "django_app/urls.py",
+      "name": "urls.py",
+      "ext": "py"
+    },
+    {
+      "path": "django_app/wsgi.py",
+      "name": "wsgi.py",
+      "ext": "py"
+    },
+    {
+      "path": "manage.py",
+      "name": "manage.py",
+      "ext": "py"
+    },
+    {
+      "path": "users/__init__.py",
+      "name": "__init__.py",
+      "ext": "py"
+    },
+    {
+      "path": "users/admin.py",
+      "name": "admin.py",
+      "ext": "py"
+    },
+    {
+      "path": "users/models.py",
+      "name": "models.py",
+      "ext": "py"
+    },
+    {
+      "path": "users/serializers.py",
+      "name": "serializers.py",
+      "ext": "py"
+    },
+    {
+      "path": "users/urls.py",
+      "name": "urls.py",
+      "ext": "py"
+    },
+    {
+      "path": "users/views.py",
+      "name": "views.py",
+      "ext": "py"
+    }
+  ]
+}

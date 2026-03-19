@@ -1,0 +1,301 @@
+{
+  "version": "1.0.0",
+  "lastIndexed": "2026-03-18T19:21:56.385Z",
+  "totalFiles": 42,
+  "files": {
+    "README.md": {
+      "path": "README.md",
+      "hash": "ee92d7e508c3afd9aed6198088189034",
+      "mtime": 1773853695476.1587,
+      "size": 3702,
+      "indexedAt": "2026-03-18T19:21:56.035Z"
+    },
+    "ai/ai_context.md": {
+      "path": "ai/ai_context.md",
+      "hash": "fe0019e323075691930f13ed11200f30",
+      "mtime": 1773861715816.4453,
+      "size": 1508,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/ai_rules.md": {
+      "path": "ai/ai_rules.md",
+      "hash": "cfede6f9f889291b318863e4428b8e51",
+      "mtime": 1773861715816.4453,
+      "size": 820,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/architecture.md": {
+      "path": "ai/architecture.md",
+      "hash": "9c721bff66c3403bed3389c17322e558",
+      "mtime": 1773861715808.445,
+      "size": 683,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/cache.json": {
+      "path": "ai/cache.json",
+      "hash": "7321faa330e973be4d80e8cb0b1c3740",
+      "mtime": 1773861715902.4465,
+      "size": 5578,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/context/features/src.json": {
+      "path": "ai/context/features/src.json",
+      "hash": "42a60c161a5bf54c5d33ef364591c4f7",
+      "mtime": 1773861715904.4465,
+      "size": 1223,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/context/flows/PostController.json": {
+      "path": "ai/context/flows/PostController.json",
+      "hash": "2f5e73a2ec99953c3b007452cc7bdba9",
+      "mtime": 1773853770802.222,
+      "size": 594,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/context/flows/UserController.json": {
+      "path": "ai/context/flows/UserController.json",
+      "hash": "3edb3f6c856c098b62f7375a3b9780fa",
+      "mtime": 1773853770802.222,
+      "size": 592,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/context/flows/comment.json": {
+      "path": "ai/context/flows/comment.json",
+      "hash": "913f7e2f07c4a16cdf4fd01cfb8b433a",
+      "mtime": 1773861715904.4465,
+      "size": 360,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/context/flows/post.json": {
+      "path": "ai/context/flows/post.json",
+      "hash": "0aedae49606deeece03d0356244cac8a",
+      "mtime": 1773861715904.4465,
+      "size": 426,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/context/flows/user.json": {
+      "path": "ai/context/flows/user.json",
+      "hash": "e5a3d93f3de0265263bcf0de1d02bb44",
+      "mtime": 1773861715904.4465,
+      "size": 426,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/conventions.md": {
+      "path": "ai/conventions.md",
+      "hash": "cf36cf015f6c293ebf89ec2c7756bb57",
+      "mtime": 1773861715811.445,
+      "size": 826,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/dependencies.json": {
+      "path": "ai/dependencies.json",
+      "hash": "231ca459d245c614550189bfdfc8aa31",
+      "mtime": 1773861715814.4453,
+      "size": 12317,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/entrypoints.md": {
+      "path": "ai/entrypoints.md",
+      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
+      "mtime": 1773861715810.445,
+      "size": 43,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/files.json": {
+      "path": "ai/files.json",
+      "hash": "d31895c9ef72e66f675e60a47e10197f",
+      "mtime": 1773861715973.4478,
+      "size": 4783,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/graph/knowledge-graph.json": {
+      "path": "ai/graph/knowledge-graph.json",
+      "hash": "c3c6d2ab4d730299f9b778c6779ba28c",
+      "mtime": 1773861716384.454,
+      "size": 5531,
+      "indexedAt": "2026-03-18T19:21:56.385Z"
+    },
+    "ai/graph/module-graph.json": {
+      "path": "ai/graph/module-graph.json",
+      "hash": "bcdee278b7c197c3fdd8cc05e248bd69",
+      "mtime": 1773861715891.4465,
+      "size": 933,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/graph/symbol-graph.json": {
+      "path": "ai/graph/symbol-graph.json",
+      "hash": "af3b7eee071f51f7751d2e9c06c34ca4",
+      "mtime": 1773861715900.4465,
+      "size": 32701,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/graph/symbol-references.json": {
+      "path": "ai/graph/symbol-references.json",
+      "hash": "d2b999dd64f0a7f70cc7fcb11a1d0450",
+      "mtime": 1773861715900.4465,
+      "size": 4794,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/index-state.json": {
+      "path": "ai/index-state.json",
+      "hash": "f1e5869f66e279411d097c6e5fef5b6b",
+      "mtime": 1773861716036.4487,
+      "size": 10456,
+      "indexedAt": "2026-03-18T19:21:56.385Z"
+    },
+    "ai/modules.json": {
+      "path": "ai/modules.json",
+      "hash": "8822d383d8a69f12aac8593ec2382889",
+      "mtime": 1773861715973.4478,
+      "size": 918,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/project.json": {
+      "path": "ai/project.json",
+      "hash": "7b3e1a7134deade0aab48453d5794ee9",
+      "mtime": 1773861715819.4453,
+      "size": 292,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/repo-map.json": {
+      "path": "ai/repo-map.json",
+      "hash": "f9774a6b8c1b60d5e59060da5d45ccd7",
+      "mtime": 1773861715888.4463,
+      "size": 12533,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/repo_map.json": {
+      "path": "ai/repo_map.json",
+      "hash": "a624066d75677301ad1d99effff88dc0",
+      "mtime": 1773861715807.445,
+      "size": 12533,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/repo_map.md": {
+      "path": "ai/repo_map.md",
+      "hash": "2dc7f97f8d60d5e6aa5162d670c81664",
+      "mtime": 1773861715806.445,
+      "size": 3072,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/schema.json": {
+      "path": "ai/schema.json",
+      "hash": "c5c33b8840bd12a9f86caece66e5d1e2",
+      "mtime": 1773861715819.4453,
+      "size": 102,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/summary.md": {
+      "path": "ai/summary.md",
+      "hash": "c36630aadc051806afd5c0a390cae782",
+      "mtime": 1773861715807.445,
+      "size": 168,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/symbols.json": {
+      "path": "ai/symbols.json",
+      "hash": "b2578a94b3c80dfdfc14b3ea4d083b90",
+      "mtime": 1773861715813.4453,
+      "size": 25556,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/tech_stack.md": {
+      "path": "ai/tech_stack.md",
+      "hash": "57c03d467ccd5f76ac202a0f89ad0aff",
+      "mtime": 1773861715809.445,
+      "size": 351,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "ai/tools.json": {
+      "path": "ai/tools.json",
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773861715819.4453,
+      "size": 138,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "src/main/java/com/example/demo/DemoApplication.java": {
+      "path": "src/main/java/com/example/demo/DemoApplication.java",
+      "hash": "2d75ac141d2c8033430f3380b665baa2",
+      "mtime": 1773853571729.4216,
+      "size": 315,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "src/main/java/com/example/demo/controllers/CommentController.java": {
+      "path": "src/main/java/com/example/demo/controllers/CommentController.java",
+      "hash": "5b6b97f35e3c2776a8beb278db3fb9aa",
+      "mtime": 1773853662865.6997,
+      "size": 3158,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "src/main/java/com/example/demo/controllers/PostController.java": {
+      "path": "src/main/java/com/example/demo/controllers/PostController.java",
+      "hash": "17440d8fbbd9b6ac6f72df6f8549beae",
+      "mtime": 1773853649501.512,
+      "size": 2944,
+      "indexedAt": "2026-03-18T19:21:56.036Z"
+    },
+    "src/main/java/com/example/demo/controllers/UserController.java": {
+      "path": "src/main/java/com/example/demo/controllers/UserController.java",
+      "hash": "f6250869c401aa8a10575ed850358ff3",
+      "mtime": 1773853637492.3433,
+      "size": 2725,
+      "indexedAt": "2026-03-18T19:21:56.037Z"
+    },
+    "src/main/java/com/example/demo/models/Comment.java": {
+      "path": "src/main/java/com/example/demo/models/Comment.java",
+      "hash": "a9a5d05a4b9d9f84ab9f414f44b35e87",
+      "mtime": 1773853589658.6726,
+      "size": 793,
+      "indexedAt": "2026-03-18T19:21:56.037Z"
+    },
+    "src/main/java/com/example/demo/models/Post.java": {
+      "path": "src/main/java/com/example/demo/models/Post.java",
+      "hash": "88f4abb8eeed067c6de4ee4d2771d607",
+      "mtime": 1773853585054.6082,
+      "size": 1234,
+      "indexedAt": "2026-03-18T19:21:56.037Z"
+    },
+    "src/main/java/com/example/demo/models/User.java": {
+      "path": "src/main/java/com/example/demo/models/User.java",
+      "hash": "b2dfa90af2b99d773e509ff41b449377",
+      "mtime": 1773853578068.5103,
+      "size": 979,
+      "indexedAt": "2026-03-18T19:21:56.037Z"
+    },
+    "src/main/java/com/example/demo/repositories/CommentRepository.java": {
+      "path": "src/main/java/com/example/demo/repositories/CommentRepository.java",
+      "hash": "8f53f0b36acfeae6e976c59947225b0a",
+      "mtime": 1773853599958.817,
+      "size": 554,
+      "indexedAt": "2026-03-18T19:21:56.037Z"
+    },
+    "src/main/java/com/example/demo/repositories/PostRepository.java": {
+      "path": "src/main/java/com/example/demo/repositories/PostRepository.java",
+      "hash": "71da6b918547e00329c3417841fa1f1e",
+      "mtime": 1773853597248.7788,
+      "size": 480,
+      "indexedAt": "2026-03-18T19:21:56.037Z"
+    },
+    "src/main/java/com/example/demo/repositories/UserRepository.java": {
+      "path": "src/main/java/com/example/demo/repositories/UserRepository.java",
+      "hash": "e8578153133af2fec45af59a695abcb5",
+      "mtime": 1773853592037.7058,
+      "size": 388,
+      "indexedAt": "2026-03-18T19:21:56.037Z"
+    },
+    "src/main/java/com/example/demo/services/PostService.java": {
+      "path": "src/main/java/com/example/demo/services/PostService.java",
+      "hash": "cceae946c06807fb78b1a5427deb098e",
+      "mtime": 1773853621141.1138,
+      "size": 2535,
+      "indexedAt": "2026-03-18T19:21:56.037Z"
+    },
+    "src/main/java/com/example/demo/services/UserService.java": {
+      "path": "src/main/java/com/example/demo/services/UserService.java",
+      "hash": "fb164c2fa54b3195392774a0ca15d740",
+      "mtime": 1773853608542.937,
+      "size": 1907,
+      "indexedAt": "2026-03-18T19:21:56.037Z"
+    }
+  }
+}

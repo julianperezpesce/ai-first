@@ -1,0 +1,9 @@
+{
+  "name": "remove_",
+  "entrypoint": "cli/remove_command.py",
+  "files": [
+    "cli/remove_command.py"
+  ],
+  "depth": 0,
+  "layers": []
+}

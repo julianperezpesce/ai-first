@@ -1,0 +1,22 @@
+{
+  "name": "rails-app",
+  "rootDir": "test-projects/rails-app",
+  "features": [
+    "app",
+    "config"
+  ],
+  "flows": [
+    "application",
+    "application_",
+    "comments",
+    "comments_",
+    "posts",
+    "posts_",
+    "routes",
+    "users",
+    "users_"
+  ],
+  "languages": [],
+  "frameworks": [],
+  "generatedAt": "2026-03-18T19:21:53.661Z"
+}

@@ -1,0 +1,70 @@
+{
+  "src/main/java/com/example/demo/models/Comment.java#Comment": [
+    "src/main/java/com/example/demo/controllers/CommentController.java#CommentController",
+    "src/main/java/com/example/demo/controllers/CommentController.java#CommentCreateRequest",
+    "src/main/java/com/example/demo/controllers/CommentController.java#CommentUpdateRequest",
+    "src/main/java/com/example/demo/repositories/CommentRepository.java#CommentRepository"
+  ],
+  "src/main/java/com/example/demo/repositories/CommentRepository.java#CommentRepository": [
+    "src/main/java/com/example/demo/controllers/CommentController.java#CommentController",
+    "src/main/java/com/example/demo/controllers/CommentController.java#CommentCreateRequest",
+    "src/main/java/com/example/demo/controllers/CommentController.java#CommentUpdateRequest"
+  ],
+  "src/main/java/com/example/demo/models/Post.java#Post": [
+    "src/main/java/com/example/demo/controllers/PostController.java#PostController",
+    "src/main/java/com/example/demo/controllers/PostController.java#PostCreateRequest",
+    "src/main/java/com/example/demo/controllers/PostController.java#PostUpdateRequest",
+    "src/main/java/com/example/demo/repositories/CommentRepository.java#CommentRepository",
+    "src/main/java/com/example/demo/repositories/PostRepository.java#PostRepository",
+    "src/main/java/com/example/demo/services/PostService.java#PostService",
+    "src/main/java/com/example/demo/services/PostService.java#create",
+    "src/main/java/com/example/demo/services/PostService.java#publish",
+    "src/main/java/com/example/demo/services/PostService.java#update",
+    "src/main/java/com/example/demo/services/PostService.java#delete"
+  ],
+  "src/main/java/com/example/demo/services/PostService.java#PostService": [
+    "src/main/java/com/example/demo/controllers/PostController.java#PostController",
+    "src/main/java/com/example/demo/controllers/PostController.java#PostCreateRequest",
+    "src/main/java/com/example/demo/controllers/PostController.java#PostUpdateRequest"
+  ],
+  "src/main/java/com/example/demo/models/User.java#User": [
+    "src/main/java/com/example/demo/controllers/UserController.java#UserController",
+    "src/main/java/com/example/demo/controllers/UserController.java#UserCreateRequest",
+    "src/main/java/com/example/demo/controllers/UserController.java#UserUpdateRequest",
+    "src/main/java/com/example/demo/repositories/CommentRepository.java#CommentRepository",
+    "src/main/java/com/example/demo/repositories/PostRepository.java#PostRepository",
+    "src/main/java/com/example/demo/repositories/UserRepository.java#UserRepository",
+    "src/main/java/com/example/demo/services/PostService.java#PostService",
+    "src/main/java/com/example/demo/services/PostService.java#create",
+    "src/main/java/com/example/demo/services/PostService.java#publish",
+    "src/main/java/com/example/demo/services/PostService.java#update",
+    "src/main/java/com/example/demo/services/PostService.java#delete",
+    "src/main/java/com/example/demo/services/UserService.java#UserService",
+    "src/main/java/com/example/demo/services/UserService.java#create",
+    "src/main/java/com/example/demo/services/UserService.java#update",
+    "src/main/java/com/example/demo/services/UserService.java#delete"
+  ],
+  "src/main/java/com/example/demo/services/UserService.java#UserService": [
+    "src/main/java/com/example/demo/controllers/UserController.java#UserController",
+    "src/main/java/com/example/demo/controllers/UserController.java#UserCreateRequest",
+    "src/main/java/com/example/demo/controllers/UserController.java#UserUpdateRequest"
+  ],
+  "src/main/java/com/example/demo/repositories/PostRepository.java#PostRepository": [
+    "src/main/java/com/example/demo/services/PostService.java#PostService",
+    "src/main/java/com/example/demo/services/PostService.java#create",
+    "src/main/java/com/example/demo/services/PostService.java#publish",
+    "src/main/java/com/example/demo/services/PostService.java#update",
+    "src/main/java/com/example/demo/services/PostService.java#delete"
+  ],
+  "src/main/java/com/example/demo/repositories/UserRepository.java#UserRepository": [
+    "src/main/java/com/example/demo/services/PostService.java#PostService",
+    "src/main/java/com/example/demo/services/PostService.java#create",
+    "src/main/java/com/example/demo/services/PostService.java#publish",
+    "src/main/java/com/example/demo/services/PostService.java#update",
+    "src/main/java/com/example/demo/services/PostService.java#delete",
+    "src/main/java/com/example/demo/services/UserService.java#UserService",
+    "src/main/java/com/example/demo/services/UserService.java#create",
+    "src/main/java/com/example/demo/services/UserService.java#update",
+    "src/main/java/com/example/demo/services/UserService.java#delete"
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "name": "README.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/ai_context.md",
+      "name": "ai_context.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/architecture.md",
+      "name": "architecture.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/cache.json",
+      "name": "cache.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/features/app.json",
+      "name": "app.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/features/config.json",
+      "name": "config.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/application.json",
+      "name": "application.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/application_.json",
+      "name": "application_.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/comments.json",
+      "name": "comments.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/comments_.json",
+      "name": "comments_.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/posts.json",
+      "name": "posts.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/posts_.json",
+      "name": "posts_.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/routes.json",
+      "name": "routes.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/users.json",
+      "name": "users.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/users_.json",
+      "name": "users_.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/conventions.md",
+      "name": "conventions.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/dependencies.json",
+      "name": "dependencies.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/files.json",
+      "name": "files.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/index-state.json",
+      "name": "index-state.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/modules.json",
+      "name": "modules.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/project.json",
+      "name": "project.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/repo-map.json",
+      "name": "repo-map.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/repo_map.json",
+      "name": "repo_map.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/repo_map.md",
+      "name": "repo_map.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/schema.json",
+      "name": "schema.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/summary.md",
+      "name": "summary.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/symbols.json",
+      "name": "symbols.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/tools.json",
+      "name": "tools.json",
+      "ext": "json"
+    },
+    {
+      "path": "app/controllers/api/comments_controller.rb",
+      "name": "comments_controller.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "app/controllers/api/posts_controller.rb",
+      "name": "posts_controller.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "app/controllers/api/users_controller.rb",
+      "name": "users_controller.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "app/controllers/application_controller.rb",
+      "name": "application_controller.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "app/models/comment.rb",
+      "name": "comment.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "app/models/post.rb",
+      "name": "post.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "app/models/user.rb",
+      "name": "user.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "app/services/post_service.rb",
+      "name": "post_service.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "app/services/user_service.rb",
+      "name": "user_service.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "config/application.rb",
+      "name": "application.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "config/environment.rb",
+      "name": "environment.rb",
+      "ext": "rb"
+    },
+    {
+      "path": "config/routes.rb",
+      "name": "routes.rb",
+      "ext": "rb"
+    }
+  ]
+}
