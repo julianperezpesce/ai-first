@@ -24,12 +24,12 @@
 
 ```
 $ npx ai-first init
-✅ Generated ai/ai_context.md (0.3s)
-✅ Generated ai/symbols.json (0.1s)  
-✅ Generated ai/dependencies.json (0.1s)
+✅ Generated .ai-dev/ai_context.md (0.3s)
+✅ Generated .ai-dev/symbols.json (0.1s)  
+✅ Generated .ai-dev/dependencies.json (0.1s)
 ✅ Generated 11 context files
 
-🎉 Ready! Give ai/ai_context.md to your AI assistant.
+🎉 Ready! Give .ai-dev/ai_context.md to your AI assistant.
 ```
 
 **Resultado:** La IA comprende tu proyecto en ~500 tokens en lugar de 50,000.
@@ -114,13 +114,13 @@ ai-first init
 ### 1. Agentes de Código IA (OpenCode, Cursor, Claude Code)
 ```bash
 ai-first init
-# Luego pregunta a la IA: "Lee ai/ai_context.md y ayúdame a agregar una característica"
+# Luego pregunta a la IA: "Lee .ai-dev/ai_context.md y ayúdame a agregar una característica"
 ```
 
 ### 2. Incorporación de Nuevos Desarrolladores
 ```bash
 ai-first init
-# El nuevo desarrollador lee ai/ai_context.md → comprende el proyecto en 2 minutos
+# El nuevo desarrollador lee .ai-dev/ai_context.md → comprende el proyecto en 2 minutos
 ```
 
 ### 3. Documentación del Proyecto
@@ -148,7 +148,7 @@ Resultado: Código roto, tokens desperdiciados
 ```
 $ ai-first init
 
-Tú: "Lee ai/ai_context.md, luego agrega autenticación"
+Tú: "Lee .ai-dev/ai_context.md, luego agrega autenticación"
 IA: *lee 1 archivo (0.5s)*
 IA: "Veo que usas Express + JWT con auth en src/middleware/auth.ts"
 IA: "Agregaré autenticación siguiendo tus convenciones..."

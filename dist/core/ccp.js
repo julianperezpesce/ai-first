@@ -99,7 +99,7 @@ function detectFeatureDirectories(files) {
  * Create a new CCP (Context Control Pack)
  */
 export function createCCP(rootDir, name, options = {}) {
-    const aiDir = path.join(rootDir, "ai");
+    const aiDir = path.join(rootDir, ".ai-dev");
     const ccpDir = path.join(aiDir, "ccp", name);
     try {
         if (!fs.existsSync(aiDir)) {

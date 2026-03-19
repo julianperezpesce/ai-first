@@ -6,7 +6,7 @@ import { generateModuleGraph } from "../core/moduleGraph.js";
 export interface ExploreResult { success: boolean; modules?: string[]; dependencies?: string[]; error?: string; }
 
 export async function runExplore(rootDir: string, moduleName: string | undefined): Promise<ExploreResult> {
-  const aiDir = path.join(rootDir, "ai");
+  const aiDir = path.join(rootDir, ".ai-dev");
   const graphFile = path.join(aiDir, "graph", "module-graph.json");
 
   if (!moduleName || moduleName === 'all') {

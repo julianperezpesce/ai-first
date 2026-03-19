@@ -53,7 +53,7 @@ export interface AIFirstResult {
 export async function runAIFirst(options: AIFirstOptions = {}): Promise<AIFirstResult> {
   const {
     rootDir = process.cwd(),
-    outputDir = path.join(rootDir, "ai"),
+    outputDir = path.join(rootDir, ".ai-dev"),
   } = options;
 
   const filesCreated: string[] = [];
@@ -419,7 +419,7 @@ Example queries (for AI agents):
       outputPath = path.join(rootDir, "ai", "index.db");
     }
 
-    const aiDir = path.join(rootDir, "ai");
+    const aiDir = path.join(rootDir, ".ai-dev");
 
     // Load existing index state for incremental indexing
     const existingState = loadIndexState(aiDir);
@@ -614,7 +614,7 @@ Features:
     // Context command - generate AI context files OR symbol-specific context packet
     args.shift();
     let rootDir = process.cwd();
-    let outputDir = path.join(rootDir, "ai");
+    let outputDir = path.join(rootDir, ".ai-dev");
     let symbolArg: string | undefined;
     let depth = 1;
     let maxSymbols = 50;
@@ -628,7 +628,7 @@ Features:
           case "--root":
           case "-r":
             rootDir = args[++i];
-            outputDir = path.join(rootDir, "ai");
+            outputDir = path.join(rootDir, ".ai-dev");
             break;
           case "--output":
           case "-o":
@@ -1098,7 +1098,7 @@ Options:
     
     console.log("\n🗺️  Generating repository map...\n");
     const scan = scanRepo(rootDir);
-    const aiDir = path.join(rootDir, "ai");
+    const aiDir = path.join(rootDir, ".ai-dev");
     
     // files.json
     const filesJson = { files: scan.files.map(f => ({ path: f.relativePath, name: f.name, ext: f.extension })) };
@@ -1183,7 +1183,7 @@ Examples:
     args.shift();
     
     let rootDir = process.cwd();
-    let aiDir = path.join(rootDir, "ai");
+    let aiDir = path.join(rootDir, ".ai-dev");
     let limit = 50;
     let showActivity = false;
     let showJson = false;
@@ -1194,7 +1194,7 @@ Examples:
         case "--root":
         case "-r":
           rootDir = args[++i];
-          aiDir = path.join(rootDir, "ai");
+          aiDir = path.join(rootDir, ".ai-dev");
           break;
         case "--limit":
         case "-n":
@@ -1290,7 +1290,7 @@ Examples:
     args.shift();
     
     let rootDir = process.cwd();
-    let aiDir = path.join(rootDir, "ai");
+    let aiDir = path.join(rootDir, ".ai-dev");
     let showJson = false;
     let showStats = false;
     
@@ -1300,7 +1300,7 @@ Examples:
         case "--root":
         case "-r":
           rootDir = args[++i];
-          aiDir = path.join(rootDir, "ai");
+          aiDir = path.join(rootDir, ".ai-dev");
           break;
         case "--json":
           showJson = true;
@@ -1373,7 +1373,7 @@ Examples:
     args.shift();
     
     let rootDir = process.cwd();
-    let aiDir = path.join(rootDir, "ai");
+    let aiDir = path.join(rootDir, ".ai-dev");
     let useGit = true;
     let showJson = false;
     
@@ -1383,7 +1383,7 @@ Examples:
         case "--root":
         case "-r":
           rootDir = args[++i];
-          aiDir = path.join(rootDir, "ai");
+          aiDir = path.join(rootDir, ".ai-dev");
           break;
         case "--no-git":
           useGit = false;

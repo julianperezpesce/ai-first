@@ -54,6 +54,24 @@ All notable changes to `ai-first` will be documented in this file.
 
 - **Breaking Change:** `repo-map.json` renamed to `repo_map.json`
 
+### Phase 3: Architecture - Completed (v1.2.0)
+
+**Date:** 2026-03-18
+
+#### Changed
+
+- **Breaking Change:** Directory renamed from `ai/` to `.ai-dev/`
+  - Reason: Hidden directory (starts with `.`) keeps project root cleaner
+  - Affects: All generated files, test projects, documentation
+  - Files updated: 21 source files + all README/docs
+
+#### Technical Details
+
+- Changed: `path.join(rootDir, "ai")` → `path.join(rootDir, ".ai-dev")` in all source files
+- Renamed: Main project directory `ai/` → `.ai-dev/`
+- Renamed: All 11 test project directories `*/ai/` → `*/.ai-dev/`
+- Updated: README.md, README.es.md, CHANGELOG.md, PLAN_MEJORAS.md
+
 ---
 
 ## [1.1.6] - 2026-03-18

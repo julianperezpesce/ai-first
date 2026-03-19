@@ -147,7 +147,7 @@ export function createCCP(
     include?: string[];
   } = {}
 ): { success: boolean; path: string; error?: string } {
-  const aiDir = path.join(rootDir, "ai");
+  const aiDir = path.join(rootDir, ".ai-dev");
   const ccpDir = path.join(aiDir, "ccp", name);
   
   try {

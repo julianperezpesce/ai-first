@@ -33,7 +33,7 @@ const __dirname = path.dirname(__filename);
  * Main function to run ai-first command
  */
 export async function runAIFirst(options = {}) {
-    const { rootDir = process.cwd(), outputDir = path.join(rootDir, "ai"), } = options;
+    const { rootDir = process.cwd(), outputDir = path.join(rootDir, ".ai-dev"), } = options;
     const filesCreated = [];
     try {
         console.log(`\n🔍 Scanning repository: ${rootDir}\n`);
@@ -347,7 +347,7 @@ Example queries (for AI agents):
         if (!outputPath) {
             outputPath = path.join(rootDir, "ai", "index.db");
         }
-        const aiDir = path.join(rootDir, "ai");
+        const aiDir = path.join(rootDir, ".ai-dev");
         // Load existing index state for incremental indexing
         const existingState = loadIndexState(aiDir);
         // Scan repository
@@ -525,7 +525,7 @@ Features:
         // Context command - generate AI context files OR symbol-specific context packet
         args.shift();
         let rootDir = process.cwd();
-        let outputDir = path.join(rootDir, "ai");
+        let outputDir = path.join(rootDir, ".ai-dev");
         let symbolArg;
         let depth = 1;
         let maxSymbols = 50;
@@ -538,7 +538,7 @@ Features:
                     case "--root":
                     case "-r":
                         rootDir = args[++i];
-                        outputDir = path.join(rootDir, "ai");
+                        outputDir = path.join(rootDir, ".ai-dev");
                         break;
                     case "--output":
                     case "-o":
@@ -988,7 +988,7 @@ Options:
         }
         console.log("\n🗺️  Generating repository map...\n");
         const scan = scanRepo(rootDir);
-        const aiDir = path.join(rootDir, "ai");
+        const aiDir = path.join(rootDir, ".ai-dev");
         // files.json
         const filesJson = { files: scan.files.map(f => ({ path: f.relativePath, name: f.name, ext: f.extension })) };
         fs.writeFileSync(path.join(aiDir, "files.json"), JSON.stringify(filesJson, null, 2));
@@ -1067,7 +1067,7 @@ Examples:
         // Git intelligence command
         args.shift();
         let rootDir = process.cwd();
-        let aiDir = path.join(rootDir, "ai");
+        let aiDir = path.join(rootDir, ".ai-dev");
         let limit = 50;
         let showActivity = false;
         let showJson = false;
@@ -1077,7 +1077,7 @@ Examples:
                 case "--root":
                 case "-r":
                     rootDir = args[++i];
-                    aiDir = path.join(rootDir, "ai");
+                    aiDir = path.join(rootDir, ".ai-dev");
                     break;
                 case "--limit":
                 case "-n":
@@ -1165,7 +1165,7 @@ Examples:
         // Knowledge Graph command
         args.shift();
         let rootDir = process.cwd();
-        let aiDir = path.join(rootDir, "ai");
+        let aiDir = path.join(rootDir, ".ai-dev");
         let showJson = false;
         let showStats = false;
         for (let i = 0; i < args.length; i++) {
@@ -1174,7 +1174,7 @@ Examples:
                 case "--root":
                 case "-r":
                     rootDir = args[++i];
-                    aiDir = path.join(rootDir, "ai");
+                    aiDir = path.join(rootDir, ".ai-dev");
                     break;
                 case "--json":
                     showJson = true;
@@ -1240,7 +1240,7 @@ Examples:
         // Incremental update command
         args.shift();
         let rootDir = process.cwd();
-        let aiDir = path.join(rootDir, "ai");
+        let aiDir = path.join(rootDir, ".ai-dev");
         let useGit = true;
         let showJson = false;
         for (let i = 0; i < args.length; i++) {
@@ -1249,7 +1249,7 @@ Examples:
                 case "--root":
                 case "-r":
                     rootDir = args[++i];
-                    aiDir = path.join(rootDir, "ai");
+                    aiDir = path.join(rootDir, ".ai-dev");
                     break;
                 case "--no-git":
                     useGit = false;
