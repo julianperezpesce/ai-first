@@ -1,0 +1,16 @@
+{
+  "name": "react-app",
+  "rootDir": "test-projects/react-app",
+  "features": [
+    "src"
+  ],
+  "flows": [
+    "UsersPage",
+    "dashboard",
+    "login",
+    "users"
+  ],
+  "languages": [],
+  "frameworks": [],
+  "generatedAt": "2026-03-18T19:21:54.390Z"
+}

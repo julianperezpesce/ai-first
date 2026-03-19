@@ -1,0 +1,112 @@
+{
+  "nodes": [
+    {
+      "id": "src",
+      "type": "feature",
+      "label": "src",
+      "metadata": {
+        "path": "src",
+        "fileCount": 8
+      }
+    },
+    {
+      "id": "UsersPage",
+      "type": "flow",
+      "label": "UsersPage",
+      "metadata": {
+        "entrypoint": "src/pages/UsersPage.tsx",
+        "fileCount": 3
+      }
+    },
+    {
+      "id": "dashboard",
+      "type": "flow",
+      "label": "dashboard",
+      "metadata": {
+        "entrypoint": "src/pages/DashboardPage.tsx",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "login",
+      "type": "flow",
+      "label": "login",
+      "metadata": {
+        "entrypoint": "src/pages/LoginPage.tsx",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "users",
+      "type": "flow",
+      "label": "users",
+      "metadata": {
+        "entrypoint": "src/pages/UsersPage.tsx",
+        "fileCount": 1
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "src",
+      "to": "UsersPage",
+      "type": "contains"
+    },
+    {
+      "from": "src",
+      "to": "dashboard",
+      "type": "contains"
+    },
+    {
+      "from": "src",
+      "to": "login",
+      "type": "contains"
+    },
+    {
+      "from": "src",
+      "to": "users",
+      "type": "contains"
+    },
+    {
+      "from": "UsersPage",
+      "to": "src/pages/UsersPage.tsx",
+      "type": "implements"
+    },
+    {
+      "from": "UsersPage",
+      "to": "react",
+      "type": "implements"
+    },
+    {
+      "from": "UsersPage",
+      "to": "src/services/userService",
+      "type": "implements"
+    },
+    {
+      "from": "dashboard",
+      "to": "src/pages/DashboardPage.tsx",
+      "type": "implements"
+    },
+    {
+      "from": "login",
+      "to": "src/pages/LoginPage.tsx",
+      "type": "implements"
+    },
+    {
+      "from": "users",
+      "to": "src/pages/UsersPage.tsx",
+      "type": "implements"
+    }
+  ],
+  "metadata": {
+    "generated": "2026-03-18T19:21:54.965Z",
+    "sources": [
+      "features",
+      "flows",
+      "symbols",
+      "dependencies"
+    ],
+    "nodeCount": 5,
+    "edgeCount": 10
+  }
+}

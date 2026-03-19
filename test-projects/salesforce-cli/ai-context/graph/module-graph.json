@@ -1,0 +1,13 @@
+{
+  "modules": [
+    {
+      "name": "force-app",
+      "paths": [
+        "force-app/main/default/classes/AccountController.cls",
+        "force-app/main/default/classes/OpportunityController.cls",
+        "force-app/main/default/triggers/AccountTrigger.trigger"
+      ]
+    }
+  ],
+  "dependencies": []
+}

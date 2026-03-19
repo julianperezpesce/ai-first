@@ -1,0 +1,128 @@
+{
+  "totalDependencies": 18,
+  "totalModules": 6,
+  "dependencies": [
+    {
+      "source": "src/App.tsx",
+      "target": "src/context/AuthContext",
+      "type": "import"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/pages/LoginPage",
+      "type": "import"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/pages/DashboardPage",
+      "type": "import"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/pages/UsersPage",
+      "type": "import"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/context/AuthContext",
+      "type": "import"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/pages/LoginPage",
+      "type": "import"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/pages/DashboardPage",
+      "type": "import"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/pages/UsersPage",
+      "type": "import"
+    },
+    {
+      "source": "src/hooks/useAuth.ts",
+      "target": "src/context/AuthContext",
+      "type": "import"
+    },
+    {
+      "source": "src/hooks/useAuth.ts",
+      "target": "src/context/AuthContext",
+      "type": "import"
+    },
+    {
+      "source": "src/main.tsx",
+      "target": "src/App",
+      "type": "import"
+    },
+    {
+      "source": "src/main.tsx",
+      "target": "src/App",
+      "type": "import"
+    },
+    {
+      "source": "src/pages/DashboardPage.tsx",
+      "target": "src/hooks/useAuth",
+      "type": "import"
+    },
+    {
+      "source": "src/pages/DashboardPage.tsx",
+      "target": "src/hooks/useAuth",
+      "type": "import"
+    },
+    {
+      "source": "src/pages/LoginPage.tsx",
+      "target": "src/hooks/useAuth",
+      "type": "import"
+    },
+    {
+      "source": "src/pages/LoginPage.tsx",
+      "target": "src/hooks/useAuth",
+      "type": "import"
+    },
+    {
+      "source": "src/pages/UsersPage.tsx",
+      "target": "src/services/userService",
+      "type": "import"
+    },
+    {
+      "source": "src/pages/UsersPage.tsx",
+      "target": "src/services/userService",
+      "type": "import"
+    }
+  ],
+  "byFile": {
+    "src/App.tsx": [
+      "src/context/AuthContext",
+      "src/pages/LoginPage",
+      "src/pages/DashboardPage",
+      "src/pages/UsersPage",
+      "src/context/AuthContext",
+      "src/pages/LoginPage",
+      "src/pages/DashboardPage",
+      "src/pages/UsersPage"
+    ],
+    "src/hooks/useAuth.ts": [
+      "src/context/AuthContext",
+      "src/context/AuthContext"
+    ],
+    "src/main.tsx": [
+      "src/App",
+      "src/App"
+    ],
+    "src/pages/DashboardPage.tsx": [
+      "src/hooks/useAuth",
+      "src/hooks/useAuth"
+    ],
+    "src/pages/LoginPage.tsx": [
+      "src/hooks/useAuth",
+      "src/hooks/useAuth"
+    ],
+    "src/pages/UsersPage.tsx": [
+      "src/services/userService",
+      "src/services/userService"
+    ]
+  }
+}

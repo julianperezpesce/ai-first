@@ -1,0 +1,14 @@
+{
+  "name": "UsersPage",
+  "entrypoint": "src/pages/UsersPage.tsx",
+  "files": [
+    "src/pages/UsersPage.tsx",
+    "react",
+    "src/services/userService"
+  ],
+  "depth": 3,
+  "layers": [
+    "unknown",
+    "service"
+  ]
+}

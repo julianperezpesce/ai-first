@@ -1,0 +1,30 @@
+{
+  "modules": [
+    {
+      "name": "app",
+      "paths": [
+        "app/Http/Controllers/Api/CategoryController.php",
+        "app/Http/Controllers/Api/CommentController.php",
+        "app/Http/Controllers/Api/PostController.php",
+        "app/Http/Controllers/Controller.php",
+        "app/Models/Category.php",
+        "app/Models/Comment.php",
+        "app/Models/Post.php",
+        "app/Models/User.php"
+      ]
+    },
+    {
+      "name": "bootstrap",
+      "paths": [
+        "bootstrap/app.php"
+      ]
+    },
+    {
+      "name": "routes",
+      "paths": [
+        "routes/api.php"
+      ]
+    }
+  ],
+  "dependencies": []
+}

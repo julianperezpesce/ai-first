@@ -86,7 +86,7 @@ function detectChangesWithGit(rootDir: string): ChangedFile[] {
 
 function detectChangesWithTimestamps(rootDir: string): ChangedFile[] {
   const changes: ChangedFile[] = [];
-  const aiDir = path.join(rootDir, "ai");
+  const aiDir = path.join(rootDir, "ai-context");
   const state = loadIndexState(aiDir);
   
   if (!state) return [];
@@ -372,7 +372,7 @@ export function updateKnowledgeGraph(rootDir: string, aiDir: string): boolean {
 // ============================================================
 
 export function runIncrementalUpdate(rootDir: string, aiDir?: string): IncrementalUpdateResult {
-  const targetAiDir = aiDir || path.join(rootDir, "ai");
+  const targetAiDir = aiDir || path.join(rootDir, "ai-context");
   const errors: string[] = [];
   
   if (!fs.existsSync(targetAiDir)) {
@@ -436,7 +436,7 @@ export function runIncrementalUpdate(rootDir: string, aiDir?: string): Increment
 }
 
 function updateIndexState(rootDir: string, changedFiles: ChangedFile[]): void {
-  const aiDir = path.join(rootDir, "ai");
+  const aiDir = path.join(rootDir, "ai-context");
   let state = loadIndexState(aiDir);
   
   if (!state) {

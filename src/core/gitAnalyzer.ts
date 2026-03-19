@@ -240,7 +240,7 @@ function loadFlows(aiDir: string): Map<string, string[]> {
  * Map changed files to features
  */
 export function mapFilesToFeatures(rootDir: string, files: string[]): string[] {
-  const aiDir = path.join(rootDir, "ai");
+  const aiDir = path.join(rootDir, "ai-context");
   const featuresMap = loadFeatures(aiDir);
   
   const featureSet = new Set<string>();
@@ -267,7 +267,7 @@ export function mapFilesToFeatures(rootDir: string, files: string[]): string[] {
  * Map changed files to flows
  */
 export function mapFilesToFlows(rootDir: string, files: string[]): string[] {
-  const aiDir = path.join(rootDir, "ai");
+  const aiDir = path.join(rootDir, "ai-context");
   const flowsMap = loadFlows(aiDir);
   
   const flowSet = new Set<string>();
@@ -354,7 +354,7 @@ export function generateGitContext(rootDir: string, aiDir?: string): {
   recentFlows: string[];
   activity: GitActivity | null;
 } {
-  const targetAiDir = aiDir || path.join(rootDir, "ai");
+  const targetAiDir = aiDir || path.join(rootDir, "ai-context");
   const gitDir = path.join(targetAiDir, "git");
   
   ensureDir(gitDir);

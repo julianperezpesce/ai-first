@@ -22,7 +22,7 @@ export async function runDoctor(rootDir, fixMode) {
         return false;
     } });
     checks.push({ name: 'Large files', status: largeFiles.length === 0 ? 'pass' : 'warn', message: largeFiles.length === 0 ? 'No large files' : `${largeFiles.length} large files` });
-    const aiDir = path.join(rootDir, "ai");
+    const aiDir = path.join(rootDir, "ai-context");
     checks.push({ name: 'AI directory', status: fs.existsSync(aiDir) ? 'pass' : 'warn', message: fs.existsSync(aiDir) ? 'Found' : 'Not found' });
     checks.push({ name: 'Semantic index', status: fs.existsSync(path.join(aiDir, "index")) ? 'pass' : 'warn', message: fs.existsSync(path.join(aiDir, "index")) ? 'Found' : 'Not found' });
     checks.push({ name: 'Module graph', status: fs.existsSync(path.join(aiDir, "graph", "module-graph.json")) ? 'pass' : 'warn', message: 'Run ai-first explore all' });
