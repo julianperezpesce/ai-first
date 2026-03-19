@@ -6,7 +6,7 @@
 
 ## Guidelines
 
-- Language: Use Markdown, Java
+- Language: Use Markdown, JSON, Java
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
 - Source directory: src/
@@ -25,7 +25,7 @@
 
 | Category | Value |
 |----------|-------|
-| Language | Markdown, Java |
+| Language | Markdown, JSON, Java |
 | Framework | N/A |
 | Architecture | Flat / Simple Structure |
 | Naming | PascalCase |

@@ -1,0 +1,98 @@
+{
+  "nodes": [
+    {
+      "id": "app",
+      "type": "feature",
+      "label": "app",
+      "metadata": {
+        "path": "app",
+        "fileCount": 8
+      }
+    },
+    {
+      "id": "category",
+      "type": "flow",
+      "label": "category",
+      "metadata": {
+        "entrypoint": "app/Http/Controllers/Api/CategoryController.php",
+        "fileCount": 2
+      }
+    },
+    {
+      "id": "comment",
+      "type": "flow",
+      "label": "comment",
+      "metadata": {
+        "entrypoint": "app/Http/Controllers/Api/CommentController.php",
+        "fileCount": 2
+      }
+    },
+    {
+      "id": "post",
+      "type": "flow",
+      "label": "post",
+      "metadata": {
+        "entrypoint": "app/Http/Controllers/Api/PostController.php",
+        "fileCount": 2
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "app",
+      "to": "category",
+      "type": "contains"
+    },
+    {
+      "from": "app",
+      "to": "comment",
+      "type": "contains"
+    },
+    {
+      "from": "app",
+      "to": "post",
+      "type": "contains"
+    },
+    {
+      "from": "category",
+      "to": "app/Http/Controllers/Api/CategoryController.php",
+      "type": "implements"
+    },
+    {
+      "from": "category",
+      "to": "app/Models/Category.php",
+      "type": "implements"
+    },
+    {
+      "from": "comment",
+      "to": "app/Http/Controllers/Api/CommentController.php",
+      "type": "implements"
+    },
+    {
+      "from": "comment",
+      "to": "app/Models/Comment.php",
+      "type": "implements"
+    },
+    {
+      "from": "post",
+      "to": "app/Http/Controllers/Api/PostController.php",
+      "type": "implements"
+    },
+    {
+      "from": "post",
+      "to": "app/Models/Post.php",
+      "type": "implements"
+    }
+  ],
+  "metadata": {
+    "generated": "2026-03-18T19:21:52.073Z",
+    "sources": [
+      "features",
+      "flows",
+      "symbols",
+      "dependencies"
+    ],
+    "nodeCount": 4,
+    "edgeCount": 9
+  }
+}

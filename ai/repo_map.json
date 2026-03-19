@@ -1,6 +1,6 @@
 {
-  "generated": "2026-03-10T19:52:05.658Z",
-  "totalFiles": 80,
+  "generated": "2026-03-18T20:34:40.609Z",
+  "totalFiles": 565,
   "structure": {
     ".netlify": {
       "type": "directory",
@@ -10,6 +10,18 @@
           "extension": "json"
         }
       }
+    },
+    "ANALISIS_COMPLETO.md": {
+      "type": "file",
+      "extension": "md"
+    },
+    "ANALISIS_MEJORAS.md": {
+      "type": "file",
+      "extension": "md"
+    },
+    "BUGS.md": {
+      "type": "file",
+      "extension": "md"
     },
     "CHANGELOG.md": {
       "type": "file",
@@ -23,11 +35,35 @@
       "type": "file",
       "extension": "md"
     },
+    "PLAN_MEJORAS.md": {
+      "type": "file",
+      "extension": "md"
+    },
     "README.es.md": {
       "type": "file",
       "extension": "md"
     },
     "README.md": {
+      "type": "file",
+      "extension": "md"
+    },
+    "TEST_RESULTS.md": {
+      "type": "file",
+      "extension": "md"
+    },
+    "TEST_RESULTS_COMPARATIVE.md": {
+      "type": "file",
+      "extension": "md"
+    },
+    "TEST_RESULTS_COMPLETE.md": {
+      "type": "file",
+      "extension": "md"
+    },
+    "TEST_RESULTS_COMPREHENSIVE.md": {
+      "type": "file",
+      "extension": "md"
+    },
+    "TEST_RESULTS_PHASE1.md": {
       "type": "file",
       "extension": "md"
     },
@@ -67,6 +103,92 @@
         "context": {
           "type": "directory",
           "children": {
+            "features": {
+              "type": "directory",
+              "children": {
+                "commands.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "src.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "test-projects.json": {
+                  "type": "file",
+                  "extension": "json"
+                }
+              }
+            },
+            "flows": {
+              "type": "directory",
+              "children": {
+                "account.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "ai-first.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "api.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "auth.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "category.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "comment.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "dashboard.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "doctor.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "explore.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "login.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "opportunity.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "post.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "routes.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "user.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "users.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "views.json": {
+                  "type": "file",
+                  "extension": "json"
+                }
+              }
+            },
             "repo.json": {
               "type": "file",
               "extension": "json"
@@ -97,9 +219,34 @@
           "type": "file",
           "extension": "json"
         },
+        "git": {
+          "type": "directory",
+          "children": {
+            "commit-activity.json": {
+              "type": "file",
+              "extension": "json"
+            },
+            "recent-features.json": {
+              "type": "file",
+              "extension": "json"
+            },
+            "recent-files.json": {
+              "type": "file",
+              "extension": "json"
+            },
+            "recent-flows.json": {
+              "type": "file",
+              "extension": "json"
+            }
+          }
+        },
         "graph": {
           "type": "directory",
           "children": {
+            "knowledge-graph.json": {
+              "type": "file",
+              "extension": "json"
+            },
             "module-graph.json": {
               "type": "file",
               "extension": "json"
@@ -126,6 +273,10 @@
           "type": "file",
           "extension": "json"
         },
+        "project.json": {
+          "type": "file",
+          "extension": "json"
+        },
         "repo_map.json": {
           "type": "file",
           "extension": "json"
@@ -133,6 +284,10 @@
         "repo_map.md": {
           "type": "file",
           "extension": "md"
+        },
+        "schema.json": {
+          "type": "file",
+          "extension": "json"
         },
         "summary.md": {
           "type": "file",
@@ -145,6 +300,10 @@
         "tech_stack.md": {
           "type": "file",
           "extension": "md"
+        },
+        "tools.json": {
+          "type": "file",
+          "extension": "json"
         }
       }
     },
@@ -179,7 +338,43 @@
             "guide": {
               "type": "directory",
               "children": {
+                "adapters.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "ai-repository-schema.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "features.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "flows.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
                 "getting-started.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "git-intelligence.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "incremental-analysis.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "knowledge-graph.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "lazy-indexing.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "performance.md": {
                   "type": "file",
                   "extension": "md"
                 }
@@ -215,7 +410,19 @@
         "guide": {
           "type": "directory",
           "children": {
+            "adapters.md": {
+              "type": "file",
+              "extension": "md"
+            },
+            "ai-repository-schema.md": {
+              "type": "file",
+              "extension": "md"
+            },
             "architecture.md": {
+              "type": "file",
+              "extension": "md"
+            },
+            "flows.md": {
               "type": "file",
               "extension": "md"
             },
@@ -223,7 +430,27 @@
               "type": "file",
               "extension": "md"
             },
+            "git-intelligence.md": {
+              "type": "file",
+              "extension": "md"
+            },
+            "incremental-analysis.md": {
+              "type": "file",
+              "extension": "md"
+            },
             "installation.md": {
+              "type": "file",
+              "extension": "md"
+            },
+            "knowledge-graph.md": {
+              "type": "file",
+              "extension": "md"
+            },
+            "lazy-indexing.md": {
+              "type": "file",
+              "extension": "md"
+            },
+            "performance.md": {
               "type": "file",
               "extension": "md"
             },
@@ -341,6 +568,76 @@
         "core": {
           "type": "directory",
           "children": {
+            "adapters": {
+              "type": "directory",
+              "children": {
+                "adapterRegistry.ts": {
+                  "type": "file",
+                  "extension": "ts"
+                },
+                "baseAdapter.ts": {
+                  "type": "file",
+                  "extension": "ts"
+                },
+                "community": {
+                  "type": "directory",
+                  "children": {
+                    "fastapiAdapter.ts": {
+                      "type": "file",
+                      "extension": "ts"
+                    },
+                    "index.ts": {
+                      "type": "file",
+                      "extension": "ts"
+                    },
+                    "laravelAdapter.ts": {
+                      "type": "file",
+                      "extension": "ts"
+                    },
+                    "nestjsAdapter.ts": {
+                      "type": "file",
+                      "extension": "ts"
+                    },
+                    "phoenixAdapter.ts": {
+                      "type": "file",
+                      "extension": "ts"
+                    },
+                    "springBootAdapter.ts": {
+                      "type": "file",
+                      "extension": "ts"
+                    }
+                  }
+                },
+                "dotnetAdapter.ts": {
+                  "type": "file",
+                  "extension": "ts"
+                },
+                "index.ts": {
+                  "type": "file",
+                  "extension": "ts"
+                },
+                "javascriptAdapter.ts": {
+                  "type": "file",
+                  "extension": "ts"
+                },
+                "pythonAdapter.ts": {
+                  "type": "file",
+                  "extension": "ts"
+                },
+                "railsAdapter.ts": {
+                  "type": "file",
+                  "extension": "ts"
+                },
+                "salesforceAdapter.ts": {
+                  "type": "file",
+                  "extension": "ts"
+                },
+                "sdk.ts": {
+                  "type": "file",
+                  "extension": "ts"
+                }
+              }
+            },
             "aiContextGenerator.ts": {
               "type": "file",
               "extension": "ts"
@@ -365,7 +662,15 @@
               "type": "file",
               "extension": "ts"
             },
+            "gitAnalyzer.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
             "hierarchyGenerator.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "incrementalAnalyzer.ts": {
               "type": "file",
               "extension": "ts"
             },
@@ -374,6 +679,14 @@
               "extension": "ts"
             },
             "indexer.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "knowledgeGraphBuilder.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "lazyAnalyzer.ts": {
               "type": "file",
               "extension": "ts"
             },
@@ -386,6 +699,10 @@
               "extension": "ts"
             },
             "repoScanner.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "schema.ts": {
               "type": "file",
               "extension": "ts"
             },
@@ -423,6 +740,2249 @@
         }
       }
     },
+    "test-projects": {
+      "type": "directory",
+      "children": {
+        "django-app": {
+          "type": "directory",
+          "children": {
+            "README.md": {
+              "type": "file",
+              "extension": "md"
+            },
+            "ai": {
+              "type": "directory",
+              "children": {
+                "ai_context.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "ai_rules.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "architecture.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "cache.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "context": {
+                  "type": "directory",
+                  "children": {
+                    "flows": {
+                      "type": "directory",
+                      "children": {
+                        "views.json": {
+                          "type": "file",
+                          "extension": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                "conventions.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "dependencies.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "entrypoints.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "files.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "graph": {
+                  "type": "directory",
+                  "children": {
+                    "knowledge-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "module-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "symbol-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "symbol-references.json": {
+                      "type": "file",
+                      "extension": "json"
+                    }
+                  }
+                },
+                "index-state.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "modules.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "project.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "schema.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "summary.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "symbols.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "tech_stack.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "tools.json": {
+                  "type": "file",
+                  "extension": "json"
+                }
+              }
+            },
+            "blog": {
+              "type": "directory",
+              "children": {
+                "__init__.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "admin.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "models.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "serializers.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "urls.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "views.py": {
+                  "type": "file",
+                  "extension": "py"
+                }
+              }
+            },
+            "django_app": {
+              "type": "directory",
+              "children": {
+                "__init__.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "settings.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "urls.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "wsgi.py": {
+                  "type": "file",
+                  "extension": "py"
+                }
+              }
+            },
+            "manage.py": {
+              "type": "file",
+              "extension": "py"
+            },
+            "users": {
+              "type": "directory",
+              "children": {
+                "__init__.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "admin.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "models.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "serializers.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "urls.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "views.py": {
+                  "type": "file",
+                  "extension": "py"
+                }
+              }
+            }
+          }
+        },
+        "express-api": {
+          "type": "directory",
+          "children": {
+            "ai": {
+              "type": "directory",
+              "children": {
+                "ai_context.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "ai_rules.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "architecture.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "context": {
+                  "type": "directory",
+                  "children": {
+                    "features": {
+                      "type": "directory",
+                      "children": {
+                        "controllers.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "services.json": {
+                          "type": "file",
+                          "extension": "json"
+                        }
+                      }
+                    },
+                    "flows": {
+                      "type": "directory",
+                      "children": {
+                        "auth.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "user.json": {
+                          "type": "file",
+                          "extension": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                "conventions.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "dependencies.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "entrypoints.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "files.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "graph": {
+                  "type": "directory",
+                  "children": {
+                    "knowledge-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    }
+                  }
+                },
+                "index-state.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "modules.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "project.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "schema.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "summary.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "symbols.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "tech_stack.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "tools.json": {
+                  "type": "file",
+                  "extension": "json"
+                }
+              }
+            },
+            "controllers": {
+              "type": "directory",
+              "children": {
+                "authController.js": {
+                  "type": "file",
+                  "extension": "js"
+                },
+                "userController.js": {
+                  "type": "file",
+                  "extension": "js"
+                }
+              }
+            },
+            "index.js": {
+              "type": "file",
+              "extension": "js"
+            },
+            "middleware": {
+              "type": "directory",
+              "children": {
+                "authMiddleware.js": {
+                  "type": "file",
+                  "extension": "js"
+                }
+              }
+            },
+            "models": {
+              "type": "directory",
+              "children": {
+                "userRepository.js": {
+                  "type": "file",
+                  "extension": "js"
+                }
+              }
+            },
+            "package.json": {
+              "type": "file",
+              "extension": "json"
+            },
+            "services": {
+              "type": "directory",
+              "children": {
+                "authService.js": {
+                  "type": "file",
+                  "extension": "js"
+                },
+                "userService.js": {
+                  "type": "file",
+                  "extension": "js"
+                }
+              }
+            }
+          }
+        },
+        "fastapi-app": {
+          "type": "directory",
+          "children": {
+            "README.md": {
+              "type": "file",
+              "extension": "md"
+            },
+            "ai": {
+              "type": "directory",
+              "children": {
+                "ai_context.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "ai_rules.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "architecture.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "cache.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "conventions.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "dependencies.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "entrypoints.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "files.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "graph": {
+                  "type": "directory",
+                  "children": {
+                    "knowledge-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "module-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "symbol-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "symbol-references.json": {
+                      "type": "file",
+                      "extension": "json"
+                    }
+                  }
+                },
+                "index-state.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "modules.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "project.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "schema.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "summary.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "symbols.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "tech_stack.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "tools.json": {
+                  "type": "file",
+                  "extension": "json"
+                }
+              }
+            },
+            "app": {
+              "type": "directory",
+              "children": {
+                "database.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "dependencies.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "main.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "models.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "routers": {
+                  "type": "directory",
+                  "children": {
+                    "auth.py": {
+                      "type": "file",
+                      "extension": "py"
+                    },
+                    "posts.py": {
+                      "type": "file",
+                      "extension": "py"
+                    }
+                  }
+                },
+                "schemas.py": {
+                  "type": "file",
+                  "extension": "py"
+                }
+              }
+            }
+          }
+        },
+        "flask-app": {
+          "type": "directory",
+          "children": {
+            "README.md": {
+              "type": "file",
+              "extension": "md"
+            },
+            "ai": {
+              "type": "directory",
+              "children": {
+                "ai_context.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "ai_rules.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "architecture.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "cache.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "context": {
+                  "type": "directory",
+                  "children": {
+                    "features": {
+                      "type": "directory",
+                      "children": {
+                        "app.json": {
+                          "type": "file",
+                          "extension": "json"
+                        }
+                      }
+                    },
+                    "flows": {
+                      "type": "directory",
+                      "children": {
+                        "routes.json": {
+                          "type": "file",
+                          "extension": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                "conventions.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "dependencies.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "entrypoints.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "files.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "graph": {
+                  "type": "directory",
+                  "children": {
+                    "knowledge-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "module-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "symbol-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "symbol-references.json": {
+                      "type": "file",
+                      "extension": "json"
+                    }
+                  }
+                },
+                "index-state.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "modules.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "project.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "schema.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "summary.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "symbols.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "tech_stack.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "tools.json": {
+                  "type": "file",
+                  "extension": "json"
+                }
+              }
+            },
+            "app": {
+              "type": "directory",
+              "children": {
+                "__init__.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "api": {
+                  "type": "directory",
+                  "children": {
+                    "__init__.py": {
+                      "type": "file",
+                      "extension": "py"
+                    },
+                    "routes.py": {
+                      "type": "file",
+                      "extension": "py"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "directory",
+                  "children": {
+                    "__init__.py": {
+                      "type": "file",
+                      "extension": "py"
+                    },
+                    "forms.py": {
+                      "type": "file",
+                      "extension": "py"
+                    },
+                    "routes.py": {
+                      "type": "file",
+                      "extension": "py"
+                    }
+                  }
+                },
+                "blog": {
+                  "type": "directory",
+                  "children": {
+                    "__init__.py": {
+                      "type": "file",
+                      "extension": "py"
+                    },
+                    "forms.py": {
+                      "type": "file",
+                      "extension": "py"
+                    },
+                    "routes.py": {
+                      "type": "file",
+                      "extension": "py"
+                    }
+                  }
+                },
+                "main": {
+                  "type": "directory",
+                  "children": {
+                    "__init__.py": {
+                      "type": "file",
+                      "extension": "py"
+                    },
+                    "routes.py": {
+                      "type": "file",
+                      "extension": "py"
+                    }
+                  }
+                },
+                "models.py": {
+                  "type": "file",
+                  "extension": "py"
+                }
+              }
+            },
+            "config.py": {
+              "type": "file",
+              "extension": "py"
+            }
+          }
+        },
+        "laravel-app": {
+          "type": "directory",
+          "children": {
+            "README.md": {
+              "type": "file",
+              "extension": "md"
+            },
+            "ai": {
+              "type": "directory",
+              "children": {
+                "ai_context.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "ai_rules.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "architecture.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "cache.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "context": {
+                  "type": "directory",
+                  "children": {
+                    "features": {
+                      "type": "directory",
+                      "children": {
+                        "app.json": {
+                          "type": "file",
+                          "extension": "json"
+                        }
+                      }
+                    },
+                    "flows": {
+                      "type": "directory",
+                      "children": {
+                        "category.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "comment.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "post.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "unnamed.json": {
+                          "type": "file",
+                          "extension": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                "conventions.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "dependencies.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "entrypoints.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "files.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "graph": {
+                  "type": "directory",
+                  "children": {
+                    "knowledge-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "module-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "symbol-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "symbol-references.json": {
+                      "type": "file",
+                      "extension": "json"
+                    }
+                  }
+                },
+                "index-state.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "modules.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "project.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "schema.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "summary.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "symbols.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "tech_stack.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "tools.json": {
+                  "type": "file",
+                  "extension": "json"
+                }
+              }
+            },
+            "app": {
+              "type": "directory",
+              "children": {
+                "Http": {
+                  "type": "directory",
+                  "children": {
+                    "Controllers": {
+                      "type": "directory",
+                      "children": {
+                        "Api": {
+                          "type": "directory",
+                          "children": {
+                            "CategoryController.php": {
+                              "type": "file",
+                              "extension": "php"
+                            },
+                            "CommentController.php": {
+                              "type": "file",
+                              "extension": "php"
+                            },
+                            "PostController.php": {
+                              "type": "file",
+                              "extension": "php"
+                            }
+                          }
+                        },
+                        "Controller.php": {
+                          "type": "file",
+                          "extension": "php"
+                        }
+                      }
+                    }
+                  }
+                },
+                "Models": {
+                  "type": "directory",
+                  "children": {
+                    "Category.php": {
+                      "type": "file",
+                      "extension": "php"
+                    },
+                    "Comment.php": {
+                      "type": "file",
+                      "extension": "php"
+                    },
+                    "Post.php": {
+                      "type": "file",
+                      "extension": "php"
+                    },
+                    "User.php": {
+                      "type": "file",
+                      "extension": "php"
+                    }
+                  }
+                }
+              }
+            },
+            "bootstrap": {
+              "type": "directory",
+              "children": {
+                "app.php": {
+                  "type": "file",
+                  "extension": "php"
+                }
+              }
+            },
+            "composer.json": {
+              "type": "file",
+              "extension": "json"
+            },
+            "routes": {
+              "type": "directory",
+              "children": {
+                "api.php": {
+                  "type": "file",
+                  "extension": "php"
+                }
+              }
+            }
+          }
+        },
+        "nestjs-backend": {
+          "type": "directory",
+          "children": {
+            "ai": {
+              "type": "directory",
+              "children": {
+                "ai_context.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "ai_rules.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "architecture.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "cache.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "context": {
+                  "type": "directory",
+                  "children": {
+                    "features": {
+                      "type": "directory",
+                      "children": {
+                        "src.json": {
+                          "type": "file",
+                          "extension": "json"
+                        }
+                      }
+                    },
+                    "flows": {
+                      "type": "directory",
+                      "children": {
+                        "auth.controller.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "auth.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "users..json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "users.controller.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "users.json": {
+                          "type": "file",
+                          "extension": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                "conventions.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "dependencies.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "entrypoints.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "files.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "graph": {
+                  "type": "directory",
+                  "children": {
+                    "knowledge-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "module-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "symbol-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "symbol-references.json": {
+                      "type": "file",
+                      "extension": "json"
+                    }
+                  }
+                },
+                "index-state.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "modules.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "project.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "schema.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "summary.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "symbols.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "tech_stack.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "tools.json": {
+                  "type": "file",
+                  "extension": "json"
+                }
+              }
+            },
+            "package.json": {
+              "type": "file",
+              "extension": "json"
+            },
+            "src": {
+              "type": "directory",
+              "children": {
+                "app.module.ts": {
+                  "type": "file",
+                  "extension": "ts"
+                },
+                "auth": {
+                  "type": "directory",
+                  "children": {
+                    "auth.controller.ts": {
+                      "type": "file",
+                      "extension": "ts"
+                    },
+                    "auth.module.ts": {
+                      "type": "file",
+                      "extension": "ts"
+                    },
+                    "auth.service.ts": {
+                      "type": "file",
+                      "extension": "ts"
+                    },
+                    "dto": {
+                      "type": "directory",
+                      "children": {
+                        "login.dto.ts": {
+                          "type": "file",
+                          "extension": "ts"
+                        }
+                      }
+                    },
+                    "strategies": {
+                      "type": "directory",
+                      "children": {
+                        "jwt.strategy.ts": {
+                          "type": "file",
+                          "extension": "ts"
+                        }
+                      }
+                    }
+                  }
+                },
+                "main.ts": {
+                  "type": "file",
+                  "extension": "ts"
+                },
+                "users": {
+                  "type": "directory",
+                  "children": {
+                    "users.controller.ts": {
+                      "type": "file",
+                      "extension": "ts"
+                    },
+                    "users.module.ts": {
+                      "type": "file",
+                      "extension": "ts"
+                    },
+                    "users.service.ts": {
+                      "type": "file",
+                      "extension": "ts"
+                    }
+                  }
+                }
+              }
+            },
+            "tsconfig.json": {
+              "type": "file",
+              "extension": "json"
+            }
+          }
+        },
+        "python-cli": {
+          "type": "directory",
+          "children": {
+            "__init__.py": {
+              "type": "file",
+              "extension": "py"
+            },
+            "ai": {
+              "type": "directory",
+              "children": {
+                "ai_context.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "ai_rules.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "architecture.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "cache.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "context": {
+                  "type": "directory",
+                  "children": {
+                    "features": {
+                      "type": "directory",
+                      "children": {
+                        "cli.json": {
+                          "type": "file",
+                          "extension": "json"
+                        }
+                      }
+                    },
+                    "flows": {
+                      "type": "directory",
+                      "children": {
+                        "list_.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "remove_.json": {
+                          "type": "file",
+                          "extension": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                "conventions.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "dependencies.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "entrypoints.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "files.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "graph": {
+                  "type": "directory",
+                  "children": {
+                    "knowledge-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "module-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "symbol-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "symbol-references.json": {
+                      "type": "file",
+                      "extension": "json"
+                    }
+                  }
+                },
+                "index-state.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "modules.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "project.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "schema.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "summary.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "symbols.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "tech_stack.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "tools.json": {
+                  "type": "file",
+                  "extension": "json"
+                }
+              }
+            },
+            "cli": {
+              "type": "directory",
+              "children": {
+                "__init__.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "add_command.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "list_command.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "remove_command.py": {
+                  "type": "file",
+                  "extension": "py"
+                }
+              }
+            },
+            "main.py": {
+              "type": "file",
+              "extension": "py"
+            },
+            "models": {
+              "type": "directory",
+              "children": {
+                "__init__.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "task.py": {
+                  "type": "file",
+                  "extension": "py"
+                },
+                "task_repository.py": {
+                  "type": "file",
+                  "extension": "py"
+                }
+              }
+            }
+          }
+        },
+        "rails-app": {
+          "type": "directory",
+          "children": {
+            "README.md": {
+              "type": "file",
+              "extension": "md"
+            },
+            "ai": {
+              "type": "directory",
+              "children": {
+                "ai_context.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "ai_rules.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "architecture.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "cache.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "context": {
+                  "type": "directory",
+                  "children": {
+                    "features": {
+                      "type": "directory",
+                      "children": {
+                        "app.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "config.json": {
+                          "type": "file",
+                          "extension": "json"
+                        }
+                      }
+                    },
+                    "flows": {
+                      "type": "directory",
+                      "children": {
+                        "application.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "application_.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "comments.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "comments_.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "posts.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "posts_.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "routes.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "users.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "users_.json": {
+                          "type": "file",
+                          "extension": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                "conventions.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "dependencies.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "entrypoints.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "files.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "graph": {
+                  "type": "directory",
+                  "children": {
+                    "knowledge-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "module-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "symbol-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "symbol-references.json": {
+                      "type": "file",
+                      "extension": "json"
+                    }
+                  }
+                },
+                "index-state.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "modules.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "project.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "schema.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "summary.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "symbols.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "tech_stack.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "tools.json": {
+                  "type": "file",
+                  "extension": "json"
+                }
+              }
+            },
+            "app": {
+              "type": "directory",
+              "children": {
+                "controllers": {
+                  "type": "directory",
+                  "children": {
+                    "api": {
+                      "type": "directory",
+                      "children": {
+                        "comments_controller.rb": {
+                          "type": "file",
+                          "extension": "rb"
+                        },
+                        "posts_controller.rb": {
+                          "type": "file",
+                          "extension": "rb"
+                        },
+                        "users_controller.rb": {
+                          "type": "file",
+                          "extension": "rb"
+                        }
+                      }
+                    },
+                    "application_controller.rb": {
+                      "type": "file",
+                      "extension": "rb"
+                    }
+                  }
+                },
+                "models": {
+                  "type": "directory",
+                  "children": {
+                    "comment.rb": {
+                      "type": "file",
+                      "extension": "rb"
+                    },
+                    "post.rb": {
+                      "type": "file",
+                      "extension": "rb"
+                    },
+                    "user.rb": {
+                      "type": "file",
+                      "extension": "rb"
+                    }
+                  }
+                },
+                "services": {
+                  "type": "directory",
+                  "children": {
+                    "post_service.rb": {
+                      "type": "file",
+                      "extension": "rb"
+                    },
+                    "user_service.rb": {
+                      "type": "file",
+                      "extension": "rb"
+                    }
+                  }
+                }
+              }
+            },
+            "config": {
+              "type": "directory",
+              "children": {
+                "application.rb": {
+                  "type": "file",
+                  "extension": "rb"
+                },
+                "environment.rb": {
+                  "type": "file",
+                  "extension": "rb"
+                },
+                "routes.rb": {
+                  "type": "file",
+                  "extension": "rb"
+                }
+              }
+            }
+          }
+        },
+        "react-app": {
+          "type": "directory",
+          "children": {
+            "ai": {
+              "type": "directory",
+              "children": {
+                "ai_context.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "ai_rules.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "architecture.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "cache.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "context": {
+                  "type": "directory",
+                  "children": {
+                    "features": {
+                      "type": "directory",
+                      "children": {
+                        "src.json": {
+                          "type": "file",
+                          "extension": "json"
+                        }
+                      }
+                    },
+                    "flows": {
+                      "type": "directory",
+                      "children": {
+                        "UsersPage.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "dashboard.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "login.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "users.json": {
+                          "type": "file",
+                          "extension": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                "conventions.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "dependencies.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "entrypoints.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "files.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "graph": {
+                  "type": "directory",
+                  "children": {
+                    "knowledge-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "module-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "symbol-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "symbol-references.json": {
+                      "type": "file",
+                      "extension": "json"
+                    }
+                  }
+                },
+                "index-state.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "modules.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "project.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "schema.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "summary.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "symbols.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "tech_stack.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "tools.json": {
+                  "type": "file",
+                  "extension": "json"
+                }
+              }
+            },
+            "package.json": {
+              "type": "file",
+              "extension": "json"
+            },
+            "src": {
+              "type": "directory",
+              "children": {
+                "App.tsx": {
+                  "type": "file",
+                  "extension": "tsx"
+                },
+                "context": {
+                  "type": "directory",
+                  "children": {
+                    "AuthContext.tsx": {
+                      "type": "file",
+                      "extension": "tsx"
+                    }
+                  }
+                },
+                "hooks": {
+                  "type": "directory",
+                  "children": {
+                    "useAuth.ts": {
+                      "type": "file",
+                      "extension": "ts"
+                    }
+                  }
+                },
+                "main.tsx": {
+                  "type": "file",
+                  "extension": "tsx"
+                },
+                "pages": {
+                  "type": "directory",
+                  "children": {
+                    "DashboardPage.tsx": {
+                      "type": "file",
+                      "extension": "tsx"
+                    },
+                    "LoginPage.tsx": {
+                      "type": "file",
+                      "extension": "tsx"
+                    },
+                    "UsersPage.tsx": {
+                      "type": "file",
+                      "extension": "tsx"
+                    }
+                  }
+                },
+                "services": {
+                  "type": "directory",
+                  "children": {
+                    "userService.ts": {
+                      "type": "file",
+                      "extension": "ts"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "salesforce-cli": {
+          "type": "directory",
+          "children": {
+            "ai": {
+              "type": "directory",
+              "children": {
+                "ai_context.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "ai_rules.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "architecture.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "cache.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "context": {
+                  "type": "directory",
+                  "children": {
+                    "features": {
+                      "type": "directory",
+                      "children": {
+                        "force-app.json": {
+                          "type": "file",
+                          "extension": "json"
+                        }
+                      }
+                    },
+                    "flows": {
+                      "type": "directory",
+                      "children": {
+                        "account.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "opportunity.json": {
+                          "type": "file",
+                          "extension": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                "conventions.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "dependencies.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "entrypoints.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "files.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "graph": {
+                  "type": "directory",
+                  "children": {
+                    "knowledge-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "module-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "symbol-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "symbol-references.json": {
+                      "type": "file",
+                      "extension": "json"
+                    }
+                  }
+                },
+                "index-state.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "modules.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "project.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "schema.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "summary.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "symbols.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "tech_stack.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "tools.json": {
+                  "type": "file",
+                  "extension": "json"
+                }
+              }
+            },
+            "force-app": {
+              "type": "directory",
+              "children": {
+                "main": {
+                  "type": "directory",
+                  "children": {
+                    "default": {
+                      "type": "directory",
+                      "children": {
+                        "classes": {
+                          "type": "directory",
+                          "children": {
+                            "AccountController.cls": {
+                              "type": "file",
+                              "extension": "cls"
+                            },
+                            "OpportunityController.cls": {
+                              "type": "file",
+                              "extension": "cls"
+                            }
+                          }
+                        },
+                        "triggers": {
+                          "type": "directory",
+                          "children": {
+                            "AccountTrigger.trigger": {
+                              "type": "file",
+                              "extension": "trigger"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "sfdx-project.json": {
+              "type": "file",
+              "extension": "json"
+            }
+          }
+        },
+        "spring-boot-app": {
+          "type": "directory",
+          "children": {
+            "README.md": {
+              "type": "file",
+              "extension": "md"
+            },
+            "ai": {
+              "type": "directory",
+              "children": {
+                "ai_context.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "ai_rules.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "architecture.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "cache.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "context": {
+                  "type": "directory",
+                  "children": {
+                    "features": {
+                      "type": "directory",
+                      "children": {
+                        "src.json": {
+                          "type": "file",
+                          "extension": "json"
+                        }
+                      }
+                    },
+                    "flows": {
+                      "type": "directory",
+                      "children": {
+                        "PostController.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "UserController.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "comment.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "post.json": {
+                          "type": "file",
+                          "extension": "json"
+                        },
+                        "user.json": {
+                          "type": "file",
+                          "extension": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                "conventions.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "dependencies.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "entrypoints.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "files.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "graph": {
+                  "type": "directory",
+                  "children": {
+                    "knowledge-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "module-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "symbol-graph.json": {
+                      "type": "file",
+                      "extension": "json"
+                    },
+                    "symbol-references.json": {
+                      "type": "file",
+                      "extension": "json"
+                    }
+                  }
+                },
+                "index-state.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "modules.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "project.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "repo_map.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "schema.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "summary.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "symbols.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "tech_stack.md": {
+                  "type": "file",
+                  "extension": "md"
+                },
+                "tools.json": {
+                  "type": "file",
+                  "extension": "json"
+                }
+              }
+            },
+            "src": {
+              "type": "directory",
+              "children": {
+                "main": {
+                  "type": "directory",
+                  "children": {
+                    "java": {
+                      "type": "directory",
+                      "children": {
+                        "com": {
+                          "type": "directory",
+                          "children": {
+                            "example": {
+                              "type": "directory",
+                              "children": {
+                                "demo": {
+                                  "type": "directory",
+                                  "children": {
+                                    "DemoApplication.java": {
+                                      "type": "file",
+                                      "extension": "java"
+                                    },
+                                    "controllers": {
+                                      "type": "directory",
+                                      "children": {
+                                        "CommentController.java": {
+                                          "type": "file",
+                                          "extension": "java"
+                                        },
+                                        "PostController.java": {
+                                          "type": "file",
+                                          "extension": "java"
+                                        },
+                                        "UserController.java": {
+                                          "type": "file",
+                                          "extension": "java"
+                                        }
+                                      }
+                                    },
+                                    "models": {
+                                      "type": "directory",
+                                      "children": {
+                                        "Comment.java": {
+                                          "type": "file",
+                                          "extension": "java"
+                                        },
+                                        "Post.java": {
+                                          "type": "file",
+                                          "extension": "java"
+                                        },
+                                        "User.java": {
+                                          "type": "file",
+                                          "extension": "java"
+                                        }
+                                      }
+                                    },
+                                    "repositories": {
+                                      "type": "directory",
+                                      "children": {
+                                        "CommentRepository.java": {
+                                          "type": "file",
+                                          "extension": "java"
+                                        },
+                                        "PostRepository.java": {
+                                          "type": "file",
+                                          "extension": "java"
+                                        },
+                                        "UserRepository.java": {
+                                          "type": "file",
+                                          "extension": "java"
+                                        }
+                                      }
+                                    },
+                                    "services": {
+                                      "type": "directory",
+                                      "children": {
+                                        "PostService.java": {
+                                          "type": "file",
+                                          "extension": "java"
+                                        },
+                                        "UserService.java": {
+                                          "type": "file",
+                                          "extension": "java"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "tests": {
+      "type": "directory",
+      "children": {
+        "adapters.test.ts": {
+          "type": "file",
+          "extension": "ts"
+        },
+        "e2e": {
+          "type": "directory",
+          "children": {
+            "README.md": {
+              "type": "file",
+              "extension": "md"
+            }
+          }
+        },
+        "gitAnalyzer.test.ts": {
+          "type": "file",
+          "extension": "ts"
+        },
+        "incrementalAnalyzer.test.ts": {
+          "type": "file",
+          "extension": "ts"
+        },
+        "knowledgeGraph.test.ts": {
+          "type": "file",
+          "extension": "ts"
+        },
+        "lazyAnalyzer.test.ts": {
+          "type": "file",
+          "extension": "ts"
+        },
+        "schema.test.ts": {
+          "type": "file",
+          "extension": "ts"
+        },
+        "semanticContexts.test.ts": {
+          "type": "file",
+          "extension": "ts"
+        }
+      }
+    },
     "tsconfig.json": {
       "type": "file",
       "extension": "json"
@@ -433,6 +2993,21 @@
       "path": ".netlify/state.json",
       "name": "state.json",
       "extension": "json"
+    },
+    {
+      "path": "ANALISIS_COMPLETO.md",
+      "name": "ANALISIS_COMPLETO.md",
+      "extension": "md"
+    },
+    {
+      "path": "ANALISIS_MEJORAS.md",
+      "name": "ANALISIS_MEJORAS.md",
+      "extension": "md"
+    },
+    {
+      "path": "BUGS.md",
+      "name": "BUGS.md",
+      "extension": "md"
     },
     {
       "path": "CHANGELOG.md",
@@ -450,6 +3025,11 @@
       "extension": "md"
     },
     {
+      "path": "PLAN_MEJORAS.md",
+      "name": "PLAN_MEJORAS.md",
+      "extension": "md"
+    },
+    {
       "path": "README.es.md",
       "name": "README.es.md",
       "extension": "md"
@@ -457,6 +3037,31 @@
     {
       "path": "README.md",
       "name": "README.md",
+      "extension": "md"
+    },
+    {
+      "path": "TEST_RESULTS.md",
+      "name": "TEST_RESULTS.md",
+      "extension": "md"
+    },
+    {
+      "path": "TEST_RESULTS_COMPARATIVE.md",
+      "name": "TEST_RESULTS_COMPARATIVE.md",
+      "extension": "md"
+    },
+    {
+      "path": "TEST_RESULTS_COMPLETE.md",
+      "name": "TEST_RESULTS_COMPLETE.md",
+      "extension": "md"
+    },
+    {
+      "path": "TEST_RESULTS_COMPREHENSIVE.md",
+      "name": "TEST_RESULTS_COMPREHENSIVE.md",
+      "extension": "md"
+    },
+    {
+      "path": "TEST_RESULTS_PHASE1.md",
+      "name": "TEST_RESULTS_PHASE1.md",
       "extension": "md"
     },
     {
@@ -482,6 +3087,101 @@
     {
       "path": "ai/ccp/jira-123/context.json",
       "name": "context.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/features/commands.json",
+      "name": "commands.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/features/src.json",
+      "name": "src.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/features/test-projects.json",
+      "name": "test-projects.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/account.json",
+      "name": "account.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/ai-first.json",
+      "name": "ai-first.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/api.json",
+      "name": "api.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/auth.json",
+      "name": "auth.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/category.json",
+      "name": "category.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/comment.json",
+      "name": "comment.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/dashboard.json",
+      "name": "dashboard.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/doctor.json",
+      "name": "doctor.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/explore.json",
+      "name": "explore.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/login.json",
+      "name": "login.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/opportunity.json",
+      "name": "opportunity.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/post.json",
+      "name": "post.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/routes.json",
+      "name": "routes.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/user.json",
+      "name": "user.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/users.json",
+      "name": "users.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/views.json",
+      "name": "views.json",
       "extension": "json"
     },
     {
@@ -520,6 +3220,31 @@
       "extension": "json"
     },
     {
+      "path": "ai/git/commit-activity.json",
+      "name": "commit-activity.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/git/recent-features.json",
+      "name": "recent-features.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/git/recent-files.json",
+      "name": "recent-files.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/git/recent-flows.json",
+      "name": "recent-flows.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "extension": "json"
+    },
+    {
       "path": "ai/graph/module-graph.json",
       "name": "module-graph.json",
       "extension": "json"
@@ -550,6 +3275,11 @@
       "extension": "json"
     },
     {
+      "path": "ai/project.json",
+      "name": "project.json",
+      "extension": "json"
+    },
+    {
       "path": "ai/repo_map.json",
       "name": "repo_map.json",
       "extension": "json"
@@ -558,6 +3288,11 @@
       "path": "ai/repo_map.md",
       "name": "repo_map.md",
       "extension": "md"
+    },
+    {
+      "path": "ai/schema.json",
+      "name": "schema.json",
+      "extension": "json"
     },
     {
       "path": "ai/summary.md",
@@ -575,6 +3310,11 @@
       "extension": "md"
     },
     {
+      "path": "ai/tools.json",
+      "name": "tools.json",
+      "extension": "json"
+    },
+    {
       "path": "docs/.vitepress/config.ts",
       "name": "config.ts",
       "extension": "ts"
@@ -590,8 +3330,53 @@
       "extension": "ts"
     },
     {
+      "path": "docs/es/guide/adapters.md",
+      "name": "adapters.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/es/guide/ai-repository-schema.md",
+      "name": "ai-repository-schema.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/es/guide/features.md",
+      "name": "features.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/es/guide/flows.md",
+      "name": "flows.md",
+      "extension": "md"
+    },
+    {
       "path": "docs/es/guide/getting-started.md",
       "name": "getting-started.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/es/guide/git-intelligence.md",
+      "name": "git-intelligence.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/es/guide/incremental-analysis.md",
+      "name": "incremental-analysis.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/es/guide/knowledge-graph.md",
+      "name": "knowledge-graph.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/es/guide/lazy-indexing.md",
+      "name": "lazy-indexing.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/es/guide/performance.md",
+      "name": "performance.md",
       "extension": "md"
     },
     {
@@ -620,8 +3405,23 @@
       "extension": "md"
     },
     {
+      "path": "docs/guide/adapters.md",
+      "name": "adapters.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/guide/ai-repository-schema.md",
+      "name": "ai-repository-schema.md",
+      "extension": "md"
+    },
+    {
       "path": "docs/guide/architecture.md",
       "name": "architecture.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/guide/flows.md",
+      "name": "flows.md",
       "extension": "md"
     },
     {
@@ -630,8 +3430,33 @@
       "extension": "md"
     },
     {
+      "path": "docs/guide/git-intelligence.md",
+      "name": "git-intelligence.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/guide/incremental-analysis.md",
+      "name": "incremental-analysis.md",
+      "extension": "md"
+    },
+    {
       "path": "docs/guide/installation.md",
       "name": "installation.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/guide/knowledge-graph.md",
+      "name": "knowledge-graph.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/guide/lazy-indexing.md",
+      "name": "lazy-indexing.md",
+      "extension": "md"
+    },
+    {
+      "path": "docs/guide/performance.md",
+      "name": "performance.md",
       "extension": "md"
     },
     {
@@ -740,6 +3565,81 @@
       "extension": "ts"
     },
     {
+      "path": "src/core/adapters/adapterRegistry.ts",
+      "name": "adapterRegistry.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/adapters/baseAdapter.ts",
+      "name": "baseAdapter.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/adapters/community/fastapiAdapter.ts",
+      "name": "fastapiAdapter.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/adapters/community/index.ts",
+      "name": "index.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/adapters/community/laravelAdapter.ts",
+      "name": "laravelAdapter.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/adapters/community/nestjsAdapter.ts",
+      "name": "nestjsAdapter.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/adapters/community/phoenixAdapter.ts",
+      "name": "phoenixAdapter.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/adapters/community/springBootAdapter.ts",
+      "name": "springBootAdapter.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/adapters/dotnetAdapter.ts",
+      "name": "dotnetAdapter.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/adapters/index.ts",
+      "name": "index.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/adapters/javascriptAdapter.ts",
+      "name": "javascriptAdapter.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/adapters/pythonAdapter.ts",
+      "name": "pythonAdapter.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/adapters/railsAdapter.ts",
+      "name": "railsAdapter.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/adapters/salesforceAdapter.ts",
+      "name": "salesforceAdapter.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/adapters/sdk.ts",
+      "name": "sdk.ts",
+      "extension": "ts"
+    },
+    {
       "path": "src/core/aiContextGenerator.ts",
       "name": "aiContextGenerator.ts",
       "extension": "ts"
@@ -770,8 +3670,18 @@
       "extension": "ts"
     },
     {
+      "path": "src/core/gitAnalyzer.ts",
+      "name": "gitAnalyzer.ts",
+      "extension": "ts"
+    },
+    {
       "path": "src/core/hierarchyGenerator.ts",
       "name": "hierarchyGenerator.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/incrementalAnalyzer.ts",
+      "name": "incrementalAnalyzer.ts",
       "extension": "ts"
     },
     {
@@ -782,6 +3692,16 @@
     {
       "path": "src/core/indexer.ts",
       "name": "indexer.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/knowledgeGraphBuilder.ts",
+      "name": "knowledgeGraphBuilder.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/lazyAnalyzer.ts",
+      "name": "lazyAnalyzer.ts",
       "extension": "ts"
     },
     {
@@ -797,6 +3717,11 @@
     {
       "path": "src/core/repoScanner.ts",
       "name": "repoScanner.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/core/schema.ts",
+      "name": "schema.ts",
       "extension": "ts"
     },
     {
@@ -822,6 +3747,2066 @@
     {
       "path": "src/utils/fileUtils.ts",
       "name": "fileUtils.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "test-projects/django-app/README.md",
+      "name": "README.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/django-app/ai/ai_context.md",
+      "name": "ai_context.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/django-app/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/django-app/ai/architecture.md",
+      "name": "architecture.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/django-app/ai/cache.json",
+      "name": "cache.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/context/flows/views.json",
+      "name": "views.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/conventions.md",
+      "name": "conventions.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/django-app/ai/dependencies.json",
+      "name": "dependencies.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/django-app/ai/files.json",
+      "name": "files.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/index-state.json",
+      "name": "index-state.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/modules.json",
+      "name": "modules.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/project.json",
+      "name": "project.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/repo_map.json",
+      "name": "repo_map.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/repo_map.md",
+      "name": "repo_map.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/django-app/ai/schema.json",
+      "name": "schema.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/summary.md",
+      "name": "summary.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/django-app/ai/symbols.json",
+      "name": "symbols.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/django-app/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/django-app/ai/tools.json",
+      "name": "tools.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/django-app/blog/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/django-app/blog/admin.py",
+      "name": "admin.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/django-app/blog/models.py",
+      "name": "models.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/django-app/blog/serializers.py",
+      "name": "serializers.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/django-app/blog/urls.py",
+      "name": "urls.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/django-app/blog/views.py",
+      "name": "views.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/django-app/django_app/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/django-app/django_app/settings.py",
+      "name": "settings.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/django-app/django_app/urls.py",
+      "name": "urls.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/django-app/django_app/wsgi.py",
+      "name": "wsgi.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/django-app/manage.py",
+      "name": "manage.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/django-app/users/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/django-app/users/admin.py",
+      "name": "admin.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/django-app/users/models.py",
+      "name": "models.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/django-app/users/serializers.py",
+      "name": "serializers.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/django-app/users/urls.py",
+      "name": "urls.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/django-app/users/views.py",
+      "name": "views.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/express-api/ai/ai_context.md",
+      "name": "ai_context.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/express-api/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/express-api/ai/architecture.md",
+      "name": "architecture.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/express-api/ai/context/features/controllers.json",
+      "name": "controllers.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/context/features/services.json",
+      "name": "services.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/context/flows/auth.json",
+      "name": "auth.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/context/flows/user.json",
+      "name": "user.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/conventions.md",
+      "name": "conventions.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/express-api/ai/dependencies.json",
+      "name": "dependencies.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/express-api/ai/files.json",
+      "name": "files.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/index-state.json",
+      "name": "index-state.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/modules.json",
+      "name": "modules.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/project.json",
+      "name": "project.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/repo_map.json",
+      "name": "repo_map.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/repo_map.md",
+      "name": "repo_map.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/express-api/ai/schema.json",
+      "name": "schema.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/summary.md",
+      "name": "summary.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/express-api/ai/symbols.json",
+      "name": "symbols.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/express-api/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/express-api/ai/tools.json",
+      "name": "tools.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/express-api/controllers/authController.js",
+      "name": "authController.js",
+      "extension": "js"
+    },
+    {
+      "path": "test-projects/express-api/controllers/userController.js",
+      "name": "userController.js",
+      "extension": "js"
+    },
+    {
+      "path": "test-projects/express-api/index.js",
+      "name": "index.js",
+      "extension": "js"
+    },
+    {
+      "path": "test-projects/express-api/middleware/authMiddleware.js",
+      "name": "authMiddleware.js",
+      "extension": "js"
+    },
+    {
+      "path": "test-projects/express-api/models/userRepository.js",
+      "name": "userRepository.js",
+      "extension": "js"
+    },
+    {
+      "path": "test-projects/express-api/package.json",
+      "name": "package.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/express-api/services/authService.js",
+      "name": "authService.js",
+      "extension": "js"
+    },
+    {
+      "path": "test-projects/express-api/services/userService.js",
+      "name": "userService.js",
+      "extension": "js"
+    },
+    {
+      "path": "test-projects/fastapi-app/README.md",
+      "name": "README.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/ai_context.md",
+      "name": "ai_context.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/architecture.md",
+      "name": "architecture.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/cache.json",
+      "name": "cache.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/conventions.md",
+      "name": "conventions.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/dependencies.json",
+      "name": "dependencies.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/files.json",
+      "name": "files.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/index-state.json",
+      "name": "index-state.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/modules.json",
+      "name": "modules.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/project.json",
+      "name": "project.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/repo_map.json",
+      "name": "repo_map.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/repo_map.md",
+      "name": "repo_map.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/schema.json",
+      "name": "schema.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/summary.md",
+      "name": "summary.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/symbols.json",
+      "name": "symbols.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/fastapi-app/ai/tools.json",
+      "name": "tools.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/fastapi-app/app/database.py",
+      "name": "database.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/fastapi-app/app/dependencies.py",
+      "name": "dependencies.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/fastapi-app/app/main.py",
+      "name": "main.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/fastapi-app/app/models.py",
+      "name": "models.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/fastapi-app/app/routers/auth.py",
+      "name": "auth.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/fastapi-app/app/routers/posts.py",
+      "name": "posts.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/fastapi-app/app/schemas.py",
+      "name": "schemas.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/flask-app/README.md",
+      "name": "README.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/flask-app/ai/ai_context.md",
+      "name": "ai_context.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/flask-app/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/flask-app/ai/architecture.md",
+      "name": "architecture.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/flask-app/ai/cache.json",
+      "name": "cache.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/context/features/app.json",
+      "name": "app.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/context/flows/routes.json",
+      "name": "routes.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/conventions.md",
+      "name": "conventions.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/flask-app/ai/dependencies.json",
+      "name": "dependencies.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/flask-app/ai/files.json",
+      "name": "files.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/index-state.json",
+      "name": "index-state.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/modules.json",
+      "name": "modules.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/project.json",
+      "name": "project.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/repo_map.json",
+      "name": "repo_map.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/repo_map.md",
+      "name": "repo_map.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/flask-app/ai/schema.json",
+      "name": "schema.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/summary.md",
+      "name": "summary.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/flask-app/ai/symbols.json",
+      "name": "symbols.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/flask-app/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/flask-app/ai/tools.json",
+      "name": "tools.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/flask-app/app/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/api/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/api/routes.py",
+      "name": "routes.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/auth/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/auth/forms.py",
+      "name": "forms.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/auth/routes.py",
+      "name": "routes.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/blog/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/blog/forms.py",
+      "name": "forms.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/blog/routes.py",
+      "name": "routes.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/main/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/main/routes.py",
+      "name": "routes.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/flask-app/app/models.py",
+      "name": "models.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/flask-app/config.py",
+      "name": "config.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/laravel-app/README.md",
+      "name": "README.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/ai_context.md",
+      "name": "ai_context.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/architecture.md",
+      "name": "architecture.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/cache.json",
+      "name": "cache.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/context/features/app.json",
+      "name": "app.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/context/flows/category.json",
+      "name": "category.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/context/flows/comment.json",
+      "name": "comment.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/context/flows/post.json",
+      "name": "post.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/context/flows/unnamed.json",
+      "name": "unnamed.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/conventions.md",
+      "name": "conventions.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/dependencies.json",
+      "name": "dependencies.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/files.json",
+      "name": "files.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/index-state.json",
+      "name": "index-state.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/modules.json",
+      "name": "modules.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/project.json",
+      "name": "project.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/repo_map.json",
+      "name": "repo_map.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/repo_map.md",
+      "name": "repo_map.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/schema.json",
+      "name": "schema.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/summary.md",
+      "name": "summary.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/symbols.json",
+      "name": "symbols.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/laravel-app/ai/tools.json",
+      "name": "tools.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/app/Http/Controllers/Api/CategoryController.php",
+      "name": "CategoryController.php",
+      "extension": "php"
+    },
+    {
+      "path": "test-projects/laravel-app/app/Http/Controllers/Api/CommentController.php",
+      "name": "CommentController.php",
+      "extension": "php"
+    },
+    {
+      "path": "test-projects/laravel-app/app/Http/Controllers/Api/PostController.php",
+      "name": "PostController.php",
+      "extension": "php"
+    },
+    {
+      "path": "test-projects/laravel-app/app/Http/Controllers/Controller.php",
+      "name": "Controller.php",
+      "extension": "php"
+    },
+    {
+      "path": "test-projects/laravel-app/app/Models/Category.php",
+      "name": "Category.php",
+      "extension": "php"
+    },
+    {
+      "path": "test-projects/laravel-app/app/Models/Comment.php",
+      "name": "Comment.php",
+      "extension": "php"
+    },
+    {
+      "path": "test-projects/laravel-app/app/Models/Post.php",
+      "name": "Post.php",
+      "extension": "php"
+    },
+    {
+      "path": "test-projects/laravel-app/app/Models/User.php",
+      "name": "User.php",
+      "extension": "php"
+    },
+    {
+      "path": "test-projects/laravel-app/bootstrap/app.php",
+      "name": "app.php",
+      "extension": "php"
+    },
+    {
+      "path": "test-projects/laravel-app/composer.json",
+      "name": "composer.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/laravel-app/routes/api.php",
+      "name": "api.php",
+      "extension": "php"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/ai_context.md",
+      "name": "ai_context.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/architecture.md",
+      "name": "architecture.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/cache.json",
+      "name": "cache.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/context/features/src.json",
+      "name": "src.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/context/flows/auth.controller.json",
+      "name": "auth.controller.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/context/flows/auth.json",
+      "name": "auth.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/context/flows/users..json",
+      "name": "users..json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/context/flows/users.controller.json",
+      "name": "users.controller.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/context/flows/users.json",
+      "name": "users.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/conventions.md",
+      "name": "conventions.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/dependencies.json",
+      "name": "dependencies.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/files.json",
+      "name": "files.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/index-state.json",
+      "name": "index-state.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/modules.json",
+      "name": "modules.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/project.json",
+      "name": "project.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/repo_map.json",
+      "name": "repo_map.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/repo_map.md",
+      "name": "repo_map.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/schema.json",
+      "name": "schema.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/summary.md",
+      "name": "summary.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/symbols.json",
+      "name": "symbols.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/nestjs-backend/ai/tools.json",
+      "name": "tools.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/package.json",
+      "name": "package.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/nestjs-backend/src/app.module.ts",
+      "name": "app.module.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "test-projects/nestjs-backend/src/auth/auth.controller.ts",
+      "name": "auth.controller.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "test-projects/nestjs-backend/src/auth/auth.module.ts",
+      "name": "auth.module.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "test-projects/nestjs-backend/src/auth/auth.service.ts",
+      "name": "auth.service.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "test-projects/nestjs-backend/src/auth/dto/login.dto.ts",
+      "name": "login.dto.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "test-projects/nestjs-backend/src/auth/strategies/jwt.strategy.ts",
+      "name": "jwt.strategy.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "test-projects/nestjs-backend/src/main.ts",
+      "name": "main.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "test-projects/nestjs-backend/src/users/users.controller.ts",
+      "name": "users.controller.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "test-projects/nestjs-backend/src/users/users.module.ts",
+      "name": "users.module.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "test-projects/nestjs-backend/src/users/users.service.ts",
+      "name": "users.service.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "test-projects/nestjs-backend/tsconfig.json",
+      "name": "tsconfig.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/python-cli/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/python-cli/ai/ai_context.md",
+      "name": "ai_context.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/python-cli/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/python-cli/ai/architecture.md",
+      "name": "architecture.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/python-cli/ai/cache.json",
+      "name": "cache.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/context/features/cli.json",
+      "name": "cli.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/context/flows/list_.json",
+      "name": "list_.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/context/flows/remove_.json",
+      "name": "remove_.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/conventions.md",
+      "name": "conventions.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/python-cli/ai/dependencies.json",
+      "name": "dependencies.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/python-cli/ai/files.json",
+      "name": "files.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/index-state.json",
+      "name": "index-state.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/modules.json",
+      "name": "modules.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/project.json",
+      "name": "project.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/repo_map.json",
+      "name": "repo_map.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/repo_map.md",
+      "name": "repo_map.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/python-cli/ai/schema.json",
+      "name": "schema.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/summary.md",
+      "name": "summary.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/python-cli/ai/symbols.json",
+      "name": "symbols.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/python-cli/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/python-cli/ai/tools.json",
+      "name": "tools.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/python-cli/cli/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/python-cli/cli/add_command.py",
+      "name": "add_command.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/python-cli/cli/list_command.py",
+      "name": "list_command.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/python-cli/cli/remove_command.py",
+      "name": "remove_command.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/python-cli/main.py",
+      "name": "main.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/python-cli/models/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/python-cli/models/task.py",
+      "name": "task.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/python-cli/models/task_repository.py",
+      "name": "task_repository.py",
+      "extension": "py"
+    },
+    {
+      "path": "test-projects/rails-app/README.md",
+      "name": "README.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/rails-app/ai/ai_context.md",
+      "name": "ai_context.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/rails-app/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/rails-app/ai/architecture.md",
+      "name": "architecture.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/rails-app/ai/cache.json",
+      "name": "cache.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/features/app.json",
+      "name": "app.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/features/config.json",
+      "name": "config.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/flows/application.json",
+      "name": "application.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/flows/application_.json",
+      "name": "application_.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/flows/comments.json",
+      "name": "comments.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/flows/comments_.json",
+      "name": "comments_.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/flows/posts.json",
+      "name": "posts.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/flows/posts_.json",
+      "name": "posts_.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/flows/routes.json",
+      "name": "routes.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/flows/users.json",
+      "name": "users.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/context/flows/users_.json",
+      "name": "users_.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/conventions.md",
+      "name": "conventions.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/rails-app/ai/dependencies.json",
+      "name": "dependencies.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/rails-app/ai/files.json",
+      "name": "files.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/index-state.json",
+      "name": "index-state.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/modules.json",
+      "name": "modules.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/project.json",
+      "name": "project.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/repo_map.json",
+      "name": "repo_map.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/repo_map.md",
+      "name": "repo_map.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/rails-app/ai/schema.json",
+      "name": "schema.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/summary.md",
+      "name": "summary.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/rails-app/ai/symbols.json",
+      "name": "symbols.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/rails-app/ai/tools.json",
+      "name": "tools.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/rails-app/app/controllers/api/comments_controller.rb",
+      "name": "comments_controller.rb",
+      "extension": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/app/controllers/api/posts_controller.rb",
+      "name": "posts_controller.rb",
+      "extension": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/app/controllers/api/users_controller.rb",
+      "name": "users_controller.rb",
+      "extension": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/app/controllers/application_controller.rb",
+      "name": "application_controller.rb",
+      "extension": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/app/models/comment.rb",
+      "name": "comment.rb",
+      "extension": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/app/models/post.rb",
+      "name": "post.rb",
+      "extension": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/app/models/user.rb",
+      "name": "user.rb",
+      "extension": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/app/services/post_service.rb",
+      "name": "post_service.rb",
+      "extension": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/app/services/user_service.rb",
+      "name": "user_service.rb",
+      "extension": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/config/application.rb",
+      "name": "application.rb",
+      "extension": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/config/environment.rb",
+      "name": "environment.rb",
+      "extension": "rb"
+    },
+    {
+      "path": "test-projects/rails-app/config/routes.rb",
+      "name": "routes.rb",
+      "extension": "rb"
+    },
+    {
+      "path": "test-projects/react-app/ai/ai_context.md",
+      "name": "ai_context.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/react-app/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/react-app/ai/architecture.md",
+      "name": "architecture.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/react-app/ai/cache.json",
+      "name": "cache.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/context/features/src.json",
+      "name": "src.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/context/flows/UsersPage.json",
+      "name": "UsersPage.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/context/flows/dashboard.json",
+      "name": "dashboard.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/context/flows/login.json",
+      "name": "login.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/context/flows/users.json",
+      "name": "users.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/conventions.md",
+      "name": "conventions.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/react-app/ai/dependencies.json",
+      "name": "dependencies.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/react-app/ai/files.json",
+      "name": "files.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/index-state.json",
+      "name": "index-state.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/modules.json",
+      "name": "modules.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/project.json",
+      "name": "project.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/repo_map.json",
+      "name": "repo_map.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/repo_map.md",
+      "name": "repo_map.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/react-app/ai/schema.json",
+      "name": "schema.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/summary.md",
+      "name": "summary.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/react-app/ai/symbols.json",
+      "name": "symbols.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/react-app/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/react-app/ai/tools.json",
+      "name": "tools.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/react-app/package.json",
+      "name": "package.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/react-app/src/App.tsx",
+      "name": "App.tsx",
+      "extension": "tsx"
+    },
+    {
+      "path": "test-projects/react-app/src/context/AuthContext.tsx",
+      "name": "AuthContext.tsx",
+      "extension": "tsx"
+    },
+    {
+      "path": "test-projects/react-app/src/hooks/useAuth.ts",
+      "name": "useAuth.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "test-projects/react-app/src/main.tsx",
+      "name": "main.tsx",
+      "extension": "tsx"
+    },
+    {
+      "path": "test-projects/react-app/src/pages/DashboardPage.tsx",
+      "name": "DashboardPage.tsx",
+      "extension": "tsx"
+    },
+    {
+      "path": "test-projects/react-app/src/pages/LoginPage.tsx",
+      "name": "LoginPage.tsx",
+      "extension": "tsx"
+    },
+    {
+      "path": "test-projects/react-app/src/pages/UsersPage.tsx",
+      "name": "UsersPage.tsx",
+      "extension": "tsx"
+    },
+    {
+      "path": "test-projects/react-app/src/services/userService.ts",
+      "name": "userService.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/ai_context.md",
+      "name": "ai_context.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/architecture.md",
+      "name": "architecture.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/cache.json",
+      "name": "cache.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/context/features/force-app.json",
+      "name": "force-app.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/context/flows/account.json",
+      "name": "account.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/context/flows/opportunity.json",
+      "name": "opportunity.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/conventions.md",
+      "name": "conventions.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/dependencies.json",
+      "name": "dependencies.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/files.json",
+      "name": "files.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/index-state.json",
+      "name": "index-state.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/modules.json",
+      "name": "modules.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/project.json",
+      "name": "project.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/repo_map.json",
+      "name": "repo_map.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/repo_map.md",
+      "name": "repo_map.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/schema.json",
+      "name": "schema.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/summary.md",
+      "name": "summary.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/symbols.json",
+      "name": "symbols.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/salesforce-cli/ai/tools.json",
+      "name": "tools.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/salesforce-cli/force-app/main/default/classes/AccountController.cls",
+      "name": "AccountController.cls",
+      "extension": "cls"
+    },
+    {
+      "path": "test-projects/salesforce-cli/force-app/main/default/classes/OpportunityController.cls",
+      "name": "OpportunityController.cls",
+      "extension": "cls"
+    },
+    {
+      "path": "test-projects/salesforce-cli/force-app/main/default/triggers/AccountTrigger.trigger",
+      "name": "AccountTrigger.trigger",
+      "extension": "trigger"
+    },
+    {
+      "path": "test-projects/salesforce-cli/sfdx-project.json",
+      "name": "sfdx-project.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/README.md",
+      "name": "README.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/ai_context.md",
+      "name": "ai_context.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/architecture.md",
+      "name": "architecture.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/cache.json",
+      "name": "cache.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/context/features/src.json",
+      "name": "src.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/context/flows/PostController.json",
+      "name": "PostController.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/context/flows/UserController.json",
+      "name": "UserController.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/context/flows/comment.json",
+      "name": "comment.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/context/flows/post.json",
+      "name": "post.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/context/flows/user.json",
+      "name": "user.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/conventions.md",
+      "name": "conventions.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/dependencies.json",
+      "name": "dependencies.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/files.json",
+      "name": "files.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/index-state.json",
+      "name": "index-state.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/modules.json",
+      "name": "modules.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/project.json",
+      "name": "project.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/repo_map.json",
+      "name": "repo_map.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/repo_map.md",
+      "name": "repo_map.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/schema.json",
+      "name": "schema.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/summary.md",
+      "name": "summary.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/symbols.json",
+      "name": "symbols.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "extension": "md"
+    },
+    {
+      "path": "test-projects/spring-boot-app/ai/tools.json",
+      "name": "tools.json",
+      "extension": "json"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/DemoApplication.java",
+      "name": "DemoApplication.java",
+      "extension": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/CommentController.java",
+      "name": "CommentController.java",
+      "extension": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/PostController.java",
+      "name": "PostController.java",
+      "extension": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/UserController.java",
+      "name": "UserController.java",
+      "extension": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/models/Comment.java",
+      "name": "Comment.java",
+      "extension": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/models/Post.java",
+      "name": "Post.java",
+      "extension": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/models/User.java",
+      "name": "User.java",
+      "extension": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/CommentRepository.java",
+      "name": "CommentRepository.java",
+      "extension": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/PostRepository.java",
+      "name": "PostRepository.java",
+      "extension": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/UserRepository.java",
+      "name": "UserRepository.java",
+      "extension": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/services/PostService.java",
+      "name": "PostService.java",
+      "extension": "java"
+    },
+    {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/services/UserService.java",
+      "name": "UserService.java",
+      "extension": "java"
+    },
+    {
+      "path": "tests/adapters.test.ts",
+      "name": "adapters.test.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "tests/e2e/README.md",
+      "name": "README.md",
+      "extension": "md"
+    },
+    {
+      "path": "tests/gitAnalyzer.test.ts",
+      "name": "gitAnalyzer.test.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "tests/incrementalAnalyzer.test.ts",
+      "name": "incrementalAnalyzer.test.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "tests/knowledgeGraph.test.ts",
+      "name": "knowledgeGraph.test.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "tests/lazyAnalyzer.test.ts",
+      "name": "lazyAnalyzer.test.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "tests/schema.test.ts",
+      "name": "schema.test.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "tests/semanticContexts.test.ts",
+      "name": "semanticContexts.test.ts",
       "extension": "ts"
     },
     {

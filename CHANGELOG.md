@@ -6,6 +6,54 @@ All notable changes to `ai-first` will be documented in this file.
 
 ## [Unreleased]
 
+### Phase 2: Code Quality - Completed (v1.2.0)
+
+**Date:** 2026-03-18
+
+#### Fixed
+
+- **Symbol Extraction Extension Bug**
+  - Files affected: `src/analyzers/symbols.ts`
+  - Issue: Extension checks were missing dots (`"js"` instead of `".js"`)
+  - Fix: All extension checks now use correct format with dot
+
+- **Flow Name Sanitization**
+  - Files affected: `src/core/semanticContexts.ts`
+  - Issue: Malformed flow names like `auth..json`, `add_.json`
+  - Fix: Added `sanitizeFlowName()` function
+
+- **Duplicate Files**
+  - Issue: `repo-map.json` and `repo_map.json` coexisted
+  - Fix: Consolidated to `repo_map.json` only
+
+- **PHP Parser**
+  - Files affected: `src/analyzers/symbols.ts`
+  - Issue: Laravel adapter returned 0 symbols
+  - Fix: Added `parsePHP()` function
+
+- **Ruby Parser**
+  - Files affected: `src/analyzers/symbols.ts`
+  - Issue: Rails adapter returned 0 symbols
+  - Fix: Added `parseRuby()` function
+
+#### Added
+
+- **Functional Tests for Phase 2 Fixes**
+  - File: `tests/phase2-fixes.test.ts`
+  - Tests symbol extraction, flow sanitization, file consolidation
+
+- **Adapter Test Script**
+  - File: `test_adapters.mjs`
+  - Tests all 11 adapters for symbol extraction (11/11 PASS)
+
+#### Changed
+
+- **Breaking Change:** Flow files are now sanitized
+  - Old names: `auth..json`, `users..json`, `add_.json`
+  - New names: `auth.json`, `users.json`, `add.json`
+
+- **Breaking Change:** `repo-map.json` renamed to `repo_map.json`
+
 ---
 
 ## [1.1.6] - 2026-03-18

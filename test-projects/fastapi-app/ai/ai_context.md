@@ -7,9 +7,9 @@
 ## Quick Overview
 
 - **Pattern**: Flat / Simple Structure
-- **Languages**: Markdown, Python
+- **Languages**: Markdown, JSON, Python
 - **Frameworks**: None
-- **Total Files**: 8
+- **Total Files**: 30
 
 ---
 
@@ -26,7 +26,7 @@
 
 ## Tech Stack
 
-**Languages**: Markdown, Python
+**Languages**: Markdown, JSON, Python
 
 ---
 
@@ -39,6 +39,7 @@
 | Module | Responsibility |
 |--------|----------------|
 | `README.md` | Contains 0 files |
+| `ai` | Contains 22 files |
 | `app` | Contains 7 files |
 
 
@@ -63,7 +64,7 @@
 
 ## AI Rules
 
-- Language: Use Markdown, Python
+- Language: Use Markdown, JSON, Python
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
 

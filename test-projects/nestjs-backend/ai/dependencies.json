@@ -1,302 +1,152 @@
 {
-  "totalDependencies": 46,
-  "totalModules": 9,
+  "totalDependencies": 22,
+  "totalModules": 6,
   "dependencies": [
     {
       "source": "src/app.module.ts",
-      "target": "@nestjs/common",
+      "target": "src/auth/auth.module",
       "type": "import"
     },
     {
       "source": "src/app.module.ts",
-      "target": "src/./auth/auth.module/index",
+      "target": "src/users/users.module",
       "type": "import"
     },
     {
       "source": "src/app.module.ts",
-      "target": "src/./users/users.module/index",
+      "target": "src/auth/auth.module",
       "type": "import"
     },
     {
       "source": "src/app.module.ts",
-      "target": "@nestjs/common",
-      "type": "import"
-    },
-    {
-      "source": "src/app.module.ts",
-      "target": "src/./auth/auth.module/index",
-      "type": "import"
-    },
-    {
-      "source": "src/app.module.ts",
-      "target": "src/./users/users.module/index",
+      "target": "src/users/users.module",
       "type": "import"
     },
     {
       "source": "src/auth/auth.controller.ts",
-      "target": "@nestjs/common",
+      "target": "src/auth/auth.service",
       "type": "import"
     },
     {
       "source": "src/auth/auth.controller.ts",
-      "target": "src/auth/./auth.service/index",
+      "target": "src/auth/dto/login.dto",
       "type": "import"
     },
     {
       "source": "src/auth/auth.controller.ts",
-      "target": "src/auth/./dto/login.dto/index",
+      "target": "src/auth/auth.service",
       "type": "import"
     },
     {
       "source": "src/auth/auth.controller.ts",
-      "target": "@nestjs/common",
-      "type": "import"
-    },
-    {
-      "source": "src/auth/auth.controller.ts",
-      "target": "src/auth/./auth.service/index",
-      "type": "import"
-    },
-    {
-      "source": "src/auth/auth.controller.ts",
-      "target": "src/auth/./dto/login.dto/index",
+      "target": "src/auth/dto/login.dto",
       "type": "import"
     },
     {
       "source": "src/auth/auth.module.ts",
-      "target": "@nestjs/common",
+      "target": "src/auth/auth.controller",
       "type": "import"
     },
     {
       "source": "src/auth/auth.module.ts",
-      "target": "src/auth/./auth.controller/index",
+      "target": "src/auth/auth.service",
       "type": "import"
     },
     {
       "source": "src/auth/auth.module.ts",
-      "target": "src/auth/./auth.service/index",
+      "target": "src/auth/strategies/jwt.strategy",
       "type": "import"
     },
     {
       "source": "src/auth/auth.module.ts",
-      "target": "src/auth/./strategies/jwt.strategy/index",
+      "target": "src/auth/auth.controller",
       "type": "import"
     },
     {
       "source": "src/auth/auth.module.ts",
-      "target": "@nestjs/common",
+      "target": "src/auth/auth.service",
       "type": "import"
     },
     {
       "source": "src/auth/auth.module.ts",
-      "target": "src/auth/./auth.controller/index",
-      "type": "import"
-    },
-    {
-      "source": "src/auth/auth.module.ts",
-      "target": "src/auth/./auth.service/index",
-      "type": "import"
-    },
-    {
-      "source": "src/auth/auth.module.ts",
-      "target": "src/auth/./strategies/jwt.strategy/index",
-      "type": "import"
-    },
-    {
-      "source": "src/auth/auth.service.ts",
-      "target": "@nestjs/common",
-      "type": "import"
-    },
-    {
-      "source": "src/auth/auth.service.ts",
-      "target": "@nestjs/jwt",
-      "type": "import"
-    },
-    {
-      "source": "src/auth/auth.service.ts",
-      "target": "@nestjs/common",
-      "type": "import"
-    },
-    {
-      "source": "src/auth/auth.service.ts",
-      "target": "@nestjs/jwt",
-      "type": "import"
-    },
-    {
-      "source": "src/auth/strategies/jwt.strategy.ts",
-      "target": "@nestjs/common",
-      "type": "import"
-    },
-    {
-      "source": "src/auth/strategies/jwt.strategy.ts",
-      "target": "@nestjs/passport",
-      "type": "import"
-    },
-    {
-      "source": "src/auth/strategies/jwt.strategy.ts",
-      "target": "passport-jwt",
-      "type": "import"
-    },
-    {
-      "source": "src/auth/strategies/jwt.strategy.ts",
-      "target": "@nestjs/common",
-      "type": "import"
-    },
-    {
-      "source": "src/auth/strategies/jwt.strategy.ts",
-      "target": "@nestjs/passport",
-      "type": "import"
-    },
-    {
-      "source": "src/auth/strategies/jwt.strategy.ts",
-      "target": "passport-jwt",
+      "target": "src/auth/strategies/jwt.strategy",
       "type": "import"
     },
     {
       "source": "src/main.ts",
-      "target": "@nestjs/core",
+      "target": "src/app.module",
       "type": "import"
     },
     {
       "source": "src/main.ts",
-      "target": "src/./app.module/index",
-      "type": "import"
-    },
-    {
-      "source": "src/main.ts",
-      "target": "@nestjs/core",
-      "type": "import"
-    },
-    {
-      "source": "src/main.ts",
-      "target": "src/./app.module/index",
+      "target": "src/app.module",
       "type": "import"
     },
     {
       "source": "src/users/users.controller.ts",
-      "target": "@nestjs/common",
+      "target": "src/users/users.service",
       "type": "import"
     },
     {
       "source": "src/users/users.controller.ts",
-      "target": "src/users/./users.service/index",
-      "type": "import"
-    },
-    {
-      "source": "src/users/users.controller.ts",
-      "target": "@nestjs/common",
-      "type": "import"
-    },
-    {
-      "source": "src/users/users.controller.ts",
-      "target": "src/users/./users.service/index",
+      "target": "src/users/users.service",
       "type": "import"
     },
     {
       "source": "src/users/users.module.ts",
-      "target": "@nestjs/common",
+      "target": "src/users/users.controller",
       "type": "import"
     },
     {
       "source": "src/users/users.module.ts",
-      "target": "src/users/./users.controller/index",
+      "target": "src/users/users.service",
       "type": "import"
     },
     {
       "source": "src/users/users.module.ts",
-      "target": "src/users/./users.service/index",
+      "target": "src/users/users.controller",
       "type": "import"
     },
     {
       "source": "src/users/users.module.ts",
-      "target": "@nestjs/common",
-      "type": "import"
-    },
-    {
-      "source": "src/users/users.module.ts",
-      "target": "src/users/./users.controller/index",
-      "type": "import"
-    },
-    {
-      "source": "src/users/users.module.ts",
-      "target": "src/users/./users.service/index",
-      "type": "import"
-    },
-    {
-      "source": "src/users/users.service.ts",
-      "target": "@nestjs/common",
-      "type": "import"
-    },
-    {
-      "source": "src/users/users.service.ts",
-      "target": "@nestjs/common",
+      "target": "src/users/users.service",
       "type": "import"
     }
   ],
   "byFile": {
     "src/app.module.ts": [
-      "@nestjs/common",
-      "src/./auth/auth.module/index",
-      "src/./users/users.module/index",
-      "@nestjs/common",
-      "src/./auth/auth.module/index",
-      "src/./users/users.module/index"
+      "src/auth/auth.module",
+      "src/users/users.module",
+      "src/auth/auth.module",
+      "src/users/users.module"
     ],
     "src/auth/auth.controller.ts": [
-      "@nestjs/common",
-      "src/auth/./auth.service/index",
-      "src/auth/./dto/login.dto/index",
-      "@nestjs/common",
-      "src/auth/./auth.service/index",
-      "src/auth/./dto/login.dto/index"
+      "src/auth/auth.service",
+      "src/auth/dto/login.dto",
+      "src/auth/auth.service",
+      "src/auth/dto/login.dto"
     ],
     "src/auth/auth.module.ts": [
-      "@nestjs/common",
-      "src/auth/./auth.controller/index",
-      "src/auth/./auth.service/index",
-      "src/auth/./strategies/jwt.strategy/index",
-      "@nestjs/common",
-      "src/auth/./auth.controller/index",
-      "src/auth/./auth.service/index",
-      "src/auth/./strategies/jwt.strategy/index"
-    ],
-    "src/auth/auth.service.ts": [
-      "@nestjs/common",
-      "@nestjs/jwt",
-      "@nestjs/common",
-      "@nestjs/jwt"
-    ],
-    "src/auth/strategies/jwt.strategy.ts": [
-      "@nestjs/common",
-      "@nestjs/passport",
-      "passport-jwt",
-      "@nestjs/common",
-      "@nestjs/passport",
-      "passport-jwt"
+      "src/auth/auth.controller",
+      "src/auth/auth.service",
+      "src/auth/strategies/jwt.strategy",
+      "src/auth/auth.controller",
+      "src/auth/auth.service",
+      "src/auth/strategies/jwt.strategy"
     ],
     "src/main.ts": [
-      "@nestjs/core",
-      "src/./app.module/index",
-      "@nestjs/core",
-      "src/./app.module/index"
+      "src/app.module",
+      "src/app.module"
     ],
     "src/users/users.controller.ts": [
-      "@nestjs/common",
-      "src/users/./users.service/index",
-      "@nestjs/common",
-      "src/users/./users.service/index"
+      "src/users/users.service",
+      "src/users/users.service"
     ],
     "src/users/users.module.ts": [
-      "@nestjs/common",
-      "src/users/./users.controller/index",
-      "src/users/./users.service/index",
-      "@nestjs/common",
-      "src/users/./users.controller/index",
-      "src/users/./users.service/index"
-    ],
-    "src/users/users.service.ts": [
-      "@nestjs/common",
-      "@nestjs/common"
+      "src/users/users.controller",
+      "src/users/users.service",
+      "src/users/users.controller",
+      "src/users/users.service"
     ]
   }
 }

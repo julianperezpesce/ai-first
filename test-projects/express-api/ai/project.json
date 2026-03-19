@@ -1,6 +1,6 @@
 {
   "name": "express-api",
-  "rootDir": "test-projects/express-api",
+  "rootDir": "/mnt/m2/Código/opencode-ai-first/test-projects/express-api",
   "features": [
     "controllers",
     "services"
@@ -11,5 +11,5 @@
   ],
   "languages": [],
   "frameworks": [],
-  "generatedAt": "2026-03-17T23:40:08.214Z"
+  "generatedAt": "2026-03-18T20:36:11.365Z"
 }

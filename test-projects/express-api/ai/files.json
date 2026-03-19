@@ -1,82 +1,139 @@
 {
-  "controllers/authController.js": {
-    "symbols": [
-      "controllers/authController.js#jwt",
-      "controllers/authController.js#authService",
-      "controllers/authController.js#SECRET",
-      "controllers/authController.js#login",
-      "controllers/authController.js#user",
-      "controllers/authController.js#token",
-      "controllers/authController.js#register"
-    ],
-    "module": "controllers"
-  },
-  "controllers/userController.js": {
-    "symbols": [
-      "controllers/userController.js#userService",
-      "controllers/userController.js#getAll",
-      "controllers/userController.js#users",
-      "controllers/userController.js#getById",
-      "controllers/userController.js#user",
-      "controllers/userController.js#create",
-      "controllers/userController.js#update",
-      "controllers/userController.js#remove"
-    ],
-    "module": "controllers"
-  },
-  "index.js": {
-    "symbols": [
-      "index.js#express",
-      "index.js#authController",
-      "index.js#userController",
-      "index.js#app",
-      "index.js#PORT"
-    ],
-    "module": "index.js"
-  },
-  "middleware/authMiddleware.js": {
-    "symbols": [
-      "middleware/authMiddleware.js#jwt",
-      "middleware/authMiddleware.js#SECRET",
-      "middleware/authMiddleware.js#authenticate",
-      "middleware/authMiddleware.js#token",
-      "middleware/authMiddleware.js#decoded",
-      "middleware/authMiddleware.js#authorize"
-    ],
-    "module": "middleware"
-  },
-  "models/userRepository.js": {
-    "symbols": [
-      "models/userRepository.js#users",
-      "models/userRepository.js#db",
-      "models/userRepository.js#findAll",
-      "models/userRepository.js#findById",
-      "models/userRepository.js#findByEmail",
-      "models/userRepository.js#create",
-      "models/userRepository.js#user",
-      "models/userRepository.js#update",
-      "models/userRepository.js#index",
-      "models/userRepository.js#delete"
-    ],
-    "module": "models"
-  },
-  "services/authService.js": {
-    "symbols": [
-      "services/authService.js#bcrypt",
-      "services/authService.js#userRepository",
-      "services/authService.js#verifyCredentials",
-      "services/authService.js#user",
-      "services/authService.js#valid",
-      "services/authService.js#createUser",
-      "services/authService.js#hashedPassword"
-    ],
-    "module": "services"
-  },
-  "services/userService.js": {
-    "symbols": [
-      "services/userService.js#UserService",
-      "services/userService.js#repository"
-    ],
-    "module": "services"
-  }
+  "files": [
+    {
+      "path": "ai/ai_context.md",
+      "name": "ai_context.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/architecture.md",
+      "name": "architecture.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/context/features/controllers.json",
+      "name": "controllers.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/features/services.json",
+      "name": "services.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/auth.json",
+      "name": "auth.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/user.json",
+      "name": "user.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/conventions.md",
+      "name": "conventions.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/dependencies.json",
+      "name": "dependencies.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/modules.json",
+      "name": "modules.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/project.json",
+      "name": "project.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/repo_map.json",
+      "name": "repo_map.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/repo_map.md",
+      "name": "repo_map.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/schema.json",
+      "name": "schema.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/summary.md",
+      "name": "summary.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/symbols.json",
+      "name": "symbols.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/tools.json",
+      "name": "tools.json",
+      "ext": "json"
+    },
+    {
+      "path": "controllers/authController.js",
+      "name": "authController.js",
+      "ext": "js"
+    },
+    {
+      "path": "controllers/userController.js",
+      "name": "userController.js",
+      "ext": "js"
+    },
+    {
+      "path": "index.js",
+      "name": "index.js",
+      "ext": "js"
+    },
+    {
+      "path": "middleware/authMiddleware.js",
+      "name": "authMiddleware.js",
+      "ext": "js"
+    },
+    {
+      "path": "models/userRepository.js",
+      "name": "userRepository.js",
+      "ext": "js"
+    },
+    {
+      "path": "package.json",
+      "name": "package.json",
+      "ext": "json"
+    },
+    {
+      "path": "services/authService.js",
+      "name": "authService.js",
+      "ext": "js"
+    },
+    {
+      "path": "services/userService.js",
+      "name": "userService.js",
+      "ext": "js"
+    }
+  ]
 }

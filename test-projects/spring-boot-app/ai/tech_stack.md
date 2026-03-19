@@ -1,9 +1,10 @@
 # Technology Stack
 
-**Languages**: Markdown, Java
+**Languages**: Markdown, JSON, Java
 
 ## Languages
 - Markdown
+- JSON
 - Java
 
 ## Frameworks

@@ -1,69 +1,189 @@
 {
-  "src/App.tsx": {
-    "symbols": [
-      "src/App.tsx#App"
-    ],
-    "module": "src"
-  },
-  "src/context/AuthContext.tsx": {
-    "symbols": [
-      "src/context/AuthContext.tsx#User",
-      "src/context/AuthContext.tsx#AuthContextType",
-      "src/context/AuthContext.tsx#login",
-      "src/context/AuthContext.tsx#logout",
-      "src/context/AuthContext.tsx#AuthContext",
-      "src/context/AuthContext.tsx#AuthProvider",
-      "src/context/AuthContext.tsx#response",
-      "src/context/AuthContext.tsx#data"
-    ],
-    "module": "src"
-  },
-  "src/hooks/useAuth.ts": {
-    "symbols": [
-      "src/hooks/useAuth.ts#useAuth",
-      "src/hooks/useAuth.ts#context"
-    ],
-    "module": "src"
-  },
-  "src/main.tsx": {
-    "symbols": [
-      "src/main.tsx#root"
-    ],
-    "module": "src"
-  },
-  "src/pages/DashboardPage.tsx": {
-    "symbols": [
-      "src/pages/DashboardPage.tsx#DashboardPage"
-    ],
-    "module": "src"
-  },
-  "src/pages/LoginPage.tsx": {
-    "symbols": [
-      "src/pages/LoginPage.tsx#LoginPage",
-      "src/pages/LoginPage.tsx#navigate",
-      "src/pages/LoginPage.tsx#handleSubmit"
-    ],
-    "module": "src"
-  },
-  "src/pages/UsersPage.tsx": {
-    "symbols": [
-      "src/pages/UsersPage.tsx#UsersPage",
-      "src/pages/UsersPage.tsx#fetchUsers",
-      "src/pages/UsersPage.tsx#response",
-      "src/pages/UsersPage.tsx#data"
-    ],
-    "module": "src"
-  },
-  "src/services/userService.ts": {
-    "symbols": [
-      "src/services/userService.ts#User",
-      "src/services/userService.ts#fetchUsers",
-      "src/services/userService.ts#response",
-      "src/services/userService.ts#fetchUser",
-      "src/services/userService.ts#createUser",
-      "src/services/userService.ts#updateUser",
-      "src/services/userService.ts#deleteUser"
-    ],
-    "module": "src"
-  }
+  "files": [
+    {
+      "path": "ai/ai_context.md",
+      "name": "ai_context.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/architecture.md",
+      "name": "architecture.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/cache.json",
+      "name": "cache.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/features/src.json",
+      "name": "src.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/UsersPage.json",
+      "name": "UsersPage.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/dashboard.json",
+      "name": "dashboard.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/login.json",
+      "name": "login.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/users.json",
+      "name": "users.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/conventions.md",
+      "name": "conventions.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/dependencies.json",
+      "name": "dependencies.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/files.json",
+      "name": "files.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/index-state.json",
+      "name": "index-state.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/modules.json",
+      "name": "modules.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/project.json",
+      "name": "project.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/repo-map.json",
+      "name": "repo-map.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/repo_map.json",
+      "name": "repo_map.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/repo_map.md",
+      "name": "repo_map.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/schema.json",
+      "name": "schema.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/summary.md",
+      "name": "summary.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/symbols.json",
+      "name": "symbols.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/tools.json",
+      "name": "tools.json",
+      "ext": "json"
+    },
+    {
+      "path": "package.json",
+      "name": "package.json",
+      "ext": "json"
+    },
+    {
+      "path": "src/App.tsx",
+      "name": "App.tsx",
+      "ext": "tsx"
+    },
+    {
+      "path": "src/context/AuthContext.tsx",
+      "name": "AuthContext.tsx",
+      "ext": "tsx"
+    },
+    {
+      "path": "src/hooks/useAuth.ts",
+      "name": "useAuth.ts",
+      "ext": "ts"
+    },
+    {
+      "path": "src/main.tsx",
+      "name": "main.tsx",
+      "ext": "tsx"
+    },
+    {
+      "path": "src/pages/DashboardPage.tsx",
+      "name": "DashboardPage.tsx",
+      "ext": "tsx"
+    },
+    {
+      "path": "src/pages/LoginPage.tsx",
+      "name": "LoginPage.tsx",
+      "ext": "tsx"
+    },
+    {
+      "path": "src/pages/UsersPage.tsx",
+      "name": "UsersPage.tsx",
+      "ext": "tsx"
+    },
+    {
+      "path": "src/services/userService.ts",
+      "name": "userService.ts",
+      "ext": "ts"
+    }
+  ]
 }

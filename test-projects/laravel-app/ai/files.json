@@ -46,6 +46,11 @@
       "ext": "json"
     },
     {
+      "path": "ai/context/flows/unnamed.json",
+      "name": "unnamed.json",
+      "ext": "json"
+    },
+    {
       "path": "ai/conventions.md",
       "name": "conventions.md",
       "ext": "md"
@@ -78,6 +83,11 @@
     {
       "path": "ai/graph/symbol-references.json",
       "name": "symbol-references.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/index-state.json",
+      "name": "index-state.json",
       "ext": "json"
     },
     {

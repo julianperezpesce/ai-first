@@ -1,0 +1,30 @@
+{
+  "name": "opencode-ai-first",
+  "rootDir": "/mnt/m2/Código/opencode-ai-first",
+  "features": [
+    "commands",
+    "src",
+    "test-projects"
+  ],
+  "flows": [
+    "account",
+    "ai-first",
+    "api",
+    "auth",
+    "category",
+    "comment",
+    "dashboard",
+    "doctor",
+    "explore",
+    "login",
+    "opportunity",
+    "post",
+    "routes",
+    "user",
+    "users",
+    "views"
+  ],
+  "languages": [],
+  "frameworks": [],
+  "generatedAt": "2026-03-18T20:34:40.835Z"
+}

@@ -1,9 +1,10 @@
 # Technology Stack
 
-**Languages**: Markdown, Ruby
+**Languages**: Markdown, JSON, Ruby
 
 ## Languages
 - Markdown
+- JSON
 - Ruby
 
 ## Frameworks

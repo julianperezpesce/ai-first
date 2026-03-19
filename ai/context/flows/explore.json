@@ -1,0 +1,9 @@
+{
+  "name": "explore",
+  "entrypoint": "src/commands/explore.ts",
+  "files": [
+    "src/commands/explore.ts"
+  ],
+  "depth": 0,
+  "layers": []
+}

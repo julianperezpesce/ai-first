@@ -1,0 +1,9 @@
+{
+  "name": "account",
+  "entrypoint": "test-projects/salesforce-cli/force-app/main/default/classes/AccountController.cls",
+  "files": [
+    "test-projects/salesforce-cli/force-app/main/default/classes/AccountController.cls"
+  ],
+  "depth": 0,
+  "layers": []
+}

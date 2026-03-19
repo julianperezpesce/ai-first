@@ -7,6 +7,7 @@
 | Module | Responsibility |
 |--------|----------------|
 | `README.md` | Contains 0 files |
+| `ai` | Contains 23 files |
 | `blog` | Contains 6 files |
 | `django_app` | Contains 4 files |
 | `manage.py` | Contains 0 files |
@@ -18,6 +19,11 @@
 ### README.md
 - **Path**: `README.md`
 - **Responsibility**: Contains 0 files
+
+
+### ai
+- **Path**: `ai`
+- **Responsibility**: Contains 23 files
 
 
 ### blog

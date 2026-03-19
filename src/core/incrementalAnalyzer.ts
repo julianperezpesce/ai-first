@@ -114,18 +114,56 @@ function detectChangesWithTimestamps(rootDir: string): ChangedFile[] {
 
 export function updateSymbols(rootDir: string, changedFiles: ChangedFile[], aiDir: string): number {
   const symbolsPath = path.join(aiDir, "symbols.json");
-  let existingSymbols: Array<{name: string; file: string; type?: string}> = [];
+  
+  // Read existing symbols.json structure
+  interface SymbolsIndex {
+    [id: string]: { name: string; type: string; file: string; line?: number; module?: string; export?: boolean };
+  }
+  interface SymbolsData {
+    symbols: SymbolsIndex;
+    total: number;
+    byType: { [type: string]: Array<{ id: string; name: string; type: string; file: string; line?: number; export?: boolean }> };
+    byFile: { [file: string]: Array<{ id: string; name: string; type: string; file: string; line?: number; export?: boolean }> };
+    exported: Array<{ id: string; name: string; type: string; file: string; line?: number; export?: boolean }>;
+  }
+  
+  let symbolsData: SymbolsData | null = null;
   
   if (fs.existsSync(symbolsPath)) {
     try {
       const raw = readJsonFile(symbolsPath);
-      if (Array.isArray(raw)) existingSymbols = raw as typeof existingSymbols;
-    } catch { existingSymbols = []; }
+      if (!Array.isArray(raw) && raw && typeof raw === 'object') {
+        symbolsData = raw as unknown as SymbolsData;
+      }
+    } catch { }
+  }
+  
+  // If no valid symbols.json exists, nothing to update
+  if (!symbolsData) {
+    return 0;
   }
   
   const changedPaths = new Set(changedFiles.map(f => f.path));
-  existingSymbols = existingSymbols.filter(s => !changedPaths.has(s.file));
   
+  // Remove symbols from changed files
+  for (const filePath of changedPaths) {
+    delete symbolsData.byFile[filePath];
+    for (const type of Object.keys(symbolsData.byType)) {
+      symbolsData.byType[type] = symbolsData.byType[type].filter(
+        sym => sym.file !== filePath
+      );
+    }
+    symbolsData.exported = symbolsData.exported.filter(sym => sym.file !== filePath);
+    // Remove from symbols index
+    const keysToDelete = Object.keys(symbolsData.symbols).filter(
+      id => id.startsWith(filePath + '#')
+    );
+    for (const key of keysToDelete) {
+      delete symbolsData.symbols[key];
+    }
+  }
+  
+  // Extract and add new symbols from changed files
   for (const changed of changedFiles) {
     if (changed.status === "deleted") continue;
     const fullPath = path.join(rootDir, changed.path);
@@ -133,20 +171,72 @@ export function updateSymbols(rootDir: string, changedFiles: ChangedFile[], aiDi
     
     try {
       const fileInfo: FileInfo = {
-        path: changed.path,
+        path: fullPath,
         relativePath: changed.path,
         extension: path.extname(changed.path),
         name: path.basename(changed.path, path.extname(changed.path))
       };
       const symbols = extractSymbols([fileInfo]);
+      
       for (const symbol of symbols.symbols || []) {
-        existingSymbols.push({ name: symbol.name, file: changed.path, type: symbol.type });
+        const id = `${changed.path}#${symbol.name}`;
+        
+        // Add to symbols index
+        symbolsData.symbols[id] = {
+          name: symbol.name,
+          type: symbol.type,
+          file: changed.path,
+          line: symbol.line,
+          module: changed.path.split('/')[0],
+          export: symbol.export
+        };
+        
+        // Add to byFile
+        if (!symbolsData.byFile[changed.path]) {
+          symbolsData.byFile[changed.path] = [];
+        }
+        symbolsData.byFile[changed.path].push({
+          id,
+          name: symbol.name,
+          type: symbol.type,
+          file: changed.path,
+          line: symbol.line,
+          export: symbol.export
+        });
+        
+        // Add to byType
+        if (!symbolsData.byType[symbol.type]) {
+          symbolsData.byType[symbol.type] = [];
+        }
+        symbolsData.byType[symbol.type].push({
+          id,
+          name: symbol.name,
+          type: symbol.type,
+          file: changed.path,
+          line: symbol.line,
+          export: symbol.export
+        });
+        
+        // Add to exported if applicable
+        if (symbol.export) {
+          symbolsData.exported.push({
+            id,
+            name: symbol.name,
+            type: symbol.type,
+            file: changed.path,
+            line: symbol.line,
+            export: symbol.export
+          });
+        }
       }
     } catch { /* skip */ }
   }
   
-  writeFile(symbolsPath, JSON.stringify(existingSymbols, null, 2));
-  return existingSymbols.length;
+  // Update total
+  symbolsData.total = Object.keys(symbolsData.symbols).length;
+  
+  writeFile(symbolsPath, JSON.stringify(symbolsData, null, 2));
+  return symbolsData.total;
 }
 
 // ============================================================
