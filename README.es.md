@@ -6,8 +6,8 @@
   <a href="https://github.com/julianperezpesce/ai-first/stargazers">
     <img src="https://img.shields.io/github/stars/julianperezpesce/ai-first?style=flat&color=ffd700" alt="Stars">
   </a>
-  <a href="https://www.npmjs.com/package/ai-first">
-    <img src="https://img.shields.io/npm/dt/ai-first?color=blue" alt="NPM Downloads">
+  <a href="https://www.npmjs.com/package/ai-first-cli">
+    <img src="https://img.shields.io/npm/dt/ai-first-cli?color=blue" alt="NPM Downloads">
   </a>
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
@@ -51,48 +51,8 @@ Indexa el repositorio para que los agentes de IA puedan entender el código:
 ai-first index
 ```
 
-Genera un mapa de arquitectura del repositorio:
-
-```
-ai-first summarize
-```
-
 * `init` genera 11 archivos de contexto con metadatos del proyecto
 * `index` crea una base de datos SQLite para consultas rápidas de símbolos
-* `summarize` crea resúmenes jerárquicos para navegación IA
-
----
-
-## ❓ Por qué AI-First?
-
-Los asistentes de código IA a menudo tienen dificultades con repositorios grandes.
-
-**Problemas comunes:**
-
-* ventanas de contexto limitadas
-* falta de conocimiento arquitectónico
-* dificultad para navegar bases de código grandes
-* relaciones perdidas entre módulos
-
-AI-First resuelve esto creando una capa de inteligencia del repositorio.
-
-Esto permite a los agentes IA:
-
-* entender la estructura del proyecto
-* recuperar código relevante
-* navegar repositorios grandes
-* mantener contexto arquitectónico
-
----
-
-## 🚀 ¿Por qué ai-first?
-
-| Antes de ai-first | Después de ai-first |
-|-------------------|---------------------|
-| La IA lee 500+ archivos para entender el proyecto | La IA lee 1 archivo con contexto completo |
-| $5+ por proyecto en costos de API | ~$0.05 por proyecto |
-| 30+ segundos para que la IA "se caliente" | Comprensión instantánea |
-| La IA pierde convenciones y patrones | La IA conoce tu arquitectura |
 
 ---
 
@@ -243,22 +203,19 @@ ai-context/
 ├── repo_map.json      # Estructura legible por máquina
 ├── symbols.json       # Funciones/clases extraídas
 ├── dependencies.json  # Relaciones de imports
-├── architecture.md   # Patrón de arquitectura
+├── architecture.md    # Patrón de arquitectura
 ├── tech_stack.md      # Lenguajes y frameworks
 ├── entrypoints.md     # Puntos de entrada
 ├── conventions.md     # Convenciones de código
-├── index.db           # SQLite (con índice ai-first)
-│
-├── graph/             # Generado por `ai-first map`
-│   ├── module-graph.json   # Grafo de dependencias a nivel de módulo
-│   └── symbol-graph.json   # Relaciones a nivel de símbolo (calls, imports, etc.)
-│
-└── context/           # Generado por `ai-first init` o `map`
+├── index.db           # Índice SQLite (generado por `ai-first index`)
+├── graph/             # Grafos de dependencias (generado por `ai-first map`)
+│   ├── module-graph.json
+│   └── symbol-graph.json
+└── context/           # Contexto de negocio (generado por `ai-first init`)
     ├── features/      # Features de negocio detectados
     │   └── <modulo>.json
     └── flows/         # Cadenas de ejecución de negocio
         └── <flujo>.json
-└── index.db           # SQLite (con índice ai-first)
 ```
 
 ---
@@ -388,19 +345,23 @@ ai-first detecta e indexa automáticamente proyectos Android/Kotlin:
 - Soporte para parsers PHP y Ruby agregado
 - 11 adapters funcionando (100% cobertura)
 
-### Phase 3 (Planificado)
-- [ ] Indexación semántica mejorada
-- [ ] Sistema de plugins para analizadores custom
-- [ ] Soporte Scala
-- [ ] Soporte de archivo de configuración (`ai-first.config.json`)
-- [ ] Sistema de reglas/plugins custom
-- [ ] Plantillas de integración CI/CD
+### Phase 3 ✅ (Completado)
+- Indexación semántica mejorada
+- Soporte PHP y Ruby (proyectos de prueba Laravel y Rails)
+- Soporte de archivo de configuración (`ai-first.config.json`)
+- Sistema de reglas/plugins custom
+- Plantillas de integración CI/CD
 
-### Phase 4 (Futuro)
-- [ ] Integración con Git (analizar cambios recientes)
-- [ ] Contexto aware de diff (qué cambió desde última ejecución)
-- [ ] Modo interactivo
-- [ ] Extensión de VS Code
+### Phase 4 ✅ (Completado)
+- Integración con Git (analizar cambios recientes)
+- Contexto aware de diff (qué cambió desde última ejecución)
+- Modo interactivo
+- Índice SQLite para consultas rápidas de símbolos
+
+### Phase 5 ✅ (Completado)
+- Arquitectura: `ai/` → `ai-context/`
+- Rendimiento: embeddings a SQLite
+- Documentación: mejoras comprehensivas del README
 
 ---
 
@@ -463,7 +424,5 @@ ai-first detecta e indexa automáticamente proyectos Android/Kotlin:
 ---
 
 ## 📄 Licencia
-
-MIT © [Julian Perez Pesce](https://github.com/julianperezpesce)
 
 MIT © [Julian Perez Pesce](https://github.com/julianperezpesce)
