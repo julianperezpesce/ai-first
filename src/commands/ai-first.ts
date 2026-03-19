@@ -365,6 +365,23 @@ if (isMain) {
   const args = process.argv.slice(2);
   const options: AIFirstOptions = {};
 
+  if (args.includes('--completions') || args.includes('-c')) {
+    const script = `#!/bin/bash
+_af_completions() {
+  local cur prev
+  COMPREPLY=()
+  cur="\${COMP_WORDS[COMP_CWORD]}"
+  prev="\${COMP_WORDS[COMP_CWORD-1]}"
+  commands="init index watch context summarize query doctor explore map adapters git graph update"
+  if [ $COMP_CWORD -eq 1 ]; then
+    COMPREPLY=( $(compgen -W "$commands" -- "$cur") )
+  fi
+}
+complete -F _af_completions af`;
+    console.log(script);
+    process.exit(0);
+  }
+
   // Handle commands
   const command = args[0];
   
