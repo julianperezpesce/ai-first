@@ -40,31 +40,31 @@ function parseFileForSymbols(file) {
     try {
         const content = readFile(file.path);
         const lines = content.split("\n");
-        if (file.extension === ".ts" || file.extension === ".tsx" || file.extension === ".js" || file.extension === ".jsx") {
+        if (file.extension === "ts" || file.extension === "tsx" || file.extension === "js" || file.extension === "jsx") {
             parseJavaScriptTypeScript(file, content, lines, symbols);
         }
-        else if (file.extension === ".py") {
+        else if (file.extension === "py") {
             parsePython(file, content, lines, symbols);
         }
-        else if (file.extension === ".go") {
+        else if (file.extension === "go") {
             parseGo(file, content, lines, symbols);
         }
-        else if (file.extension === ".rs") {
+        else if (file.extension === "rs") {
             parseRust(file, content, lines, symbols);
         }
-        else if (file.extension === ".java") {
+        else if (file.extension === "java") {
             parseJava(file, content, lines, symbols);
         }
-        else if (file.extension === ".cs") {
+        else if (file.extension === "cs") {
             parseCSharp(file, content, lines, symbols);
         }
-        else if (file.extension === ".cls" || file.extension === ".trigger") {
+        else if (file.extension === "cls" || file.extension === "trigger") {
             parseApex(file, content, lines, symbols);
         }
-        else if (file.extension === ".php") {
+        else if (file.extension === "php") {
             parsePHP(file, content, lines, symbols);
         }
-        else if (file.extension === ".rb") {
+        else if (file.extension === "rb") {
             parseRuby(file, content, lines, symbols);
         }
     }

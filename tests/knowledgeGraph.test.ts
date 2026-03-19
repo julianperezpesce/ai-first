@@ -14,7 +14,7 @@ import os from "os";
 
 describe("Knowledge Graph Builder", () => {
   const testRoot = process.cwd();
-  const testAiDir = path.join(testRoot, "ai");
+  const testAiDir = path.join(testRoot, "ai-context");
 
   describe("createNodes", () => {
     it("should create nodes from ai directory", () => {
