@@ -1,0 +1,20 @@
+{
+  "repo": "Spring Boot REST API Blog Application",
+  "folders": {
+    "src": "Source code"
+  },
+  "files": {
+    "src/main/java/com/example/demo/DemoApplication.java": "class: class DemoApplication",
+    "src/main/java/com/example/demo/controllers/CommentController.java": "class: class CommentController",
+    "src/main/java/com/example/demo/controllers/PostController.java": "class: class PostController",
+    "src/main/java/com/example/demo/controllers/UserController.java": "class: class UserController",
+    "src/main/java/com/example/demo/models/Comment.java": "class: class Comment",
+    "src/main/java/com/example/demo/models/Post.java": "class: class Post",
+    "src/main/java/com/example/demo/models/User.java": "class: class User",
+    "src/main/java/com/example/demo/repositories/CommentRepository.java": "interface: interface CommentRepository",
+    "src/main/java/com/example/demo/repositories/PostRepository.java": "interface: interface PostRepository",
+    "src/main/java/com/example/demo/repositories/UserRepository.java": "interface: interface UserRepository",
+    "src/main/java/com/example/demo/services/PostService.java": "class: class PostService",
+    "src/main/java/com/example/demo/services/UserService.java": "class: class UserService"
+  }
+}

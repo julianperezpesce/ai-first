@@ -1,0 +1,5 @@
+{
+  "src/main.ts#app": [
+    "src/main.ts#bootstrap"
+  ]
+}

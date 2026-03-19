@@ -1,0 +1,298 @@
+{
+  "totalDependencies": 44,
+  "totalModules": 13,
+  "dependencies": [
+    {
+      "source": "app/__init__.py",
+      "target": "flask.py",
+      "type": "from"
+    },
+    {
+      "source": "app/__init__.py",
+      "target": "flask_sqlalchemy.py",
+      "type": "from"
+    },
+    {
+      "source": "app/__init__.py",
+      "target": "flask_migrate.py",
+      "type": "from"
+    },
+    {
+      "source": "app/__init__.py",
+      "target": "flask_login.py",
+      "type": "from"
+    },
+    {
+      "source": "app/__init__.py",
+      "target": "config.py",
+      "type": "from"
+    },
+    {
+      "source": "app/__init__.py",
+      "target": "app.py",
+      "type": "from"
+    },
+    {
+      "source": "app/api/__init__.py",
+      "target": "flask.py",
+      "type": "from"
+    },
+    {
+      "source": "app/api/__init__.py",
+      "target": "app/api.py",
+      "type": "from"
+    },
+    {
+      "source": "app/api/routes.py",
+      "target": "flask.py",
+      "type": "from"
+    },
+    {
+      "source": "app/api/routes.py",
+      "target": "app.py",
+      "type": "from"
+    },
+    {
+      "source": "app/api/routes.py",
+      "target": "app/models.py",
+      "type": "from"
+    },
+    {
+      "source": "app/auth/__init__.py",
+      "target": "flask.py",
+      "type": "from"
+    },
+    {
+      "source": "app/auth/__init__.py",
+      "target": "app/auth.py",
+      "type": "from"
+    },
+    {
+      "source": "app/auth/forms.py",
+      "target": "flask_wtf.py",
+      "type": "from"
+    },
+    {
+      "source": "app/auth/forms.py",
+      "target": "wtforms.py",
+      "type": "from"
+    },
+    {
+      "source": "app/auth/forms.py",
+      "target": "wtforms/validators.py",
+      "type": "from"
+    },
+    {
+      "source": "app/auth/forms.py",
+      "target": "app/models.py",
+      "type": "from"
+    },
+    {
+      "source": "app/auth/routes.py",
+      "target": "flask.py",
+      "type": "from"
+    },
+    {
+      "source": "app/auth/routes.py",
+      "target": "flask_login.py",
+      "type": "from"
+    },
+    {
+      "source": "app/auth/routes.py",
+      "target": "werkzeug/urls.py",
+      "type": "from"
+    },
+    {
+      "source": "app/auth/routes.py",
+      "target": "app.py",
+      "type": "from"
+    },
+    {
+      "source": "app/auth/routes.py",
+      "target": "app/models.py",
+      "type": "from"
+    },
+    {
+      "source": "app/auth/routes.py",
+      "target": "app/auth/forms.py",
+      "type": "from"
+    },
+    {
+      "source": "app/blog/__init__.py",
+      "target": "flask.py",
+      "type": "from"
+    },
+    {
+      "source": "app/blog/__init__.py",
+      "target": "app/blog.py",
+      "type": "from"
+    },
+    {
+      "source": "app/blog/forms.py",
+      "target": "flask_wtf.py",
+      "type": "from"
+    },
+    {
+      "source": "app/blog/forms.py",
+      "target": "wtforms.py",
+      "type": "from"
+    },
+    {
+      "source": "app/blog/forms.py",
+      "target": "wtforms/validators.py",
+      "type": "from"
+    },
+    {
+      "source": "app/blog/routes.py",
+      "target": "flask.py",
+      "type": "from"
+    },
+    {
+      "source": "app/blog/routes.py",
+      "target": "flask_login.py",
+      "type": "from"
+    },
+    {
+      "source": "app/blog/routes.py",
+      "target": "app.py",
+      "type": "from"
+    },
+    {
+      "source": "app/blog/routes.py",
+      "target": "app/models.py",
+      "type": "from"
+    },
+    {
+      "source": "app/blog/routes.py",
+      "target": "app/blog/forms.py",
+      "type": "from"
+    },
+    {
+      "source": "app/main/__init__.py",
+      "target": "flask.py",
+      "type": "from"
+    },
+    {
+      "source": "app/main/__init__.py",
+      "target": "app/main.py",
+      "type": "from"
+    },
+    {
+      "source": "app/main/routes.py",
+      "target": "flask.py",
+      "type": "from"
+    },
+    {
+      "source": "app/main/routes.py",
+      "target": "app/models.py",
+      "type": "from"
+    },
+    {
+      "source": "app/main/routes.py",
+      "target": "app.py",
+      "type": "from"
+    },
+    {
+      "source": "app/models.py",
+      "target": "datetime.py",
+      "type": "from"
+    },
+    {
+      "source": "app/models.py",
+      "target": "werkzeug/security.py",
+      "type": "from"
+    },
+    {
+      "source": "app/models.py",
+      "target": "flask_login.py",
+      "type": "from"
+    },
+    {
+      "source": "app/models.py",
+      "target": "app.py",
+      "type": "from"
+    },
+    {
+      "source": "config.py",
+      "target": "dotenv.py",
+      "type": "from"
+    },
+    {
+      "source": "config.py",
+      "target": "os.py",
+      "type": "import"
+    }
+  ],
+  "byFile": {
+    "app/__init__.py": [
+      "flask.py",
+      "flask_sqlalchemy.py",
+      "flask_migrate.py",
+      "flask_login.py",
+      "config.py",
+      "app.py"
+    ],
+    "app/api/__init__.py": [
+      "flask.py",
+      "app/api.py"
+    ],
+    "app/api/routes.py": [
+      "flask.py",
+      "app.py",
+      "app/models.py"
+    ],
+    "app/auth/__init__.py": [
+      "flask.py",
+      "app/auth.py"
+    ],
+    "app/auth/forms.py": [
+      "flask_wtf.py",
+      "wtforms.py",
+      "wtforms/validators.py",
+      "app/models.py"
+    ],
+    "app/auth/routes.py": [
+      "flask.py",
+      "flask_login.py",
+      "werkzeug/urls.py",
+      "app.py",
+      "app/models.py",
+      "app/auth/forms.py"
+    ],
+    "app/blog/__init__.py": [
+      "flask.py",
+      "app/blog.py"
+    ],
+    "app/blog/forms.py": [
+      "flask_wtf.py",
+      "wtforms.py",
+      "wtforms/validators.py"
+    ],
+    "app/blog/routes.py": [
+      "flask.py",
+      "flask_login.py",
+      "app.py",
+      "app/models.py",
+      "app/blog/forms.py"
+    ],
+    "app/main/__init__.py": [
+      "flask.py",
+      "app/main.py"
+    ],
+    "app/main/routes.py": [
+      "flask.py",
+      "app/models.py",
+      "app.py"
+    ],
+    "app/models.py": [
+      "datetime.py",
+      "werkzeug/security.py",
+      "flask_login.py",
+      "app.py"
+    ],
+    "config.py": [
+      "dotenv.py",
+      "os.py"
+    ]
+  }
+}

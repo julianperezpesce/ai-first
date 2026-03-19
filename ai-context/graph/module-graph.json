@@ -1,0 +1,866 @@
+{
+  "modules": [
+    {
+      "name": ".netlify",
+      "paths": [
+        ".netlify/state.json"
+      ]
+    },
+    {
+      "name": "docs",
+      "paths": [
+        "docs/.vitepress/config.ts",
+        "docs/.vitepress/theme/custom.css",
+        "docs/.vitepress/theme/index.ts",
+        "docs/es/guide/adapters.md",
+        "docs/es/guide/ai-repository-schema.md",
+        "docs/es/guide/features.md",
+        "docs/es/guide/flows.md",
+        "docs/es/guide/getting-started.md",
+        "docs/es/guide/git-intelligence.md",
+        "docs/es/guide/incremental-analysis.md",
+        "docs/es/guide/knowledge-graph.md",
+        "docs/es/guide/lazy-indexing.md",
+        "docs/es/guide/performance.md",
+        "docs/es/index.md",
+        "docs/examples/express-api.md",
+        "docs/examples/index.md",
+        "docs/examples/python-django.md",
+        "docs/examples/react-app.md",
+        "docs/guide/adapters.md",
+        "docs/guide/ai-repository-schema.md",
+        "docs/guide/architecture.md",
+        "docs/guide/flows.md",
+        "docs/guide/getting-started.md",
+        "docs/guide/git-intelligence.md",
+        "docs/guide/incremental-analysis.md",
+        "docs/guide/installation.md",
+        "docs/guide/knowledge-graph.md",
+        "docs/guide/lazy-indexing.md",
+        "docs/guide/performance.md",
+        "docs/guide/quick-start.md",
+        "docs/index.md",
+        "docs/reference/commands.md"
+      ]
+    },
+    {
+      "name": "examples",
+      "paths": [
+        "examples/01-express-api.md",
+        "examples/02-react-app.md",
+        "examples/03-python-django.md",
+        "examples/README.md"
+      ]
+    },
+    {
+      "name": "src",
+      "paths": [
+        "src/analyzers/aiRules.ts",
+        "src/analyzers/androidResources.ts",
+        "src/analyzers/architecture.ts",
+        "src/analyzers/conventions.ts",
+        "src/analyzers/dependencies.ts",
+        "src/analyzers/entrypoints.ts",
+        "src/analyzers/gradleModules.ts",
+        "src/analyzers/symbols.ts",
+        "src/analyzers/techStack.ts",
+        "src/commands/ai-first.ts",
+        "src/commands/doctor.ts",
+        "src/commands/explore.ts",
+        "src/core/adapters/adapterRegistry.ts",
+        "src/core/adapters/baseAdapter.ts",
+        "src/core/adapters/community/fastapiAdapter.ts",
+        "src/core/adapters/community/index.ts",
+        "src/core/adapters/community/laravelAdapter.ts",
+        "src/core/adapters/community/nestjsAdapter.ts",
+        "src/core/adapters/community/phoenixAdapter.ts",
+        "src/core/adapters/community/springBootAdapter.ts",
+        "src/core/adapters/dotnetAdapter.ts",
+        "src/core/adapters/index.ts",
+        "src/core/adapters/javascriptAdapter.ts",
+        "src/core/adapters/pythonAdapter.ts",
+        "src/core/adapters/railsAdapter.ts",
+        "src/core/adapters/salesforceAdapter.ts",
+        "src/core/adapters/sdk.ts",
+        "src/core/aiContextGenerator.ts",
+        "src/core/ccp.ts",
+        "src/core/chunker.ts",
+        "src/core/contextGenerator.ts",
+        "src/core/contextPacket.ts",
+        "src/core/embeddings.ts",
+        "src/core/gitAnalyzer.ts",
+        "src/core/hierarchyGenerator.ts",
+        "src/core/incrementalAnalyzer.ts",
+        "src/core/indexState.ts",
+        "src/core/indexer.ts",
+        "src/core/knowledgeGraphBuilder.ts",
+        "src/core/lazyAnalyzer.ts",
+        "src/core/moduleGraph.ts",
+        "src/core/repoMapper.ts",
+        "src/core/repoScanner.ts",
+        "src/core/schema.ts",
+        "src/core/semanticContexts.ts",
+        "src/core/symbolGraph.ts",
+        "src/index.ts",
+        "src/types/sql.js.d.ts",
+        "src/utils/fileUtils.ts"
+      ]
+    },
+    {
+      "name": "test-projects",
+      "paths": [
+        "test-projects/django-app/README.md",
+        "test-projects/django-app/ai/ai_context.md",
+        "test-projects/django-app/ai/ai_rules.md",
+        "test-projects/django-app/ai/architecture.md",
+        "test-projects/django-app/ai/cache.json",
+        "test-projects/django-app/ai/context/flows/views.json",
+        "test-projects/django-app/ai/conventions.md",
+        "test-projects/django-app/ai/dependencies.json",
+        "test-projects/django-app/ai/entrypoints.md",
+        "test-projects/django-app/ai/files.json",
+        "test-projects/django-app/ai/graph/module-graph.json",
+        "test-projects/django-app/ai/graph/symbol-graph.json",
+        "test-projects/django-app/ai/graph/symbol-references.json",
+        "test-projects/django-app/ai/index-state.json",
+        "test-projects/django-app/ai/modules.json",
+        "test-projects/django-app/ai/project.json",
+        "test-projects/django-app/ai/repo-map.json",
+        "test-projects/django-app/ai/repo_map.json",
+        "test-projects/django-app/ai/repo_map.md",
+        "test-projects/django-app/ai/schema.json",
+        "test-projects/django-app/ai/summary.md",
+        "test-projects/django-app/ai/symbols.json",
+        "test-projects/django-app/ai/tech_stack.md",
+        "test-projects/django-app/ai/tools.json",
+        "test-projects/django-app/blog/__init__.py",
+        "test-projects/django-app/blog/admin.py",
+        "test-projects/django-app/blog/models.py",
+        "test-projects/django-app/blog/serializers.py",
+        "test-projects/django-app/blog/urls.py",
+        "test-projects/django-app/blog/views.py",
+        "test-projects/django-app/django_app/__init__.py",
+        "test-projects/django-app/django_app/settings.py",
+        "test-projects/django-app/django_app/urls.py",
+        "test-projects/django-app/django_app/wsgi.py",
+        "test-projects/django-app/manage.py",
+        "test-projects/django-app/users/__init__.py",
+        "test-projects/django-app/users/admin.py",
+        "test-projects/django-app/users/models.py",
+        "test-projects/django-app/users/serializers.py",
+        "test-projects/django-app/users/urls.py",
+        "test-projects/django-app/users/views.py",
+        "test-projects/express-api/ai/ai_context.md",
+        "test-projects/express-api/ai/ai_rules.md",
+        "test-projects/express-api/ai/architecture.md",
+        "test-projects/express-api/ai/cache.json",
+        "test-projects/express-api/ai/context/features/controllers.json",
+        "test-projects/express-api/ai/context/features/services.json",
+        "test-projects/express-api/ai/context/flows/auth.json",
+        "test-projects/express-api/ai/context/flows/user.json",
+        "test-projects/express-api/ai/conventions.md",
+        "test-projects/express-api/ai/dependencies.json",
+        "test-projects/express-api/ai/entrypoints.md",
+        "test-projects/express-api/ai/files.json",
+        "test-projects/express-api/ai/graph/knowledge-graph.json",
+        "test-projects/express-api/ai/graph/module-graph.json",
+        "test-projects/express-api/ai/graph/symbol-graph.json",
+        "test-projects/express-api/ai/graph/symbol-references.json",
+        "test-projects/express-api/ai/index-state.json",
+        "test-projects/express-api/ai/modules.json",
+        "test-projects/express-api/ai/project.json",
+        "test-projects/express-api/ai/repo-map.json",
+        "test-projects/express-api/ai/repo_map.json",
+        "test-projects/express-api/ai/repo_map.md",
+        "test-projects/express-api/ai/schema.json",
+        "test-projects/express-api/ai/summary.md",
+        "test-projects/express-api/ai/symbols.json",
+        "test-projects/express-api/ai/tech_stack.md",
+        "test-projects/express-api/ai/tools.json",
+        "test-projects/express-api/controllers/authController.js",
+        "test-projects/express-api/controllers/userController.js",
+        "test-projects/express-api/index.js",
+        "test-projects/express-api/middleware/authMiddleware.js",
+        "test-projects/express-api/models/userRepository.js",
+        "test-projects/express-api/package.json",
+        "test-projects/express-api/services/authService.js",
+        "test-projects/express-api/services/userService.js",
+        "test-projects/fastapi-app/README.md",
+        "test-projects/fastapi-app/ai/ai_context.md",
+        "test-projects/fastapi-app/ai/ai_rules.md",
+        "test-projects/fastapi-app/ai/architecture.md",
+        "test-projects/fastapi-app/ai/cache.json",
+        "test-projects/fastapi-app/ai/conventions.md",
+        "test-projects/fastapi-app/ai/dependencies.json",
+        "test-projects/fastapi-app/ai/entrypoints.md",
+        "test-projects/fastapi-app/ai/files.json",
+        "test-projects/fastapi-app/ai/graph/module-graph.json",
+        "test-projects/fastapi-app/ai/graph/symbol-graph.json",
+        "test-projects/fastapi-app/ai/graph/symbol-references.json",
+        "test-projects/fastapi-app/ai/index-state.json",
+        "test-projects/fastapi-app/ai/modules.json",
+        "test-projects/fastapi-app/ai/project.json",
+        "test-projects/fastapi-app/ai/repo-map.json",
+        "test-projects/fastapi-app/ai/repo_map.json",
+        "test-projects/fastapi-app/ai/repo_map.md",
+        "test-projects/fastapi-app/ai/schema.json",
+        "test-projects/fastapi-app/ai/summary.md",
+        "test-projects/fastapi-app/ai/symbols.json",
+        "test-projects/fastapi-app/ai/tech_stack.md",
+        "test-projects/fastapi-app/ai/tools.json",
+        "test-projects/fastapi-app/app/database.py",
+        "test-projects/fastapi-app/app/dependencies.py",
+        "test-projects/fastapi-app/app/main.py",
+        "test-projects/fastapi-app/app/models.py",
+        "test-projects/fastapi-app/app/routers/auth.py",
+        "test-projects/fastapi-app/app/routers/posts.py",
+        "test-projects/fastapi-app/app/schemas.py",
+        "test-projects/flask-app/README.md",
+        "test-projects/flask-app/ai/ai_context.md",
+        "test-projects/flask-app/ai/ai_rules.md",
+        "test-projects/flask-app/ai/architecture.md",
+        "test-projects/flask-app/ai/cache.json",
+        "test-projects/flask-app/ai/context/features/app.json",
+        "test-projects/flask-app/ai/context/flows/routes.json",
+        "test-projects/flask-app/ai/conventions.md",
+        "test-projects/flask-app/ai/dependencies.json",
+        "test-projects/flask-app/ai/entrypoints.md",
+        "test-projects/flask-app/ai/files.json",
+        "test-projects/flask-app/ai/graph/module-graph.json",
+        "test-projects/flask-app/ai/graph/symbol-graph.json",
+        "test-projects/flask-app/ai/graph/symbol-references.json",
+        "test-projects/flask-app/ai/index-state.json",
+        "test-projects/flask-app/ai/modules.json",
+        "test-projects/flask-app/ai/project.json",
+        "test-projects/flask-app/ai/repo-map.json",
+        "test-projects/flask-app/ai/repo_map.json",
+        "test-projects/flask-app/ai/repo_map.md",
+        "test-projects/flask-app/ai/schema.json",
+        "test-projects/flask-app/ai/summary.md",
+        "test-projects/flask-app/ai/symbols.json",
+        "test-projects/flask-app/ai/tech_stack.md",
+        "test-projects/flask-app/ai/tools.json",
+        "test-projects/flask-app/app/__init__.py",
+        "test-projects/flask-app/app/api/__init__.py",
+        "test-projects/flask-app/app/api/routes.py",
+        "test-projects/flask-app/app/auth/__init__.py",
+        "test-projects/flask-app/app/auth/forms.py",
+        "test-projects/flask-app/app/auth/routes.py",
+        "test-projects/flask-app/app/blog/__init__.py",
+        "test-projects/flask-app/app/blog/forms.py",
+        "test-projects/flask-app/app/blog/routes.py",
+        "test-projects/flask-app/app/main/__init__.py",
+        "test-projects/flask-app/app/main/routes.py",
+        "test-projects/flask-app/app/models.py",
+        "test-projects/flask-app/config.py",
+        "test-projects/laravel-app/README.md",
+        "test-projects/laravel-app/ai/ai_context.md",
+        "test-projects/laravel-app/ai/ai_rules.md",
+        "test-projects/laravel-app/ai/architecture.md",
+        "test-projects/laravel-app/ai/cache.json",
+        "test-projects/laravel-app/ai/context/features/app.json",
+        "test-projects/laravel-app/ai/context/flows/category.json",
+        "test-projects/laravel-app/ai/context/flows/comment.json",
+        "test-projects/laravel-app/ai/context/flows/post.json",
+        "test-projects/laravel-app/ai/context/flows/unnamed.json",
+        "test-projects/laravel-app/ai/conventions.md",
+        "test-projects/laravel-app/ai/dependencies.json",
+        "test-projects/laravel-app/ai/entrypoints.md",
+        "test-projects/laravel-app/ai/files.json",
+        "test-projects/laravel-app/ai/graph/module-graph.json",
+        "test-projects/laravel-app/ai/graph/symbol-graph.json",
+        "test-projects/laravel-app/ai/graph/symbol-references.json",
+        "test-projects/laravel-app/ai/index-state.json",
+        "test-projects/laravel-app/ai/modules.json",
+        "test-projects/laravel-app/ai/project.json",
+        "test-projects/laravel-app/ai/repo-map.json",
+        "test-projects/laravel-app/ai/repo_map.json",
+        "test-projects/laravel-app/ai/repo_map.md",
+        "test-projects/laravel-app/ai/schema.json",
+        "test-projects/laravel-app/ai/summary.md",
+        "test-projects/laravel-app/ai/symbols.json",
+        "test-projects/laravel-app/ai/tech_stack.md",
+        "test-projects/laravel-app/ai/tools.json",
+        "test-projects/laravel-app/app/Http/Controllers/Api/CategoryController.php",
+        "test-projects/laravel-app/app/Http/Controllers/Api/CommentController.php",
+        "test-projects/laravel-app/app/Http/Controllers/Api/PostController.php",
+        "test-projects/laravel-app/app/Http/Controllers/Controller.php",
+        "test-projects/laravel-app/app/Models/Category.php",
+        "test-projects/laravel-app/app/Models/Comment.php",
+        "test-projects/laravel-app/app/Models/Post.php",
+        "test-projects/laravel-app/app/Models/User.php",
+        "test-projects/laravel-app/bootstrap/app.php",
+        "test-projects/laravel-app/composer.json",
+        "test-projects/laravel-app/routes/api.php",
+        "test-projects/nestjs-backend/ai/ai_context.md",
+        "test-projects/nestjs-backend/ai/ai_rules.md",
+        "test-projects/nestjs-backend/ai/architecture.md",
+        "test-projects/nestjs-backend/ai/cache.json",
+        "test-projects/nestjs-backend/ai/context/features/src.json",
+        "test-projects/nestjs-backend/ai/context/flows/auth..json",
+        "test-projects/nestjs-backend/ai/context/flows/auth.controller.json",
+        "test-projects/nestjs-backend/ai/context/flows/auth.json",
+        "test-projects/nestjs-backend/ai/context/flows/users..json",
+        "test-projects/nestjs-backend/ai/context/flows/users.controller.json",
+        "test-projects/nestjs-backend/ai/context/flows/users.json",
+        "test-projects/nestjs-backend/ai/conventions.md",
+        "test-projects/nestjs-backend/ai/dependencies.json",
+        "test-projects/nestjs-backend/ai/entrypoints.md",
+        "test-projects/nestjs-backend/ai/files.json",
+        "test-projects/nestjs-backend/ai/graph/module-graph.json",
+        "test-projects/nestjs-backend/ai/graph/symbol-graph.json",
+        "test-projects/nestjs-backend/ai/graph/symbol-references.json",
+        "test-projects/nestjs-backend/ai/index-state.json",
+        "test-projects/nestjs-backend/ai/modules.json",
+        "test-projects/nestjs-backend/ai/project.json",
+        "test-projects/nestjs-backend/ai/repo-map.json",
+        "test-projects/nestjs-backend/ai/repo_map.json",
+        "test-projects/nestjs-backend/ai/repo_map.md",
+        "test-projects/nestjs-backend/ai/schema.json",
+        "test-projects/nestjs-backend/ai/summary.md",
+        "test-projects/nestjs-backend/ai/symbols.json",
+        "test-projects/nestjs-backend/ai/tech_stack.md",
+        "test-projects/nestjs-backend/ai/tools.json",
+        "test-projects/nestjs-backend/package.json",
+        "test-projects/nestjs-backend/src/app.module.ts",
+        "test-projects/nestjs-backend/src/auth/auth.controller.ts",
+        "test-projects/nestjs-backend/src/auth/auth.module.ts",
+        "test-projects/nestjs-backend/src/auth/auth.service.ts",
+        "test-projects/nestjs-backend/src/auth/dto/login.dto.ts",
+        "test-projects/nestjs-backend/src/auth/strategies/jwt.strategy.ts",
+        "test-projects/nestjs-backend/src/main.ts",
+        "test-projects/nestjs-backend/src/users/users.controller.ts",
+        "test-projects/nestjs-backend/src/users/users.module.ts",
+        "test-projects/nestjs-backend/src/users/users.service.ts",
+        "test-projects/nestjs-backend/tsconfig.json",
+        "test-projects/python-cli/__init__.py",
+        "test-projects/python-cli/ai/ai_context.md",
+        "test-projects/python-cli/ai/ai_rules.md",
+        "test-projects/python-cli/ai/architecture.md",
+        "test-projects/python-cli/ai/cache.json",
+        "test-projects/python-cli/ai/context/features/cli.json",
+        "test-projects/python-cli/ai/context/flows/add_.json",
+        "test-projects/python-cli/ai/context/flows/list_.json",
+        "test-projects/python-cli/ai/context/flows/remove_.json",
+        "test-projects/python-cli/ai/conventions.md",
+        "test-projects/python-cli/ai/dependencies.json",
+        "test-projects/python-cli/ai/entrypoints.md",
+        "test-projects/python-cli/ai/files.json",
+        "test-projects/python-cli/ai/graph/knowledge-graph.json",
+        "test-projects/python-cli/ai/graph/module-graph.json",
+        "test-projects/python-cli/ai/graph/symbol-graph.json",
+        "test-projects/python-cli/ai/graph/symbol-references.json",
+        "test-projects/python-cli/ai/index-state.json",
+        "test-projects/python-cli/ai/modules.json",
+        "test-projects/python-cli/ai/project.json",
+        "test-projects/python-cli/ai/repo-map.json",
+        "test-projects/python-cli/ai/repo_map.json",
+        "test-projects/python-cli/ai/repo_map.md",
+        "test-projects/python-cli/ai/schema.json",
+        "test-projects/python-cli/ai/summary.md",
+        "test-projects/python-cli/ai/symbols.json",
+        "test-projects/python-cli/ai/tech_stack.md",
+        "test-projects/python-cli/ai/tools.json",
+        "test-projects/python-cli/cli/__init__.py",
+        "test-projects/python-cli/cli/add_command.py",
+        "test-projects/python-cli/cli/list_command.py",
+        "test-projects/python-cli/cli/remove_command.py",
+        "test-projects/python-cli/main.py",
+        "test-projects/python-cli/models/__init__.py",
+        "test-projects/python-cli/models/task.py",
+        "test-projects/python-cli/models/task_repository.py",
+        "test-projects/rails-app/README.md",
+        "test-projects/rails-app/ai/ai_context.md",
+        "test-projects/rails-app/ai/ai_rules.md",
+        "test-projects/rails-app/ai/architecture.md",
+        "test-projects/rails-app/ai/cache.json",
+        "test-projects/rails-app/ai/context/features/app.json",
+        "test-projects/rails-app/ai/context/features/config.json",
+        "test-projects/rails-app/ai/context/flows/application.json",
+        "test-projects/rails-app/ai/context/flows/application_.json",
+        "test-projects/rails-app/ai/context/flows/comments.json",
+        "test-projects/rails-app/ai/context/flows/comments_.json",
+        "test-projects/rails-app/ai/context/flows/posts.json",
+        "test-projects/rails-app/ai/context/flows/posts_.json",
+        "test-projects/rails-app/ai/context/flows/routes.json",
+        "test-projects/rails-app/ai/context/flows/users.json",
+        "test-projects/rails-app/ai/context/flows/users_.json",
+        "test-projects/rails-app/ai/conventions.md",
+        "test-projects/rails-app/ai/dependencies.json",
+        "test-projects/rails-app/ai/entrypoints.md",
+        "test-projects/rails-app/ai/files.json",
+        "test-projects/rails-app/ai/graph/knowledge-graph.json",
+        "test-projects/rails-app/ai/graph/module-graph.json",
+        "test-projects/rails-app/ai/graph/symbol-graph.json",
+        "test-projects/rails-app/ai/graph/symbol-references.json",
+        "test-projects/rails-app/ai/index-state.json",
+        "test-projects/rails-app/ai/modules.json",
+        "test-projects/rails-app/ai/project.json",
+        "test-projects/rails-app/ai/repo-map.json",
+        "test-projects/rails-app/ai/repo_map.json",
+        "test-projects/rails-app/ai/repo_map.md",
+        "test-projects/rails-app/ai/schema.json",
+        "test-projects/rails-app/ai/summary.md",
+        "test-projects/rails-app/ai/symbols.json",
+        "test-projects/rails-app/ai/tech_stack.md",
+        "test-projects/rails-app/ai/tools.json",
+        "test-projects/rails-app/app/controllers/api/comments_controller.rb",
+        "test-projects/rails-app/app/controllers/api/posts_controller.rb",
+        "test-projects/rails-app/app/controllers/api/users_controller.rb",
+        "test-projects/rails-app/app/controllers/application_controller.rb",
+        "test-projects/rails-app/app/models/comment.rb",
+        "test-projects/rails-app/app/models/post.rb",
+        "test-projects/rails-app/app/models/user.rb",
+        "test-projects/rails-app/app/services/post_service.rb",
+        "test-projects/rails-app/app/services/user_service.rb",
+        "test-projects/rails-app/config/application.rb",
+        "test-projects/rails-app/config/environment.rb",
+        "test-projects/rails-app/config/routes.rb",
+        "test-projects/react-app/ai/ai_context.md",
+        "test-projects/react-app/ai/ai_rules.md",
+        "test-projects/react-app/ai/architecture.md",
+        "test-projects/react-app/ai/cache.json",
+        "test-projects/react-app/ai/context/features/src.json",
+        "test-projects/react-app/ai/context/flows/UsersPage.json",
+        "test-projects/react-app/ai/context/flows/dashboard.json",
+        "test-projects/react-app/ai/context/flows/login.json",
+        "test-projects/react-app/ai/context/flows/users.json",
+        "test-projects/react-app/ai/conventions.md",
+        "test-projects/react-app/ai/dependencies.json",
+        "test-projects/react-app/ai/entrypoints.md",
+        "test-projects/react-app/ai/files.json",
+        "test-projects/react-app/ai/graph/knowledge-graph.json",
+        "test-projects/react-app/ai/graph/module-graph.json",
+        "test-projects/react-app/ai/graph/symbol-graph.json",
+        "test-projects/react-app/ai/graph/symbol-references.json",
+        "test-projects/react-app/ai/index-state.json",
+        "test-projects/react-app/ai/modules.json",
+        "test-projects/react-app/ai/project.json",
+        "test-projects/react-app/ai/repo-map.json",
+        "test-projects/react-app/ai/repo_map.json",
+        "test-projects/react-app/ai/repo_map.md",
+        "test-projects/react-app/ai/schema.json",
+        "test-projects/react-app/ai/summary.md",
+        "test-projects/react-app/ai/symbols.json",
+        "test-projects/react-app/ai/tech_stack.md",
+        "test-projects/react-app/ai/tools.json",
+        "test-projects/react-app/package.json",
+        "test-projects/react-app/src/App.tsx",
+        "test-projects/react-app/src/context/AuthContext.tsx",
+        "test-projects/react-app/src/hooks/useAuth.ts",
+        "test-projects/react-app/src/main.tsx",
+        "test-projects/react-app/src/pages/DashboardPage.tsx",
+        "test-projects/react-app/src/pages/LoginPage.tsx",
+        "test-projects/react-app/src/pages/UsersPage.tsx",
+        "test-projects/react-app/src/services/userService.ts",
+        "test-projects/salesforce-cli/ai/ai_context.md",
+        "test-projects/salesforce-cli/ai/ai_rules.md",
+        "test-projects/salesforce-cli/ai/architecture.md",
+        "test-projects/salesforce-cli/ai/cache.json",
+        "test-projects/salesforce-cli/ai/context/features/force-app.json",
+        "test-projects/salesforce-cli/ai/context/flows/account.json",
+        "test-projects/salesforce-cli/ai/context/flows/opportunity.json",
+        "test-projects/salesforce-cli/ai/conventions.md",
+        "test-projects/salesforce-cli/ai/dependencies.json",
+        "test-projects/salesforce-cli/ai/entrypoints.md",
+        "test-projects/salesforce-cli/ai/files.json",
+        "test-projects/salesforce-cli/ai/graph/knowledge-graph.json",
+        "test-projects/salesforce-cli/ai/graph/module-graph.json",
+        "test-projects/salesforce-cli/ai/graph/symbol-graph.json",
+        "test-projects/salesforce-cli/ai/graph/symbol-references.json",
+        "test-projects/salesforce-cli/ai/index-state.json",
+        "test-projects/salesforce-cli/ai/modules.json",
+        "test-projects/salesforce-cli/ai/project.json",
+        "test-projects/salesforce-cli/ai/repo-map.json",
+        "test-projects/salesforce-cli/ai/repo_map.json",
+        "test-projects/salesforce-cli/ai/repo_map.md",
+        "test-projects/salesforce-cli/ai/schema.json",
+        "test-projects/salesforce-cli/ai/summary.md",
+        "test-projects/salesforce-cli/ai/symbols.json",
+        "test-projects/salesforce-cli/ai/tech_stack.md",
+        "test-projects/salesforce-cli/ai/tools.json",
+        "test-projects/salesforce-cli/force-app/main/default/classes/AccountController.cls",
+        "test-projects/salesforce-cli/force-app/main/default/classes/OpportunityController.cls",
+        "test-projects/salesforce-cli/force-app/main/default/triggers/AccountTrigger.trigger",
+        "test-projects/salesforce-cli/sfdx-project.json",
+        "test-projects/spring-boot-app/README.md",
+        "test-projects/spring-boot-app/ai/ai_context.md",
+        "test-projects/spring-boot-app/ai/ai_rules.md",
+        "test-projects/spring-boot-app/ai/architecture.md",
+        "test-projects/spring-boot-app/ai/cache.json",
+        "test-projects/spring-boot-app/ai/context/features/src.json",
+        "test-projects/spring-boot-app/ai/context/flows/PostController.json",
+        "test-projects/spring-boot-app/ai/context/flows/UserController.json",
+        "test-projects/spring-boot-app/ai/context/flows/comment.json",
+        "test-projects/spring-boot-app/ai/context/flows/post.json",
+        "test-projects/spring-boot-app/ai/context/flows/user.json",
+        "test-projects/spring-boot-app/ai/conventions.md",
+        "test-projects/spring-boot-app/ai/dependencies.json",
+        "test-projects/spring-boot-app/ai/entrypoints.md",
+        "test-projects/spring-boot-app/ai/files.json",
+        "test-projects/spring-boot-app/ai/graph/knowledge-graph.json",
+        "test-projects/spring-boot-app/ai/graph/module-graph.json",
+        "test-projects/spring-boot-app/ai/graph/symbol-graph.json",
+        "test-projects/spring-boot-app/ai/graph/symbol-references.json",
+        "test-projects/spring-boot-app/ai/index-state.json",
+        "test-projects/spring-boot-app/ai/modules.json",
+        "test-projects/spring-boot-app/ai/project.json",
+        "test-projects/spring-boot-app/ai/repo-map.json",
+        "test-projects/spring-boot-app/ai/repo_map.json",
+        "test-projects/spring-boot-app/ai/repo_map.md",
+        "test-projects/spring-boot-app/ai/schema.json",
+        "test-projects/spring-boot-app/ai/summary.md",
+        "test-projects/spring-boot-app/ai/symbols.json",
+        "test-projects/spring-boot-app/ai/tech_stack.md",
+        "test-projects/spring-boot-app/ai/tools.json",
+        "test-projects/spring-boot-app/src/main/java/com/example/demo/DemoApplication.java",
+        "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/CommentController.java",
+        "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/PostController.java",
+        "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/UserController.java",
+        "test-projects/spring-boot-app/src/main/java/com/example/demo/models/Comment.java",
+        "test-projects/spring-boot-app/src/main/java/com/example/demo/models/Post.java",
+        "test-projects/spring-boot-app/src/main/java/com/example/demo/models/User.java",
+        "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/CommentRepository.java",
+        "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/PostRepository.java",
+        "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/UserRepository.java",
+        "test-projects/spring-boot-app/src/main/java/com/example/demo/services/PostService.java",
+        "test-projects/spring-boot-app/src/main/java/com/example/demo/services/UserService.java"
+      ]
+    },
+    {
+      "name": "tests",
+      "paths": [
+        "tests/adapters.test.ts",
+        "tests/e2e/README.md",
+        "tests/gitAnalyzer.test.ts",
+        "tests/incrementalAnalyzer.test.ts",
+        "tests/knowledgeGraph.test.ts",
+        "tests/lazyAnalyzer.test.ts",
+        "tests/schema.test.ts",
+        "tests/semanticContexts.test.ts"
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "from": "docs",
+      "to": "vitepress"
+    },
+    {
+      "from": "docs",
+      "to": "path"
+    },
+    {
+      "from": "src",
+      "to": "path"
+    },
+    {
+      "from": "src",
+      "to": "x"
+    },
+    {
+      "from": "src",
+      "to": "@alias"
+    },
+    {
+      "from": "src",
+      "to": "package"
+    },
+    {
+      "from": "src",
+      "to": "fs"
+    },
+    {
+      "from": "src",
+      "to": "url"
+    },
+    {
+      "from": "src",
+      "to": "ora"
+    },
+    {
+      "from": "src",
+      "to": "process"
+    },
+    {
+      "from": "src",
+      "to": "crypto"
+    },
+    {
+      "from": "src",
+      "to": "child_process"
+    },
+    {
+      "from": "src",
+      "to": "sql.js"
+    },
+    {
+      "from": "src",
+      "to": "chokidar"
+    },
+    {
+      "from": "test-projects",
+      "to": "django.contrib"
+    },
+    {
+      "from": "test-projects",
+      "to": "django.db"
+    },
+    {
+      "from": "test-projects",
+      "to": "django.contrib.auth.models"
+    },
+    {
+      "from": "test-projects",
+      "to": "rest_framework"
+    },
+    {
+      "from": "test-projects",
+      "to": "django.urls"
+    },
+    {
+      "from": "test-projects",
+      "to": "rest_framework.routers"
+    },
+    {
+      "from": "test-projects",
+      "to": "rest_framework.decorators"
+    },
+    {
+      "from": "test-projects",
+      "to": "rest_framework.response"
+    },
+    {
+      "from": "test-projects",
+      "to": "rest_framework.permissions"
+    },
+    {
+      "from": "test-projects",
+      "to": "pathlib"
+    },
+    {
+      "from": "test-projects",
+      "to": "django.core.wsgi"
+    },
+    {
+      "from": "test-projects",
+      "to": "os"
+    },
+    {
+      "from": "test-projects",
+      "to": "sys"
+    },
+    {
+      "from": "test-projects",
+      "to": "django.contrib.auth.admin"
+    },
+    {
+      "from": "test-projects",
+      "to": "django.db.models.signals"
+    },
+    {
+      "from": "test-projects",
+      "to": "django.dispatch"
+    },
+    {
+      "from": "test-projects",
+      "to": "django.contrib.auth"
+    },
+    {
+      "from": "test-projects",
+      "to": "jsonwebtoken"
+    },
+    {
+      "from": "test-projects",
+      "to": "express"
+    },
+    {
+      "from": "test-projects",
+      "to": "bcrypt"
+    },
+    {
+      "from": "test-projects",
+      "to": "sqlalchemy"
+    },
+    {
+      "from": "test-projects",
+      "to": "sqlalchemy.ext.declarative"
+    },
+    {
+      "from": "test-projects",
+      "to": "sqlalchemy.orm"
+    },
+    {
+      "from": "test-projects",
+      "to": "datetime"
+    },
+    {
+      "from": "test-projects",
+      "to": "typing"
+    },
+    {
+      "from": "test-projects",
+      "to": "jose"
+    },
+    {
+      "from": "test-projects",
+      "to": "passlib.context"
+    },
+    {
+      "from": "test-projects",
+      "to": "fastapi"
+    },
+    {
+      "from": "test-projects",
+      "to": "fastapi.security"
+    },
+    {
+      "from": "test-projects",
+      "to": "app"
+    },
+    {
+      "from": "test-projects",
+      "to": "app.database"
+    },
+    {
+      "from": "test-projects",
+      "to": "fastapi.middleware.cors"
+    },
+    {
+      "from": "test-projects",
+      "to": "app.routers"
+    },
+    {
+      "from": "test-projects",
+      "to": "sqlalchemy.sql"
+    },
+    {
+      "from": "test-projects",
+      "to": "app.dependencies"
+    },
+    {
+      "from": "test-projects",
+      "to": "pydantic"
+    },
+    {
+      "from": "test-projects",
+      "to": "flask"
+    },
+    {
+      "from": "test-projects",
+      "to": "flask_sqlalchemy"
+    },
+    {
+      "from": "test-projects",
+      "to": "flask_migrate"
+    },
+    {
+      "from": "test-projects",
+      "to": "flask_login"
+    },
+    {
+      "from": "test-projects",
+      "to": "config"
+    },
+    {
+      "from": "test-projects",
+      "to": "app.api"
+    },
+    {
+      "from": "test-projects",
+      "to": "app.models"
+    },
+    {
+      "from": "test-projects",
+      "to": "app.auth"
+    },
+    {
+      "from": "test-projects",
+      "to": "flask_wtf"
+    },
+    {
+      "from": "test-projects",
+      "to": "wtforms"
+    },
+    {
+      "from": "test-projects",
+      "to": "wtforms.validators"
+    },
+    {
+      "from": "test-projects",
+      "to": "werkzeug.urls"
+    },
+    {
+      "from": "test-projects",
+      "to": "app.auth.forms"
+    },
+    {
+      "from": "test-projects",
+      "to": "app.blog"
+    },
+    {
+      "from": "test-projects",
+      "to": "app.blog.forms"
+    },
+    {
+      "from": "test-projects",
+      "to": "app.main"
+    },
+    {
+      "from": "test-projects",
+      "to": "werkzeug.security"
+    },
+    {
+      "from": "test-projects",
+      "to": "dotenv"
+    },
+    {
+      "from": "test-projects",
+      "to": "@nestjs"
+    },
+    {
+      "from": "test-projects",
+      "to": "passport-jwt"
+    },
+    {
+      "from": "test-projects",
+      "to": "cli.commands"
+    },
+    {
+      "from": "test-projects",
+      "to": "argparse"
+    },
+    {
+      "from": "test-projects",
+      "to": "models.task"
+    },
+    {
+      "from": "test-projects",
+      "to": "react-router-dom"
+    },
+    {
+      "from": "test-projects",
+      "to": "react"
+    },
+    {
+      "from": "test-projects",
+      "to": "react-dom"
+    },
+    {
+      "from": "tests",
+      "to": "vitest"
+    },
+    {
+      "from": "tests",
+      "to": "fs"
+    },
+    {
+      "from": "tests",
+      "to": "path"
+    },
+    {
+      "from": "tests",
+      "to": "os"
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "files": [
+    {
+      "path": "__init__.py",
+      "name": "__init__.py",
+      "ext": "py"
+    },
+    {
+      "path": "ai/ai_context.md",
+      "name": "ai_context.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/architecture.md",
+      "name": "architecture.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/cache.json",
+      "name": "cache.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/features/cli.json",
+      "name": "cli.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/add_.json",
+      "name": "add_.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/list_.json",
+      "name": "list_.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/context/flows/remove_.json",
+      "name": "remove_.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/conventions.md",
+      "name": "conventions.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/dependencies.json",
+      "name": "dependencies.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/files.json",
+      "name": "files.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/index-state.json",
+      "name": "index-state.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/modules.json",
+      "name": "modules.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/project.json",
+      "name": "project.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/repo-map.json",
+      "name": "repo-map.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/repo_map.json",
+      "name": "repo_map.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/repo_map.md",
+      "name": "repo_map.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/schema.json",
+      "name": "schema.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/summary.md",
+      "name": "summary.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/symbols.json",
+      "name": "symbols.json",
+      "ext": "json"
+    },
+    {
+      "path": "ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "ext": "md"
+    },
+    {
+      "path": "ai/tools.json",
+      "name": "tools.json",
+      "ext": "json"
+    },
+    {
+      "path": "cli/__init__.py",
+      "name": "__init__.py",
+      "ext": "py"
+    },
+    {
+      "path": "cli/add_command.py",
+      "name": "add_command.py",
+      "ext": "py"
+    },
+    {
+      "path": "cli/list_command.py",
+      "name": "list_command.py",
+      "ext": "py"
+    },
+    {
+      "path": "cli/remove_command.py",
+      "name": "remove_command.py",
+      "ext": "py"
+    },
+    {
+      "path": "main.py",
+      "name": "main.py",
+      "ext": "py"
+    },
+    {
+      "path": "models/__init__.py",
+      "name": "__init__.py",
+      "ext": "py"
+    },
+    {
+      "path": "models/task.py",
+      "name": "task.py",
+      "ext": "py"
+    },
+    {
+      "path": "models/task_repository.py",
+      "name": "task_repository.py",
+      "ext": "py"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "services",
+  "path": "services",
+  "files": [
+    "services/authService.js",
+    "services/userService.js"
+  ],
+  "entrypoints": [
+    "services/authService.js",
+    "services/userService.js"
+  ],
+  "dependencies": []
+}

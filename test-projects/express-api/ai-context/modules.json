@@ -1,0 +1,30 @@
+{
+  "modules": {
+    "controllers": {
+      "path": "controllers",
+      "files": [
+        "controllers/authController.js",
+        "controllers/userController.js"
+      ]
+    },
+    "middleware": {
+      "path": "middleware",
+      "files": [
+        "middleware/authMiddleware.js"
+      ]
+    },
+    "models": {
+      "path": "models",
+      "files": [
+        "models/userRepository.js"
+      ]
+    },
+    "services": {
+      "path": "services",
+      "files": [
+        "services/authService.js",
+        "services/userService.js"
+      ]
+    }
+  }
+}

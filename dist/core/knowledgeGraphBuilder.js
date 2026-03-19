@@ -151,7 +151,7 @@ export function createEdges(aiDir) {
     return edges;
 }
 export function buildKnowledgeGraph(rootDir, aiDir) {
-    const targetAiDir = aiDir || path.join(rootDir, "ai");
+    const targetAiDir = aiDir || path.join(rootDir, "ai-context");
     const graphDir = path.join(targetAiDir, "graph");
     ensureDir(graphDir);
     const nodes = createNodes(targetAiDir);

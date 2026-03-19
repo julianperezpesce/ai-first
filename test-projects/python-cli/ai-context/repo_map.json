@@ -1,0 +1,367 @@
+{
+  "generated": "2026-03-18T19:21:52.933Z",
+  "totalFiles": 36,
+  "structure": {
+    "__init__.py": {
+      "type": "file",
+      "extension": "py"
+    },
+    "ai": {
+      "type": "directory",
+      "children": {
+        "ai_context.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "ai_rules.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "architecture.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "cache.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "context": {
+          "type": "directory",
+          "children": {
+            "features": {
+              "type": "directory",
+              "children": {
+                "cli.json": {
+                  "type": "file",
+                  "extension": "json"
+                }
+              }
+            },
+            "flows": {
+              "type": "directory",
+              "children": {
+                "add_.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "list_.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "remove_.json": {
+                  "type": "file",
+                  "extension": "json"
+                }
+              }
+            }
+          }
+        },
+        "conventions.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "dependencies.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "entrypoints.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "files.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "graph": {
+          "type": "directory",
+          "children": {
+            "knowledge-graph.json": {
+              "type": "file",
+              "extension": "json"
+            },
+            "module-graph.json": {
+              "type": "file",
+              "extension": "json"
+            },
+            "symbol-graph.json": {
+              "type": "file",
+              "extension": "json"
+            },
+            "symbol-references.json": {
+              "type": "file",
+              "extension": "json"
+            }
+          }
+        },
+        "index-state.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "modules.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "project.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "repo-map.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "repo_map.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "repo_map.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "schema.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "summary.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "symbols.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "tech_stack.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "tools.json": {
+          "type": "file",
+          "extension": "json"
+        }
+      }
+    },
+    "cli": {
+      "type": "directory",
+      "children": {
+        "__init__.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "add_command.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "list_command.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "remove_command.py": {
+          "type": "file",
+          "extension": "py"
+        }
+      }
+    },
+    "main.py": {
+      "type": "file",
+      "extension": "py"
+    },
+    "models": {
+      "type": "directory",
+      "children": {
+        "__init__.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "task.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "task_repository.py": {
+          "type": "file",
+          "extension": "py"
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "ai/ai_context.md",
+      "name": "ai_context.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/architecture.md",
+      "name": "architecture.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/cache.json",
+      "name": "cache.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/features/cli.json",
+      "name": "cli.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/add_.json",
+      "name": "add_.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/list_.json",
+      "name": "list_.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/remove_.json",
+      "name": "remove_.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/conventions.md",
+      "name": "conventions.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/dependencies.json",
+      "name": "dependencies.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/files.json",
+      "name": "files.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/graph/knowledge-graph.json",
+      "name": "knowledge-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/index-state.json",
+      "name": "index-state.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/modules.json",
+      "name": "modules.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/project.json",
+      "name": "project.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/repo-map.json",
+      "name": "repo-map.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/repo_map.json",
+      "name": "repo_map.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/repo_map.md",
+      "name": "repo_map.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/schema.json",
+      "name": "schema.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/summary.md",
+      "name": "summary.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/symbols.json",
+      "name": "symbols.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/tools.json",
+      "name": "tools.json",
+      "extension": "json"
+    },
+    {
+      "path": "cli/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "cli/add_command.py",
+      "name": "add_command.py",
+      "extension": "py"
+    },
+    {
+      "path": "cli/list_command.py",
+      "name": "list_command.py",
+      "extension": "py"
+    },
+    {
+      "path": "cli/remove_command.py",
+      "name": "remove_command.py",
+      "extension": "py"
+    },
+    {
+      "path": "main.py",
+      "name": "main.py",
+      "extension": "py"
+    },
+    {
+      "path": "models/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "models/task.py",
+      "name": "task.py",
+      "extension": "py"
+    },
+    {
+      "path": "models/task_repository.py",
+      "name": "task_repository.py",
+      "extension": "py"
+    }
+  ]
+}

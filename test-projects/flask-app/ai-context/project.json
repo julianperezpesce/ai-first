@@ -1,0 +1,13 @@
+{
+  "name": "flask-app",
+  "rootDir": "test-projects/flask-app",
+  "features": [
+    "app"
+  ],
+  "flows": [
+    "routes"
+  ],
+  "languages": [],
+  "frameworks": [],
+  "generatedAt": "2026-03-18T19:21:50.783Z"
+}
