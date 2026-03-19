@@ -1,0 +1,9 @@
+{
+  "name": "",
+  "entrypoint": "app/Http/Controllers/Controller.php",
+  "files": [
+    "app/Http/Controllers/Controller.php"
+  ],
+  "depth": 0,
+  "layers": []
+}

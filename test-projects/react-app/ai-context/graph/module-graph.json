@@ -1,0 +1,31 @@
+{
+  "modules": [
+    {
+      "name": "src",
+      "paths": [
+        "src/App.tsx",
+        "src/context/AuthContext.tsx",
+        "src/hooks/useAuth.ts",
+        "src/main.tsx",
+        "src/pages/DashboardPage.tsx",
+        "src/pages/LoginPage.tsx",
+        "src/pages/UsersPage.tsx",
+        "src/services/userService.ts"
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "from": "src",
+      "to": "react-router-dom"
+    },
+    {
+      "from": "src",
+      "to": "react"
+    },
+    {
+      "from": "src",
+      "to": "react-dom"
+    }
+  ]
+}

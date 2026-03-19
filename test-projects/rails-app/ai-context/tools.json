@@ -1,0 +1,10 @@
+{
+  "compatibleAgents": [
+    "ai-first-bridge",
+    "opencode",
+    "cursor",
+    "windsurf",
+    "cline"
+  ],
+  "schemaVersion": "1.0"
+}

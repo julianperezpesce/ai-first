@@ -1,0 +1,2946 @@
+{
+  "totalDependencies": 452,
+  "totalModules": 113,
+  "dependencies": [
+    {
+      "source": "docs/.vitepress/theme/index.ts",
+      "target": "docs/.vitepress/theme/custom.css",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "src/analyzers/conventions.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "src/analyzers/entrypoints.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "src/analyzers/techStack.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "src/analyzers/architecture.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "src/analyzers/conventions.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "src/analyzers/entrypoints.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "src/analyzers/techStack.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/aiRules.ts",
+      "target": "src/analyzers/architecture.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/androidResources.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/androidResources.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/architecture.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/architecture.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/architecture.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/architecture.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/conventions.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/conventions.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/conventions.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/conventions.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/dependencies.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/dependencies.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/dependencies.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/dependencies.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/entrypoints.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/entrypoints.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/entrypoints.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/entrypoints.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/gradleModules.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/gradleModules.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/gradleModules.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/gradleModules.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/symbols.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/symbols.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/symbols.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/symbols.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/techStack.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/techStack.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/techStack.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/techStack.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/repoMapper.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/indexer.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/aiContextGenerator.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/hierarchyGenerator.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/analyzers/architecture.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/analyzers/techStack.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/analyzers/entrypoints.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/analyzers/conventions.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/analyzers/symbols.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/analyzers/dependencies.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/analyzers/aiRules.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/moduleGraph.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/indexState.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/chunker.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/embeddings.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/ccp.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/semanticContexts.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/doctor.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/explore.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/adapters/index.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/gitAnalyzer.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/knowledgeGraphBuilder.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/incrementalAnalyzer.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/schema.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/repoMapper.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/indexer.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/aiContextGenerator.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/hierarchyGenerator.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/analyzers/architecture.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/analyzers/techStack.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/analyzers/entrypoints.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/analyzers/conventions.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/analyzers/symbols.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/analyzers/dependencies.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/analyzers/aiRules.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/moduleGraph.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/indexState.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/chunker.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/embeddings.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/ccp.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/semanticContexts.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/doctor.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/commands/explore.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/adapters/index.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/gitAnalyzer.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/knowledgeGraphBuilder.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/incrementalAnalyzer.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/core/schema.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/doctor.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/doctor.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/explore.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/explore.ts",
+      "target": "src/core/moduleGraph.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/explore.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/explore.ts",
+      "target": "src/core/moduleGraph.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/adapterRegistry.ts",
+      "target": "src/core/adapters/baseAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/adapterRegistry.ts",
+      "target": "src/core/adapters/javascriptAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/adapterRegistry.ts",
+      "target": "src/core/adapters/pythonAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/adapterRegistry.ts",
+      "target": "src/core/adapters/railsAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/adapterRegistry.ts",
+      "target": "src/core/adapters/salesforceAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/adapterRegistry.ts",
+      "target": "src/core/adapters/dotnetAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/adapterRegistry.ts",
+      "target": "src/core/adapters/community/index.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/adapterRegistry.ts",
+      "target": "src/core/adapters/baseAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/adapterRegistry.ts",
+      "target": "src/core/adapters/javascriptAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/adapterRegistry.ts",
+      "target": "src/core/adapters/pythonAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/adapterRegistry.ts",
+      "target": "src/core/adapters/railsAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/adapterRegistry.ts",
+      "target": "src/core/adapters/salesforceAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/adapterRegistry.ts",
+      "target": "src/core/adapters/dotnetAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/adapterRegistry.ts",
+      "target": "src/core/adapters/community/index.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/community/fastapiAdapter.ts",
+      "target": "src/core/adapters/sdk.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/community/fastapiAdapter.ts",
+      "target": "src/core/adapters/sdk.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/community/laravelAdapter.ts",
+      "target": "src/core/adapters/sdk.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/community/laravelAdapter.ts",
+      "target": "src/core/adapters/sdk.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/community/nestjsAdapter.ts",
+      "target": "src/core/adapters/sdk.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/community/nestjsAdapter.ts",
+      "target": "src/core/adapters/sdk.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/community/phoenixAdapter.ts",
+      "target": "src/core/adapters/sdk.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/community/phoenixAdapter.ts",
+      "target": "src/core/adapters/sdk.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/community/springBootAdapter.ts",
+      "target": "src/core/adapters/sdk.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/community/springBootAdapter.ts",
+      "target": "src/core/adapters/sdk.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/dotnetAdapter.ts",
+      "target": "src/core/adapters/baseAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/dotnetAdapter.ts",
+      "target": "src/core/adapters/baseAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/javascriptAdapter.ts",
+      "target": "src/core/adapters/baseAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/javascriptAdapter.ts",
+      "target": "src/core/adapters/baseAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/pythonAdapter.ts",
+      "target": "src/core/adapters/baseAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/pythonAdapter.ts",
+      "target": "src/core/adapters/baseAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/railsAdapter.ts",
+      "target": "src/core/adapters/baseAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/railsAdapter.ts",
+      "target": "src/core/adapters/baseAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/salesforceAdapter.ts",
+      "target": "src/core/adapters/baseAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/salesforceAdapter.ts",
+      "target": "src/core/adapters/baseAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/sdk.ts",
+      "target": "src/core/adapters/baseAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/sdk.ts",
+      "target": "src/core/adapters/adapters/sdk.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/sdk.ts",
+      "target": "src/core/adapters/baseAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/adapters/sdk.ts",
+      "target": "src/core/adapters/adapters/sdk.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/aiContextGenerator.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/aiContextGenerator.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/aiContextGenerator.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/aiContextGenerator.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/ccp.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/ccp.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/contextPacket.ts",
+      "target": "src/core/symbolGraph.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/contextPacket.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/contextPacket.ts",
+      "target": "src/core/symbolGraph.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/contextPacket.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/embeddings.ts",
+      "target": "src/core/chunker.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/embeddings.ts",
+      "target": "src/core/chunker.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/gitAnalyzer.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/gitAnalyzer.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/hierarchyGenerator.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/hierarchyGenerator.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/incrementalAnalyzer.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/incrementalAnalyzer.ts",
+      "target": "src/core/indexState.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/incrementalAnalyzer.ts",
+      "target": "src/analyzers/symbols.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/incrementalAnalyzer.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/incrementalAnalyzer.ts",
+      "target": "src/core/knowledgeGraphBuilder.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/incrementalAnalyzer.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/incrementalAnalyzer.ts",
+      "target": "src/core/indexState.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/incrementalAnalyzer.ts",
+      "target": "src/analyzers/symbols.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/incrementalAnalyzer.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/incrementalAnalyzer.ts",
+      "target": "src/core/knowledgeGraphBuilder.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexer.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexer.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexer.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/indexer.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/knowledgeGraphBuilder.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/knowledgeGraphBuilder.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/lazyAnalyzer.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/lazyAnalyzer.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/lazyAnalyzer.ts",
+      "target": "src/core/repoMapper.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/lazyAnalyzer.ts",
+      "target": "src/analyzers/techStack.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/lazyAnalyzer.ts",
+      "target": "src/analyzers/entrypoints.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/lazyAnalyzer.ts",
+      "target": "src/analyzers/symbols.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/lazyAnalyzer.ts",
+      "target": "src/analyzers/dependencies.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/lazyAnalyzer.ts",
+      "target": "src/core/semanticContexts.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/lazyAnalyzer.ts",
+      "target": "src/core/knowledgeGraphBuilder.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/lazyAnalyzer.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/lazyAnalyzer.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/lazyAnalyzer.ts",
+      "target": "src/core/repoMapper.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/lazyAnalyzer.ts",
+      "target": "src/analyzers/techStack.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/lazyAnalyzer.ts",
+      "target": "src/analyzers/entrypoints.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/lazyAnalyzer.ts",
+      "target": "src/analyzers/symbols.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/lazyAnalyzer.ts",
+      "target": "src/analyzers/dependencies.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/lazyAnalyzer.ts",
+      "target": "src/core/semanticContexts.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/lazyAnalyzer.ts",
+      "target": "src/core/knowledgeGraphBuilder.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/moduleGraph.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/moduleGraph.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/repoMapper.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/repoMapper.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/repoScanner.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/repoScanner.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/schema.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/schema.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/semanticContexts.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/semanticContexts.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "src/analyzers/symbols.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "src/analyzers/dependencies.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "src/analyzers/symbols.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "src/analyzers/dependencies.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/symbolGraph.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/django-app/blog/admin.py",
+      "target": "django/contrib.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/blog/admin.py",
+      "target": "/models.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/blog/models.py",
+      "target": "django/db.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/blog/models.py",
+      "target": "django/contrib/auth/models.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/blog/serializers.py",
+      "target": "rest_framework.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/blog/serializers.py",
+      "target": "django/contrib/auth/models.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/blog/serializers.py",
+      "target": "/models.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/blog/urls.py",
+      "target": "django/urls.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/blog/urls.py",
+      "target": "rest_framework/routers.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/blog/urls.py",
+      "target": "/views.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/blog/views.py",
+      "target": "rest_framework.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/blog/views.py",
+      "target": "rest_framework/decorators.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/blog/views.py",
+      "target": "rest_framework/response.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/blog/views.py",
+      "target": "rest_framework/permissions.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/blog/views.py",
+      "target": "django/contrib/auth/models.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/blog/views.py",
+      "target": "/models.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/blog/views.py",
+      "target": "/serializers.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/django_app/settings.py",
+      "target": "pathlib.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/django_app/urls.py",
+      "target": "django/contrib.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/django_app/urls.py",
+      "target": "django/urls.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/django_app/wsgi.py",
+      "target": "django/core/wsgi.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/django_app/wsgi.py",
+      "target": "os.py",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/django-app/manage.py",
+      "target": "os.py",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/django-app/manage.py",
+      "target": "sys.py",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/django-app/users/admin.py",
+      "target": "django/contrib.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/admin.py",
+      "target": "django/contrib/auth/admin.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/admin.py",
+      "target": "django/contrib/auth/models.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/admin.py",
+      "target": "/models.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/models.py",
+      "target": "django/db.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/models.py",
+      "target": "django/contrib/auth/models.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/models.py",
+      "target": "django/db/models/signals.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/models.py",
+      "target": "django/dispatch.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/serializers.py",
+      "target": "rest_framework.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/serializers.py",
+      "target": "django/contrib/auth/models.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/serializers.py",
+      "target": "/models.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/urls.py",
+      "target": "django/urls.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/urls.py",
+      "target": "rest_framework/routers.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/urls.py",
+      "target": "/views.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/views.py",
+      "target": "rest_framework.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/views.py",
+      "target": "rest_framework/decorators.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/views.py",
+      "target": "rest_framework/response.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/views.py",
+      "target": "rest_framework/permissions.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/views.py",
+      "target": "django/contrib/auth/models.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/views.py",
+      "target": "django/contrib/auth.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/views.py",
+      "target": "/models.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/django-app/users/views.py",
+      "target": "/serializers.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/express-api/controllers/authController.js",
+      "target": "test-projects/express-api/services/authService",
+      "type": "require"
+    },
+    {
+      "source": "test-projects/express-api/controllers/userController.js",
+      "target": "test-projects/express-api/services/userService",
+      "type": "require"
+    },
+    {
+      "source": "test-projects/express-api/index.js",
+      "target": "test-projects/express-api/controllers/authController",
+      "type": "require"
+    },
+    {
+      "source": "test-projects/express-api/index.js",
+      "target": "test-projects/express-api/controllers/userController",
+      "type": "require"
+    },
+    {
+      "source": "test-projects/express-api/services/authService.js",
+      "target": "test-projects/express-api/models/userRepository",
+      "type": "require"
+    },
+    {
+      "source": "test-projects/express-api/services/userService.js",
+      "target": "test-projects/express-api/models/userRepository",
+      "type": "require"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/database.py",
+      "target": "sqlalchemy.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/database.py",
+      "target": "sqlalchemy/ext/declarative.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/database.py",
+      "target": "sqlalchemy/orm.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/dependencies.py",
+      "target": "datetime.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/dependencies.py",
+      "target": "typing.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/dependencies.py",
+      "target": "jose.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/dependencies.py",
+      "target": "passlib/context.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/dependencies.py",
+      "target": "sqlalchemy/orm.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/dependencies.py",
+      "target": "fastapi.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/dependencies.py",
+      "target": "fastapi/security.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/dependencies.py",
+      "target": "app.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/dependencies.py",
+      "target": "app/database.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/main.py",
+      "target": "fastapi.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/main.py",
+      "target": "fastapi/middleware/cors.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/main.py",
+      "target": "app/database.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/main.py",
+      "target": "app/routers.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/models.py",
+      "target": "sqlalchemy.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/models.py",
+      "target": "sqlalchemy/orm.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/models.py",
+      "target": "sqlalchemy/sql.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/models.py",
+      "target": "app/database.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/routers/auth.py",
+      "target": "datetime.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/routers/auth.py",
+      "target": "typing.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/routers/auth.py",
+      "target": "fastapi.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/routers/auth.py",
+      "target": "sqlalchemy/orm.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/routers/auth.py",
+      "target": "app.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/routers/auth.py",
+      "target": "app/database.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/routers/auth.py",
+      "target": "app/dependencies.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/routers/posts.py",
+      "target": "typing.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/routers/posts.py",
+      "target": "fastapi.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/routers/posts.py",
+      "target": "sqlalchemy/orm.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/routers/posts.py",
+      "target": "sqlalchemy.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/routers/posts.py",
+      "target": "app.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/routers/posts.py",
+      "target": "app/database.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/routers/posts.py",
+      "target": "app/dependencies.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/schemas.py",
+      "target": "datetime.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/schemas.py",
+      "target": "typing.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/fastapi-app/app/schemas.py",
+      "target": "pydantic.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/__init__.py",
+      "target": "flask.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/__init__.py",
+      "target": "flask_sqlalchemy.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/__init__.py",
+      "target": "flask_migrate.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/__init__.py",
+      "target": "flask_login.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/__init__.py",
+      "target": "config.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/__init__.py",
+      "target": "app.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/api/__init__.py",
+      "target": "flask.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/api/__init__.py",
+      "target": "app/api.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/api/routes.py",
+      "target": "flask.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/api/routes.py",
+      "target": "app.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/api/routes.py",
+      "target": "app/models.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/auth/__init__.py",
+      "target": "flask.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/auth/__init__.py",
+      "target": "app/auth.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/auth/forms.py",
+      "target": "flask_wtf.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/auth/forms.py",
+      "target": "wtforms.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/auth/forms.py",
+      "target": "wtforms/validators.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/auth/forms.py",
+      "target": "app/models.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/auth/routes.py",
+      "target": "flask.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/auth/routes.py",
+      "target": "flask_login.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/auth/routes.py",
+      "target": "werkzeug/urls.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/auth/routes.py",
+      "target": "app.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/auth/routes.py",
+      "target": "app/models.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/auth/routes.py",
+      "target": "app/auth/forms.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/blog/__init__.py",
+      "target": "flask.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/blog/__init__.py",
+      "target": "app/blog.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/blog/forms.py",
+      "target": "flask_wtf.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/blog/forms.py",
+      "target": "wtforms.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/blog/forms.py",
+      "target": "wtforms/validators.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/blog/routes.py",
+      "target": "flask.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/blog/routes.py",
+      "target": "flask_login.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/blog/routes.py",
+      "target": "app.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/blog/routes.py",
+      "target": "app/models.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/blog/routes.py",
+      "target": "app/blog/forms.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/main/__init__.py",
+      "target": "flask.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/main/__init__.py",
+      "target": "app/main.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/main/routes.py",
+      "target": "flask.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/main/routes.py",
+      "target": "app/models.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/main/routes.py",
+      "target": "app.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/models.py",
+      "target": "datetime.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/models.py",
+      "target": "werkzeug/security.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/models.py",
+      "target": "flask_login.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/app/models.py",
+      "target": "app.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/config.py",
+      "target": "dotenv.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/flask-app/config.py",
+      "target": "os.py",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/app.module.ts",
+      "target": "test-projects/nestjs-backend/src/auth/auth.module",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/app.module.ts",
+      "target": "test-projects/nestjs-backend/src/users/users.module",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/app.module.ts",
+      "target": "test-projects/nestjs-backend/src/auth/auth.module",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/app.module.ts",
+      "target": "test-projects/nestjs-backend/src/users/users.module",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/auth/auth.controller.ts",
+      "target": "test-projects/nestjs-backend/src/auth/auth.service",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/auth/auth.controller.ts",
+      "target": "test-projects/nestjs-backend/src/auth/dto/login.dto",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/auth/auth.controller.ts",
+      "target": "test-projects/nestjs-backend/src/auth/auth.service",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/auth/auth.controller.ts",
+      "target": "test-projects/nestjs-backend/src/auth/dto/login.dto",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/auth/auth.module.ts",
+      "target": "test-projects/nestjs-backend/src/auth/auth.controller",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/auth/auth.module.ts",
+      "target": "test-projects/nestjs-backend/src/auth/auth.service",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/auth/auth.module.ts",
+      "target": "test-projects/nestjs-backend/src/auth/strategies/jwt.strategy",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/auth/auth.module.ts",
+      "target": "test-projects/nestjs-backend/src/auth/auth.controller",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/auth/auth.module.ts",
+      "target": "test-projects/nestjs-backend/src/auth/auth.service",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/auth/auth.module.ts",
+      "target": "test-projects/nestjs-backend/src/auth/strategies/jwt.strategy",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/main.ts",
+      "target": "test-projects/nestjs-backend/src/app.module",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/main.ts",
+      "target": "test-projects/nestjs-backend/src/app.module",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/users/users.controller.ts",
+      "target": "test-projects/nestjs-backend/src/users/users.service",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/users/users.controller.ts",
+      "target": "test-projects/nestjs-backend/src/users/users.service",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/users/users.module.ts",
+      "target": "test-projects/nestjs-backend/src/users/users.controller",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/users/users.module.ts",
+      "target": "test-projects/nestjs-backend/src/users/users.service",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/users/users.module.ts",
+      "target": "test-projects/nestjs-backend/src/users/users.controller",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/nestjs-backend/src/users/users.module.ts",
+      "target": "test-projects/nestjs-backend/src/users/users.service",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/python-cli/cli/__init__.py",
+      "target": "/.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/python-cli/main.py",
+      "target": "cli/commands.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/python-cli/main.py",
+      "target": "argparse.py",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/python-cli/models/__init__.py",
+      "target": "/task.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/python-cli/models/__init__.py",
+      "target": "/task_repository.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/python-cli/models/task.py",
+      "target": "datetime.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/python-cli/models/task_repository.py",
+      "target": "models/task.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/python-cli/models/task_repository.py",
+      "target": "datetime.py",
+      "type": "from"
+    },
+    {
+      "source": "test-projects/react-app/src/App.tsx",
+      "target": "test-projects/react-app/src/context/AuthContext",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/react-app/src/App.tsx",
+      "target": "test-projects/react-app/src/pages/LoginPage",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/react-app/src/App.tsx",
+      "target": "test-projects/react-app/src/pages/DashboardPage",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/react-app/src/App.tsx",
+      "target": "test-projects/react-app/src/pages/UsersPage",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/react-app/src/App.tsx",
+      "target": "test-projects/react-app/src/context/AuthContext",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/react-app/src/App.tsx",
+      "target": "test-projects/react-app/src/pages/LoginPage",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/react-app/src/App.tsx",
+      "target": "test-projects/react-app/src/pages/DashboardPage",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/react-app/src/App.tsx",
+      "target": "test-projects/react-app/src/pages/UsersPage",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/react-app/src/hooks/useAuth.ts",
+      "target": "test-projects/react-app/src/context/AuthContext",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/react-app/src/hooks/useAuth.ts",
+      "target": "test-projects/react-app/src/context/AuthContext",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/react-app/src/main.tsx",
+      "target": "test-projects/react-app/src/App",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/react-app/src/main.tsx",
+      "target": "test-projects/react-app/src/App",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/react-app/src/pages/DashboardPage.tsx",
+      "target": "test-projects/react-app/src/hooks/useAuth",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/react-app/src/pages/DashboardPage.tsx",
+      "target": "test-projects/react-app/src/hooks/useAuth",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/react-app/src/pages/LoginPage.tsx",
+      "target": "test-projects/react-app/src/hooks/useAuth",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/react-app/src/pages/LoginPage.tsx",
+      "target": "test-projects/react-app/src/hooks/useAuth",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/react-app/src/pages/UsersPage.tsx",
+      "target": "test-projects/react-app/src/services/userService",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/react-app/src/pages/UsersPage.tsx",
+      "target": "test-projects/react-app/src/services/userService",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/DemoApplication.java",
+      "target": "org/springframework/boot/SpringApplication.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/DemoApplication.java",
+      "target": "org/springframework/boot/autoconfigure/SpringBootApplication.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/CommentController.java",
+      "target": "com/example/demo/models/Comment.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/CommentController.java",
+      "target": "com/example/demo/repositories/CommentRepository.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/CommentController.java",
+      "target": "jakarta/validation/Valid.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/CommentController.java",
+      "target": "jakarta/validation/constraints/NotBlank.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/CommentController.java",
+      "target": "jakarta/validation/constraints/NotNull.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/CommentController.java",
+      "target": "lombok/RequiredArgsConstructor.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/CommentController.java",
+      "target": "org/springframework/http/HttpStatus.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/CommentController.java",
+      "target": "org/springframework/http/ResponseEntity.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/PostController.java",
+      "target": "com/example/demo/models/Post.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/PostController.java",
+      "target": "com/example/demo/services/PostService.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/PostController.java",
+      "target": "jakarta/validation/Valid.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/PostController.java",
+      "target": "jakarta/validation/constraints/NotBlank.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/PostController.java",
+      "target": "jakarta/validation/constraints/NotNull.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/PostController.java",
+      "target": "lombok/RequiredArgsConstructor.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/PostController.java",
+      "target": "org/springframework/http/HttpStatus.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/PostController.java",
+      "target": "org/springframework/http/ResponseEntity.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/UserController.java",
+      "target": "com/example/demo/models/User.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/UserController.java",
+      "target": "com/example/demo/services/UserService.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/UserController.java",
+      "target": "jakarta/validation/Valid.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/UserController.java",
+      "target": "jakarta/validation/constraints/Email.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/UserController.java",
+      "target": "jakarta/validation/constraints/NotBlank.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/UserController.java",
+      "target": "lombok/RequiredArgsConstructor.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/UserController.java",
+      "target": "org/springframework/http/HttpStatus.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/UserController.java",
+      "target": "org/springframework/http/ResponseEntity.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/CommentRepository.java",
+      "target": "com/example/demo/models/Comment.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/CommentRepository.java",
+      "target": "com/example/demo/models/Post.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/CommentRepository.java",
+      "target": "com/example/demo/models/User.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/CommentRepository.java",
+      "target": "org/springframework/data/jpa/repository/JpaRepository.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/CommentRepository.java",
+      "target": "org/springframework/stereotype/Repository.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/PostRepository.java",
+      "target": "com/example/demo/models/Post.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/PostRepository.java",
+      "target": "com/example/demo/models/User.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/PostRepository.java",
+      "target": "org/springframework/data/jpa/repository/JpaRepository.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/PostRepository.java",
+      "target": "org/springframework/stereotype/Repository.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/UserRepository.java",
+      "target": "com/example/demo/models/User.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/UserRepository.java",
+      "target": "org/springframework/data/jpa/repository/JpaRepository.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/UserRepository.java",
+      "target": "org/springframework/stereotype/Repository.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/services/PostService.java",
+      "target": "com/example/demo/models/Post.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/services/PostService.java",
+      "target": "com/example/demo/models/User.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/services/PostService.java",
+      "target": "com/example/demo/repositories/PostRepository.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/services/PostService.java",
+      "target": "com/example/demo/repositories/UserRepository.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/services/PostService.java",
+      "target": "lombok/RequiredArgsConstructor.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/services/PostService.java",
+      "target": "org/springframework/stereotype/Service.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/services/PostService.java",
+      "target": "org/springframework/transaction/annotation/Transactional.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/services/UserService.java",
+      "target": "com/example/demo/models/User.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/services/UserService.java",
+      "target": "com/example/demo/repositories/UserRepository.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/services/UserService.java",
+      "target": "lombok/RequiredArgsConstructor.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/services/UserService.java",
+      "target": "org/springframework/stereotype/Service.java",
+      "type": "import"
+    },
+    {
+      "source": "test-projects/spring-boot-app/src/main/java/com/example/demo/services/UserService.java",
+      "target": "org/springframework/transaction/annotation/Transactional.java",
+      "type": "import"
+    },
+    {
+      "source": "tests/adapters.test.ts",
+      "target": "src/core/adapters/index.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/adapters.test.ts",
+      "target": "src/core/adapters/index.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/gitAnalyzer.test.ts",
+      "target": "src/core/gitAnalyzer.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/gitAnalyzer.test.ts",
+      "target": "src/core/gitAnalyzer.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/incrementalAnalyzer.test.ts",
+      "target": "src/core/incrementalAnalyzer.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/incrementalAnalyzer.test.ts",
+      "target": "src/core/incrementalAnalyzer.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/knowledgeGraph.test.ts",
+      "target": "src/core/knowledgeGraphBuilder.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/knowledgeGraph.test.ts",
+      "target": "src/core/knowledgeGraphBuilder.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/lazyAnalyzer.test.ts",
+      "target": "src/core/lazyAnalyzer.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/lazyAnalyzer.test.ts",
+      "target": "tests/auth",
+      "type": "import"
+    },
+    {
+      "source": "tests/lazyAnalyzer.test.ts",
+      "target": "src/core/lazyAnalyzer.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/lazyAnalyzer.test.ts",
+      "target": "tests/auth",
+      "type": "import"
+    },
+    {
+      "source": "tests/schema.test.ts",
+      "target": "src/core/schema.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/schema.test.ts",
+      "target": "src/core/schema.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/semanticContexts.test.ts",
+      "target": "src/core/semanticContexts.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/semanticContexts.test.ts",
+      "target": "src/core/semanticContexts.js",
+      "type": "import"
+    }
+  ],
+  "byFile": {
+    "docs/.vitepress/theme/index.ts": [
+      "docs/.vitepress/theme/custom.css"
+    ],
+    "src/analyzers/aiRules.ts": [
+      "src/core/repoScanner.js",
+      "src/analyzers/conventions.js",
+      "src/analyzers/entrypoints.js",
+      "src/analyzers/techStack.js",
+      "src/analyzers/architecture.js",
+      "src/core/repoScanner.js",
+      "src/analyzers/conventions.js",
+      "src/analyzers/entrypoints.js",
+      "src/analyzers/techStack.js",
+      "src/analyzers/architecture.js"
+    ],
+    "src/analyzers/androidResources.ts": [
+      "src/core/repoScanner.js",
+      "src/core/repoScanner.js"
+    ],
+    "src/analyzers/architecture.ts": [
+      "src/core/repoScanner.js",
+      "src/utils/fileUtils.js",
+      "src/core/repoScanner.js",
+      "src/utils/fileUtils.js"
+    ],
+    "src/analyzers/conventions.ts": [
+      "src/core/repoScanner.js",
+      "src/utils/fileUtils.js",
+      "src/core/repoScanner.js",
+      "src/utils/fileUtils.js"
+    ],
+    "src/analyzers/dependencies.ts": [
+      "src/core/repoScanner.js",
+      "src/utils/fileUtils.js",
+      "src/core/repoScanner.js",
+      "src/utils/fileUtils.js"
+    ],
+    "src/analyzers/entrypoints.ts": [
+      "src/core/repoScanner.js",
+      "src/utils/fileUtils.js",
+      "src/core/repoScanner.js",
+      "src/utils/fileUtils.js"
+    ],
+    "src/analyzers/gradleModules.ts": [
+      "src/core/repoScanner.js",
+      "src/utils/fileUtils.js",
+      "src/core/repoScanner.js",
+      "src/utils/fileUtils.js"
+    ],
+    "src/analyzers/symbols.ts": [
+      "src/core/repoScanner.js",
+      "src/utils/fileUtils.js",
+      "src/core/repoScanner.js",
+      "src/utils/fileUtils.js"
+    ],
+    "src/analyzers/techStack.ts": [
+      "src/core/repoScanner.js",
+      "src/utils/fileUtils.js",
+      "src/core/repoScanner.js",
+      "src/utils/fileUtils.js"
+    ],
+    "src/commands/ai-first.ts": [
+      "src/core/repoScanner.js",
+      "src/core/repoMapper.js",
+      "src/core/indexer.js",
+      "src/core/aiContextGenerator.js",
+      "src/core/hierarchyGenerator.js",
+      "src/utils/fileUtils.js",
+      "src/analyzers/architecture.js",
+      "src/analyzers/techStack.js",
+      "src/analyzers/entrypoints.js",
+      "src/analyzers/conventions.js",
+      "src/analyzers/symbols.js",
+      "src/analyzers/dependencies.js",
+      "src/analyzers/aiRules.js",
+      "src/core/moduleGraph.js",
+      "src/core/indexState.js",
+      "src/core/chunker.js",
+      "src/core/embeddings.js",
+      "src/core/ccp.js",
+      "src/core/semanticContexts.js",
+      "src/commands/doctor.js",
+      "src/commands/explore.js",
+      "src/core/adapters/index.js",
+      "src/core/gitAnalyzer.js",
+      "src/core/knowledgeGraphBuilder.js",
+      "src/core/incrementalAnalyzer.js",
+      "src/core/schema.js",
+      "src/core/repoScanner.js",
+      "src/core/repoMapper.js",
+      "src/core/indexer.js",
+      "src/core/aiContextGenerator.js",
+      "src/core/hierarchyGenerator.js",
+      "src/utils/fileUtils.js",
+      "src/analyzers/architecture.js",
+      "src/analyzers/techStack.js",
+      "src/analyzers/entrypoints.js",
+      "src/analyzers/conventions.js",
+      "src/analyzers/symbols.js",
+      "src/analyzers/dependencies.js",
+      "src/analyzers/aiRules.js",
+      "src/core/moduleGraph.js",
+      "src/core/indexState.js",
+      "src/core/chunker.js",
+      "src/core/embeddings.js",
+      "src/core/ccp.js",
+      "src/core/semanticContexts.js",
+      "src/commands/doctor.js",
+      "src/commands/explore.js",
+      "src/core/adapters/index.js",
+      "src/core/gitAnalyzer.js",
+      "src/core/knowledgeGraphBuilder.js",
+      "src/core/incrementalAnalyzer.js",
+      "src/core/schema.js"
+    ],
+    "src/commands/doctor.ts": [
+      "src/core/repoScanner.js",
+      "src/core/repoScanner.js"
+    ],
+    "src/commands/explore.ts": [
+      "src/core/repoScanner.js",
+      "src/core/moduleGraph.js",
+      "src/core/repoScanner.js",
+      "src/core/moduleGraph.js"
+    ],
+    "src/core/adapters/adapterRegistry.ts": [
+      "src/core/adapters/baseAdapter.js",
+      "src/core/adapters/javascriptAdapter.js",
+      "src/core/adapters/pythonAdapter.js",
+      "src/core/adapters/railsAdapter.js",
+      "src/core/adapters/salesforceAdapter.js",
+      "src/core/adapters/dotnetAdapter.js",
+      "src/core/adapters/community/index.js",
+      "src/core/adapters/baseAdapter.js",
+      "src/core/adapters/javascriptAdapter.js",
+      "src/core/adapters/pythonAdapter.js",
+      "src/core/adapters/railsAdapter.js",
+      "src/core/adapters/salesforceAdapter.js",
+      "src/core/adapters/dotnetAdapter.js",
+      "src/core/adapters/community/index.js"
+    ],
+    "src/core/adapters/community/fastapiAdapter.ts": [
+      "src/core/adapters/sdk.js",
+      "src/core/adapters/sdk.js"
+    ],
+    "src/core/adapters/community/laravelAdapter.ts": [
+      "src/core/adapters/sdk.js",
+      "src/core/adapters/sdk.js"
+    ],
+    "src/core/adapters/community/nestjsAdapter.ts": [
+      "src/core/adapters/sdk.js",
+      "src/core/adapters/sdk.js"
+    ],
+    "src/core/adapters/community/phoenixAdapter.ts": [
+      "src/core/adapters/sdk.js",
+      "src/core/adapters/sdk.js"
+    ],
+    "src/core/adapters/community/springBootAdapter.ts": [
+      "src/core/adapters/sdk.js",
+      "src/core/adapters/sdk.js"
+    ],
+    "src/core/adapters/dotnetAdapter.ts": [
+      "src/core/adapters/baseAdapter.js",
+      "src/core/adapters/baseAdapter.js"
+    ],
+    "src/core/adapters/javascriptAdapter.ts": [
+      "src/core/adapters/baseAdapter.js",
+      "src/core/adapters/baseAdapter.js"
+    ],
+    "src/core/adapters/pythonAdapter.ts": [
+      "src/core/adapters/baseAdapter.js",
+      "src/core/adapters/baseAdapter.js"
+    ],
+    "src/core/adapters/railsAdapter.ts": [
+      "src/core/adapters/baseAdapter.js",
+      "src/core/adapters/baseAdapter.js"
+    ],
+    "src/core/adapters/salesforceAdapter.ts": [
+      "src/core/adapters/baseAdapter.js",
+      "src/core/adapters/baseAdapter.js"
+    ],
+    "src/core/adapters/sdk.ts": [
+      "src/core/adapters/baseAdapter.js",
+      "src/core/adapters/adapters/sdk.js",
+      "src/core/adapters/baseAdapter.js",
+      "src/core/adapters/adapters/sdk.js"
+    ],
+    "src/core/aiContextGenerator.ts": [
+      "src/core/repoScanner.js",
+      "src/utils/fileUtils.js",
+      "src/core/repoScanner.js",
+      "src/utils/fileUtils.js"
+    ],
+    "src/core/ccp.ts": [
+      "src/utils/fileUtils.js",
+      "src/utils/fileUtils.js"
+    ],
+    "src/core/contextPacket.ts": [
+      "src/core/symbolGraph.js",
+      "src/utils/fileUtils.js",
+      "src/core/symbolGraph.js",
+      "src/utils/fileUtils.js"
+    ],
+    "src/core/embeddings.ts": [
+      "src/core/chunker.js",
+      "src/core/chunker.js"
+    ],
+    "src/core/gitAnalyzer.ts": [
+      "src/utils/fileUtils.js",
+      "src/utils/fileUtils.js"
+    ],
+    "src/core/hierarchyGenerator.ts": [
+      "src/utils/fileUtils.js",
+      "src/utils/fileUtils.js"
+    ],
+    "src/core/incrementalAnalyzer.ts": [
+      "src/utils/fileUtils.js",
+      "src/core/indexState.js",
+      "src/analyzers/symbols.js",
+      "src/core/repoScanner.js",
+      "src/core/knowledgeGraphBuilder.js",
+      "src/utils/fileUtils.js",
+      "src/core/indexState.js",
+      "src/analyzers/symbols.js",
+      "src/core/repoScanner.js",
+      "src/core/knowledgeGraphBuilder.js"
+    ],
+    "src/core/indexer.ts": [
+      "src/core/repoScanner.js",
+      "src/utils/fileUtils.js",
+      "src/core/repoScanner.js",
+      "src/utils/fileUtils.js"
+    ],
+    "src/core/knowledgeGraphBuilder.ts": [
+      "src/utils/fileUtils.js",
+      "src/utils/fileUtils.js"
+    ],
+    "src/core/lazyAnalyzer.ts": [
+      "src/utils/fileUtils.js",
+      "src/core/repoScanner.js",
+      "src/core/repoMapper.js",
+      "src/analyzers/techStack.js",
+      "src/analyzers/entrypoints.js",
+      "src/analyzers/symbols.js",
+      "src/analyzers/dependencies.js",
+      "src/core/semanticContexts.js",
+      "src/core/knowledgeGraphBuilder.js",
+      "src/utils/fileUtils.js",
+      "src/core/repoScanner.js",
+      "src/core/repoMapper.js",
+      "src/analyzers/techStack.js",
+      "src/analyzers/entrypoints.js",
+      "src/analyzers/symbols.js",
+      "src/analyzers/dependencies.js",
+      "src/core/semanticContexts.js",
+      "src/core/knowledgeGraphBuilder.js"
+    ],
+    "src/core/moduleGraph.ts": [
+      "src/core/repoScanner.js",
+      "src/core/repoScanner.js"
+    ],
+    "src/core/repoMapper.ts": [
+      "src/core/repoScanner.js",
+      "src/core/repoScanner.js"
+    ],
+    "src/core/repoScanner.ts": [
+      "src/utils/fileUtils.js",
+      "src/utils/fileUtils.js"
+    ],
+    "src/core/schema.ts": [
+      "src/utils/fileUtils.js",
+      "src/utils/fileUtils.js"
+    ],
+    "src/core/semanticContexts.ts": [
+      "src/utils/fileUtils.js",
+      "src/utils/fileUtils.js"
+    ],
+    "src/core/symbolGraph.ts": [
+      "src/core/repoScanner.js",
+      "src/analyzers/symbols.js",
+      "src/analyzers/dependencies.js",
+      "src/utils/fileUtils.js",
+      "src/core/repoScanner.js",
+      "src/analyzers/symbols.js",
+      "src/analyzers/dependencies.js",
+      "src/utils/fileUtils.js"
+    ],
+    "test-projects/django-app/blog/admin.py": [
+      "django/contrib.py",
+      "/models.py"
+    ],
+    "test-projects/django-app/blog/models.py": [
+      "django/db.py",
+      "django/contrib/auth/models.py"
+    ],
+    "test-projects/django-app/blog/serializers.py": [
+      "rest_framework.py",
+      "django/contrib/auth/models.py",
+      "/models.py"
+    ],
+    "test-projects/django-app/blog/urls.py": [
+      "django/urls.py",
+      "rest_framework/routers.py",
+      "/views.py"
+    ],
+    "test-projects/django-app/blog/views.py": [
+      "rest_framework.py",
+      "rest_framework/decorators.py",
+      "rest_framework/response.py",
+      "rest_framework/permissions.py",
+      "django/contrib/auth/models.py",
+      "/models.py",
+      "/serializers.py"
+    ],
+    "test-projects/django-app/django_app/settings.py": [
+      "pathlib.py"
+    ],
+    "test-projects/django-app/django_app/urls.py": [
+      "django/contrib.py",
+      "django/urls.py"
+    ],
+    "test-projects/django-app/django_app/wsgi.py": [
+      "django/core/wsgi.py",
+      "os.py"
+    ],
+    "test-projects/django-app/manage.py": [
+      "os.py",
+      "sys.py"
+    ],
+    "test-projects/django-app/users/admin.py": [
+      "django/contrib.py",
+      "django/contrib/auth/admin.py",
+      "django/contrib/auth/models.py",
+      "/models.py"
+    ],
+    "test-projects/django-app/users/models.py": [
+      "django/db.py",
+      "django/contrib/auth/models.py",
+      "django/db/models/signals.py",
+      "django/dispatch.py"
+    ],
+    "test-projects/django-app/users/serializers.py": [
+      "rest_framework.py",
+      "django/contrib/auth/models.py",
+      "/models.py"
+    ],
+    "test-projects/django-app/users/urls.py": [
+      "django/urls.py",
+      "rest_framework/routers.py",
+      "/views.py"
+    ],
+    "test-projects/django-app/users/views.py": [
+      "rest_framework.py",
+      "rest_framework/decorators.py",
+      "rest_framework/response.py",
+      "rest_framework/permissions.py",
+      "django/contrib/auth/models.py",
+      "django/contrib/auth.py",
+      "/models.py",
+      "/serializers.py"
+    ],
+    "test-projects/express-api/controllers/authController.js": [
+      "test-projects/express-api/services/authService"
+    ],
+    "test-projects/express-api/controllers/userController.js": [
+      "test-projects/express-api/services/userService"
+    ],
+    "test-projects/express-api/index.js": [
+      "test-projects/express-api/controllers/authController",
+      "test-projects/express-api/controllers/userController"
+    ],
+    "test-projects/express-api/services/authService.js": [
+      "test-projects/express-api/models/userRepository"
+    ],
+    "test-projects/express-api/services/userService.js": [
+      "test-projects/express-api/models/userRepository"
+    ],
+    "test-projects/fastapi-app/app/database.py": [
+      "sqlalchemy.py",
+      "sqlalchemy/ext/declarative.py",
+      "sqlalchemy/orm.py"
+    ],
+    "test-projects/fastapi-app/app/dependencies.py": [
+      "datetime.py",
+      "typing.py",
+      "jose.py",
+      "passlib/context.py",
+      "sqlalchemy/orm.py",
+      "fastapi.py",
+      "fastapi/security.py",
+      "app.py",
+      "app/database.py"
+    ],
+    "test-projects/fastapi-app/app/main.py": [
+      "fastapi.py",
+      "fastapi/middleware/cors.py",
+      "app/database.py",
+      "app/routers.py"
+    ],
+    "test-projects/fastapi-app/app/models.py": [
+      "sqlalchemy.py",
+      "sqlalchemy/orm.py",
+      "sqlalchemy/sql.py",
+      "app/database.py"
+    ],
+    "test-projects/fastapi-app/app/routers/auth.py": [
+      "datetime.py",
+      "typing.py",
+      "fastapi.py",
+      "sqlalchemy/orm.py",
+      "app.py",
+      "app/database.py",
+      "app/dependencies.py"
+    ],
+    "test-projects/fastapi-app/app/routers/posts.py": [
+      "typing.py",
+      "fastapi.py",
+      "sqlalchemy/orm.py",
+      "sqlalchemy.py",
+      "app.py",
+      "app/database.py",
+      "app/dependencies.py"
+    ],
+    "test-projects/fastapi-app/app/schemas.py": [
+      "datetime.py",
+      "typing.py",
+      "pydantic.py"
+    ],
+    "test-projects/flask-app/app/__init__.py": [
+      "flask.py",
+      "flask_sqlalchemy.py",
+      "flask_migrate.py",
+      "flask_login.py",
+      "config.py",
+      "app.py"
+    ],
+    "test-projects/flask-app/app/api/__init__.py": [
+      "flask.py",
+      "app/api.py"
+    ],
+    "test-projects/flask-app/app/api/routes.py": [
+      "flask.py",
+      "app.py",
+      "app/models.py"
+    ],
+    "test-projects/flask-app/app/auth/__init__.py": [
+      "flask.py",
+      "app/auth.py"
+    ],
+    "test-projects/flask-app/app/auth/forms.py": [
+      "flask_wtf.py",
+      "wtforms.py",
+      "wtforms/validators.py",
+      "app/models.py"
+    ],
+    "test-projects/flask-app/app/auth/routes.py": [
+      "flask.py",
+      "flask_login.py",
+      "werkzeug/urls.py",
+      "app.py",
+      "app/models.py",
+      "app/auth/forms.py"
+    ],
+    "test-projects/flask-app/app/blog/__init__.py": [
+      "flask.py",
+      "app/blog.py"
+    ],
+    "test-projects/flask-app/app/blog/forms.py": [
+      "flask_wtf.py",
+      "wtforms.py",
+      "wtforms/validators.py"
+    ],
+    "test-projects/flask-app/app/blog/routes.py": [
+      "flask.py",
+      "flask_login.py",
+      "app.py",
+      "app/models.py",
+      "app/blog/forms.py"
+    ],
+    "test-projects/flask-app/app/main/__init__.py": [
+      "flask.py",
+      "app/main.py"
+    ],
+    "test-projects/flask-app/app/main/routes.py": [
+      "flask.py",
+      "app/models.py",
+      "app.py"
+    ],
+    "test-projects/flask-app/app/models.py": [
+      "datetime.py",
+      "werkzeug/security.py",
+      "flask_login.py",
+      "app.py"
+    ],
+    "test-projects/flask-app/config.py": [
+      "dotenv.py",
+      "os.py"
+    ],
+    "test-projects/nestjs-backend/src/app.module.ts": [
+      "test-projects/nestjs-backend/src/auth/auth.module",
+      "test-projects/nestjs-backend/src/users/users.module",
+      "test-projects/nestjs-backend/src/auth/auth.module",
+      "test-projects/nestjs-backend/src/users/users.module"
+    ],
+    "test-projects/nestjs-backend/src/auth/auth.controller.ts": [
+      "test-projects/nestjs-backend/src/auth/auth.service",
+      "test-projects/nestjs-backend/src/auth/dto/login.dto",
+      "test-projects/nestjs-backend/src/auth/auth.service",
+      "test-projects/nestjs-backend/src/auth/dto/login.dto"
+    ],
+    "test-projects/nestjs-backend/src/auth/auth.module.ts": [
+      "test-projects/nestjs-backend/src/auth/auth.controller",
+      "test-projects/nestjs-backend/src/auth/auth.service",
+      "test-projects/nestjs-backend/src/auth/strategies/jwt.strategy",
+      "test-projects/nestjs-backend/src/auth/auth.controller",
+      "test-projects/nestjs-backend/src/auth/auth.service",
+      "test-projects/nestjs-backend/src/auth/strategies/jwt.strategy"
+    ],
+    "test-projects/nestjs-backend/src/main.ts": [
+      "test-projects/nestjs-backend/src/app.module",
+      "test-projects/nestjs-backend/src/app.module"
+    ],
+    "test-projects/nestjs-backend/src/users/users.controller.ts": [
+      "test-projects/nestjs-backend/src/users/users.service",
+      "test-projects/nestjs-backend/src/users/users.service"
+    ],
+    "test-projects/nestjs-backend/src/users/users.module.ts": [
+      "test-projects/nestjs-backend/src/users/users.controller",
+      "test-projects/nestjs-backend/src/users/users.service",
+      "test-projects/nestjs-backend/src/users/users.controller",
+      "test-projects/nestjs-backend/src/users/users.service"
+    ],
+    "test-projects/python-cli/cli/__init__.py": [
+      "/.py"
+    ],
+    "test-projects/python-cli/main.py": [
+      "cli/commands.py",
+      "argparse.py"
+    ],
+    "test-projects/python-cli/models/__init__.py": [
+      "/task.py",
+      "/task_repository.py"
+    ],
+    "test-projects/python-cli/models/task.py": [
+      "datetime.py"
+    ],
+    "test-projects/python-cli/models/task_repository.py": [
+      "models/task.py",
+      "datetime.py"
+    ],
+    "test-projects/react-app/src/App.tsx": [
+      "test-projects/react-app/src/context/AuthContext",
+      "test-projects/react-app/src/pages/LoginPage",
+      "test-projects/react-app/src/pages/DashboardPage",
+      "test-projects/react-app/src/pages/UsersPage",
+      "test-projects/react-app/src/context/AuthContext",
+      "test-projects/react-app/src/pages/LoginPage",
+      "test-projects/react-app/src/pages/DashboardPage",
+      "test-projects/react-app/src/pages/UsersPage"
+    ],
+    "test-projects/react-app/src/hooks/useAuth.ts": [
+      "test-projects/react-app/src/context/AuthContext",
+      "test-projects/react-app/src/context/AuthContext"
+    ],
+    "test-projects/react-app/src/main.tsx": [
+      "test-projects/react-app/src/App",
+      "test-projects/react-app/src/App"
+    ],
+    "test-projects/react-app/src/pages/DashboardPage.tsx": [
+      "test-projects/react-app/src/hooks/useAuth",
+      "test-projects/react-app/src/hooks/useAuth"
+    ],
+    "test-projects/react-app/src/pages/LoginPage.tsx": [
+      "test-projects/react-app/src/hooks/useAuth",
+      "test-projects/react-app/src/hooks/useAuth"
+    ],
+    "test-projects/react-app/src/pages/UsersPage.tsx": [
+      "test-projects/react-app/src/services/userService",
+      "test-projects/react-app/src/services/userService"
+    ],
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/DemoApplication.java": [
+      "org/springframework/boot/SpringApplication.java",
+      "org/springframework/boot/autoconfigure/SpringBootApplication.java"
+    ],
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/CommentController.java": [
+      "com/example/demo/models/Comment.java",
+      "com/example/demo/repositories/CommentRepository.java",
+      "jakarta/validation/Valid.java",
+      "jakarta/validation/constraints/NotBlank.java",
+      "jakarta/validation/constraints/NotNull.java",
+      "lombok/RequiredArgsConstructor.java",
+      "org/springframework/http/HttpStatus.java",
+      "org/springframework/http/ResponseEntity.java"
+    ],
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/PostController.java": [
+      "com/example/demo/models/Post.java",
+      "com/example/demo/services/PostService.java",
+      "jakarta/validation/Valid.java",
+      "jakarta/validation/constraints/NotBlank.java",
+      "jakarta/validation/constraints/NotNull.java",
+      "lombok/RequiredArgsConstructor.java",
+      "org/springframework/http/HttpStatus.java",
+      "org/springframework/http/ResponseEntity.java"
+    ],
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/UserController.java": [
+      "com/example/demo/models/User.java",
+      "com/example/demo/services/UserService.java",
+      "jakarta/validation/Valid.java",
+      "jakarta/validation/constraints/Email.java",
+      "jakarta/validation/constraints/NotBlank.java",
+      "lombok/RequiredArgsConstructor.java",
+      "org/springframework/http/HttpStatus.java",
+      "org/springframework/http/ResponseEntity.java"
+    ],
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/CommentRepository.java": [
+      "com/example/demo/models/Comment.java",
+      "com/example/demo/models/Post.java",
+      "com/example/demo/models/User.java",
+      "org/springframework/data/jpa/repository/JpaRepository.java",
+      "org/springframework/stereotype/Repository.java"
+    ],
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/PostRepository.java": [
+      "com/example/demo/models/Post.java",
+      "com/example/demo/models/User.java",
+      "org/springframework/data/jpa/repository/JpaRepository.java",
+      "org/springframework/stereotype/Repository.java"
+    ],
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/UserRepository.java": [
+      "com/example/demo/models/User.java",
+      "org/springframework/data/jpa/repository/JpaRepository.java",
+      "org/springframework/stereotype/Repository.java"
+    ],
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/services/PostService.java": [
+      "com/example/demo/models/Post.java",
+      "com/example/demo/models/User.java",
+      "com/example/demo/repositories/PostRepository.java",
+      "com/example/demo/repositories/UserRepository.java",
+      "lombok/RequiredArgsConstructor.java",
+      "org/springframework/stereotype/Service.java",
+      "org/springframework/transaction/annotation/Transactional.java"
+    ],
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/services/UserService.java": [
+      "com/example/demo/models/User.java",
+      "com/example/demo/repositories/UserRepository.java",
+      "lombok/RequiredArgsConstructor.java",
+      "org/springframework/stereotype/Service.java",
+      "org/springframework/transaction/annotation/Transactional.java"
+    ],
+    "tests/adapters.test.ts": [
+      "src/core/adapters/index.js",
+      "src/core/adapters/index.js"
+    ],
+    "tests/gitAnalyzer.test.ts": [
+      "src/core/gitAnalyzer.js",
+      "src/core/gitAnalyzer.js"
+    ],
+    "tests/incrementalAnalyzer.test.ts": [
+      "src/core/incrementalAnalyzer.js",
+      "src/core/incrementalAnalyzer.js"
+    ],
+    "tests/knowledgeGraph.test.ts": [
+      "src/core/knowledgeGraphBuilder.js",
+      "src/core/knowledgeGraphBuilder.js"
+    ],
+    "tests/lazyAnalyzer.test.ts": [
+      "src/core/lazyAnalyzer.js",
+      "tests/auth",
+      "src/core/lazyAnalyzer.js",
+      "tests/auth"
+    ],
+    "tests/schema.test.ts": [
+      "src/core/schema.js",
+      "src/core/schema.js"
+    ],
+    "tests/semanticContexts.test.ts": [
+      "src/core/semanticContexts.js",
+      "src/core/semanticContexts.js"
+    ]
+  }
+}

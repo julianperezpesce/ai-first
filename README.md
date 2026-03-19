@@ -22,12 +22,12 @@
 
 ```
 $ npx ai-first init
-✅ Generated .ai-dev/ai_context.md (0.3s)
-✅ Generated .ai-dev/symbols.json (0.1s)  
-✅ Generated .ai-dev/dependencies.json (0.1s)
+✅ Generated ai-context/ai_context.md (0.3s)
+✅ Generated ai-context/symbols.json (0.1s)  
+✅ Generated ai-context/dependencies.json (0.1s)
 ✅ Generated 11 context files
 
-🎉 Ready! Give .ai-dev/ai_context.md to your AI assistant.
+🎉 Ready! Give ai-context/ai_context.md to your AI assistant.
 ```
 
 **Result:** AI understands your project in ~500 tokens instead of 50,000.
@@ -113,13 +113,13 @@ ai-first init
 ### 1. AI Coding Agents (OpenCode, Cursor, Claude Code)
 ```bash
 ai-first init
-# Then ask AI: "Read .ai-dev/ai_context.md and help me add a feature"
+# Then ask AI: "Read ai-context/ai_context.md and help me add a feature"
 ```
 
 ### 2. Onboarding New Developers
 ```bash
 ai-first init
-# New dev reads .ai-dev/ai_context.md → understands project in 2 minutes
+# New dev reads ai-context/ai_context.md → understands project in 2 minutes
 ```
 
 ### 3. Project Documentation
@@ -147,7 +147,7 @@ Result: Broken code, wasted tokens
 ```
 $ ai-first init
 
-You: "Read .ai-dev/ai_context.md, then add authentication"
+You: "Read ai-context/ai_context.md, then add authentication"
 AI: *reads 1 file (0.5s)*
 AI: "I see you're using Express + JWT with auth in src/middleware/auth.ts"
 AI: "I'll add authentication following your conventions..."
@@ -239,7 +239,7 @@ AI-First CLI
 ## 📁 Generated Files
 
 ```
-.ai-dev/
+ai-context/
 ├── ai_context.md      # ⭐ Start here — unified overview
 ├── repo_map.json     # Machine-readable structure
 ├── symbols.json       # Extracted functions/classes with unique IDs
@@ -276,7 +276,7 @@ AI-First CLI
 | Agent | How to Use |
 |-------|------------|
 | **OpenCode** | `~/.config/opencode/commands/ai-first.md` |
-| **Cursor** | Reference `.ai-dev/ai_context.md` in prompts |
+| **Cursor** | Reference `ai-context/ai_context.md` in prompts |
 | **Claude Code** | Include context in system prompt |
 | **Windsurf** | Project understanding |
 | **GitHub Copilot** | Context-aware suggestions |
@@ -390,7 +390,7 @@ Features represent real business modules detected from your project structure.
 - Excluded: utils, helpers, types, interfaces, constants, config, models, dto, common
 
 ```json
-// .ai-dev/context/features/<module>.json
+// ai-context/context/features/<module>.json
 {
   "feature": "auth",
   "files": ["src/auth/controller.js", "src/auth/service.js"],
@@ -408,7 +408,7 @@ Flows represent business execution chains starting from entrypoints.
 - Must start from an entrypoint (Controller, Route, Command, Handler)
 
 ```json
-// .ai-dev/context/flows/<name>.json
+// ai-context/context/flows/<name>.json
 {
   "name": "login",
   "entrypoint": "src/auth/controller.js",
@@ -465,11 +465,11 @@ ai-first automatically detects and indexes Android/Kotlin projects:
 
 ### Generated Files for Android Projects
 
-- `.ai-dev/tech_stack.md` - Shows Android framework with SDK versions
-- `.ai-dev/dependencies.json` - Gradle dependencies with group:artifact:version
-- `.ai-dev/entrypoints.md` - Android activities, services, permissions
-- `.ai-dev/android-resources.json` - Layouts, drawables, values (if res/ exists)
-- `.ai-dev/gradle-modules.json` - Multi-module structure (if settings.gradle exists)
+- `ai-context/tech_stack.md` - Shows Android framework with SDK versions
+- `ai-context/dependencies.json` - Gradle dependencies with group:artifact:version
+- `ai-context/entrypoints.md` - Android activities, services, permissions
+- `ai-context/android-resources.json` - Layouts, drawables, values (if res/ exists)
+- `ai-context/gradle-modules.json` - Multi-module structure (if settings.gradle exists)
 
 ---
 

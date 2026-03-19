@@ -1,0 +1,18 @@
+{
+  "name": "commands",
+  "path": "src/commands",
+  "files": [
+    "src/commands/ai-first.ts",
+    "src/commands/doctor.ts",
+    "src/commands/explore.ts"
+  ],
+  "entrypoints": [
+    "src/commands/ai-first.ts",
+    "src/commands/doctor.ts",
+    "src/commands/explore.ts"
+  ],
+  "dependencies": [
+    "docs",
+    "src"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "users",
+  "entrypoint": "test-projects/react-app/src/pages/UsersPage.tsx",
+  "files": [
+    "test-projects/react-app/src/pages/UsersPage.tsx"
+  ],
+  "depth": 0,
+  "layers": []
+}

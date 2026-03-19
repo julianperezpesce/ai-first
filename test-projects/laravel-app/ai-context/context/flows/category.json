@@ -1,0 +1,12 @@
+{
+  "name": "category",
+  "entrypoint": "app/Http/Controllers/Api/CategoryController.php",
+  "files": [
+    "app/Http/Controllers/Api/CategoryController.php",
+    "app/Models/Category.php"
+  ],
+  "depth": 1,
+  "layers": [
+    "api"
+  ]
+}

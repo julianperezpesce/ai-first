@@ -127,7 +127,7 @@ Implementar todas las mejoras identificadas en el análisis mediante un proceso 
 
 ### FASE 3: ARCHITECTURE ⏳ PENDIENTE
 **Branch:** `feature/phase-3-architecture`
-**Objetivo:** Renombrar ai/ a .ai-dev/ y reorganizar estructura
+**Objetivo:** Renombrar ai/ a ai-context/ y reorganizar estructura
 
 ---
 
@@ -175,7 +175,7 @@ Implementar todas las mejoras identificadas en el análisis mediante un proceso 
 - [x] Phase 2: No duplicate files, all snake_case
 - [x] Phase 2: Symbol extraction fixed for all 11 adapters
 - [x] Phase 2: Flow names sanitized (no more auth..json, add_.json)
-- [x] Phase 3: New folder structure working (.ai-dev/ instead of ai/)
+- [x] Phase 3: New folder structure working (ai-context/ instead of ai/)
 - [ ] Phase 4: Performance improvements verified
 - [ ] Phase 5: Documentation complete (ENG + ES)
 - [ ] All 11 commands work on all 11 projects

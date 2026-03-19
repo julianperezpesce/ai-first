@@ -1,0 +1,54 @@
+{
+  "totalDependencies": 6,
+  "totalModules": 5,
+  "dependencies": [
+    {
+      "source": "controllers/authController.js",
+      "target": "services/authService",
+      "type": "require"
+    },
+    {
+      "source": "controllers/userController.js",
+      "target": "services/userService",
+      "type": "require"
+    },
+    {
+      "source": "index.js",
+      "target": "controllers/authController",
+      "type": "require"
+    },
+    {
+      "source": "index.js",
+      "target": "controllers/userController",
+      "type": "require"
+    },
+    {
+      "source": "services/authService.js",
+      "target": "models/userRepository",
+      "type": "require"
+    },
+    {
+      "source": "services/userService.js",
+      "target": "models/userRepository",
+      "type": "require"
+    }
+  ],
+  "byFile": {
+    "controllers/authController.js": [
+      "services/authService"
+    ],
+    "controllers/userController.js": [
+      "services/userService"
+    ],
+    "index.js": [
+      "controllers/authController",
+      "controllers/userController"
+    ],
+    "services/authService.js": [
+      "models/userRepository"
+    ],
+    "services/userService.js": [
+      "models/userRepository"
+    ]
+  }
+}

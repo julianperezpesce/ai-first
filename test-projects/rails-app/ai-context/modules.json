@@ -1,0 +1,26 @@
+{
+  "modules": {
+    "app": {
+      "path": "app",
+      "files": [
+        "app/controllers/api/comments_controller.rb",
+        "app/controllers/api/posts_controller.rb",
+        "app/controllers/api/users_controller.rb",
+        "app/controllers/application_controller.rb",
+        "app/models/comment.rb",
+        "app/models/post.rb",
+        "app/models/user.rb",
+        "app/services/post_service.rb",
+        "app/services/user_service.rb"
+      ]
+    },
+    "config": {
+      "path": "config",
+      "files": [
+        "config/application.rb",
+        "config/environment.rb",
+        "config/routes.rb"
+      ]
+    }
+  }
+}

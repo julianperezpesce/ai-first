@@ -1,0 +1,20 @@
+{
+  "name": "user",
+  "entrypoint": "test-projects/express-api/controllers/userController.js",
+  "files": [
+    "test-projects/express-api/controllers/userController.js",
+    "test-projects/express-api/models/userRepository.js",
+    "test-projects/express-api/services/userService.js",
+    "test-projects/laravel-app/app/Models/User.php",
+    "test-projects/rails-app/app/models/user.rb",
+    "test-projects/react-app/src/services/userService.ts",
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/UserController.java",
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/models/User.java",
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/UserRepository.java",
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/services/UserService.java"
+  ],
+  "depth": 1,
+  "layers": [
+    "service"
+  ]
+}

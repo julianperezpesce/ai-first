@@ -180,7 +180,7 @@ function loadFlows(aiDir) {
  * Map changed files to features
  */
 export function mapFilesToFeatures(rootDir, files) {
-    const aiDir = path.join(rootDir, ".ai-dev");
+    const aiDir = path.join(rootDir, "ai-context");
     const featuresMap = loadFeatures(aiDir);
     const featureSet = new Set();
     for (const file of files) {
@@ -202,7 +202,7 @@ export function mapFilesToFeatures(rootDir, files) {
  * Map changed files to flows
  */
 export function mapFilesToFlows(rootDir, files) {
-    const aiDir = path.join(rootDir, ".ai-dev");
+    const aiDir = path.join(rootDir, "ai-context");
     const flowsMap = loadFlows(aiDir);
     const flowSet = new Set();
     for (const file of files) {
@@ -268,7 +268,7 @@ export function analyzeGitActivity(rootDir, options = {}) {
  * Generate git context files
  */
 export function generateGitContext(rootDir, aiDir) {
-    const targetAiDir = aiDir || path.join(rootDir, ".ai-dev");
+    const targetAiDir = aiDir || path.join(rootDir, "ai-context");
     const gitDir = path.join(targetAiDir, "git");
     ensureDir(gitDir);
     const commits = getRecentCommits(rootDir);

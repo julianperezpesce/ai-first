@@ -1,0 +1,7 @@
+{
+  "task": "jira-123",
+  "description": "",
+  "includes": [
+    "../../context/repo.json"
+  ]
+}
