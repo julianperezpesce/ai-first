@@ -7,9 +7,9 @@
 ## Quick Overview
 
 - **Pattern**: MVC (Model-View-Controller)
-- **Languages**: Markdown, JSON, JavaScript
+- **Languages**: JavaScript, JSON
 - **Frameworks**: Express.js
-- **Total Files**: 30
+- **Total Files**: 8
 
 ---
 
@@ -26,7 +26,7 @@
 
 ## Tech Stack
 
-**Languages**: Markdown, JSON, JavaScript
+**Languages**: JavaScript, JSON
 
 **Frameworks**: Express.js
 
@@ -49,7 +49,6 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `ai` | Contains 22 files |
 | `controllers` | API endpoints and request handling |
 | `index.js` | Contains 0 files |
 | `middleware` | Request/response middleware |
@@ -74,7 +73,7 @@
 ## Code Conventions
 
 ## Naming Conventions
-- **Files**: kebab-case or snake_case
+- **Files**: camelCase
 
 ## Project Structure
 
@@ -86,10 +85,10 @@
 
 ## AI Rules
 
-- Language: Use Markdown, JSON, JavaScript
+- Language: Use JavaScript, JSON
 - Frameworks: Express.js
 - Architecture: Follow MVC (Model-View-Controller) pattern
-- File naming: kebab-case or snake_case
+- File naming: camelCase
 - Main entry: package.json#scripts.start
 
 ---

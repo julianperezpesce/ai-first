@@ -147,7 +147,7 @@ export function createEdges(aiDir: string): KnowledgeEdge[] {
 }
 
 export function buildKnowledgeGraph(rootDir: string, aiDir?: string): KnowledgeGraph {
-  const targetAiDir = aiDir || path.join(rootDir, "ai");
+  const targetAiDir = aiDir || path.join(rootDir, ".ai-dev");
   const graphDir = path.join(targetAiDir, "graph");
   ensureDir(graphDir);
   const nodes = createNodes(targetAiDir);

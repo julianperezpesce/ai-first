@@ -3,7 +3,7 @@ import path from "path";
 import { scanRepo } from "../core/repoScanner.js";
 import { generateModuleGraph } from "../core/moduleGraph.js";
 export async function runExplore(rootDir, moduleName) {
-    const aiDir = path.join(rootDir, "ai");
+    const aiDir = path.join(rootDir, ".ai-dev");
     const graphFile = path.join(aiDir, "graph", "module-graph.json");
     if (!moduleName || moduleName === 'all') {
         console.log("\n📦 Repository Modules\n");

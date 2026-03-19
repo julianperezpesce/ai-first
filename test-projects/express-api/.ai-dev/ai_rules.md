@@ -6,10 +6,10 @@
 
 ## Guidelines
 
-- Language: Use Markdown, JSON, JavaScript
+- Language: Use JavaScript, JSON
 - Frameworks: Express.js
 - Architecture: Follow MVC (Model-View-Controller) pattern
-- File naming: kebab-case or snake_case
+- File naming: camelCase
 - Main entry: package.json#scripts.start
 - Dev command: npm run dev
 
@@ -27,10 +27,10 @@
 
 | Category | Value |
 |----------|-------|
-| Language | Markdown, JSON, JavaScript |
+| Language | JavaScript, JSON |
 | Framework | Express.js |
 | Architecture | MVC (Model-View-Controller) |
-| Naming | kebab-case or snake_case |
+| Naming | camelCase |
 | Indentation | unknown |
 
 ---

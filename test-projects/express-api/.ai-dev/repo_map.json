@@ -1,0 +1,100 @@
+{
+  "generated": "2026-03-19T01:00:36.355Z",
+  "totalFiles": 8,
+  "structure": {
+    "controllers": {
+      "type": "directory",
+      "children": {
+        "authController.js": {
+          "type": "file",
+          "extension": "js"
+        },
+        "userController.js": {
+          "type": "file",
+          "extension": "js"
+        }
+      }
+    },
+    "index.js": {
+      "type": "file",
+      "extension": "js"
+    },
+    "middleware": {
+      "type": "directory",
+      "children": {
+        "authMiddleware.js": {
+          "type": "file",
+          "extension": "js"
+        }
+      }
+    },
+    "models": {
+      "type": "directory",
+      "children": {
+        "userRepository.js": {
+          "type": "file",
+          "extension": "js"
+        }
+      }
+    },
+    "package.json": {
+      "type": "file",
+      "extension": "json"
+    },
+    "services": {
+      "type": "directory",
+      "children": {
+        "authService.js": {
+          "type": "file",
+          "extension": "js"
+        },
+        "userService.js": {
+          "type": "file",
+          "extension": "js"
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "controllers/authController.js",
+      "name": "authController.js",
+      "extension": "js"
+    },
+    {
+      "path": "controllers/userController.js",
+      "name": "userController.js",
+      "extension": "js"
+    },
+    {
+      "path": "index.js",
+      "name": "index.js",
+      "extension": "js"
+    },
+    {
+      "path": "middleware/authMiddleware.js",
+      "name": "authMiddleware.js",
+      "extension": "js"
+    },
+    {
+      "path": "models/userRepository.js",
+      "name": "userRepository.js",
+      "extension": "js"
+    },
+    {
+      "path": "package.json",
+      "name": "package.json",
+      "extension": "json"
+    },
+    {
+      "path": "services/authService.js",
+      "name": "authService.js",
+      "extension": "js"
+    },
+    {
+      "path": "services/userService.js",
+      "name": "userService.js",
+      "extension": "js"
+    }
+  ]
+}
