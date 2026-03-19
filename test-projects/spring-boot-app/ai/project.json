@@ -1,0 +1,17 @@
+{
+  "name": "spring-boot-app",
+  "rootDir": "test-projects/spring-boot-app",
+  "features": [
+    "src"
+  ],
+  "flows": [
+    "PostController",
+    "UserController",
+    "comment",
+    "post",
+    "user"
+  ],
+  "languages": [],
+  "frameworks": [],
+  "generatedAt": "2026-03-18T17:09:30.804Z"
+}

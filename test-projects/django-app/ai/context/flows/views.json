@@ -1,0 +1,10 @@
+{
+  "name": "views",
+  "entrypoint": "blog/views.py",
+  "files": [
+    "blog/views.py",
+    "users/views.py"
+  ],
+  "depth": 0,
+  "layers": []
+}

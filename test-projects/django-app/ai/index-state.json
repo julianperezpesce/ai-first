@@ -1,0 +1,287 @@
+{
+  "version": "1.0.0",
+  "lastIndexed": "2026-03-18T15:25:41.455Z",
+  "totalFiles": 40,
+  "files": {
+    "README.md": {
+      "path": "README.md",
+      "hash": "2b099275e8f719d2a008071b600752a7",
+      "mtime": 1773847503082.22,
+      "size": 2592,
+      "indexedAt": "2026-03-18T15:25:41.454Z"
+    },
+    "ai/ai_context.md": {
+      "path": "ai/ai_context.md",
+      "hash": "4926e5dd61c81d03cee052db56664235",
+      "mtime": 1773847524423.5146,
+      "size": 1525,
+      "indexedAt": "2026-03-18T15:25:41.454Z"
+    },
+    "ai/ai_rules.md": {
+      "path": "ai/ai_rules.md",
+      "hash": "b7db08ce64e7b0afd2e515992bc0a561",
+      "mtime": 1773847524422.5146,
+      "size": 787,
+      "indexedAt": "2026-03-18T15:25:41.454Z"
+    },
+    "ai/architecture.md": {
+      "path": "ai/architecture.md",
+      "hash": "fa4d5fbe8c4e29ebc725a92b12d88b04",
+      "mtime": 1773847524416.5146,
+      "size": 922,
+      "indexedAt": "2026-03-18T15:25:41.454Z"
+    },
+    "ai/cache.json": {
+      "path": "ai/cache.json",
+      "hash": "29106f930a901a1723c2c25d22e43f31",
+      "mtime": 1773847532764.63,
+      "size": 4384,
+      "indexedAt": "2026-03-18T15:25:41.454Z"
+    },
+    "ai/context/flows/views.json": {
+      "path": "ai/context/flows/views.json",
+      "hash": "a914f6473aa639c9261d9491913a5440",
+      "mtime": 1773847532766.63,
+      "size": 144,
+      "indexedAt": "2026-03-18T15:25:41.454Z"
+    },
+    "ai/conventions.md": {
+      "path": "ai/conventions.md",
+      "hash": "d11ac646a8916e3c6cc376f610368317",
+      "mtime": 1773847524419.5146,
+      "size": 813,
+      "indexedAt": "2026-03-18T15:25:41.454Z"
+    },
+    "ai/dependencies.json": {
+      "path": "ai/dependencies.json",
+      "hash": "ef1c6db344eea60efd35525d7edfbdc5",
+      "mtime": 1773847524421.5146,
+      "size": 6782,
+      "indexedAt": "2026-03-18T15:25:41.454Z"
+    },
+    "ai/entrypoints.md": {
+      "path": "ai/entrypoints.md",
+      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
+      "mtime": 1773847524418.5146,
+      "size": 43,
+      "indexedAt": "2026-03-18T15:25:41.454Z"
+    },
+    "ai/files.json": {
+      "path": "ai/files.json",
+      "hash": "7b7f0e91d52466a3bfc61934f7318773",
+      "mtime": 1773847541371.7488,
+      "size": 3845,
+      "indexedAt": "2026-03-18T15:25:41.454Z"
+    },
+    "ai/graph/module-graph.json": {
+      "path": "ai/graph/module-graph.json",
+      "hash": "b226564aa5093d79889b9d70969a7018",
+      "mtime": 1773847532754.6296,
+      "size": 2547,
+      "indexedAt": "2026-03-18T15:25:41.454Z"
+    },
+    "ai/graph/symbol-graph.json": {
+      "path": "ai/graph/symbol-graph.json",
+      "hash": "b1bd34e7d1007ce43b7fe133c1c2ba93",
+      "mtime": 1773847532762.63,
+      "size": 37423,
+      "indexedAt": "2026-03-18T15:25:41.454Z"
+    },
+    "ai/graph/symbol-references.json": {
+      "path": "ai/graph/symbol-references.json",
+      "hash": "99914b932bd37a50b983c5e7c90ae93b",
+      "mtime": 1773847532762.63,
+      "size": 2,
+      "indexedAt": "2026-03-18T15:25:41.454Z"
+    },
+    "ai/modules.json": {
+      "path": "ai/modules.json",
+      "hash": "cba831f3ad2e9f04973d35fad2f07b55",
+      "mtime": 1773847541371.7488,
+      "size": 688,
+      "indexedAt": "2026-03-18T15:25:41.454Z"
+    },
+    "ai/project.json": {
+      "path": "ai/project.json",
+      "hash": "446f506ec7e9c0573dfc4a245b7c7084",
+      "mtime": 1773847524425.5146,
+      "size": 199,
+      "indexedAt": "2026-03-18T15:25:41.454Z"
+    },
+    "ai/repo-map.json": {
+      "path": "ai/repo-map.json",
+      "hash": "22e7d221904a4f61d95484fab517e546",
+      "mtime": 1773847532746.6296,
+      "size": 7092,
+      "indexedAt": "2026-03-18T15:25:41.454Z"
+    },
+    "ai/repo_map.json": {
+      "path": "ai/repo_map.json",
+      "hash": "9940eb9df7de6de79da4220bc1c3ca2b",
+      "mtime": 1773847524415.5146,
+      "size": 3653,
+      "indexedAt": "2026-03-18T15:25:41.454Z"
+    },
+    "ai/repo_map.md": {
+      "path": "ai/repo_map.md",
+      "hash": "9e1e333f34d5b4166d3fca576c2c77b9",
+      "mtime": 1773847524415.5146,
+      "size": 891,
+      "indexedAt": "2026-03-18T15:25:41.454Z"
+    },
+    "ai/schema.json": {
+      "path": "ai/schema.json",
+      "hash": "9aef49ca496598670fa99edc138df4a4",
+      "mtime": 1773847524425.5146,
+      "size": 102,
+      "indexedAt": "2026-03-18T15:25:41.454Z"
+    },
+    "ai/summary.md": {
+      "path": "ai/summary.md",
+      "hash": "21d8172f53214fcb4765fdbfc60783ca",
+      "mtime": 1773847524415.5146,
+      "size": 189,
+      "indexedAt": "2026-03-18T15:25:41.454Z"
+    },
+    "ai/symbols.json": {
+      "path": "ai/symbols.json",
+      "hash": "a5f3112d44cfa4dc256b75bda253df0e",
+      "mtime": 1773847524420.5146,
+      "size": 61296,
+      "indexedAt": "2026-03-18T15:25:41.455Z"
+    },
+    "ai/tech_stack.md": {
+      "path": "ai/tech_stack.md",
+      "hash": "f5d7720e17390f42b9f81c4b3c0d1bdf",
+      "mtime": 1773847524418.5146,
+      "size": 342,
+      "indexedAt": "2026-03-18T15:25:41.455Z"
+    },
+    "ai/tools.json": {
+      "path": "ai/tools.json",
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773847524425.5146,
+      "size": 138,
+      "indexedAt": "2026-03-18T15:25:41.455Z"
+    },
+    "blog/__init__.py": {
+      "path": "blog/__init__.py",
+      "hash": "d41d8cd98f00b204e9800998ecf8427e",
+      "mtime": 1773847262320.9067,
+      "size": 0,
+      "indexedAt": "2026-03-18T15:25:41.455Z"
+    },
+    "blog/admin.py": {
+      "path": "blog/admin.py",
+      "hash": "ef8b15c55e00e9ef835b4cc1a3ae8307",
+      "mtime": 1773847452965.5286,
+      "size": 851,
+      "indexedAt": "2026-03-18T15:25:41.455Z"
+    },
+    "blog/models.py": {
+      "path": "blog/models.py",
+      "hash": "11cf32800211bc954798a3775a0c1429",
+      "mtime": 1773847281082.164,
+      "size": 1551,
+      "indexedAt": "2026-03-18T15:25:41.455Z"
+    },
+    "blog/serializers.py": {
+      "path": "blog/serializers.py",
+      "hash": "efb817010fdd412250c980c9d7b738a2",
+      "mtime": 1773847304708.4883,
+      "size": 2094,
+      "indexedAt": "2026-03-18T15:25:41.455Z"
+    },
+    "blog/urls.py": {
+      "path": "blog/urls.py",
+      "hash": "235d6b0d52e581825c76a37dba5d46f4",
+      "mtime": 1773847343339.019,
+      "size": 407,
+      "indexedAt": "2026-03-18T15:25:41.455Z"
+    },
+    "blog/views.py": {
+      "path": "blog/views.py",
+      "hash": "b51bcfc62e8a9cc4e36d6e04d0d66ac2",
+      "mtime": 1773847331379.8545,
+      "size": 3123,
+      "indexedAt": "2026-03-18T15:25:41.455Z"
+    },
+    "django_app/__init__.py": {
+      "path": "django_app/__init__.py",
+      "hash": "d41d8cd98f00b204e9800998ecf8427e",
+      "mtime": 1773847262320.9067,
+      "size": 0,
+      "indexedAt": "2026-03-18T15:25:41.455Z"
+    },
+    "django_app/settings.py": {
+      "path": "django_app/settings.py",
+      "hash": "ec0ff12dd114d0f70b04dee4e6753ded",
+      "mtime": 1773847230399.4692,
+      "size": 2283,
+      "indexedAt": "2026-03-18T15:25:41.455Z"
+    },
+    "django_app/urls.py": {
+      "path": "django_app/urls.py",
+      "hash": "646e11e6cbfc20b5a1c457bd04058b6f",
+      "mtime": 1773847241419.62,
+      "size": 311,
+      "indexedAt": "2026-03-18T15:25:41.455Z"
+    },
+    "django_app/wsgi.py": {
+      "path": "django_app/wsgi.py",
+      "hash": "8997e7b6236b6d5cc5ab76625293b138",
+      "mtime": 1773847252217.768,
+      "size": 214,
+      "indexedAt": "2026-03-18T15:25:41.455Z"
+    },
+    "manage.py": {
+      "path": "manage.py",
+      "hash": "557480f24dd7cddb10ad7fdcf39b6c79",
+      "mtime": 1773847204930.1206,
+      "size": 667,
+      "indexedAt": "2026-03-18T15:25:41.455Z"
+    },
+    "users/__init__.py": {
+      "path": "users/__init__.py",
+      "hash": "d41d8cd98f00b204e9800998ecf8427e",
+      "mtime": 1773847262320.9067,
+      "size": 0,
+      "indexedAt": "2026-03-18T15:25:41.455Z"
+    },
+    "users/admin.py": {
+      "path": "users/admin.py",
+      "hash": "3a42200ccb8543463198e6df6bbf3601",
+      "mtime": 1773847468180.7383,
+      "size": 1024,
+      "indexedAt": "2026-03-18T15:25:41.455Z"
+    },
+    "users/models.py": {
+      "path": "users/models.py",
+      "hash": "861e708ed26ccbcb76365faf6d540ac6",
+      "mtime": 1773847363660.2983,
+      "size": 1748,
+      "indexedAt": "2026-03-18T15:25:41.455Z"
+    },
+    "users/serializers.py": {
+      "path": "users/serializers.py",
+      "hash": "709f852da00f6f58d0b9cdb84bb7fe24",
+      "mtime": 1773847389572.655,
+      "size": 3196,
+      "indexedAt": "2026-03-18T15:25:41.455Z"
+    },
+    "users/urls.py": {
+      "path": "users/urls.py",
+      "hash": "c331ed123fa4e1121d48eead9befbb0d",
+      "mtime": 1773847438434.3281,
+      "size": 351,
+      "indexedAt": "2026-03-18T15:25:41.455Z"
+    },
+    "users/views.py": {
+      "path": "users/views.py",
+      "hash": "91fa1403cd82ec70898d487250d9673b",
+      "mtime": 1773847426896.1692,
+      "size": 4756,
+      "indexedAt": "2026-03-18T15:25:41.455Z"
+    }
+  }
+}

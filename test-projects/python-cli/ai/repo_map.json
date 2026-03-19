@@ -1,0 +1,99 @@
+{
+  "generated": "2026-03-18T01:14:52.506Z",
+  "totalFiles": 9,
+  "structure": {
+    "__init__.py": {
+      "type": "file",
+      "extension": "py"
+    },
+    "cli": {
+      "type": "directory",
+      "children": {
+        "__init__.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "add_command.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "list_command.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "remove_command.py": {
+          "type": "file",
+          "extension": "py"
+        }
+      }
+    },
+    "main.py": {
+      "type": "file",
+      "extension": "py"
+    },
+    "models": {
+      "type": "directory",
+      "children": {
+        "__init__.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "task.py": {
+          "type": "file",
+          "extension": "py"
+        },
+        "task_repository.py": {
+          "type": "file",
+          "extension": "py"
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "cli/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "cli/add_command.py",
+      "name": "add_command.py",
+      "extension": "py"
+    },
+    {
+      "path": "cli/list_command.py",
+      "name": "list_command.py",
+      "extension": "py"
+    },
+    {
+      "path": "cli/remove_command.py",
+      "name": "remove_command.py",
+      "extension": "py"
+    },
+    {
+      "path": "main.py",
+      "name": "main.py",
+      "extension": "py"
+    },
+    {
+      "path": "models/__init__.py",
+      "name": "__init__.py",
+      "extension": "py"
+    },
+    {
+      "path": "models/task.py",
+      "name": "task.py",
+      "extension": "py"
+    },
+    {
+      "path": "models/task_repository.py",
+      "name": "task_repository.py",
+      "extension": "py"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "comment",
+  "entrypoint": "app/Http/Controllers/Api/CommentController.php",
+  "files": [
+    "app/Http/Controllers/Api/CommentController.php",
+    "app/Models/Comment.php"
+  ],
+  "depth": 1,
+  "layers": [
+    "api"
+  ]
+}
