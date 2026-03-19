@@ -7,9 +7,9 @@
 ## Quick Overview
 
 - **Pattern**: Flat / Simple Structure
-- **Languages**: JSON, Markdown, TypeScript, CSS
+- **Languages**: JSON, Markdown, TypeScript, CSS, Python, JavaScript, PHP, Ruby, TypeScript (React), Java
 - **Frameworks**: Vue.js, Nuxt.js, TypeScript
-- **Total Files**: 80
+- **Total Files**: 565
 
 ---
 
@@ -26,11 +26,11 @@
 
 ## Tech Stack
 
-**Languages**: JSON, Markdown, TypeScript, CSS
+**Languages**: JSON, Markdown, TypeScript, CSS, Python, JavaScript, PHP, Ruby, TypeScript (React), Java
 
 **Frameworks**: Vue.js, Nuxt.js, TypeScript
 
-**Package Managers**: npm
+**Package Managers**: npm, Composer
 
 ---
 
@@ -41,21 +41,22 @@
 
 ## Layers Identified
 - Infrastructure
+- Tests
 - Config
 
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
 | `.netlify` | Contains 1 files |
+| `ANALISIS_COMPLETO.md` | Contains 0 files |
+| `ANALISIS_MEJORAS.md` | Contains 0 files |
+| `BUGS.md` | Contains 0 files |
 | `CHANGELOG.md` | Contains 0 files |
 | `CONTRIBUTING.md` | Contains 0 files |
 | `FLOW.md` | Contains 0 files |
+| `PLAN_MEJORAS.md` | Contains 0 files |
 | `README.es.md` | Contains 0 files |
 | `README.md` | Contains 0 files |
-| `ai` | Contains 23 files |
-| `docs` | Contains 15 files |
-| `examples` | Contains 4 files |
-| `package-lock.json` | Contains 0 files |
 
 
 ---
@@ -65,7 +66,7 @@
 ### Library
 - `dist/index.js` - Main entry point
 - `docs/.vitepress/theme/index.ts` - Entry point
-- `src/index.ts` - Entry point
+- `src/core/adapters/community/index.ts` - Entry point
 
 ### Cli
 - `dist/commands/ai-first.js` - CLI: ai-first
@@ -77,6 +78,11 @@
 ### Server
 - `package.json#scripts.dev` - dev: node --loader ts-node/esm src/commands/ai-first.ts
 - `package.json#scripts.docs:dev` - docs:dev: vitepress dev docs
+- `test-projects/nestjs-backend/src/main.ts` - Main
+
+### Test
+- `package.json#scripts.test` - test: vitest run
+- `package.json#scripts.test:watch` - test:watch: vitest
 
 ---
 
@@ -87,6 +93,7 @@
 
 ## Project Structure
 - **Source**: src/
+- **Tests**: test/
 
 ## Code Style
 - **Semicolons**: Required
@@ -96,11 +103,11 @@
 
 ## AI Rules
 
-- Language: Use JSON, Markdown, TypeScript, CSS
+- Language: Use JSON, Markdown, TypeScript, CSS, Python, JavaScript, PHP, Ruby, TypeScript (React), Java
 - Frameworks: Vue.js, Nuxt.js, TypeScript
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
-- Source directory: src/
+- Test files: *.test.{ts,js}
 
 ---
 

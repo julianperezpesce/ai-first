@@ -66,6 +66,11 @@
       "ext": "json"
     },
     {
+      "path": "ai/index-state.json",
+      "name": "index-state.json",
+      "ext": "json"
+    },
+    {
       "path": "ai/modules.json",
       "name": "modules.json",
       "ext": "json"

@@ -289,60 +289,25 @@ ai-first init --output ./docs/ai
 
 # Directorio raíz personalizado
 ai-first init --root ./my-project
-TH|```
-TH|
-TH|## 📦 Context Control Packs (CCP)
-TH|
-TH|CCP (Context Control Packs) te permite crear contextos reutilizables y específicos para diferentes flujos de trabajo de IA.
-TH|
-TH|### Cómo Funciona
-TH|
-TH|1. **Generar Módulos de Contexto**: `ai-first init` crea módulos en `ai/context/`
-TH|2. **Crear un CCP**: Define qué módulos incluir para una tarea específica
-TH|3. **Usar en IA**: Referencia el CCP al trabajar con agentes de IA
-TH|
-TH|### Comandos CCP
-TH|
-TH|```bash
-TH|# Crear un nuevo CCP con módulos de contexto específicos
-TH|ai-first ccp create tarea-auth --include repo,auth,api --description "Trabajo en autenticación"
-TH|
-TH|# Listar todos los CCPs disponibles
-TH|ai-first ccp list
-TH|
-TH|# Mostrar detalles del CCP
-TH|ai-first ccp show tarea-auth
-TH|```
-TH|
-TH|### Estructura CCP
-TH|
-TH|```
-TH|ai/
-TH|├── context/           # Módulos de contexto (auto-generados)
-TH|│   ├── repo.json      # Contexto base del repositorio
-TH|│   ├── auth.json      # Contexto de autenticación
-TH|│   └── <feature>.json
-TH|│
-TH|└── ccp/              # Definiciones de CCP
-TH|    └── <nombre>/
-TH|        └── context.json
-TH|```
-TH|
-TH|Ejemplo CCP (context.json)
-TH|
-TH|```json
-TH|{
-TH|  "task": "auth-feature",
-TH|  "description": "Trabajo en autenticación",
-TH|  "includes": [
-TH|    "../../context/repo.json",
-TH|    "../../context/auth.json",
-TH|    "../../context/api.json"
-TH|  ]
-TH|}
-TH|```
-TH|
-Caso de uso: Crea contextos específicos como `"fix-bug"`, `"add-feature"`, `"refactor"`, etc.
+```
+
+---
+
+## 📦 Context Control Packs (CCP)
+
+CCP (Context Control Packs) te permite crear contextos reutilizables y específicos para diferentes flujos de trabajo de IA.
+
+### Cómo Funciona
+
+1. **Generar Módulos de Contexto**: `ai-first init` crea módulos en `ai/context/`
+2. **Crear un CCP**: Define qué módulos incluir para una tarea específica
+3. **Usar en IA**: Referencia el CCP al trabajar con agentes de IA
+
+### Ejemplo
+
+```bash
+ai-first ccp create tarea-auth --include repo,auth,api --description "Trabajo en autenticación"
+```
 
 ---
 
@@ -392,68 +357,50 @@ Los flows representan cadenas de ejecución de negocio desde entrypoints.
 
 ---
 
-## 🌎 Idiomas
-TH|
-TH|---
+## 🤖 Soporte Android/Kotlin
 
----
+ai-first detecta e indexa automáticamente proyectos Android/Kotlin:
 
-## 🌎 Idiomas
+- **Detección de lenguaje**: Kotlin (.kt)
+- **Detección de framework**: Android (vía build.gradle, AndroidManifest.xml)
+- **Análisis de dependencias**: Dependencias Gradle (implementation, api, compile)
+- **Puntos de entrada**: Activities, Services, BroadcastReceivers desde AndroidManifest.xml
+- **Recursos**: Indexa res/layout, res/drawable, res/values
+- **Multi-módulo**: Detecta módulos Gradle desde settings.gradle
 
-Esta documentación está disponible en:
+### Archivos generados para proyectos Android
 
-* English (por defecto)
-* Español
-
----
-
-## 🌍 Soporte Multi-Idioma y Frameworks
-
-### Lenguajes
-
-| Categoría | Lenguajes |
-|-----------|-----------|
-| **Web** | JavaScript, TypeScript, Python, Go, Rust |
-| **Backend** | Java, C#, PHP, Ruby, Go, Rust, Kotlin |
-| **Móvil** | Swift, Kotlin, Android |
-| **Frontend** | Vue, Svelte, React, HTML, CSS, SCSS |
-| **Testing** | Jest, Vitest, pytest, Mocha, RSpec |
-
-### Frameworks (Probados)
-
-| Framework | Lenguaje | Proyecto de Test |
-|-----------|----------|------------------|
-| **Django** | Python | `test-projects/django-app` |
-| **FastAPI** | Python | `test-projects/fastapi-app` |
-| **Flask** | Python | `test-projects/flask-app` |
-| **Laravel** | PHP | `test-projects/laravel-app` |
-| **Rails** | Ruby | `test-projects/rails-app` |
-| **Spring Boot** | Java | `test-projects/spring-boot-app` |
-| Express.js | JavaScript | `test-projects/express-api` |
-| NestJS | TypeScript | `test-projects/nestjs-backend` |
-| React | JavaScript | `test-projects/react-app` |
-| Python CLI | Python | `test-projects/python-cli` |
-| Salesforce DX | Apex | `test-projects/salesforce-cli` |
+- `ai/tech_stack.md` - Muestra Android con versiones de SDK
+- `ai/dependencies.json` - Dependencias Gradle en formato group:artifact:version
+- `ai/entrypoints.md` - Activities, services, permisos de Android
+- `ai/android-resources.json` - Layouts, drawables, values (si existe res/)
+- `ai/gradle-modules.json` - Estructura multi-módulo (si existe settings.gradle)
 
 ---
 
 ## 📋 Roadmap
 
-### v1.1 (Próximamente)
-- [ ] Modo watch para auto-regeneración
-- [ ] Integración con Git (analizar cambios recientes)
+### Phase 1 ✅ (Completado)
+- Infraestructura de testing con 11 proyectos de prueba
 
-### v1.2 (Planificado)
-- [x] Soporte PHP (Laravel test project)
-- [x] Soporte Ruby (Rails test project)
+### Phase 2 ✅ (Completado)
+- Fixes de calidad: extracción de símbolos, sanitización de nombres de flows
+- Soporte para parsers PHP y Ruby agregado
+- 11 adapters funcionando (100% cobertura)
+
+### Phase 3 (Planificado)
+- [ ] Indexación semántica mejorada
+- [ ] Sistema de plugins para analizadores custom
 - [ ] Soporte Scala
-- [ ] Integración LSP para símbolos más ricos
-- [ ] Plugins de analizadores personalizados
+- [ ] Soporte de archivo de configuración (`ai-first.config.json`)
+- [ ] Sistema de reglas/plugins custom
+- [ ] Plantillas de integración CI/CD
 
-### v2.0 (Futuro)
-- [ ] Análisis multi-repositorio
-- [ ] Extensiones de IDE (VS Code, JetBrains)
-- [ ] Integración CI/CD
+### Phase 4 (Futuro)
+- [ ] Integración con Git (analizar cambios recientes)
+- [ ] Contexto aware de diff (qué cambió desde última ejecución)
+- [ ] Modo interactivo
+- [ ] Extensión de VS Code
 
 ---
 
@@ -493,27 +440,30 @@ Ver [docs/architecture.md](./docs/architecture.md) para arquitectura interna.
 ¡Danos una ⭐ si este proyecto te ayudó!
 
 ---
-KP|
-VT|## 🤖 Soporte Android/Kotlin
-HB|
-XZ|ai-first detecta e indexa automáticamente proyectos Android/Kotlin:
-HB|
-RV|- **Detección de lenguaje**: Kotlin (.kt)
+
+## 🤖 Soporte Android/Kotlin
+
+ai-first detecta e indexa automáticamente proyectos Android/Kotlin:
+
+- **Detección de lenguaje**: Kotlin (.kt)
 - **Detección de framework**: Android (vía build.gradle, AndroidManifest.xml)
 - **Análisis de dependencias**: Dependencias Gradle (implementation, api, compile)
 - **Puntos de entrada**: Activities, Services, BroadcastReceivers desde AndroidManifest.xml
 - **Recursos**: Indexa res/layout, res/drawable, res/values
 - **Multi-módulo**: Detecta módulos Gradle desde settings.gradle
-HB|
-XZ|### Archivos generados para proyectos Android
-HB|
-XZ|- `ai/tech_stack.md` - Muestra Android con versiones de SDK
+
+### Archivos generados para proyectos Android
+
+- `ai/tech_stack.md` - Muestra Android con versiones de SDK
 - `ai/dependencies.json` - Dependencias Gradle en formato group:artifact:version
 - `ai/entrypoints.md` - Activities, services, permisos de Android
 - `ai/android-resources.json` - Layouts, drawables, values (si existe res/)
 - `ai/gradle-modules.json` - Estructura multi-módulo (si existe settings.gradle)
-HB|
-VT|---
+
+---
+
 ## 📄 Licencia
+
+MIT © [Julian Perez Pesce](https://github.com/julianperezpesce)
 
 MIT © [Julian Perez Pesce](https://github.com/julianperezpesce)

@@ -1,0 +1,9 @@
+{
+  "name": "doctor",
+  "entrypoint": "src/commands/doctor.ts",
+  "files": [
+    "src/commands/doctor.ts"
+  ],
+  "depth": 0,
+  "layers": []
+}

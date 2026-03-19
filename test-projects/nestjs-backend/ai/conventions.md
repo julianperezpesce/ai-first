@@ -1,7 +1,7 @@
 # Code Conventions
 
 ## Naming Conventions
-- **Files**: camelCase
+- **Files**: kebab-case or snake_case
 
 ## Project Structure
 - **Source**: src/
@@ -14,7 +14,7 @@
 
 | Element | Convention |
 |---------|------------|
-| Files | camelCase |
+| Files | kebab-case or snake_case |
 | Components | unknown |
 | Test Files | unknown |
 | Directories | src/ |

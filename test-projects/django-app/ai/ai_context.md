@@ -7,9 +7,9 @@
 ## Quick Overview
 
 - **Pattern**: Flat / Simple Structure
-- **Languages**: Markdown, Python
+- **Languages**: Markdown, JSON, Python
 - **Frameworks**: None
-- **Total Files**: 18
+- **Total Files**: 41
 
 ---
 
@@ -26,7 +26,7 @@
 
 ## Tech Stack
 
-**Languages**: Markdown, Python
+**Languages**: Markdown, JSON, Python
 
 ---
 
@@ -39,6 +39,7 @@
 | Module | Responsibility |
 |--------|----------------|
 | `README.md` | Contains 0 files |
+| `ai` | Contains 23 files |
 | `blog` | Contains 6 files |
 | `django_app` | Contains 4 files |
 | `manage.py` | Contains 0 files |
@@ -66,7 +67,7 @@
 
 ## AI Rules
 
-- Language: Use Markdown, Python
+- Language: Use Markdown, JSON, Python
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
 

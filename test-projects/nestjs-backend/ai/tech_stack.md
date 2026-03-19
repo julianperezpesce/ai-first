@@ -1,6 +1,6 @@
 # Technology Stack
 
-**Languages**: JSON, TypeScript
+**Languages**: Markdown, JSON, TypeScript
 
 **Frameworks**: TypeScript
 
@@ -9,6 +9,7 @@
 **Package Managers**: npm
 
 ## Languages
+- Markdown
 - JSON
 - TypeScript
 

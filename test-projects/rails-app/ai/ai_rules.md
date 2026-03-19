@@ -6,7 +6,7 @@
 
 ## Guidelines
 
-- Language: Use Markdown, Ruby
+- Language: Use Markdown, JSON, Ruby
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
 
@@ -24,7 +24,7 @@
 
 | Category | Value |
 |----------|-------|
-| Language | Markdown, Ruby |
+| Language | Markdown, JSON, Ruby |
 | Framework | N/A |
 | Architecture | Flat / Simple Structure |
 | Naming | PascalCase |

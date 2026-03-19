@@ -6,11 +6,17 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
+| `ai` | Contains 28 files |
 | `package.json` | Contains 0 files |
 | `src` | Contains 8 files |
 
 
 ## Module Details
+
+### ai
+- **Path**: `ai`
+- **Responsibility**: Contains 28 files
+
 
 ### package.json
 - **Path**: `package.json`

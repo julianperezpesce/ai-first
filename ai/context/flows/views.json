@@ -1,0 +1,14 @@
+{
+  "name": "views",
+  "entrypoint": "test-projects/django-app/blog/views.py",
+  "files": [
+    "test-projects/django-app/blog/views.py",
+    "test-projects/react-app/src/services/userService.ts",
+    "src/analyzers/entrypoints.ts"
+  ],
+  "depth": 4,
+  "layers": [
+    "unknown",
+    "service"
+  ]
+}

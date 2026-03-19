@@ -5,6 +5,7 @@
 
 ## Project Structure
 - **Source**: src/
+- **Tests**: test/
 
 ## Code Style
 - **Semicolons**: Required
@@ -16,7 +17,7 @@
 |---------|------------|
 | Files | PascalCase |
 | Components | unknown |
-| Test Files | unknown |
+| Test Files | *.test.{ts,js} |
 | Directories | src/ |
 
 ## Project Structure
@@ -24,7 +25,7 @@
 | Directory | Location |
 |-----------|----------|
 | Source | src/ |
-| Tests | unknown |
+| Tests | test/ |
 | Config | unknown |
 
 ## Code Style

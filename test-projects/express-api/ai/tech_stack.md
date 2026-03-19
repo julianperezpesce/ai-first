@@ -1,6 +1,6 @@
 # Technology Stack
 
-**Languages**: JavaScript, JSON
+**Languages**: Markdown, JSON, JavaScript
 
 **Frameworks**: Express.js
 
@@ -9,8 +9,9 @@
 **Package Managers**: npm
 
 ## Languages
-- JavaScript
+- Markdown
 - JSON
+- JavaScript
 
 ## Frameworks
 - Express.js

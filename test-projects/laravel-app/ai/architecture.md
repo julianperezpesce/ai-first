@@ -10,6 +10,7 @@
 | Module | Responsibility |
 |--------|----------------|
 | `README.md` | Contains 0 files |
+| `ai` | Contains 27 files |
 | `app` | Contains 8 files |
 | `bootstrap` | Contains 1 files |
 | `composer.json` | Contains 0 files |
@@ -21,6 +22,11 @@
 ### README.md
 - **Path**: `README.md`
 - **Responsibility**: Contains 0 files
+
+
+### ai
+- **Path**: `ai`
+- **Responsibility**: Contains 27 files
 
 
 ### app

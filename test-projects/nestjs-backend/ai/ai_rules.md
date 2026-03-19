@@ -6,10 +6,10 @@
 
 ## Guidelines
 
-- Language: Use JSON, TypeScript
+- Language: Use Markdown, JSON, TypeScript
 - Frameworks: TypeScript
 - Architecture: Follow Flat / Simple Structure pattern
-- File naming: camelCase
+- File naming: kebab-case or snake_case
 - Source directory: src/
 - Main entry: package.json#scripts.start
 - Dev command: npm run start:dev
@@ -29,10 +29,10 @@
 
 | Category | Value |
 |----------|-------|
-| Language | JSON, TypeScript |
+| Language | Markdown, JSON, TypeScript |
 | Framework | TypeScript |
 | Architecture | Flat / Simple Structure |
-| Naming | camelCase |
+| Naming | kebab-case or snake_case |
 | Indentation | unknown |
 
 ---

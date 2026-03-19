@@ -1,931 +1,4123 @@
 {
   "version": "1.0.0",
-  "lastIndexed": "2026-03-11T19:50:01.981Z",
-  "totalFiles": 132,
+  "lastIndexed": "2026-03-18T19:21:24.581Z",
+  "totalFiles": 588,
   "files": {
     ".netlify/state.json": {
       "path": ".netlify/state.json",
       "hash": "18a32a19520dc577b2a8faa5a5b24660",
       "mtime": 1773089671614.5596,
       "size": 53,
-      "indexedAt": "2026-03-10T15:57:22.297Z"
+      "indexedAt": "2026-03-18T19:21:24.548Z"
+    },
+    "ANALISIS_COMPLETO.md": {
+      "path": "ANALISIS_COMPLETO.md",
+      "hash": "d83e2304adc6e0c3085b1e60ac3da61c",
+      "mtime": 1773845526410.2007,
+      "size": 13713,
+      "indexedAt": "2026-03-18T19:21:24.548Z"
+    },
+    "ANALISIS_MEJORAS.md": {
+      "path": "ANALISIS_MEJORAS.md",
+      "hash": "be77cf9d0386bb0bd0b8a01050837005",
+      "mtime": 1773797381719.1362,
+      "size": 9666,
+      "indexedAt": "2026-03-18T19:21:24.548Z"
+    },
+    "BUGS.md": {
+      "path": "BUGS.md",
+      "hash": "c0173c586524a860ecdc3e6a2d468a1c",
+      "mtime": 1773797238389.9348,
+      "size": 16405,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
     },
     "CHANGELOG.md": {
       "path": "CHANGELOG.md",
-      "hash": "f72229ac7e9949de6ebbd8c2f3d3599c",
-      "mtime": 1773252024284.6418,
-      "size": 11977,
-      "indexedAt": "2026-03-11T18:01:22.437Z"
+      "hash": "960656671015416f3ee6715f3d647867",
+      "mtime": 1773797150695.5867,
+      "size": 5508,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
     },
     "CONTRIBUTING.md": {
       "path": "CONTRIBUTING.md",
       "hash": "f08bff9a750bbe18e8e2d20a291aea6b",
       "mtime": 1773008956996.6243,
       "size": 1768,
-      "indexedAt": "2026-03-10T15:57:22.297Z"
+      "indexedAt": "2026-03-18T19:21:24.549Z"
     },
     "FLOW.md": {
       "path": "FLOW.md",
       "hash": "3229cb5aed9575b09415c641ffa24a81",
       "mtime": 1773010195719.8748,
       "size": 8721,
-      "indexedAt": "2026-03-10T15:57:22.297Z"
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "PLAN_MEJORAS.md": {
+      "path": "PLAN_MEJORAS.md",
+      "hash": "8429a595b64327888c55f06fe67a7cbe",
+      "mtime": 1773854140224.48,
+      "size": 8566,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
     },
     "README.es.md": {
       "path": "README.es.md",
-      "hash": "1e963dbc24cb46d7e495097a37d65ec4",
-      "mtime": 1773154992628.9292,
-      "size": 9684,
-      "indexedAt": "2026-03-10T15:57:22.297Z"
+      "hash": "01dec2cc8fb7dd7d1a4812f42b193d07",
+      "mtime": 1773165384491.799,
+      "size": 13051,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
     },
     "README.md": {
       "path": "README.md",
-      "hash": "d29a7181460fd6a21e0cd7e2e54d8a10",
-      "mtime": 1773154496028.6777,
-      "size": 10960,
-      "indexedAt": "2026-03-10T15:57:22.297Z"
+      "hash": "9712f00575eb69d064e44c9ca7f12097",
+      "mtime": 1773165282282.2097,
+      "size": 14162,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "TEST_RESULTS.md": {
+      "path": "TEST_RESULTS.md",
+      "hash": "4dcc48b362e754348f1c26a78a8a419a",
+      "mtime": 1773795118813.5083,
+      "size": 4172,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "TEST_RESULTS_COMPARATIVE.md": {
+      "path": "TEST_RESULTS_COMPARATIVE.md",
+      "hash": "f885cecf865df3e9fbe9e196436dd98a",
+      "mtime": 1773795738092.3345,
+      "size": 5121,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "TEST_RESULTS_COMPLETE.md": {
+      "path": "TEST_RESULTS_COMPLETE.md",
+      "hash": "28ab6574db905dacefaf1b46ac41bb1a",
+      "mtime": 1773796602392.1162,
+      "size": 5691,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "TEST_RESULTS_COMPREHENSIVE.md": {
+      "path": "TEST_RESULTS_COMPREHENSIVE.md",
+      "hash": "e8dceb19849928c2ed969cb811b647b9",
+      "mtime": 1773796206591.9136,
+      "size": 7438,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "TEST_RESULTS_PHASE1.md": {
+      "path": "TEST_RESULTS_PHASE1.md",
+      "hash": "cfd4aad15d6b273528faf0c43a4f12de",
+      "mtime": 1773854897635.4668,
+      "size": 15094,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
     },
     "ai/ai_context.md": {
       "path": "ai/ai_context.md",
-      "hash": "7787cbedd4dda0c26a5b985dc0a38e60",
-      "mtime": 1773158175579.6672,
-      "size": 2463,
-      "indexedAt": "2026-03-10T15:57:22.297Z"
+      "hash": "ad4a51ec2a6277f097ec9a80c5517686",
+      "mtime": 1773861683213.9294,
+      "size": 2896,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
     },
     "ai/ai_rules.md": {
       "path": "ai/ai_rules.md",
-      "hash": "9db46ea950b6a0fc468fde147dadbd93",
-      "mtime": 1773158175579.6672,
-      "size": 1030,
-      "indexedAt": "2026-03-10T15:57:22.297Z"
+      "hash": "468baddf7848a3e0d49328e4e75cb495",
+      "mtime": 1773861683213.9294,
+      "size": 1207,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
     },
     "ai/architecture.md": {
       "path": "ai/architecture.md",
-      "hash": "b3ffc20337f9f5aa678417304cb841c0",
-      "mtime": 1773158175079.659,
-      "size": 1828,
-      "indexedAt": "2026-03-10T15:57:22.297Z"
+      "hash": "ac965d6508a0baac14f2a5e039373190",
+      "mtime": 1773861683115.9277,
+      "size": 2661,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
     },
     "ai/cache.json": {
       "path": "ai/cache.json",
-      "hash": "8d74d54110e5e6abb7245bc6b73f2ba4",
-      "mtime": 1773095750167.667,
-      "size": 9109,
-      "indexedAt": "2026-03-10T15:57:22.297Z"
+      "hash": "72fa0ce010856ad543d47330380ebee1",
+      "mtime": 1773861683726.9375,
+      "size": 82840,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/ccp/jira-123/context.json": {
+      "path": "ai/ccp/jira-123/context.json",
+      "hash": "60531ec055a219c58dfde8ae0d511c8a",
+      "mtime": 1773162450033.8916,
+      "size": 96,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/context/features/commands.json": {
+      "path": "ai/context/features/commands.json",
+      "hash": "48e3fd06862409e55b7e154a6683071a",
+      "mtime": 1773851281856.6865,
+      "size": 323,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/context/features/src.json": {
+      "path": "ai/context/features/src.json",
+      "hash": "cdc2cf9c106cf259a0a96d6e4001dd21",
+      "mtime": 1773861683871.9397,
+      "size": 1974,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/context/features/test-projects.json": {
+      "path": "ai/context/features/test-projects.json",
+      "hash": "3cf9abe53c00499e19f446bb5e33afdc",
+      "mtime": 1773861683871.9397,
+      "size": 3356,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/context/flows/account.json": {
+      "path": "ai/context/flows/account.json",
+      "hash": "b2c5f559c33e0b7bcf8ef848bbf94fc1",
+      "mtime": 1773851281856.6865,
+      "size": 260,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/context/flows/add_.json": {
+      "path": "ai/context/flows/add_.json",
+      "hash": "55a902e5509ae357f962e04591bb8bf5",
+      "mtime": 1773861683249.93,
+      "size": 181,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/context/flows/ai-first.json": {
+      "path": "ai/context/flows/ai-first.json",
+      "hash": "519e23e52c3fd00fe7620dcdda3dfd8a",
+      "mtime": 1773861683248.93,
+      "size": 147,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/context/flows/api.json": {
+      "path": "ai/context/flows/api.json",
+      "hash": "b6d2b3b5f66876810647907f3ce64cb8",
+      "mtime": 1773861683249.93,
+      "size": 174,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/context/flows/auth..json": {
+      "path": "ai/context/flows/auth..json",
+      "hash": "2c4c9ca9f58b85fe40411c2c41c7623d",
+      "mtime": 1773861683249.93,
+      "size": 269,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/context/flows/auth.json": {
+      "path": "ai/context/flows/auth.json",
+      "hash": "5cc3201e74ffb877bc40cf53d0f1a022",
+      "mtime": 1773861683248.93,
+      "size": 332,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/context/flows/category.json": {
+      "path": "ai/context/flows/category.json",
+      "hash": "cf87b916cb3c943136cf8f3539ef65dc",
+      "mtime": 1773861683248.93,
+      "size": 315,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/context/flows/comment.json": {
+      "path": "ai/context/flows/comment.json",
+      "hash": "add34ffed48b550e174dfca7f1625e7b",
+      "mtime": 1773861683248.93,
+      "size": 659,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/context/flows/comments_.json": {
+      "path": "ai/context/flows/comments_.json",
+      "hash": "2bb1c4a68b2326aedd9c8294288978c3",
+      "mtime": 1773861683249.93,
+      "size": 245,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/context/flows/dashboard.json": {
+      "path": "ai/context/flows/dashboard.json",
+      "hash": "e2cec18eb964929e180e23dece8417c0",
+      "mtime": 1773851281857.6865,
+      "size": 202,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/context/flows/doctor.json": {
+      "path": "ai/context/flows/doctor.json",
+      "hash": "7ea1481871abde355cad12cf6529bd3e",
+      "mtime": 1773861683248.93,
+      "size": 141,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/context/flows/explore.json": {
+      "path": "ai/context/flows/explore.json",
+      "hash": "dc98cfe5667da6160b45c9dec5adfd11",
+      "mtime": 1773861683248.93,
+      "size": 144,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/context/flows/list_.json": {
+      "path": "ai/context/flows/list_.json",
+      "hash": "1d8c41032eb16cb916cbcdfe05b21468",
+      "mtime": 1773861683249.93,
+      "size": 184,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/context/flows/login.json": {
+      "path": "ai/context/flows/login.json",
+      "hash": "2990a4b77d43e47f42d40d72cd6686d0",
+      "mtime": 1773851281857.6865,
+      "size": 190,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/context/flows/opportunity.json": {
+      "path": "ai/context/flows/opportunity.json",
+      "hash": "5807c6713416c0918fe8cf87561d0c86",
+      "mtime": 1773851281857.6865,
+      "size": 272,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/context/flows/post.json": {
+      "path": "ai/context/flows/post.json",
+      "hash": "378facf71a8606f3ee160d2473263379",
+      "mtime": 1773861683248.93,
+      "size": 744,
+      "indexedAt": "2026-03-18T19:21:24.549Z"
+    },
+    "ai/context/flows/posts_.json": {
+      "path": "ai/context/flows/posts_.json",
+      "hash": "3b2580700cfb6b1a8138d30df99399db",
+      "mtime": 1773861683249.93,
+      "size": 236,
+      "indexedAt": "2026-03-18T19:21:24.550Z"
+    },
+    "ai/context/flows/remove_.json": {
+      "path": "ai/context/flows/remove_.json",
+      "hash": "f5536b94612783995e76dc8ed74a28da",
+      "mtime": 1773861683249.93,
+      "size": 190,
+      "indexedAt": "2026-03-18T19:21:24.550Z"
+    },
+    "ai/context/flows/routes.json": {
+      "path": "ai/context/flows/routes.json",
+      "hash": "00b67f4db96c2a8fab4422b20f5cd534",
+      "mtime": 1773861683248.93,
+      "size": 390,
+      "indexedAt": "2026-03-18T19:21:24.550Z"
+    },
+    "ai/context/flows/routes.py.json": {
+      "path": "ai/context/flows/routes.py.json",
+      "hash": "881c3c9641e454634cfbf12afe83b8bc",
+      "mtime": 1773861683871.9397,
+      "size": 448,
+      "indexedAt": "2026-03-18T19:21:24.550Z"
+    },
+    "ai/context/flows/user.json": {
+      "path": "ai/context/flows/user.json",
+      "hash": "93d4e3c2656f297d9a71e4aaa51b7fd3",
+      "mtime": 1773861683248.93,
+      "size": 879,
+      "indexedAt": "2026-03-18T19:21:24.550Z"
+    },
+    "ai/context/flows/users..json": {
+      "path": "ai/context/flows/users..json",
+      "hash": "bba4acffbadec25f444b28379acb5294",
+      "mtime": 1773861683249.93,
+      "size": 276,
+      "indexedAt": "2026-03-18T19:21:24.550Z"
+    },
+    "ai/context/flows/users.json": {
+      "path": "ai/context/flows/users.json",
+      "hash": "f273e00f06ca0730ce57f646168d0633",
+      "mtime": 1773851281858.6865,
+      "size": 190,
+      "indexedAt": "2026-03-18T19:21:24.550Z"
+    },
+    "ai/context/flows/users_.json": {
+      "path": "ai/context/flows/users_.json",
+      "hash": "70747fc217ba5a01487c3870e788f701",
+      "mtime": 1773861683249.93,
+      "size": 236,
+      "indexedAt": "2026-03-18T19:21:24.550Z"
+    },
+    "ai/context/flows/views.json": {
+      "path": "ai/context/flows/views.json",
+      "hash": "5c601564d4eb4a68e12a312e74ffad13",
+      "mtime": 1773861683248.93,
+      "size": 219,
+      "indexedAt": "2026-03-18T19:21:24.550Z"
+    },
+    "ai/context/flows/views.py.json": {
+      "path": "ai/context/flows/views.py.json",
+      "hash": "92e219664bd09fef678ee7fd1d7056ab",
+      "mtime": 1773861683871.9397,
+      "size": 302,
+      "indexedAt": "2026-03-18T19:21:24.550Z"
+    },
+    "ai/context/repo.json": {
+      "path": "ai/context/repo.json",
+      "hash": "bd1c6fa8dd53ef2812310be1b0fb660c",
+      "mtime": 1773162421927.4534,
+      "size": 1529,
+      "indexedAt": "2026-03-18T19:21:24.550Z"
+    },
+    "ai/context/utils.json": {
+      "path": "ai/context/utils.json",
+      "hash": "1e24ba3674bfffeb902de264f3bfe104",
+      "mtime": 1773162421927.4534,
+      "size": 121,
+      "indexedAt": "2026-03-18T19:21:24.550Z"
     },
     "ai/conventions.md": {
       "path": "ai/conventions.md",
-      "hash": "cf36cf015f6c293ebf89ec2c7756bb57",
-      "mtime": 1773158175081.659,
-      "size": 826,
-      "indexedAt": "2026-03-10T15:57:22.297Z"
+      "hash": "3dfe3926ca897908529e645c31176604",
+      "mtime": 1773861683120.928,
+      "size": 850,
+      "indexedAt": "2026-03-18T19:21:24.550Z"
     },
     "ai/dependencies.json": {
       "path": "ai/dependencies.json",
-      "hash": "429415c0f4f7ad8a7eb2f182944b7b6f",
-      "mtime": 1773258601943.5815,
-      "size": 8336,
-      "indexedAt": "2026-03-11T19:50:01.967Z"
+      "hash": "5c42f814ecc05c9b765eb5c3d1df3538",
+      "mtime": 1773861683206.9292,
+      "size": 87014,
+      "indexedAt": "2026-03-18T19:21:24.550Z"
     },
     "ai/embeddings.json": {
       "path": "ai/embeddings.json",
       "hash": "26a10d77ee69ae123cc71fee255587c7",
       "mtime": 1773074029679.9358,
       "size": 706073,
-      "indexedAt": "2026-03-10T15:57:22.298Z"
+      "indexedAt": "2026-03-18T19:21:24.551Z"
     },
     "ai/entrypoints.md": {
       "path": "ai/entrypoints.md",
-      "hash": "656b4b5ac7bc92ad7878efa8190eec57",
-      "mtime": 1773158175081.659,
-      "size": 713,
-      "indexedAt": "2026-03-10T15:57:22.298Z"
+      "hash": "ec0759563a5d2f2d9351ee65013fbde8",
+      "mtime": 1773861683118.928,
+      "size": 1068,
+      "indexedAt": "2026-03-18T19:21:24.551Z"
     },
     "ai/files.json": {
       "path": "ai/files.json",
-      "hash": "ac5d12fe1032f937b9a879ad8c8174b4",
-      "mtime": 1773158242024.7693,
-      "size": 7769,
-      "indexedAt": "2026-03-10T15:57:22.298Z"
+      "hash": "c8ee0df10ad0ae833140f494ee07b98d",
+      "mtime": 1773861683976.9414,
+      "size": 71703,
+      "indexedAt": "2026-03-18T19:21:24.551Z"
+    },
+    "ai/git/commit-activity.json": {
+      "path": "ai/git/commit-activity.json",
+      "hash": "a316ee82ce5e61bcfac27710f35d999c",
+      "mtime": 1773854929666.0325,
+      "size": 552707,
+      "indexedAt": "2026-03-18T19:21:24.552Z"
+    },
+    "ai/git/recent-features.json": {
+      "path": "ai/git/recent-features.json",
+      "hash": "d751713988987e9331980363e24189ce",
+      "mtime": 1773854929666.0325,
+      "size": 2,
+      "indexedAt": "2026-03-18T19:21:24.552Z"
+    },
+    "ai/git/recent-files.json": {
+      "path": "ai/git/recent-files.json",
+      "hash": "02e54f0e55236da0d7e799a1ce22b47b",
+      "mtime": 1773854929666.0325,
+      "size": 1636,
+      "indexedAt": "2026-03-18T19:21:24.552Z"
+    },
+    "ai/git/recent-flows.json": {
+      "path": "ai/git/recent-flows.json",
+      "hash": "d751713988987e9331980363e24189ce",
+      "mtime": 1773854929666.0325,
+      "size": 2,
+      "indexedAt": "2026-03-18T19:21:24.552Z"
+    },
+    "ai/graph/knowledge-graph.json": {
+      "path": "ai/graph/knowledge-graph.json",
+      "hash": "f3b4695cd4d8fa147bb274506586c88d",
+      "mtime": 1773854929667.0325,
+      "size": 1608497,
+      "indexedAt": "2026-03-18T19:21:24.554Z"
     },
     "ai/graph/module-graph.json": {
       "path": "ai/graph/module-graph.json",
-      "hash": "0d94a0d375b733b1d5df9daab5f0eb09",
-      "mtime": 1773095750091.6658,
-      "size": 2524,
-      "indexedAt": "2026-03-10T15:57:22.298Z"
+      "hash": "79ece2ad0d153f888fd671535e95812a",
+      "mtime": 1773861683350.9316,
+      "size": 34067,
+      "indexedAt": "2026-03-18T19:21:24.554Z"
     },
     "ai/graph/symbol-graph.json": {
       "path": "ai/graph/symbol-graph.json",
-      "hash": "47789fe155c1782cc2a64edc72d1542f",
-      "mtime": 1773095750156.667,
-      "size": 1476102,
-      "indexedAt": "2026-03-10T15:57:22.301Z"
+      "hash": "0fed8ad53527714320a8fed486264455",
+      "mtime": 1773861683679.9368,
+      "size": 6254510,
+      "indexedAt": "2026-03-18T19:21:24.565Z"
     },
     "ai/graph/symbol-references.json": {
       "path": "ai/graph/symbol-references.json",
-      "hash": "7e7857c41b4795de3ed3ad856a0dbe8c",
-      "mtime": 1773095750158.667,
-      "size": 67744,
-      "indexedAt": "2026-03-10T15:57:22.301Z"
+      "hash": "72805d0c57e1e933751701c756fb4296",
+      "mtime": 1773861683693.937,
+      "size": 296033,
+      "indexedAt": "2026-03-18T19:21:24.566Z"
     },
     "ai/hierarchy.json": {
       "path": "ai/hierarchy.json",
       "hash": "6acd89feb85aa3b73608b4a076062f5a",
-      "mtime": 1773016139926.8276,
+      "mtime": 1773854929670.0327,
       "size": 1976,
-      "indexedAt": "2026-03-10T15:57:22.301Z"
+      "indexedAt": "2026-03-18T19:21:24.566Z"
     },
     "ai/index-state.json": {
       "path": "ai/index-state.json",
-      "hash": "119f98f186e4069030d39dbdd19832cf",
-      "mtime": 1773252082450.5886,
-      "size": 32035,
-      "indexedAt": "2026-03-11T19:50:01.967Z"
+      "hash": "0c557017ee79e08150c6608cdba09601",
+      "mtime": 1773854929671.0327,
+      "size": 32552,
+      "indexedAt": "2026-03-18T19:21:24.566Z"
     },
     "ai/modules.json": {
       "path": "ai/modules.json",
-      "hash": "6e8a10677427c7ff5e602e6c685ef24f",
-      "mtime": 1773158242025.7693,
-      "size": 2056,
-      "indexedAt": "2026-03-10T15:57:22.301Z"
+      "hash": "283094fee199bd2b19ff5550d82384da",
+      "mtime": 1773861683977.9414,
+      "size": 28696,
+      "indexedAt": "2026-03-18T19:21:24.566Z"
+    },
+    "ai/project.json": {
+      "path": "ai/project.json",
+      "hash": "a74d96e6ea8c2031b09619dbb8f3d1bd",
+      "mtime": 1773861683250.93,
+      "size": 599,
+      "indexedAt": "2026-03-18T19:21:24.566Z"
+    },
+    "ai/repo-map.json": {
+      "path": "ai/repo-map.json",
+      "hash": "bf720b25a20829ac2b7a9e4a6c25869c",
+      "mtime": 1773861683330.9312,
+      "size": 168624,
+      "indexedAt": "2026-03-18T19:21:24.566Z"
     },
     "ai/repo_map.json": {
       "path": "ai/repo_map.json",
-      "hash": "89c331ec2443c409fbf70fb71d84090c",
-      "mtime": 1773158175077.659,
-      "size": 17650,
-      "indexedAt": "2026-03-10T15:57:22.301Z"
+      "hash": "683e925f0bb7bb86a0a95b4f045f247d",
+      "mtime": 1773861683111.9277,
+      "size": 168624,
+      "indexedAt": "2026-03-18T19:21:24.566Z"
     },
     "ai/repo_map.md": {
       "path": "ai/repo_map.md",
-      "hash": "bdc9a0359a0fb98b7b62b59a506baefd",
-      "mtime": 1773158175076.659,
-      "size": 4552,
-      "indexedAt": "2026-03-10T15:57:22.301Z"
+      "hash": "76db6ab5077517843b4e9673c713b074",
+      "mtime": 1773861683109.9277,
+      "size": 41049,
+      "indexedAt": "2026-03-18T19:21:24.566Z"
+    },
+    "ai/schema.json": {
+      "path": "ai/schema.json",
+      "hash": "4f0b7ea89f849a2d8f24cab1e27e0b35",
+      "mtime": 1773861683249.93,
+      "size": 102,
+      "indexedAt": "2026-03-18T19:21:24.566Z"
     },
     "ai/summary.md": {
       "path": "ai/summary.md",
-      "hash": "88aa00ea5477361bf395edffb3b4e97e",
-      "mtime": 1773158175077.659,
-      "size": 368,
-      "indexedAt": "2026-03-10T15:57:22.301Z"
+      "hash": "2a759ad5606e7ff84df3c85bb9f01e62",
+      "mtime": 1773861683112.9277,
+      "size": 759,
+      "indexedAt": "2026-03-18T19:21:24.566Z"
     },
     "ai/symbols.json": {
       "path": "ai/symbols.json",
-      "hash": "d751713988987e9331980363e24189ce",
-      "mtime": 1773258601942.5815,
-      "size": 2,
-      "indexedAt": "2026-03-11T19:50:01.967Z"
+      "hash": "9ef3d9b7a04b6d50e0086dfec6c9a37f",
+      "mtime": 1773861683188.929,
+      "size": 1642096,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
     },
     "ai/tech_stack.md": {
       "path": "ai/tech_stack.md",
-      "hash": "00ba0b64188ca72ae0b3250ba7b2188f",
-      "mtime": 1773158175080.659,
-      "size": 452,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "hash": "0a379fa423f21f42370f81b95e58f3a7",
+      "mtime": 1773861683118.928,
+      "size": 593,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
+    },
+    "ai/tools.json": {
+      "path": "ai/tools.json",
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773861683250.93,
+      "size": 138,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
     },
     "docs/.vitepress/config.ts": {
       "path": "docs/.vitepress/config.ts",
       "hash": "6c53efc8669f87bc9040096b96847be3",
       "mtime": 1773090332406.6528,
       "size": 3219,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.570Z"
     },
     "docs/.vitepress/theme/custom.css": {
       "path": "docs/.vitepress/theme/custom.css",
       "hash": "924287015c3c64819e66cdfc0f24fa46",
       "mtime": 1773076171344.3733,
       "size": 4021,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.570Z"
     },
     "docs/.vitepress/theme/index.ts": {
       "path": "docs/.vitepress/theme/index.ts",
       "hash": "a9a72e0000dd7687fd2d899d79e4aee0",
       "mtime": 1773076127580.8638,
       "size": 182,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.570Z"
+    },
+    "docs/es/guide/adapters.md": {
+      "path": "docs/es/guide/adapters.md",
+      "hash": "a593b919a72920866a143d68d3f6114a",
+      "mtime": 1773184836139.1023,
+      "size": 3853,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
+    },
+    "docs/es/guide/ai-repository-schema.md": {
+      "path": "docs/es/guide/ai-repository-schema.md",
+      "hash": "36634728939ebe93bd4f47ebcbeee945",
+      "mtime": 1773251866778.0652,
+      "size": 3030,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
+    },
+    "docs/es/guide/features.md": {
+      "path": "docs/es/guide/features.md",
+      "hash": "0b8d521e9b1156336091a441b64518f0",
+      "mtime": 1773178691579.252,
+      "size": 1785,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
+    },
+    "docs/es/guide/flows.md": {
+      "path": "docs/es/guide/flows.md",
+      "hash": "00cd75411f18ab0c21c0b1d110b14064",
+      "mtime": 1773178392796.509,
+      "size": 3671,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
     },
     "docs/es/guide/getting-started.md": {
       "path": "docs/es/guide/getting-started.md",
       "hash": "c446f6957beff061b7b41b0ccef510e2",
       "mtime": 1773090370625.2866,
       "size": 619,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.570Z"
+    },
+    "docs/es/guide/git-intelligence.md": {
+      "path": "docs/es/guide/git-intelligence.md",
+      "hash": "e47e2199964d144cb4e841a0c7a8b881",
+      "mtime": 1773238994485.4612,
+      "size": 4390,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
+    },
+    "docs/es/guide/incremental-analysis.md": {
+      "path": "docs/es/guide/incremental-analysis.md",
+      "hash": "526453da195d833ad614c9a32585e3f3",
+      "mtime": 1773247246616.0706,
+      "size": 3419,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
+    },
+    "docs/es/guide/knowledge-graph.md": {
+      "path": "docs/es/guide/knowledge-graph.md",
+      "hash": "a4deda34b2f4f587858127a7299c5e0b",
+      "mtime": 1773244257027.961,
+      "size": 3593,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
+    },
+    "docs/es/guide/lazy-indexing.md": {
+      "path": "docs/es/guide/lazy-indexing.md",
+      "hash": "50862945713d450e7ca2401e62ce3e66",
+      "mtime": 1773258482771.7268,
+      "size": 3918,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
+    },
+    "docs/es/guide/performance.md": {
+      "path": "docs/es/guide/performance.md",
+      "hash": "624e29f574a1bc47347754e918476dcc",
+      "mtime": 1773181129397.9136,
+      "size": 3199,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
     },
     "docs/es/index.md": {
       "path": "docs/es/index.md",
       "hash": "920ea9e39b01a04495d68306c26d2fe9",
       "mtime": 1773090256493.4934,
       "size": 3121,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.570Z"
     },
     "docs/examples/express-api.md": {
       "path": "docs/examples/express-api.md",
       "hash": "54af0d58910939c041d98437a73cf231",
       "mtime": 1773076482605.2854,
       "size": 2665,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.570Z"
     },
     "docs/examples/index.md": {
       "path": "docs/examples/index.md",
       "hash": "67f774e8e8b170d44b51cfcfff9ecdd7",
       "mtime": 1773076421849.489,
       "size": 738,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.570Z"
     },
     "docs/examples/python-django.md": {
       "path": "docs/examples/python-django.md",
       "hash": "a57217d9a4a0eba7e6750caf75b86aae",
       "mtime": 1773076518221.758,
       "size": 1926,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.570Z"
     },
     "docs/examples/react-app.md": {
       "path": "docs/examples/react-app.md",
       "hash": "c3ae0d56ab0de03f6957a2c3685e2a10",
       "mtime": 1773076494650.4448,
       "size": 2305,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.570Z"
+    },
+    "docs/guide/adapters.md": {
+      "path": "docs/guide/adapters.md",
+      "hash": "54aff0280eef4b341723d9fe1f4936a1",
+      "mtime": 1773194224066.7905,
+      "size": 6006,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
+    },
+    "docs/guide/ai-repository-schema.md": {
+      "path": "docs/guide/ai-repository-schema.md",
+      "hash": "b953a4c87754d0ac445df26967444891",
+      "mtime": 1773251800916.9807,
+      "size": 2757,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
     },
     "docs/guide/architecture.md": {
       "path": "docs/guide/architecture.md",
-      "hash": "1045ecab928d43a93a55add6ab7ebdd7",
-      "mtime": 1773095880814.749,
-      "size": 11049,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "hash": "a73bf154ed909b4d0157e0f8f37a97aa",
+      "mtime": 1773176294334.256,
+      "size": 12576,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
+    },
+    "docs/guide/flows.md": {
+      "path": "docs/guide/flows.md",
+      "hash": "58dc503bbdf067153ba4a0b04a8c56f0",
+      "mtime": 1773176979656.7134,
+      "size": 3165,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
     },
     "docs/guide/getting-started.md": {
       "path": "docs/guide/getting-started.md",
       "hash": "b783c85c32dc67ffa2133915b5cd93fb",
       "mtime": 1773076199524.7075,
       "size": 2315,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.570Z"
+    },
+    "docs/guide/git-intelligence.md": {
+      "path": "docs/guide/git-intelligence.md",
+      "hash": "2e6f8fc3e8efba54d92eea8cc631c19e",
+      "mtime": 1773238937863.8408,
+      "size": 4071,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
+    },
+    "docs/guide/incremental-analysis.md": {
+      "path": "docs/guide/incremental-analysis.md",
+      "hash": "d4293f8de2ca740e2736c282f8b1514b",
+      "mtime": 1773247186818.0437,
+      "size": 3138,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
     },
     "docs/guide/installation.md": {
       "path": "docs/guide/installation.md",
       "hash": "7926dceb824c696ff79bc357aee27580",
       "mtime": 1773076224028.002,
       "size": 1276,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.570Z"
+    },
+    "docs/guide/knowledge-graph.md": {
+      "path": "docs/guide/knowledge-graph.md",
+      "hash": "3c00be517112f0fb1e865cedd2ec5a81",
+      "mtime": 1773244190994.9873,
+      "size": 3408,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
+    },
+    "docs/guide/lazy-indexing.md": {
+      "path": "docs/guide/lazy-indexing.md",
+      "hash": "29c43fc104003e8819e731e45f7c640d",
+      "mtime": 1773258407656.5571,
+      "size": 3491,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
+    },
+    "docs/guide/performance.md": {
+      "path": "docs/guide/performance.md",
+      "hash": "a2a5434f93591785a72e202ff700467f",
+      "mtime": 1773181094035.3489,
+      "size": 2783,
+      "indexedAt": "2026-03-18T19:21:24.570Z"
     },
     "docs/guide/quick-start.md": {
       "path": "docs/guide/quick-start.md",
       "hash": "dfa4c6196895c98b84845c138182dae6",
       "mtime": 1773076244371.249,
       "size": 1732,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.570Z"
     },
     "docs/index.md": {
       "path": "docs/index.md",
       "hash": "9032437ec565b4935df406022143d2ae",
       "mtime": 1773089168385.8672,
       "size": 3163,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.570Z"
     },
     "docs/reference/commands.md": {
       "path": "docs/reference/commands.md",
       "hash": "f9b509d9a44a4a8ffebc433d4adb07c5",
       "mtime": 1773095909341.2031,
       "size": 3817,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.571Z"
     },
     "examples/01-express-api.md": {
       "path": "examples/01-express-api.md",
       "hash": "54af0d58910939c041d98437a73cf231",
       "mtime": 1773014837445.3228,
       "size": 2665,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.571Z"
     },
     "examples/02-react-app.md": {
       "path": "examples/02-react-app.md",
       "hash": "2f1948bf3765228b37697f9f48d37b79",
       "mtime": 1773014866555.722,
       "size": 2702,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.571Z"
     },
     "examples/03-python-django.md": {
       "path": "examples/03-python-django.md",
       "hash": "fccd23e390a3d29d7d0d5d34a14d8cf3",
       "mtime": 1773014902647.2178,
       "size": 2947,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.571Z"
     },
     "examples/README.md": {
       "path": "examples/README.md",
       "hash": "4e8a85046bacda16352b5dff84e3ffe4",
       "mtime": 1773014931866.6204,
       "size": 1660,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.571Z"
     },
     "package-lock.json": {
       "path": "package-lock.json",
       "hash": "52220838924486c8aa10ed329be1adf5",
       "mtime": 1773083490249.47,
       "size": 126683,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.571Z"
     },
     "package.json": {
       "path": "package.json",
-      "hash": "14fe71f476664b2e608bf1d2c2fdcd7b",
-      "mtime": 1773255231667.2507,
+      "hash": "df5d8aec6d7b3e2829995654a76aaf80",
+      "mtime": 1773797139334.4119,
       "size": 1538,
-      "indexedAt": "2026-03-11T19:50:01.979Z"
+      "indexedAt": "2026-03-18T19:21:24.571Z"
     },
     "src/analyzers/aiRules.ts": {
       "path": "src/analyzers/aiRules.ts",
       "hash": "3213f98ebd24246dd24b2c39f696bd14",
       "mtime": 1773009335276.8303,
       "size": 4961,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.571Z"
     },
     "src/analyzers/androidResources.ts": {
       "path": "src/analyzers/androidResources.ts",
       "hash": "d260211a62c187920db680c232367505",
       "mtime": 1773153784923.4502,
       "size": 3203,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.571Z"
     },
     "src/analyzers/architecture.ts": {
       "path": "src/analyzers/architecture.ts",
       "hash": "263e2e84afa0800cd4e95820f7d5aacb",
       "mtime": 1773007837808.1536,
       "size": 9551,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.571Z"
     },
     "src/analyzers/conventions.ts": {
       "path": "src/analyzers/conventions.ts",
       "hash": "887a991db6e0b9d658046b81cbe719b6",
       "mtime": 1773008352611.8462,
       "size": 7412,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "indexedAt": "2026-03-18T19:21:24.571Z"
     },
     "src/analyzers/dependencies.ts": {
       "path": "src/analyzers/dependencies.ts",
-      "hash": "bc4bab37ede63c8518d9b856ca587a9c",
-      "mtime": 1773153614988.8157,
-      "size": 9390,
-      "indexedAt": "2026-03-10T15:57:22.303Z"
+      "hash": "b0a73ac0cfe33821632a918e2529fdad",
+      "mtime": 1773790761658.4297,
+      "size": 9118,
+      "indexedAt": "2026-03-18T19:21:24.571Z"
     },
     "src/analyzers/entrypoints.ts": {
       "path": "src/analyzers/entrypoints.ts",
       "hash": "c4a26db8302561ab46319ed6ba9019be",
       "mtime": 1773153667235.145,
       "size": 6659,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "indexedAt": "2026-03-18T19:21:24.571Z"
     },
     "src/analyzers/gradleModules.ts": {
       "path": "src/analyzers/gradleModules.ts",
       "hash": "fd4d77c29f554bf967e2ce4a05574497",
       "mtime": 1773153804000.0356,
       "size": 2761,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "indexedAt": "2026-03-18T19:21:24.571Z"
     },
     "src/analyzers/symbols.ts": {
       "path": "src/analyzers/symbols.ts",
-      "hash": "47b731c0e9bd4757b6aab646de5249ed",
-      "mtime": 1773095734207.4124,
-      "size": 10850,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "hash": "f861ab716c8341b280b72f1322eaa125",
+      "mtime": 1773854929727.6602,
+      "size": 13015,
+      "indexedAt": "2026-03-18T19:21:24.571Z"
     },
     "src/analyzers/techStack.ts": {
       "path": "src/analyzers/techStack.ts",
       "hash": "64ef322c5475e2b0ef1d95eab41b6b4c",
       "mtime": 1773153400053.8142,
       "size": 13336,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "indexedAt": "2026-03-18T19:21:24.571Z"
     },
     "src/commands/ai-first.ts": {
       "path": "src/commands/ai-first.ts",
-      "hash": "c3d16139076959c74fd4c2324a2d6c66",
-      "mtime": 1773256012369.3918,
-      "size": 50418,
-      "indexedAt": "2026-03-11T19:50:01.979Z"
+      "hash": "7bfaa8a8bf6662f305f34b0608114b1d",
+      "mtime": 1773793521992.9373,
+      "size": 51429,
+      "indexedAt": "2026-03-18T19:21:24.571Z"
     },
     "src/commands/doctor.ts": {
       "path": "src/commands/doctor.ts",
       "hash": "bf877242c2777a92c2c13c6f20952d63",
       "mtime": 1773072336100.912,
       "size": 3599,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "indexedAt": "2026-03-18T19:21:24.571Z"
     },
     "src/commands/explore.ts": {
       "path": "src/commands/explore.ts",
       "hash": "684e64267e90e13ff9ae7a7a87deaa5d",
       "mtime": 1773071610359.5925,
       "size": 2787,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "indexedAt": "2026-03-18T19:21:24.571Z"
+    },
+    "src/core/adapters/adapterRegistry.ts": {
+      "path": "src/core/adapters/adapterRegistry.ts",
+      "hash": "9c82d3399bf134c40c4d0d8239252813",
+      "mtime": 1773194865986.006,
+      "size": 4746,
+      "indexedAt": "2026-03-18T19:21:24.571Z"
+    },
+    "src/core/adapters/baseAdapter.ts": {
+      "path": "src/core/adapters/baseAdapter.ts",
+      "hash": "5f64bb1c62d32109898a576b1a11fc84",
+      "mtime": 1773183006248.3667,
+      "size": 2706,
+      "indexedAt": "2026-03-18T19:21:24.571Z"
+    },
+    "src/core/adapters/community/fastapiAdapter.ts": {
+      "path": "src/core/adapters/community/fastapiAdapter.ts",
+      "hash": "1d6e19ee052f97e3edeaf100199a4f6e",
+      "mtime": 1773195157323.2893,
+      "size": 1227,
+      "indexedAt": "2026-03-18T19:21:24.571Z"
+    },
+    "src/core/adapters/community/index.ts": {
+      "path": "src/core/adapters/community/index.ts",
+      "hash": "869811b9969b694a69da22a0acf65062",
+      "mtime": 1773185647607.2932,
+      "size": 366,
+      "indexedAt": "2026-03-18T19:21:24.571Z"
+    },
+    "src/core/adapters/community/laravelAdapter.ts": {
+      "path": "src/core/adapters/community/laravelAdapter.ts",
+      "hash": "783b2d3973cb186133b0291cecf5bea4",
+      "mtime": 1773185437305.221,
+      "size": 1501,
+      "indexedAt": "2026-03-18T19:21:24.571Z"
+    },
+    "src/core/adapters/community/nestjsAdapter.ts": {
+      "path": "src/core/adapters/community/nestjsAdapter.ts",
+      "hash": "1497421c1608545d575172567db22956",
+      "mtime": 1773185475791.7996,
+      "size": 1519,
+      "indexedAt": "2026-03-18T19:21:24.571Z"
+    },
+    "src/core/adapters/community/phoenixAdapter.ts": {
+      "path": "src/core/adapters/community/phoenixAdapter.ts",
+      "hash": "06f5634a4d352223e4cd8f5ea795a7e4",
+      "mtime": 1773185580466.3152,
+      "size": 1331,
+      "indexedAt": "2026-03-18T19:21:24.571Z"
+    },
+    "src/core/adapters/community/springBootAdapter.ts": {
+      "path": "src/core/adapters/community/springBootAdapter.ts",
+      "hash": "a4da44ea1657a242cfe06e2c80263c3b",
+      "mtime": 1773185539438.7197,
+      "size": 1502,
+      "indexedAt": "2026-03-18T19:21:24.571Z"
+    },
+    "src/core/adapters/dotnetAdapter.ts": {
+      "path": "src/core/adapters/dotnetAdapter.ts",
+      "hash": "cb85de66279ec84e49b78e202ad53172",
+      "mtime": 1773183211018.439,
+      "size": 3432,
+      "indexedAt": "2026-03-18T19:21:24.571Z"
+    },
+    "src/core/adapters/index.ts": {
+      "path": "src/core/adapters/index.ts",
+      "hash": "52fbc30e12817507e27c51584e710041",
+      "mtime": 1773194224100.791,
+      "size": 1096,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "src/core/adapters/javascriptAdapter.ts": {
+      "path": "src/core/adapters/javascriptAdapter.ts",
+      "hash": "4344fc5d7dfa44800a3c27d04bf5b23d",
+      "mtime": 1773183042396.908,
+      "size": 2152,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "src/core/adapters/pythonAdapter.ts": {
+      "path": "src/core/adapters/pythonAdapter.ts",
+      "hash": "01bf12d95ab7ebf0819b1bbc97bd0223",
+      "mtime": 1773183091831.6492,
+      "size": 4108,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "src/core/adapters/railsAdapter.ts": {
+      "path": "src/core/adapters/railsAdapter.ts",
+      "hash": "ce0622664c7614cd86fe33a6ed5cf9ec",
+      "mtime": 1773183128570.2004,
+      "size": 1983,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "src/core/adapters/salesforceAdapter.ts": {
+      "path": "src/core/adapters/salesforceAdapter.ts",
+      "hash": "9080869edee1b246baf94caf66732cf1",
+      "mtime": 1773183167520.7852,
+      "size": 2375,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "src/core/adapters/sdk.ts": {
+      "path": "src/core/adapters/sdk.ts",
+      "hash": "cfe5d3b363b701aae09b29250274d495",
+      "mtime": 1773185372752.242,
+      "size": 4947,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
     },
     "src/core/aiContextGenerator.ts": {
       "path": "src/core/aiContextGenerator.ts",
       "hash": "c520cef1f061e0f8517734b30957b947",
       "mtime": 1773013859071.9048,
       "size": 30018,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "indexedAt": "2026-03-18T19:21:24.572Z"
     },
     "src/core/ccp.ts": {
       "path": "src/core/ccp.ts",
       "hash": "cdab3bf243f95155d0a15e26b6582afb",
       "mtime": 1773157731340.6924,
       "size": 6267,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "indexedAt": "2026-03-18T19:21:24.572Z"
     },
     "src/core/chunker.ts": {
       "path": "src/core/chunker.ts",
       "hash": "7f53952952c9d801672a5a6ad729e7d5",
       "mtime": 1773073665099.1428,
       "size": 9678,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "indexedAt": "2026-03-18T19:21:24.572Z"
     },
     "src/core/contextGenerator.ts": {
       "path": "src/core/contextGenerator.ts",
       "hash": "0e3c3077c006ce8092c64f0232f750c0",
       "mtime": 1773006174980.9766,
       "size": 8351,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "indexedAt": "2026-03-18T19:21:24.572Z"
     },
     "src/core/contextPacket.ts": {
       "path": "src/core/contextPacket.ts",
       "hash": "0febc90214d77fc907e412222f94e6c1",
       "mtime": 1773095515712.9194,
       "size": 13322,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "indexedAt": "2026-03-18T19:21:24.572Z"
     },
     "src/core/embeddings.ts": {
       "path": "src/core/embeddings.ts",
       "hash": "ce1769d7adec0510a295672f69a8ba41",
       "mtime": 1773073766382.3613,
       "size": 4541,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "src/core/gitAnalyzer.ts": {
+      "path": "src/core/gitAnalyzer.ts",
+      "hash": "cc017c698e64892c23a1761440d9dbd7",
+      "mtime": 1773237342075.0762,
+      "size": 10336,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
     },
     "src/core/hierarchyGenerator.ts": {
       "path": "src/core/hierarchyGenerator.ts",
       "hash": "c83b44b554d5aab8759f6a4807985a24",
       "mtime": 1773016072837.5437,
       "size": 10914,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "src/core/incrementalAnalyzer.ts": {
+      "path": "src/core/incrementalAnalyzer.ts",
+      "hash": "7057f4102daa2b59a53f62776a56b9e1",
+      "mtime": 1773246228077.465,
+      "size": 12487,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
     },
     "src/core/indexState.ts": {
       "path": "src/core/indexState.ts",
       "hash": "412559800f738abb82e28c9eb71f8a6c",
       "mtime": 1773073382179.3071,
       "size": 4850,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "indexedAt": "2026-03-18T19:21:24.572Z"
     },
     "src/core/indexer.ts": {
       "path": "src/core/indexer.ts",
       "hash": "6e5b002d8661cf176d236b2e362db46c",
       "mtime": 1773012050361.3564,
       "size": 25617,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "src/core/knowledgeGraphBuilder.ts": {
+      "path": "src/core/knowledgeGraphBuilder.ts",
+      "hash": "274e5831b4e8be00cec10f2668b90735",
+      "mtime": 1773242876540.4153,
+      "size": 7833,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "src/core/lazyAnalyzer.ts": {
+      "path": "src/core/lazyAnalyzer.ts",
+      "hash": "b28a51c974b1f4ea7eb98acd5ba6fddd",
+      "mtime": 1773257763051.4905,
+      "size": 8092,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
     },
     "src/core/moduleGraph.ts": {
       "path": "src/core/moduleGraph.ts",
       "hash": "0bf6db06febcf2f929d92fdf569d753b",
       "mtime": 1773071610359.6934,
       "size": 5256,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "indexedAt": "2026-03-18T19:21:24.572Z"
     },
     "src/core/repoMapper.ts": {
       "path": "src/core/repoMapper.ts",
       "hash": "2b5a86b04f99bcbfaa6b29291857a0d4",
       "mtime": 1773005052293.012,
       "size": 4464,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "indexedAt": "2026-03-18T19:21:24.572Z"
     },
     "src/core/repoScanner.ts": {
       "path": "src/core/repoScanner.ts",
       "hash": "78c4baf429b8365b779d779faec6c6f2",
       "mtime": 1773004069943.8745,
       "size": 2351,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "src/core/schema.ts": {
+      "path": "src/core/schema.ts",
+      "hash": "e6f173aea750cf98e4ef363846edd2b2",
+      "mtime": 1773249080973.0469,
+      "size": 5195,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "src/core/semanticContexts.ts": {
+      "path": "src/core/semanticContexts.ts",
+      "hash": "8c335cda53cbdecd1190a15d30910c17",
+      "mtime": 1773854929727.958,
+      "size": 17361,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
     },
     "src/core/symbolGraph.ts": {
       "path": "src/core/symbolGraph.ts",
-      "hash": "2ed7da22206f2833ab0766b144e82f6b",
-      "mtime": 1773095424570.4573,
-      "size": 17247,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "hash": "32cf884e7fd3e92bd87c94d0610a2654",
+      "mtime": 1773854929728.3672,
+      "size": 17845,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
     },
     "src/index.ts": {
       "path": "src/index.ts",
       "hash": "f79ef17442d3a4a7a0288a646e2b21b0",
       "mtime": 1773069735666.7573,
       "size": 556,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "indexedAt": "2026-03-18T19:21:24.572Z"
     },
     "src/types/sql.js.d.ts": {
       "path": "src/types/sql.js.d.ts",
       "hash": "5b68823eaec8a56784c956075d1954ce",
       "mtime": 1773010637558.1929,
       "size": 515,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "indexedAt": "2026-03-18T19:21:24.572Z"
     },
     "src/utils/fileUtils.ts": {
       "path": "src/utils/fileUtils.ts",
-      "hash": "0f8b254e80a30b65d71ba40798fbcd3f",
-      "mtime": 1773007816979.788,
-      "size": 2682,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
+      "hash": "f1b6c884e3f78c088b276ff82a7ad09e",
+      "mtime": 1773778112059.0947,
+      "size": 2746,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "test-projects/django-app/README.md": {
+      "path": "test-projects/django-app/README.md",
+      "hash": "2b099275e8f719d2a008071b600752a7",
+      "mtime": 1773847503082.22,
+      "size": 2592,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "test-projects/django-app/ai/ai_context.md": {
+      "path": "test-projects/django-app/ai/ai_context.md",
+      "hash": "4926e5dd61c81d03cee052db56664235",
+      "mtime": 1773847524423.5146,
+      "size": 1525,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "test-projects/django-app/ai/ai_rules.md": {
+      "path": "test-projects/django-app/ai/ai_rules.md",
+      "hash": "b7db08ce64e7b0afd2e515992bc0a561",
+      "mtime": 1773847524422.5146,
+      "size": 787,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "test-projects/django-app/ai/architecture.md": {
+      "path": "test-projects/django-app/ai/architecture.md",
+      "hash": "fa4d5fbe8c4e29ebc725a92b12d88b04",
+      "mtime": 1773847524416.5146,
+      "size": 922,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "test-projects/django-app/ai/cache.json": {
+      "path": "test-projects/django-app/ai/cache.json",
+      "hash": "29106f930a901a1723c2c25d22e43f31",
+      "mtime": 1773847532764.63,
+      "size": 4384,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "test-projects/django-app/ai/context/flows/views.json": {
+      "path": "test-projects/django-app/ai/context/flows/views.json",
+      "hash": "a914f6473aa639c9261d9491913a5440",
+      "mtime": 1773847532766.63,
+      "size": 144,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "test-projects/django-app/ai/conventions.md": {
+      "path": "test-projects/django-app/ai/conventions.md",
+      "hash": "d11ac646a8916e3c6cc376f610368317",
+      "mtime": 1773847524419.5146,
+      "size": 813,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "test-projects/django-app/ai/dependencies.json": {
+      "path": "test-projects/django-app/ai/dependencies.json",
+      "hash": "ef1c6db344eea60efd35525d7edfbdc5",
+      "mtime": 1773847524421.5146,
+      "size": 6782,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "test-projects/django-app/ai/entrypoints.md": {
+      "path": "test-projects/django-app/ai/entrypoints.md",
+      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
+      "mtime": 1773847524418.5146,
+      "size": 43,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "test-projects/django-app/ai/files.json": {
+      "path": "test-projects/django-app/ai/files.json",
+      "hash": "7b7f0e91d52466a3bfc61934f7318773",
+      "mtime": 1773854929728.3672,
+      "size": 3845,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "test-projects/django-app/ai/graph/module-graph.json": {
+      "path": "test-projects/django-app/ai/graph/module-graph.json",
+      "hash": "b226564aa5093d79889b9d70969a7018",
+      "mtime": 1773847532754.6296,
+      "size": 2547,
+      "indexedAt": "2026-03-18T19:21:24.572Z"
+    },
+    "test-projects/django-app/ai/graph/symbol-graph.json": {
+      "path": "test-projects/django-app/ai/graph/symbol-graph.json",
+      "hash": "b1bd34e7d1007ce43b7fe133c1c2ba93",
+      "mtime": 1773847532762.63,
+      "size": 37423,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/ai/graph/symbol-references.json": {
+      "path": "test-projects/django-app/ai/graph/symbol-references.json",
+      "hash": "99914b932bd37a50b983c5e7c90ae93b",
+      "mtime": 1773847532762.63,
+      "size": 2,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/ai/index-state.json": {
+      "path": "test-projects/django-app/ai/index-state.json",
+      "hash": "bfc0668aa599dec27819bd72c7bfe674",
+      "mtime": 1773854929728.3672,
+      "size": 8827,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/ai/modules.json": {
+      "path": "test-projects/django-app/ai/modules.json",
+      "hash": "cba831f3ad2e9f04973d35fad2f07b55",
+      "mtime": 1773854831967.291,
+      "size": 688,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/ai/project.json": {
+      "path": "test-projects/django-app/ai/project.json",
+      "hash": "446f506ec7e9c0573dfc4a245b7c7084",
+      "mtime": 1773847524425.5146,
+      "size": 199,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/ai/repo-map.json": {
+      "path": "test-projects/django-app/ai/repo-map.json",
+      "hash": "22e7d221904a4f61d95484fab517e546",
+      "mtime": 1773847532746.6296,
+      "size": 7092,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/ai/repo_map.json": {
+      "path": "test-projects/django-app/ai/repo_map.json",
+      "hash": "9940eb9df7de6de79da4220bc1c3ca2b",
+      "mtime": 1773847524415.5146,
+      "size": 3653,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/ai/repo_map.md": {
+      "path": "test-projects/django-app/ai/repo_map.md",
+      "hash": "9e1e333f34d5b4166d3fca576c2c77b9",
+      "mtime": 1773847524415.5146,
+      "size": 891,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/ai/schema.json": {
+      "path": "test-projects/django-app/ai/schema.json",
+      "hash": "9aef49ca496598670fa99edc138df4a4",
+      "mtime": 1773847524425.5146,
+      "size": 102,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/ai/summary.md": {
+      "path": "test-projects/django-app/ai/summary.md",
+      "hash": "21d8172f53214fcb4765fdbfc60783ca",
+      "mtime": 1773847524415.5146,
+      "size": 189,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/ai/symbols.json": {
+      "path": "test-projects/django-app/ai/symbols.json",
+      "hash": "a5f3112d44cfa4dc256b75bda253df0e",
+      "mtime": 1773847524420.5146,
+      "size": 61296,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/ai/tech_stack.md": {
+      "path": "test-projects/django-app/ai/tech_stack.md",
+      "hash": "f5d7720e17390f42b9f81c4b3c0d1bdf",
+      "mtime": 1773847524418.5146,
+      "size": 342,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/ai/tools.json": {
+      "path": "test-projects/django-app/ai/tools.json",
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773847524425.5146,
+      "size": 138,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/blog/__init__.py": {
+      "path": "test-projects/django-app/blog/__init__.py",
+      "hash": "d41d8cd98f00b204e9800998ecf8427e",
+      "mtime": 1773847262320.9067,
+      "size": 0,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/blog/admin.py": {
+      "path": "test-projects/django-app/blog/admin.py",
+      "hash": "ef8b15c55e00e9ef835b4cc1a3ae8307",
+      "mtime": 1773847452965.5286,
+      "size": 851,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/blog/models.py": {
+      "path": "test-projects/django-app/blog/models.py",
+      "hash": "11cf32800211bc954798a3775a0c1429",
+      "mtime": 1773847281082.164,
+      "size": 1551,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/blog/serializers.py": {
+      "path": "test-projects/django-app/blog/serializers.py",
+      "hash": "efb817010fdd412250c980c9d7b738a2",
+      "mtime": 1773847304708.4883,
+      "size": 2094,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/blog/urls.py": {
+      "path": "test-projects/django-app/blog/urls.py",
+      "hash": "235d6b0d52e581825c76a37dba5d46f4",
+      "mtime": 1773847343339.019,
+      "size": 407,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/blog/views.py": {
+      "path": "test-projects/django-app/blog/views.py",
+      "hash": "b51bcfc62e8a9cc4e36d6e04d0d66ac2",
+      "mtime": 1773847331379.8545,
+      "size": 3123,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/django_app/__init__.py": {
+      "path": "test-projects/django-app/django_app/__init__.py",
+      "hash": "d41d8cd98f00b204e9800998ecf8427e",
+      "mtime": 1773847262320.9067,
+      "size": 0,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/django_app/settings.py": {
+      "path": "test-projects/django-app/django_app/settings.py",
+      "hash": "ec0ff12dd114d0f70b04dee4e6753ded",
+      "mtime": 1773847230399.4692,
+      "size": 2283,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/django_app/urls.py": {
+      "path": "test-projects/django-app/django_app/urls.py",
+      "hash": "646e11e6cbfc20b5a1c457bd04058b6f",
+      "mtime": 1773847241419.62,
+      "size": 311,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/django_app/wsgi.py": {
+      "path": "test-projects/django-app/django_app/wsgi.py",
+      "hash": "8997e7b6236b6d5cc5ab76625293b138",
+      "mtime": 1773847252217.768,
+      "size": 214,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/manage.py": {
+      "path": "test-projects/django-app/manage.py",
+      "hash": "557480f24dd7cddb10ad7fdcf39b6c79",
+      "mtime": 1773847204930.1206,
+      "size": 667,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/users/__init__.py": {
+      "path": "test-projects/django-app/users/__init__.py",
+      "hash": "d41d8cd98f00b204e9800998ecf8427e",
+      "mtime": 1773847262320.9067,
+      "size": 0,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/users/admin.py": {
+      "path": "test-projects/django-app/users/admin.py",
+      "hash": "3a42200ccb8543463198e6df6bbf3601",
+      "mtime": 1773847468180.7383,
+      "size": 1024,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/users/models.py": {
+      "path": "test-projects/django-app/users/models.py",
+      "hash": "861e708ed26ccbcb76365faf6d540ac6",
+      "mtime": 1773847363660.2983,
+      "size": 1748,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/users/serializers.py": {
+      "path": "test-projects/django-app/users/serializers.py",
+      "hash": "709f852da00f6f58d0b9cdb84bb7fe24",
+      "mtime": 1773847389572.655,
+      "size": 3196,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/users/urls.py": {
+      "path": "test-projects/django-app/users/urls.py",
+      "hash": "c331ed123fa4e1121d48eead9befbb0d",
+      "mtime": 1773847438434.3281,
+      "size": 351,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/django-app/users/views.py": {
+      "path": "test-projects/django-app/users/views.py",
+      "hash": "91fa1403cd82ec70898d487250d9673b",
+      "mtime": 1773847426896.1692,
+      "size": 4756,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/express-api/ai/ai_context.md": {
+      "path": "test-projects/express-api/ai/ai_context.md",
+      "hash": "286f0083010c4a66f3906b020b9cc7b4",
+      "mtime": 1773796492348.4023,
+      "size": 2042,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/express-api/ai/ai_rules.md": {
+      "path": "test-projects/express-api/ai/ai_rules.md",
+      "hash": "fa1a632e71f5b7055dee7d1368600ce0",
+      "mtime": 1773796492348.4023,
+      "size": 915,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/express-api/ai/architecture.md": {
+      "path": "test-projects/express-api/ai/architecture.md",
+      "hash": "5e9f157447aac07a89cf6fe7bffcdad4",
+      "mtime": 1773796492342.4023,
+      "size": 1328,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/express-api/ai/cache.json": {
+      "path": "test-projects/express-api/ai/cache.json",
+      "hash": "3c6e4d40d9a93aec0c33ac72d4fc4e85",
+      "mtime": 1773854929729.0337,
+      "size": 3670,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/express-api/ai/context/features/controllers.json": {
+      "path": "test-projects/express-api/ai/context/features/controllers.json",
+      "hash": "65a9f94a405e51bd65bd7a5378dbb164",
+      "mtime": 1773796517401.7932,
+      "size": 262,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/express-api/ai/context/features/services.json": {
+      "path": "test-projects/express-api/ai/context/features/services.json",
+      "hash": "113525da53ad952071cca194ba355d48",
+      "mtime": 1773796517401.7932,
+      "size": 232,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/express-api/ai/context/flows/auth.json": {
+      "path": "test-projects/express-api/ai/context/flows/auth.json",
+      "hash": "a6200259a521a38e08dc6396d870a633",
+      "mtime": 1773796517401.7932,
+      "size": 201,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/express-api/ai/context/flows/user.json": {
+      "path": "test-projects/express-api/ai/context/flows/user.json",
+      "hash": "af049ebfc3b8ce808e6091ac96a651ee",
+      "mtime": 1773796517401.7932,
+      "size": 233,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/express-api/ai/conventions.md": {
+      "path": "test-projects/express-api/ai/conventions.md",
+      "hash": "fa8f117204dbd53d6b787e6ec1791dbf",
+      "mtime": 1773796492344.4023,
+      "size": 811,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/express-api/ai/dependencies.json": {
+      "path": "test-projects/express-api/ai/dependencies.json",
+      "hash": "b59a369568a90136bf6d54a022aae411",
+      "mtime": 1773796492346.4023,
+      "size": 1193,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/express-api/ai/entrypoints.md": {
+      "path": "test-projects/express-api/ai/entrypoints.md",
+      "hash": "17b75097fff8baf7e8218553431dad64",
+      "mtime": 1773796492343.4023,
+      "size": 304,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/express-api/ai/files.json": {
+      "path": "test-projects/express-api/ai/files.json",
+      "hash": "4041be286c1f3bef227566eb3131babc",
+      "mtime": 1773854929729.0337,
+      "size": 2512,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/express-api/ai/graph/knowledge-graph.json": {
+      "path": "test-projects/express-api/ai/graph/knowledge-graph.json",
+      "hash": "f77f4f49dab0623ff144b6e971feabdc",
+      "mtime": 1773796549349.291,
+      "size": 1809,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/express-api/ai/graph/module-graph.json": {
+      "path": "test-projects/express-api/ai/graph/module-graph.json",
+      "hash": "43383456483e635b66ff8960f3b39f03",
+      "mtime": 1773796517391.793,
+      "size": 725,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/express-api/ai/graph/symbol-graph.json": {
+      "path": "test-projects/express-api/ai/graph/symbol-graph.json",
+      "hash": "d254a317177342dab8125c05c4616101",
+      "mtime": 1773796517397.7932,
+      "size": 23692,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/express-api/ai/graph/symbol-references.json": {
+      "path": "test-projects/express-api/ai/graph/symbol-references.json",
+      "hash": "656c3df0aaaf021cc2f25769a7945c41",
+      "mtime": 1773796517397.7932,
+      "size": 1577,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/express-api/ai/index-state.json": {
+      "path": "test-projects/express-api/ai/index-state.json",
+      "hash": "8870c8839252ed08c5c2804959db7841",
+      "mtime": 1773854832180.295,
+      "size": 7997,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/express-api/ai/modules.json": {
+      "path": "test-projects/express-api/ai/modules.json",
+      "hash": "52396bb2eb3346493e373bf55805ef90",
+      "mtime": 1773854832117.2937,
+      "size": 555,
+      "indexedAt": "2026-03-18T19:21:24.573Z"
+    },
+    "test-projects/express-api/ai/project.json": {
+      "path": "test-projects/express-api/ai/project.json",
+      "hash": "1bb817bdbded1961f92fd41ff357d31b",
+      "mtime": 1773854929729.0337,
+      "size": 249,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/express-api/ai/repo-map.json": {
+      "path": "test-projects/express-api/ai/repo-map.json",
+      "hash": "d59ff56ea2af1192014b5a9977c3cc01",
+      "mtime": 1773854929729.0337,
+      "size": 6308,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/express-api/ai/repo_map.json": {
+      "path": "test-projects/express-api/ai/repo_map.json",
+      "hash": "2c931b22a4f0555492ca98f0e74d0511",
+      "mtime": 1773854929729.0337,
+      "size": 2017,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/express-api/ai/repo_map.md": {
+      "path": "test-projects/express-api/ai/repo_map.md",
+      "hash": "35963e46f602438bc7b1318c630c9616",
+      "mtime": 1773796492340.4023,
+      "size": 618,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/express-api/ai/schema.json": {
+      "path": "test-projects/express-api/ai/schema.json",
+      "hash": "13d7dee9946a2959f9b7309ee88b23f6",
+      "mtime": 1773854929729.0337,
+      "size": 102,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/express-api/ai/summary.md": {
+      "path": "test-projects/express-api/ai/summary.md",
+      "hash": "792c7fa8536cdf57b7506a5b4390e1fd",
+      "mtime": 1773796492341.4023,
+      "size": 215,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/express-api/ai/symbols.json": {
+      "path": "test-projects/express-api/ai/symbols.json",
+      "hash": "55f09cedb48590dcdc4c0a4506026d52",
+      "mtime": 1773796492346.4023,
+      "size": 30291,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/express-api/ai/tech_stack.md": {
+      "path": "test-projects/express-api/ai/tech_stack.md",
+      "hash": "bce98c307ddce9864d341031c914ba8a",
+      "mtime": 1773796492343.4023,
+      "size": 411,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/express-api/ai/tools.json": {
+      "path": "test-projects/express-api/ai/tools.json",
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773796492350.4023,
+      "size": 138,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/express-api/controllers/authController.js": {
+      "path": "test-projects/express-api/controllers/authController.js",
+      "hash": "7354721b063c069c013d70e04f4bee0f",
+      "mtime": 1773776832721.0393,
+      "size": 930,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/express-api/controllers/userController.js": {
+      "path": "test-projects/express-api/controllers/userController.js",
+      "hash": "e43bb45b1c75b7e4bcd072c60a70d848",
+      "mtime": 1773776845003.1538,
+      "size": 1214,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/express-api/index.js": {
+      "path": "test-projects/express-api/index.js",
+      "hash": "b866780bf160f2bfb2ac6baba6a1f6b1",
+      "mtime": 1773776791058.662,
+      "size": 682,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/express-api/middleware/authMiddleware.js": {
+      "path": "test-projects/express-api/middleware/authMiddleware.js",
+      "hash": "bd1176bd90f83f93b3f66d07758267e5",
+      "mtime": 1773776926397.9497,
+      "size": 689,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/express-api/models/userRepository.js": {
+      "path": "test-projects/express-api/models/userRepository.js",
+      "hash": "fdf8dfbb70b15c82f0d2b13e51a640f6",
+      "mtime": 1773776885672.544,
+      "size": 767,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/express-api/package.json": {
+      "path": "test-projects/express-api/package.json",
+      "hash": "c64180130f77b5472a2850aafa61c7e9",
+      "mtime": 1773776784437.6038,
+      "size": 363,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/express-api/services/authService.js": {
+      "path": "test-projects/express-api/services/authService.js",
+      "hash": "cacf5bd493a669c8ef7b95bef67cf7e5",
+      "mtime": 1773776853984.2388,
+      "size": 555,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/express-api/services/userService.js": {
+      "path": "test-projects/express-api/services/userService.js",
+      "hash": "cb3b6f655977d154edee4038d6105d10",
+      "mtime": 1773776865182.3455,
+      "size": 534,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/README.md": {
+      "path": "test-projects/fastapi-app/README.md",
+      "hash": "bf26100b42bb769b5067306a5fb0a830",
+      "mtime": 1773848160010.3352,
+      "size": 3195,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/ai_context.md": {
+      "path": "test-projects/fastapi-app/ai/ai_context.md",
+      "hash": "06b0588ccaa38e93b82047e29c26dbf4",
+      "mtime": 1773848180015.6138,
+      "size": 1421,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/ai_rules.md": {
+      "path": "test-projects/fastapi-app/ai/ai_rules.md",
+      "hash": "b7db08ce64e7b0afd2e515992bc0a561",
+      "mtime": 1773848180015.6138,
+      "size": 787,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/architecture.md": {
+      "path": "test-projects/fastapi-app/ai/architecture.md",
+      "hash": "423f9f9db4f90e3e12c8aab7f022ef98",
+      "mtime": 1773848180010.6138,
+      "size": 586,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/cache.json": {
+      "path": "test-projects/fastapi-app/ai/cache.json",
+      "hash": "429adfe1177228af3779a24147bc7e1b",
+      "mtime": 1773848188957.7383,
+      "size": 3095,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/conventions.md": {
+      "path": "test-projects/fastapi-app/ai/conventions.md",
+      "hash": "d11ac646a8916e3c6cc376f610368317",
+      "mtime": 1773848180012.6138,
+      "size": 813,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/dependencies.json": {
+      "path": "test-projects/fastapi-app/ai/dependencies.json",
+      "hash": "246c5a632d3afd7fd186dc0f028157f6",
+      "mtime": 1773848180014.6138,
+      "size": 5060,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/entrypoints.md": {
+      "path": "test-projects/fastapi-app/ai/entrypoints.md",
+      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
+      "mtime": 1773848180011.6138,
+      "size": 43,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/files.json": {
+      "path": "test-projects/fastapi-app/ai/files.json",
+      "hash": "2e3b91dd5469562139f75f79287027d8",
+      "mtime": 1773854929729.0337,
+      "size": 2819,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/graph/module-graph.json": {
+      "path": "test-projects/fastapi-app/ai/graph/module-graph.json",
+      "hash": "dccb5b1211bf9c438fefd949ef8d280d",
+      "mtime": 1773848188949.738,
+      "size": 1223,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/graph/symbol-graph.json": {
+      "path": "test-projects/fastapi-app/ai/graph/symbol-graph.json",
+      "hash": "dacfe5d47c55c042e7a83e970b975fd2",
+      "mtime": 1773848188955.7383,
+      "size": 44539,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/graph/symbol-references.json": {
+      "path": "test-projects/fastapi-app/ai/graph/symbol-references.json",
+      "hash": "1cac27d66672fe0c2cf2c0f030e38795",
+      "mtime": 1773848188956.7383,
+      "size": 1791,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/index-state.json": {
+      "path": "test-projects/fastapi-app/ai/index-state.json",
+      "hash": "140a19ce26a2a62352b6eb6457d91fc5",
+      "mtime": 1773854929729.0337,
+      "size": 6441,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/modules.json": {
+      "path": "test-projects/fastapi-app/ai/modules.json",
+      "hash": "1c7630ab9b91c57c6cb9ccb384cc3f4e",
+      "mtime": 1773854832245.2961,
+      "size": 281,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/project.json": {
+      "path": "test-projects/fastapi-app/ai/project.json",
+      "hash": "1067d825cc4be093755993728968ba7f",
+      "mtime": 1773848180017.6138,
+      "size": 186,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/repo-map.json": {
+      "path": "test-projects/fastapi-app/ai/repo-map.json",
+      "hash": "618ba6fae84d28fb96cfad500fb0b32a",
+      "mtime": 1773848188947.738,
+      "size": 4769,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/repo_map.json": {
+      "path": "test-projects/fastapi-app/ai/repo_map.json",
+      "hash": "01a62da84320e9b5989803f90799e278",
+      "mtime": 1773848180009.6135,
+      "size": 1778,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/repo_map.md": {
+      "path": "test-projects/fastapi-app/ai/repo_map.md",
+      "hash": "e6e7d946bb0e4408e4e373f5b8fd6a74",
+      "mtime": 1773848180008.6135,
+      "size": 450,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/schema.json": {
+      "path": "test-projects/fastapi-app/ai/schema.json",
+      "hash": "da47e464464bc5767261d258df5b17c4",
+      "mtime": 1773848180017.6138,
+      "size": 102,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/summary.md": {
+      "path": "test-projects/fastapi-app/ai/summary.md",
+      "hash": "9a081d026396cae093add00fc2c34320",
+      "mtime": 1773848180009.6135,
+      "size": 138,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/symbols.json": {
+      "path": "test-projects/fastapi-app/ai/symbols.json",
+      "hash": "a89ac8114a5482c6128299186c367207",
+      "mtime": 1773848180013.6138,
+      "size": 47762,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/tech_stack.md": {
+      "path": "test-projects/fastapi-app/ai/tech_stack.md",
+      "hash": "f5d7720e17390f42b9f81c4b3c0d1bdf",
+      "mtime": 1773848180011.6138,
+      "size": 342,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/ai/tools.json": {
+      "path": "test-projects/fastapi-app/ai/tools.json",
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773848180017.6138,
+      "size": 138,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/app/database.py": {
+      "path": "test-projects/fastapi-app/app/database.py",
+      "hash": "119e69e1cbb98dd5dbad6dd6667c31c8",
+      "mtime": 1773847938779.2578,
+      "size": 534,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/app/dependencies.py": {
+      "path": "test-projects/fastapi-app/app/dependencies.py",
+      "hash": "a4bcf7c973d54dfba67718f52c0d1e9b",
+      "mtime": 1773848033913.5806,
+      "size": 3402,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/app/main.py": {
+      "path": "test-projects/fastapi-app/app/main.py",
+      "hash": "19a812c3ee021a6e96bdf3aee822ac95",
+      "mtime": 1773848130927.9304,
+      "size": 1043,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/app/models.py": {
+      "path": "test-projects/fastapi-app/app/models.py",
+      "hash": "a246bcc28f34e2ea398115358f06ec1e",
+      "mtime": 1773847967580.6582,
+      "size": 4875,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/app/routers/auth.py": {
+      "path": "test-projects/fastapi-app/app/routers/auth.py",
+      "hash": "7f51218c007b8f521b149f0801d8b145",
+      "mtime": 1773848061086.9585,
+      "size": 3508,
+      "indexedAt": "2026-03-18T19:21:24.574Z"
+    },
+    "test-projects/fastapi-app/app/routers/posts.py": {
+      "path": "test-projects/fastapi-app/app/routers/posts.py",
+      "hash": "f8db1a2d760c7e611af7c610dbab4162",
+      "mtime": 1773848113520.6882,
+      "size": 7555,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/fastapi-app/app/schemas.py": {
+      "path": "test-projects/fastapi-app/app/schemas.py",
+      "hash": "4049102356e992bc2c4442d589cd2ced",
+      "mtime": 1773848005561.1863,
+      "size": 3996,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/README.md": {
+      "path": "test-projects/flask-app/README.md",
+      "hash": "071fe06a414db5cf64f67408324178eb",
+      "mtime": 1773848514509.6038,
+      "size": 2864,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/ai_context.md": {
+      "path": "test-projects/flask-app/ai/ai_context.md",
+      "hash": "cf729a56ec41c185778ce65866e495a7",
+      "mtime": 1773848536627.0344,
+      "size": 1514,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/ai_rules.md": {
+      "path": "test-projects/flask-app/ai/ai_rules.md",
+      "hash": "e3b8a915d60578c37888d5589cc8a8b4",
+      "mtime": 1773848536627.0344,
+      "size": 812,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/architecture.md": {
+      "path": "test-projects/flask-app/ai/architecture.md",
+      "hash": "5436c01ae8a7ed86df7421cf06c4a2ea",
+      "mtime": 1773848536621.0344,
+      "size": 766,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/cache.json": {
+      "path": "test-projects/flask-app/ai/cache.json",
+      "hash": "452dea2cf3172e79ede6d8bd57f1d7d6",
+      "mtime": 1773848544258.1821,
+      "size": 4065,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/context/features/app.json": {
+      "path": "test-projects/flask-app/ai/context/features/app.json",
+      "hash": "1d70801cc444a0b89b9d8b821d3bd9fa",
+      "mtime": 1773848544260.1821,
+      "size": 509,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/context/flows/routes.json": {
+      "path": "test-projects/flask-app/ai/context/flows/routes.json",
+      "hash": "5ddf9a5c298ea6a4642971022d75d3a3",
+      "mtime": 1773848544260.1821,
+      "size": 222,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/conventions.md": {
+      "path": "test-projects/flask-app/ai/conventions.md",
+      "hash": "d11ac646a8916e3c6cc376f610368317",
+      "mtime": 1773848536623.0344,
+      "size": 813,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/dependencies.json": {
+      "path": "test-projects/flask-app/ai/dependencies.json",
+      "hash": "a1df2bb705e3dfc1d871a0f4b5599918",
+      "mtime": 1773848536626.0344,
+      "size": 5954,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/entrypoints.md": {
+      "path": "test-projects/flask-app/ai/entrypoints.md",
+      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
+      "mtime": 1773848536623.0344,
+      "size": 43,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/files.json": {
+      "path": "test-projects/flask-app/ai/files.json",
+      "hash": "fbef1c8bb7bf176d0b15f8e232cefee9",
+      "mtime": 1773854929729.0337,
+      "size": 3602,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/graph/module-graph.json": {
+      "path": "test-projects/flask-app/ai/graph/module-graph.json",
+      "hash": "02a02b0cbc9e18fbb1a22a7ab03e332d",
+      "mtime": 1773848544249.182,
+      "size": 1533,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/graph/symbol-graph.json": {
+      "path": "test-projects/flask-app/ai/graph/symbol-graph.json",
+      "hash": "c6510825e8319f971555c34d69b398f8",
+      "mtime": 1773848544256.1821,
+      "size": 36185,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/graph/symbol-references.json": {
+      "path": "test-projects/flask-app/ai/graph/symbol-references.json",
+      "hash": "50d531c7ec9c163df25e05dbeda9d3dc",
+      "mtime": 1773848544256.1821,
+      "size": 1393,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/index-state.json": {
+      "path": "test-projects/flask-app/ai/index-state.json",
+      "hash": "e6134693beb94e4a0ffec54a51e056d3",
+      "mtime": 1773854929729.0337,
+      "size": 8254,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/modules.json": {
+      "path": "test-projects/flask-app/ai/modules.json",
+      "hash": "38c0bc646d910f72304c2f0c0a7dc547",
+      "mtime": 1773854832384.2986,
+      "size": 442,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/project.json": {
+      "path": "test-projects/flask-app/ai/project.json",
+      "hash": "cef4e1e0702fd7503ab8c8e1461a5eed",
+      "mtime": 1773848536629.0347,
+      "size": 211,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/repo-map.json": {
+      "path": "test-projects/flask-app/ai/repo-map.json",
+      "hash": "3fa4e569753bb24a62a351af4e536168",
+      "mtime": 1773848544247.182,
+      "size": 7103,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/repo_map.json": {
+      "path": "test-projects/flask-app/ai/repo_map.json",
+      "hash": "b1e8e7df6742fdc1b4856421917a1aea",
+      "mtime": 1773848536620.0344,
+      "size": 3310,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/repo_map.md": {
+      "path": "test-projects/flask-app/ai/repo_map.md",
+      "hash": "00b39c99697e3a192ac9582c29acbd0c",
+      "mtime": 1773848536620.0344,
+      "size": 816,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/schema.json": {
+      "path": "test-projects/flask-app/ai/schema.json",
+      "hash": "b242479cd54da3a1069f9a72d4087693",
+      "mtime": 1773848536629.0347,
+      "size": 102,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/summary.md": {
+      "path": "test-projects/flask-app/ai/summary.md",
+      "hash": "6e8e4144d042cab6e79a4263a02e8c8e",
+      "mtime": 1773848536620.0344,
+      "size": 158,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/symbols.json": {
+      "path": "test-projects/flask-app/ai/symbols.json",
+      "hash": "303ff8a7e834966302a3ef8665c10efa",
+      "mtime": 1773848536625.0344,
+      "size": 44420,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/tech_stack.md": {
+      "path": "test-projects/flask-app/ai/tech_stack.md",
+      "hash": "f5d7720e17390f42b9f81c4b3c0d1bdf",
+      "mtime": 1773848536622.0344,
+      "size": 342,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/ai/tools.json": {
+      "path": "test-projects/flask-app/ai/tools.json",
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773848536629.0347,
+      "size": 138,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/app/__init__.py": {
+      "path": "test-projects/flask-app/app/__init__.py",
+      "hash": "135b544eb6253b213ebe2931693d7e81",
+      "mtime": 1773848317056.531,
+      "size": 1071,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/app/api/__init__.py": {
+      "path": "test-projects/flask-app/app/api/__init__.py",
+      "hash": "9ef74422b71d8e4eb23da44a55746762",
+      "mtime": 1773848498343.286,
+      "size": 111,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/app/api/routes.py": {
+      "path": "test-projects/flask-app/app/api/routes.py",
+      "hash": "5b5e6a14a1d593e67abd927391313750",
+      "mtime": 1773848496063.241,
+      "size": 3490,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/app/auth/__init__.py": {
+      "path": "test-projects/flask-app/app/auth/__init__.py",
+      "hash": "abf9b359f664fe1d79755ece5091a5da",
+      "mtime": 1773848426716.8467,
+      "size": 131,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/app/auth/forms.py": {
+      "path": "test-projects/flask-app/app/auth/forms.py",
+      "hash": "89d621d726eb0aab9e5395e5d5785b5e",
+      "mtime": 1773848423372.7783,
+      "size": 1731,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/app/auth/routes.py": {
+      "path": "test-projects/flask-app/app/auth/routes.py",
+      "hash": "786f87aafcd30ab8c036f77c1f28a994",
+      "mtime": 1773848412451.5537,
+      "size": 2117,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/app/blog/__init__.py": {
+      "path": "test-projects/flask-app/app/blog/__init__.py",
+      "hash": "3aadb4a0fa81a23f19574d14d8f7b0b6",
+      "mtime": 1773848463715.5967,
+      "size": 121,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/app/blog/forms.py": {
+      "path": "test-projects/flask-app/app/blog/forms.py",
+      "hash": "f5bb29b358afcf2c49a9e43f6a4cade0",
+      "mtime": 1773848462522.5728,
+      "size": 1195,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/app/blog/routes.py": {
+      "path": "test-projects/flask-app/app/blog/routes.py",
+      "hash": "e5c182cbc60aa3b179790f48608340a7",
+      "mtime": 1773848455560.4326,
+      "size": 4196,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/app/main/__init__.py": {
+      "path": "test-projects/flask-app/app/main/__init__.py",
+      "hash": "2ec8b9aaec26dc4cadc268b03d26644a",
+      "mtime": 1773848389471.0767,
+      "size": 114,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/app/main/routes.py": {
+      "path": "test-projects/flask-app/app/main/routes.py",
+      "hash": "11851d841b8f782e855c201064be0932",
+      "mtime": 1773848388172.0493,
+      "size": 2509,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/app/models.py": {
+      "path": "test-projects/flask-app/app/models.py",
+      "hash": "80684c0f3c472100220ebf3265dbdd2a",
+      "mtime": 1773848367634.6174,
+      "size": 5539,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/flask-app/config.py": {
+      "path": "test-projects/flask-app/config.py",
+      "hash": "f955d56ff51f4f024d586ba42f1c6320",
+      "mtime": 1773848326297.732,
+      "size": 1439,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/laravel-app/README.md": {
+      "path": "test-projects/laravel-app/README.md",
+      "hash": "63be1b116847a4eacdb95be2aeab72c2",
+      "mtime": 1773847786371.1416,
+      "size": 2642,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/laravel-app/ai/ai_context.md": {
+      "path": "test-projects/laravel-app/ai/ai_context.md",
+      "hash": "15ab5feae2638cabf3a2685cfe7f8ee4",
+      "mtime": 1773854736818.5432,
+      "size": 1623,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/laravel-app/ai/ai_rules.md": {
+      "path": "test-projects/laravel-app/ai/ai_rules.md",
+      "hash": "2e09780ab0f6bb945f7401219fe243d4",
+      "mtime": 1773854736818.5432,
+      "size": 804,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/laravel-app/ai/architecture.md": {
+      "path": "test-projects/laravel-app/ai/architecture.md",
+      "hash": "6c860fc433c730671d752ddf9f58cbca",
+      "mtime": 1773854736813.5432,
+      "size": 1003,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/laravel-app/ai/cache.json": {
+      "path": "test-projects/laravel-app/ai/cache.json",
+      "hash": "b753a30235e999795838c0d5cb154c66",
+      "mtime": 1773854929730.0337,
+      "size": 4204,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/laravel-app/ai/context/features/app.json": {
+      "path": "test-projects/laravel-app/ai/context/features/app.json",
+      "hash": "48ed0274a6a81b1c50955d402b3c2695",
+      "mtime": 1773854736911.5452,
+      "size": 619,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/laravel-app/ai/context/flows/category.json": {
+      "path": "test-projects/laravel-app/ai/context/flows/category.json",
+      "hash": "437bcbd406d6d1288bd16213b6be4767",
+      "mtime": 1773854736911.5452,
+      "size": 237,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/laravel-app/ai/context/flows/comment.json": {
+      "path": "test-projects/laravel-app/ai/context/flows/comment.json",
+      "hash": "c2ebad5e63035bae2fde39e9f863e9cb",
+      "mtime": 1773854736911.5452,
+      "size": 233,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/laravel-app/ai/context/flows/post.json": {
+      "path": "test-projects/laravel-app/ai/context/flows/post.json",
+      "hash": "f704d1cdb7823ec237964b578e9935b7",
+      "mtime": 1773854736911.5452,
+      "size": 221,
+      "indexedAt": "2026-03-18T19:21:24.575Z"
+    },
+    "test-projects/laravel-app/ai/context/flows/unnamed.json": {
+      "path": "test-projects/laravel-app/ai/context/flows/unnamed.json",
+      "hash": "0d3ba6968f125bdddd28f7b908d4c9e0",
+      "mtime": 1773854736911.5452,
+      "size": 161,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/ai/conventions.md": {
+      "path": "test-projects/laravel-app/ai/conventions.md",
+      "hash": "d11ac646a8916e3c6cc376f610368317",
+      "mtime": 1773854736815.5432,
+      "size": 813,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/ai/dependencies.json": {
+      "path": "test-projects/laravel-app/ai/dependencies.json",
+      "hash": "038f80a99cbcc45991786b645398758e",
+      "mtime": 1773854736817.5432,
+      "size": 87,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/ai/entrypoints.md": {
+      "path": "test-projects/laravel-app/ai/entrypoints.md",
+      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
+      "mtime": 1773854736814.5432,
+      "size": 43,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/ai/files.json": {
+      "path": "test-projects/laravel-app/ai/files.json",
+      "hash": "17c7ffe15934f3eb665046045dd500da",
+      "mtime": 1773854929730.0337,
+      "size": 3791,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/ai/graph/module-graph.json": {
+      "path": "test-projects/laravel-app/ai/graph/module-graph.json",
+      "hash": "08886f9cf775a3e58668f9c166b6f1ae",
+      "mtime": 1773854736900.545,
+      "size": 631,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/ai/graph/symbol-graph.json": {
+      "path": "test-projects/laravel-app/ai/graph/symbol-graph.json",
+      "hash": "79a11e66d1c9ebdbec716c31b9eb11db",
+      "mtime": 1773854929730.0337,
+      "size": 60,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/ai/graph/symbol-references.json": {
+      "path": "test-projects/laravel-app/ai/graph/symbol-references.json",
+      "hash": "99914b932bd37a50b983c5e7c90ae93b",
+      "mtime": 1773854929730.0337,
+      "size": 2,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/ai/index-state.json": {
+      "path": "test-projects/laravel-app/ai/index-state.json",
+      "hash": "e7da95c458fbcbf04c7d84fc58575b42",
+      "mtime": 1773854929730.0337,
+      "size": 8513,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/ai/modules.json": {
+      "path": "test-projects/laravel-app/ai/modules.json",
+      "hash": "2a7554702c3a5bcd823e4c634f012bb7",
+      "mtime": 1773854832519.301,
+      "size": 639,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/ai/project.json": {
+      "path": "test-projects/laravel-app/ai/project.json",
+      "hash": "4f84fe1080f4b75b4285e8c8e1bcca0a",
+      "mtime": 1773854929730.0337,
+      "size": 252,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/ai/repo-map.json": {
+      "path": "test-projects/laravel-app/ai/repo-map.json",
+      "hash": "e3eef6b0e39948ede51b992e3fd98afb",
+      "mtime": 1773854929730.0337,
+      "size": 7717,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/ai/repo_map.json": {
+      "path": "test-projects/laravel-app/ai/repo_map.json",
+      "hash": "fbfd40643cc587d96742b7d25f11a4e8",
+      "mtime": 1773854929730.0337,
+      "size": 3445,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/ai/repo_map.md": {
+      "path": "test-projects/laravel-app/ai/repo_map.md",
+      "hash": "9ee5fd15680ac4effd4398914d3b698c",
+      "mtime": 1773854736809.5432,
+      "size": 911,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/ai/schema.json": {
+      "path": "test-projects/laravel-app/ai/schema.json",
+      "hash": "827bc0de2e5f071098e8ec8a65b30211",
+      "mtime": 1773854929730.0337,
+      "size": 102,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/ai/summary.md": {
+      "path": "test-projects/laravel-app/ai/summary.md",
+      "hash": "9dbbf46bbf4b35c92e5294250b50a54b",
+      "mtime": 1773854736812.5432,
+      "size": 206,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/ai/symbols.json": {
+      "path": "test-projects/laravel-app/ai/symbols.json",
+      "hash": "6edde050dc3089a9e15bf3934226a7c4",
+      "mtime": 1773854929731.0337,
+      "size": 83,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/ai/tech_stack.md": {
+      "path": "test-projects/laravel-app/ai/tech_stack.md",
+      "hash": "fd84b9bddb9a4ced339df8f8eec6abe1",
+      "mtime": 1773854736814.5432,
+      "size": 376,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/ai/tools.json": {
+      "path": "test-projects/laravel-app/ai/tools.json",
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773854736821.5435,
+      "size": 138,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/app/Http/Controllers/Api/CategoryController.php": {
+      "path": "test-projects/laravel-app/app/Http/Controllers/Api/CategoryController.php",
+      "hash": "eae63919c19317d673da75fae862ac1b",
+      "mtime": 1773847799280.3206,
+      "size": 2278,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/app/Http/Controllers/Api/CommentController.php": {
+      "path": "test-projects/laravel-app/app/Http/Controllers/Api/CommentController.php",
+      "hash": "6dac8cef07f04ac0b0f20d76f4ca8348",
+      "mtime": 1773847807128.4294,
+      "size": 1414,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/app/Http/Controllers/Api/PostController.php": {
+      "path": "test-projects/laravel-app/app/Http/Controllers/Api/PostController.php",
+      "hash": "105dfc4a6f054cd19e4e1b14453c02ac",
+      "mtime": 1773847736086.444,
+      "size": 4713,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/app/Http/Controllers/Controller.php": {
+      "path": "test-projects/laravel-app/app/Http/Controllers/Controller.php",
+      "hash": "42517d7dc7e3d0d3045b06ed842b565e",
+      "mtime": 1773847748755.6199,
+      "size": 299,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/app/Models/Category.php": {
+      "path": "test-projects/laravel-app/app/Models/Category.php",
+      "hash": "8982d52ddaad742bd03abfe7ee89cf5c",
+      "mtime": 1773847700804.955,
+      "size": 614,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/app/Models/Comment.php": {
+      "path": "test-projects/laravel-app/app/Models/Comment.php",
+      "hash": "9efa05310b8bc1ca407c4db0aaf191f5",
+      "mtime": 1773847664829.4568,
+      "size": 1009,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/app/Models/Post.php": {
+      "path": "test-projects/laravel-app/app/Models/Post.php",
+      "hash": "235a49b0fb8acb6d27ad0a76f9e67e46",
+      "mtime": 1773847648272.2275,
+      "size": 2170,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/app/Models/User.php": {
+      "path": "test-projects/laravel-app/app/Models/User.php",
+      "hash": "20cc08b187ba186031da18582a03c9a9",
+      "mtime": 1773847685326.7407,
+      "size": 1703,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/bootstrap/app.php": {
+      "path": "test-projects/laravel-app/bootstrap/app.php",
+      "hash": "9ce9c023ef044aa0246244f18202bd9e",
+      "mtime": 1773847620203.8389,
+      "size": 824,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/composer.json": {
+      "path": "test-projects/laravel-app/composer.json",
+      "hash": "1fd162ecf419a1aa7a24e660429335ee",
+      "mtime": 1773847763470.8237,
+      "size": 885,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/laravel-app/routes/api.php": {
+      "path": "test-projects/laravel-app/routes/api.php",
+      "hash": "2ce87617f3fee458e3e5fda64a536495",
+      "mtime": 1773847757081.7354,
+      "size": 1557,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/ai_context.md": {
+      "path": "test-projects/nestjs-backend/ai/ai_context.md",
+      "hash": "01e94675a8faa5d598f2782c09e3d5ad",
+      "mtime": 1773854807532.8474,
+      "size": 1892,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/ai_rules.md": {
+      "path": "test-projects/nestjs-backend/ai/ai_rules.md",
+      "hash": "0056c2b3f1d212bd870734924f577d09",
+      "mtime": 1773854807531.8474,
+      "size": 972,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/architecture.md": {
+      "path": "test-projects/nestjs-backend/ai/architecture.md",
+      "hash": "b763c79531f89caf3a6731d8c6b4f157",
+      "mtime": 1773854807525.8474,
+      "size": 787,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/cache.json": {
+      "path": "test-projects/nestjs-backend/ai/cache.json",
+      "hash": "26c8ef59478d363a106dfd15b861e043",
+      "mtime": 1773854929731.0337,
+      "size": 4308,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/context/features/src.json": {
+      "path": "test-projects/nestjs-backend/ai/context/features/src.json",
+      "hash": "e62d7f714439c64f0a0051436687b023",
+      "mtime": 1773854807614.8489,
+      "size": 558,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/context/flows/auth..json": {
+      "path": "test-projects/nestjs-backend/ai/context/flows/auth..json",
+      "hash": "064519d0be7978f42c408cf2f99edaf9",
+      "mtime": 1773854929731.0337,
+      "size": 182,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/context/flows/auth.controller.json": {
+      "path": "test-projects/nestjs-backend/ai/context/flows/auth.controller.json",
+      "hash": "a61ee04c482158f50919e84978222248",
+      "mtime": 1773854929731.0337,
+      "size": 248,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/context/flows/auth.json": {
+      "path": "test-projects/nestjs-backend/ai/context/flows/auth.json",
+      "hash": "064519d0be7978f42c408cf2f99edaf9",
+      "mtime": 1773854807615.8489,
+      "size": 182,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/context/flows/users..json": {
+      "path": "test-projects/nestjs-backend/ai/context/flows/users..json",
+      "hash": "743cdda74793f8b1d4fac2656267c24b",
+      "mtime": 1773854929731.0337,
+      "size": 189,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/context/flows/users.controller.json": {
+      "path": "test-projects/nestjs-backend/ai/context/flows/users.controller.json",
+      "hash": "a797f6c268b0619dc79a49e34ed9dc0f",
+      "mtime": 1773854929731.0337,
+      "size": 255,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/context/flows/users.json": {
+      "path": "test-projects/nestjs-backend/ai/context/flows/users.json",
+      "hash": "743cdda74793f8b1d4fac2656267c24b",
+      "mtime": 1773854807615.8489,
+      "size": 189,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/conventions.md": {
+      "path": "test-projects/nestjs-backend/ai/conventions.md",
+      "hash": "9924468f87cfd5d2328fa48737aac075",
+      "mtime": 1773854807528.8474,
+      "size": 824,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/dependencies.json": {
+      "path": "test-projects/nestjs-backend/ai/dependencies.json",
+      "hash": "02d90ce28c41920d2591c9a29255813d",
+      "mtime": 1773854929731.0337,
+      "size": 7521,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/entrypoints.md": {
+      "path": "test-projects/nestjs-backend/ai/entrypoints.md",
+      "hash": "31bc6c36186b7db7764086f994a34fcf",
+      "mtime": 1773854807527.8474,
+      "size": 383,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/files.json": {
+      "path": "test-projects/nestjs-backend/ai/files.json",
+      "hash": "6fc0e5f9f769544e4d28bbd29197b2f5",
+      "mtime": 1773854929731.0337,
+      "size": 1499,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/graph/module-graph.json": {
+      "path": "test-projects/nestjs-backend/ai/graph/module-graph.json",
+      "hash": "0e4d69958d08b9aaf402549b2cfe2b3a",
+      "mtime": 1773854807603.8489,
+      "size": 582,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/graph/symbol-graph.json": {
+      "path": "test-projects/nestjs-backend/ai/graph/symbol-graph.json",
+      "hash": "0b661a46325dfe546710ef24eab5bd4f",
+      "mtime": 1773854929731.0337,
+      "size": 15358,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/graph/symbol-references.json": {
+      "path": "test-projects/nestjs-backend/ai/graph/symbol-references.json",
+      "hash": "afadcb8711e7e5322742b99da7ec3e50",
+      "mtime": 1773854929731.0337,
+      "size": 367,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/index-state.json": {
+      "path": "test-projects/nestjs-backend/ai/index-state.json",
+      "hash": "0a1cb9edc3311943232bc10889d43ba0",
+      "mtime": 1773854832725.3047,
+      "size": 8182,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/modules.json": {
+      "path": "test-projects/nestjs-backend/ai/modules.json",
+      "hash": "11513775b7ba2c22e59f9bd915ea33fa",
+      "mtime": 1773854832659.3035,
+      "size": 448,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/project.json": {
+      "path": "test-projects/nestjs-backend/ai/project.json",
+      "hash": "c6b3d408145afd2fd35063120fd6d922",
+      "mtime": 1773854929731.0337,
+      "size": 281,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/repo-map.json": {
+      "path": "test-projects/nestjs-backend/ai/repo-map.json",
+      "hash": "3b95375593b57740d1511afecbc9ec06",
+      "mtime": 1773854929731.0337,
+      "size": 7729,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/repo_map.json": {
+      "path": "test-projects/nestjs-backend/ai/repo_map.json",
+      "hash": "5286055a82f31ff2a9e6091b4299928b",
+      "mtime": 1773854929731.0337,
+      "size": 3168,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/repo_map.md": {
+      "path": "test-projects/nestjs-backend/ai/repo_map.md",
+      "hash": "d3b93db63ba7b92c1bcba98b7682b487",
+      "mtime": 1773854807523.8474,
+      "size": 868,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/schema.json": {
+      "path": "test-projects/nestjs-backend/ai/schema.json",
+      "hash": "f39eaae38116c54da7659e845e463132",
+      "mtime": 1773854929731.0337,
+      "size": 102,
+      "indexedAt": "2026-03-18T19:21:24.576Z"
+    },
+    "test-projects/nestjs-backend/ai/summary.md": {
+      "path": "test-projects/nestjs-backend/ai/summary.md",
+      "hash": "c97180815314cb04e69623f705703641",
+      "mtime": 1773854807524.8474,
+      "size": 167,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/nestjs-backend/ai/symbols.json": {
+      "path": "test-projects/nestjs-backend/ai/symbols.json",
+      "hash": "86f0962de99584aca04f8773850703ba",
+      "mtime": 1773854807529.8474,
+      "size": 13180,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/nestjs-backend/ai/tech_stack.md": {
+      "path": "test-projects/nestjs-backend/ai/tech_stack.md",
+      "hash": "a84eb022eb8e5959365181abc81e5f9d",
+      "mtime": 1773854807526.8474,
+      "size": 410,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/nestjs-backend/ai/tools.json": {
+      "path": "test-projects/nestjs-backend/ai/tools.json",
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773854807534.8474,
+      "size": 138,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/nestjs-backend/package.json": {
+      "path": "test-projects/nestjs-backend/package.json",
+      "hash": "54188023d3f4898db4ed5ecb0963ad7c",
+      "mtime": 1773776957019.264,
+      "size": 504,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/nestjs-backend/src/app.module.ts": {
+      "path": "test-projects/nestjs-backend/src/app.module.ts",
+      "hash": "340f55f1f816bff231e0d7cceb640a6a",
+      "mtime": 1773777098469.8062,
+      "size": 220,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/nestjs-backend/src/auth/auth.controller.ts": {
+      "path": "test-projects/nestjs-backend/src/auth/auth.controller.ts",
+      "hash": "042f9828f736d2cd17f81a9f38e92902",
+      "mtime": 1773776992110.6333,
+      "size": 724,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/nestjs-backend/src/auth/auth.module.ts": {
+      "path": "test-projects/nestjs-backend/src/auth/auth.module.ts",
+      "hash": "d77f0da16ab8259e61017e585aa84ba1",
+      "mtime": 1773776981771.5234,
+      "size": 337,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/nestjs-backend/src/auth/auth.service.ts": {
+      "path": "test-projects/nestjs-backend/src/auth/auth.service.ts",
+      "hash": "82d1c6ef4273438c42f5ec7a6d11af7e",
+      "mtime": 1773777003294.753,
+      "size": 781,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/nestjs-backend/src/auth/dto/login.dto.ts": {
+      "path": "test-projects/nestjs-backend/src/auth/dto/login.dto.ts",
+      "hash": "ea30ef087078e1172bffc80a370ebff3",
+      "mtime": 1773777024191.979,
+      "size": 63,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/nestjs-backend/src/auth/strategies/jwt.strategy.ts": {
+      "path": "test-projects/nestjs-backend/src/auth/strategies/jwt.strategy.ts",
+      "hash": "0f76815e6d72c4b1d3324713b6c09853",
+      "mtime": 1773777033163.077,
+      "size": 512,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/nestjs-backend/src/main.ts": {
+      "path": "test-projects/nestjs-backend/src/main.ts",
+      "hash": "37685b56941c1e865638bae7fd76d81c",
+      "mtime": 1773777107555.9097,
+      "size": 275,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/nestjs-backend/src/users/users.controller.ts": {
+      "path": "test-projects/nestjs-backend/src/users/users.controller.ts",
+      "hash": "41b4cfa3872766fb0578a901abd294fa",
+      "mtime": 1773777065483.4343,
+      "size": 749,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/nestjs-backend/src/users/users.module.ts": {
+      "path": "test-projects/nestjs-backend/src/users/users.module.ts",
+      "hash": "f3eb2901994d3dcf77b5bb6766f937aa",
+      "mtime": 1773777054886.3164,
+      "size": 275,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/nestjs-backend/src/users/users.service.ts": {
+      "path": "test-projects/nestjs-backend/src/users/users.service.ts",
+      "hash": "34c037f935826f26a9f72d53774a3223",
+      "mtime": 1773777078186.5767,
+      "size": 1068,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/nestjs-backend/tsconfig.json": {
+      "path": "test-projects/nestjs-backend/tsconfig.json",
+      "hash": "f0902e207501d022c8048ac457251ecc",
+      "mtime": 1773777131755.1877,
+      "size": 546,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/__init__.py": {
+      "path": "test-projects/python-cli/__init__.py",
+      "hash": "b8e919564af9b6e38c79d449bb77a7b5",
+      "mtime": 1773777152897.4336,
+      "size": 27,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/ai_context.md": {
+      "path": "test-projects/python-cli/ai/ai_context.md",
+      "hash": "ed58b5050b4b428a2dc5ddde0d8f0784",
+      "mtime": 1773796492511.405,
+      "size": 1568,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/ai_rules.md": {
+      "path": "test-projects/python-cli/ai/ai_rules.md",
+      "hash": "497d2aaa36fc25e1a1d43ad93a5e3631",
+      "mtime": 1773796492510.405,
+      "size": 809,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/architecture.md": {
+      "path": "test-projects/python-cli/ai/architecture.md",
+      "hash": "96f6c50d3d91f5ac670473220a4aa87e",
+      "mtime": 1773796492506.4048,
+      "size": 887,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/cache.json": {
+      "path": "test-projects/python-cli/ai/cache.json",
+      "hash": "fa069f54b96796535e6acc9b3238696b",
+      "mtime": 1773854929732.0337,
+      "size": 1593,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/context/features/cli.json": {
+      "path": "test-projects/python-cli/ai/context/features/cli.json",
+      "hash": "db233eedf90a4de1cbb42f260b4ec159",
+      "mtime": 1773796517557.7957,
+      "size": 285,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/context/flows/add_.json": {
+      "path": "test-projects/python-cli/ai/context/flows/add_.json",
+      "hash": "8fd1b0ccd628661384b1982917527e10",
+      "mtime": 1773796517557.7957,
+      "size": 131,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/context/flows/list_.json": {
+      "path": "test-projects/python-cli/ai/context/flows/list_.json",
+      "hash": "2307454625174d3b69e727acf6e10261",
+      "mtime": 1773796517557.7957,
+      "size": 134,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/context/flows/remove_.json": {
+      "path": "test-projects/python-cli/ai/context/flows/remove_.json",
+      "hash": "12bece7cdabce999d2430fee0b316b3b",
+      "mtime": 1773796517557.7957,
+      "size": 140,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/conventions.md": {
+      "path": "test-projects/python-cli/ai/conventions.md",
+      "hash": "9c37d280c1cab6899447a58aa03b0f44",
+      "mtime": 1773796492508.4048,
+      "size": 841,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/dependencies.json": {
+      "path": "test-projects/python-cli/ai/dependencies.json",
+      "hash": "b1333fe58b2dddfa6ecb8c53292f442f",
+      "mtime": 1773796492509.405,
+      "size": 1239,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/entrypoints.md": {
+      "path": "test-projects/python-cli/ai/entrypoints.md",
+      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
+      "mtime": 1773796492507.4048,
+      "size": 43,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/files.json": {
+      "path": "test-projects/python-cli/ai/files.json",
+      "hash": "c82d9d1331bd255fc43be845aa368725",
+      "mtime": 1773854929732.0337,
+      "size": 990,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/graph/knowledge-graph.json": {
+      "path": "test-projects/python-cli/ai/graph/knowledge-graph.json",
+      "hash": "9641492007f1599955e6db2b90705b53",
+      "mtime": 1773796549477.293,
+      "size": 1457,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/graph/module-graph.json": {
+      "path": "test-projects/python-cli/ai/graph/module-graph.json",
+      "hash": "54539a6536c57542d107b5e587852d21",
+      "mtime": 1773796517549.7954,
+      "size": 501,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/graph/symbol-graph.json": {
+      "path": "test-projects/python-cli/ai/graph/symbol-graph.json",
+      "hash": "d142e1a1a55b23200fe02b7aee7472df",
+      "mtime": 1773796517553.7954,
+      "size": 9226,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/graph/symbol-references.json": {
+      "path": "test-projects/python-cli/ai/graph/symbol-references.json",
+      "hash": "de6f7fd1e3fb7cc19d8ec0efd2ac8d57",
+      "mtime": 1773796517554.7957,
+      "size": 329,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/index-state.json": {
+      "path": "test-projects/python-cli/ai/index-state.json",
+      "hash": "853666bdf0060524fb4bebdc2afae5b0",
+      "mtime": 1773854832868.3074,
+      "size": 8094,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/modules.json": {
+      "path": "test-projects/python-cli/ai/modules.json",
+      "hash": "366ccb4be2fcb4b7098548e68cee7a06",
+      "mtime": 1773854832804.3062,
+      "size": 371,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/project.json": {
+      "path": "test-projects/python-cli/ai/project.json",
+      "hash": "0511f31fdb8944b75813100c96738f88",
+      "mtime": 1773796492513.405,
+      "size": 239,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/repo-map.json": {
+      "path": "test-projects/python-cli/ai/repo-map.json",
+      "hash": "d69f73250cea151ebef88e78f50ae286",
+      "mtime": 1773854929732.0337,
+      "size": 1959,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/repo_map.json": {
+      "path": "test-projects/python-cli/ai/repo_map.json",
+      "hash": "aa9b5cffb4fea856e640d50ae2f843be",
+      "mtime": 1773796492505.4048,
+      "size": 1959,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/repo_map.md": {
+      "path": "test-projects/python-cli/ai/repo_map.md",
+      "hash": "ef0d7f67520571d71a944a89aed09b85",
+      "mtime": 1773796492504.4048,
+      "size": 542,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/schema.json": {
+      "path": "test-projects/python-cli/ai/schema.json",
+      "hash": "5f906385bbf15f468465b9b3b4e4cabb",
+      "mtime": 1773796492512.405,
+      "size": 102,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/summary.md": {
+      "path": "test-projects/python-cli/ai/summary.md",
+      "hash": "ce45f19fa9b88934464c679faa8bb5e1",
+      "mtime": 1773796492505.4048,
+      "size": 158,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/symbols.json": {
+      "path": "test-projects/python-cli/ai/symbols.json",
+      "hash": "cd04c4c359d5fdffb6f49d080ee81749",
+      "mtime": 1773796492509.405,
+      "size": 11325,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/tech_stack.md": {
+      "path": "test-projects/python-cli/ai/tech_stack.md",
+      "hash": "549e166f1ac035b5c54f522a1962321e",
+      "mtime": 1773796492507.4048,
+      "size": 321,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/ai/tools.json": {
+      "path": "test-projects/python-cli/ai/tools.json",
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773796492513.405,
+      "size": 138,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/cli/__init__.py": {
+      "path": "test-projects/python-cli/cli/__init__.py",
+      "hash": "a3b6d5054e9628836636cf4d6927e33a",
+      "mtime": 1773777227193.3157,
+      "size": 56,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/cli/add_command.py": {
+      "path": "test-projects/python-cli/cli/add_command.py",
+      "hash": "d9b48d790c714aebf7b29db0f8aa3464",
+      "mtime": 1773777196493.9478,
+      "size": 218,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/cli/list_command.py": {
+      "path": "test-projects/python-cli/cli/list_command.py",
+      "hash": "fd7ca8830013f013e16afd191e6c5c75",
+      "mtime": 1773777202889.024,
+      "size": 247,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/cli/remove_command.py": {
+      "path": "test-projects/python-cli/cli/remove_command.py",
+      "hash": "1209f465970ad86ef87ed6c0409cef50",
+      "mtime": 1773777208836.0952,
+      "size": 167,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/main.py": {
+      "path": "test-projects/python-cli/main.py",
+      "hash": "8e7d98c3b644a2b27f760c017100e886",
+      "mtime": 1773777186036.8235,
+      "size": 1117,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/models/__init__.py": {
+      "path": "test-projects/python-cli/models/__init__.py",
+      "hash": "a99db8f336d72b5c5700545705baf7de",
+      "mtime": 1773777266541.7935,
+      "size": 67,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/models/task.py": {
+      "path": "test-projects/python-cli/models/task.py",
+      "hash": "95274739cbb686a2f8c661836623c692",
+      "mtime": 1773777234068.3987,
+      "size": 544,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/python-cli/models/task_repository.py": {
+      "path": "test-projects/python-cli/models/task_repository.py",
+      "hash": "68215671f3b74e5dbd6fdc06671b08b1",
+      "mtime": 1773777261367.7302,
+      "size": 1318,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/rails-app/README.md": {
+      "path": "test-projects/rails-app/README.md",
+      "hash": "3ef44ec9e999fbbf4cc8576bd9996e24",
+      "mtime": 1773853678950.926,
+      "size": 3820,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/rails-app/ai/ai_context.md": {
+      "path": "test-projects/rails-app/ai/ai_context.md",
+      "hash": "2b88de40fafdef3feb62eb1bdc9d1450",
+      "mtime": 1773854723408.2922,
+      "size": 1504,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/rails-app/ai/ai_rules.md": {
+      "path": "test-projects/rails-app/ai/ai_rules.md",
+      "hash": "b34350fb34dabf766cc8425b6a5c32cb",
+      "mtime": 1773854723408.2922,
+      "size": 808,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/rails-app/ai/architecture.md": {
+      "path": "test-projects/rails-app/ai/architecture.md",
+      "hash": "c2692ffcacf44f02742598328eaa2329",
+      "mtime": 1773854723402.2922,
+      "size": 755,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/rails-app/ai/cache.json": {
+      "path": "test-projects/rails-app/ai/cache.json",
+      "hash": "e4d6d1eda920d24846bd61736d855d14",
+      "mtime": 1773854929732.0337,
+      "size": 4733,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/rails-app/ai/context/features/app.json": {
+      "path": "test-projects/rails-app/ai/context/features/app.json",
+      "hash": "3bf2bb6ca87e997141474e32fa2986fa",
+      "mtime": 1773854723495.294,
+      "size": 709,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/rails-app/ai/context/features/config.json": {
+      "path": "test-projects/rails-app/ai/context/features/config.json",
+      "hash": "db2ab595087aba40287ee15c6d79552c",
+      "mtime": 1773854723495.294,
+      "size": 210,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/rails-app/ai/context/flows/application.json": {
+      "path": "test-projects/rails-app/ai/context/flows/application.json",
+      "hash": "b796ad3fa8bca08e15dcbade1439944c",
+      "mtime": 1773854723495.294,
+      "size": 185,
+      "indexedAt": "2026-03-18T19:21:24.577Z"
+    },
+    "test-projects/rails-app/ai/context/flows/application_.json": {
+      "path": "test-projects/rails-app/ai/context/flows/application_.json",
+      "hash": "b796ad3fa8bca08e15dcbade1439944c",
+      "mtime": 1773854929732.0337,
+      "size": 185,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/context/flows/comments.json": {
+      "path": "test-projects/rails-app/ai/context/flows/comments.json",
+      "hash": "d90ee6034c82ea59410cc3da7471901d",
+      "mtime": 1773854723495.294,
+      "size": 197,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/context/flows/comments_.json": {
+      "path": "test-projects/rails-app/ai/context/flows/comments_.json",
+      "hash": "d90ee6034c82ea59410cc3da7471901d",
+      "mtime": 1773854929732.0337,
+      "size": 197,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/context/flows/posts.json": {
+      "path": "test-projects/rails-app/ai/context/flows/posts.json",
+      "hash": "a4142ffe2c2908069728bfd86d73d8a3",
+      "mtime": 1773854723495.294,
+      "size": 188,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/context/flows/posts_.json": {
+      "path": "test-projects/rails-app/ai/context/flows/posts_.json",
+      "hash": "a4142ffe2c2908069728bfd86d73d8a3",
+      "mtime": 1773854929732.0337,
+      "size": 188,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/context/flows/routes.json": {
+      "path": "test-projects/rails-app/ai/context/flows/routes.json",
+      "hash": "c63b4ddeccd3090f084d1e090cdc2cad",
+      "mtime": 1773854723495.294,
+      "size": 129,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/context/flows/users.json": {
+      "path": "test-projects/rails-app/ai/context/flows/users.json",
+      "hash": "6ec4411b509c8d1d063bd0228a9fc186",
+      "mtime": 1773854723495.294,
+      "size": 188,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/context/flows/users_.json": {
+      "path": "test-projects/rails-app/ai/context/flows/users_.json",
+      "hash": "6ec4411b509c8d1d063bd0228a9fc186",
+      "mtime": 1773854929732.0337,
+      "size": 188,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/conventions.md": {
+      "path": "test-projects/rails-app/ai/conventions.md",
+      "hash": "271252881dc9d70018eda35db35449ef",
+      "mtime": 1773854723405.2922,
+      "size": 813,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/dependencies.json": {
+      "path": "test-projects/rails-app/ai/dependencies.json",
+      "hash": "038f80a99cbcc45991786b645398758e",
+      "mtime": 1773854723407.2922,
+      "size": 87,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/entrypoints.md": {
+      "path": "test-projects/rails-app/ai/entrypoints.md",
+      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
+      "mtime": 1773854723404.2922,
+      "size": 43,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/files.json": {
+      "path": "test-projects/rails-app/ai/files.json",
+      "hash": "8b503e51fdc90b73d0c02e481e65ab3f",
+      "mtime": 1773854929732.0337,
+      "size": 4258,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/graph/knowledge-graph.json": {
+      "path": "test-projects/rails-app/ai/graph/knowledge-graph.json",
+      "hash": "69c2e2b44738fe82fa46d5c6da082634",
+      "mtime": 1773854929732.0337,
+      "size": 2545,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/graph/module-graph.json": {
+      "path": "test-projects/rails-app/ai/graph/module-graph.json",
+      "hash": "1ec6b5cded4704395df625458db3360e",
+      "mtime": 1773854723485.2937,
+      "size": 638,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/graph/symbol-graph.json": {
+      "path": "test-projects/rails-app/ai/graph/symbol-graph.json",
+      "hash": "79a11e66d1c9ebdbec716c31b9eb11db",
+      "mtime": 1773854929732.0337,
+      "size": 60,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/graph/symbol-references.json": {
+      "path": "test-projects/rails-app/ai/graph/symbol-references.json",
+      "hash": "99914b932bd37a50b983c5e7c90ae93b",
+      "mtime": 1773854723491.294,
+      "size": 2,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/index-state.json": {
+      "path": "test-projects/rails-app/ai/index-state.json",
+      "hash": "7ec666d7977235df3b8f143c2877d1ca",
+      "mtime": 1773854929733.0337,
+      "size": 9495,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/modules.json": {
+      "path": "test-projects/rails-app/ai/modules.json",
+      "hash": "b86162ee33ceced7d087170aeb03bae5",
+      "mtime": 1773854832947.3088,
+      "size": 633,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/project.json": {
+      "path": "test-projects/rails-app/ai/project.json",
+      "hash": "8320f4be11fc7ac2d8a77f01e2fb1bf1",
+      "mtime": 1773854929733.0337,
+      "size": 290,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/repo-map.json": {
+      "path": "test-projects/rails-app/ai/repo-map.json",
+      "hash": "a02197cb10fa510fc230f7f0f480028e",
+      "mtime": 1773854929733.0337,
+      "size": 8542,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/repo_map.json": {
+      "path": "test-projects/rails-app/ai/repo_map.json",
+      "hash": "e1a4828e985e97f765bc36bd71b14323",
+      "mtime": 1773854929733.0337,
+      "size": 3529,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/repo_map.md": {
+      "path": "test-projects/rails-app/ai/repo_map.md",
+      "hash": "6be292d9062029469958f996ab4b05cc",
+      "mtime": 1773854723400.2922,
+      "size": 944,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/schema.json": {
+      "path": "test-projects/rails-app/ai/schema.json",
+      "hash": "aa050d62e0686ae90b5f60ed7969e3b9",
+      "mtime": 1773854929733.0337,
+      "size": 102,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/summary.md": {
+      "path": "test-projects/rails-app/ai/summary.md",
+      "hash": "87c1c31c6bc816e49363f4406c287ed5",
+      "mtime": 1773854723401.2922,
+      "size": 154,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/symbols.json": {
+      "path": "test-projects/rails-app/ai/symbols.json",
+      "hash": "6edde050dc3089a9e15bf3934226a7c4",
+      "mtime": 1773854929733.0337,
+      "size": 83,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/tech_stack.md": {
+      "path": "test-projects/rails-app/ai/tech_stack.md",
+      "hash": "eaaa6e1eb439a6bd2f1b510ca4f72f32",
+      "mtime": 1773854723403.2922,
+      "size": 338,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/ai/tools.json": {
+      "path": "test-projects/rails-app/ai/tools.json",
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773854723411.2925,
+      "size": 138,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/app/controllers/api/comments_controller.rb": {
+      "path": "test-projects/rails-app/app/controllers/api/comments_controller.rb",
+      "hash": "e3b584186544ce602aad545c965bc2a2",
+      "mtime": 1773853631697.262,
+      "size": 1899,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/app/controllers/api/posts_controller.rb": {
+      "path": "test-projects/rails-app/app/controllers/api/posts_controller.rb",
+      "hash": "b1de2ba0bc7c211e7d9835e6774c679b",
+      "mtime": 1773853614445.0198,
+      "size": 1586,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/app/controllers/api/users_controller.rb": {
+      "path": "test-projects/rails-app/app/controllers/api/users_controller.rb",
+      "hash": "af3c6c69f25f83ba384a677b2f1509ff",
+      "mtime": 1773853603625.8682,
+      "size": 1101,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/app/controllers/application_controller.rb": {
+      "path": "test-projects/rails-app/app/controllers/application_controller.rb",
+      "hash": "6b9ad7e9ab66ff26949ecd46168804fa",
+      "mtime": 1773853593748.7297,
+      "size": 997,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/app/models/comment.rb": {
+      "path": "test-projects/rails-app/app/models/comment.rb",
+      "hash": "a4948b0d232cea2dec83a7bea2e94c75",
+      "mtime": 1773853587660.6445,
+      "size": 694,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/app/models/post.rb": {
+      "path": "test-projects/rails-app/app/models/post.rb",
+      "hash": "1a970d5c75d2ffcf23b797d8da78018a",
+      "mtime": 1773853581771.5623,
+      "size": 812,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/app/models/user.rb": {
+      "path": "test-projects/rails-app/app/models/user.rb",
+      "hash": "c31306e81cef27073eabae95167c2fe9",
+      "mtime": 1773853574668.463,
+      "size": 609,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/app/services/post_service.rb": {
+      "path": "test-projects/rails-app/app/services/post_service.rb",
+      "hash": "8b168ea13fd7490330796c9427513d88",
+      "mtime": 1773853657349.6223,
+      "size": 2145,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/app/services/user_service.rb": {
+      "path": "test-projects/rails-app/app/services/user_service.rb",
+      "hash": "ad982de5fd4fb6d6bf56ae11786085eb",
+      "mtime": 1773853643398.4263,
+      "size": 1649,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/config/application.rb": {
+      "path": "test-projects/rails-app/config/application.rb",
+      "hash": "6f483e86399f29d8459f5395025fa916",
+      "mtime": 1773853559786.255,
+      "size": 844,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/config/environment.rb": {
+      "path": "test-projects/rails-app/config/environment.rb",
+      "hash": "591ba809105639f0e8706132656ae120",
+      "mtime": 1773853561174.2742,
+      "size": 158,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/rails-app/config/routes.rb": {
+      "path": "test-projects/rails-app/config/routes.rb",
+      "hash": "3b60545df1ace195b9ce879b79b6638f",
+      "mtime": 1773853565362.3328,
+      "size": 409,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/react-app/ai/ai_context.md": {
+      "path": "test-projects/react-app/ai/ai_context.md",
+      "hash": "4866a92297737fd2e34fabcd82b4974f",
+      "mtime": 1773796492594.4062,
+      "size": 1647,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/react-app/ai/ai_rules.md": {
+      "path": "test-projects/react-app/ai/ai_rules.md",
+      "hash": "187ea54135fe8b42b7d38acb8c45ace3",
+      "mtime": 1773796492594.4062,
+      "size": 906,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/react-app/ai/architecture.md": {
+      "path": "test-projects/react-app/ai/architecture.md",
+      "hash": "e8662d770fe3c6360a9fc9b20c341266",
+      "mtime": 1773796492588.4062,
+      "size": 595,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/react-app/ai/cache.json": {
+      "path": "test-projects/react-app/ai/cache.json",
+      "hash": "c6773221d9b92c5e78a50d2f87b8f19c",
+      "mtime": 1773854929733.0337,
+      "size": 3892,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/react-app/ai/context/features/src.json": {
+      "path": "test-projects/react-app/ai/context/features/src.json",
+      "hash": "2d248c2486297a3db63103469fcb4d7b",
+      "mtime": 1773796517636.7969,
+      "size": 367,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/react-app/ai/context/flows/UsersPage.json": {
+      "path": "test-projects/react-app/ai/context/flows/UsersPage.json",
+      "hash": "9c80be1645cd69f5ad66d24ba46e8b85",
+      "mtime": 1773854929733.0337,
+      "size": 223,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/react-app/ai/context/flows/dashboard.json": {
+      "path": "test-projects/react-app/ai/context/flows/dashboard.json",
+      "hash": "0fbc56b67033373bb6157659552c82d9",
+      "mtime": 1773796517636.7969,
+      "size": 154,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/react-app/ai/context/flows/login.json": {
+      "path": "test-projects/react-app/ai/context/flows/login.json",
+      "hash": "9311af687ac6a30df3de225f1e18f879",
+      "mtime": 1773796517636.7969,
+      "size": 142,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/react-app/ai/context/flows/users.json": {
+      "path": "test-projects/react-app/ai/context/flows/users.json",
+      "hash": "b5ee48090ea670d1afe36d1fa13500b7",
+      "mtime": 1773796517636.7969,
+      "size": 142,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/react-app/ai/conventions.md": {
+      "path": "test-projects/react-app/ai/conventions.md",
+      "hash": "cf36cf015f6c293ebf89ec2c7756bb57",
+      "mtime": 1773796492590.4062,
+      "size": 826,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/react-app/ai/dependencies.json": {
+      "path": "test-projects/react-app/ai/dependencies.json",
+      "hash": "93a2fe3aec79aca7e1253533cae99f12",
+      "mtime": 1773854929733.0337,
+      "size": 4851,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/react-app/ai/entrypoints.md": {
+      "path": "test-projects/react-app/ai/entrypoints.md",
+      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
+      "mtime": 1773796492589.4062,
+      "size": 43,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/react-app/ai/files.json": {
+      "path": "test-projects/react-app/ai/files.json",
+      "hash": "48ab393f8b9df782ab081eeb57c5147d",
+      "mtime": 1773854929733.0337,
+      "size": 1793,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/react-app/ai/graph/knowledge-graph.json": {
+      "path": "test-projects/react-app/ai/graph/knowledge-graph.json",
+      "hash": "fa879b4bb2bbdf4ade73108745039e7b",
+      "mtime": 1773796549543.294,
+      "size": 1499,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/react-app/ai/graph/module-graph.json": {
+      "path": "test-projects/react-app/ai/graph/module-graph.json",
+      "hash": "3599338f9de3043664fde3c5ca8bc1ca",
+      "mtime": 1773796517626.7966,
+      "size": 546,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/react-app/ai/graph/symbol-graph.json": {
+      "path": "test-projects/react-app/ai/graph/symbol-graph.json",
+      "hash": "cdd01d0b3bdb6f26648460fa8d33b069",
+      "mtime": 1773796517632.7969,
+      "size": 23781,
+      "indexedAt": "2026-03-18T19:21:24.578Z"
+    },
+    "test-projects/react-app/ai/graph/symbol-references.json": {
+      "path": "test-projects/react-app/ai/graph/symbol-references.json",
+      "hash": "a2ec09612e8db86fc410fc8b4755c07b",
+      "mtime": 1773796517632.7969,
+      "size": 829,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/react-app/ai/index-state.json": {
+      "path": "test-projects/react-app/ai/index-state.json",
+      "hash": "4c8940a512edb67a82dd9bd2aeafe1bb",
+      "mtime": 1773854833164.3127,
+      "size": 8174,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/react-app/ai/modules.json": {
+      "path": "test-projects/react-app/ai/modules.json",
+      "hash": "c539e0624fa9a288ddfb14bd48b5587e",
+      "mtime": 1773854833093.3113,
+      "size": 352,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/react-app/ai/project.json": {
+      "path": "test-projects/react-app/ai/project.json",
+      "hash": "e916a42c2cd97173f16f2f82189d5986",
+      "mtime": 1773854929733.0337,
+      "size": 257,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/react-app/ai/repo-map.json": {
+      "path": "test-projects/react-app/ai/repo-map.json",
+      "hash": "b0821a6572790fc16e5270c4c5e9276e",
+      "mtime": 1773854929733.0337,
+      "size": 6949,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/react-app/ai/repo_map.json": {
+      "path": "test-projects/react-app/ai/repo_map.json",
+      "hash": "7cd5df100b5acc9f5c96d3d51e55347e",
+      "mtime": 1773854929733.0337,
+      "size": 2429,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/react-app/ai/repo_map.md": {
+      "path": "test-projects/react-app/ai/repo_map.md",
+      "hash": "f3361ccec5c3c9c2b4ead2c27b5fd571",
+      "mtime": 1773796492586.406,
+      "size": 637,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/react-app/ai/schema.json": {
+      "path": "test-projects/react-app/ai/schema.json",
+      "hash": "96136c4559dbd4fb396d07196c0158ad",
+      "mtime": 1773854929734.0337,
+      "size": 102,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/react-app/ai/summary.md": {
+      "path": "test-projects/react-app/ai/summary.md",
+      "hash": "6c7df62f23d13a49598c071057253eae",
+      "mtime": 1773796492587.4062,
+      "size": 155,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/react-app/ai/symbols.json": {
+      "path": "test-projects/react-app/ai/symbols.json",
+      "hash": "ad94b9b17ac8aee49fe27f0113994ceb",
+      "mtime": 1773796492592.4062,
+      "size": 25371,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/react-app/ai/tech_stack.md": {
+      "path": "test-projects/react-app/ai/tech_stack.md",
+      "hash": "d7e224852b6ec88de645453bfb065c40",
+      "mtime": 1773796492589.4062,
+      "size": 449,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/react-app/ai/tools.json": {
+      "path": "test-projects/react-app/ai/tools.json",
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773796492596.4062,
+      "size": 138,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/react-app/package.json": {
+      "path": "test-projects/react-app/package.json",
+      "hash": "12744c74a0278dc2edfb68294b9b9125",
+      "mtime": 1773777304827.265,
+      "size": 321,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/react-app/src/App.tsx": {
+      "path": "test-projects/react-app/src/App.tsx",
+      "hash": "1bd200aa3ea7b4e1175a07d0f26f8dc4",
+      "mtime": 1773777339360.6953,
+      "size": 614,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/react-app/src/context/AuthContext.tsx": {
+      "path": "test-projects/react-app/src/context/AuthContext.tsx",
+      "hash": "4113336d7e2eb6ac2b78cebe8464276e",
+      "mtime": 1773777350783.8386,
+      "size": 1070,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/react-app/src/hooks/useAuth.ts": {
+      "path": "test-projects/react-app/src/hooks/useAuth.ts",
+      "hash": "036b7295855cbd8214eb4653954f10cc",
+      "mtime": 1773777417490.685,
+      "size": 269,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/react-app/src/main.tsx": {
+      "path": "test-projects/react-app/src/main.tsx",
+      "hash": "283000b4b4218c8dc8b4e634a70bbbe3",
+      "mtime": 1773777310472.335,
+      "size": 247,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/react-app/src/pages/DashboardPage.tsx": {
+      "path": "test-projects/react-app/src/pages/DashboardPage.tsx",
+      "hash": "4c9a9c8fc6a53db6bdbb4d0de6561baf",
+      "mtime": 1773777385566.278,
+      "size": 358,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/react-app/src/pages/LoginPage.tsx": {
+      "path": "test-projects/react-app/src/pages/LoginPage.tsx",
+      "hash": "16a9451aafa3dd13e3c62b8816ab98d6",
+      "mtime": 1773777377789.1794,
+      "size": 1063,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/react-app/src/pages/UsersPage.tsx": {
+      "path": "test-projects/react-app/src/pages/UsersPage.tsx",
+      "hash": "e24caa3c7d598228c36600eb1ca95b30",
+      "mtime": 1773777394130.387,
+      "size": 821,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/react-app/src/services/userService.ts": {
+      "path": "test-projects/react-app/src/services/userService.ts",
+      "hash": "78df2c3240cd630cedb2095347616301",
+      "mtime": 1773777428144.8215,
+      "size": 997,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/ai_context.md": {
+      "path": "test-projects/salesforce-cli/ai/ai_context.md",
+      "hash": "f038c6e81ed1afc0b5582c214b42fe69",
+      "mtime": 1773796492673.4075,
+      "size": 1399,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/ai_rules.md": {
+      "path": "test-projects/salesforce-cli/ai/ai_rules.md",
+      "hash": "d6864e4c14fb24f5b12fc0dbc5fe50f7",
+      "mtime": 1773796492673.4075,
+      "size": 763,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/architecture.md": {
+      "path": "test-projects/salesforce-cli/ai/architecture.md",
+      "hash": "587f3de6d1623a0fc13d924503ab2ad9",
+      "mtime": 1773796492669.4075,
+      "size": 628,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/cache.json": {
+      "path": "test-projects/salesforce-cli/ai/cache.json",
+      "hash": "057d536d2dcfcff14ee37d655336948a",
+      "mtime": 1773854929734.0337,
+      "size": 3147,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/context/features/force-app.json": {
+      "path": "test-projects/salesforce-cli/ai/context/features/force-app.json",
+      "hash": "05a59b12f59343ac6550313514d26378",
+      "mtime": 1773796517714.798,
+      "size": 420,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/context/flows/account.json": {
+      "path": "test-projects/salesforce-cli/ai/context/flows/account.json",
+      "hash": "b598b9ea1bc7ba8e8220ce3861cd9a6b",
+      "mtime": 1773796517714.798,
+      "size": 202,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/context/flows/opportunity.json": {
+      "path": "test-projects/salesforce-cli/ai/context/flows/opportunity.json",
+      "hash": "ac8e6a6f053bb84d99784bd2e4556e90",
+      "mtime": 1773796517715.798,
+      "size": 214,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/conventions.md": {
+      "path": "test-projects/salesforce-cli/ai/conventions.md",
+      "hash": "d11ac646a8916e3c6cc376f610368317",
+      "mtime": 1773796492671.4075,
+      "size": 813,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/dependencies.json": {
+      "path": "test-projects/salesforce-cli/ai/dependencies.json",
+      "hash": "038f80a99cbcc45991786b645398758e",
+      "mtime": 1773796492672.4075,
+      "size": 87,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/entrypoints.md": {
+      "path": "test-projects/salesforce-cli/ai/entrypoints.md",
+      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
+      "mtime": 1773796492670.4075,
+      "size": 43,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/files.json": {
+      "path": "test-projects/salesforce-cli/ai/files.json",
+      "hash": "d69a645e7a5ac643dfc30df33cd9b267",
+      "mtime": 1773854929734.0337,
+      "size": 916,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/graph/knowledge-graph.json": {
+      "path": "test-projects/salesforce-cli/ai/graph/knowledge-graph.json",
+      "hash": "70dfef7b797d97d5df2254beabc335c3",
+      "mtime": 1773796549609.295,
+      "size": 1299,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/graph/module-graph.json": {
+      "path": "test-projects/salesforce-cli/ai/graph/module-graph.json",
+      "hash": "6848d665199d24a321d36d4e96e9dd90",
+      "mtime": 1773796517707.7979,
+      "size": 305,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/graph/symbol-graph.json": {
+      "path": "test-projects/salesforce-cli/ai/graph/symbol-graph.json",
+      "hash": "fbd7cdd87c277789096aeeb23182dd5e",
+      "mtime": 1773796517711.798,
+      "size": 5748,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/graph/symbol-references.json": {
+      "path": "test-projects/salesforce-cli/ai/graph/symbol-references.json",
+      "hash": "99914b932bd37a50b983c5e7c90ae93b",
+      "mtime": 1773796517711.798,
+      "size": 2,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/index-state.json": {
+      "path": "test-projects/salesforce-cli/ai/index-state.json",
+      "hash": "fe92312c4252ec320829438b42b88265",
+      "mtime": 1773854833297.3152,
+      "size": 7012,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/modules.json": {
+      "path": "test-projects/salesforce-cli/ai/modules.json",
+      "hash": "1d0ec72acc3fc6e1c8c1c28b1ad87252",
+      "mtime": 1773854833246.3142,
+      "size": 296,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/project.json": {
+      "path": "test-projects/salesforce-cli/ai/project.json",
+      "hash": "0909e7d9b9c9496dce2bf848e992bf06",
+      "mtime": 1773854929734.0337,
+      "size": 247,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/repo-map.json": {
+      "path": "test-projects/salesforce-cli/ai/repo-map.json",
+      "hash": "f0a8d30c722f69eaaf0d928d1e242e7e",
+      "mtime": 1773854929734.0337,
+      "size": 5843,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/repo_map.json": {
+      "path": "test-projects/salesforce-cli/ai/repo_map.json",
+      "hash": "3db22c2c179a0e59abb01cc8620dc944",
+      "mtime": 1773854929734.0337,
+      "size": 1775,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/repo_map.md": {
+      "path": "test-projects/salesforce-cli/ai/repo_map.md",
+      "hash": "612c1b7f776ec7f0e02e6a2a80bafe3b",
+      "mtime": 1773796492667.4075,
+      "size": 521,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/schema.json": {
+      "path": "test-projects/salesforce-cli/ai/schema.json",
+      "hash": "69181f30c0d2916ef84a893c5b50ba83",
+      "mtime": 1773854929734.0337,
+      "size": 102,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/summary.md": {
+      "path": "test-projects/salesforce-cli/ai/summary.md",
+      "hash": "52c99c74210210438e7bf314915ef872",
+      "mtime": 1773796492668.4075,
+      "size": 171,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/symbols.json": {
+      "path": "test-projects/salesforce-cli/ai/symbols.json",
+      "hash": "e3c31bde2bfd56e085f689eb750aa93e",
+      "mtime": 1773796492672.4075,
+      "size": 8233,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/tech_stack.md": {
+      "path": "test-projects/salesforce-cli/ai/tech_stack.md",
+      "hash": "4f67b75666a8dab1f2f82196130ab030",
+      "mtime": 1773796492670.4075,
+      "size": 317,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/ai/tools.json": {
+      "path": "test-projects/salesforce-cli/ai/tools.json",
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773796492675.4075,
+      "size": 138,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/force-app/main/default/classes/AccountController.cls": {
+      "path": "test-projects/salesforce-cli/force-app/main/default/classes/AccountController.cls",
+      "hash": "f42a5c32b2194cf4c6227503ba00f6fe",
+      "mtime": 1773777904495.204,
+      "size": 719,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/force-app/main/default/classes/OpportunityController.cls": {
+      "path": "test-projects/salesforce-cli/force-app/main/default/classes/OpportunityController.cls",
+      "hash": "27984b63f77bef40953426e0a6b0c685",
+      "mtime": 1773777913625.33,
+      "size": 872,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/force-app/main/default/triggers/AccountTrigger.trigger": {
+      "path": "test-projects/salesforce-cli/force-app/main/default/triggers/AccountTrigger.trigger",
+      "hash": "84c54cb056848e844af710a70c5ef243",
+      "mtime": 1773777952108.863,
+      "size": 1058,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/salesforce-cli/sfdx-project.json": {
+      "path": "test-projects/salesforce-cli/sfdx-project.json",
+      "hash": "d2a50cc298ee84931caa1b54ae8b18ed",
+      "mtime": 1773777895732.083,
+      "size": 194,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/spring-boot-app/README.md": {
+      "path": "test-projects/spring-boot-app/README.md",
+      "hash": "ee92d7e508c3afd9aed6198088189034",
+      "mtime": 1773853695476.1587,
+      "size": 3702,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/spring-boot-app/ai/ai_context.md": {
+      "path": "test-projects/spring-boot-app/ai/ai_context.md",
+      "hash": "805894557ce87043443bf9a93a34fd4d",
+      "mtime": 1773853770800.222,
+      "size": 1461,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/spring-boot-app/ai/ai_rules.md": {
+      "path": "test-projects/spring-boot-app/ai/ai_rules.md",
+      "hash": "dd94e2e76a4b44d39e6094e0d9d2f59b",
+      "mtime": 1773853770799.222,
+      "size": 808,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/spring-boot-app/ai/architecture.md": {
+      "path": "test-projects/spring-boot-app/ai/architecture.md",
+      "hash": "b39463d4712f6ea781823c9a5165b0c4",
+      "mtime": 1773853770794.222,
+      "size": 588,
+      "indexedAt": "2026-03-18T19:21:24.579Z"
+    },
+    "test-projects/spring-boot-app/ai/cache.json": {
+      "path": "test-projects/spring-boot-app/ai/cache.json",
+      "hash": "cbd7f7b4ef78c0be59cec53e1fc5eb96",
+      "mtime": 1773853776316.2998,
+      "size": 4947,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/context/features/src.json": {
+      "path": "test-projects/spring-boot-app/ai/context/features/src.json",
+      "hash": "42a60c161a5bf54c5d33ef364591c4f7",
+      "mtime": 1773853776318.3,
+      "size": 1223,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/context/flows/PostController.json": {
+      "path": "test-projects/spring-boot-app/ai/context/flows/PostController.json",
+      "hash": "2f5e73a2ec99953c3b007452cc7bdba9",
+      "mtime": 1773853770802.222,
+      "size": 594,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/context/flows/UserController.json": {
+      "path": "test-projects/spring-boot-app/ai/context/flows/UserController.json",
+      "hash": "3edb3f6c856c098b62f7375a3b9780fa",
+      "mtime": 1773853770802.222,
+      "size": 592,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/context/flows/comment.json": {
+      "path": "test-projects/spring-boot-app/ai/context/flows/comment.json",
+      "hash": "913f7e2f07c4a16cdf4fd01cfb8b433a",
+      "mtime": 1773853776318.3,
+      "size": 360,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/context/flows/post.json": {
+      "path": "test-projects/spring-boot-app/ai/context/flows/post.json",
+      "hash": "0aedae49606deeece03d0356244cac8a",
+      "mtime": 1773853776319.3,
+      "size": 426,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/context/flows/user.json": {
+      "path": "test-projects/spring-boot-app/ai/context/flows/user.json",
+      "hash": "e5a3d93f3de0265263bcf0de1d02bb44",
+      "mtime": 1773853776319.3,
+      "size": 426,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/conventions.md": {
+      "path": "test-projects/spring-boot-app/ai/conventions.md",
+      "hash": "cf36cf015f6c293ebf89ec2c7756bb57",
+      "mtime": 1773853770796.222,
+      "size": 826,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/dependencies.json": {
+      "path": "test-projects/spring-boot-app/ai/dependencies.json",
+      "hash": "231ca459d245c614550189bfdfc8aa31",
+      "mtime": 1773853770798.222,
+      "size": 12317,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/entrypoints.md": {
+      "path": "test-projects/spring-boot-app/ai/entrypoints.md",
+      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
+      "mtime": 1773853770795.222,
+      "size": 43,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/files.json": {
+      "path": "test-projects/spring-boot-app/ai/files.json",
+      "hash": "b038e97b87e805d6554aa6bcdd5541c8",
+      "mtime": 1773854929734.0337,
+      "size": 4561,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/graph/knowledge-graph.json": {
+      "path": "test-projects/spring-boot-app/ai/graph/knowledge-graph.json",
+      "hash": "63bcb889e49a8816c395d915d0812490",
+      "mtime": 1773853807662.7434,
+      "size": 5531,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/graph/module-graph.json": {
+      "path": "test-projects/spring-boot-app/ai/graph/module-graph.json",
+      "hash": "bcdee278b7c197c3fdd8cc05e248bd69",
+      "mtime": 1773853776307.2998,
+      "size": 933,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/graph/symbol-graph.json": {
+      "path": "test-projects/spring-boot-app/ai/graph/symbol-graph.json",
+      "hash": "af3b7eee071f51f7751d2e9c06c34ca4",
+      "mtime": 1773853776314.2998,
+      "size": 32701,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/graph/symbol-references.json": {
+      "path": "test-projects/spring-boot-app/ai/graph/symbol-references.json",
+      "hash": "d2b999dd64f0a7f70cc7fcb11a1d0450",
+      "mtime": 1773853776314.2998,
+      "size": 4794,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/index-state.json": {
+      "path": "test-projects/spring-boot-app/ai/index-state.json",
+      "hash": "f712e4ee8204fa320a6b98185daa9cf3",
+      "mtime": 1773854929734.0337,
+      "size": 9967,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/modules.json": {
+      "path": "test-projects/spring-boot-app/ai/modules.json",
+      "hash": "8822d383d8a69f12aac8593ec2382889",
+      "mtime": 1773854833383.3167,
+      "size": 918,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/project.json": {
+      "path": "test-projects/spring-boot-app/ai/project.json",
+      "hash": "1690f6494c5f4774a4b9f9937c5c94ce",
+      "mtime": 1773853770802.222,
+      "size": 292,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/repo-map.json": {
+      "path": "test-projects/spring-boot-app/ai/repo-map.json",
+      "hash": "b23ef3b9d1a9158da820bb92f19c40ef",
+      "mtime": 1773853776306.2998,
+      "size": 10702,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/repo_map.json": {
+      "path": "test-projects/spring-boot-app/ai/repo_map.json",
+      "hash": "357e0755e2fc4ae9a135b0a786fedc44",
+      "mtime": 1773853770793.2217,
+      "size": 5918,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/repo_map.md": {
+      "path": "test-projects/spring-boot-app/ai/repo_map.md",
+      "hash": "81ca0a8d506c9bbd24021116386e18c1",
+      "mtime": 1773853770792.2217,
+      "size": 1440,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/schema.json": {
+      "path": "test-projects/spring-boot-app/ai/schema.json",
+      "hash": "cd1991ee7fb126511c11bd77a822164f",
+      "mtime": 1773853770802.222,
+      "size": 102,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/summary.md": {
+      "path": "test-projects/spring-boot-app/ai/summary.md",
+      "hash": "b0b1433dd60af9373e118e7c6b018601",
+      "mtime": 1773853770793.2217,
+      "size": 143,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/symbols.json": {
+      "path": "test-projects/spring-boot-app/ai/symbols.json",
+      "hash": "b2578a94b3c80dfdfc14b3ea4d083b90",
+      "mtime": 1773853770797.222,
+      "size": 25556,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/tech_stack.md": {
+      "path": "test-projects/spring-boot-app/ai/tech_stack.md",
+      "hash": "5c79ac677f9fab6c1558ed3e32f1bd85",
+      "mtime": 1773853770795.222,
+      "size": 338,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/ai/tools.json": {
+      "path": "test-projects/spring-boot-app/ai/tools.json",
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773853770803.222,
+      "size": 138,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/DemoApplication.java": {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/DemoApplication.java",
+      "hash": "2d75ac141d2c8033430f3380b665baa2",
+      "mtime": 1773853571729.4216,
+      "size": 315,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/CommentController.java": {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/CommentController.java",
+      "hash": "5b6b97f35e3c2776a8beb278db3fb9aa",
+      "mtime": 1773853662865.6997,
+      "size": 3158,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/PostController.java": {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/PostController.java",
+      "hash": "17440d8fbbd9b6ac6f72df6f8549beae",
+      "mtime": 1773853649501.512,
+      "size": 2944,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/UserController.java": {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/UserController.java",
+      "hash": "f6250869c401aa8a10575ed850358ff3",
+      "mtime": 1773853637492.3433,
+      "size": 2725,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/models/Comment.java": {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/models/Comment.java",
+      "hash": "a9a5d05a4b9d9f84ab9f414f44b35e87",
+      "mtime": 1773853589658.6726,
+      "size": 793,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/models/Post.java": {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/models/Post.java",
+      "hash": "88f4abb8eeed067c6de4ee4d2771d607",
+      "mtime": 1773853585054.6082,
+      "size": 1234,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/models/User.java": {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/models/User.java",
+      "hash": "b2dfa90af2b99d773e509ff41b449377",
+      "mtime": 1773853578068.5103,
+      "size": 979,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/CommentRepository.java": {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/CommentRepository.java",
+      "hash": "8f53f0b36acfeae6e976c59947225b0a",
+      "mtime": 1773853599958.817,
+      "size": 554,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/PostRepository.java": {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/PostRepository.java",
+      "hash": "71da6b918547e00329c3417841fa1f1e",
+      "mtime": 1773853597248.7788,
+      "size": 480,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/UserRepository.java": {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/UserRepository.java",
+      "hash": "e8578153133af2fec45af59a695abcb5",
+      "mtime": 1773853592037.7058,
+      "size": 388,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/services/PostService.java": {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/services/PostService.java",
+      "hash": "cceae946c06807fb78b1a5427deb098e",
+      "mtime": 1773853621141.1138,
+      "size": 2535,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/services/UserService.java": {
+      "path": "test-projects/spring-boot-app/src/main/java/com/example/demo/services/UserService.java",
+      "hash": "fb164c2fa54b3195392774a0ca15d740",
+      "mtime": 1773853608542.937,
+      "size": 1907,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "tests/adapters.test.ts": {
+      "path": "tests/adapters.test.ts",
+      "hash": "dd001e296fb4f6840c55cace91598fe3",
+      "mtime": 1773189127885.884,
+      "size": 5484,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "tests/e2e/README.md": {
+      "path": "tests/e2e/README.md",
+      "hash": "7f999ef4a2cf0b3aead8e52722a81922",
+      "mtime": 1773777663589.9187,
+      "size": 2427,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "tests/gitAnalyzer.test.ts": {
+      "path": "tests/gitAnalyzer.test.ts",
+      "hash": "ce622fbb549463aaae743c63a4893b19",
+      "mtime": 1773238789169.5671,
+      "size": 4818,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "tests/incrementalAnalyzer.test.ts": {
+      "path": "tests/incrementalAnalyzer.test.ts",
+      "hash": "bc6176d6120da7f2ec3329c9fb6509a7",
+      "mtime": 1773247021660.156,
+      "size": 2860,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "tests/knowledgeGraph.test.ts": {
+      "path": "tests/knowledgeGraph.test.ts",
+      "hash": "0db7cd99fd3d87f88ca0a39e24a30525",
+      "mtime": 1773244016810.462,
+      "size": 4990,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "tests/lazyAnalyzer.test.ts": {
+      "path": "tests/lazyAnalyzer.test.ts",
+      "hash": "6726ead95b81f122da2bfa47db63964f",
+      "mtime": 1773258331083.3643,
+      "size": 7239,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "tests/schema.test.ts": {
+      "path": "tests/schema.test.ts",
+      "hash": "0e54cc7b18fdc335a08ad5cd021cc6f7",
+      "mtime": 1773251240586.4749,
+      "size": 6626,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
+    },
+    "tests/semanticContexts.test.ts": {
+      "path": "tests/semanticContexts.test.ts",
+      "hash": "52883ed5b704088e58cbbc0c505d2af2",
+      "mtime": 1773780147914.5684,
+      "size": 14187,
+      "indexedAt": "2026-03-18T19:21:24.580Z"
     },
     "tsconfig.json": {
       "path": "tsconfig.json",
       "hash": "7f7a4bcb349bfbd33e1550e0b02d501b",
       "mtime": 1773004002782.7,
       "size": 475,
-      "indexedAt": "2026-03-10T15:57:22.304Z"
-    },
-    "dist/commands/ai-first.d.ts.map": {
-      "path": "dist/commands/ai-first.d.ts.map",
-      "hash": "f6770875a016eb96042319d822bc2d93",
-      "mtime": 1773257824232.4495,
-      "size": 479,
-      "indexedAt": "2026-03-11T19:50:01.967Z"
-    },
-    "dist/commands/ai-first.js": {
-      "path": "dist/commands/ai-first.js",
-      "hash": "8e9bc91dae5b77d492dfee56d4f675d9",
-      "mtime": 1773257824232.4495,
-      "size": 55502,
-      "indexedAt": "2026-03-11T19:50:01.967Z"
-    },
-    "dist/commands/ai-first.js.map": {
-      "path": "dist/commands/ai-first.js.map",
-      "hash": "4a398030559a6187ea12a214d6eeb086",
-      "mtime": 1773257824231.4495,
-      "size": 47232,
-      "indexedAt": "2026-03-11T19:50:01.967Z"
-    },
-    "node_modules/.package-lock.json": {
-      "path": "node_modules/.package-lock.json",
-      "hash": "74218c4f44d0c516e25767d6cf17a631",
-      "mtime": 1773255231697.2512,
-      "size": 126050,
-      "indexedAt": "2026-03-11T19:50:01.967Z"
-    },
-    "node_modules/@iconify-json/simple-icons/icons.json": {
-      "path": "node_modules/@iconify-json/simple-icons/icons.json",
-      "hash": "2ddd130f595681edf72dc61b17ebc4d9",
-      "mtime": 1773255231633.2502,
-      "size": 4742480,
-      "indexedAt": "2026-03-11T19:50:01.975Z"
-    },
-    "node_modules/@iconify-json/simple-icons/info.json": {
-      "path": "node_modules/@iconify-json/simple-icons/info.json",
-      "hash": "945d5bdfbc6526f334f48bec72d050db",
-      "mtime": 1773255231633.2502,
-      "size": 502,
-      "indexedAt": "2026-03-11T19:50:01.975Z"
-    },
-    "node_modules/@iconify-json/simple-icons/package.json": {
-      "path": "node_modules/@iconify-json/simple-icons/package.json",
-      "hash": "7014c1a26d4188bc794ac7bf2e5d1295",
-      "mtime": 1773255231634.022,
-      "size": 677,
-      "indexedAt": "2026-03-11T19:50:01.975Z"
-    },
-    "node_modules/bare-stream/package.json": {
-      "path": "node_modules/bare-stream/package.json",
-      "hash": "f1f0c4c0a0ae319b54133c406dd15cb1",
-      "mtime": 1773255231587.3245,
-      "size": 1330,
-      "indexedAt": "2026-03-11T19:50:01.975Z"
-    },
-    "node_modules/bare-stream/web.js": {
-      "path": "node_modules/bare-stream/web.js",
-      "hash": "813cec46ba0e1ca646cce4761f14df97",
-      "mtime": 1773255231585.2495,
-      "size": 10809,
-      "indexedAt": "2026-03-11T19:50:01.975Z"
-    },
-    "node_modules/estree-walker/README.md": {
-      "path": "node_modules/estree-walker/README.md",
-      "hash": "5f9f4c15b1e6b440b3aa4823ea00102b",
-      "mtime": 1773255231592.2498,
-      "size": 1591,
-      "indexedAt": "2026-03-11T19:50:01.975Z"
-    },
-    "node_modules/estree-walker/package.json": {
-      "path": "node_modules/estree-walker/package.json",
-      "hash": "2aad9549ac50c68535376606fc432447",
-      "mtime": 1773255231591.2498,
-      "size": 720,
-      "indexedAt": "2026-03-11T19:50:01.975Z"
-    },
-    "node_modules/estree-walker/src/async.js": {
-      "path": "node_modules/estree-walker/src/async.js",
-      "hash": "dc39d8d0ac14f7f715ed8d4fafdc0e8a",
-      "mtime": 1773255231574.2495,
-      "size": 3474,
-      "indexedAt": "2026-03-11T19:50:01.975Z"
-    },
-    "node_modules/estree-walker/src/index.js": {
-      "path": "node_modules/estree-walker/src/index.js",
-      "hash": "9b6f26f366d15e040471e3293d14d542",
-      "mtime": 1773255231581.2495,
-      "size": 806,
-      "indexedAt": "2026-03-11T19:50:01.975Z"
-    },
-    "node_modules/estree-walker/src/sync.js": {
-      "path": "node_modules/estree-walker/src/sync.js",
-      "hash": "962561751bf71b557617efa5a502a464",
-      "mtime": 1773255231586.2498,
-      "size": 3418,
-      "indexedAt": "2026-03-11T19:50:01.976Z"
-    },
-    "node_modules/estree-walker/src/walker.js": {
-      "path": "node_modules/estree-walker/src/walker.js",
-      "hash": "e202e77221195e3c5ea9287ad2b1b77b",
-      "mtime": 1773255231589.2498,
-      "size": 1393,
-      "indexedAt": "2026-03-11T19:50:01.976Z"
-    },
-    "node_modules/estree-walker/types/async.d.ts": {
-      "path": "node_modules/estree-walker/types/async.d.ts",
-      "hash": "651825d9064839c1fdeee83756536c0e",
-      "mtime": 1773255231596.2498,
-      "size": 1455,
-      "indexedAt": "2026-03-11T19:50:01.976Z"
-    },
-    "node_modules/estree-walker/types/index.d.ts": {
-      "path": "node_modules/estree-walker/types/index.d.ts",
-      "hash": "68c13af0ee8ef9f0ac54d1655f402094",
-      "mtime": 1773255231598.2498,
-      "size": 858,
-      "indexedAt": "2026-03-11T19:50:01.976Z"
-    },
-    "node_modules/estree-walker/types/sync.d.ts": {
-      "path": "node_modules/estree-walker/types/sync.d.ts",
-      "hash": "d293f438b8e9f975bda0a80f85ae0eff",
-      "mtime": 1773255231600.2498,
-      "size": 1408,
-      "indexedAt": "2026-03-11T19:50:01.976Z"
-    },
-    "node_modules/estree-walker/types/walker.d.ts": {
-      "path": "node_modules/estree-walker/types/walker.d.ts",
-      "hash": "42a219a4529f7481d67fd48542b2985d",
-      "mtime": 1773255231601.2498,
-      "size": 1350,
-      "indexedAt": "2026-03-11T19:50:01.976Z"
-    },
-    "node_modules/preact/compat/dist/compat.js": {
-      "path": "node_modules/preact/compat/dist/compat.js",
-      "hash": "2f27022c8de6a048f1dc7eab1c4111e0",
-      "mtime": 1773255231603.2498,
-      "size": 11446,
-      "indexedAt": "2026-03-11T19:50:01.976Z"
-    },
-    "node_modules/preact/compat/dist/compat.js.map": {
-      "path": "node_modules/preact/compat/dist/compat.js.map",
-      "hash": "3c15890bcc5c75a2583e9ce2b62e9893",
-      "mtime": 1773255231634.2502,
-      "size": 54612,
-      "indexedAt": "2026-03-11T19:50:01.976Z"
-    },
-    "node_modules/preact/compat/dist/compat.mjs": {
-      "path": "node_modules/preact/compat/dist/compat.mjs",
-      "hash": "1c025777a1270e4d8679822768819900",
-      "mtime": 1773255231640.3076,
-      "size": 10281,
-      "indexedAt": "2026-03-11T19:50:01.976Z"
-    },
-    "node_modules/preact/compat/dist/compat.module.js": {
-      "path": "node_modules/preact/compat/dist/compat.module.js",
-      "hash": "1c025777a1270e4d8679822768819900",
-      "mtime": 1773255231606.25,
-      "size": 10281,
-      "indexedAt": "2026-03-11T19:50:01.976Z"
-    },
-    "node_modules/preact/compat/dist/compat.module.js.map": {
-      "path": "node_modules/preact/compat/dist/compat.module.js.map",
-      "hash": "d2a064fd536167f973dac598db49fb33",
-      "mtime": 1773255231635.0017,
-      "size": 54228,
-      "indexedAt": "2026-03-11T19:50:01.976Z"
-    },
-    "node_modules/preact/compat/dist/compat.umd.js": {
-      "path": "node_modules/preact/compat/dist/compat.umd.js",
-      "hash": "2cb20cab3642f6cbe70ebc8d9e822c35",
-      "mtime": 1773255231608.25,
-      "size": 11468,
-      "indexedAt": "2026-03-11T19:50:01.976Z"
-    },
-    "node_modules/preact/compat/dist/compat.umd.js.map": {
-      "path": "node_modules/preact/compat/dist/compat.umd.js.map",
-      "hash": "81d431b61217bc14dd75413bd41fddde",
-      "mtime": 1773255231635.0017,
-      "size": 54617,
-      "indexedAt": "2026-03-11T19:50:01.977Z"
-    },
-    "node_modules/preact/compat/src/index.js": {
-      "path": "node_modules/preact/compat/src/index.js",
-      "hash": "e001456de452b5f5c7199dc2b4d3c457",
-      "mtime": 1773255231624.1016,
-      "size": 5264,
-      "indexedAt": "2026-03-11T19:50:01.977Z"
-    },
-    "node_modules/preact/compat/src/memo.js": {
-      "path": "node_modules/preact/compat/src/memo.js",
-      "hash": "36ba277087ab25a3717f297f887170ae",
-      "mtime": 1773255231628.0076,
-      "size": 1043,
-      "indexedAt": "2026-03-11T19:50:01.977Z"
-    },
-    "node_modules/preact/compat/src/render.js": {
-      "path": "node_modules/preact/compat/src/render.js",
-      "hash": "d8838b04e9818b3ca541dbcecb6ed650",
-      "mtime": 1773255231630.7095,
-      "size": 8747,
-      "indexedAt": "2026-03-11T19:50:01.977Z"
-    },
-    "node_modules/preact/compat/src/suspense.js": {
-      "path": "node_modules/preact/compat/src/suspense.js",
-      "hash": "b0759855f9b44c51b94c6850c79fcaad",
-      "mtime": 1773255231631.796,
-      "size": 8295,
-      "indexedAt": "2026-03-11T19:50:01.977Z"
-    },
-    "node_modules/preact/devtools/dist/devtools.js": {
-      "path": "node_modules/preact/devtools/dist/devtools.js",
-      "hash": "539572da21c0d8ae973f87587548d3ba",
-      "mtime": 1773255231618.7239,
-      "size": 357,
-      "indexedAt": "2026-03-11T19:50:01.977Z"
-    },
-    "node_modules/preact/devtools/dist/devtools.js.map": {
-      "path": "node_modules/preact/devtools/dist/devtools.js.map",
-      "hash": "e0f71b8d0b041e0d190273e99fd766fe",
-      "mtime": 1773255231636.0386,
-      "size": 1341,
-      "indexedAt": "2026-03-11T19:50:01.977Z"
-    },
-    "node_modules/preact/devtools/dist/devtools.mjs": {
-      "path": "node_modules/preact/devtools/dist/devtools.mjs",
-      "hash": "965287dcf264d6ba53ef7a84c323f2b6",
-      "mtime": 1773255231640.3076,
-      "size": 369,
-      "indexedAt": "2026-03-11T19:50:01.977Z"
-    },
-    "node_modules/preact/devtools/dist/devtools.module.js": {
-      "path": "node_modules/preact/devtools/dist/devtools.module.js",
-      "hash": "965287dcf264d6ba53ef7a84c323f2b6",
-      "mtime": 1773255231619.8484,
-      "size": 369,
-      "indexedAt": "2026-03-11T19:50:01.977Z"
-    },
-    "node_modules/preact/devtools/dist/devtools.module.js.map": {
-      "path": "node_modules/preact/devtools/dist/devtools.module.js.map",
-      "hash": "577d94f007cff118fe02d0c728e955ca",
-      "mtime": 1773255231636.3538,
-      "size": 1343,
-      "indexedAt": "2026-03-11T19:50:01.977Z"
-    },
-    "node_modules/preact/devtools/dist/devtools.umd.js": {
-      "path": "node_modules/preact/devtools/dist/devtools.umd.js",
-      "hash": "72cbb69c1f9988850a6bf1be6ceb11c7",
-      "mtime": 1773255231620.6755,
-      "size": 563,
-      "indexedAt": "2026-03-11T19:50:01.977Z"
-    },
-    "node_modules/preact/devtools/dist/devtools.umd.js.map": {
-      "path": "node_modules/preact/devtools/dist/devtools.umd.js.map",
-      "hash": "8c218c7f723c69bfb4743751ac061edb",
-      "mtime": 1773255231636.6292,
-      "size": 1351,
-      "indexedAt": "2026-03-11T19:50:01.977Z"
-    },
-    "node_modules/preact/devtools/src/devtools.js": {
-      "path": "node_modules/preact/devtools/src/devtools.js",
-      "hash": "3a3cb275f70f987700c9c584edd06f08",
-      "mtime": 1773255231619.25,
-      "size": 426,
-      "indexedAt": "2026-03-11T19:50:01.977Z"
-    },
-    "node_modules/preact/dist/preact.js": {
-      "path": "node_modules/preact/dist/preact.js",
-      "hash": "a9b5a3edd4b143c5b3a4d3480d8eac91",
-      "mtime": 1773255231628.772,
-      "size": 11504,
-      "indexedAt": "2026-03-11T19:50:01.977Z"
-    },
-    "node_modules/preact/dist/preact.js.map": {
-      "path": "node_modules/preact/dist/preact.js.map",
-      "hash": "0d693299b8022c668bc7738e4ba0b062",
-      "mtime": 1773255231638.3586,
-      "size": 84365,
-      "indexedAt": "2026-03-11T19:50:01.977Z"
-    },
-    "node_modules/preact/dist/preact.min.js": {
-      "path": "node_modules/preact/dist/preact.min.js",
-      "hash": "01b261bbb786e5dbd4f50d98bc53caf3",
-      "mtime": 1773255231629.043,
-      "size": 11125,
-      "indexedAt": "2026-03-11T19:50:01.977Z"
-    },
-    "node_modules/preact/dist/preact.min.js.map": {
-      "path": "node_modules/preact/dist/preact.min.js.map",
-      "hash": "9299a5f519784062fcc618e67f610f7b",
-      "mtime": 1773255231638.668,
-      "size": 84729,
-      "indexedAt": "2026-03-11T19:50:01.978Z"
-    },
-    "node_modules/preact/dist/preact.min.module.js": {
-      "path": "node_modules/preact/dist/preact.min.module.js",
-      "hash": "581b51684ed5a22705b8b881e21b0760",
-      "mtime": 1773255231629.3286,
-      "size": 11489,
-      "indexedAt": "2026-03-11T19:50:01.978Z"
-    },
-    "node_modules/preact/dist/preact.min.module.js.map": {
-      "path": "node_modules/preact/dist/preact.min.module.js.map",
-      "hash": "5087781f545d08572d4e886278ddd910",
-      "mtime": 1773255231638.824,
-      "size": 84600,
-      "indexedAt": "2026-03-11T19:50:01.978Z"
-    },
-    "node_modules/preact/dist/preact.min.umd.js": {
-      "path": "node_modules/preact/dist/preact.min.umd.js",
-      "hash": "0da89f57ed55322bd126b1142f8ce3f6",
-      "mtime": 1773255231629.3286,
-      "size": 11193,
-      "indexedAt": "2026-03-11T19:50:01.978Z"
-    },
-    "node_modules/preact/dist/preact.min.umd.js.map": {
-      "path": "node_modules/preact/dist/preact.min.umd.js.map",
-      "hash": "4ea38b0e880dfb6d1b50e3796d340ac8",
-      "mtime": 1773255231639.3254,
-      "size": 84733,
-      "indexedAt": "2026-03-11T19:50:01.978Z"
-    },
-    "node_modules/preact/dist/preact.mjs": {
-      "path": "node_modules/preact/dist/preact.mjs",
-      "hash": "db794ebf4acf76cff301017e447df12a",
-      "mtime": 1773255231641.4036,
-      "size": 11470,
-      "indexedAt": "2026-03-11T19:50:01.978Z"
-    },
-    "node_modules/preact/dist/preact.module.js": {
-      "path": "node_modules/preact/dist/preact.module.js",
-      "hash": "db794ebf4acf76cff301017e447df12a",
-      "mtime": 1773255231629.6626,
-      "size": 11470,
-      "indexedAt": "2026-03-11T19:50:01.978Z"
-    },
-    "node_modules/preact/dist/preact.module.js.map": {
-      "path": "node_modules/preact/dist/preact.module.js.map",
-      "hash": "dddc98c569500e8800a8220b43741640",
-      "mtime": 1773255231639.3254,
-      "size": 84449,
-      "indexedAt": "2026-03-11T19:50:01.979Z"
-    },
-    "node_modules/preact/dist/preact.umd.js": {
-      "path": "node_modules/preact/dist/preact.umd.js",
-      "hash": "7d35b7b19668b7642a744dfe33dd8163",
-      "mtime": 1773255231629.8672,
-      "size": 11246,
-      "indexedAt": "2026-03-11T19:50:01.979Z"
-    },
-    "node_modules/preact/dist/preact.umd.js.map": {
-      "path": "node_modules/preact/dist/preact.umd.js.map",
-      "hash": "88468b65eb8cf706330e4fc39ff62dba",
-      "mtime": 1773255231639.777,
-      "size": 84505,
-      "indexedAt": "2026-03-11T19:50:01.979Z"
-    },
-    "node_modules/preact/package.json": {
-      "path": "node_modules/preact/package.json",
-      "hash": "d913bad577b0324a56c30202ab8af546",
-      "mtime": 1773255231634.022,
-      "size": 9042,
-      "indexedAt": "2026-03-11T19:50:01.979Z"
-    },
-    "node_modules/preact/src/component.js": {
-      "path": "node_modules/preact/src/component.js",
-      "hash": "661edfeedff96a9aa10fb8cfe0d1cfc7",
-      "mtime": 1773255231611.3528,
-      "size": 7625,
-      "indexedAt": "2026-03-11T19:50:01.979Z"
-    },
-    "node_modules/preact/src/diff/index.js": {
-      "path": "node_modules/preact/src/diff/index.js",
-      "hash": "7f843865b3012d6e9268cc8d25b55d10",
-      "mtime": 1773255231625.8462,
-      "size": 18824,
-      "indexedAt": "2026-03-11T19:50:01.979Z"
-    },
-    "node_modules/node-abi/abi_registry.json": {
-      "path": "node_modules/node-abi/abi_registry.json",
-      "hash": "c7138a2c35d36842db35dd945e7cd92e",
-      "mtime": 1773255231580.2495,
-      "size": 7280,
-      "indexedAt": "2026-03-11T19:50:01.976Z"
-    },
-    "node_modules/node-abi/package.json": {
-      "path": "node_modules/node-abi/package.json",
-      "hash": "aa4467cd8e738526c581655d2aa97202",
-      "mtime": 1773255231584.2495,
-      "size": 1164,
-      "indexedAt": "2026-03-11T19:50:01.976Z"
+      "indexedAt": "2026-03-18T19:21:24.580Z"
     }
   }
 }

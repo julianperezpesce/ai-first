@@ -1,252 +1,196 @@
 {
   "version": "1.0.0",
-  "lastIndexed": "2026-03-18T17:27:12.181Z",
-  "totalFiles": 35,
+  "lastIndexed": "2026-03-18T20:16:00.303Z",
+  "totalFiles": 27,
   "files": {
     "ai/ai_context.md": {
       "path": "ai/ai_context.md",
       "hash": "286f0083010c4a66f3906b020b9cc7b4",
-      "mtime": 1773796492348.4023,
+      "mtime": 1773864936299.5916,
       "size": 2042,
-      "indexedAt": "2026-03-18T17:27:12.179Z"
+      "indexedAt": "2026-03-18T20:15:36.431Z"
     },
     "ai/ai_rules.md": {
       "path": "ai/ai_rules.md",
       "hash": "fa1a632e71f5b7055dee7d1368600ce0",
-      "mtime": 1773796492348.4023,
+      "mtime": 1773864936299.5916,
       "size": 915,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
+      "indexedAt": "2026-03-18T20:15:36.431Z"
     },
     "ai/architecture.md": {
       "path": "ai/architecture.md",
       "hash": "5e9f157447aac07a89cf6fe7bffcdad4",
-      "mtime": 1773796492342.4023,
+      "mtime": 1773864936292.5913,
       "size": 1328,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
-    },
-    "ai/cache.json": {
-      "path": "ai/cache.json",
-      "hash": "e4a0b073ccbaca175c009e8775b62544",
-      "mtime": 1773796517399.7932,
-      "size": 3674,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
+      "indexedAt": "2026-03-18T20:15:36.431Z"
     },
     "ai/context/features/controllers.json": {
       "path": "ai/context/features/controllers.json",
       "hash": "65a9f94a405e51bd65bd7a5378dbb164",
-      "mtime": 1773796517401.7932,
+      "mtime": 1773864936301.5916,
       "size": 262,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
+      "indexedAt": "2026-03-18T20:15:36.431Z"
     },
     "ai/context/features/services.json": {
       "path": "ai/context/features/services.json",
       "hash": "113525da53ad952071cca194ba355d48",
-      "mtime": 1773796517401.7932,
+      "mtime": 1773864936301.5916,
       "size": 232,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
+      "indexedAt": "2026-03-18T20:15:36.431Z"
     },
     "ai/context/flows/auth.json": {
       "path": "ai/context/flows/auth.json",
       "hash": "a6200259a521a38e08dc6396d870a633",
-      "mtime": 1773796517401.7932,
+      "mtime": 1773864936301.5916,
       "size": 201,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
+      "indexedAt": "2026-03-18T20:15:36.431Z"
     },
     "ai/context/flows/user.json": {
       "path": "ai/context/flows/user.json",
       "hash": "af049ebfc3b8ce808e6091ac96a651ee",
-      "mtime": 1773796517401.7932,
+      "mtime": 1773864936301.5916,
       "size": 233,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
+      "indexedAt": "2026-03-18T20:15:36.431Z"
     },
     "ai/conventions.md": {
       "path": "ai/conventions.md",
       "hash": "fa8f117204dbd53d6b787e6ec1791dbf",
-      "mtime": 1773796492344.4023,
+      "mtime": 1773864936295.5916,
       "size": 811,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
+      "indexedAt": "2026-03-18T20:15:36.431Z"
     },
     "ai/dependencies.json": {
       "path": "ai/dependencies.json",
       "hash": "b59a369568a90136bf6d54a022aae411",
-      "mtime": 1773796492346.4023,
+      "mtime": 1773864936298.5916,
       "size": 1193,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
+      "indexedAt": "2026-03-18T20:15:36.431Z"
     },
     "ai/entrypoints.md": {
       "path": "ai/entrypoints.md",
       "hash": "17b75097fff8baf7e8218553431dad64",
-      "mtime": 1773796492343.4023,
+      "mtime": 1773864936294.5916,
       "size": 304,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
-    },
-    "ai/files.json": {
-      "path": "ai/files.json",
-      "hash": "96c25beb61cd68e70e925683753d74a8",
-      "mtime": 1773854832116.2937,
-      "size": 3583,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
-    },
-    "ai/graph/knowledge-graph.json": {
-      "path": "ai/graph/knowledge-graph.json",
-      "hash": "f77f4f49dab0623ff144b6e971feabdc",
-      "mtime": 1773796549349.291,
-      "size": 1809,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
-    },
-    "ai/graph/module-graph.json": {
-      "path": "ai/graph/module-graph.json",
-      "hash": "43383456483e635b66ff8960f3b39f03",
-      "mtime": 1773796517391.793,
-      "size": 725,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
-    },
-    "ai/graph/symbol-graph.json": {
-      "path": "ai/graph/symbol-graph.json",
-      "hash": "d254a317177342dab8125c05c4616101",
-      "mtime": 1773796517397.7932,
-      "size": 23692,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
-    },
-    "ai/graph/symbol-references.json": {
-      "path": "ai/graph/symbol-references.json",
-      "hash": "656c3df0aaaf021cc2f25769a7945c41",
-      "mtime": 1773796517397.7932,
-      "size": 1577,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
-    },
-    "ai/index-state.json": {
-      "path": "ai/index-state.json",
-      "hash": "d4628adce51b80a842173a3a6b1550ec",
-      "mtime": 1773796525965.9268,
-      "size": 7530,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
+      "indexedAt": "2026-03-18T20:15:36.431Z"
     },
     "ai/modules.json": {
       "path": "ai/modules.json",
       "hash": "52396bb2eb3346493e373bf55805ef90",
-      "mtime": 1773854832117.2937,
+      "mtime": 1773864936368.5923,
       "size": 555,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
+      "indexedAt": "2026-03-18T20:15:36.431Z"
     },
     "ai/project.json": {
       "path": "ai/project.json",
-      "hash": "08ba7541bf16fe9e746aa0ed3ef4a7b3",
-      "mtime": 1773796492350.4023,
-      "size": 249,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
-    },
-    "ai/repo-map.json": {
-      "path": "ai/repo-map.json",
-      "hash": "bc79826d46b669d42b546057efb73255",
-      "mtime": 1773796517383.793,
-      "size": 6308,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
+      "hash": "19ab0bad1f0c140675594e15ca8044c2",
+      "mtime": 1773864936301.5916,
+      "size": 215,
+      "indexedAt": "2026-03-18T20:15:36.431Z"
     },
     "ai/repo_map.json": {
       "path": "ai/repo_map.json",
-      "hash": "474f2af3cc084780fcdc989f865cb19d",
-      "mtime": 1773796492340.4023,
+      "hash": "5bb205761a580367570d8aeb76aeef89",
+      "mtime": 1773864936291.5913,
       "size": 2017,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
+      "indexedAt": "2026-03-18T20:15:36.431Z"
     },
     "ai/repo_map.md": {
       "path": "ai/repo_map.md",
       "hash": "35963e46f602438bc7b1318c630c9616",
-      "mtime": 1773796492340.4023,
+      "mtime": 1773864936291.5913,
       "size": 618,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
+      "indexedAt": "2026-03-18T20:15:36.431Z"
     },
     "ai/schema.json": {
       "path": "ai/schema.json",
-      "hash": "09deb83ac436baaa3ee8ba47c1b6876e",
-      "mtime": 1773796492350.4023,
+      "hash": "404e0a61ccff4c0fb5e00a30fc591149",
+      "mtime": 1773864936301.5916,
       "size": 102,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
+      "indexedAt": "2026-03-18T20:15:36.431Z"
     },
     "ai/summary.md": {
       "path": "ai/summary.md",
       "hash": "792c7fa8536cdf57b7506a5b4390e1fd",
-      "mtime": 1773796492341.4023,
+      "mtime": 1773864936291.5913,
       "size": 215,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
+      "indexedAt": "2026-03-18T20:15:36.431Z"
     },
     "ai/symbols.json": {
       "path": "ai/symbols.json",
       "hash": "55f09cedb48590dcdc4c0a4506026d52",
-      "mtime": 1773796492346.4023,
+      "mtime": 1773864936297.5916,
       "size": 30291,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
+      "indexedAt": "2026-03-18T20:15:36.431Z"
     },
     "ai/tech_stack.md": {
       "path": "ai/tech_stack.md",
       "hash": "bce98c307ddce9864d341031c914ba8a",
-      "mtime": 1773796492343.4023,
+      "mtime": 1773864936294.5916,
       "size": 411,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
+      "indexedAt": "2026-03-18T20:15:36.431Z"
     },
     "ai/tools.json": {
       "path": "ai/tools.json",
       "hash": "b1356e52c74e9b3b6a0d397b790a4968",
-      "mtime": 1773796492350.4023,
+      "mtime": 1773864936301.5916,
       "size": 138,
-      "indexedAt": "2026-03-18T17:27:12.180Z"
+      "indexedAt": "2026-03-18T20:15:36.432Z"
     },
     "controllers/authController.js": {
       "path": "controllers/authController.js",
       "hash": "7354721b063c069c013d70e04f4bee0f",
       "mtime": 1773776832721.0393,
       "size": 930,
-      "indexedAt": "2026-03-18T17:27:12.181Z"
+      "indexedAt": "2026-03-18T20:15:36.432Z"
     },
     "controllers/userController.js": {
       "path": "controllers/userController.js",
       "hash": "e43bb45b1c75b7e4bcd072c60a70d848",
       "mtime": 1773776845003.1538,
       "size": 1214,
-      "indexedAt": "2026-03-18T17:27:12.181Z"
+      "indexedAt": "2026-03-18T20:15:36.432Z"
     },
     "index.js": {
       "path": "index.js",
-      "hash": "b866780bf160f2bfb2ac6baba6a1f6b1",
-      "mtime": 1773776791058.662,
-      "size": 682,
-      "indexedAt": "2026-03-18T17:27:12.181Z"
+      "hash": "3b4f38fe7d200315965b79e1ee447a37",
+      "mtime": 1773864951013.7817,
+      "size": 726,
+      "indexedAt": "2026-03-18T20:16:00.303Z"
     },
     "middleware/authMiddleware.js": {
       "path": "middleware/authMiddleware.js",
       "hash": "bd1176bd90f83f93b3f66d07758267e5",
       "mtime": 1773776926397.9497,
       "size": 689,
-      "indexedAt": "2026-03-18T17:27:12.181Z"
+      "indexedAt": "2026-03-18T20:15:36.432Z"
     },
     "models/userRepository.js": {
       "path": "models/userRepository.js",
       "hash": "fdf8dfbb70b15c82f0d2b13e51a640f6",
       "mtime": 1773776885672.544,
       "size": 767,
-      "indexedAt": "2026-03-18T17:27:12.181Z"
+      "indexedAt": "2026-03-18T20:15:36.432Z"
     },
     "package.json": {
       "path": "package.json",
       "hash": "c64180130f77b5472a2850aafa61c7e9",
       "mtime": 1773776784437.6038,
       "size": 363,
-      "indexedAt": "2026-03-18T17:27:12.181Z"
+      "indexedAt": "2026-03-18T20:15:36.432Z"
     },
     "services/authService.js": {
       "path": "services/authService.js",
       "hash": "cacf5bd493a669c8ef7b95bef67cf7e5",
       "mtime": 1773776853984.2388,
       "size": 555,
-      "indexedAt": "2026-03-18T17:27:12.181Z"
+      "indexedAt": "2026-03-18T20:15:36.432Z"
     },
     "services/userService.js": {
       "path": "services/userService.js",
       "hash": "cb3b6f655977d154edee4038d6105d10",
       "mtime": 1773776865182.3455,
       "size": 534,
-      "indexedAt": "2026-03-18T17:27:12.181Z"
+      "indexedAt": "2026-03-18T20:15:36.432Z"
     }
   }
 }

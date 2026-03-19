@@ -7,9 +7,9 @@
 ## Quick Overview
 
 - **Pattern**: Flat / Simple Structure
-- **Languages**: Markdown, Ruby
+- **Languages**: Markdown, JSON, Ruby
 - **Frameworks**: None
-- **Total Files**: 13
+- **Total Files**: 47
 
 ---
 
@@ -26,7 +26,7 @@
 
 ## Tech Stack
 
-**Languages**: Markdown, Ruby
+**Languages**: Markdown, JSON, Ruby
 
 ---
 
@@ -43,6 +43,7 @@
 | Module | Responsibility |
 |--------|----------------|
 | `README.md` | Contains 0 files |
+| `ai` | Contains 34 files |
 | `app` | Contains 9 files |
 | `config` | Configuration management |
 
@@ -68,7 +69,7 @@
 
 ## AI Rules
 
-- Language: Use Markdown, Ruby
+- Language: Use Markdown, JSON, Ruby
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
 

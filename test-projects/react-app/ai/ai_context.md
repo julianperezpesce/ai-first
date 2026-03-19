@@ -7,9 +7,9 @@
 ## Quick Overview
 
 - **Pattern**: Flat / Simple Structure
-- **Languages**: JSON, TypeScript (React), TypeScript
+- **Languages**: Markdown, JSON, TypeScript (React), TypeScript
 - **Frameworks**: React, Next.js, Remix
-- **Total Files**: 9
+- **Total Files**: 37
 
 ---
 
@@ -26,7 +26,7 @@
 
 ## Tech Stack
 
-**Languages**: JSON, TypeScript (React), TypeScript
+**Languages**: Markdown, JSON, TypeScript (React), TypeScript
 
 **Frameworks**: React, Next.js, Remix
 
@@ -42,6 +42,7 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
+| `ai` | Contains 28 files |
 | `package.json` | Contains 0 files |
 | `src` | Contains 8 files |
 
@@ -68,7 +69,7 @@
 
 ## AI Rules
 
-- Language: Use JSON, TypeScript (React), TypeScript
+- Language: Use Markdown, JSON, TypeScript (React), TypeScript
 - Frameworks: React, Next.js, Remix
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase

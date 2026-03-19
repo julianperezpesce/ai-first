@@ -6,7 +6,7 @@
 
 ## Guidelines
 
-- Language: Use Markdown, PHP, JSON
+- Language: Use Markdown, JSON, PHP
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
 
@@ -24,7 +24,7 @@
 
 | Category | Value |
 |----------|-------|
-| Language | Markdown, PHP, JSON |
+| Language | Markdown, JSON, PHP |
 | Framework | N/A |
 | Architecture | Flat / Simple Structure |
 | Naming | PascalCase |

@@ -1,0 +1,16 @@
+{
+  "name": "comment",
+  "entrypoint": "test-projects/laravel-app/app/Http/Controllers/Api/CommentController.php",
+  "files": [
+    "test-projects/laravel-app/app/Http/Controllers/Api/CommentController.php",
+    "test-projects/laravel-app/app/Models/Comment.php",
+    "test-projects/rails-app/app/models/comment.rb",
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/controllers/CommentController.java",
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/models/Comment.java",
+    "test-projects/spring-boot-app/src/main/java/com/example/demo/repositories/CommentRepository.java"
+  ],
+  "depth": 1,
+  "layers": [
+    "api"
+  ]
+}

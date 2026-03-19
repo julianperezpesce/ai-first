@@ -1,0 +1,9 @@
+{
+  "name": "opportunity",
+  "entrypoint": "test-projects/salesforce-cli/force-app/main/default/classes/OpportunityController.cls",
+  "files": [
+    "test-projects/salesforce-cli/force-app/main/default/classes/OpportunityController.cls"
+  ],
+  "depth": 0,
+  "layers": []
+}
