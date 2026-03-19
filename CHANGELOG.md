@@ -72,6 +72,25 @@ All notable changes to `ai-first` will be documented in this file.
 - Renamed: All 11 test project directories `*/ai/` → `*/ai-context/`
 - Updated: README.md, README.es.md, CHANGELOG.md, PLAN_MEJORAS.md
 
+### Phase 4: Performance - Completed (v1.2.0)
+
+**Date:** 2026-03-19
+
+#### Changed
+
+- **Embeddings storage moved from JSON to SQLite**
+  - Embeddings now stored in `index.db` alongside other index data
+  - Removed `embeddings.json` file generation
+  - Performance improvement: Single database file instead of multiple JSON files
+  - Files affected: `src/core/embeddings.ts`, `src/commands/ai-first.ts`
+
+#### Technical Details
+
+- Added `embeddings` table to SQLite database
+- Schema: `(id, vector, metadata, chunk_id, file_path, start_line, end_line, type, language)`
+- Vector and metadata stored as JSON strings
+- Same `index.db` used for files, symbols, imports, and embeddings
+
 ---
 
 ## [1.1.6] - 2026-03-18

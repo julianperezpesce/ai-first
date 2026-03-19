@@ -17,7 +17,7 @@ import { analyzeDependencies, generateDependenciesJson } from "../analyzers/depe
 import { generateAIRules, generateAIRulesFile } from "../analyzers/aiRules.js";
 import { loadIndexState, computeFileHash, getFilesToIndex } from "../core/indexState.js";
 import { chunkFiles } from "../core/chunker.js";
-import { generateEmbeddings, saveEmbeddings } from "../core/embeddings.js";
+import { generateEmbeddings, saveEmbeddings, createEmbeddingsTable } from "../core/embeddings.js";
 import { generateSemanticContexts } from "../core/semanticContexts.js";
 import { doctorMain } from "./doctor.js";
 import { exploreMain } from "./explore.js";
@@ -348,6 +348,10 @@ Example queries (for AI agents):
             outputPath = path.join(rootDir, "ai", "index.db");
         }
         const aiDir = path.join(rootDir, "ai-context");
+        // Create output directory if it doesn't exist
+        if (!fs.existsSync(aiDir)) {
+            fs.mkdirSync(aiDir, { recursive: true });
+        }
         // Load existing index state for incremental indexing
         const existingState = loadIndexState(aiDir);
         // Scan repository
@@ -430,7 +434,23 @@ Example queries (for AI agents):
                         const chunks = chunkFiles(filePaths);
                         console.log(`   Created ${chunks.length} chunks`);
                         const { embeddings, model } = await generateEmbeddings(chunks);
-                        saveEmbeddings(embeddings, aiDir, model, 384);
+                        const initSqlJs = (await import("sql.js")).default;
+                        const SQL = await initSqlJs();
+                        const dbPath = outputPath || path.join(rootDir, "ai", "index.db");
+                        let db;
+                        if (fs.existsSync(dbPath)) {
+                            const fileBuffer = fs.readFileSync(dbPath);
+                            db = new SQL.Database(fileBuffer);
+                        }
+                        else {
+                            db = new SQL.Database();
+                        }
+                        createEmbeddingsTable(db);
+                        saveEmbeddings(db, embeddings, model, 384);
+                        const data = db.export();
+                        const buffer = Buffer.from(data);
+                        fs.writeFileSync(dbPath, buffer);
+                        db.close();
                         console.log("   ✅ Semantic indexing complete");
                     }
                     catch (error) {
