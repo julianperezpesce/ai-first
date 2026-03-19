@@ -39,7 +39,7 @@ npx ai-first init
 
 ## Output: Generated Files
 
-### ai/ai_context.md
+### ai-context/ai_context.md
 
 ```markdown
 # AI Context
@@ -98,7 +98,7 @@ npx ai-first init
 4. Use Django's built-in auth
 ```
 
-### ai/conventions.md
+### ai-context/conventions.md
 
 ```markdown
 # Coding Conventions
@@ -130,7 +130,7 @@ Result: Broken code, wrong patterns
 
 **With ai-first:**
 ```
-You: "Read ai/ai_context.md. Add a product search endpoint using Django REST Framework following existing patterns."
+You: "Read ai-context/ai_context.md. Add a product search endpoint using Django REST Framework following existing patterns."
 AI: *understands DRF, uses correct serializers, proper URLs*
 ✅ Working endpoint, follows Django conventions
 ```

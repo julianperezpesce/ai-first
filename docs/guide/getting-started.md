@@ -36,12 +36,12 @@ npx ai-first init
 ai-first init
 
 # This generates:
-# - ai/ai_context.md      # Unified context (start here!)
-# - ai/repo_map.json      # Machine-readable structure
-# - ai/symbols.json       # Extracted functions/classes
-# - ai/dependencies.json   # Import relationships
-# - ai/architecture.md    # Architecture pattern
-# - ai/tech_stack.md      # Languages & frameworks
+# - ai-context/ai_context.md      # Unified context (start here!)
+# - ai-context/repo_map.json      # Machine-readable structure
+# - ai-context/symbols.json       # Extracted functions/classes
+# - ai-context/dependencies.json   # Import relationships
+# - ai-context/architecture.md    # Architecture pattern
+# - ai-context/tech_stack.md      # Languages & frameworks
 ```
 
 ## Index for Fast Queries
@@ -56,7 +56,7 @@ ai-first index --semantic
 
 ## Use with AI Agents
 
-After running `ai-first init`, give the AI agent the `ai/ai_context.md` file. It contains:
+After running `ai-first init`, give the AI agent the `ai-context/ai_context.md` file. It contains:
 
 - Project overview
 - Architecture pattern
@@ -69,7 +69,7 @@ After running `ai-first init`, give the AI agent the `ai/ai_context.md` file. It
 | Agent | How to Use |
 |-------|------------|
 | **OpenCode** | `~/.config/opencode/commands/ai-first.md` |
-| **Cursor** | Reference `ai/ai_context.md` in prompts |
+| **Cursor** | Reference `ai-context/ai_context.md` in prompts |
 | **Claude Code** | Include context in system prompt |
 | **Windsurf** | Project understanding |
 | **GitHub Copilot** | Context-aware suggestions |

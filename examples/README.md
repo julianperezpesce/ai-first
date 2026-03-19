@@ -40,7 +40,7 @@ touch examples/0X-your-framework.md
 git clone <repo>
 cd <repo>
 npx ai-first init
-# Read ai/ai_context.md
+# Read ai-context/ai_context.md
 # Now you understand the project in 2 minutes
 ```
 
@@ -50,13 +50,13 @@ npx ai-first init
 npx ai-first init
 
 # Then ask:
-"Read ai/ai_context.md and help me add feature X"
+"Read ai-context/ai_context.md and help me add feature X"
 ```
 
 ### For Technical Leads
 ```
 # Onboard new team members
 npx ai-first init
-# New hire reads ai/ai_context.md
+# New hire reads ai-context/ai_context.md
 # Instant project understanding
 ```

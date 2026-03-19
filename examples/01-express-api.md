@@ -35,7 +35,7 @@ npx ai-first init
 
 ## Output: Generated Files
 
-### ai/ai_context.md
+### ai-context/ai_context.md
 
 ```markdown
 # AI Context
@@ -94,7 +94,7 @@ npx ai-first init
 4. Request validation in src/middleware/validate.ts
 ```
 
-### ai/symbols.json (excerpt)
+### ai-context/symbols.json (excerpt)
 
 ```json
 {
@@ -127,7 +127,7 @@ AI: *reads 200 files, guesses wrong, breaks auth flow*
 
 **With ai-first:**
 ```
-You: "Read ai/ai_context.md first. Then add a password reset endpoint to the Express API following the existing patterns."
+You: "Read ai-context/ai_context.md first. Then add a password reset endpoint to the Express API following the existing patterns."
 AI: *reads 1 file, understands auth middleware, adds correct endpoint*
 ✅ Working code, follows conventions
 ```
