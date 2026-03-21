@@ -1,6 +1,7 @@
 import { FileInfo } from "../core/repoScanner.js";
 import { readFile, readJsonFile } from "../utils/fileUtils.js";
 import path from "path";
+import fs from "fs";
 
 export interface TechStack {
   languages: string[];
@@ -155,9 +156,9 @@ function detectFrameworks(files: FileInfo[], fileNames: Set<string>, rootDir: st
 }
 
 /**
- * Detect libraries
+ * Detect Node.js libraries from package.json
  */
-function detectLibraries(files: FileInfo[], rootDir: string): string[] {
+function detectNodeLibraries(rootDir: string): string[] {
   const libraries: string[] = [];
   
   try {
@@ -185,7 +186,69 @@ function detectLibraries(files: FileInfo[], rootDir: string): string[] {
     }
   } catch {}
   
-  return [...new Set(libraries)];
+  return libraries;
+}
+
+function detectSwiftLibraries(rootDir: string): string[] {
+  const libraries: string[] = [];
+  const packagePath = path.join(rootDir, "Package.swift");
+
+  try {
+    const content = readFile(packagePath);
+    const libMap: Record<string, string> = {
+      "Vapor": "Vapor",
+      "Fluent": "Fluent ORM",
+      "FluentPostgresDriver": "Fluent PostgreSQL",
+      "FluentMySQLDriver": "Fluent MySQL",
+      "FluentSQLiteDriver": "Fluent SQLite",
+      "FluentMongoDriver": "Fluent MongoDB",
+      "Leaf": "Leaf",
+      "APNS": "APNS",
+      "Queues": "Queues",
+      "QueuesRedisDriver": "Queues Redis",
+      "QueuesFluentDriver": "Queues Fluent",
+      "Mailgun": "Mailgun",
+      "SendGrid": "SendGrid",
+      "JWTKit": "JWTKit",
+      "Crypto": "Apple CryptoKit",
+      "NIO": "SwiftNIO",
+      "NIOSSL": "SwiftNIO SSL",
+      "NIOHTTP1": "SwiftNIO HTTP",
+      "NIOWebSocket": "SwiftNIO WebSocket",
+      "NIOTransportServices": "SwiftNIO Transport Services",
+      "AsyncHTTPClient": "AsyncHTTPClient",
+      "Alamofire": "Alamofire",
+      "Moya": "Moya",
+      "RxSwift": "RxSwift",
+      "PromiseKit": "PromiseKit",
+      "SwiftyJSON": "SwiftyJSON",
+      "ObjectMapper": "ObjectMapper",
+      "SnapKit": "SnapKit",
+      "Kingfisher": "Kingfisher",
+      "SDWebImage": "SDWebImage Swift",
+      "Lottie": "Lottie",
+      "SwiftLint": "SwiftLint",
+      "SwiftFormat": "SwiftFormat",
+    };
+
+    const depPattern = /\.package\s*\(\s*url:\s*"[^"]+"\s*,\s*(?:from|\.upToNextMajor|\.upToNextMinor|\.exact):\s*"[^"]+"\s*\)/g;
+    let match;
+
+    while ((match = depPattern.exec(content)) !== null) {
+      const depString = match[0];
+      const urlMatch = depString.match(/url:\s*"([^"]+)"/);
+      if (urlMatch) {
+        const url = urlMatch[1];
+        const depName = url.split("/").pop()?.replace(".git", "") || "";
+        const libName = libMap[depName] || depName;
+        if (!libraries.includes(libName)) {
+          libraries.push(libName);
+        }
+      }
+    }
+  } catch {}
+
+  return libraries;
 }
 
 /**
@@ -384,6 +447,143 @@ function generateTechStackDescription(
   if (formatters.length > 0) lines.push(`**Formatters**: ${formatters.join(", ")}`);
   
   return lines.join("\n\n");
+}
+
+function detectGradleLibraries(_files: FileInfo[], rootDir: string): string[] {
+  const libraries: string[] = [];
+  const gradleFiles: string[] = [];
+
+  function findGradleFiles(dir: string, depth: number = 0) {
+    if (depth > 3) return;
+    try {
+      const entries = fs.readdirSync(dir, { withFileTypes: true });
+      for (const entry of entries) {
+        const fullPath = path.join(dir, entry.name);
+        if (entry.isDirectory() && !entry.name.startsWith('.') && entry.name !== 'node_modules') {
+          findGradleFiles(fullPath, depth + 1);
+        } else if (entry.isFile() && (entry.name === 'build.gradle' || entry.name === 'build.gradle.kts')) {
+          gradleFiles.push(fullPath);
+        }
+      }
+    } catch {}
+  }
+
+  findGradleFiles(rootDir);
+
+  const libMap: Record<string, string> = {
+    "androidx.core": "AndroidX Core", "androidx.appcompat": "AppCompat",
+    "com.google.android.material": "Material Design",
+    "androidx.constraintlayout": "ConstraintLayout",
+    "androidx.navigation": "Navigation", "androidx.room": "Room",
+    "org.jetbrains.kotlin": "Kotlin", "kotlinx.coroutines": "Kotlin Coroutines",
+    "com.squareup.retrofit2": "Retrofit", "com.squareup.okhttp3": "OkHttp",
+    "com.google.dagger": "Dagger", "junit": "JUnit",
+    "org.mockito": "Mockito", "com.jakewharton.timber": "Timber",
+    "com.github.bumptech.glide": "Glide", "io.coil-kt": "Coil",
+    "com.google.code.gson": "Gson",
+  };
+
+  for (const gf of gradleFiles) {
+    try {
+      const content = readFile(gf);
+      const depPattern = /(?:implementation|api|compileOnly|runtimeOnly|testImplementation|androidTestImplementation|kapt|annotationProcessor)\s*(?:\(|\s)?['"]([^'"]+)['"](?:\))?/g;
+      let match;
+      while ((match = depPattern.exec(content)) !== null) {
+        const parts = match[1].split(':');
+        if (parts.length >= 2) {
+          const libName = libMap[parts[0]] || `${parts[0]}:${parts[1]}`;
+          if (!libraries.includes(libName)) libraries.push(libName);
+        }
+      }
+      if (content.includes("com.android.application") && !libraries.includes("Android Gradle Plugin")) {
+        libraries.push("Android Gradle Plugin");
+      }
+    } catch {}
+  }
+
+  return libraries;
+}
+
+function detectCargoLibraries(rootDir: string): string[] {
+  const libraries: string[] = [];
+  try {
+    const content = readFile(path.join(rootDir, "Cargo.toml"));
+    const libMap: Record<string, string> = {
+      tokio: "Tokio", serde: "Serde", "serde_json": "Serde JSON",
+      reqwest: "Reqwest", actix_web: "Actix Web", axum: "Axum",
+      sqlx: "SQLx", diesel: "Diesel", mongodb: "MongoDB",
+      redis: "Redis", chrono: "Chrono", regex: "Regex",
+      clap: "Clap", log: "Log", tracing: "Tracing",
+      anyhow: "Anyhow", thiserror: "ThisError", rayon: "Rayon",
+      uuid: "UUID", rand: "Rand", hyper: "Hyper",
+    };
+    const depSection = content.match(/\[dependencies\]([^\[]*)/);
+    if (depSection) {
+      const depPattern = /^(\w+)\s*=/gm;
+      let match;
+      while ((match = depPattern.exec(depSection[1])) !== null) {
+        const libName = libMap[match[1]] || match[1];
+        if (!libraries.includes(libName)) libraries.push(libName);
+      }
+    }
+  } catch {}
+  return libraries;
+}
+
+function detectGoLibraries(rootDir: string): string[] {
+  const libraries: string[] = [];
+  try {
+    const content = readFile(path.join(rootDir, "go.mod"));
+    const libMap: Record<string, string> = {
+      "gin-gonic/gin": "Gin", "labstack/echo": "Echo",
+      "gorilla/mux": "Gorilla Mux", "go-chi/chi": "Chi",
+      "gofiber/fiber": "Fiber", "gorm.io/gorm": "GORM",
+      "github.com/jmoiron/sqlx": "SQLx",
+      "github.com/lib/pq": "PostgreSQL Driver",
+      "github.com/spf13/cobra": "Cobra", "github.com/spf13/viper": "Viper",
+    };
+    const requirePattern = /^\s*(\S+)\s+v?[\d\.]+/gm;
+    let match;
+    while ((match = requirePattern.exec(content)) !== null) {
+      const libName = libMap[match[1]] || match[1];
+      if (!libraries.includes(libName)) libraries.push(libName);
+    }
+  } catch {}
+  return libraries;
+}
+
+function detectMavenLibraries(rootDir: string): string[] {
+  const libraries: string[] = [];
+  try {
+    const content = readFile(path.join(rootDir, "pom.xml"));
+    const libMap: Record<string, string> = {
+      "org.springframework.boot": "Spring Boot",
+      "org.springframework": "Spring Framework",
+      "org.springframework.data": "Spring Data",
+      "org.springframework.security": "Spring Security",
+      "org.springframework.cloud": "Spring Cloud",
+    };
+    const depPattern = /<dependency>\s*<groupId>([^<]+)<\/groupId>\s*<artifactId>([^<]+)<\/artifactId>/g;
+    let match;
+    while ((match = depPattern.exec(content)) !== null) {
+      const libName = libMap[match[1]] || `${match[1]}:${match[2]}`;
+      if (!libraries.includes(libName)) libraries.push(libName);
+    }
+  } catch {}
+  return libraries;
+}
+
+function detectLibraries(files: FileInfo[], rootDir: string): string[] {
+  const libraries: string[] = [];
+
+  libraries.push(...detectNodeLibraries(rootDir));
+  libraries.push(...detectGradleLibraries(files, rootDir));
+  libraries.push(...detectCargoLibraries(rootDir));
+  libraries.push(...detectGoLibraries(rootDir));
+  libraries.push(...detectMavenLibraries(rootDir));
+  libraries.push(...detectSwiftLibraries(rootDir));
+
+  return [...new Set(libraries)];
 }
 
 /**
