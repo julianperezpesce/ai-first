@@ -17,11 +17,12 @@ Implementar todas las mejoras identificadas en el análisis mediante un proceso 
 
 | Fase | Nombre | Branch | Prioridad | Estado | Breaking Changes |
 |------|--------|--------|-----------|--------|------------------|
-| 1 | Testing Infrastructure | `feature/phase-1-testing-infrastructure` | 🔴 Crítica | ✅ **COMPLETADO** | ❌ No |
-| 2 | Code Quality | `feature/phase-2-code-quality` | 🔴 Crítica | ✅ **COMPLETADO** | ✅ Sí |
-| 3 | Architecture | `feature/phase-3-architecture` | 🟠 Alta | ⏳ Pendiente | ✅ Sí |
-| 4 | Performance | `feature/phase-4-performance` | 🟡 Media | ⏳ Pendiente | ❌ No |
-| 5 | Documentation | `feature/phase-5-documentation` | 🟢 Baja | ⏳ Pendiente | ❌ No |
+| 1 | Library Detection | `feature/phase-1-library-detection` | 🔴 Crítica | ✅ **COMPLETADO** | ❌ No |
+| 2 | Testing Infrastructure | `feature/phase-1-testing-infrastructure` | 🔴 Crítica | ✅ **COMPLETADO** | ❌ No |
+| 3 | Code Quality | `feature/phase-2-code-quality` | 🔴 Crítica | ✅ **COMPLETADO** | ✅ Sí |
+| 4 | Architecture | `feature/phase-3-architecture` | 🟠 Alta | ⏳ Pendiente | ✅ Sí |
+| 5 | Performance | `feature/phase-4-performance` | 🟡 Media | ⏳ Pendiente | ❌ No |
+| 6 | Documentation | `feature/phase-5-documentation` | 🟢 Baja | ⏳ Pendiente | ❌ No |
 
 ---
 
@@ -35,7 +36,38 @@ Implementar todas las mejoras identificadas en el análisis mediante un proceso 
 
 ---
 
-## 📊 ESTADO ACTUAL - PHASE 2 COMPLETADO ✅
+## 📊 ESTADO ACTUAL - PHASE 1 (LIBRARY DETECTION) COMPLETADO ✅
+
+### Commit: `1ab7ce8`
+**Fecha:** 2026-03-21
+**Branch:** `feature/phase-1-library-detection`
+**Push:** ✅ Subido a `upstream/feature/phase-1-library-detection`
+
+### Implementaciones Fase 1:
+
+1. **Layer Detection Fix** ✅
+   - `src/core/semanticContexts.ts` - Substring matching para detección de capas
+   - `auth.controller.ts` ahora detecta correctamente capa "api"
+
+2. **Library Detection para 5 Build Systems** ✅
+   - `detectGradleLibraries()` - Gradle (Android/Java/Kotlin)
+   - `detectCargoLibraries()` - Cargo (Rust)
+   - `detectGoLibraries()` - Go Modules (Go)
+   - `detectMavenLibraries()` - Maven (Java)
+   - `detectSwiftLibraries()` - Swift Package Manager (Swift)
+
+3. **Master Test Script** ✅
+   - `run-all-tests.sh` - Tests unitarios + funcionales + integración
+
+### Test Results (93/93 PASS):
+- ✅ 93 tests unitarios (Vitest)
+- ✅ 11 adapters funcionando
+- ✅ Layer detection verificado
+- ✅ Library detection verificado para todos los build systems
+
+---
+
+## 📊 ESTADO PREVIO - PHASE 2 COMPLETADO ✅
 
 ### Commit: `b9d50bc`
 **Fecha:** 2026-03-18
@@ -81,13 +113,56 @@ Implementar todas las mejoras identificadas en el análisis mediante un proceso 
 
 ## 🚀 PROMPTS DE DESARROLLO POR FASE
 
-### FASE 1: TESTING INFRASTRUCTURE ✅ COMPLETADO
+### FASE 1: LIBRARY DETECTION ✅ COMPLETADO
+**Branch:** `feature/phase-1-library-detection`
+**Commit:** `1ab7ce8`
+
+**IMPLEMENTACIONES:**
+
+1. **Layer Detection Fix**
+   - Archivo: `src/core/semanticContexts.ts`
+   - Cambio: `patterns.includes(s)` → `patterns.some(p => s.includes(p))`
+   - Resultado: Substring matching para nombres de archivo compuestos
+
+2. **Gradle Library Detection**
+   - Archivo: `src/analyzers/techStack.ts`
+   - Función: `detectGradleLibraries()`
+   - Soporta: build.gradle, build.gradle.kts (Groovy y Kotlin DSL)
+   - Detecta: AndroidX, Retrofit, Room, Coroutines, etc.
+
+3. **Cargo Library Detection**
+   - Archivo: `src/analyzers/techStack.ts`
+   - Función: `detectCargoLibraries()`
+   - Parsea: [dependencies] en Cargo.toml
+   - Detecta: Tokio, Serde, Actix, Axum, SQLx, etc.
+
+4. **Go Modules Library Detection**
+   - Archivo: `src/analyzers/techStack.ts`
+   - Función: `detectGoLibraries()`
+   - Parsea: require en go.mod
+   - Detecta: Gin, Echo, GORM, Cobra, etc.
+
+5. **Maven Library Detection**
+   - Archivo: `src/analyzers/techStack.ts`
+   - Función: `detectMavenLibraries()`
+   - Parsea: pom.xml dependencies
+   - Detecta: Spring Boot, Spring Framework, etc.
+
+6. **Swift Package Manager Library Detection**
+   - Archivo: `src/analyzers/techStack.ts`
+   - Función: `detectSwiftLibraries()`
+   - Parsea: Package.swift
+   - Detecta: Vapor, Fluent, Alamofire, etc.
+
+---
+
+### FASE 2: TESTING INFRASTRUCTURE ✅ COMPLETADO
 **Branch:** `feature/phase-1-testing-infrastructure`
 **Commit:** `a5562f1`
 
 ---
 
-### FASE 2: CODE QUALITY ✅ COMPLETADO
+### FASE 3: CODE QUALITY ✅ COMPLETADO
 **Branch:** `feature/phase-2-code-quality`
 **Commits:**
 - `b9d50bc` - fix: Add PHP and Ruby parsers for symbol extraction
@@ -147,14 +222,15 @@ Implementar todas las mejoras identificadas en el análisis mediante un proceso 
 
 | Fase | Duración Estimada | Dependencias | Estado |
 |------|-------------------|--------------|--------|
-| Phase 1: Testing | 3-4 días | Ninguna | ✅ **COMPLETADO** |
-| Phase 2: Code Quality | 2-3 días | Ninguna | ✅ **COMPLETADO** |
-| Phase 3: Architecture | 2 días | Phase 2 | ✅ **COMPLETADO** |
-| Phase 4: Performance | 1-2 días | Phase 3 | ✅ **COMPLETADO** |
-| Phase 5: Documentation | 1-2 días | Todas las anteriores | ✅ **COMPLETADO** |
+| Phase 1: Library Detection | 1 día | Ninguna | ✅ **COMPLETADO** |
+| Phase 2: Testing Infrastructure | 3-4 días | Ninguna | ✅ **COMPLETADO** |
+| Phase 3: Code Quality | 2-3 días | Ninguna | ✅ **COMPLETADO** |
+| Phase 4: Architecture | 2 días | Phase 2 | ✅ **COMPLETADO** |
+| Phase 5: Performance | 1-2 días | Phase 3 | ✅ **COMPLETADO** |
+| Phase 6: Documentation | 1-2 días | Todas las anteriores | ✅ **COMPLETADO** |
 
-**Total:** 9-13 días de desarrollo
-**Completado:** 5/5 fases (100%)
+**Total:** 10-14 días de desarrollo
+**Completado:** 6/6 fases (100%)
 
 ---
 
@@ -170,14 +246,18 @@ Implementar todas las mejoras identificadas en el análisis mediante un proceso 
 
 ## ✅ CHECKLIST PRE-RELEASE v1.2.0
 
-- [x] Phase 1: 11 test projects working (5 old + 6 new)
+- [x] Phase 1: Library detection for 5 build systems (Gradle, Cargo, Go, Maven, Swift)
+- [x] Phase 1: Layer detection substring matching fixed
+- [x] Phase 1: Master test script created (run-all-tests.sh)
 - [x] Phase 1: Commit pushed to GitHub
-- [x] Phase 2: No duplicate files, all snake_case
-- [x] Phase 2: Symbol extraction fixed for all 11 adapters
-- [x] Phase 2: Flow names sanitized (no more auth..json, add_.json)
-- [x] Phase 3: New folder structure working (ai-context/ instead of ai/)
-- [ ] Phase 4: Performance improvements verified
-- [ ] Phase 5: Documentation complete (ENG + ES)
+- [x] Phase 2: 11 test projects working (5 old + 6 new)
+- [x] Phase 2: Commit pushed to GitHub
+- [x] Phase 3: No duplicate files, all snake_case
+- [x] Phase 3: Symbol extraction fixed for all 11 adapters
+- [x] Phase 3: Flow names sanitized (no more auth..json, add_.json)
+- [x] Phase 4: New folder structure working (ai-context/ instead of ai/)
+- [ ] Phase 5: Performance improvements verified
+- [ ] Phase 6: Documentation complete (ENG + ES)
 - [ ] All 11 commands work on all 11 projects
 - [ ] CHANGELOG.md and CHANGELOG.es.md updated
 - [ ] README.md and README.es.md synchronized
@@ -212,5 +292,5 @@ Implementar todas las mejoras identificadas en el análisis mediante un proceso 
 ---
 
 *Plan creado: 2026-03-17*
-*Última actualización: 2026-03-18*
+*Última actualización: 2026-03-21*
 *Version target: 1.2.0*
