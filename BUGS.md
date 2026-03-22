@@ -329,6 +329,32 @@ ai-first query symbol login --root test-projects/express-api
 - [ ] Bug 2 (Parcial): Calls/Called by detection requiere AST parser completo (limitación aceptada)
 - [ ] Bug 4 (Parcial): 3 vulnerabilidades npm restantes (riesgo aceptado - dev only)
 
+### Bug D: Contador de features/flows incorrecto en Salesforce CLI
+**Estado**: ⚠️ Confirmado - Fix pendiente
+**Fecha**: 2026-03-22
+**Severidad**: Baja (cosmético)
+
+**Descripción**: El comando `ai-first init` muestra "Created 0 features, 0 flows" para proyectos Salesforce, pero los archivos SÍ se generan correctamente.
+
+**Evidencia**:
+```bash
+# Mensaje mostrado:
+✅ Created 0 features, 0 flows
+
+# Realidad:
+$ ls test-projects/salesforce-cli/ai-context/context/features/
+→ force-app.json  (1 feature válido)
+
+$ ls test-projects/salesforce-cli/ai-context/context/flows/
+→ account.json, opportunity.json  (2 flows válidos)
+```
+
+**Impacto**: Ninguno en funcionalidad. Los archivos se generan correctamente, solo el mensaje de conteo es incorrecto.
+
+**Fix sugerido**: Revisar la función `runAIFirst()` en `src/commands/ai-first.ts` donde se cuenta features/flows para el mensaje de salida.
+
+---
+
 ---
 
 ## Nuevos Issues Identificados (Para futuras versiones)
