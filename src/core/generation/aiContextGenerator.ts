@@ -1,0 +1,335 @@
+import { ArchitectureAnalysis } from "../analysis/architectureDetector.js";
+
+export interface EnrichedContext {
+  project: {
+    name: string;
+    type: string;
+    description: string;
+  };
+  architecture: {
+    pattern: string;
+    confidence: number;
+    layers: Array<{
+      name: string;
+      components: string[];
+      responsibility: string;
+    }>;
+  };
+  techStack: {
+    languages: string[];
+    frameworks: string[];
+    libraries: string[];
+  };
+  entryPoints: Array<{
+    name: string;
+    file: string;
+    description: string;
+  }>;
+  flows: Array<{
+    name: string;
+    description: string;
+    files: string[];
+    dependencies: string[];
+  }>;
+  metrics: {
+    totalFiles: number;
+    totalSymbols: number;
+    totalDependencies: number;
+    averageComplexity: number;
+  };
+}
+
+export class AIContextGenerator {
+  generate(analysis: {
+    architecture: ArchitectureAnalysis;
+    symbols: Array<{
+      id: string;
+      name: string;
+      type: string;
+      file: string;
+    }>;
+    dependencies: {
+      totalDependencies: number;
+      dependencies: Array<{
+        source: string;
+        target: string;
+        type: string;
+      }>;
+    };
+    projectName: string;
+  }): string {
+    const enriched = this.enrichAnalysis(analysis);
+    return this.renderMarkdown(enriched);
+  }
+
+  private enrichAnalysis(analysis: {
+    architecture: ArchitectureAnalysis;
+    symbols: Array<{
+      id: string;
+      name: string;
+      type: string;
+      file: string;
+    }>;
+    dependencies: {
+      totalDependencies: number;
+      dependencies: Array<{
+        source: string;
+        target: string;
+        type: string;
+      }>;
+    };
+    projectName: string;
+  }): EnrichedContext {
+    const uniqueFiles = [...new Set(analysis.symbols.map((s) => s.file))];
+    const uniqueTypes = [...new Set(analysis.symbols.map((s) => s.type))];
+
+    return {
+      project: {
+        name: analysis.projectName,
+        type: this.detectProjectType(analysis),
+        description: this.generateDescription(analysis),
+      },
+      architecture: {
+        pattern: analysis.architecture.primary?.name || "Unknown",
+        confidence: analysis.architecture.primary?.confidence || 0,
+        layers: analysis.architecture.layers.map((layer) => ({
+          name: layer.name,
+          components: layer.symbols.slice(0, 10),
+          responsibility: layer.responsibility,
+        })),
+      },
+      techStack: {
+        languages: this.extractLanguages(uniqueFiles),
+        frameworks: this.detectFrameworks(analysis),
+        libraries: this.detectLibraries(analysis),
+      },
+      entryPoints: analysis.architecture.entryPoints.slice(0, 5).map((ep) => ({
+        name: ep.split("#")[1] || ep,
+        file: ep.split("#")[0] || ep,
+        description: this.describeEntryPoint(ep),
+      })),
+      flows: this.extractFlows(analysis),
+      metrics: {
+        totalFiles: uniqueFiles.length,
+        totalSymbols: analysis.symbols.length,
+        totalDependencies: analysis.dependencies.totalDependencies,
+        averageComplexity: this.calculateComplexity(analysis),
+      },
+    };
+  }
+
+  private renderMarkdown(context: EnrichedContext): string {
+    return `# AI Context: ${context.project.name}
+
+## Project Overview
+
+**Type**: ${context.project.type}  
+**Description**: ${context.project.description}
+
+## Architecture
+
+### Pattern: ${context.architecture.pattern}
+**Confidence**: ${(context.architecture.confidence * 100).toFixed(0)}%
+
+### Layers
+
+${context.architecture.layers
+  .map(
+    (layer) => `#### ${layer.name}
+**Responsibility**: ${layer.responsibility}
+
+**Key Components**:
+${layer.components.map((c) => `- \`${c}\``).join("\n")}
+`
+  )
+  .join("\n")}
+
+## Tech Stack
+
+### Languages
+${context.techStack.languages.map((l) => `- ${l}`).join("\n")}
+
+### Frameworks
+${context.techStack.frameworks.map((f) => `- ${f}`).join("\n")}
+
+### Key Libraries
+${context.techStack.libraries.slice(0, 10).map((l) => `- ${l}`).join("\n")}
+
+## Entry Points
+
+${context.entryPoints
+  .map(
+    (ep) => `### ${ep.name}
+- **File**: \`${ep.file}\`
+- **Description**: ${ep.description}
+`
+  )
+  .join("\n")}
+
+## Business Flows
+
+${context.flows
+  .map(
+    (flow) => `### ${flow.name}
+${flow.description}
+
+**Files involved**:
+${flow.files.map((f) => `- \`${f}\``).join("\n")}
+
+**Dependencies**:
+${flow.dependencies.slice(0, 5).map((d) => `- ${d}`).join("\n")}
+`
+  )
+  .join("\n")}
+
+## Metrics
+
+| Metric | Value |
+|--------|-------|
+| Total Files | ${context.metrics.totalFiles} |
+| Total Symbols | ${context.metrics.totalSymbols} |
+| Total Dependencies | ${context.metrics.totalDependencies} |
+| Average Complexity | ${context.metrics.averageComplexity.toFixed(2)} |
+
+## Getting Started for AI
+
+1. **Read architecture.md** for detailed structure
+2. **Check context/flows/** for business logic understanding
+3. **See symbols.json** for complete API reference
+4. **Review dependencies.json** for module relationships
+
+---
+*Generated by ai-first-cli v2.0 with semantic analysis*
+`;
+  }
+
+  private detectProjectType(analysis: {
+    symbols: Array<{ type: string; file: string }>;
+  }): string {
+    const hasControllers = analysis.symbols.some(
+      (s) => s.type === "class" && s.file.includes("controller")
+    );
+    const hasComponents = analysis.symbols.some(
+      (s) => s.type === "class" && s.file.includes("component")
+    );
+    const hasRoutes = analysis.symbols.some((s) => s.file.includes("route"));
+
+    if (hasComponents) return "Frontend Application (React/Vue/Angular)";
+    if (hasControllers && hasRoutes) return "REST API / Web Service";
+    if (hasControllers) return "MVC Web Application";
+    return "Generic Application";
+  }
+
+  private generateDescription(analysis: {
+    architecture: ArchitectureAnalysis;
+    symbols: Array<{ type: string }>;
+  }): string {
+    const patterns = analysis.architecture.primary
+      ? [analysis.architecture.primary.name]
+      : [];
+    patterns.push(...analysis.architecture.secondary.map((s) => s.name));
+
+    const classes = analysis.symbols.filter((s) => s.type === "class").length;
+    const functions = analysis.symbols.filter((s) => s.type === "function").length;
+
+    return `A ${patterns.join(" / ")} application with ${classes} classes and ${functions} functions organized in ${analysis.architecture.layers.length} architectural layers.`;
+  }
+
+  private extractLanguages(files: string[]): string[] {
+    const extensions = files.map((f) => f.split(".").pop() || "");
+    const langMap: Record<string, string> = {
+      ts: "TypeScript",
+      tsx: "TypeScript (React)",
+      js: "JavaScript",
+      jsx: "JavaScript (React)",
+      py: "Python",
+      java: "Java",
+      go: "Go",
+      rs: "Rust",
+      php: "PHP",
+      rb: "Ruby",
+    };
+
+    return [...new Set(extensions.map((e) => langMap[e] || e).filter(Boolean))];
+  }
+
+  private detectFrameworks(analysis: {
+    symbols: Array<{ name: string; file: string }>;
+  }): string[] {
+    const frameworks: string[] = [];
+    const check = (pattern: string, name: string) => {
+      if (
+        analysis.symbols.some(
+          (s) => s.name.includes(pattern) || s.file.includes(pattern.toLowerCase())
+        )
+      ) {
+        frameworks.push(name);
+      }
+    };
+
+    check("Controller", "NestJS / Express");
+    check("Component", "React / Vue / Angular");
+    check("Service", "Angular / NestJS");
+    check("Model", "Django / Rails / Laravel");
+    check("View", "Django / Rails");
+    check("Route", "Express / Fastify");
+
+    return [...new Set(frameworks)];
+  }
+
+  private detectLibraries(analysis: {
+    dependencies: { dependencies: Array<{ target: string }> };
+  }): string[] {
+    const imports = analysis.dependencies.dependencies.map((d) => d.target);
+    return [...new Set(imports)].slice(0, 20);
+  }
+
+  private describeEntryPoint(entryPoint: string): string {
+    const name = entryPoint.split("#")[1] || entryPoint;
+    const file = entryPoint.split("#")[0] || entryPoint;
+
+    if (name.toLowerCase().includes("main")) return "Application entry point";
+    if (name.toLowerCase().includes("server")) return "Server bootstrap";
+    if (name.toLowerCase().includes("app")) return "Main application setup";
+    if (file.includes("controller")) return "API endpoint handler";
+    if (file.includes("route")) return "Route definition";
+    return "Entry point";
+  }
+
+  private extractFlows(analysis: {
+    architecture: ArchitectureAnalysis;
+    symbols: Array<{ id: string; name: string; file: string; type: string }>;
+  }): EnrichedContext["flows"] {
+    const flows: EnrichedContext["flows"] = [];
+
+    const entryPoints = analysis.architecture.entryPoints;
+    for (const ep of entryPoints.slice(0, 5)) {
+      const epName = ep.split("#")[1] || ep;
+      const epFile = ep.split("#")[0] || ep;
+
+      const relatedFiles = analysis.symbols
+        .filter((s) => s.file.includes(epName.toLowerCase().replace(/controller|handler/g, "")))
+        .map((s) => s.file);
+
+      flows.push({
+        name: epName,
+        description: `Business flow starting at ${epName}`,
+        files: [...new Set([epFile, ...relatedFiles])].slice(0, 5),
+        dependencies: [],
+      });
+    }
+
+    return flows;
+  }
+
+  private calculateComplexity(analysis: {
+    symbols: Array<{ type: string }>;
+    dependencies: { dependencies: Array<unknown> };
+  }): number {
+    const symbolCount = analysis.symbols.length;
+    const depCount = analysis.dependencies.dependencies.length;
+    return symbolCount > 0 ? depCount / symbolCount : 0;
+  }
+}
+
+export const aiContextGenerator = new AIContextGenerator();
