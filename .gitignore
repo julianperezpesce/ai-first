@@ -1,8 +1,61 @@
-#PB|node_modules/
-#ZH|ai/
-#PW|*.log
-#ZS|.env
-#ZV|.DS_Store
-#PW|path
-#ZY|url
-#PB|package-lock.json
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# AI Context directories (generated)
+ai/
+ai-context/
+
+# Logs
+*.log
+logs/
+log/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Internal development files (not for public repo)
+.sisyphus/
+PLAN_*.md
+PROMPT_*.md
+BUGS.md
+*.private.md
+.internal/
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Build artifacts
+dist/
+build/
+*.tsbuildinfo
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Large binary files
+*.db
+*.sqlite
+*.sqlite3
+
+# Node
+path
+url

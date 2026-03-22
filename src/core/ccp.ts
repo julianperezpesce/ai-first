@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { ensureDir, writeFile, readJsonFile } from "../utils/fileUtils.js";
+import { getCcpDir, getCcpPath } from "../utils/constants.js";
 
 export interface ContextModule {
   name: string;
@@ -206,7 +207,7 @@ export function createCCP(
  * List all CCPs
  */
 export function listCCPs(rootDir: string): string[] {
-  const ccpDir = path.join(rootDir, "ai", "ccp");
+  const ccpDir = getCcpDir(rootDir);
   
   if (!fs.existsSync(ccpDir)) {
     return [];
@@ -222,7 +223,7 @@ export function listCCPs(rootDir: string): string[] {
  * Get CCP details
  */
 export function getCCP(rootDir: string, name: string): CCPContext | null {
-  const contextPath = path.join(rootDir, "ai", "ccp", name, "context.json");
+  const contextPath = getCcpPath(rootDir, name);
   
   if (!fs.existsSync(contextPath)) {
     return null;

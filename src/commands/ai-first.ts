@@ -8,6 +8,7 @@ import { generateIndex, IncrementalIndexer, EXAMPLE_QUERIES } from "../core/inde
 import { generateAIContext } from "../core/aiContextGenerator.js";
 import { generateHierarchy } from "../core/hierarchyGenerator.js";
 import { ensureDir, writeFile } from "../utils/fileUtils.js";
+import { AI_CONTEXT_DIR, getIndexDbPath, getHierarchyPath } from "../utils/constants.js";
 import { analyzeArchitecture, generateArchitectureFile } from "../analyzers/architecture.js";
 import { detectTechStack, generateTechStackFile } from "../analyzers/techStack.js";
 import { discoverEntrypoints, generateEntrypointsFile } from "../analyzers/entrypoints.js";
@@ -416,7 +417,7 @@ Usage: ai-first index [options]
 
 Options:
   -r, --root <dir>      Root directory to scan (default: current directory)
-  -o, --output <path>  Output path for index.db (default: ./ai/index.db)
+  -o, --output <path>  Output path for index.db (default: ./ai-context/index.db)
   -s, --semantic       Force semantic indexing
   -h, --help           Show help message
 
@@ -435,7 +436,7 @@ Example queries (for AI agents):
     }
 
     if (!outputPath) {
-      outputPath = path.join(rootDir, "ai", "index.db");
+      outputPath = getIndexDbPath(rootDir);
     }
 
     const aiDir = path.join(rootDir, "ai-context");
@@ -489,7 +490,7 @@ Example queries (for AI agents):
     const modules: Record<string, { path: string; files: string[] }> = {};
     for (const file of scanResult.files) {
       const parts = file.relativePath.split('/');
-      if (parts.length > 1 && parts[0] !== 'ai') {
+      if (parts.length > 1 && parts[0] !== AI_CONTEXT_DIR && parts[0] !== 'ai') {
         if (!modules[parts[0]]) modules[parts[0]] = { path: parts[0], files: [] };
         modules[parts[0]].files.push(file.relativePath);
       }
@@ -543,7 +544,7 @@ Example queries (for AI agents):
             
             const initSqlJs = (await import("sql.js")).default;
             const SQL = await initSqlJs();
-            const dbPath = outputPath || path.join(rootDir, "ai", "index.db");
+            const dbPath = outputPath || getIndexDbPath(rootDir);
             let db: Database;
             if (fs.existsSync(dbPath)) {
               const fileBuffer = fs.readFileSync(dbPath);
@@ -577,7 +578,7 @@ Example queries (for AI agents):
     // Watch command - incremental indexing
     args.shift();
     let rootDir = process.cwd();
-    let outputPath = path.join(rootDir, "ai", "index.db");
+    let outputPath = getIndexDbPath(rootDir);
     let semanticMode = false;
     let debounceMs = 300;
 
@@ -605,7 +606,7 @@ Usage: ai-first watch [options]
 
 Options:
   -r, --root <dir>       Root directory to watch (default: current directory)
-  -o, --output <path>   Output path for index.db (default: ./ai/index.db)
+  -o, --output <path>   Output path for index.db (default: ./ai-context/index.db)
   -d, --debounce <ms>   Debounce delay in ms (default: 300)
   -h, --help            Show help message
 
@@ -701,7 +702,7 @@ Arguments:
 
 Options:
   -r, --root <dir>        Root directory (default: current directory)
-  -o, --output <dir>     Output directory (default: ./ai)
+  -o, --output <dir>     Output directory (default: ./ai-context)
   -d, --depth <n>        Graph traversal depth (default: 1)
   -m, --max-symbols <n>  Max related symbols (default: 50)
   -f, --format <fmt>      Output format: json, markdown, text (default: json)
@@ -781,7 +782,7 @@ Examples:
     // Summarize command - generate hierarchical repository summaries
     args.shift();
     let rootDir = process.cwd();
-    let outputPath = path.join(rootDir, "ai", "hierarchy.json");
+    let outputPath = getHierarchyPath(rootDir);
 
     for (let i = 0; i < args.length; i++) {
       const arg = args[i];
@@ -803,7 +804,7 @@ Usage: ai-first summarize [options]
 
 Options:
   -r, --root <dir>      Root directory (default: current directory)
-  -o, --output <path>   Output path (default: ./ai/hierarchy.json)
+  -o, --output <path>   Output path (default: ./ai-context/hierarchy.json)
   -h, --help            Show help message
 
 Output:
@@ -834,7 +835,7 @@ Output:
     args.shift();
     const queryType = args.shift();
     let rootDir = process.cwd();
-    let dbPath = path.join(rootDir, "ai", "index.db");
+    let dbPath = getIndexDbPath(rootDir);
 
     for (let i = 0; i < args.length; i++) {
       const arg = args[i];
@@ -842,7 +843,7 @@ Output:
         case "--root":
         case "-r":
           rootDir = args[++i];
-          dbPath = path.join(rootDir, "ai", "index.db");
+          dbPath = getIndexDbPath(rootDir);
           break;
         case "--db":
         case "-d":
@@ -867,7 +868,7 @@ Subcommands:
 
 Options:
   -r, --root <dir>   Root directory (default: current directory)
-  -d, --db <path>    Database path (default: ./ai/index.db)
+  -d, --db <path>    Database path (default: ./ai-context/index.db)
   -h, --help         Show help message
 `);
       process.exit(0);
@@ -1111,7 +1112,7 @@ Commands:
 
 Options:
   -r, --root <dir>      Root directory to scan (default: current directory)
-  -o, --output <dir>   Output directory (default: ./ai)
+  -o, --output <dir>   Output directory (default: ./ai-context)
   -h, --help           Show help message
 `);
           process.exit(0);

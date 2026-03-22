@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { readFile, DEFAULT_EXCLUDE_PATTERNS, getAllFiles as scanFiles, getRelativePath } from "../utils/fileUtils.js";
+import { AI_CONTEXT_DIR, getHierarchyPath } from "../utils/constants.js";
 
 /**
  * Hierarchy result
@@ -299,11 +300,11 @@ function summarizeFile(filePath: string, content: string): string {
  */
 export async function generateHierarchy(
   rootDir: string,
-  outputPath: string = "ai/hierarchy.json"
+  outputPath: string = getHierarchyPath(rootDir)
 ): Promise<HierarchyResult> {
   try {
     // Get all files
-    const allFiles = scanFiles(rootDir, [...DEFAULT_EXCLUDE_PATTERNS, "ai", "node_modules"]);
+    const allFiles = scanFiles(rootDir, [...DEFAULT_EXCLUDE_PATTERNS, AI_CONTEXT_DIR, "ai", "node_modules"]);
 
     // Get files for analysis
     const files: { path: string; relativePath: string }[] = [];
