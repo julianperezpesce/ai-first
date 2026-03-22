@@ -6,7 +6,14 @@ All notable changes to `ai-first` will be documented in this file.
 
 ## [Unreleased]
 
-### Phase 1: AST Parsing - Completed (v1.3.0)
+## [1.3.0] - 2026-03-22
+
+### 🚀 Release v1.3.0 - AST-Based Semantic Analysis
+
+**Branch:** `master` (merged from beta)
+**Total Changes:** 5 phases, 157 tests, 13 bug fixes
+
+### Phase 1: AST Parsing
 
 **Date:** 2026-03-21
 **Branch:** `feature/phase-1-ast-parsing`
@@ -493,7 +500,7 @@ AST parsing adds more metadata without changing output format.
 - Multi-language support
 - Salesforce/Apex support (partial)
 
-### Phase 5: Integration and Optimization - Completed (v2.0.0)
+### Phase 5: Integration and Optimization - Completed (v1.3.0)
 
 **Date:** 2026-03-21
 **Branch:** `feature/phase-5-integration`
