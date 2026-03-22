@@ -1,5 +1,6 @@
 import { FileInfo } from "../core/repoScanner.js";
 import { readFile } from "../utils/fileUtils.js";
+import { parserRegistry, createSymbolFromParsed } from "../core/parsers/index.js";
 
 export interface Symbol {
   id: string;  // Unique ID: filePath#symbolName (e.g., src/auth/login.ts#loginUser)
@@ -61,16 +62,20 @@ export function extractSymbols(files: FileInfo[]): SymbolsAnalysis {
  */
 function parseFileForSymbols(file: FileInfo): Symbol[] {
   const symbols: Symbol[] = [];
-  
+
   try {
     const content = readFile(file.path);
+
+    const ext = "." + file.extension;
+    if (parserRegistry.hasParser(ext)) {
+      const parsed = parserRegistry.parse(file.relativePath, content, ext);
+      if (parsed) {
+        return createSymbolFromParsed(parsed, file.relativePath);
+      }
+    }
+
     const lines = content.split("\n");
-    
-    if (file.extension === "ts" || file.extension === "tsx" || file.extension === "js" || file.extension === "jsx") {
-      parseJavaScriptTypeScript(file, content, lines, symbols);
-    } else if (file.extension === "py") {
-      parsePython(file, content, lines, symbols);
-    } else if (file.extension === "go") {
+    if (file.extension === "go") {
       parseGo(file, content, lines, symbols);
     } else if (file.extension === "rs") {
       parseRust(file, content, lines, symbols);
