@@ -224,6 +224,10 @@ src/
 │   ├── dependencies.ts # Import analysis
 │   └── aiRules.ts     # AI guidelines
 ├── core/               # Processing engine
+│   ├── parsers/        # AST-based language parsers
+│   │   ├── typescriptParser.ts  # TS Compiler API
+│   │   ├── pythonParser.ts      # Python AST parser
+│   │   └── index.ts            # Parser registry
 │   ├── repoScanner.ts  # File discovery
 │   ├── indexer.ts      # SQLite indexing
 │   └── contextGenerator.ts
@@ -248,13 +252,29 @@ AI-First CLI
    │        ▼
    │   SQLite Index
    │
-   └── Architecture Mapper
-            │
-            ▼
-     Repository Map
+    └── Architecture Mapper
+             │
+             ▼
+      Repository Map
 ```
 
+### AST-Based Language Parsers
 
+ai-first uses real Abstract Syntax Tree (AST) parsers for accurate code analysis:
+
+- **TypeScript/JavaScript**: TypeScript Compiler API
+  - Extracts classes, interfaces, functions, enums
+  - Detects inheritance (extends/implements)
+  - Parses imports/exports and JSDoc comments
+  - Handles decorators (@Component, @Injectable)
+
+- **Python**: Custom recursive descent parser
+  - Extracts classes, functions, methods
+  - Detects decorators (@app.route, @dataclass)
+  - Parses type hints and docstrings
+  - Handles async/await syntax
+
+- **Other languages**: Go, Rust, Java, PHP, Ruby (regex-based)
 
 ---
 
