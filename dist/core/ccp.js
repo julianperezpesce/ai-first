@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { ensureDir, writeFile, readJsonFile } from "../utils/fileUtils.js";
+import { getCcpDir, getCcpPath } from "../utils/constants.js";
 /**
  * Generate context modules from repository analysis
  */
@@ -153,7 +154,7 @@ export function createCCP(rootDir, name, options = {}) {
  * List all CCPs
  */
 export function listCCPs(rootDir) {
-    const ccpDir = path.join(rootDir, "ai", "ccp");
+    const ccpDir = getCcpDir(rootDir);
     if (!fs.existsSync(ccpDir)) {
         return [];
     }
@@ -166,7 +167,7 @@ export function listCCPs(rootDir) {
  * Get CCP details
  */
 export function getCCP(rootDir, name) {
-    const contextPath = path.join(rootDir, "ai", "ccp", name, "context.json");
+    const contextPath = getCcpPath(rootDir, name);
     if (!fs.existsSync(contextPath)) {
         return null;
     }

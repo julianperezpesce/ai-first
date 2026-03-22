@@ -1,68 +1,27 @@
 import fs from "fs";
 import path from "path";
 import { ensureDir, writeFile, readJsonFile } from "../utils/fileUtils.js";
-// ============================================================
-// CONFIGURATION - Feature Detection Rules
-// ============================================================
-// 1. Candidate roots - scan inside these directories
-const CANDIDATE_ROOTS = [
-    "src", "app", "packages", "services", "modules", "features",
-    // MVC patterns - for projects without src/ prefix
-    "controllers", "routes", "handlers", "views", "pages"
-];
-// 2. Ignore folders - these are technical, not business features
-const IGNORED_FOLDERS = new Set([
-    "utils",
-    "helpers",
-    "types",
-    "interfaces",
-    "constants",
-    "config",
-    "dto",
-    "common",
-    "shared"
-]);
-// 3. Entrypoint patterns - files that indicate a business feature
-const ENTRYPOINT_PATTERNS = [
-    "controller",
-    "route",
-    "handler",
-    "command",
-    "service"
-];
-// 4. Flow-specific patterns
-const FLOW_ENTRY_PATTERNS = [
-    "controller", "route", "handler", "command",
-    // Frontend patterns
-    "page", "screen", "view", "component"
-];
-// 5. Flow exclusion patterns
-const FLOW_EXCLUDE = new Set([
-    "repository", "repo", "utils", "helper", "model", "entity",
-    "dto", "type", "interface", "constant", "config"
-]);
-// 6. Layer detection
-const LAYER_PATTERNS = {
-    api: ["controller", "handler", "route", "router", "api", "endpoint"],
-    service: ["service", "services", "usecase", "interactor"],
-    data: ["repository", "repo", "dal", "dao", "data", "persistence"],
-    domain: ["model", "entity", "schema", "domain"],
-    util: ["util", "helper", "lib", "common"]
-};
-const LAYER_PRIORITY = {
-    api: 1, controller: 1, handler: 1, route: 1, router: 1,
-    service: 2, usecase: 2, interactor: 2,
-    data: 3, repository: 3, repo: 3, dal: 3, dao: 3, persistence: 3,
-    model: 4, entity: 4, domain: 4,
-};
+import { DEFAULT_ADAPTER } from "./adapters/baseAdapter.js";
+// Use DEFAULT_ADAPTER which has universal patterns for ALL languages/frameworks
+const ADAPTER = DEFAULT_ADAPTER;
+const CANDIDATE_ROOTS = ADAPTER.featureRoots;
+const IGNORED_FOLDERS = new Set(ADAPTER.ignoredFolders);
+const ENTRYPOINT_PATTERNS = ADAPTER.entrypointPatterns;
+const FLOW_ENTRY_PATTERNS = ADAPTER.flowEntrypointPatterns;
+const FLOW_EXCLUDE = new Set(ADAPTER.flowExcludePatterns);
+const LAYER_PATTERNS = {};
+for (const layer of ADAPTER.layerRules) {
+    LAYER_PATTERNS[layer.name] = layer.patterns;
+}
+const LAYER_PRIORITY = {};
+for (const layer of ADAPTER.layerRules) {
+    for (const pattern of layer.patterns) {
+        LAYER_PRIORITY[pattern] = layer.priority;
+    }
+}
 const MAX_FLOW_DEPTH = 5;
 const MAX_FLOW_FILES = 30;
-// Supported source file extensions
-const SOURCE_EXTENSIONS = new Set([
-    ".ts", ".tsx", ".js", ".jsx", ".py", ".java", ".kt", ".go", ".rs", ".rb", ".php", ".cs", ".vue", ".svelte",
-    // Salesforce/Apex
-    ".cls", ".trigger", ".apex", ".object"
-]);
+const SOURCE_EXTENSIONS = new Set(ADAPTER.supportedExtensions);
 // ============================================================
 // HELPER FUNCTIONS
 // ============================================================
@@ -99,7 +58,7 @@ function isFlowExcluded(filePath) {
 function getLayer(filePath) {
     const parts = filePath.split(/[/\\]/).map(s => s.toLowerCase().replace(/\.(ts|js|tsx|jsx)$/, ""));
     for (const [layer, patterns] of Object.entries(LAYER_PATTERNS)) {
-        if (parts.some(s => patterns.includes(s))) {
+        if (parts.some(s => patterns.some(p => s.includes(p)))) {
             return layer;
         }
     }
@@ -231,6 +190,9 @@ export function generateFeatures(modulesJsonPath, _symbolsJsonPath) {
             continue;
         // Extract feature name from path - get the last segment
         const featureName = mod.path.split("/").pop() || moduleName;
+        // Skip ignored folders (utils, helpers, types, etc.)
+        if (isIgnoredFolder(featureName))
+            continue;
         features.push({
             name: featureName,
             path: mod.path,

@@ -43,7 +43,7 @@ export interface LayerRule {
     patterns: string[];
 }
 /**
- * Default adapter configuration
+ * Default adapter configuration - works for ANY project type
  */
 export declare const DEFAULT_ADAPTER: AnalysisAdapter;
 //# sourceMappingURL=baseAdapter.d.ts.map
