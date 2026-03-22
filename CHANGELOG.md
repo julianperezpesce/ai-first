@@ -72,7 +72,47 @@ AST parsing adds more metadata without changing output format.
 
 ---
 
-### Phase 2: Code Quality - Completed (v1.2.0)
+### Phase 2: Dependency Analysis and Graph Building - Completed (v1.4.0)
+
+**Date:** 2026-03-21
+**Branch:** `feature/phase-1-ast-parsing` (continued)
+
+#### Added
+
+- **Dependency Analyzer**
+  - File: `src/core/analysis/dependencyAnalyzer.ts`
+  - Analyzes imports/exports between files
+  - Builds dependency graph with nodes and edges
+  - Detects circular dependencies
+  - Calculates metrics (total imports, most imported modules)
+
+- **Call Graph Builder**
+  - File: `src/core/analysis/callGraphBuilder.ts`
+  - Builds call graph between functions
+  - Finds unused functions and dead code
+  - Calculates call chains and complexity
+  - Detects entry points
+
+- **Inheritance Analyzer**
+  - File: `src/core/analysis/inheritanceAnalyzer.ts`
+  - Builds class hierarchy graphs
+  - Detects extends and implements relationships
+  - Finds ancestors and descendants
+  - Calculates inheritance depth metrics
+
+- **Comprehensive Test Suite**
+  - 12 tests for analysis modules
+  - Total: 135 tests passing (was 123)
+
+#### Technical Details
+
+- New module: `src/core/analysis/` with index exports
+- Algorithms: DFS for cycle detection, recursive traversal for hierarchy
+- Metrics: Import counts, inheritance depth, call complexity
+
+---
+
+### Phase 3: Code Quality - Completed (v1.2.0)
 
 **Date:** 2026-03-18
 
