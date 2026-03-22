@@ -162,7 +162,85 @@ AST parsing adds more metadata without changing output format.
 
 ---
 
-### Phase 4: Code Quality - Completed (v1.2.0)
+### Phase 4: Context Generation with Semantic Analysis - Completed (v1.6.0)
+
+**Date:** 2026-03-21
+**Branch:** `feature/phase-4-context-generation`
+
+#### Added
+
+- **AI Context Generator Enriched**
+  - File: `src/core/generation/aiContextGenerator.ts`
+  - Generates ai_context.md with semantic analysis
+  - Includes architecture pattern detection with confidence
+  - Shows tech stack (languages, frameworks, libraries)
+  - Lists business flows with dependencies
+  - Provides metrics (total files, symbols, complexity)
+  - Getting started guide for AI assistants
+
+- **Flow Generator with Real Dependencies**
+  - File: `src/core/generation/flowGenerator.ts`
+  - Generates flows with actual imports and calls
+  - Detects architectural layers (API, Service, Data, UI)
+  - Calculates complexity (low/medium/high)
+  - Traces call chains from entry points
+  - Shows file responsibilities and symbols
+
+- **Architecture Generator with Diagrams**
+  - File: `src/core/generation/architectureGenerator.ts`
+  - Generates ASCII architecture diagrams
+  - Creates Mermaid diagrams for visualization
+  - Shows layer hierarchy and relationships
+  - Displays module dependencies
+  - Provides architectural recommendations
+
+- **Comprehensive Test Suite**
+  - 8 tests for generation modules
+  - Total: 150 tests passing (was 142)
+
+#### Generated Output Examples
+
+**ai_context.md now includes:**
+```markdown
+# AI Context: ProjectName
+
+## Project Overview
+**Type**: REST API / Web Service
+**Description**: Layered Architecture with 45 classes and 23 functions
+
+## Architecture
+### Pattern: Layered Architecture
+**Confidence**: 85%
+
+### Layers
+#### API Layer
+**Responsibility**: Handle HTTP requests
+**Components**: UserController, AuthController
+
+## Tech Stack
+### Languages
+- TypeScript
+
+### Frameworks
+- NestJS / Express
+```
+
+**architecture.md now includes:**
+- ASCII diagrams showing layer hierarchy
+- Mermaid diagrams for visualization
+- Module dependency graphs
+- Architectural recommendations
+
+#### Technical Details
+
+- New module: `src/core/generation/` with index exports
+- Integration with analysis modules from Phase 2 and 3
+- Markdown generation with templates
+- No breaking changes, enhanced output only
+
+---
+
+### Phase 5: Code Quality - Completed (v1.2.0)
 
 **Date:** 2026-03-18
 
