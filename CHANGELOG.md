@@ -6,6 +6,72 @@ All notable changes to `ai-first` will be documented in this file.
 
 ## [Unreleased]
 
+### Phase 1: AST Parsing - Completed (v1.3.0)
+
+**Date:** 2026-03-21
+**Branch:** `feature/phase-1-ast-parsing`
+
+#### Added
+
+- **TypeScript Parser with TS Compiler API**
+  - File: `src/core/parsers/typescriptParser.ts`
+  - Extracts: classes, interfaces, functions, enums, types
+  - Detects: inheritance (extends/implements), imports/exports
+  - Parses: JSDoc comments, decorators (@Component, @Injectable)
+  - Technology: TypeScript Compiler API
+
+- **Python Parser with Enhanced Syntax Analysis**
+  - File: `src/core/parsers/pythonParser.ts`
+  - Extracts: classes, functions, methods
+  - Detects: decorators (@app.route, @dataclass), type hints
+  - Handles: async/await, docstrings
+  - Technology: Custom recursive descent parser
+
+- **Parser Registry (Factory Pattern)**
+  - File: `src/core/parsers/index.ts`
+  - Selects appropriate parser based on file extension
+  - Extensible architecture for future parsers
+  - Supported: .ts, .tsx, .js, .jsx, .py
+
+- **Comprehensive Test Suite**
+  - 9 tests for TypeScript parser
+  - 8 tests for Python parser
+  - 13 tests for Parser Registry
+  - Total: 123 tests passing (was 93)
+
+#### Changed
+
+- **Symbol Extraction Engine**
+  - File: `src/analyzers/symbols.ts`
+  - Now uses AST parsers for TypeScript and Python
+  - Falls back to regex for other languages (Go, Rust, Java, PHP, Ruby)
+  - Result: More accurate symbol detection with metadata
+
+#### Test Results
+
+All 11 adapters working with improved accuracy:
+
+| Adapter | Symbols | Status |
+|---------|---------|--------|
+| django-app | 84 | ✅ |
+| laravel-app | 132 | ✅ |
+| fastapi-app | 132 | ✅ |
+| flask-app | 105 | ✅ |
+| rails-app | 276 | ✅ |
+| spring-boot-app | 64 | ✅ |
+| nestjs-backend | 89 | ✅ |
+| express-api | 100 | ✅ |
+| react-app | 92 | ✅ |
+| salesforce-cli | 21 | ✅ |
+| python-cli | 18 | ✅ |
+
+#### Migration Notes
+
+No breaking changes. All existing functionality preserved.
+AST parsing adds more metadata without changing output format.
+
+---
+
 ### Phase 2: Code Quality - Completed (v1.2.0)
 
 **Date:** 2026-03-18

@@ -100,7 +100,7 @@ function getLayer(filePath: string): string {
   );
   
   for (const [layer, patterns] of Object.entries(LAYER_PATTERNS)) {
-    if (parts.some(s => patterns.includes(s))) {
+    if (parts.some(s => patterns.some(p => s.includes(p)))) {
       return layer;
     }
   }
