@@ -18,3 +18,11 @@ export {
   type InheritanceRelation,
   type InheritanceGraph,
 } from "./inheritanceAnalyzer.js";
+
+export {
+  ArchitectureDetector,
+  architectureDetector,
+  type ArchitecturePattern,
+  type Layer,
+  type ArchitectureAnalysis,
+} from "./architectureDetector.js";

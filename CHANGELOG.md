@@ -112,7 +112,57 @@ AST parsing adds more metadata without changing output format.
 
 ---
 
-### Phase 3: Code Quality - Completed (v1.2.0)
+### Phase 3: Architecture Detection - Completed (v1.5.0)
+
+**Date:** 2026-03-21
+**Branch:** `feature/phase-3-architecture-detection`
+
+#### Added
+
+- **Architecture Detector**
+  - File: `src/core/analysis/architectureDetector.ts`
+  - Detects MVC pattern (Models, Views, Controllers)
+  - Detects Layered Architecture (API, Service, Data layers)
+  - Detects Clean Architecture (Entities, Use Cases, Interfaces)
+  - Detects Hexagonal Architecture (Ports & Adapters)
+  - Detects Microservices pattern
+  - Confidence scoring with evidence
+
+- **Layer Detection**
+  - API/Presentation layer (controllers, routes, handlers)
+  - Service/Business layer (services, use cases)
+  - Data/Persistence layer (repositories, models)
+  - Automatic classification based on naming
+
+- **Entry Point Detection**
+  - Identifies main, index, bootstrap functions
+  - Detects server entry points
+  - Used for dead code analysis
+
+- **Comprehensive Test Suite**
+  - 7 tests for Architecture Detector
+  - Total: 142 tests passing
+
+#### Detected Patterns
+
+| Pattern | Indicators | Example |
+|---------|------------|---------|
+| MVC | Controllers, Models, Views | `UserController`, `User`, `user.html` |
+| Layered | API, Service, Data layers | `ApiController`, `UserService`, `UserRepository` |
+| Clean | Entities, Use Cases | `User`, `CreateUserUseCase` |
+| Hexagonal | Ports, Adapters | `UserPort`, `UserAdapter` |
+| Microservices | Loosely coupled services | Multiple independent services |
+
+#### Technical Details
+
+- Pattern matching based on naming conventions and dependencies
+- Confidence scoring: 0-1 based on evidence strength
+- Layer detection uses file paths and symbol names
+- No breaking changes, additive only
+
+---
+
+### Phase 4: Code Quality - Completed (v1.2.0)
 
 **Date:** 2026-03-18
 
