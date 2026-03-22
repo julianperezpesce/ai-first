@@ -1,6 +1,6 @@
 import { typescriptParser, ParsedFile as ParsedTSFile } from "./typescriptParser.js";
 import { pythonParser, ParsedPythonFile } from "./pythonParser.js";
-import type { Symbol } from "../../analyzers/symbols.js";
+import type { Symbol as CodeSymbol } from "../../analyzers/symbols.js";
 
 export type ParsedResult = ParsedTSFile | ParsedPythonFile;
 
@@ -66,15 +66,15 @@ export const parserRegistry = new ParserRegistry();
 export function createSymbolFromParsed(
   parsed: ParsedResult,
   filePath: string
-): Symbol[] {
-  const symbols: ReturnType<typeof createSymbolFromParsed> = [];
+): CodeSymbol[] {
+  const symbols: CodeSymbol[] = [];
 
   if ("symbols" in parsed) {
     for (const sym of parsed.symbols) {
       symbols.push({
         id: `${filePath}#${sym.name}`,
         name: sym.name,
-        type: sym.type as Symbol['type'],
+        type: sym.type as CodeSymbol['type'],
         file: filePath,
         line: sym.line,
         export: sym.isExported ?? false,
@@ -85,7 +85,7 @@ export function createSymbolFromParsed(
           symbols.push({
             id: `${filePath}#${sym.name}.${member.name}`,
             name: `${sym.name}.${member.name}`,
-            type: member.type as Symbol['type'],
+            type: member.type as CodeSymbol['type'],
             file: filePath,
             line: member.line,
             export: false,
