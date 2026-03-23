@@ -8,13 +8,16 @@
 | index.ts | `docs/.vitepress/theme/index.ts` | - |
 | index.ts | `src/core/adapters/community/index.ts` | - |
 | index.ts | `src/core/adapters/index.ts` | - |
+| index.ts | `src/core/analysis/index.ts` | - |
+| index.ts | `src/core/generation/index.ts` | - |
+| index.ts | `src/core/parsers/index.ts` | - |
 | index.ts | `src/index.ts` | - |
 
 ## CLI
 
 | Name | Path | Command |
 |------|------|--------|
-| ai-first | `dist/commands/ai-first.js` | npx ai-first |
+| af | `dist/commands/ai-first.js` | npx af |
 
 ## Build
 

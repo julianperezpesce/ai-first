@@ -1,50 +1,5 @@
 # Repository Map
-## .netlify
-  - state.json
-
-## ANALISIS_COMPLETO.md
-  - ANALISIS_COMPLETO.md
-
-## ANALISIS_MEJORAS.md
-  - ANALISIS_MEJORAS.md
-
-## BUGS.md
-  - BUGS.md
-
-## CHANGELOG.md
-  - CHANGELOG.md
-
-## CONTRIBUTING.md
-  - CONTRIBUTING.md
-
-## FLOW.md
-  - FLOW.md
-
-## PLAN_MEJORAS.md
-  - PLAN_MEJORAS.md
-
-## README.es.md
-  - README.es.md
-
-## README.md
-  - README.md
-
-## TEST_RESULTS.md
-  - TEST_RESULTS.md
-
-## TEST_RESULTS_COMPARATIVE.md
-  - TEST_RESULTS_COMPARATIVE.md
-
-## TEST_RESULTS_COMPLETE.md
-  - TEST_RESULTS_COMPLETE.md
-
-## TEST_RESULTS_COMPREHENSIVE.md
-  - TEST_RESULTS_COMPREHENSIVE.md
-
-## TEST_RESULTS_PHASE1.md
-  - TEST_RESULTS_PHASE1.md
-
-## ai
+## .ai-dev
   - account.json
   - ai_context.md
   - ai_rules.md
@@ -96,6 +51,58 @@
   - utils.json
   - views.json
 
+## .github
+  - publish.yml
+
+## .netlify
+  - state.json
+
+## ANALISIS_COMPLETO.md
+  - ANALISIS_COMPLETO.md
+
+## ANALISIS_MEJORAS.md
+  - ANALISIS_MEJORAS.md
+
+## CHANGELOG.md
+  - CHANGELOG.md
+
+## CONTRIBUTING.md
+  - CONTRIBUTING.md
+
+## FLOW.md
+  - FLOW.md
+
+## PLAN_DE_MEJORAS.md
+  - PLAN_DE_MEJORAS.md
+
+## PLAN_DE_TESTS.md
+  - PLAN_DE_TESTS.md
+
+## PLAN_MEJORAS.md
+  - PLAN_MEJORAS.md
+
+## README.es.md
+  - README.es.md
+
+## README.md
+  - README.md
+
+## TEST_RESULTS.md
+  - TEST_RESULTS.md
+
+## TEST_RESULTS_COMPARATIVE.md
+  - TEST_RESULTS_COMPARATIVE.md
+
+## TEST_RESULTS_COMPLETE.md
+  - TEST_RESULTS_COMPLETE.md
+
+## TEST_RESULTS_COMPREHENSIVE.md
+  - TEST_RESULTS_COMPREHENSIVE.md
+
+## ai
+  - dependencies.json
+  - knowledge-graph.json
+
 ## docs
   - adapters.md
   - adapters.md
@@ -136,6 +143,9 @@
   - 03-python-django.md
   - README.md
 
+## homebrew
+  - af.rb
+
 ## package-lock.json
   - package-lock.json
 
@@ -146,16 +156,22 @@
   - adapterRegistry.ts
   - ai-first.ts
   - aiContextGenerator.ts
+  - aiContextGenerator.ts
   - aiRules.ts
   - androidResources.ts
   - architecture.ts
+  - architectureDetector.ts
+  - architectureGenerator.ts
   - baseAdapter.ts
+  - callGraphBuilder.ts
   - ccp.ts
   - chunker.ts
+  - constants.ts
   - contextGenerator.ts
   - contextPacket.ts
   - conventions.ts
   - dependencies.ts
+  - dependencyAnalyzer.ts
   - doctor.ts
   - dotnetAdapter.ts
   - embeddings.ts
@@ -163,6 +179,7 @@
   - explore.ts
   - fastapiAdapter.ts
   - fileUtils.ts
+  - flowGenerator.ts
   - gitAnalyzer.ts
   - gradleModules.ts
   - hierarchyGenerator.ts
@@ -170,8 +187,12 @@
   - index.ts
   - index.ts
   - index.ts
+  - index.ts
+  - index.ts
+  - index.ts
   - indexer.ts
   - indexState.ts
+  - inheritanceAnalyzer.ts
   - javascriptAdapter.ts
   - knowledgeGraphBuilder.ts
   - laravelAdapter.ts
@@ -179,7 +200,9 @@
   - moduleGraph.ts
   - nestjsAdapter.ts
   - phoenixAdapter.ts
+  - pipeline.ts
   - pythonAdapter.ts
+  - pythonParser.ts
   - railsAdapter.ts
   - repoMapper.ts
   - repoScanner.ts
@@ -192,6 +215,7 @@
   - symbolGraph.ts
   - symbols.ts
   - techStack.ts
+  - typescriptParser.ts
 
 ## test-projects
   - __init__.py
@@ -205,6 +229,7 @@
   - __init__.py
   - __init__.py
   - __init__.py
+  - account.json
   - account.json
   - AccountController.cls
   - AccountTrigger.trigger
@@ -222,6 +247,28 @@
   - ai_context.md
   - ai_context.md
   - ai_context.md
+  - ai_context.md
+  - ai_context.md
+  - ai_context.md
+  - ai_context.md
+  - ai_context.md
+  - ai_context.md
+  - ai_context.md
+  - ai_context.md
+  - ai_context.md
+  - ai_context.md
+  - ai_context.md
+  - ai_rules.md
+  - ai_rules.md
+  - ai_rules.md
+  - ai_rules.md
+  - ai_rules.md
+  - ai_rules.md
+  - ai_rules.md
+  - ai_rules.md
+  - ai_rules.md
+  - ai_rules.md
+  - ai_rules.md
   - ai_rules.md
   - ai_rules.md
   - ai_rules.md
@@ -237,11 +284,16 @@
   - app.json
   - app.json
   - app.json
+  - app.json
+  - app.json
+  - app.json
   - app.module.ts
   - app.php
   - App.tsx
   - application_.json
+  - application_.json
   - application_controller.rb
+  - application.json
   - application.json
   - application.rb
   - architecture.md
@@ -255,8 +307,22 @@
   - architecture.md
   - architecture.md
   - architecture.md
+  - architecture.md
+  - architecture.md
+  - architecture.md
+  - architecture.md
+  - architecture.md
+  - architecture.md
+  - architecture.md
+  - architecture.md
+  - architecture.md
+  - architecture.md
+  - architecture.md
+  - auth.controller.json
   - auth.controller.json
   - auth.controller.ts
+  - auth.json
+  - auth.json
   - auth.json
   - auth.json
   - auth.module.ts
@@ -276,11 +342,25 @@
   - cache.json
   - cache.json
   - cache.json
+  - cache.json
+  - cache.json
+  - cache.json
+  - cache.json
+  - cache.json
+  - cache.json
+  - cache.json
+  - cache.json
+  - cache.json
+  - cache.json
+  - category.json
   - category.json
   - Category.php
   - CategoryController.php
   - cli.json
+  - cli.json
   - Comment.java
+  - comment.json
+  - comment.json
   - comment.json
   - comment.json
   - Comment.php
@@ -289,12 +369,16 @@
   - CommentController.php
   - CommentRepository.java
   - comments_.json
+  - comments_.json
   - comments_controller.rb
+  - comments.json
   - comments.json
   - composer.json
   - config.json
+  - config.json
   - config.py
   - Controller.php
+  - controllers.json
   - controllers.json
   - conventions.md
   - conventions.md
@@ -307,10 +391,33 @@
   - conventions.md
   - conventions.md
   - conventions.md
+  - conventions.md
+  - conventions.md
+  - conventions.md
+  - conventions.md
+  - conventions.md
+  - conventions.md
+  - conventions.md
+  - conventions.md
+  - conventions.md
+  - conventions.md
+  - conventions.md
+  - dashboard.json
   - dashboard.json
   - DashboardPage.tsx
   - database.py
   - DemoApplication.java
+  - dependencies.json
+  - dependencies.json
+  - dependencies.json
+  - dependencies.json
+  - dependencies.json
+  - dependencies.json
+  - dependencies.json
+  - dependencies.json
+  - dependencies.json
+  - dependencies.json
+  - dependencies.json
   - dependencies.json
   - dependencies.json
   - dependencies.json
@@ -334,6 +441,17 @@
   - entrypoints.md
   - entrypoints.md
   - entrypoints.md
+  - entrypoints.md
+  - entrypoints.md
+  - entrypoints.md
+  - entrypoints.md
+  - entrypoints.md
+  - entrypoints.md
+  - entrypoints.md
+  - entrypoints.md
+  - entrypoints.md
+  - entrypoints.md
+  - entrypoints.md
   - environment.rb
   - files.json
   - files.json
@@ -346,9 +464,30 @@
   - files.json
   - files.json
   - files.json
+  - files.json
+  - files.json
+  - files.json
+  - files.json
+  - files.json
+  - files.json
+  - files.json
+  - files.json
+  - files.json
+  - files.json
+  - force-app.json
   - force-app.json
   - forms.py
   - forms.py
+  - index-state.json
+  - index-state.json
+  - index-state.json
+  - index-state.json
+  - index-state.json
+  - index-state.json
+  - index-state.json
+  - index-state.json
+  - index-state.json
+  - index-state.json
   - index-state.json
   - index-state.json
   - index-state.json
@@ -373,9 +512,20 @@
   - knowledge-graph.json
   - knowledge-graph.json
   - knowledge-graph.json
+  - knowledge-graph.json
+  - knowledge-graph.json
+  - knowledge-graph.json
+  - knowledge-graph.json
+  - knowledge-graph.json
+  - knowledge-graph.json
+  - knowledge-graph.json
+  - knowledge-graph.json
+  - knowledge-graph.json
+  - list_.json
   - list_.json
   - list_command.py
   - login.dto.ts
+  - login.json
   - login.json
   - LoginPage.tsx
   - main.py
@@ -397,6 +547,27 @@
   - module-graph.json
   - module-graph.json
   - module-graph.json
+  - module-graph.json
+  - module-graph.json
+  - module-graph.json
+  - module-graph.json
+  - module-graph.json
+  - module-graph.json
+  - module-graph.json
+  - module-graph.json
+  - module-graph.json
+  - module-graph.json
+  - modules.json
+  - modules.json
+  - modules.json
+  - modules.json
+  - modules.json
+  - modules.json
+  - modules.json
+  - modules.json
+  - modules.json
+  - modules.json
+  - modules.json
   - modules.json
   - modules.json
   - modules.json
@@ -409,6 +580,7 @@
   - modules.json
   - modules.json
   - opportunity.json
+  - opportunity.json
   - OpportunityController.cls
   - package.json
   - package.json
@@ -417,17 +589,33 @@
   - Post.java
   - post.json
   - post.json
+  - post.json
+  - post.json
   - Post.php
   - post.rb
   - PostController.java
   - PostController.json
+  - PostController.json
   - PostController.php
   - PostRepository.java
   - posts_.json
+  - posts_.json
   - posts_controller.rb
+  - posts.json
   - posts.json
   - posts.py
   - PostService.java
+  - project.json
+  - project.json
+  - project.json
+  - project.json
+  - project.json
+  - project.json
+  - project.json
+  - project.json
+  - project.json
+  - project.json
+  - project.json
   - project.json
   - project.json
   - project.json
@@ -446,6 +634,7 @@
   - README.md
   - README.md
   - remove_.json
+  - remove_.json
   - remove_command.py
   - repo_map.json
   - repo_map.json
@@ -458,6 +647,17 @@
   - repo_map.json
   - repo_map.json
   - repo_map.json
+  - repo_map.json
+  - repo_map.json
+  - repo_map.json
+  - repo_map.json
+  - repo_map.json
+  - repo_map.json
+  - repo_map.json
+  - repo_map.json
+  - repo_map.json
+  - repo_map.json
+  - repo_map.json
   - repo_map.md
   - repo_map.md
   - repo_map.md
@@ -469,6 +669,19 @@
   - repo_map.md
   - repo_map.md
   - repo_map.md
+  - repo_map.md
+  - repo_map.md
+  - repo_map.md
+  - repo_map.md
+  - repo_map.md
+  - repo_map.md
+  - repo_map.md
+  - repo_map.md
+  - repo_map.md
+  - repo_map.md
+  - repo_map.md
+  - routes.json
+  - routes.json
   - routes.json
   - routes.json
   - routes.py
@@ -487,15 +700,41 @@
   - schema.json
   - schema.json
   - schema.json
+  - schema.json
+  - schema.json
+  - schema.json
+  - schema.json
+  - schema.json
+  - schema.json
+  - schema.json
+  - schema.json
+  - schema.json
+  - schema.json
+  - schema.json
   - schemas.py
   - serializers.py
   - serializers.py
+  - services.json
   - services.json
   - settings.py
   - sfdx-project.json
   - src.json
   - src.json
   - src.json
+  - src.json
+  - src.json
+  - src.json
+  - summary.md
+  - summary.md
+  - summary.md
+  - summary.md
+  - summary.md
+  - summary.md
+  - summary.md
+  - summary.md
+  - summary.md
+  - summary.md
+  - summary.md
   - summary.md
   - summary.md
   - summary.md
@@ -517,6 +756,16 @@
   - symbol-graph.json
   - symbol-graph.json
   - symbol-graph.json
+  - symbol-graph.json
+  - symbol-graph.json
+  - symbol-graph.json
+  - symbol-graph.json
+  - symbol-graph.json
+  - symbol-graph.json
+  - symbol-graph.json
+  - symbol-graph.json
+  - symbol-graph.json
+  - symbol-graph.json
   - symbol-references.json
   - symbol-references.json
   - symbol-references.json
@@ -527,6 +776,27 @@
   - symbol-references.json
   - symbol-references.json
   - symbol-references.json
+  - symbol-references.json
+  - symbol-references.json
+  - symbol-references.json
+  - symbol-references.json
+  - symbol-references.json
+  - symbol-references.json
+  - symbol-references.json
+  - symbol-references.json
+  - symbol-references.json
+  - symbol-references.json
+  - symbols.json
+  - symbols.json
+  - symbols.json
+  - symbols.json
+  - symbols.json
+  - symbols.json
+  - symbols.json
+  - symbols.json
+  - symbols.json
+  - symbols.json
+  - symbols.json
   - symbols.json
   - symbols.json
   - symbols.json
@@ -551,6 +821,28 @@
   - tech_stack.md
   - tech_stack.md
   - tech_stack.md
+  - tech_stack.md
+  - tech_stack.md
+  - tech_stack.md
+  - tech_stack.md
+  - tech_stack.md
+  - tech_stack.md
+  - tech_stack.md
+  - tech_stack.md
+  - tech_stack.md
+  - tech_stack.md
+  - tech_stack.md
+  - tools.json
+  - tools.json
+  - tools.json
+  - tools.json
+  - tools.json
+  - tools.json
+  - tools.json
+  - tools.json
+  - tools.json
+  - tools.json
+  - tools.json
   - tools.json
   - tools.json
   - tools.json
@@ -564,6 +856,7 @@
   - tools.json
   - tsconfig.json
   - unnamed.json
+  - unnamed.json
   - urls.py
   - urls.py
   - urls.py
@@ -572,18 +865,27 @@
   - User.java
   - user.json
   - user.json
+  - user.json
+  - user.json
   - User.php
   - user.rb
   - UserController.java
   - userController.js
   - UserController.json
+  - UserController.json
   - UserRepository.java
   - userRepository.js
   - users_.json
+  - users_.json
   - users_controller.rb
   - users..json
+  - users..json
+  - users.controller.json
   - users.controller.json
   - users.controller.ts
+  - users.json
+  - users.json
+  - users.json
   - users.json
   - users.json
   - users.json
@@ -593,7 +895,9 @@
   - userService.js
   - userService.ts
   - UsersPage.json
+  - UsersPage.json
   - UsersPage.tsx
+  - views.json
   - views.json
   - views.py
   - views.py
@@ -601,13 +905,21 @@
 
 ## tests
   - adapters.test.ts
+  - analysis.test.ts
+  - architectureDetector.test.ts
+  - generation.test.ts
   - gitAnalyzer.test.ts
   - incrementalAnalyzer.test.ts
   - knowledgeGraph.test.ts
   - lazyAnalyzer.test.ts
+  - parserRegistry.test.ts
+  - phase2-fixes.test.ts
+  - pipeline.integration.test.ts
+  - pythonParser.test.ts
   - README.md
   - schema.test.ts
   - semanticContexts.test.ts
+  - typescriptParser.test.ts
 
 ## tsconfig.json
   - tsconfig.json
@@ -615,9 +927,7 @@
 
 
 # Repository Structure (Tree View)
-├── .netlify/
-│   └── state.json
-├── ai/
+├── .ai-dev/
 │   ├── ccp/
 │   │   └── jira-123/
 │   │       └── context.json
@@ -675,6 +985,15 @@
 │   ├── symbols.json
 │   ├── tech_stack.md
 │   └── tools.json
+├── .github/
+│   └── workflows/
+│       └── publish.yml
+├── .netlify/
+│   └── state.json
+├── ai/
+│   ├── graph/
+│   │   └── knowledge-graph.json
+│   └── dependencies.json
 ├── docs/
 │   ├── .vitepress/
 │   │   ├── theme/
@@ -720,6 +1039,8 @@
 │   ├── 02-react-app.md
 │   ├── 03-python-django.md
 │   └── README.md
+├── homebrew/
+│   └── af.rb
 ├── src/
 │   ├── analyzers/
 │   │   ├── aiRules.ts
@@ -753,6 +1074,21 @@
 │   │   │   ├── railsAdapter.ts
 │   │   │   ├── salesforceAdapter.ts
 │   │   │   └── sdk.ts
+│   │   ├── analysis/
+│   │   │   ├── architectureDetector.ts
+│   │   │   ├── callGraphBuilder.ts
+│   │   │   ├── dependencyAnalyzer.ts
+│   │   │   ├── index.ts
+│   │   │   └── inheritanceAnalyzer.ts
+│   │   ├── generation/
+│   │   │   ├── aiContextGenerator.ts
+│   │   │   ├── architectureGenerator.ts
+│   │   │   ├── flowGenerator.ts
+│   │   │   └── index.ts
+│   │   ├── parsers/
+│   │   │   ├── index.ts
+│   │   │   ├── pythonParser.ts
+│   │   │   └── typescriptParser.ts
 │   │   ├── aiContextGenerator.ts
 │   │   ├── ccp.ts
 │   │   ├── chunker.ts
@@ -767,6 +1103,7 @@
 │   │   ├── knowledgeGraphBuilder.ts
 │   │   ├── lazyAnalyzer.ts
 │   │   ├── moduleGraph.ts
+│   │   ├── pipeline.ts
 │   │   ├── repoMapper.ts
 │   │   ├── repoScanner.ts
 │   │   ├── schema.ts
@@ -775,11 +1112,39 @@
 │   ├── types/
 │   │   └── sql.js.d.ts
 │   ├── utils/
+│   │   ├── constants.ts
 │   │   └── fileUtils.ts
 │   └── index.ts
 ├── test-projects/
 │   ├── django-app/
-│   │   ├── ai/
+│   │   ├── .ai-dev/
+│   │   │   ├── context/
+│   │   │   │   └── flows/
+│   │   │   │       └── views.json
+│   │   │   ├── graph/
+│   │   │   │   ├── knowledge-graph.json
+│   │   │   │   ├── module-graph.json
+│   │   │   │   ├── symbol-graph.json
+│   │   │   │   └── symbol-references.json
+│   │   │   ├── ai_context.md
+│   │   │   ├── ai_rules.md
+│   │   │   ├── architecture.md
+│   │   │   ├── cache.json
+│   │   │   ├── conventions.md
+│   │   │   ├── dependencies.json
+│   │   │   ├── entrypoints.md
+│   │   │   ├── files.json
+│   │   │   ├── index-state.json
+│   │   │   ├── modules.json
+│   │   │   ├── project.json
+│   │   │   ├── repo_map.json
+│   │   │   ├── repo_map.md
+│   │   │   ├── schema.json
+│   │   │   ├── summary.md
+│   │   │   ├── symbols.json
+│   │   │   ├── tech_stack.md
+│   │   │   └── tools.json
+│   │   ├── ai-context/
 │   │   │   ├── context/
 │   │   │   │   └── flows/
 │   │   │   │       └── views.json
@@ -828,7 +1193,7 @@
 │   │   ├── README.md
 │   │   └── manage.py
 │   ├── express-api/
-│   │   ├── ai/
+│   │   ├── .ai-dev/
 │   │   │   ├── context/
 │   │   │   │   ├── features/
 │   │   │   │   │   ├── controllers.json
@@ -836,8 +1201,29 @@
 │   │   │   │   └── flows/
 │   │   │   │       ├── auth.json
 │   │   │   │       └── user.json
-│   │   │   ├── graph/
-│   │   │   │   └── knowledge-graph.json
+│   │   │   ├── ai_context.md
+│   │   │   ├── ai_rules.md
+│   │   │   ├── architecture.md
+│   │   │   ├── conventions.md
+│   │   │   ├── dependencies.json
+│   │   │   ├── entrypoints.md
+│   │   │   ├── modules.json
+│   │   │   ├── project.json
+│   │   │   ├── repo_map.json
+│   │   │   ├── repo_map.md
+│   │   │   ├── schema.json
+│   │   │   ├── summary.md
+│   │   │   ├── symbols.json
+│   │   │   ├── tech_stack.md
+│   │   │   └── tools.json
+│   │   ├── ai-context/
+│   │   │   ├── context/
+│   │   │   │   ├── features/
+│   │   │   │   │   ├── controllers.json
+│   │   │   │   │   └── services.json
+│   │   │   │   └── flows/
+│   │   │   │       ├── auth.json
+│   │   │   │       └── user.json
 │   │   │   ├── ai_context.md
 │   │   │   ├── ai_rules.md
 │   │   │   ├── architecture.md
@@ -868,7 +1254,31 @@
 │   │   ├── index.js
 │   │   └── package.json
 │   ├── fastapi-app/
-│   │   ├── ai/
+│   │   ├── .ai-dev/
+│   │   │   ├── graph/
+│   │   │   │   ├── knowledge-graph.json
+│   │   │   │   ├── module-graph.json
+│   │   │   │   ├── symbol-graph.json
+│   │   │   │   └── symbol-references.json
+│   │   │   ├── ai_context.md
+│   │   │   ├── ai_rules.md
+│   │   │   ├── architecture.md
+│   │   │   ├── cache.json
+│   │   │   ├── conventions.md
+│   │   │   ├── dependencies.json
+│   │   │   ├── entrypoints.md
+│   │   │   ├── files.json
+│   │   │   ├── index-state.json
+│   │   │   ├── modules.json
+│   │   │   ├── project.json
+│   │   │   ├── repo_map.json
+│   │   │   ├── repo_map.md
+│   │   │   ├── schema.json
+│   │   │   ├── summary.md
+│   │   │   ├── symbols.json
+│   │   │   ├── tech_stack.md
+│   │   │   └── tools.json
+│   │   ├── ai-context/
 │   │   │   ├── graph/
 │   │   │   │   ├── knowledge-graph.json
 │   │   │   │   ├── module-graph.json
@@ -903,7 +1313,36 @@
 │   │   │   └── schemas.py
 │   │   └── README.md
 │   ├── flask-app/
-│   │   ├── ai/
+│   │   ├── .ai-dev/
+│   │   │   ├── context/
+│   │   │   │   ├── features/
+│   │   │   │   │   └── app.json
+│   │   │   │   └── flows/
+│   │   │   │       └── routes.json
+│   │   │   ├── graph/
+│   │   │   │   ├── knowledge-graph.json
+│   │   │   │   ├── module-graph.json
+│   │   │   │   ├── symbol-graph.json
+│   │   │   │   └── symbol-references.json
+│   │   │   ├── ai_context.md
+│   │   │   ├── ai_rules.md
+│   │   │   ├── architecture.md
+│   │   │   ├── cache.json
+│   │   │   ├── conventions.md
+│   │   │   ├── dependencies.json
+│   │   │   ├── entrypoints.md
+│   │   │   ├── files.json
+│   │   │   ├── index-state.json
+│   │   │   ├── modules.json
+│   │   │   ├── project.json
+│   │   │   ├── repo_map.json
+│   │   │   ├── repo_map.md
+│   │   │   ├── schema.json
+│   │   │   ├── summary.md
+│   │   │   ├── symbols.json
+│   │   │   ├── tech_stack.md
+│   │   │   └── tools.json
+│   │   ├── ai-context/
 │   │   │   ├── context/
 │   │   │   │   ├── features/
 │   │   │   │   │   └── app.json
@@ -952,7 +1391,39 @@
 │   │   ├── README.md
 │   │   └── config.py
 │   ├── laravel-app/
-│   │   ├── ai/
+│   │   ├── .ai-dev/
+│   │   │   ├── context/
+│   │   │   │   ├── features/
+│   │   │   │   │   └── app.json
+│   │   │   │   └── flows/
+│   │   │   │       ├── category.json
+│   │   │   │       ├── comment.json
+│   │   │   │       ├── post.json
+│   │   │   │       └── unnamed.json
+│   │   │   ├── graph/
+│   │   │   │   ├── knowledge-graph.json
+│   │   │   │   ├── module-graph.json
+│   │   │   │   ├── symbol-graph.json
+│   │   │   │   └── symbol-references.json
+│   │   │   ├── ai_context.md
+│   │   │   ├── ai_rules.md
+│   │   │   ├── architecture.md
+│   │   │   ├── cache.json
+│   │   │   ├── conventions.md
+│   │   │   ├── dependencies.json
+│   │   │   ├── entrypoints.md
+│   │   │   ├── files.json
+│   │   │   ├── index-state.json
+│   │   │   ├── modules.json
+│   │   │   ├── project.json
+│   │   │   ├── repo_map.json
+│   │   │   ├── repo_map.md
+│   │   │   ├── schema.json
+│   │   │   ├── summary.md
+│   │   │   ├── symbols.json
+│   │   │   ├── tech_stack.md
+│   │   │   └── tools.json
+│   │   ├── ai-context/
 │   │   │   ├── context/
 │   │   │   │   ├── features/
 │   │   │   │   │   └── app.json
@@ -1004,7 +1475,40 @@
 │   │   ├── README.md
 │   │   └── composer.json
 │   ├── nestjs-backend/
-│   │   ├── ai/
+│   │   ├── .ai-dev/
+│   │   │   ├── context/
+│   │   │   │   ├── features/
+│   │   │   │   │   └── src.json
+│   │   │   │   └── flows/
+│   │   │   │       ├── auth.controller.json
+│   │   │   │       ├── auth.json
+│   │   │   │       ├── users..json
+│   │   │   │       ├── users.controller.json
+│   │   │   │       └── users.json
+│   │   │   ├── graph/
+│   │   │   │   ├── knowledge-graph.json
+│   │   │   │   ├── module-graph.json
+│   │   │   │   ├── symbol-graph.json
+│   │   │   │   └── symbol-references.json
+│   │   │   ├── ai_context.md
+│   │   │   ├── ai_rules.md
+│   │   │   ├── architecture.md
+│   │   │   ├── cache.json
+│   │   │   ├── conventions.md
+│   │   │   ├── dependencies.json
+│   │   │   ├── entrypoints.md
+│   │   │   ├── files.json
+│   │   │   ├── index-state.json
+│   │   │   ├── modules.json
+│   │   │   ├── project.json
+│   │   │   ├── repo_map.json
+│   │   │   ├── repo_map.md
+│   │   │   ├── schema.json
+│   │   │   ├── summary.md
+│   │   │   ├── symbols.json
+│   │   │   ├── tech_stack.md
+│   │   │   └── tools.json
+│   │   ├── ai-context/
 │   │   │   ├── context/
 │   │   │   │   ├── features/
 │   │   │   │   │   └── src.json
@@ -1055,7 +1559,37 @@
 │   │   ├── package.json
 │   │   └── tsconfig.json
 │   ├── python-cli/
-│   │   ├── ai/
+│   │   ├── .ai-dev/
+│   │   │   ├── context/
+│   │   │   │   ├── features/
+│   │   │   │   │   └── cli.json
+│   │   │   │   └── flows/
+│   │   │   │       ├── list_.json
+│   │   │   │       └── remove_.json
+│   │   │   ├── graph/
+│   │   │   │   ├── knowledge-graph.json
+│   │   │   │   ├── module-graph.json
+│   │   │   │   ├── symbol-graph.json
+│   │   │   │   └── symbol-references.json
+│   │   │   ├── ai_context.md
+│   │   │   ├── ai_rules.md
+│   │   │   ├── architecture.md
+│   │   │   ├── cache.json
+│   │   │   ├── conventions.md
+│   │   │   ├── dependencies.json
+│   │   │   ├── entrypoints.md
+│   │   │   ├── files.json
+│   │   │   ├── index-state.json
+│   │   │   ├── modules.json
+│   │   │   ├── project.json
+│   │   │   ├── repo_map.json
+│   │   │   ├── repo_map.md
+│   │   │   ├── schema.json
+│   │   │   ├── summary.md
+│   │   │   ├── symbols.json
+│   │   │   ├── tech_stack.md
+│   │   │   └── tools.json
+│   │   ├── ai-context/
 │   │   │   ├── context/
 │   │   │   │   ├── features/
 │   │   │   │   │   └── cli.json
@@ -1097,7 +1631,45 @@
 │   │   ├── __init__.py
 │   │   └── main.py
 │   ├── rails-app/
-│   │   ├── ai/
+│   │   ├── .ai-dev/
+│   │   │   ├── context/
+│   │   │   │   ├── features/
+│   │   │   │   │   ├── app.json
+│   │   │   │   │   └── config.json
+│   │   │   │   └── flows/
+│   │   │   │       ├── application.json
+│   │   │   │       ├── application_.json
+│   │   │   │       ├── comments.json
+│   │   │   │       ├── comments_.json
+│   │   │   │       ├── posts.json
+│   │   │   │       ├── posts_.json
+│   │   │   │       ├── routes.json
+│   │   │   │       ├── users.json
+│   │   │   │       └── users_.json
+│   │   │   ├── graph/
+│   │   │   │   ├── knowledge-graph.json
+│   │   │   │   ├── module-graph.json
+│   │   │   │   ├── symbol-graph.json
+│   │   │   │   └── symbol-references.json
+│   │   │   ├── ai_context.md
+│   │   │   ├── ai_rules.md
+│   │   │   ├── architecture.md
+│   │   │   ├── cache.json
+│   │   │   ├── conventions.md
+│   │   │   ├── dependencies.json
+│   │   │   ├── entrypoints.md
+│   │   │   ├── files.json
+│   │   │   ├── index-state.json
+│   │   │   ├── modules.json
+│   │   │   ├── project.json
+│   │   │   ├── repo_map.json
+│   │   │   ├── repo_map.md
+│   │   │   ├── schema.json
+│   │   │   ├── summary.md
+│   │   │   ├── symbols.json
+│   │   │   ├── tech_stack.md
+│   │   │   └── tools.json
+│   │   ├── ai-context/
 │   │   │   ├── context/
 │   │   │   │   ├── features/
 │   │   │   │   │   ├── app.json
@@ -1155,7 +1727,39 @@
 │   │   │   └── routes.rb
 │   │   └── README.md
 │   ├── react-app/
-│   │   ├── ai/
+│   │   ├── .ai-dev/
+│   │   │   ├── context/
+│   │   │   │   ├── features/
+│   │   │   │   │   └── src.json
+│   │   │   │   └── flows/
+│   │   │   │       ├── UsersPage.json
+│   │   │   │       ├── dashboard.json
+│   │   │   │       ├── login.json
+│   │   │   │       └── users.json
+│   │   │   ├── graph/
+│   │   │   │   ├── knowledge-graph.json
+│   │   │   │   ├── module-graph.json
+│   │   │   │   ├── symbol-graph.json
+│   │   │   │   └── symbol-references.json
+│   │   │   ├── ai_context.md
+│   │   │   ├── ai_rules.md
+│   │   │   ├── architecture.md
+│   │   │   ├── cache.json
+│   │   │   ├── conventions.md
+│   │   │   ├── dependencies.json
+│   │   │   ├── entrypoints.md
+│   │   │   ├── files.json
+│   │   │   ├── index-state.json
+│   │   │   ├── modules.json
+│   │   │   ├── project.json
+│   │   │   ├── repo_map.json
+│   │   │   ├── repo_map.md
+│   │   │   ├── schema.json
+│   │   │   ├── summary.md
+│   │   │   ├── symbols.json
+│   │   │   ├── tech_stack.md
+│   │   │   └── tools.json
+│   │   ├── ai-context/
 │   │   │   ├── context/
 │   │   │   │   ├── features/
 │   │   │   │   │   └── src.json
@@ -1202,7 +1806,37 @@
 │   │   │   └── main.tsx
 │   │   └── package.json
 │   ├── salesforce-cli/
-│   │   ├── ai/
+│   │   ├── .ai-dev/
+│   │   │   ├── context/
+│   │   │   │   ├── features/
+│   │   │   │   │   └── force-app.json
+│   │   │   │   └── flows/
+│   │   │   │       ├── account.json
+│   │   │   │       └── opportunity.json
+│   │   │   ├── graph/
+│   │   │   │   ├── knowledge-graph.json
+│   │   │   │   ├── module-graph.json
+│   │   │   │   ├── symbol-graph.json
+│   │   │   │   └── symbol-references.json
+│   │   │   ├── ai_context.md
+│   │   │   ├── ai_rules.md
+│   │   │   ├── architecture.md
+│   │   │   ├── cache.json
+│   │   │   ├── conventions.md
+│   │   │   ├── dependencies.json
+│   │   │   ├── entrypoints.md
+│   │   │   ├── files.json
+│   │   │   ├── index-state.json
+│   │   │   ├── modules.json
+│   │   │   ├── project.json
+│   │   │   ├── repo_map.json
+│   │   │   ├── repo_map.md
+│   │   │   ├── schema.json
+│   │   │   ├── summary.md
+│   │   │   ├── symbols.json
+│   │   │   ├── tech_stack.md
+│   │   │   └── tools.json
+│   │   ├── ai-context/
 │   │   │   ├── context/
 │   │   │   │   ├── features/
 │   │   │   │   │   └── force-app.json
@@ -1242,7 +1876,40 @@
 │   │   │               └── AccountTrigger.trigger
 │   │   └── sfdx-project.json
 │   └── spring-boot-app/
-│       ├── ai/
+│       ├── .ai-dev/
+│       │   ├── context/
+│       │   │   ├── features/
+│       │   │   │   └── src.json
+│       │   │   └── flows/
+│       │   │       ├── PostController.json
+│       │   │       ├── UserController.json
+│       │   │       ├── comment.json
+│       │   │       ├── post.json
+│       │   │       └── user.json
+│       │   ├── graph/
+│       │   │   ├── knowledge-graph.json
+│       │   │   ├── module-graph.json
+│       │   │   ├── symbol-graph.json
+│       │   │   └── symbol-references.json
+│       │   ├── ai_context.md
+│       │   ├── ai_rules.md
+│       │   ├── architecture.md
+│       │   ├── cache.json
+│       │   ├── conventions.md
+│       │   ├── dependencies.json
+│       │   ├── entrypoints.md
+│       │   ├── files.json
+│       │   ├── index-state.json
+│       │   ├── modules.json
+│       │   ├── project.json
+│       │   ├── repo_map.json
+│       │   ├── repo_map.md
+│       │   ├── schema.json
+│       │   ├── summary.md
+│       │   ├── symbols.json
+│       │   ├── tech_stack.md
+│       │   └── tools.json
+│       ├── ai-context/
 │       │   ├── context/
 │       │   │   ├── features/
 │       │   │   │   └── src.json
@@ -1302,18 +1969,27 @@
 │   ├── e2e/
 │   │   └── README.md
 │   ├── adapters.test.ts
+│   ├── analysis.test.ts
+│   ├── architectureDetector.test.ts
+│   ├── generation.test.ts
 │   ├── gitAnalyzer.test.ts
 │   ├── incrementalAnalyzer.test.ts
 │   ├── knowledgeGraph.test.ts
 │   ├── lazyAnalyzer.test.ts
+│   ├── parserRegistry.test.ts
+│   ├── phase2-fixes.test.ts
+│   ├── pipeline.integration.test.ts
+│   ├── pythonParser.test.ts
 │   ├── schema.test.ts
-│   └── semanticContexts.test.ts
+│   ├── semanticContexts.test.ts
+│   └── typescriptParser.test.ts
 ├── ANALISIS_COMPLETO.md
 ├── ANALISIS_MEJORAS.md
-├── BUGS.md
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
 ├── FLOW.md
+├── PLAN_DE_MEJORAS.md
+├── PLAN_DE_TESTS.md
 ├── PLAN_MEJORAS.md
 ├── README.es.md
 ├── README.md
@@ -1321,7 +1997,6 @@
 ├── TEST_RESULTS_COMPARATIVE.md
 ├── TEST_RESULTS_COMPLETE.md
 ├── TEST_RESULTS_COMPREHENSIVE.md
-├── TEST_RESULTS_PHASE1.md
 ├── package-lock.json
 ├── package.json
 └── tsconfig.json

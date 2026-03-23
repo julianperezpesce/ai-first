@@ -6,16 +6,22 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `ai` | Contains 26 files |
+| `.ai-dev` | Contains 25 files |
+| `ai-context` | Contains 15 files |
 | `force-app` | Contains 3 files |
 | `sfdx-project.json` | Contains 0 files |
 
 
 ## Module Details
 
-### ai
-- **Path**: `ai`
-- **Responsibility**: Contains 26 files
+### .ai-dev
+- **Path**: `.ai-dev`
+- **Responsibility**: Contains 25 files
+
+
+### ai-context
+- **Path**: `ai-context`
+- **Responsibility**: Contains 15 files
 
 
 ### force-app

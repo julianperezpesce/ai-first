@@ -3,12 +3,10 @@
   "entrypoint": "test-projects/django-app/blog/views.py",
   "files": [
     "test-projects/django-app/blog/views.py",
-    "test-projects/react-app/src/services/userService.ts",
-    "src/analyzers/entrypoints.ts"
+    "test-projects/django-app/users/views.py"
   ],
-  "depth": 4,
+  "depth": 1,
   "layers": [
-    "unknown",
-    "service"
+    "api"
   ]
 }

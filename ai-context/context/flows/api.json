@@ -1,9 +1,0 @@
-{
-  "name": "api",
-  "entrypoint": "test-projects/laravel-app/routes/api.php",
-  "files": [
-    "test-projects/laravel-app/routes/api.php"
-  ],
-  "depth": 0,
-  "layers": []
-}
