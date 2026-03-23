@@ -10,6 +10,7 @@
 - Frameworks: Salesforce DX, Salesforce
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
+- Main entry: force-app/main/default/classes/AccountController.cls
 
 ## Patterns
 
