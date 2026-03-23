@@ -151,7 +151,15 @@ function detectModules(files: FileInfo[], directories: string[]): ModuleInfo[] {
   const dirs = directories.filter(d => d && d !== "root");
   
   for (const dir of dirs.slice(0, 20)) { // Limit to 20 modules
+    // Skip root-level files (entries without "/" that are not real directories)
+    // A proper directory should have files under it with path "dir/file"
     const moduleFiles = files.filter(f => f.relativePath.startsWith(dir + "/"));
+    
+    // Skip if no files found under this directory (it's likely a root-level file misidentified as directory)
+    if (moduleFiles.length === 0) {
+      continue;
+    }
+    
     const mainFiles = moduleFiles.filter(f => {
       const name = f.name.toLowerCase();
       return name === "index.ts" || name === "mod.ts" || name === "mod.rs" || 

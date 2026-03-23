@@ -6,6 +6,33 @@ All notable changes to `ai-first` will be documented in this file.
 
 ## [Unreleased]
 
+## [1.3.3] - 2026-03-23
+
+### 🐛 Fixed "Contains 0 files" Errors
+
+**Branch:** `feature/phase2-containsfiles-fix`
+
+#### Fixed
+
+- **Architecture Module Detection**
+  - File: `src/analyzers/architecture.ts`
+  - Fixed bug where root-level files (README.md, CHANGELOG.md, etc.) were incorrectly treated as modules
+  - Root files no longer appear as "Contains 0 files" entries
+  - Only actual directories are now listed as modules
+
+- **Salesforce Entrypoints Detection**
+  - File: `src/analyzers/entrypoints.ts`
+  - Added `discoverSalesforceEntrypoints()` function
+  - Apex classes now appear as entrypoints
+  - Apex triggers now appear as entrypoints
+  - Detects @AuraEnabled, @RestResource, and @webservice annotated methods
+
+#### Test Results
+
+- 169 unit tests passing
+- 11/11 adapter functional tests passing
+- Salesforce user simulation successful
+
 ## [1.3.2] - 2026-03-23
 
 ### 🚀 Enhanced Salesforce/Apex Support
