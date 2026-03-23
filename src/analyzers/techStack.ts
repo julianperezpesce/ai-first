@@ -165,6 +165,23 @@ function detectFrameworks(files: FileInfo[], fileNames: Set<string>, rootDir: st
     }
   }
   
+  // Detect SwiftUI from Swift files
+  const swiftFiles = files.filter(f => f.extension === "swift");
+  for (const swiftFile of swiftFiles) {
+    try {
+      const content = readFile(path.join(rootDir, swiftFile.relativePath));
+      if (content.includes("import SwiftUI")) {
+        if (!frameworks.includes("SwiftUI")) {
+          frameworks.push("SwiftUI");
+        }
+        if (!frameworks.includes("iOS")) {
+          frameworks.push("iOS");
+        }
+        break;
+      }
+    } catch {}
+  }
+  
   return [...new Set(frameworks)];
 }
 

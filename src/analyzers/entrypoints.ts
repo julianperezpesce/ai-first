@@ -87,6 +87,15 @@ export function discoverEntrypoints(files: FileInfo[], rootDir: string): Entrypo
     } catch {}
   }
   
+  // Detect iOS/SwiftUI entrypoints from Swift files
+  const swiftFiles = files.filter(f => f.extension === "swift");
+  if (swiftFiles.length > 0) {
+    try {
+      const swiftEntrypoints = discoverSwiftUIEntrypoints(swiftFiles, rootDir);
+      entrypoints.push(...swiftEntrypoints);
+    } catch {}
+  }
+  
   return entrypoints;
 }
 
@@ -215,6 +224,46 @@ function extractApexMethods(content: string): string[] {
     methods.push(match[0]);
   }
   return methods;
+}
+
+function discoverSwiftUIEntrypoints(swiftFiles: FileInfo[], rootDir: string): Entrypoint[] {
+  const entrypoints: Entrypoint[] = [];
+  
+  for (const swiftFile of swiftFiles) {
+    try {
+      const content = readFile(path.join(rootDir, swiftFile.relativePath));
+      
+      if (!content.includes("import SwiftUI")) {
+        continue;
+      }
+      
+      const structRegex = /struct\s+(\w+)\s*:\s*View/g;
+      let match;
+      while ((match = structRegex.exec(content)) !== null) {
+        const viewName = match[1];
+        const isContentView = viewName === "ContentView";
+        
+        entrypoints.push({
+          name: viewName,
+          path: swiftFile.relativePath,
+          type: "client",
+          description: isContentView ? "Main SwiftUI View" : `SwiftUI View: ${viewName}`,
+        });
+      }
+      
+      const appRegex = /@main\s*\n\s*struct\s+(\w+)/g;
+      while ((match = appRegex.exec(content)) !== null) {
+        entrypoints.push({
+          name: match[1],
+          path: swiftFile.relativePath,
+          type: "client",
+          description: `SwiftUI App Entry Point: ${match[1]}`,
+        });
+      }
+    } catch {}
+  }
+  
+  return entrypoints;
 }
 
 function getScriptType(name: string): Entrypoint["type"] | null {

@@ -6,6 +6,38 @@ All notable changes to `ai-first` will be documented in this file.
 
 ## [Unreleased]
 
+## [1.3.4] - 2026-03-23
+
+### 🚀 Enhanced iOS/SwiftUI Support
+
+**Branch:** `feature/phase3-universal-framework-detection`
+
+#### Added
+
+- **SwiftUI Framework Detection**
+  - File: `src/analyzers/techStack.ts`
+  - Detects SwiftUI framework when `import SwiftUI` is found in Swift files
+  - Also detects iOS framework alongside SwiftUI
+
+- **SwiftUI Entrypoints Detection**
+  - File: `src/analyzers/entrypoints.ts`
+  - Added `discoverSwiftUIEntrypoints()` function
+  - Extracts SwiftUI Views (structs conforming to View)
+  - Detects @main app entry points
+  - ContentView marked as main SwiftUI view
+
+- **Swift Symbol Parsing**
+  - File: `src/analyzers/symbols.ts`
+  - Added `parseSwift()` function
+  - Extracts structs, classes, functions, enums, protocols, constants
+  - Supports Swift syntax: struct, class, func, enum, protocol, let, var
+
+#### Test Results
+
+- 169 unit tests passing
+- 11/11 adapter functional tests passing
+- iOS/SwiftUI user simulation successful
+
 ## [1.3.3] - 2026-03-23
 
 ### 🐛 Fixed "Contains 0 files" Errors
