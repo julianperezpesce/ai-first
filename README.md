@@ -454,7 +454,7 @@ Flows represent business execution chains starting from entrypoints.
 | Category | Languages |
 |----------|-----------|
 | **Web** | JavaScript, TypeScript, Python, Go, Rust |
-| **Backend** | Java, C#, PHP, Ruby, Go, Rust, Kotlin |
+| **Backend** | Java, C#, PHP, Ruby, Go, Rust, Kotlin, **Apex** |
 | **Mobile** | Swift, Kotlin, Android |
 | **Frontend** | Vue, Svelte, React, HTML, CSS, SCSS |
 | **Testing** | Jest, Vitest, pytest, Mocha, RSpec |
@@ -491,6 +491,24 @@ ai-first automatically detects and indexes Android/Kotlin projects:
 - `ai-context/entrypoints.md` - Android activities, services, permissions
 - `ai-context/android-resources.json` - Layouts, drawables, values (if res/ exists)
 - `ai-context/gradle-modules.json` - Multi-module structure (if settings.gradle exists)
+
+### Salesforce Support (NEW ✅)
+
+ai-first automatically detects and indexes Salesforce/Apex projects:
+
+- **Language Detection**: Apex (.cls, .trigger files)
+- **Framework Detection**: Salesforce DX (via sfdx-project.json)
+- **Symbol Extraction**: Classes, interfaces, methods, triggers
+- **SObject Detection**: Automatically detects SObjects from trigger definitions
+- **API Version**: Reads sourceApiVersion from sfdx-project.json
+- **Entry Points**: Apex classes, triggers, @AuraEnabled methods, webservice methods
+
+### Generated Files for Salesforce Projects
+
+- `ai-context/tech_stack.md` - Shows Salesforce framework with Apex language
+- `ai-context/salesforce.json` - Salesforce-specific metadata (apiVersion, sObjects, apexClasses, triggers)
+- `ai-context/entrypoints.md` - Apex classes, triggers, and methods
+- `ai-context/symbols.json` - All extracted Apex symbols with line numbers
 
 ---
 

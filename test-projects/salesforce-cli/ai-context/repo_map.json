@@ -1,8 +1,8 @@
 {
-  "generated": "2026-03-18T19:21:55.100Z",
-  "totalFiles": 30,
+  "generated": "2026-03-23T00:27:16.251Z",
+  "totalFiles": 44,
   "structure": {
-    "ai": {
+    ".ai-dev": {
       "type": "directory",
       "children": {
         "ai_context.md": {
@@ -97,7 +97,68 @@
           "type": "file",
           "extension": "json"
         },
-        "repo-map.json": {
+        "repo_map.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "repo_map.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "schema.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "summary.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "symbols.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "tech_stack.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "tools.json": {
+          "type": "file",
+          "extension": "json"
+        }
+      }
+    },
+    "ai-context": {
+      "type": "directory",
+      "children": {
+        "ai_context.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "ai_rules.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "architecture.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "conventions.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "dependencies.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "entrypoints.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "modules.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "project.json": {
           "type": "file",
           "extension": "json"
         },
@@ -175,132 +236,202 @@
   },
   "files": [
     {
-      "path": "ai/ai_context.md",
+      "path": ".ai-dev/ai_context.md",
       "name": "ai_context.md",
       "extension": "md"
     },
     {
-      "path": "ai/ai_rules.md",
+      "path": ".ai-dev/ai_rules.md",
       "name": "ai_rules.md",
       "extension": "md"
     },
     {
-      "path": "ai/architecture.md",
+      "path": ".ai-dev/architecture.md",
       "name": "architecture.md",
       "extension": "md"
     },
     {
-      "path": "ai/cache.json",
+      "path": ".ai-dev/cache.json",
       "name": "cache.json",
       "extension": "json"
     },
     {
-      "path": "ai/context/features/force-app.json",
+      "path": ".ai-dev/context/features/force-app.json",
       "name": "force-app.json",
       "extension": "json"
     },
     {
-      "path": "ai/context/flows/account.json",
+      "path": ".ai-dev/context/flows/account.json",
       "name": "account.json",
       "extension": "json"
     },
     {
-      "path": "ai/context/flows/opportunity.json",
+      "path": ".ai-dev/context/flows/opportunity.json",
       "name": "opportunity.json",
       "extension": "json"
     },
     {
-      "path": "ai/conventions.md",
+      "path": ".ai-dev/conventions.md",
       "name": "conventions.md",
       "extension": "md"
     },
     {
-      "path": "ai/dependencies.json",
+      "path": ".ai-dev/dependencies.json",
       "name": "dependencies.json",
       "extension": "json"
     },
     {
-      "path": "ai/entrypoints.md",
+      "path": ".ai-dev/entrypoints.md",
       "name": "entrypoints.md",
       "extension": "md"
     },
     {
-      "path": "ai/files.json",
+      "path": ".ai-dev/files.json",
       "name": "files.json",
       "extension": "json"
     },
     {
-      "path": "ai/graph/knowledge-graph.json",
+      "path": ".ai-dev/graph/knowledge-graph.json",
       "name": "knowledge-graph.json",
       "extension": "json"
     },
     {
-      "path": "ai/graph/module-graph.json",
+      "path": ".ai-dev/graph/module-graph.json",
       "name": "module-graph.json",
       "extension": "json"
     },
     {
-      "path": "ai/graph/symbol-graph.json",
+      "path": ".ai-dev/graph/symbol-graph.json",
       "name": "symbol-graph.json",
       "extension": "json"
     },
     {
-      "path": "ai/graph/symbol-references.json",
+      "path": ".ai-dev/graph/symbol-references.json",
       "name": "symbol-references.json",
       "extension": "json"
     },
     {
-      "path": "ai/index-state.json",
+      "path": ".ai-dev/index-state.json",
       "name": "index-state.json",
       "extension": "json"
     },
     {
-      "path": "ai/modules.json",
+      "path": ".ai-dev/modules.json",
       "name": "modules.json",
       "extension": "json"
     },
     {
-      "path": "ai/project.json",
+      "path": ".ai-dev/project.json",
       "name": "project.json",
       "extension": "json"
     },
     {
-      "path": "ai/repo-map.json",
-      "name": "repo-map.json",
-      "extension": "json"
-    },
-    {
-      "path": "ai/repo_map.json",
+      "path": ".ai-dev/repo_map.json",
       "name": "repo_map.json",
       "extension": "json"
     },
     {
-      "path": "ai/repo_map.md",
+      "path": ".ai-dev/repo_map.md",
       "name": "repo_map.md",
       "extension": "md"
     },
     {
-      "path": "ai/schema.json",
+      "path": ".ai-dev/schema.json",
       "name": "schema.json",
       "extension": "json"
     },
     {
-      "path": "ai/summary.md",
+      "path": ".ai-dev/summary.md",
       "name": "summary.md",
       "extension": "md"
     },
     {
-      "path": "ai/symbols.json",
+      "path": ".ai-dev/symbols.json",
       "name": "symbols.json",
       "extension": "json"
     },
     {
-      "path": "ai/tech_stack.md",
+      "path": ".ai-dev/tech_stack.md",
       "name": "tech_stack.md",
       "extension": "md"
     },
     {
-      "path": "ai/tools.json",
+      "path": ".ai-dev/tools.json",
+      "name": "tools.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai-context/ai_context.md",
+      "name": "ai_context.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai-context/ai_rules.md",
+      "name": "ai_rules.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai-context/architecture.md",
+      "name": "architecture.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai-context/conventions.md",
+      "name": "conventions.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai-context/dependencies.json",
+      "name": "dependencies.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai-context/entrypoints.md",
+      "name": "entrypoints.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai-context/modules.json",
+      "name": "modules.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai-context/project.json",
+      "name": "project.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai-context/repo_map.json",
+      "name": "repo_map.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai-context/repo_map.md",
+      "name": "repo_map.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai-context/schema.json",
+      "name": "schema.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai-context/summary.md",
+      "name": "summary.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai-context/symbols.json",
+      "name": "symbols.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai-context/tech_stack.md",
+      "name": "tech_stack.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai-context/tools.json",
       "name": "tools.json",
       "extension": "json"
     },

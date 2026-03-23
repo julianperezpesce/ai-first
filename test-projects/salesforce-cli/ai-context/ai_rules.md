@@ -6,7 +6,8 @@
 
 ## Guidelines
 
-- Language: Use Markdown, JSON
+- Language: Use Markdown, JSON, Apex, Apex Trigger
+- Frameworks: Salesforce DX, Salesforce
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
 
@@ -24,8 +25,8 @@
 
 | Category | Value |
 |----------|-------|
-| Language | Markdown, JSON |
-| Framework | N/A |
+| Language | Markdown, JSON, Apex, Apex Trigger |
+| Framework | Salesforce DX, Salesforce |
 | Architecture | Flat / Simple Structure |
 | Naming | PascalCase |
 | Indentation | unknown |

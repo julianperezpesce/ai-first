@@ -6,6 +6,58 @@ All notable changes to `ai-first` will be documented in this file.
 
 ## [Unreleased]
 
+## [1.3.2] - 2026-03-23
+
+### 🚀 Enhanced Salesforce/Apex Support
+
+**Branch:** `feature/phase1-apex-salesforce-parser`
+**Total Changes:** 12 new tests, improved parser accuracy
+
+#### Added
+
+- **Improved Apex Parser**
+  - File: `src/analyzers/symbols.ts`
+  - Enhanced regex for class detection (supports with/without/inherited sharing)
+  - Better method extraction for @AuraEnabled and webservice methods
+  - Trigger detection with SObject mapping
+  - 12 comprehensive unit tests added
+
+- **Salesforce TechStack Detection**
+  - File: `src/analyzers/techStack.ts`
+  - Detects Apex and Apex Trigger languages
+  - Reads sfdx-project.json for metadata
+  - Extracts: apiVersion, packageDirectories, namespace
+  - Counts: apexClasses, triggers
+  - Auto-detects SObjects from trigger definitions
+
+- **New Interface: SalesforceInfo**
+  - Added to TechStack interface
+  - Tracks Salesforce-specific project metadata
+
+#### Changed
+
+- **Language Detection**
+  - Added "Apex" and "Apex Trigger" to language map
+  - File extensions: .cls, .trigger
+
+- **Framework Detection**
+  - Added "Salesforce DX" framework indicator
+  - Detects via sfdx-project.json
+
+#### Test Results
+
+All tests passing:
+- 169 unit tests (was 157)
+- 12 new Apex-specific tests
+- 11 adapter tests still passing
+- Salesforce project correctly detected
+
+#### Documentation
+
+- Updated README.md with Salesforce section
+- Updated README.es.md (Spanish)
+- Added Apex to supported languages list
+
 ## [1.3.0] - 2026-03-22
 
 ### 🚀 Release v1.3.0 - AST-Based Semantic Analysis
