@@ -6,7 +6,7 @@ All notable changes to `ai-first` will be documented in this file.
 
 ## [Unreleased]
 
-## [1.4.0] - 2026-03-24
+## [1.3.5] - 2026-03-24
 
 ### 🧪 Comprehensive Testing Suite
 
