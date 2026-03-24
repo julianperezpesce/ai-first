@@ -1,4 +1,5 @@
 import { readFile } from "../utils/fileUtils.js";
+import { parserRegistry, createSymbolFromParsed } from "../core/parsers/index.js";
 /**
  * Generate unique symbol ID from file path and symbol name
  * Format: filePath#symbolName (e.g., src/auth/login.ts#loginUser)
@@ -39,14 +40,15 @@ function parseFileForSymbols(file) {
     const symbols = [];
     try {
         const content = readFile(file.path);
+        const ext = "." + file.extension;
+        if (parserRegistry.hasParser(ext)) {
+            const parsed = parserRegistry.parse(file.relativePath, content, ext);
+            if (parsed) {
+                return createSymbolFromParsed(parsed, file.relativePath);
+            }
+        }
         const lines = content.split("\n");
-        if (file.extension === "ts" || file.extension === "tsx" || file.extension === "js" || file.extension === "jsx") {
-            parseJavaScriptTypeScript(file, content, lines, symbols);
-        }
-        else if (file.extension === "py") {
-            parsePython(file, content, lines, symbols);
-        }
-        else if (file.extension === "go") {
+        if (file.extension === "go") {
             parseGo(file, content, lines, symbols);
         }
         else if (file.extension === "rs") {
@@ -405,7 +407,7 @@ function parseApex(file, content, lines, symbols) {
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i].trim();
         // Classes: public with sharing class ClassName, public class ClassName, etc.
-        const classMatch = line.match(/^(?:public\s+(?:with\s+sharing|without\s+sharing|inherited\s+sharing)\s+)?class\s+(\w+)/);
+        const classMatch = line.match(/^(?:\s*(?:public|private|global)(?:\s+(?:with|without|inherited)\s+sharing)?\s+)?class\s+(\w+)/);
         if (classMatch) {
             symbols.push({
                 id: generateSymbolId(file.relativePath, classMatch[1]),

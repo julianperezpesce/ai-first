@@ -1,0 +1,39 @@
+# Internal files
+PLAN*.md
+ANALISIS*.md
+TEST_RESULTS*.md
+SIMULATION_RESULTS.md
+STATUS_*
+BUGS.md
+PROMPT*.md
+*.private.md
+.internal/
+.sisyphus/
+
+# Scripts de test
+*.sh
+run-all-tests.sh
+test-*.sh
+
+# Documentación interna
+CONTRIBUTING.md
+FLOW.md
+
+# IDE y OS
+.vscode/
+.idea/
+.DS_Store
+
+# Test projects (don't need to be in package)
+test-projects/
+
+# Dependencies (se instalan con npm install)
+node_modules/
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.*

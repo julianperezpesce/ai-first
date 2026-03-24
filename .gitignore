@@ -31,11 +31,16 @@ Thumbs.db
 
 # Internal development files (not for public repo)
 .sisyphus/
-PLAN_*.md
-PROMPT_*.md
+PLAN*.md
+PROMPT*.md
 BUGS.md
 *.private.md
 .internal/
+ANALISIS*.md
+TEST_RESULTS*.md
+SIMULATION_RESULTS.md
+STATUS_*
+*.sh
 
 # Test coverage
 coverage/

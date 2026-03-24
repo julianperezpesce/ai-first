@@ -89,6 +89,8 @@ function parseFileForSymbols(file: FileInfo): Symbol[] {
       parsePHP(file, content, lines, symbols);
     } else if (file.extension === "rb") {
       parseRuby(file, content, lines, symbols);
+    } else if (file.extension === "swift") {
+      parseSwift(file, content, lines, symbols);
     }
   } catch {}
 
@@ -454,6 +456,80 @@ function parseRuby(file: FileInfo, content: string, lines: string[], symbols: Sy
 }
 
 /**
+ * Parse Swift files
+ */
+function parseSwift(file: FileInfo, content: string, lines: string[], symbols: Symbol[]): void {
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    
+    // Classes/Structs: struct ViewName, class ClassName
+    const structMatch = line.match(/^(?:struct|class)\s+(\w+)/);
+    if (structMatch) {
+      symbols.push({
+        id: generateSymbolId(file.relativePath, structMatch[1]),
+        name: structMatch[1],
+        type: "class",
+        file: file.relativePath,
+        line: i + 1,
+        export: line.startsWith("struct") || line.startsWith("class"),
+      });
+    }
+    
+    // Functions: func functionName
+    const funcMatch = line.match(/^func\s+(\w+)/);
+    if (funcMatch) {
+      symbols.push({
+        id: generateSymbolId(file.relativePath, funcMatch[1]),
+        name: funcMatch[1],
+        type: "function",
+        file: file.relativePath,
+        line: i + 1,
+        export: true,
+      });
+    }
+    
+    // Enums: enum EnumName
+    const enumMatch = line.match(/^enum\s+(\w+)/);
+    if (enumMatch) {
+      symbols.push({
+        id: generateSymbolId(file.relativePath, enumMatch[1]),
+        name: enumMatch[1],
+        type: "enum",
+        file: file.relativePath,
+        line: i + 1,
+        export: true,
+      });
+    }
+    
+    // Protocols: protocol ProtocolName
+    const protocolMatch = line.match(/^protocol\s+(\w+)/);
+    if (protocolMatch) {
+      symbols.push({
+        id: generateSymbolId(file.relativePath, protocolMatch[1]),
+        name: protocolMatch[1],
+        type: "interface",
+        file: file.relativePath,
+        line: i + 1,
+        export: true,
+      });
+    }
+    
+    // Constants: let CONST_NAME or var CONST_NAME
+    const constMatch = line.match(/^(?:let|var)\s+([A-Z][A-Z0-9_]*)/);
+    if (constMatch) {
+      symbols.push({
+        id: generateSymbolId(file.relativePath, constMatch[1]),
+        name: constMatch[1],
+        type: "const",
+        file: file.relativePath,
+        line: i + 1,
+        export: true,
+      });
+    }
+  }
+}
+
+/**
  * Parse Apex (Salesforce) files
  */
 function parseApex(file: FileInfo, content: string, lines: string[], symbols: Symbol[]): void {
@@ -461,7 +537,7 @@ function parseApex(file: FileInfo, content: string, lines: string[], symbols: Sy
     const line = lines[i].trim();
     
     // Classes: public with sharing class ClassName, public class ClassName, etc.
-    const classMatch = line.match(/^(?:public\s+(?:with\s+sharing|without\s+sharing|inherited\s+sharing)\s+)?class\s+(\w+)/);
+    const classMatch = line.match(/^(?:\s*(?:public|private|global)(?:\s+(?:with|without|inherited)\s+sharing)?\s+)?class\s+(\w+)/);
     if (classMatch) {
       symbols.push({
         id: generateSymbolId(file.relativePath, classMatch[1]),

@@ -79,6 +79,23 @@ export function discoverEntrypoints(files: FileInfo[], rootDir: string): Entrypo
     } catch {}
   }
   
+  const sfdxFiles = files.filter(f => f.name === "sfdx-project.json");
+  if (sfdxFiles.length > 0) {
+    try {
+      const salesforceEntrypoints = discoverSalesforceEntrypoints(files, rootDir);
+      entrypoints.push(...salesforceEntrypoints);
+    } catch {}
+  }
+  
+  // Detect iOS/SwiftUI entrypoints from Swift files
+  const swiftFiles = files.filter(f => f.extension === "swift");
+  if (swiftFiles.length > 0) {
+    try {
+      const swiftEntrypoints = discoverSwiftUIEntrypoints(swiftFiles, rootDir);
+      entrypoints.push(...swiftEntrypoints);
+    } catch {}
+  }
+  
   return entrypoints;
 }
 
@@ -146,6 +163,104 @@ function parseAndroidManifest(content: string, manifestPath: string): Entrypoint
       type: "config",
       description: `${permissions.length} permissions declared`,
     });
+  }
+  
+  return entrypoints;
+}
+
+function discoverSalesforceEntrypoints(files: FileInfo[], rootDir: string): Entrypoint[] {
+  const entrypoints: Entrypoint[] = [];
+  
+  const apexFiles = files.filter(f => f.extension === "cls" || f.extension === "trigger");
+  
+  for (const apexFile of apexFiles) {
+    try {
+      const content = readFile(path.join(rootDir, apexFile.relativePath));
+      
+      if (apexFile.extension === "trigger") {
+        const triggerMatch = content.match(/^trigger\s+(\w+)\s+on\s+(\w+)/i);
+        if (triggerMatch) {
+          entrypoints.push({
+            name: triggerMatch[1],
+            path: apexFile.relativePath,
+            type: "api",
+            description: `Trigger on ${triggerMatch[2]} SObject`,
+          });
+        }
+      } else {
+        const classMatch = content.match(/^(?:\s*(?:public|private|global)(?:\s+(?:with|without|inherited)\s+sharing)?\s+)?class\s+(\w+)/i);
+        if (classMatch) {
+          const className = classMatch[1];
+          const methods = extractApexMethods(content);
+          
+          const auraEnabled = methods.filter(m => m.includes("@AuraEnabled"));
+          const restResource = methods.some(m => m.includes("@RestResource"));
+          const webservice = methods.some(m => m.includes("@webservice"));
+          
+          let description = "Apex Class";
+          if (restResource) description += " (REST Resource)";
+          else if (auraEnabled.length > 0) description += ` (${auraEnabled.length} @AuraEnabled methods)`;
+          else if (webservice) description += " (WebService)";
+          
+          entrypoints.push({
+            name: className,
+            path: apexFile.relativePath,
+            type: "api",
+            description,
+          });
+        }
+      }
+    } catch {}
+  }
+  
+  return entrypoints;
+}
+
+function extractApexMethods(content: string): string[] {
+  const methods: string[] = [];
+  const methodRegex = /@(?:AuraEnabled|RestResource|webservice|InvocableMethod)\s*(?:public|private|protected|global)?\s*(?:static)?\s*\w+\s+(\w+)\s*\(/g;
+  let match;
+  while ((match = methodRegex.exec(content)) !== null) {
+    methods.push(match[0]);
+  }
+  return methods;
+}
+
+function discoverSwiftUIEntrypoints(swiftFiles: FileInfo[], rootDir: string): Entrypoint[] {
+  const entrypoints: Entrypoint[] = [];
+  
+  for (const swiftFile of swiftFiles) {
+    try {
+      const content = readFile(path.join(rootDir, swiftFile.relativePath));
+      
+      if (!content.includes("import SwiftUI")) {
+        continue;
+      }
+      
+      const structRegex = /struct\s+(\w+)\s*:\s*View/g;
+      let match;
+      while ((match = structRegex.exec(content)) !== null) {
+        const viewName = match[1];
+        const isContentView = viewName === "ContentView";
+        
+        entrypoints.push({
+          name: viewName,
+          path: swiftFile.relativePath,
+          type: "client",
+          description: isContentView ? "Main SwiftUI View" : `SwiftUI View: ${viewName}`,
+        });
+      }
+      
+      const appRegex = /@main\s*\n\s*struct\s+(\w+)/g;
+      while ((match = appRegex.exec(content)) !== null) {
+        entrypoints.push({
+          name: match[1],
+          path: swiftFile.relativePath,
+          type: "client",
+          description: `SwiftUI App Entry Point: ${match[1]}`,
+        });
+      }
+    } catch {}
   }
   
   return entrypoints;
