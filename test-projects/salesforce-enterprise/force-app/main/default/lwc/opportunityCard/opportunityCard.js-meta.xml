@@ -1,0 +1,16 @@
+{
+    "apiVersion": "59.0",
+    "isExposed": true,
+    "masterLabel": "Opportunity Card",
+    "description": "Displays opportunity details with stage and amount information",
+    "targets": [
+        "lightning__RecordPage",
+        "lightning__AppPage"
+    ],
+    "properties": {
+        "recordId": {
+            "type": "String",
+            "description": "The record ID of the opportunity"
+        }
+    }
+}
