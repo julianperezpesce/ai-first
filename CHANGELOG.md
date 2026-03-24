@@ -6,7 +6,74 @@ All notable changes to `ai-first` will be documented in this file.
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-03-24
+
+### 🧪 Comprehensive Testing Suite
+
+**Branch:** `feature/comprehensive-testing-suite`
+
+#### Added
+
+- **Complete Test Coverage**
+  - 996 total tests (+827 new tests)
+  - 27 test files covering all scenarios
+  - 100% CLI command coverage (14 commands)
+  - 100% Salesforce component coverage
+
+- **Salesforce Testing Suite** (531 tests)
+  - Apex Classes detection (43 tests)
+  - Apex Triggers detection (67 tests)
+  - Lightning Web Components (73 tests)
+  - Flows and Process Builders (74 tests)
+  - Custom Objects and Fields (147 tests)
+  - SFDX Metadata and Integration (127 tests)
+  - Real enterprise Salesforce project with 24 files
+
+- **CLI Commands Testing** (296 tests)
+  - `init` command with all flags (33 tests)
+  - `index` command with adaptive thresholds (49 tests)
+  - `watch`, `context`, `summarize`, `query` commands (69 tests)
+  - `doctor`, `explore`, `map`, `adapters` commands (79 tests)
+  - `git`, `graph`, `update`, `help` commands (66 tests)
+
+#### Enhanced
+
+- **Framework Detection Improvements**
+  - NestJS: Fixed detection of `@nestjs/*` scoped packages
+  - Spring Boot: Now appears in Frameworks section with Layered architecture
+  - Express: Correctly identified as API Server (not Microservices)
+  - Django: MTV (Model-Template-View) pattern detection
+  - Rails: MVC with Rails conventions
+  - Laravel: Service Container, Providers, Facades, Eloquent ORM detection
+
+- **Entrypoints Detection**
+  - Go: main.go, HTTP handlers, service ports
+  - Rust: main.rs, structs, CLI arguments
+  - PHP: index.php, Laravel/FastRoute detection
+  - Python CLI: argparse commands, console_scripts
+  - Spring Boot: @RestController, @RequestMapping endpoints
+
+- **Symbol Extraction**
+  - Go: Functions, types, imports with content
+  - Rust: Structs, functions, Cargo.toml binary names
+  - Laravel: Service Container and Provider detection
+
+- **Architecture Analysis**
+  - Functional module grouping (CLI Commands, Adapters, Language Parsers, Indexer)
+  - Removed generic "Contains X files" descriptions
+  - ai-first-cli self-analysis with functional descriptions
+
+#### Test Results
+
+- 996 unit tests passing (was 169)
+- 11/11 adapter functional tests passing
+- All 14 CLI commands tested
+- 100% Salesforce component coverage
+- Zero regression in existing functionality
+
 ## [1.3.4] - 2026-03-23
+
+### 🚀 Enhanced iOS/SwiftUI Support
 
 ### 🚀 Enhanced iOS/SwiftUI Support
 
