@@ -1,9 +1,0 @@
-{
-  "name": "account",
-  "entrypoint": "force-app/main/default/classes/AccountController.cls",
-  "files": [
-    "force-app/main/default/classes/AccountController.cls"
-  ],
-  "depth": 0,
-  "layers": []
-}

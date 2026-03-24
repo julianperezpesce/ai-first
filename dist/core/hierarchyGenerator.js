@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { DEFAULT_EXCLUDE_PATTERNS, getAllFiles as scanFiles, getRelativePath } from "../utils/fileUtils.js";
+import { AI_CONTEXT_DIR, getHierarchyPath } from "../utils/constants.js";
 /**
  * Detect repository root purpose from README and package metadata
  */
@@ -251,10 +252,10 @@ function summarizeFile(filePath, content) {
 /**
  * Generate hierarchical repository summary
  */
-export async function generateHierarchy(rootDir, outputPath = "ai/hierarchy.json") {
+export async function generateHierarchy(rootDir, outputPath = getHierarchyPath(rootDir)) {
     try {
         // Get all files
-        const allFiles = scanFiles(rootDir, [...DEFAULT_EXCLUDE_PATTERNS, "ai", "node_modules"]);
+        const allFiles = scanFiles(rootDir, [...DEFAULT_EXCLUDE_PATTERNS, AI_CONTEXT_DIR, "ai", "node_modules"]);
         // Get files for analysis
         const files = [];
         for (const filePath of allFiles) {

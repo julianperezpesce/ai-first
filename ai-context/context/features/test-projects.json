@@ -54,16 +54,16 @@
     "test-projects/laravel-app/app/Models/Comment.php"
   ],
   "entrypoints": [
-    "test-projects/express-api/controllers/authController.js",
-    "test-projects/express-api/controllers/userController.js",
-    "test-projects/express-api/services/authService.js",
-    "test-projects/express-api/services/userService.js",
-    "test-projects/flask-app/app/api/routes.py",
-    "test-projects/flask-app/app/auth/routes.py",
-    "test-projects/flask-app/app/blog/routes.py",
-    "test-projects/flask-app/app/main/routes.py",
-    "test-projects/laravel-app/app/Http/Controllers/Api/CategoryController.php",
-    "test-projects/laravel-app/app/Http/Controllers/Api/CommentController.php"
+    "test-projects/django-app/blog/__init__.py",
+    "test-projects/django-app/blog/admin.py",
+    "test-projects/django-app/blog/serializers.py",
+    "test-projects/django-app/blog/views.py",
+    "test-projects/django-app/django_app/__init__.py",
+    "test-projects/django-app/users/__init__.py",
+    "test-projects/django-app/users/admin.py",
+    "test-projects/django-app/users/serializers.py",
+    "test-projects/django-app/users/views.py",
+    "test-projects/express-api/controllers/authController.js"
   ],
   "dependencies": []
 }

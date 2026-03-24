@@ -3,17 +3,13 @@
   "entrypoint": "test-projects/flask-app/app/api/routes.py",
   "files": [
     "test-projects/flask-app/app/api/routes.py",
-    "tests/lazyAnalyzer.test.ts",
-    "src/core/lazyAnalyzer.ts",
-    "src/core/semanticContexts.ts",
-    "tests/gitAnalyzer.test.ts",
-    "src/core/symbolGraph.ts",
-    "src/core/moduleGraph.ts",
-    "src/core/knowledgeGraphBuilder.ts"
+    "test-projects/flask-app/app/auth/routes.py",
+    "test-projects/flask-app/app/blog/routes.py",
+    "test-projects/flask-app/app/main/routes.py",
+    "test-projects/rails-app/config/routes.rb"
   ],
-  "depth": 5,
+  "depth": 1,
   "layers": [
-    "api",
-    "unknown"
+    "api"
   ]
 }

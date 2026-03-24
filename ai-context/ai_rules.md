@@ -6,7 +6,7 @@
 
 ## Guidelines
 
-- Language: Use JSON, Markdown, TypeScript, CSS, Python, JavaScript, PHP, Ruby, TypeScript (React), Java
+- Language: Use Markdown, JSON, YAML, TypeScript, CSS, Ruby, Python, JavaScript, PHP, TypeScript (React), Java
 - Frameworks: Vue.js, Nuxt.js, TypeScript
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
@@ -31,7 +31,7 @@
 
 | Category | Value |
 |----------|-------|
-| Language | JSON, Markdown, TypeScript, CSS, Python, JavaScript, PHP, Ruby, TypeScript (React), Java |
+| Language | Markdown, JSON, YAML, TypeScript, CSS, Ruby, Python, JavaScript, PHP, TypeScript (React), Java |
 | Framework | Vue.js, Nuxt.js, TypeScript |
 | Architecture | Flat / Simple Structure |
 | Naming | PascalCase |

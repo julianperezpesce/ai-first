@@ -2,29 +2,32 @@
   "name": "opencode-ai-first",
   "rootDir": "/mnt/m2/Código/opencode-ai-first",
   "features": [
-    "commands",
     "src",
     "test-projects"
   ],
   "flows": [
-    "account",
+    "admin",
     "ai-first",
-    "api",
+    "androidresources",
     "auth",
-    "category",
-    "comment",
-    "dashboard",
     "doctor",
+    "entrypoints",
     "explore",
-    "login",
-    "opportunity",
-    "post",
+    "fastapiadapter",
+    "index",
+    "indexer",
+    "indexstate",
+    "init",
+    "main",
+    "models",
+    "posts",
+    "repomapper",
     "routes",
+    "serializers",
     "user",
-    "users",
     "views"
   ],
   "languages": [],
   "frameworks": [],
-  "generatedAt": "2026-03-18T20:34:40.835Z"
+  "generatedAt": "2026-03-22T19:29:14.706Z"
 }

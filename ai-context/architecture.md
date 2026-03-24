@@ -11,19 +11,29 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
+| `.ai-dev` | Contains 50 files |
+| `.github` | Contains 1 files |
 | `.netlify` | Contains 1 files |
 | `ANALISIS_COMPLETO.md` | Contains 0 files |
 | `ANALISIS_MEJORAS.md` | Contains 0 files |
-| `BUGS.md` | Contains 0 files |
 | `CHANGELOG.md` | Contains 0 files |
 | `CONTRIBUTING.md` | Contains 0 files |
 | `FLOW.md` | Contains 0 files |
-| `PLAN_MEJORAS.md` | Contains 0 files |
-| `README.es.md` | Contains 0 files |
-| `README.md` | Contains 0 files |
+| `PLAN_DE_MEJORAS.md` | Contains 0 files |
+| `PLAN_DE_TESTS.md` | Testing utilities and mocks |
 
 
 ## Module Details
+
+### .ai-dev
+- **Path**: `.ai-dev`
+- **Responsibility**: Contains 50 files
+
+
+### .github
+- **Path**: `.github`
+- **Responsibility**: Contains 1 files
+
 
 ### .netlify
 - **Path**: `.netlify`
@@ -40,11 +50,6 @@
 - **Responsibility**: Contains 0 files
 
 
-### BUGS.md
-- **Path**: `BUGS.md`
-- **Responsibility**: Contains 0 files
-
-
 ### CHANGELOG.md
 - **Path**: `CHANGELOG.md`
 - **Responsibility**: Contains 0 files
@@ -58,6 +63,16 @@
 ### FLOW.md
 - **Path**: `FLOW.md`
 - **Responsibility**: Contains 0 files
+
+
+### PLAN_DE_MEJORAS.md
+- **Path**: `PLAN_DE_MEJORAS.md`
+- **Responsibility**: Contains 0 files
+
+
+### PLAN_DE_TESTS.md
+- **Path**: `PLAN_DE_TESTS.md`
+- **Responsibility**: Testing utilities and mocks
 
 
 ### PLAN_MEJORAS.md
@@ -95,14 +110,9 @@
 - **Responsibility**: Testing utilities and mocks
 
 
-### TEST_RESULTS_PHASE1.md
-- **Path**: `TEST_RESULTS_PHASE1.md`
-- **Responsibility**: Testing utilities and mocks
-
-
 ### ai
 - **Path**: `ai`
-- **Responsibility**: Contains 50 files
+- **Responsibility**: Contains 2 files
 
 
 ### docs
@@ -113,16 +123,6 @@
 ### examples
 - **Path**: `examples`
 - **Responsibility**: Contains 4 files
-
-
-### package-lock.json
-- **Path**: `package-lock.json`
-- **Responsibility**: Contains 0 files
-
-
-### package.json
-- **Path**: `package.json`
-- **Responsibility**: Contains 0 files
 
 
 
