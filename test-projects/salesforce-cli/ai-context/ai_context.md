@@ -7,9 +7,9 @@
 ## Quick Overview
 
 - **Pattern**: Flat / Simple Structure
-- **Languages**: Markdown, JSON
-- **Frameworks**: None
-- **Total Files**: 30
+- **Languages**: Markdown, JSON, Apex, Apex Trigger
+- **Frameworks**: Salesforce DX, Salesforce
+- **Total Files**: 44
 
 ---
 
@@ -26,7 +26,9 @@
 
 ## Tech Stack
 
-**Languages**: Markdown, JSON
+**Languages**: Markdown, JSON, Apex, Apex Trigger
+
+**Frameworks**: Salesforce DX, Salesforce
 
 ---
 
@@ -38,14 +40,19 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `ai` | Contains 26 files |
+| `.ai-dev` | Contains 25 files |
+| `ai-context` | Contains 15 files |
 | `force-app` | Contains 3 files |
-| `sfdx-project.json` | Contains 0 files |
 
 
 ---
 
 ## Key Entrypoints
+
+### Api
+- `force-app/main/default/classes/AccountController.cls` - Apex Class (2 @AuraEnabled methods)
+- `force-app/main/default/classes/OpportunityController.cls` - Apex Class (1 @AuraEnabled methods)
+- `force-app/main/default/triggers/AccountTrigger.trigger` - Trigger on Account SObject
 
 ---
 
@@ -64,9 +71,11 @@
 
 ## AI Rules
 
-- Language: Use Markdown, JSON
+- Language: Use Markdown, JSON, Apex, Apex Trigger
+- Frameworks: Salesforce DX, Salesforce
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
+- Main entry: force-app/main/default/classes/AccountController.cls
 
 ---
 

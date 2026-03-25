@@ -1,5 +1,55 @@
 {
   "modules": {
+    ".ai-dev": {
+      "path": ".ai-dev",
+      "files": [
+        ".ai-dev/ai_context.md",
+        ".ai-dev/ai_rules.md",
+        ".ai-dev/architecture.md",
+        ".ai-dev/cache.json",
+        ".ai-dev/context/features/force-app.json",
+        ".ai-dev/context/flows/account.json",
+        ".ai-dev/context/flows/opportunity.json",
+        ".ai-dev/conventions.md",
+        ".ai-dev/dependencies.json",
+        ".ai-dev/entrypoints.md",
+        ".ai-dev/files.json",
+        ".ai-dev/graph/knowledge-graph.json",
+        ".ai-dev/graph/module-graph.json",
+        ".ai-dev/graph/symbol-graph.json",
+        ".ai-dev/graph/symbol-references.json",
+        ".ai-dev/index-state.json",
+        ".ai-dev/modules.json",
+        ".ai-dev/project.json",
+        ".ai-dev/repo_map.json",
+        ".ai-dev/repo_map.md",
+        ".ai-dev/schema.json",
+        ".ai-dev/summary.md",
+        ".ai-dev/symbols.json",
+        ".ai-dev/tech_stack.md",
+        ".ai-dev/tools.json"
+      ]
+    },
+    "ai-context": {
+      "path": "ai-context",
+      "files": [
+        "ai-context/ai_context.md",
+        "ai-context/ai_rules.md",
+        "ai-context/architecture.md",
+        "ai-context/conventions.md",
+        "ai-context/dependencies.json",
+        "ai-context/entrypoints.md",
+        "ai-context/modules.json",
+        "ai-context/project.json",
+        "ai-context/repo_map.json",
+        "ai-context/repo_map.md",
+        "ai-context/schema.json",
+        "ai-context/summary.md",
+        "ai-context/symbols.json",
+        "ai-context/tech_stack.md",
+        "ai-context/tools.json"
+      ]
+    },
     "force-app": {
       "path": "force-app",
       "files": [

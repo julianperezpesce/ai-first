@@ -6,6 +6,184 @@ All notable changes to `ai-first` will be documented in this file.
 
 ## [Unreleased]
 
+## [1.3.5] - 2026-03-24
+
+### 🧪 Comprehensive Testing Suite
+
+**Branch:** `feature/comprehensive-testing-suite`
+
+#### Added
+
+- **Complete Test Coverage**
+  - 996 total tests (+827 new tests)
+  - 27 test files covering all scenarios
+  - 100% CLI command coverage (14 commands)
+  - 100% Salesforce component coverage
+
+- **Salesforce Testing Suite** (531 tests)
+  - Apex Classes detection (43 tests)
+  - Apex Triggers detection (67 tests)
+  - Lightning Web Components (73 tests)
+  - Flows and Process Builders (74 tests)
+  - Custom Objects and Fields (147 tests)
+  - SFDX Metadata and Integration (127 tests)
+  - Real enterprise Salesforce project with 24 files
+
+- **CLI Commands Testing** (296 tests)
+  - `init` command with all flags (33 tests)
+  - `index` command with adaptive thresholds (49 tests)
+  - `watch`, `context`, `summarize`, `query` commands (69 tests)
+  - `doctor`, `explore`, `map`, `adapters` commands (79 tests)
+  - `git`, `graph`, `update`, `help` commands (66 tests)
+
+#### Enhanced
+
+- **Framework Detection Improvements**
+  - NestJS: Fixed detection of `@nestjs/*` scoped packages
+  - Spring Boot: Now appears in Frameworks section with Layered architecture
+  - Express: Correctly identified as API Server (not Microservices)
+  - Django: MTV (Model-Template-View) pattern detection
+  - Rails: MVC with Rails conventions
+  - Laravel: Service Container, Providers, Facades, Eloquent ORM detection
+
+- **Entrypoints Detection**
+  - Go: main.go, HTTP handlers, service ports
+  - Rust: main.rs, structs, CLI arguments
+  - PHP: index.php, Laravel/FastRoute detection
+  - Python CLI: argparse commands, console_scripts
+  - Spring Boot: @RestController, @RequestMapping endpoints
+
+- **Symbol Extraction**
+  - Go: Functions, types, imports with content
+  - Rust: Structs, functions, Cargo.toml binary names
+  - Laravel: Service Container and Provider detection
+
+- **Architecture Analysis**
+  - Functional module grouping (CLI Commands, Adapters, Language Parsers, Indexer)
+  - Removed generic "Contains X files" descriptions
+  - ai-first-cli self-analysis with functional descriptions
+
+#### Test Results
+
+- 996 unit tests passing (was 169)
+- 11/11 adapter functional tests passing
+- All 14 CLI commands tested
+- 100% Salesforce component coverage
+- Zero regression in existing functionality
+
+## [1.3.4] - 2026-03-23
+
+### 🚀 Enhanced iOS/SwiftUI Support
+
+### 🚀 Enhanced iOS/SwiftUI Support
+
+**Branch:** `feature/phase3-universal-framework-detection`
+
+#### Added
+
+- **SwiftUI Framework Detection**
+  - File: `src/analyzers/techStack.ts`
+  - Detects SwiftUI framework when `import SwiftUI` is found in Swift files
+  - Also detects iOS framework alongside SwiftUI
+
+- **SwiftUI Entrypoints Detection**
+  - File: `src/analyzers/entrypoints.ts`
+  - Added `discoverSwiftUIEntrypoints()` function
+  - Extracts SwiftUI Views (structs conforming to View)
+  - Detects @main app entry points
+  - ContentView marked as main SwiftUI view
+
+- **Swift Symbol Parsing**
+  - File: `src/analyzers/symbols.ts`
+  - Added `parseSwift()` function
+  - Extracts structs, classes, functions, enums, protocols, constants
+  - Supports Swift syntax: struct, class, func, enum, protocol, let, var
+
+#### Test Results
+
+- 169 unit tests passing
+- 11/11 adapter functional tests passing
+- iOS/SwiftUI user simulation successful
+
+## [1.3.3] - 2026-03-23
+
+### 🐛 Fixed "Contains 0 files" Errors
+
+**Branch:** `feature/phase2-containsfiles-fix`
+
+#### Fixed
+
+- **Architecture Module Detection**
+  - File: `src/analyzers/architecture.ts`
+  - Fixed bug where root-level files (README.md, CHANGELOG.md, etc.) were incorrectly treated as modules
+  - Root files no longer appear as "Contains 0 files" entries
+  - Only actual directories are now listed as modules
+
+- **Salesforce Entrypoints Detection**
+  - File: `src/analyzers/entrypoints.ts`
+  - Added `discoverSalesforceEntrypoints()` function
+  - Apex classes now appear as entrypoints
+  - Apex triggers now appear as entrypoints
+  - Detects @AuraEnabled, @RestResource, and @webservice annotated methods
+
+#### Test Results
+
+- 169 unit tests passing
+- 11/11 adapter functional tests passing
+- Salesforce user simulation successful
+
+## [1.3.2] - 2026-03-23
+
+### 🚀 Enhanced Salesforce/Apex Support
+
+**Branch:** `feature/phase1-apex-salesforce-parser`
+**Total Changes:** 12 new tests, improved parser accuracy
+
+#### Added
+
+- **Improved Apex Parser**
+  - File: `src/analyzers/symbols.ts`
+  - Enhanced regex for class detection (supports with/without/inherited sharing)
+  - Better method extraction for @AuraEnabled and webservice methods
+  - Trigger detection with SObject mapping
+  - 12 comprehensive unit tests added
+
+- **Salesforce TechStack Detection**
+  - File: `src/analyzers/techStack.ts`
+  - Detects Apex and Apex Trigger languages
+  - Reads sfdx-project.json for metadata
+  - Extracts: apiVersion, packageDirectories, namespace
+  - Counts: apexClasses, triggers
+  - Auto-detects SObjects from trigger definitions
+
+- **New Interface: SalesforceInfo**
+  - Added to TechStack interface
+  - Tracks Salesforce-specific project metadata
+
+#### Changed
+
+- **Language Detection**
+  - Added "Apex" and "Apex Trigger" to language map
+  - File extensions: .cls, .trigger
+
+- **Framework Detection**
+  - Added "Salesforce DX" framework indicator
+  - Detects via sfdx-project.json
+
+#### Test Results
+
+All tests passing:
+- 169 unit tests (was 157)
+- 12 new Apex-specific tests
+- 11 adapter tests still passing
+- Salesforce project correctly detected
+
+#### Documentation
+
+- Updated README.md with Salesforce section
+- Updated README.es.md (Spanish)
+- Added Apex to supported languages list
+
 ## [1.3.0] - 2026-03-22
 
 ### 🚀 Release v1.3.0 - AST-Based Semantic Analysis

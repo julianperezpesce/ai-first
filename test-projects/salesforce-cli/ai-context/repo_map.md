@@ -1,5 +1,5 @@
 # Repository Map
-## ai
+## .ai-dev
   - account.json
   - ai_context.md
   - ai_rules.md
@@ -18,11 +18,27 @@
   - project.json
   - repo_map.json
   - repo_map.md
-  - repo-map.json
   - schema.json
   - summary.md
   - symbol-graph.json
   - symbol-references.json
+  - symbols.json
+  - tech_stack.md
+  - tools.json
+
+## ai-context
+  - ai_context.md
+  - ai_rules.md
+  - architecture.md
+  - conventions.md
+  - dependencies.json
+  - entrypoints.md
+  - modules.json
+  - project.json
+  - repo_map.json
+  - repo_map.md
+  - schema.json
+  - summary.md
   - symbols.json
   - tech_stack.md
   - tools.json
@@ -38,7 +54,7 @@
 
 
 # Repository Structure (Tree View)
-├── ai/
+├── .ai-dev/
 │   ├── context/
 │   │   ├── features/
 │   │   │   └── force-app.json
@@ -61,7 +77,22 @@
 │   ├── index-state.json
 │   ├── modules.json
 │   ├── project.json
-│   ├── repo-map.json
+│   ├── repo_map.json
+│   ├── repo_map.md
+│   ├── schema.json
+│   ├── summary.md
+│   ├── symbols.json
+│   ├── tech_stack.md
+│   └── tools.json
+├── ai-context/
+│   ├── ai_context.md
+│   ├── ai_rules.md
+│   ├── architecture.md
+│   ├── conventions.md
+│   ├── dependencies.json
+│   ├── entrypoints.md
+│   ├── modules.json
+│   ├── project.json
 │   ├── repo_map.json
 │   ├── repo_map.md
 │   ├── schema.json
