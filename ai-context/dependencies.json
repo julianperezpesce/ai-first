@@ -1,6 +1,6 @@
 {
-  "totalDependencies": 452,
-  "totalModules": 113,
+  "totalDependencies": 517,
+  "totalModules": 125,
   "dependencies": [
     {
       "source": "docs/.vitepress/theme/index.ts",
@@ -179,6 +179,11 @@
     },
     {
       "source": "src/analyzers/symbols.ts",
+      "target": "src/core/parsers/index.js",
+      "type": "import"
+    },
+    {
+      "source": "src/analyzers/symbols.ts",
       "target": "src/core/repoScanner.js",
       "type": "import"
     },
@@ -188,6 +193,11 @@
       "type": "import"
     },
     {
+      "source": "src/analyzers/symbols.ts",
+      "target": "src/core/parsers/index.js",
+      "type": "import"
+    },
+    {
       "source": "src/analyzers/techStack.ts",
       "target": "src/core/repoScanner.js",
       "type": "import"
@@ -235,6 +245,11 @@
     {
       "source": "src/commands/ai-first.ts",
       "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/utils/constants.js",
       "type": "import"
     },
     {
@@ -365,6 +380,11 @@
     {
       "source": "src/commands/ai-first.ts",
       "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/commands/ai-first.ts",
+      "target": "src/utils/constants.js",
       "type": "import"
     },
     {
@@ -714,7 +734,17 @@
     },
     {
       "source": "src/core/ccp.ts",
+      "target": "src/utils/constants.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/ccp.ts",
       "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/ccp.ts",
+      "target": "src/utils/constants.js",
       "type": "import"
     },
     {
@@ -748,6 +778,26 @@
       "type": "import"
     },
     {
+      "source": "src/core/generation/aiContextGenerator.ts",
+      "target": "src/core/analysis/architectureDetector.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/generation/aiContextGenerator.ts",
+      "target": "src/core/analysis/architectureDetector.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/generation/architectureGenerator.ts",
+      "target": "src/core/analysis/architectureDetector.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/generation/architectureGenerator.ts",
+      "target": "src/core/analysis/architectureDetector.js",
+      "type": "import"
+    },
+    {
       "source": "src/core/gitAnalyzer.ts",
       "target": "src/utils/fileUtils.js",
       "type": "import"
@@ -764,7 +814,17 @@
     },
     {
       "source": "src/core/hierarchyGenerator.ts",
+      "target": "src/utils/constants.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/hierarchyGenerator.ts",
       "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/hierarchyGenerator.ts",
+      "target": "src/utils/constants.js",
       "type": "import"
     },
     {
@@ -948,6 +1008,126 @@
       "type": "import"
     },
     {
+      "source": "src/core/parsers/index.ts",
+      "target": "src/core/parsers/typescriptParser.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/parsers/index.ts",
+      "target": "src/core/parsers/pythonParser.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/parsers/index.ts",
+      "target": "src/analyzers/symbols.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/parsers/index.ts",
+      "target": "src/core/parsers/typescriptParser.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/parsers/index.ts",
+      "target": "src/core/parsers/pythonParser.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/parsers/index.ts",
+      "target": "src/analyzers/symbols.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/pipeline.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/pipeline.ts",
+      "target": "src/analyzers/symbols.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/pipeline.ts",
+      "target": "src/core/parsers/index.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/pipeline.ts",
+      "target": "src/core/analysis/architectureDetector.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/pipeline.ts",
+      "target": "src/core/analysis/dependencyAnalyzer.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/pipeline.ts",
+      "target": "src/core/generation/aiContextGenerator.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/pipeline.ts",
+      "target": "src/core/generation/flowGenerator.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/pipeline.ts",
+      "target": "src/core/generation/architectureGenerator.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/pipeline.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/pipeline.ts",
+      "target": "src/core/repoScanner.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/pipeline.ts",
+      "target": "src/analyzers/symbols.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/pipeline.ts",
+      "target": "src/core/parsers/index.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/pipeline.ts",
+      "target": "src/core/analysis/architectureDetector.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/pipeline.ts",
+      "target": "src/core/analysis/dependencyAnalyzer.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/pipeline.ts",
+      "target": "src/core/generation/aiContextGenerator.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/pipeline.ts",
+      "target": "src/core/generation/flowGenerator.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/pipeline.ts",
+      "target": "src/core/generation/architectureGenerator.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/pipeline.ts",
+      "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
       "source": "src/core/repoMapper.ts",
       "target": "src/core/repoScanner.js",
       "type": "import"
@@ -984,7 +1164,17 @@
     },
     {
       "source": "src/core/semanticContexts.ts",
+      "target": "src/core/adapters/baseAdapter.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/semanticContexts.ts",
       "target": "src/utils/fileUtils.js",
+      "type": "import"
+    },
+    {
+      "source": "src/core/semanticContexts.ts",
+      "target": "src/core/adapters/baseAdapter.js",
       "type": "import"
     },
     {
@@ -2193,6 +2383,36 @@
       "type": "import"
     },
     {
+      "source": "tests/analysis.test.ts",
+      "target": "src/core/analysis/index.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/analysis.test.ts",
+      "target": "src/core/analysis/index.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/architectureDetector.test.ts",
+      "target": "src/core/analysis/architectureDetector.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/architectureDetector.test.ts",
+      "target": "src/core/analysis/architectureDetector.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/generation.test.ts",
+      "target": "src/core/generation/index.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/generation.test.ts",
+      "target": "src/core/generation/index.js",
+      "type": "import"
+    },
+    {
       "source": "tests/gitAnalyzer.test.ts",
       "target": "src/core/gitAnalyzer.js",
       "type": "import"
@@ -2243,6 +2463,91 @@
       "type": "import"
     },
     {
+      "source": "tests/parserRegistry.test.ts",
+      "target": "src/core/parsers/index.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/parserRegistry.test.ts",
+      "target": "src/core/parsers/index.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/phase2-fixes.test.ts",
+      "target": "src/analyzers/symbols.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/phase2-fixes.test.ts",
+      "target": "src/core/semanticContexts.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/phase2-fixes.test.ts",
+      "target": "tests/authController",
+      "type": "require"
+    },
+    {
+      "source": "tests/phase2-fixes.test.ts",
+      "target": "src/analyzers/symbols.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/phase2-fixes.test.ts",
+      "target": "src/core/semanticContexts.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/pipeline.integration.test.ts",
+      "target": "src/core/pipeline",
+      "type": "import"
+    },
+    {
+      "source": "tests/pipeline.integration.test.ts",
+      "target": "src/core/repoScanner",
+      "type": "import"
+    },
+    {
+      "source": "tests/pipeline.integration.test.ts",
+      "target": "tests/services/userService",
+      "type": "import"
+    },
+    {
+      "source": "tests/pipeline.integration.test.ts",
+      "target": "tests/config",
+      "type": "import"
+    },
+    {
+      "source": "tests/pipeline.integration.test.ts",
+      "target": "src/core/pipeline",
+      "type": "import"
+    },
+    {
+      "source": "tests/pipeline.integration.test.ts",
+      "target": "src/core/repoScanner",
+      "type": "import"
+    },
+    {
+      "source": "tests/pipeline.integration.test.ts",
+      "target": "tests/services/userService",
+      "type": "import"
+    },
+    {
+      "source": "tests/pipeline.integration.test.ts",
+      "target": "tests/config",
+      "type": "import"
+    },
+    {
+      "source": "tests/pythonParser.test.ts",
+      "target": "src/core/parsers/pythonParser",
+      "type": "import"
+    },
+    {
+      "source": "tests/pythonParser.test.ts",
+      "target": "src/core/parsers/pythonParser",
+      "type": "import"
+    },
+    {
       "source": "tests/schema.test.ts",
       "target": "src/core/schema.js",
       "type": "import"
@@ -2260,6 +2565,26 @@
     {
       "source": "tests/semanticContexts.test.ts",
       "target": "src/core/semanticContexts.js",
+      "type": "import"
+    },
+    {
+      "source": "tests/typescriptParser.test.ts",
+      "target": "src/core/parsers/typescriptParser",
+      "type": "import"
+    },
+    {
+      "source": "tests/typescriptParser.test.ts",
+      "target": "tests/user.entity",
+      "type": "import"
+    },
+    {
+      "source": "tests/typescriptParser.test.ts",
+      "target": "src/core/parsers/typescriptParser",
+      "type": "import"
+    },
+    {
+      "source": "tests/typescriptParser.test.ts",
+      "target": "tests/user.entity",
       "type": "import"
     }
   ],
@@ -2316,8 +2641,10 @@
     "src/analyzers/symbols.ts": [
       "src/core/repoScanner.js",
       "src/utils/fileUtils.js",
+      "src/core/parsers/index.js",
       "src/core/repoScanner.js",
-      "src/utils/fileUtils.js"
+      "src/utils/fileUtils.js",
+      "src/core/parsers/index.js"
     ],
     "src/analyzers/techStack.ts": [
       "src/core/repoScanner.js",
@@ -2332,6 +2659,7 @@
       "src/core/aiContextGenerator.js",
       "src/core/hierarchyGenerator.js",
       "src/utils/fileUtils.js",
+      "src/utils/constants.js",
       "src/analyzers/architecture.js",
       "src/analyzers/techStack.js",
       "src/analyzers/entrypoints.js",
@@ -2358,6 +2686,7 @@
       "src/core/aiContextGenerator.js",
       "src/core/hierarchyGenerator.js",
       "src/utils/fileUtils.js",
+      "src/utils/constants.js",
       "src/analyzers/architecture.js",
       "src/analyzers/techStack.js",
       "src/analyzers/entrypoints.js",
@@ -2459,7 +2788,9 @@
     ],
     "src/core/ccp.ts": [
       "src/utils/fileUtils.js",
-      "src/utils/fileUtils.js"
+      "src/utils/constants.js",
+      "src/utils/fileUtils.js",
+      "src/utils/constants.js"
     ],
     "src/core/contextPacket.ts": [
       "src/core/symbolGraph.js",
@@ -2471,13 +2802,23 @@
       "src/core/chunker.js",
       "src/core/chunker.js"
     ],
+    "src/core/generation/aiContextGenerator.ts": [
+      "src/core/analysis/architectureDetector.js",
+      "src/core/analysis/architectureDetector.js"
+    ],
+    "src/core/generation/architectureGenerator.ts": [
+      "src/core/analysis/architectureDetector.js",
+      "src/core/analysis/architectureDetector.js"
+    ],
     "src/core/gitAnalyzer.ts": [
       "src/utils/fileUtils.js",
       "src/utils/fileUtils.js"
     ],
     "src/core/hierarchyGenerator.ts": [
       "src/utils/fileUtils.js",
-      "src/utils/fileUtils.js"
+      "src/utils/constants.js",
+      "src/utils/fileUtils.js",
+      "src/utils/constants.js"
     ],
     "src/core/incrementalAnalyzer.ts": [
       "src/utils/fileUtils.js",
@@ -2525,6 +2866,34 @@
       "src/core/repoScanner.js",
       "src/core/repoScanner.js"
     ],
+    "src/core/parsers/index.ts": [
+      "src/core/parsers/typescriptParser.js",
+      "src/core/parsers/pythonParser.js",
+      "src/analyzers/symbols.js",
+      "src/core/parsers/typescriptParser.js",
+      "src/core/parsers/pythonParser.js",
+      "src/analyzers/symbols.js"
+    ],
+    "src/core/pipeline.ts": [
+      "src/core/repoScanner.js",
+      "src/analyzers/symbols.js",
+      "src/core/parsers/index.js",
+      "src/core/analysis/architectureDetector.js",
+      "src/core/analysis/dependencyAnalyzer.js",
+      "src/core/generation/aiContextGenerator.js",
+      "src/core/generation/flowGenerator.js",
+      "src/core/generation/architectureGenerator.js",
+      "src/utils/fileUtils.js",
+      "src/core/repoScanner.js",
+      "src/analyzers/symbols.js",
+      "src/core/parsers/index.js",
+      "src/core/analysis/architectureDetector.js",
+      "src/core/analysis/dependencyAnalyzer.js",
+      "src/core/generation/aiContextGenerator.js",
+      "src/core/generation/flowGenerator.js",
+      "src/core/generation/architectureGenerator.js",
+      "src/utils/fileUtils.js"
+    ],
     "src/core/repoMapper.ts": [
       "src/core/repoScanner.js",
       "src/core/repoScanner.js"
@@ -2539,7 +2908,9 @@
     ],
     "src/core/semanticContexts.ts": [
       "src/utils/fileUtils.js",
-      "src/utils/fileUtils.js"
+      "src/core/adapters/baseAdapter.js",
+      "src/utils/fileUtils.js",
+      "src/core/adapters/baseAdapter.js"
     ],
     "src/core/symbolGraph.ts": [
       "src/core/repoScanner.js",
@@ -2916,6 +3287,18 @@
       "src/core/adapters/index.js",
       "src/core/adapters/index.js"
     ],
+    "tests/analysis.test.ts": [
+      "src/core/analysis/index.js",
+      "src/core/analysis/index.js"
+    ],
+    "tests/architectureDetector.test.ts": [
+      "src/core/analysis/architectureDetector.js",
+      "src/core/analysis/architectureDetector.js"
+    ],
+    "tests/generation.test.ts": [
+      "src/core/generation/index.js",
+      "src/core/generation/index.js"
+    ],
     "tests/gitAnalyzer.test.ts": [
       "src/core/gitAnalyzer.js",
       "src/core/gitAnalyzer.js"
@@ -2934,6 +3317,31 @@
       "src/core/lazyAnalyzer.js",
       "tests/auth"
     ],
+    "tests/parserRegistry.test.ts": [
+      "src/core/parsers/index.js",
+      "src/core/parsers/index.js"
+    ],
+    "tests/phase2-fixes.test.ts": [
+      "src/analyzers/symbols.js",
+      "src/core/semanticContexts.js",
+      "tests/authController",
+      "src/analyzers/symbols.js",
+      "src/core/semanticContexts.js"
+    ],
+    "tests/pipeline.integration.test.ts": [
+      "src/core/pipeline",
+      "src/core/repoScanner",
+      "tests/services/userService",
+      "tests/config",
+      "src/core/pipeline",
+      "src/core/repoScanner",
+      "tests/services/userService",
+      "tests/config"
+    ],
+    "tests/pythonParser.test.ts": [
+      "src/core/parsers/pythonParser",
+      "src/core/parsers/pythonParser"
+    ],
     "tests/schema.test.ts": [
       "src/core/schema.js",
       "src/core/schema.js"
@@ -2941,6 +3349,12 @@
     "tests/semanticContexts.test.ts": [
       "src/core/semanticContexts.js",
       "src/core/semanticContexts.js"
+    ],
+    "tests/typescriptParser.test.ts": [
+      "src/core/parsers/typescriptParser",
+      "tests/user.entity",
+      "src/core/parsers/typescriptParser",
+      "tests/user.entity"
     ]
   }
 }

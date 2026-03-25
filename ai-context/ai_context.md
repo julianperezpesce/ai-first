@@ -7,9 +7,9 @@
 ## Quick Overview
 
 - **Pattern**: Flat / Simple Structure
-- **Languages**: JSON, Markdown, TypeScript, CSS, Python, JavaScript, PHP, Ruby, TypeScript (React), Java
+- **Languages**: Markdown, JSON, YAML, TypeScript, CSS, Ruby, Python, JavaScript, PHP, TypeScript (React), Java
 - **Frameworks**: Vue.js, Nuxt.js, TypeScript
-- **Total Files**: 565
+- **Total Files**: 871
 
 ---
 
@@ -26,7 +26,7 @@
 
 ## Tech Stack
 
-**Languages**: JSON, Markdown, TypeScript, CSS, Python, JavaScript, PHP, Ruby, TypeScript (React), Java
+**Languages**: Markdown, JSON, YAML, TypeScript, CSS, Ruby, Python, JavaScript, PHP, TypeScript (React), Java
 
 **Frameworks**: Vue.js, Nuxt.js, TypeScript
 
@@ -47,16 +47,16 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
+| `.ai-dev` | Contains 50 files |
+| `.github` | Contains 1 files |
 | `.netlify` | Contains 1 files |
 | `ANALISIS_COMPLETO.md` | Contains 0 files |
 | `ANALISIS_MEJORAS.md` | Contains 0 files |
-| `BUGS.md` | Contains 0 files |
 | `CHANGELOG.md` | Contains 0 files |
 | `CONTRIBUTING.md` | Contains 0 files |
 | `FLOW.md` | Contains 0 files |
-| `PLAN_MEJORAS.md` | Contains 0 files |
-| `README.es.md` | Contains 0 files |
-| `README.md` | Contains 0 files |
+| `PLAN_DE_MEJORAS.md` | Contains 0 files |
+| `PLAN_DE_TESTS.md` | Testing utilities and mocks |
 
 
 ---
@@ -69,7 +69,7 @@
 - `src/core/adapters/community/index.ts` - Entry point
 
 ### Cli
-- `dist/commands/ai-first.js` - CLI: ai-first
+- `dist/commands/ai-first.js` - CLI: af
 
 ### Build
 - `package.json#scripts.build` - build: tsc
@@ -103,7 +103,7 @@
 
 ## AI Rules
 
-- Language: Use JSON, Markdown, TypeScript, CSS, Python, JavaScript, PHP, Ruby, TypeScript (React), Java
+- Language: Use Markdown, JSON, YAML, TypeScript, CSS, Ruby, Python, JavaScript, PHP, TypeScript (React), Java
 - Frameworks: Vue.js, Nuxt.js, TypeScript
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase

@@ -484,6 +484,24 @@ af detecta e indexa automáticamente proyectos Android/Kotlin:
 - `ai-context/android-resources.json` - Layouts, drawables, values (si existe res/)
 - `ai-context/gradle-modules.json` - Estructura multi-módulo (si existe settings.gradle)
 
+### Soporte Salesforce (NUEVO ✅)
+
+af detecta e indexa automáticamente proyectos Salesforce/Apex:
+
+- **Detección de lenguaje**: Apex (.cls, .trigger)
+- **Detección de framework**: Salesforce DX (vía sfdx-project.json)
+- **Extracción de símbolos**: Clases, interfaces, métodos, triggers
+- **Detección de SObjects**: Detecta automáticamente SObjects desde definiciones de triggers
+- **Versión de API**: Lee sourceApiVersion desde sfdx-project.json
+- **Puntos de entrada**: Clases Apex, triggers, métodos @AuraEnabled, métodos webservice
+
+### Archivos generados para proyectos Salesforce
+
+- `ai-context/tech_stack.md` - Muestra Salesforce con lenguaje Apex
+- `ai-context/salesforce.json` - Metadatos específicos de Salesforce (apiVersion, sObjects, apexClasses, triggers)
+- `ai-context/entrypoints.md` - Clases Apex, triggers y métodos
+- `ai-context/symbols.json` - Todos los símbolos Apex extraídos con números de línea
+
 ---
 
 ## 📄 Licencia

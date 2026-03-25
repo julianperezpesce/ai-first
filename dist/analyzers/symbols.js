@@ -407,7 +407,7 @@ function parseApex(file, content, lines, symbols) {
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i].trim();
         // Classes: public with sharing class ClassName, public class ClassName, etc.
-        const classMatch = line.match(/^(?:public\s+(?:with\s+sharing|without\s+sharing|inherited\s+sharing)\s+)?class\s+(\w+)/);
+        const classMatch = line.match(/^(?:\s*(?:public|private|global)(?:\s+(?:with|without|inherited)\s+sharing)?\s+)?class\s+(\w+)/);
         if (classMatch) {
             symbols.push({
                 id: generateSymbolId(file.relativePath, classMatch[1]),

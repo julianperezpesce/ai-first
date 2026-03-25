@@ -16,6 +16,14 @@ export interface TechStack {
         gradleVersion?: string;
         kotlinVersion?: string;
     };
+    salesforce?: {
+        apiVersion?: string;
+        packageDirectories?: string[];
+        namespace?: string;
+        sObjects?: string[];
+        apexClasses?: number;
+        triggers?: number;
+    };
 }
 /**
  * Detect technology stack from repository

@@ -1,9 +1,0 @@
-{
-  "name": "login",
-  "entrypoint": "test-projects/react-app/src/pages/LoginPage.tsx",
-  "files": [
-    "test-projects/react-app/src/pages/LoginPage.tsx"
-  ],
-  "depth": 0,
-  "layers": []
-}
