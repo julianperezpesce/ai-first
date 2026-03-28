@@ -69,6 +69,9 @@ function parseFileForSymbols(file) {
         else if (file.extension === "rb") {
             parseRuby(file, content, lines, symbols);
         }
+        else if (file.extension === "swift") {
+            parseSwift(file, content, lines, symbols);
+        }
     }
     catch { }
     return symbols;
@@ -401,11 +404,92 @@ function parseRuby(file, content, lines, symbols) {
     }
 }
 /**
+ * Parse Swift files
+ */
+function parseSwift(file, content, lines, symbols) {
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+        // Classes/Structs: struct ViewName, class ClassName
+        const structMatch = line.match(/^(?:struct|class)\s+(\w+)/);
+        if (structMatch) {
+            symbols.push({
+                id: generateSymbolId(file.relativePath, structMatch[1]),
+                name: structMatch[1],
+                type: "class",
+                file: file.relativePath,
+                line: i + 1,
+                export: line.startsWith("struct") || line.startsWith("class"),
+            });
+        }
+        // Functions: func functionName
+        const funcMatch = line.match(/^func\s+(\w+)/);
+        if (funcMatch) {
+            symbols.push({
+                id: generateSymbolId(file.relativePath, funcMatch[1]),
+                name: funcMatch[1],
+                type: "function",
+                file: file.relativePath,
+                line: i + 1,
+                export: true,
+            });
+        }
+        // Enums: enum EnumName
+        const enumMatch = line.match(/^enum\s+(\w+)/);
+        if (enumMatch) {
+            symbols.push({
+                id: generateSymbolId(file.relativePath, enumMatch[1]),
+                name: enumMatch[1],
+                type: "enum",
+                file: file.relativePath,
+                line: i + 1,
+                export: true,
+            });
+        }
+        // Protocols: protocol ProtocolName
+        const protocolMatch = line.match(/^protocol\s+(\w+)/);
+        if (protocolMatch) {
+            symbols.push({
+                id: generateSymbolId(file.relativePath, protocolMatch[1]),
+                name: protocolMatch[1],
+                type: "interface",
+                file: file.relativePath,
+                line: i + 1,
+                export: true,
+            });
+        }
+        // Constants: let CONST_NAME or var CONST_NAME
+        const constMatch = line.match(/^(?:let|var)\s+([A-Z][A-Z0-9_]*)/);
+        if (constMatch) {
+            symbols.push({
+                id: generateSymbolId(file.relativePath, constMatch[1]),
+                name: constMatch[1],
+                type: "const",
+                file: file.relativePath,
+                line: i + 1,
+                export: true,
+            });
+        }
+    }
+}
+/**
  * Parse Apex (Salesforce) files
  */
 function parseApex(file, content, lines, symbols) {
+    // Track annotations across lines
+    let pendingAnnotations = [];
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i].trim();
+        // Skip empty lines
+        if (!line) {
+            continue;
+        }
+        // Collect annotations (@AuraEnabled, @IsTest, etc.) - handles both single-line and multi-line
+        // Match patterns like @AuraEnabled, @AuraEnabled(cacheable=true), @IsTest
+        const annotationMatch = line.match(/^@(\w+)(?:\s*\([^)]*\))?\s*$/);
+        if (annotationMatch) {
+            pendingAnnotations.push(annotationMatch[1]);
+            continue;
+        }
         // Classes: public with sharing class ClassName, public class ClassName, etc.
         const classMatch = line.match(/^(?:\s*(?:public|private|global)(?:\s+(?:with|without|inherited)\s+sharing)?\s+)?class\s+(\w+)/);
         if (classMatch) {
@@ -417,6 +501,8 @@ function parseApex(file, content, lines, symbols) {
                 line: i + 1,
                 export: true,
             });
+            pendingAnnotations = [];
+            continue;
         }
         // Interfaces
         const interfaceMatch = line.match(/^(?:public\s+)?interface\s+(\w+)/);
@@ -429,10 +515,15 @@ function parseApex(file, content, lines, symbols) {
                 line: i + 1,
                 export: true,
             });
+            pendingAnnotations = [];
+            continue;
         }
         // Methods: public static ReturnType methodName(
         // Also handles @AuraEnabled public static ReturnType methodName(
-        const methodMatch = line.match(/^(?:@\w+\s+)?(?:public|private|protected|global)\s+(?:static\s+)?(?:\w+)\s+(\w+)\s*\(/);
+        // Also handles @AuraEnabled(cacheable=true) on separate line
+        // Handles generic return types like List<Account>, Map<String, Object>
+        // Also handles webservice methods
+        const methodMatch = line.match(/^(?:@\w+(?:\s*\([^)]*\))?\s+)?(?:public|private|protected|global|webservice)\s+(?:static\s+)?(?:[\w<>,\s]+?)\s+(\w+)\s*\(/);
         if (methodMatch && !["if", "for", "while", "switch"].includes(methodMatch[1])) {
             symbols.push({
                 id: generateSymbolId(file.relativePath, methodMatch[1]),
@@ -440,8 +531,27 @@ function parseApex(file, content, lines, symbols) {
                 type: "function",
                 file: file.relativePath,
                 line: i + 1,
-                export: line.includes("public") || line.includes("global"),
+                export: line.includes("public") || line.includes("global") || line.includes("webservice"),
             });
+            pendingAnnotations = [];
+            continue;
+        }
+        // Alternative: Method with annotations on previous lines
+        // Check if we have pending annotations and current line looks like a method
+        if (pendingAnnotations.length > 0) {
+            const methodWithAnnotationMatch = line.match(/^(?:public|private|protected|global|webservice)\s+(?:static\s+)?(?:[\w<>,\s]+?)\s+(\w+)\s*\(/);
+            if (methodWithAnnotationMatch && !["if", "for", "while", "switch"].includes(methodWithAnnotationMatch[1])) {
+                symbols.push({
+                    id: generateSymbolId(file.relativePath, methodWithAnnotationMatch[1]),
+                    name: methodWithAnnotationMatch[1],
+                    type: "function",
+                    file: file.relativePath,
+                    line: i + 1,
+                    export: line.includes("public") || line.includes("global") || line.includes("webservice"),
+                });
+                pendingAnnotations = [];
+                continue;
+            }
         }
         // Triggers: trigger TriggerName on ObjectName
         const triggerMatch = line.match(/^trigger\s+(\w+)\s+on\s+(\w+)/);
@@ -454,6 +564,12 @@ function parseApex(file, content, lines, symbols) {
                 line: i + 1,
                 export: true,
             });
+            pendingAnnotations = [];
+            continue;
+        }
+        // Reset pending annotations if we encounter non-annotation, non-method line
+        if (!line.startsWith("@")) {
+            pendingAnnotations = [];
         }
     }
 }
