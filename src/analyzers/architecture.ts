@@ -27,7 +27,7 @@ export function analyzeArchitecture(
   const extensions = Array.from(groupByExtension(files).keys());
   
   // Detect patterns based on directory structure
-  const patterns = detectPatterns(directories, extensions);
+  const patterns = detectPatterns(directories, extensions, files);
   
   // Identify layers
   const layers = detectLayers(directories);
@@ -49,7 +49,7 @@ export function analyzeArchitecture(
 /**
  * Detect architecture patterns from directory structure
  */
-function detectPatterns(directories: string[], extensions: string[]): string[] {
+function detectPatterns(directories: string[], extensions: string[], files: FileInfo[]): string[] {
   const patterns: string[] = [];
   const dirs = directories.filter(d => d && d !== "root");
   
@@ -86,9 +86,38 @@ function detectPatterns(directories: string[], extensions: string[]): string[] {
     patterns.push("Monorepo");
   }
   
-  // Microservices
-  if (dirs.some(d => d.includes("services") || d.includes("api")) && dirs.length > 3) {
+  // Microservices - check for multiple service subdirectories
+  const serviceSubdirs = new Set<string>();
+  const apiSubdirs = new Set<string>();
+  const versionPattern = /^v?\d+$/i;
+  
+  for (const file of files) {
+    const parts = file.relativePath.split("/");
+    // Check for services/*/ pattern (must be an actual subdirectory, not a file)
+    const servicesIndex = parts.indexOf("services");
+    if (servicesIndex >= 0 && servicesIndex < parts.length - 2) {
+      // parts.length - 2 ensures there's at least one directory after 'services' before the file
+      const subdir = parts[servicesIndex + 1];
+      if (!versionPattern.test(subdir)) {
+        serviceSubdirs.add(subdir);
+      }
+    }
+    // Check for api/*/ pattern at root level (must be an actual subdirectory)
+    if (parts[0] === "api" && parts.length > 2) {
+      // parts.length > 2 ensures there's at least one directory after 'api' before the file
+      const subdir = parts[1];
+      if (!versionPattern.test(subdir)) {
+        apiSubdirs.add(subdir);
+      }
+    }
+  }
+  
+  if (serviceSubdirs.size >= 2 || apiSubdirs.size >= 2) {
     patterns.push("Microservices");
+  } else if (dirs.some(d => d === "services" || d === "api") ||
+             files.some(f => f.relativePath.includes("/services/") || f.relativePath.includes("/api/")) ||
+             serviceSubdirs.size === 1 || apiSubdirs.size === 1) {
+    patterns.push("API Server");
   }
   
   // Serverless / Functions
@@ -217,8 +246,48 @@ function inferModuleResponsibility(dir: string, extensions: string[]): string {
   if (name.includes("auth") || name.includes("security") || name.includes("login")) {
     return "Authentication and authorization";
   }
-  
-  return `Contains ${extensions.length} files`;
+
+  // Infer from file types
+  const uniqueExts = [...new Set(extensions)];
+  if (uniqueExts.includes("ts") || uniqueExts.includes("tsx") || uniqueExts.includes("js") || uniqueExts.includes("jsx")) {
+    if (uniqueExts.includes("css") || uniqueExts.includes("scss") || uniqueExts.includes("less")) {
+      return "Frontend components and styling";
+    }
+    return "JavaScript/TypeScript implementation";
+  }
+  if (uniqueExts.includes("py")) {
+    return "Python implementation";
+  }
+  if (uniqueExts.includes("java")) {
+    return "Java implementation";
+  }
+  if (uniqueExts.includes("go")) {
+    return "Go implementation";
+  }
+  if (uniqueExts.includes("rs")) {
+    return "Rust implementation";
+  }
+  if (uniqueExts.includes("php")) {
+    return "PHP implementation";
+  }
+  if (uniqueExts.includes("rb")) {
+    return "Ruby implementation";
+  }
+  if (uniqueExts.includes("swift")) {
+    return "Swift implementation";
+  }
+  if (uniqueExts.includes("kt")) {
+    return "Kotlin implementation";
+  }
+  if (uniqueExts.includes("cls") || uniqueExts.includes("trigger")) {
+    return "Apex/Salesforce implementation";
+  }
+
+  // Fallback based on file count
+  if (extensions.length === 1) {
+    return "Single file module";
+  }
+  return `Module with ${extensions.length} source files`;
 }
 
 /**

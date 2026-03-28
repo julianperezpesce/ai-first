@@ -96,6 +96,33 @@ export function discoverEntrypoints(files: FileInfo[], rootDir: string): Entrypo
     } catch {}
   }
   
+  // Detect Go entrypoints
+  const goFiles = files.filter(f => f.extension === "go");
+  if (goFiles.length > 0) {
+    try {
+      const goEntrypoints = discoverGoEntrypoints(goFiles, rootDir);
+      entrypoints.push(...goEntrypoints);
+    } catch {}
+  }
+  
+  // Detect Rust entrypoints
+  const rustFiles = files.filter(f => f.extension === "rs");
+  if (rustFiles.length > 0) {
+    try {
+      const rustEntrypoints = discoverRustEntrypoints(rustFiles, rootDir);
+      entrypoints.push(...rustEntrypoints);
+    } catch {}
+  }
+  
+  // Detect PHP entrypoints
+  const phpFiles = files.filter(f => f.extension === "php");
+  if (phpFiles.length > 0) {
+    try {
+      const phpEntrypoints = discoverPHPEntrypoints(phpFiles, rootDir);
+      entrypoints.push(...phpEntrypoints);
+    } catch {}
+  }
+  
   return entrypoints;
 }
 
@@ -274,6 +301,264 @@ function getScriptType(name: string): Entrypoint["type"] | null {
   if (l.includes("lint")) return "lint";
   if (l.includes("format")) return "formatter";
   return null;
+}
+
+function discoverGoEntrypoints(goFiles: FileInfo[], rootDir: string): Entrypoint[] {
+  const entrypoints: Entrypoint[] = [];
+  
+  for (const file of goFiles) {
+    try {
+      const content = readFile(path.join(rootDir, file.relativePath));
+      const fileName = file.name;
+      
+      if (fileName === "main.go") {
+        const hasMain = content.match(/func\s+main\s*\(\s*\)/);
+        const packageMatch = content.match(/package\s+(\w+)/);
+        const packageName = packageMatch ? packageMatch[1] : "main";
+        
+        const handlers: string[] = [];
+        const handlerMatches = content.matchAll(/http\.HandleFunc\s*\(\s*["']([^"']+)["']/g);
+        for (const match of handlerMatches) {
+          handlers.push(match[1]);
+        }
+        
+        const portMatches = content.matchAll(/:\s*(\d{2,5})/g);
+        const ports: string[] = [];
+        for (const match of portMatches) {
+          ports.push(match[1]);
+        }
+        
+        let description = `Go main package (${packageName})`;
+        if (handlers.length > 0) {
+          description += ` with HTTP handlers: ${handlers.join(", ")}`;
+        }
+        if (ports.length > 0) {
+          description += ` on port${ports.length > 1 ? "s" : ""} :${ports.join(", :")}`;
+        }
+        
+        entrypoints.push({
+          name: "main.go",
+          path: file.relativePath,
+          type: hasMain ? "server" : "library",
+          description,
+        });
+      } else {
+        const structMatches = content.matchAll(/type\s+(\w+)\s+struct/g);
+        const structs: string[] = [];
+        for (const match of structMatches) {
+          structs.push(match[1]);
+        }
+        
+        const methodMatches = content.matchAll(/func\s*\(?\s*\*?\s*(\w+)\s*\)?\s*(\w+)\s*\(/g);
+        const methods: string[] = [];
+        for (const match of methodMatches) {
+          methods.push(match[2]);
+        }
+        
+        if (structs.length > 0 || methods.length > 0) {
+          let description = "Go module";
+          if (structs.length > 0) {
+            description += ` with structs: ${structs.slice(0, 3).join(", ")}`;
+          }
+          if (methods.length > 0) {
+            description += `, methods: ${methods.slice(0, 3).join(", ")}`;
+          }
+          
+          entrypoints.push({
+            name: fileName,
+            path: file.relativePath,
+            type: "library",
+            description,
+          });
+        }
+      }
+    } catch {}
+  }
+  
+  const goModPath = path.join(rootDir, "go.mod");
+  try {
+    const goMod = readFile(goModPath);
+    const moduleMatch = goMod.match(/module\s+(\S+)/);
+    if (moduleMatch) {
+      entrypoints.push({
+        name: "go.mod",
+        path: "go.mod",
+        type: "config",
+        description: `Go module: ${moduleMatch[1]}`,
+      });
+    }
+  } catch {}
+  
+  return entrypoints;
+}
+
+function discoverRustEntrypoints(rustFiles: FileInfo[], rootDir: string): Entrypoint[] {
+  const entrypoints: Entrypoint[] = [];
+  
+  for (const file of rustFiles) {
+    try {
+      const content = readFile(path.join(rootDir, file.relativePath));
+      const fileName = file.name;
+      
+      if (fileName === "main.rs") {
+        const hasMain = content.match(/fn\s+main\s*\(\s*\)/);
+        
+        const structMatches = content.matchAll(/struct\s+(\w+)/g);
+        const structs: string[] = [];
+        for (const match of structMatches) {
+          structs.push(match[1]);
+        }
+        
+        const implMatches = content.matchAll(/impl\s+(?:\w+\s+for\s+)?(\w+)/g);
+        const implementations: string[] = [];
+        for (const match of implMatches) {
+          implementations.push(match[1]);
+        }
+        
+        let description = "Rust main";
+        if (structs.length > 0) {
+          description += ` with structs: ${structs.slice(0, 3).join(", ")}`;
+        }
+        if (implementations.length > 0) {
+          description += `, implementations: ${implementations.slice(0, 3).join(", ")}`;
+        }
+        
+        entrypoints.push({
+          name: "main.rs",
+          path: file.relativePath,
+          type: hasMain ? "cli" : "library",
+          description,
+        });
+      } else if (fileName === "lib.rs") {
+        const pubFnMatches = content.matchAll(/pub\s+fn\s+(\w+)/g);
+        const publicFns: string[] = [];
+        for (const match of pubFnMatches) {
+          publicFns.push(match[1]);
+        }
+        
+        let description = "Rust library";
+        if (publicFns.length > 0) {
+          description += ` with public functions: ${publicFns.slice(0, 3).join(", ")}`;
+        }
+        
+        entrypoints.push({
+          name: "lib.rs",
+          path: file.relativePath,
+          type: "library",
+          description,
+        });
+      }
+    } catch {}
+  }
+  
+  const cargoPath = path.join(rootDir, "Cargo.toml");
+  try {
+    const cargoContent = readFile(cargoPath);
+    const nameMatch = cargoContent.match(/name\s*=\s*"([^"]+)"/);
+    const versionMatch = cargoContent.match(/version\s*=\s*"([^"]+)"/);
+    
+    let description = "Rust project";
+    if (nameMatch) {
+      description += `: ${nameMatch[1]}`;
+    }
+    if (versionMatch) {
+      description += ` v${versionMatch[1]}`;
+    }
+    
+    const binMatch = cargoContent.match(/\[\[bin\]\]/);
+    if (binMatch) {
+      description += " (has binaries)";
+    }
+    
+    entrypoints.push({
+      name: "Cargo.toml",
+      path: "Cargo.toml",
+      type: "config",
+      description,
+    });
+  } catch {}
+  
+  return entrypoints;
+}
+
+function discoverPHPEntrypoints(phpFiles: FileInfo[], rootDir: string): Entrypoint[] {
+  const entrypoints: Entrypoint[] = [];
+  
+  const hasIndexPhp = phpFiles.some(f => f.name === "index.php");
+  const hasPublicIndex = phpFiles.some(f => f.relativePath.includes("public/index.php"));
+  
+  if (hasIndexPhp) {
+    const indexFile = phpFiles.find(f => f.name === "index.php")!;
+    try {
+      const content = readFile(path.join(rootDir, indexFile.relativePath));
+      
+      const classMatches = content.matchAll(/class\s+(\w+)/g);
+      const classes: string[] = [];
+      for (const match of classMatches) {
+        classes.push(match[1]);
+      }
+      
+      const routes: string[] = [];
+      
+      // Match $router->get('/path') or $app->post('/path') patterns
+      const httpMethodMatches = content.matchAll(/->\s*(?:get|post|put|delete|patch)\s*\(\s*["']([^"']+)["']/g);
+      for (const match of httpMethodMatches) {
+        routes.push(match[1]);
+      }
+      
+      // Match $router->add('METHOD', '/path') patterns (second argument is the path)
+      const addMethodMatches = content.matchAll(/->\s*add\s*\(\s*["'][^"']+["']\s*,\s*["']([^"']+)["']/g);
+      for (const match of addMethodMatches) {
+        routes.push(match[1]);
+      }
+      
+      let description = "PHP entry point";
+      if (classes.length > 0) {
+        description += ` with classes: ${classes.slice(0, 3).join(", ")}`;
+      }
+      if (routes.length > 0) {
+        description += `, routes: ${routes.slice(0, 3).join(", ")}`;
+      }
+      
+      entrypoints.push({
+        name: "index.php",
+        path: indexFile.relativePath,
+        type: hasPublicIndex ? "server" : "api",
+        description,
+      });
+    } catch {}
+  }
+  
+  const composerPath = path.join(rootDir, "composer.json");
+  try {
+    const composer = readJsonFile(composerPath) as { name?: string; description?: string; require?: Record<string, string> };
+    
+    let description = "PHP project";
+    if (composer.name) {
+      description += `: ${composer.name}`;
+    }
+    if (composer.description) {
+      description += ` - ${composer.description}`;
+    }
+    
+    const hasLaravel = composer.require && (composer.require["laravel/framework"] || composer.require["illuminate/support"]);
+    const hasSymfony = composer.require && (composer.require["symfony/framework-bundle"] || composer.require["symfony/symfony"]);
+    
+    if (hasLaravel) {
+      description += " (Laravel)";
+    } else if (hasSymfony) {
+      description += " (Symfony)";
+    }
+    
+    entrypoints.push({
+      name: "composer.json",
+      path: "composer.json",
+      type: "config",
+      description,
+    });
+  } catch {}
+  
+  return entrypoints;
 }
 
 export function generateEntrypointsFile(entrypoints: Entrypoint[]): string {

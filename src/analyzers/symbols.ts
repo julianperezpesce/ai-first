@@ -533,8 +533,24 @@ function parseSwift(file: FileInfo, content: string, lines: string[], symbols: S
  * Parse Apex (Salesforce) files
  */
 function parseApex(file: FileInfo, content: string, lines: string[], symbols: Symbol[]): void {
+  // Track annotations across lines
+  let pendingAnnotations: string[] = [];
+
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim();
+
+    // Skip empty lines
+    if (!line) {
+      continue;
+    }
+
+    // Collect annotations (@AuraEnabled, @IsTest, etc.) - handles both single-line and multi-line
+    // Match patterns like @AuraEnabled, @AuraEnabled(cacheable=true), @IsTest
+    const annotationMatch = line.match(/^@(\w+)(?:\s*\([^)]*\))?\s*$/);
+    if (annotationMatch) {
+      pendingAnnotations.push(annotationMatch[1]);
+      continue;
+    }
     
     // Classes: public with sharing class ClassName, public class ClassName, etc.
     const classMatch = line.match(/^(?:\s*(?:public|private|global)(?:\s+(?:with|without|inherited)\s+sharing)?\s+)?class\s+(\w+)/);
@@ -547,6 +563,8 @@ function parseApex(file: FileInfo, content: string, lines: string[], symbols: Sy
         line: i + 1,
         export: true,
       });
+      pendingAnnotations = [];
+      continue;
     }
 
     // Interfaces
@@ -560,11 +578,16 @@ function parseApex(file: FileInfo, content: string, lines: string[], symbols: Sy
         line: i + 1,
         export: true,
       });
+      pendingAnnotations = [];
+      continue;
     }
 
     // Methods: public static ReturnType methodName(
     // Also handles @AuraEnabled public static ReturnType methodName(
-    const methodMatch = line.match(/^(?:@\w+\s+)?(?:public|private|protected|global)\s+(?:static\s+)?(?:\w+)\s+(\w+)\s*\(/);
+    // Also handles @AuraEnabled(cacheable=true) on separate line
+    // Handles generic return types like List<Account>, Map<String, Object>
+    // Also handles webservice methods
+    const methodMatch = line.match(/^(?:@\w+(?:\s*\([^)]*\))?\s+)?(?:public|private|protected|global|webservice)\s+(?:static\s+)?(?:[\w<>,\s]+?)\s+(\w+)\s*\(/);
     if (methodMatch && !["if", "for", "while", "switch"].includes(methodMatch[1])) {
       symbols.push({
         id: generateSymbolId(file.relativePath, methodMatch[1]),
@@ -572,8 +595,28 @@ function parseApex(file: FileInfo, content: string, lines: string[], symbols: Sy
         type: "function",
         file: file.relativePath,
         line: i + 1,
-        export: line.includes("public") || line.includes("global"),
+        export: line.includes("public") || line.includes("global") || line.includes("webservice"),
       });
+      pendingAnnotations = [];
+      continue;
+    }
+
+    // Alternative: Method with annotations on previous lines
+    // Check if we have pending annotations and current line looks like a method
+    if (pendingAnnotations.length > 0) {
+      const methodWithAnnotationMatch = line.match(/^(?:public|private|protected|global|webservice)\s+(?:static\s+)?(?:[\w<>,\s]+?)\s+(\w+)\s*\(/);
+      if (methodWithAnnotationMatch && !["if", "for", "while", "switch"].includes(methodWithAnnotationMatch[1])) {
+        symbols.push({
+          id: generateSymbolId(file.relativePath, methodWithAnnotationMatch[1]),
+          name: methodWithAnnotationMatch[1],
+          type: "function",
+          file: file.relativePath,
+          line: i + 1,
+          export: line.includes("public") || line.includes("global") || line.includes("webservice"),
+        });
+        pendingAnnotations = [];
+        continue;
+      }
     }
 
     // Triggers: trigger TriggerName on ObjectName
@@ -587,6 +630,13 @@ function parseApex(file: FileInfo, content: string, lines: string[], symbols: Sy
         line: i + 1,
         export: true,
       });
+      pendingAnnotations = [];
+      continue;
+    }
+    
+    // Reset pending annotations if we encounter non-annotation, non-method line
+    if (!line.startsWith("@")) {
+      pendingAnnotations = [];
     }
   }
 }
