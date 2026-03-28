@@ -134,6 +134,18 @@ function detectFrameworks(files: FileInfo[], fileNames: Set<string>, rootDir: st
         frameworks.push(...names);
       }
     }
+    
+    // Check for @nestjs/* packages (NestJS framework)
+    const hasNestJs = Object.keys(deps).some(dep => dep.startsWith("@nestjs/"));
+    if (hasNestJs && !frameworks.includes("NestJS")) {
+      frameworks.push("NestJS");
+    }
+    
+    // Check for Spring Boot in dependencies
+    const hasSpringBoot = Object.keys(deps).some(dep => dep.startsWith("@spring.io/") || dep.includes("spring-boot"));
+    if (hasSpringBoot && !frameworks.includes("Spring Boot")) {
+      frameworks.push("Spring Boot");
+    }
   } catch {}
   
   const frameworkIndicators: Record<string, string> = {
@@ -164,6 +176,38 @@ function detectFrameworks(files: FileInfo[], fileNames: Set<string>, rootDir: st
       }
     }
   }
+  
+  // Detect Spring Boot from pom.xml
+  try {
+    const pomPath = path.join(rootDir, "pom.xml");
+    if (fs.existsSync(pomPath)) {
+      const pomContent = readFile(pomPath);
+      if (pomContent.includes("spring-boot") && !frameworks.includes("Spring Boot")) {
+        frameworks.push("Spring Boot");
+      }
+      if (pomContent.includes("spring-boot-starter-parent") && !frameworks.includes("Spring Boot")) {
+        frameworks.push("Spring Boot");
+      }
+    }
+  } catch {}
+  
+  // Detect Spring Boot from build.gradle
+  try {
+    const gradlePath = path.join(rootDir, "build.gradle");
+    const gradleKtsPath = path.join(rootDir, "build.gradle.kts");
+    let gradleContent = "";
+    if (fs.existsSync(gradlePath)) {
+      gradleContent = readFile(gradlePath);
+    } else if (fs.existsSync(gradleKtsPath)) {
+      gradleContent = readFile(gradleKtsPath);
+    }
+    if (gradleContent.includes("spring-boot") && !frameworks.includes("Spring Boot")) {
+      frameworks.push("Spring Boot");
+    }
+    if (gradleContent.includes("org.springframework.boot") && !frameworks.includes("Spring Boot")) {
+      frameworks.push("Spring Boot");
+    }
+  } catch {}
   
   // Detect SwiftUI from Swift files
   const swiftFiles = files.filter(f => f.extension === "swift");
