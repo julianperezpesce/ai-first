@@ -21,6 +21,20 @@
 
 ---
 
+## 🚀 Novedades en v1.3.6
+
+**Soporte de Lenguajes Mejorado y Detección de Frameworks**
+
+- ✅ **Entrypoints Go**: Detección automática de `main.go`, handlers HTTP y puertos de servicio
+- ✅ **Entrypoints Rust**: Soporte para `main.rs`, `Cargo.toml` e implementaciones de structs
+- ✅ **Entrypoints PHP**: Detección de `index.php`, convenciones Laravel y dependencias Composer
+- ✅ **Detección de Frameworks Mejorada**: NestJS (`@nestjs/*`), Spring Boot (pom.xml/build.gradle) y Express (API Server vs Microservices)
+- ✅ **Parser Apex**: Parsing mejorado de firmas de métodos con soporte de genéricos (`List<Account>`) y anotaciones multi-línea
+- ✅ **Descripciones de Arquitectura**: Descripciones funcionales en lugar de "Contiene X archivos" genérico
+- ✅ **1026 Tests Pasando**: 100% de éxito con 30 tests nuevos agregados
+
+---
+
 ## 📋 Tabla de Contenidos
 
 - [Comandos](#-referencia-de-comandos)
@@ -374,6 +388,47 @@ Los flows representan cadenas de ejecución de negocio desde entrypoints.
 ```
 
 **Generado por:** `af init` o `af map`
+
+---
+
+## 🌍 Soporte Multi-Lenguaje y Frameworks
+
+### Lenguajes Soportados
+
+| Categoría | Lenguajes |
+|-----------|-----------|
+| **Web** | JavaScript, TypeScript, Python, **Go**, **Rust** |
+| **Backend** | Java, C#, **PHP**, Ruby, **Go**, **Rust**, Kotlin, **Apex** |
+| **Mobile** | Swift, Kotlin, Android |
+| **Frontend** | Vue, Svelte, React, HTML, CSS, SCSS |
+| **Testing** | Jest, Vitest, pytest, Mocha, RSpec |
+
+**Nuevo en v1.3.6:** Detección completa de entrypoints para **Go** (handlers, puertos), **Rust** (Cargo.toml, binarios), y **PHP** (index.php, Laravel).
+
+### Frameworks (Testeados)
+
+| Framework | Lenguaje | Proyecto de Prueba | Estado |
+|-----------|----------|-------------------|--------|
+| **Django** | Python | `test-projects/django-app` | ✅ |
+| **FastAPI** | Python | `test-projects/fastapi-app` | ✅ |
+| **Flask** | Python | `test-projects/flask-app` | ✅ |
+| **Laravel** | PHP | `test-projects/laravel-app` | ✅ |
+| **Rails** | Ruby | `test-projects/rails-app` | ✅ |
+| **Spring Boot** | Java | `test-projects/spring-boot-app` | ✅ Mejorado v1.3.6 |
+| Express.js | JavaScript | `test-projects/express-api` | ✅ Corregido v1.3.6 |
+| **NestJS** | TypeScript | `test-projects/nestjs-backend` | ✅ Corregido v1.3.6 |
+| React | JavaScript | `test-projects/react-app` | ✅ |
+| Python CLI | Python | `test-projects/python-cli` | ✅ |
+| Salesforce DX | Apex | `test-projects/salesforce-cli` | ✅ Mejorado v1.3.6 |
+| **Go** | Go | `test-projects/go-microservice` | ✅ **NUEVO v1.3.6** |
+| **Rust** | Rust | `test-projects/rust-cli` | ✅ **NUEVO v1.3.6** |
+| **PHP Vanilla** | PHP | `test-projects/php-vanilla` | ✅ **NUEVO v1.3.6** |
+
+**Mejoras v1.3.6:**
+- **NestJS**: Ahora detecta correctamente paquetes scoped `@nestjs/*`
+- **Spring Boot**: Parsea `pom.xml` y `build.gradle`/`build.gradle.kts`
+- **Express**: Muestra "API Server" en lugar de "Microservices" para directorios de servicio único
+- **Apex**: Parser mejorado con soporte de genéricos (`List<Account>`, `Map<String, Object>`)
 
 ---
 
