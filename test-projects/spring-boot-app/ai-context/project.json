@@ -5,13 +5,17 @@
     "src"
   ],
   "flows": [
+    "CommentController",
     "PostController",
+    "PostService",
     "UserController",
+    "UserService",
     "comment",
+    "demoapplication",
     "post",
     "user"
   ],
   "languages": [],
   "frameworks": [],
-  "generatedAt": "2026-03-18T19:21:55.820Z"
+  "generatedAt": "2026-03-28T18:25:32.981Z"
 }

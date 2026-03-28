@@ -6,26 +6,14 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `.ai-dev` | Contains 25 files |
-| `ai-context` | Contains 15 files |
-| `force-app` | Contains 3 files |
+| `force-app` | Apex/Salesforce implementation |
 
 
 ## Module Details
 
-### .ai-dev
-- **Path**: `.ai-dev`
-- **Responsibility**: Contains 25 files
-
-
-### ai-context
-- **Path**: `ai-context`
-- **Responsibility**: Contains 15 files
-
-
 ### force-app
 - **Path**: `force-app`
-- **Responsibility**: Contains 3 files
+- **Responsibility**: Apex/Salesforce implementation
 
 
 

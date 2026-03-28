@@ -14,8 +14,10 @@
     "src/users/users.service.ts"
   ],
   "entrypoints": [
+    "src/app.module.ts",
     "src/auth/auth.controller.ts",
     "src/auth/auth.service.ts",
+    "src/main.ts",
     "src/users/users.controller.ts",
     "src/users/users.service.ts"
   ],

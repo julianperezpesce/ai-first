@@ -6,8 +6,9 @@
 
 ## Guidelines
 
-- Language: Use Markdown, JSON, Java
-- Architecture: Follow Flat / Simple Structure pattern
+- Language: Use Markdown, Java
+- Frameworks: Spring Boot
+- Architecture: Follow API Server pattern
 - File naming: PascalCase
 - Source directory: src/
 
@@ -25,9 +26,9 @@
 
 | Category | Value |
 |----------|-------|
-| Language | Markdown, JSON, Java |
-| Framework | N/A |
-| Architecture | Flat / Simple Structure |
+| Language | Markdown, Java |
+| Framework | Spring Boot |
+| Architecture | API Server |
 | Naming | PascalCase |
 | Indentation | unknown |
 

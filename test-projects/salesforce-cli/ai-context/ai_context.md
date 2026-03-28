@@ -7,9 +7,9 @@
 ## Quick Overview
 
 - **Pattern**: Flat / Simple Structure
-- **Languages**: Markdown, JSON, Apex, Apex Trigger
-- **Frameworks**: Salesforce DX, Salesforce
-- **Total Files**: 44
+- **Languages**: Apex, Apex Trigger, JSON
+- **Frameworks**: Salesforce DX
+- **Total Files**: 4
 
 ---
 
@@ -26,9 +26,9 @@
 
 ## Tech Stack
 
-**Languages**: Markdown, JSON, Apex, Apex Trigger
+**Languages**: Apex, Apex Trigger, JSON
 
-**Frameworks**: Salesforce DX, Salesforce
+**Frameworks**: Salesforce DX
 
 ---
 
@@ -40,9 +40,7 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `.ai-dev` | Contains 25 files |
-| `ai-context` | Contains 15 files |
-| `force-app` | Contains 3 files |
+| `force-app` | Apex/Salesforce implementation |
 
 
 ---
@@ -71,8 +69,8 @@
 
 ## AI Rules
 
-- Language: Use Markdown, JSON, Apex, Apex Trigger
-- Frameworks: Salesforce DX, Salesforce
+- Language: Use Apex, Apex Trigger, JSON
+- Frameworks: Salesforce DX
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
 - Main entry: force-app/main/default/classes/AccountController.cls

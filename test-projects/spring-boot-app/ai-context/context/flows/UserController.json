@@ -14,6 +14,7 @@
   "depth": 5,
   "layers": [
     "service",
-    "unknown"
+    "unknown",
+    "domain"
   ]
 }

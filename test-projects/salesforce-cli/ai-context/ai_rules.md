@@ -6,8 +6,8 @@
 
 ## Guidelines
 
-- Language: Use Markdown, JSON, Apex, Apex Trigger
-- Frameworks: Salesforce DX, Salesforce
+- Language: Use Apex, Apex Trigger, JSON
+- Frameworks: Salesforce DX
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
 - Main entry: force-app/main/default/classes/AccountController.cls
@@ -26,8 +26,8 @@
 
 | Category | Value |
 |----------|-------|
-| Language | Markdown, JSON, Apex, Apex Trigger |
-| Framework | Salesforce DX, Salesforce |
+| Language | Apex, Apex Trigger, JSON |
+| Framework | Salesforce DX |
 | Architecture | Flat / Simple Structure |
 | Naming | PascalCase |
 | Indentation | unknown |

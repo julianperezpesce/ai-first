@@ -1,17 +1,22 @@
 # Technology Stack
 
-**Languages**: Markdown, JSON, Java
+**Languages**: Markdown, Java
+
+**Frameworks**: Spring Boot
+
+**Libraries**: Spring Boot, com.h2database:h2, org.projectlombok:lombok
 
 ## Languages
 - Markdown
-- JSON
 - Java
 
 ## Frameworks
-- None detected
+- Spring Boot
 
 ## Key Libraries
-- None detected
+- Spring Boot
+- com.h2database:h2
+- org.projectlombok:lombok
 
 ## Development Tools
 - None detected
