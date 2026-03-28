@@ -21,6 +21,11 @@ export const DEFAULT_EXCLUDE_PATTERNS = [
     "target",
     ".cache",
     ".DS_Store",
+    "test-projects",
+    ".ai-dev",
+    ".ai-dev-out",
+    "ai-context",
+    ".ai-first-ignore",
 ];
 /**
  * File extensions to include in scanning

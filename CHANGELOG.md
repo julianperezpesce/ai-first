@@ -6,6 +6,69 @@ All notable changes to `ai-first` will be documented in this file.
 
 ## [Unreleased]
 
+## [1.3.6] - 2026-03-28
+
+### 🎯 AI Recommendations Implementation
+
+**Branch:** `feature/ai-recommendations-v1.3.6`
+
+#### Added
+
+- **Go Entrypoints Detection** (T1)
+  - Detect `main.go` with `func main()`
+  - Extract HTTP handlers (`http.HandleFunc`)
+  - Identify service ports (`:8080`, `:3000`)
+  - Parse structs and methods
+  - Read `go.mod` for module information
+
+- **Rust Entrypoints Detection** (T2)
+  - Detect `main.rs` with `fn main()`
+  - Extract `Cargo.toml` configuration
+  - Identify structs and implementations
+  - Support for binary and library projects
+
+- **PHP Entrypoints Detection** (T3)
+  - Detect `index.php` entrypoints
+  - Support Laravel convention (`public/index.php`)
+  - Parse `composer.json` dependencies
+  - Detect Laravel and Symfony frameworks
+
+- **Comprehensive Test Suite** (T4, T8, T12)
+  - 16 tests for Go/Rust/PHP entrypoints
+  - 14 tests for framework detection
+  - All Apex class tests now passing (was 40/43, now 43/43)
+
+#### Fixed
+
+- **Framework Detection** (T5-T7)
+  - NestJS: Now correctly detects `@nestjs/*` packages
+  - Spring Boot: Parses `pom.xml` and `build.gradle`/`build.gradle.kts`
+  - Express: Shows "API Server" instead of "Microservices" for single services
+
+- **Apex Parser Improvements** (T9)
+  - Handle multi-line annotations (`@AuraEnabled(cacheable=true)`)
+  - Support generic return types (`List<Account>`, `Map<String, Object>`)
+  - Detect `webservice` methods
+  - Fix method signature extraction with parameters
+
+- **Architecture Descriptions** (T15)
+  - Replace "Contains X files" with functional descriptions
+  - Infer responsibility from file types (TypeScript, Python, Java, etc.)
+  - Language-specific descriptions (e.g., "JavaScript/TypeScript implementation")
+
+- **Development Directory Filtering** (T14)
+  - Exclude `test-projects/` from analysis
+  - Exclude `.ai-dev/` and `.ai-dev-out/`
+  - Exclude `ai-context/` directory
+  - Prevent test artifacts from polluting results
+
+#### Test Results
+
+- 1026 tests passing (+30 new tests)
+- 0 tests failing (100% pass rate!)
+- Fixed 3 pre-existing Apex test failures
+- All 11 test projects validated
+
 ## [1.3.5] - 2026-03-24
 
 ### 🧪 Comprehensive Testing Suite
