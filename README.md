@@ -19,6 +19,20 @@
 
 ---
 
+## 🚀 What's New in v1.3.6
+
+**Enhanced Language Support & Framework Detection**
+
+- ✅ **Go Entrypoints**: Automatic detection of `main.go`, HTTP handlers, and service ports
+- ✅ **Rust Entrypoints**: Support for `main.rs`, `Cargo.toml`, and struct implementations  
+- ✅ **PHP Entrypoints**: Detection of `index.php`, Laravel conventions, and Composer dependencies
+- ✅ **Improved Framework Detection**: Fixed NestJS (`@nestjs/*`), Spring Boot (pom.xml/build.gradle), and Express (API Server vs Microservices)
+- ✅ **Apex Parser**: Enhanced method signature parsing with generics support (`List<Account>`) and multi-line annotations
+- ✅ **Architecture Descriptions**: Functional descriptions instead of generic "Contains X files"
+- ✅ **1026 Tests Passing**: 100% success rate with 30 new tests added
+
+---
+
 ## 📋 Table of Contents
 
 - [Commands](#-commands-reference)
@@ -453,27 +467,38 @@ Flows represent business execution chains starting from entrypoints.
 
 | Category | Languages |
 |----------|-----------|
-| **Web** | JavaScript, TypeScript, Python, Go, Rust |
-| **Backend** | Java, C#, PHP, Ruby, Go, Rust, Kotlin, **Apex** |
+| **Web** | JavaScript, TypeScript, Python, **Go**, **Rust** |
+| **Backend** | Java, C#, **PHP**, Ruby, **Go**, **Rust**, Kotlin, **Apex** |
 | **Mobile** | Swift, Kotlin, Android |
 | **Frontend** | Vue, Svelte, React, HTML, CSS, SCSS |
 | **Testing** | Jest, Vitest, pytest, Mocha, RSpec |
 
+**New in v1.3.6:** Full entrypoint detection for **Go** (handlers, ports), **Rust** (Cargo.toml, binaries), and **PHP** (index.php, Laravel).
+
 ### Frameworks (Tested)
 
-| Framework | Language | Test Project |
-|-----------|----------|-------------|
-| **Django** | Python | `test-projects/django-app` |
-| **FastAPI** | Python | `test-projects/fastapi-app` |
-| **Flask** | Python | `test-projects/flask-app` |
-| **Laravel** | PHP | `test-projects/laravel-app` |
-| **Rails** | Ruby | `test-projects/rails-app` |
-| **Spring Boot** | Java | `test-projects/spring-boot-app` |
-| Express.js | JavaScript | `test-projects/express-api` |
-| NestJS | TypeScript | `test-projects/nestjs-backend` |
-| React | JavaScript | `test-projects/react-app` |
-| Python CLI | Python | `test-projects/python-cli` |
-| Salesforce DX | Apex | `test-projects/salesforce-cli` |
+| Framework | Language | Test Project | Status |
+|-----------|----------|-------------|--------|
+| **Django** | Python | `test-projects/django-app` | ✅ |
+| **FastAPI** | Python | `test-projects/fastapi-app` | ✅ |
+| **Flask** | Python | `test-projects/flask-app` | ✅ |
+| **Laravel** | PHP | `test-projects/laravel-app` | ✅ |
+| **Rails** | Ruby | `test-projects/rails-app` | ✅ |
+| **Spring Boot** | Java | `test-projects/spring-boot-app` | ✅ Improved v1.3.6 |
+| Express.js | JavaScript | `test-projects/express-api` | ✅ Fixed v1.3.6 |
+| **NestJS** | TypeScript | `test-projects/nestjs-backend` | ✅ Fixed v1.3.6 |
+| React | JavaScript | `test-projects/react-app` | ✅ |
+| Python CLI | Python | `test-projects/python-cli` | ✅ |
+| Salesforce DX | Apex | `test-projects/salesforce-cli` | ✅ Enhanced v1.3.6 |
+| **Go** | Go | `test-projects/go-microservice` | ✅ **NEW v1.3.6** |
+| **Rust** | Rust | `test-projects/rust-cli` | ✅ **NEW v1.3.6** |
+| **PHP Vanilla** | PHP | `test-projects/php-vanilla` | ✅ **NEW v1.3.6** |
+
+**v1.3.6 Improvements:**
+- **NestJS**: Now correctly detects `@nestjs/*` scoped packages
+- **Spring Boot**: Parses `pom.xml` and `build.gradle`/`build.gradle.kts`
+- **Express**: Shows "API Server" instead of "Microservices" for single service directories
+- **Apex**: Enhanced parser with generics support (`List<Account>`, `Map<String, Object>`)
 
 ai-first automatically detects and indexes Android/Kotlin projects:
 
