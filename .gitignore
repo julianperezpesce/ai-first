@@ -42,6 +42,15 @@ SIMULATION_RESULTS.md
 STATUS_*
 *.sh
 
+# OpenCode / AI Assistant internal files
+HANDOFF*.md
+AI_RECOMMENDATIONS*.md
+BETA_EVALUATION*.md
+MASTER_VERIFICATION*.md
+*evaluation-report*.md
+quick-evaluator.ts
+scripts/ai-context-evaluator.ts
+
 # Test coverage
 coverage/
 .nyc_output/
