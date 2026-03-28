@@ -6,6 +6,10 @@
     "src/main/java/com/example/demo/models/Comment.java",
     "src/main/java/com/example/demo/repositories/CommentRepository.java"
   ],
-  "depth": 0,
-  "layers": []
+  "depth": 3,
+  "layers": [
+    "api",
+    "domain",
+    "data"
+  ]
 }

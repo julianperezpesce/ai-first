@@ -1,12 +1,10 @@
 # Repository Summary
-- **Total files**: 42
+- **Total files**: 13
 
 ## Files by Extension
   - .java: 12
-  - .json: 21
-  - .md: 9
+  - .md: 1
 
 ## Files by Directory
   - README.md: 1
-  - ai: 29
   - src: 12

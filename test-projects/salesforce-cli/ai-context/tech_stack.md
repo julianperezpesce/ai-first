@@ -1,18 +1,16 @@
 # Technology Stack
 
-**Languages**: Markdown, JSON, Apex, Apex Trigger
+**Languages**: Apex, Apex Trigger, JSON
 
-**Frameworks**: Salesforce DX, Salesforce
+**Frameworks**: Salesforce DX
 
 ## Languages
-- Markdown
-- JSON
 - Apex
 - Apex Trigger
+- JSON
 
 ## Frameworks
 - Salesforce DX
-- Salesforce
 
 ## Key Libraries
 - None detected

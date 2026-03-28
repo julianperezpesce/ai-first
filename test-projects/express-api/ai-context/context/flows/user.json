@@ -1,13 +1,15 @@
 {
   "name": "user",
-  "entrypoint": "controllers/userController.js",
+  "entrypoint": "services/userService.js",
   "files": [
+    "services/userService.js",
     "controllers/userController.js",
-    "models/userRepository.js",
-    "services/userService.js"
+    "models/userRepository.js"
   ],
-  "depth": 1,
+  "depth": 3,
   "layers": [
+    "api",
+    "data",
     "service"
   ]
 }

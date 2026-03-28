@@ -6,10 +6,10 @@
 
 ## Quick Overview
 
-- **Pattern**: Flat / Simple Structure
-- **Languages**: Markdown, JSON, Java
-- **Frameworks**: None
-- **Total Files**: 42
+- **Pattern**: API Server
+- **Languages**: Markdown, Java
+- **Frameworks**: Spring Boot
+- **Total Files**: 13
 
 ---
 
@@ -26,21 +26,23 @@
 
 ## Tech Stack
 
-**Languages**: Markdown, JSON, Java
+**Languages**: Markdown, Java
+
+**Frameworks**: Spring Boot
+
+**Libraries**: Spring Boot, com.h2database:h2, org.projectlombok:lombok
 
 ---
 
 ## Architecture
 
 ## Architectural Pattern
-**Primary**: Flat / Simple Structure
+**Primary**: API Server
 
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `README.md` | Contains 0 files |
-| `ai` | Contains 29 files |
-| `src` | Contains 12 files |
+| `src` | Java implementation |
 
 
 ---
@@ -65,8 +67,9 @@
 
 ## AI Rules
 
-- Language: Use Markdown, JSON, Java
-- Architecture: Follow Flat / Simple Structure pattern
+- Language: Use Markdown, Java
+- Frameworks: Spring Boot
+- Architecture: Follow API Server pattern
 - File naming: PascalCase
 - Source directory: src/
 

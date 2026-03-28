@@ -5,14 +5,12 @@
     "src"
   ],
   "flows": [
-    "auth.",
-    "auth.controller",
+    "app_module",
     "auth",
-    "users.",
-    "users.controller",
+    "main",
     "users"
   ],
   "languages": [],
   "frameworks": [],
-  "generatedAt": "2026-03-18T19:21:52.232Z"
+  "generatedAt": "2026-03-28T18:25:32.668Z"
 }

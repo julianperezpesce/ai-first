@@ -10,32 +10,14 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `ai` | Contains 29 files |
-| `package.json` | Contains 0 files |
-| `src` | Contains 10 files |
-| `tsconfig.json` | Configuration management |
+| `src` | JavaScript/TypeScript implementation |
 
 
 ## Module Details
 
-### ai
-- **Path**: `ai`
-- **Responsibility**: Contains 29 files
-
-
-### package.json
-- **Path**: `package.json`
-- **Responsibility**: Contains 0 files
-
-
 ### src
 - **Path**: `src`
-- **Responsibility**: Contains 10 files
-
-
-### tsconfig.json
-- **Path**: `tsconfig.json`
-- **Responsibility**: Configuration management
+- **Responsibility**: JavaScript/TypeScript implementation
 
 
 

@@ -2,7 +2,7 @@
 
 ## Architectural Pattern
 **Primary**: MVC (Model-View-Controller)
-**Secondary**: Layered Architecture, Microservices
+**Secondary**: Layered Architecture, API Server
 
 ## Layers Identified
 - Application
@@ -12,10 +12,8 @@
 | Module | Responsibility |
 |--------|----------------|
 | `controllers` | API endpoints and request handling |
-| `index.js` | Contains 0 files |
 | `middleware` | Request/response middleware |
 | `models` | Data models and entities |
-| `package.json` | Contains 0 files |
 | `services` | Business logic and use cases |
 
 
@@ -26,11 +24,6 @@
 - **Responsibility**: API endpoints and request handling
 - **Depends on**: service, model
 
-### index.js
-- **Path**: `index.js`
-- **Responsibility**: Contains 0 files
-
-
 ### middleware
 - **Path**: `middleware`
 - **Responsibility**: Request/response middleware
@@ -39,11 +32,6 @@
 ### models
 - **Path**: `models`
 - **Responsibility**: Data models and entities
-
-
-### package.json
-- **Path**: `package.json`
-- **Responsibility**: Contains 0 files
 
 
 ### services

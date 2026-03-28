@@ -1,31 +1,19 @@
 # Architecture
 
 ## Architectural Pattern
-**Primary**: Flat / Simple Structure
+**Primary**: API Server
 
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `README.md` | Contains 0 files |
-| `ai` | Contains 29 files |
-| `src` | Contains 12 files |
+| `src` | Java implementation |
 
 
 ## Module Details
 
-### README.md
-- **Path**: `README.md`
-- **Responsibility**: Contains 0 files
-
-
-### ai
-- **Path**: `ai`
-- **Responsibility**: Contains 29 files
-
-
 ### src
 - **Path**: `src`
-- **Responsibility**: Contains 12 files
+- **Responsibility**: Java implementation
 
 
 

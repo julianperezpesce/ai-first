@@ -1,10 +1,13 @@
 {
-  "name": "users.",
+  "name": "users",
   "entrypoint": "src/users/users.controller.ts",
   "files": [
     "src/users/users.controller.ts",
     "src/users/users.service.ts"
   ],
-  "depth": 0,
-  "layers": []
+  "depth": 2,
+  "layers": [
+    "api",
+    "service"
+  ]
 }

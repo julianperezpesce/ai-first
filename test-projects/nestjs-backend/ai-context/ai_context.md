@@ -7,9 +7,9 @@
 ## Quick Overview
 
 - **Pattern**: Flat / Simple Structure
-- **Languages**: Markdown, JSON, TypeScript
-- **Frameworks**: TypeScript
-- **Total Files**: 41
+- **Languages**: JSON, TypeScript
+- **Frameworks**: NestJS, TypeScript
+- **Total Files**: 12
 
 ---
 
@@ -26,9 +26,9 @@
 
 ## Tech Stack
 
-**Languages**: Markdown, JSON, TypeScript
+**Languages**: JSON, TypeScript
 
-**Frameworks**: TypeScript
+**Frameworks**: NestJS, TypeScript
 
 **Libraries**: Passport.js
 
@@ -48,10 +48,7 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `ai` | Contains 29 files |
-| `package.json` | Contains 0 files |
-| `src` | Contains 10 files |
-| `tsconfig.json` | Configuration management |
+| `src` | JavaScript/TypeScript implementation |
 
 
 ---
@@ -71,7 +68,7 @@
 ## Code Conventions
 
 ## Naming Conventions
-- **Files**: kebab-case or snake_case
+- **Files**: camelCase
 
 ## Project Structure
 - **Source**: src/
@@ -84,10 +81,10 @@
 
 ## AI Rules
 
-- Language: Use Markdown, JSON, TypeScript
-- Frameworks: TypeScript
+- Language: Use JSON, TypeScript
+- Frameworks: NestJS, TypeScript
 - Architecture: Follow Flat / Simple Structure pattern
-- File naming: kebab-case or snake_case
+- File naming: camelCase
 - Source directory: src/
 
 ---

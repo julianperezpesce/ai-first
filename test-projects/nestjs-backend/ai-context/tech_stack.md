@@ -1,19 +1,19 @@
 # Technology Stack
 
-**Languages**: Markdown, JSON, TypeScript
+**Languages**: JSON, TypeScript
 
-**Frameworks**: TypeScript
+**Frameworks**: NestJS, TypeScript
 
 **Libraries**: Passport.js
 
 **Package Managers**: npm
 
 ## Languages
-- Markdown
 - JSON
 - TypeScript
 
 ## Frameworks
+- NestJS
 - TypeScript
 
 ## Key Libraries

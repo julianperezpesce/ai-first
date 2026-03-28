@@ -8,6 +8,14 @@
       "module": "force-app",
       "export": true
     },
+    "force-app/main/default/classes/AccountController.cls#getAccounts": {
+      "name": "getAccounts",
+      "type": "function",
+      "file": "force-app/main/default/classes/AccountController.cls",
+      "line": 4,
+      "module": "force-app",
+      "export": true
+    },
     "force-app/main/default/classes/AccountController.cls#createAccount": {
       "name": "createAccount",
       "type": "function",
@@ -29,6 +37,14 @@
       "type": "class",
       "file": "force-app/main/default/classes/OpportunityController.cls",
       "line": 1,
+      "module": "force-app",
+      "export": true
+    },
+    "force-app/main/default/classes/OpportunityController.cls#getOpportunitiesByStage": {
+      "name": "getOpportunitiesByStage",
+      "type": "function",
+      "file": "force-app/main/default/classes/OpportunityController.cls",
+      "line": 4,
       "module": "force-app",
       "export": true
     },
@@ -57,7 +73,7 @@
       "export": true
     }
   },
-  "total": 7,
+  "total": 9,
   "byType": {
     "class": [
       {
@@ -79,6 +95,14 @@
     ],
     "function": [
       {
+        "id": "force-app/main/default/classes/AccountController.cls#getAccounts",
+        "name": "getAccounts",
+        "type": "function",
+        "file": "force-app/main/default/classes/AccountController.cls",
+        "line": 4,
+        "export": true
+      },
+      {
         "id": "force-app/main/default/classes/AccountController.cls#createAccount",
         "name": "createAccount",
         "type": "function",
@@ -92,6 +116,14 @@
         "type": "function",
         "file": "force-app/main/default/classes/AccountController.cls",
         "line": 19,
+        "export": true
+      },
+      {
+        "id": "force-app/main/default/classes/OpportunityController.cls#getOpportunitiesByStage",
+        "name": "getOpportunitiesByStage",
+        "type": "function",
+        "file": "force-app/main/default/classes/OpportunityController.cls",
+        "line": 4,
         "export": true
       },
       {
@@ -131,6 +163,14 @@
         "export": true
       },
       {
+        "id": "force-app/main/default/classes/AccountController.cls#getAccounts",
+        "name": "getAccounts",
+        "type": "function",
+        "file": "force-app/main/default/classes/AccountController.cls",
+        "line": 4,
+        "export": true
+      },
+      {
         "id": "force-app/main/default/classes/AccountController.cls#createAccount",
         "name": "createAccount",
         "type": "function",
@@ -154,6 +194,14 @@
         "type": "class",
         "file": "force-app/main/default/classes/OpportunityController.cls",
         "line": 1,
+        "export": true
+      },
+      {
+        "id": "force-app/main/default/classes/OpportunityController.cls#getOpportunitiesByStage",
+        "name": "getOpportunitiesByStage",
+        "type": "function",
+        "file": "force-app/main/default/classes/OpportunityController.cls",
+        "line": 4,
         "export": true
       },
       {
@@ -194,6 +242,14 @@
       "export": true
     },
     {
+      "id": "force-app/main/default/classes/AccountController.cls#getAccounts",
+      "name": "getAccounts",
+      "type": "function",
+      "file": "force-app/main/default/classes/AccountController.cls",
+      "line": 4,
+      "export": true
+    },
+    {
       "id": "force-app/main/default/classes/AccountController.cls#createAccount",
       "name": "createAccount",
       "type": "function",
@@ -215,6 +271,14 @@
       "type": "class",
       "file": "force-app/main/default/classes/OpportunityController.cls",
       "line": 1,
+      "export": true
+    },
+    {
+      "id": "force-app/main/default/classes/OpportunityController.cls#getOpportunitiesByStage",
+      "name": "getOpportunitiesByStage",
+      "type": "function",
+      "file": "force-app/main/default/classes/OpportunityController.cls",
+      "line": 4,
       "export": true
     },
     {

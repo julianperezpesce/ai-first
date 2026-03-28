@@ -1,13 +1,11 @@
 # Repository Summary
-- **Total files**: 41
+- **Total files**: 12
 
 ## Files by Extension
-  - .json: 23
-  - .md: 8
+  - .json: 2
   - .ts: 10
 
 ## Files by Directory
-  - ai: 29
   - package.json: 1
   - src: 10
   - tsconfig.json: 1
