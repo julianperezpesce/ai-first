@@ -165,6 +165,49 @@ function detectFrameworks(files, fileNames, rootDir) {
         }
     }
     catch { }
+    // Detect Python frameworks from requirements.txt, Pipfile, pyproject.toml
+    try {
+        const pythonFrameworkMap = {
+            "django": ["Django"],
+            "flask": ["Flask"],
+            "fastapi": ["FastAPI"],
+            "tornado": ["Tornado"],
+            "pyramid": ["Pyramid"],
+            "bottle": ["Bottle"],
+            "cherrypy": ["CherryPy"],
+        };
+        // Check requirements.txt
+        const reqPath = path.join(rootDir, "requirements.txt");
+        if (fs.existsSync(reqPath)) {
+            const reqContent = readFile(reqPath);
+            for (const [dep, names] of Object.entries(pythonFrameworkMap)) {
+                if (reqContent.toLowerCase().includes(dep.toLowerCase()) && !frameworks.some(f => names.includes(f))) {
+                    frameworks.push(...names);
+                }
+            }
+        }
+        // Check Pipfile
+        const pipfilePath = path.join(rootDir, "Pipfile");
+        if (fs.existsSync(pipfilePath)) {
+            const pipfileContent = readFile(pipfilePath);
+            for (const [dep, names] of Object.entries(pythonFrameworkMap)) {
+                if (pipfileContent.toLowerCase().includes(dep.toLowerCase()) && !frameworks.some(f => names.includes(f))) {
+                    frameworks.push(...names);
+                }
+            }
+        }
+        // Check pyproject.toml
+        const pyprojectPath = path.join(rootDir, "pyproject.toml");
+        if (fs.existsSync(pyprojectPath)) {
+            const pyprojectContent = readFile(pyprojectPath);
+            for (const [dep, names] of Object.entries(pythonFrameworkMap)) {
+                if (pyprojectContent.toLowerCase().includes(dep.toLowerCase()) && !frameworks.some(f => names.includes(f))) {
+                    frameworks.push(...names);
+                }
+            }
+        }
+    }
+    catch { }
     // Detect SwiftUI from Swift files
     const swiftFiles = files.filter(f => f.extension === "swift");
     for (const swiftFile of swiftFiles) {

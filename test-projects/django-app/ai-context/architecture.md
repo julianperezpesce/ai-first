@@ -6,44 +6,26 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `README.md` | Contains 0 files |
-| `ai` | Contains 23 files |
-| `blog` | Contains 6 files |
-| `django_app` | Contains 4 files |
-| `manage.py` | Contains 0 files |
-| `users` | Contains 6 files |
+| `blog` | Python implementation |
+| `django_app` | Python implementation |
+| `users` | Python implementation |
 
 
 ## Module Details
 
-### README.md
-- **Path**: `README.md`
-- **Responsibility**: Contains 0 files
-
-
-### ai
-- **Path**: `ai`
-- **Responsibility**: Contains 23 files
-
-
 ### blog
 - **Path**: `blog`
-- **Responsibility**: Contains 6 files
+- **Responsibility**: Python implementation
 
 
 ### django_app
 - **Path**: `django_app`
-- **Responsibility**: Contains 4 files
-
-
-### manage.py
-- **Path**: `manage.py`
-- **Responsibility**: Contains 0 files
+- **Responsibility**: Python implementation
 
 
 ### users
 - **Path**: `users`
-- **Responsibility**: Contains 6 files
+- **Responsibility**: Python implementation
 
 
 

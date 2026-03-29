@@ -6,7 +6,8 @@
 
 ## Guidelines
 
-- Language: Use Markdown, JSON, Python
+- Language: Use Markdown, Python
+- Frameworks: Django
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
 
@@ -24,8 +25,8 @@
 
 | Category | Value |
 |----------|-------|
-| Language | Markdown, JSON, Python |
-| Framework | N/A |
+| Language | Markdown, Python |
+| Framework | Django |
 | Architecture | Flat / Simple Structure |
 | Naming | PascalCase |
 | Indentation | unknown |
