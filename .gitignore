@@ -42,6 +42,10 @@ SIMULATION_RESULTS.md
 STATUS_*
 *.sh
 
+# Internal planning docs (not for public)
+docs/planning/
+!docs/planning/README.md
+
 # OpenCode / AI Assistant internal files
 HANDOFF*.md
 AI_RECOMMENDATIONS*.md
