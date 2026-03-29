@@ -21,7 +21,20 @@
 
 ---
 
-## 🚀 Novedades en v1.3.6
+## 🚀 Novedades en v1.3.7
+
+**Evaluador de Calidad de Contexto IA**
+
+- ✅ **Evaluación de Calidad**: Evaluador integrado para medir la calidad del contexto IA (score 0-5)
+- ✅ **Evaluación Jerárquica**: Assessment en 3 niveles (Estructura, Contenido, Revisión IA)
+- ✅ **Scoring Inteligente**: Scoring condicional que no penaliza por features opcionales
+- ✅ **Optimización de Costos**: 100% de ahorro cuando el score de calidad ≥ 3.5 (evita evaluación IA)
+- ✅ **Sugerencias de Mejora**: Recomendaciones categorizadas (IMPLEMENTED, USER_ACTION, IMPROVEMENT)
+- ✅ **Nuevos Checks**: Documentación de entry points y completitud de documentación
+- ✅ **Repo Privado del Evaluador**: Evaluador extraído a repositorio privado separado
+- ✅ **Integración NPM**: Uso como dev dependency con `npm run evaluate`
+
+### Anterior: v1.3.6
 
 **Soporte de Lenguajes Mejorado y Detección de Frameworks**
 
