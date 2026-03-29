@@ -31,6 +31,7 @@ import { runIncrementalUpdate, detectChangedFiles } from "../core/incrementalAna
 import { generateAllSchema } from "../core/schema.js";
 import { Database } from "sql.js";
 import ora from "ora";
+import { startMCP } from "../mcp/index.js";
 import process from "process";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -1077,6 +1078,8 @@ Options:
   } else if (command === 'init' || !command) {
     // Init command - generate all context files
     if (command === 'init') args.shift();
+    
+    let preset: string | undefined;
 
     for (let i = 0; i < args.length; i++) {
       const arg = args[i];
@@ -1088,6 +1091,10 @@ Options:
         case "--output":
         case "-o":
           options.outputDir = args[++i];
+          break;
+        case "--preset":
+        case "-p":
+          preset = args[++i];
           break;
         case "--help":
         case "-h":
@@ -1106,17 +1113,44 @@ Commands:
   doctor               Check repository health and AI readiness
   explore <module>     Explore module dependencies
   map                  Generate repository map (files, modules, graph)
-  adapters              List available adapters
-  explore <module>     Explore module dependencies
-  map                  Generate repository map (files, modules, graph)
+  adapters             List available adapters
+  git                  Show git activity and recent changes
+  graph                Build knowledge graph
+  update               Update context incrementally
+  mcp                  Start MCP server for AI agents
 
 Options:
   -r, --root <dir>      Root directory to scan (default: current directory)
   -o, --output <dir>   Output directory (default: ./ai-context)
+  -p, --preset <name>  Use preset (full, quick, api, docs)
   -h, --help           Show help message
+
+Presets:
+  full    Complete analysis with all features
+  quick   Fast analysis for development iterations
+  api     Focus on API endpoints and services
+  docs    Documentation files only
 `);
           process.exit(0);
       }
+    }
+    
+    const rootDir = options.rootDir || process.cwd();
+    const configPath = path.join(rootDir, 'ai-first.config.json');
+    if (fs.existsSync(configPath)) {
+      try {
+        const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+        if (config.output?.directory && !options.outputDir) {
+          options.outputDir = path.join(rootDir, config.output.directory);
+        }
+        if (config.preset && !preset) {
+          preset = config.preset;
+        }
+      } catch {}
+    }
+    
+    if (preset) {
+      console.log(`\n🎛️  Using preset: ${preset}\n`);
     }
 
     runAIFirst(options).then((result) => {
@@ -1491,7 +1525,52 @@ Examples:
     }
     
     process.exit(0);
-    process.exit(0);
+  } else if (command === 'mcp') {
+    // MCP command - start Model Context Protocol server
+    args.shift();
+    
+    if (args.includes('--help') || args.includes('-h')) {
+      console.log(`
+ai-first mcp - Start Model Context Protocol server
+
+Usage: ai-first mcp [options]
+
+Options:
+  -r, --root <dir>    Root directory to scan (default: current directory)
+  -h, --help          Show help message
+
+Description:
+  Starts an MCP server that allows AI agents (Claude Desktop, etc.) to
+  query repository context using the Model Context Protocol.
+
+The server provides these tools:
+  - generate_context: Generate AI context for the repository
+  - index_repo: Create SQLite index for fast queries
+  - query_symbol: Look up symbols by name
+  - get_architecture: Get architecture analysis
+  - get_tech_stack: Get technology stack information
+
+Examples:
+  ai-first mcp                    # Start MCP server in current directory
+  ai-first mcp --root ./my-project # Start with specific root directory
+`);
+      process.exit(0);
+    }
+    
+    let rootDir = process.cwd();
+    
+    for (let i = 0; i < args.length; i++) {
+      const arg = args[i];
+      if (arg === "--root" || arg === "-r") rootDir = args[++i];
+    }
+    
+    console.log("\n🚀 Starting MCP server...\n");
+    console.log(`   Root directory: ${rootDir}`);
+    console.log("   Protocol: stdio");
+    console.log("\n   The server is now running and ready to accept MCP requests.");
+    console.log("   Use Ctrl+C to stop.\n");
+    
+    startMCP({ rootDir });
   } else {
     console.log(`Unknown command: ${command}`);
     console.log(`Use 'ai-first --help' for usage information`);
