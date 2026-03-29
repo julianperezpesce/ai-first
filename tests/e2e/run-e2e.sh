@@ -104,3 +104,33 @@ echo ""
 echo "========================================"
 echo "E2E Tests Complete"
 echo "========================================"
+
+# MCP E2E Tests
+echo ""
+echo "========================================"
+echo "MCP E2E Tests"
+echo "========================================"
+
+# Test MCP install
+echo ""
+echo "--- MCP install on express-api ---"
+rm -rf "test-projects/express-api/.opencode"
+$CLI init --root "test-projects/express-api" --install-mcp || true
+
+if [ -f "test-projects/express-api/.opencode/mcp.json" ]; then
+  echo "✅ .opencode/mcp.json created successfully"
+  cat "test-projects/express-api/.opencode/mcp.json"
+else
+  echo "❌ .opencode/mcp.json NOT created"
+fi
+
+echo ""
+echo "--- MCP install on django-app ---"
+rm -rf "test-projects/django-app/.opencode"
+$CLI init --root "test-projects/django-app" --install-mcp || true
+
+if [ -f "test-projects/django-app/.opencode/mcp.json" ]; then
+  echo "✅ .opencode/mcp.json created successfully"
+else
+  echo "❌ .opencode/mcp.json NOT created"
+fi
