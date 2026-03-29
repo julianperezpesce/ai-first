@@ -7,6 +7,8 @@ import { processContent, classifyFile } from '../src/core/content/contentProcess
 import { getGitBlame, formatGitBlame } from '../src/core/gitAnalyzer.js';
 import { createVectorIndex, semanticSearch } from '../src/core/rag/vectorIndex.js';
 import { scanMultiRepo, generateMultiRepoReport } from '../src/core/multiRepo/multiRepoScanner.js';
+import { detectTechStack } from '../src/analyzers/techStack.js';
+import type { FileInfo } from '../src/core/repoScanner.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -241,6 +243,119 @@ export interface CartItem {
       const context = scanMultiRepo({ repositories: [repo1, repo2] });
       expect(context.repositories).toHaveLength(2);
       expect(context.totalFiles).toBe(2);
+    });
+  });
+
+  describe('Django Detection (v1.3.8)', () => {
+    const DJANGO_PROJECT = path.join(__dirname, '..', 'test-projects', 'django-app');
+
+    it('should detect Django framework from Python project', () => {
+      const files: FileInfo[] = [
+        { path: 'blog/models.py', relativePath: 'blog/models.py', name: 'models.py', extension: 'py' },
+        { path: 'blog/views.py', relativePath: 'blog/views.py', name: 'views.py', extension: 'py' },
+        { path: 'users/models.py', relativePath: 'users/models.py', name: 'models.py', extension: 'py' }
+      ];
+      const techStack = detectTechStack(files, DJANGO_PROJECT);
+      expect(techStack.frameworks).toContain('Django');
+    });
+
+    it('should detect Django from requirements.txt', () => {
+      const techStackPath = path.join(DJANGO_PROJECT, 'ai-context', 'tech_stack.md');
+      expect(fs.existsSync(techStackPath)).toBe(true);
+      
+      const content = fs.readFileSync(techStackPath, 'utf-8').toLowerCase();
+      expect(content).toContain('django');
+    });
+
+    it('should include Django in tech_stack.md frameworks section', () => {
+      const techStackPath = path.join(DJANGO_PROJECT, 'ai-context', 'tech_stack.md');
+      const content = fs.readFileSync(techStackPath, 'utf-8');
+      expect(content).toMatch(/## Frameworks\n[\s\S]*- Django/);
+    });
+
+    it('should generate ai_context.md with Django context', () => {
+      const aiContextPath = path.join(DJANGO_PROJECT, 'ai-context', 'ai_context.md');
+      expect(fs.existsSync(aiContextPath)).toBe(true);
+      
+      const content = fs.readFileSync(aiContextPath, 'utf-8').toLowerCase();
+      expect(content).toContain('django');
+    });
+  });
+
+  // MCP Integration tests removed - MCP command does not exist yet
+  // TODO(julian): Add MCP tests when the feature is implemented
+
+  describe('Config Presets (v1.3.8)', () => {
+    it('should have preset available: full', () => {
+      const preset = getPreset('full');
+      expect(preset).toBeDefined();
+      expect(preset?.name).toBe('full');
+    });
+
+    it('should have preset available: quick', () => {
+      const preset = getPreset('quick');
+      expect(preset).toBeDefined();
+      expect(preset?.name).toBe('quick');
+    });
+
+    it('should have preset available: api', () => {
+      const preset = getPreset('api');
+      expect(preset).toBeDefined();
+      expect(preset?.name).toBe('api');
+    });
+
+    it('should have preset available: docs', () => {
+      const preset = getPreset('docs');
+      expect(preset).toBeDefined();
+      expect(preset?.name).toBe('docs');
+    });
+
+    it('should list at least 4 presets', () => {
+      const presets = listPresets();
+      expect(presets.length).toBeGreaterThanOrEqual(4);
+    });
+
+    it('should apply preset to config', () => {
+      const result = loadConfig({
+        configPath: path.join(testDir, 'non-existent.json'),
+        preset: 'full'
+      });
+      expect(result.source).toBe('preset');
+      expect(result.config).toBeDefined();
+    });
+  });
+
+  describe('Git Blame Integration (v1.3.8)', () => {
+    it('should return blame info for a file', () => {
+      const result = getGitBlame('.', 'package.json');
+      expect(result.filePath).toBe('package.json');
+      expect(result.lines).toBeDefined();
+      expect(result.lines.length).toBeGreaterThan(0);
+    });
+
+    it('should return authors with contributions', () => {
+      const result = getGitBlame('.', 'package.json');
+      expect(result.authors).toBeInstanceOf(Map);
+      expect(result.authors.size).toBeGreaterThan(0);
+    });
+
+    it('should format blame as inline', () => {
+      const blame = getGitBlame('.', 'package.json');
+      const formatted = formatGitBlame(blame, 'inline');
+      expect(formatted).toContain('[');
+      expect(formatted).toContain(']');
+    });
+
+    it('should format blame as block', () => {
+      const blame = getGitBlame('.', 'package.json');
+      const formatted = formatGitBlame(blame, 'block');
+      expect(formatted).toContain('//');
+    });
+
+    it('should include blame info in summary', () => {
+      const blame = getGitBlame('.', 'package.json');
+      const formatted = formatGitBlame(blame, 'inline');
+      expect(formatted).toContain('\n');
     });
   });
 });
