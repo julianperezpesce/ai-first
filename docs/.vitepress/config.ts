@@ -60,6 +60,15 @@ export default defineConfig({
           ]
         },
         {
+          text: 'v1.3.8 Features',
+          items: [
+            { text: 'MCP Server', link: '/guide/mcp' },
+            { text: 'Configuration Presets', link: '/guide/config' },
+            { text: 'RAG Vector Search', link: '/guide/rag' },
+            { text: 'Git Blame', link: '/guide/git-blame' }
+          ]
+        },
+        {
           text: 'Concepts',
           items: [
             { text: 'Architecture', link: '/guide/architecture' },

@@ -20,16 +20,22 @@ hero:
 features:
   - title: ⚡ Contexto Instantáneo
     details: Genera archivos de contexto completos en segundos. La IA entiende tu proyecto en ~500 tokens en vez de 50,000.
-  - title: 🔌 Multi-Agente
-    details: Funciona con OpenCode, Cursor, Claude Code, Windsurf, GitHub Copilot y cualquier asistente de IA.
+  - title: 🔌 Servidor MCP
+    details: Integración nativa con Model Context Protocol. Usa AI-First como herramienta en Cursor, Claude Code y otros agentes IA.
+  - title: ⚙️ Presets de Configuración
+    details: 4 presets integrados (full, quick, api, docs) para personalizar la generación de contexto según tu caso de uso.
   - title: 🗄️ Índice SQLite
     details: Consultas rápidas de símbolos con base de datos indexada. Busca funciones, clases e importaciones al instante.
-  - title: 🧠 Búsqueda Semántica
+  - title: 🧠 Búsqueda Semántica RAG
     details: Embeddings vectoriales para búsqueda inteligente de código. Encuentra código relevante por significado, no solo palabras clave.
   - title: 📊 Grafo de Módulos
     details: Visualiza la arquitectura de tu codebase. Entiende dependencias y relaciones entre módulos.
+  - title: 🔍 Git Blame
+    details: Rastrea la autoría del código directamente en tu contexto de IA. Saber quién escribió qué y cuándo.
   - title: 🌐 Multi-Lenguaje
     details: Soporta TypeScript, Python, Go, Rust, Java, C#, Ruby, PHP y más.
+  - title: 📦 Multi-Repositorio
+    details: Maneja monorepos y microservicios. Escanea múltiples repositorios en un solo comando.
 ---
 
 <style>
