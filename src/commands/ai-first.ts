@@ -1077,6 +1077,8 @@ Options:
   } else if (command === 'init' || !command) {
     // Init command - generate all context files
     if (command === 'init') args.shift();
+    
+    let preset: string | undefined;
 
     for (let i = 0; i < args.length; i++) {
       const arg = args[i];
@@ -1088,6 +1090,10 @@ Options:
         case "--output":
         case "-o":
           options.outputDir = args[++i];
+          break;
+        case "--preset":
+        case "-p":
+          preset = args[++i];
           break;
         case "--help":
         case "-h":
@@ -1113,10 +1119,35 @@ Commands:
 Options:
   -r, --root <dir>      Root directory to scan (default: current directory)
   -o, --output <dir>   Output directory (default: ./ai-context)
+  -p, --preset <name>  Use preset (full, quick, api, docs)
   -h, --help           Show help message
+
+Presets:
+  full    Complete analysis with all features
+  quick   Fast analysis for development iterations
+  api     Focus on API endpoints and services
+  docs    Documentation files only
 `);
           process.exit(0);
       }
+    }
+    
+    const rootDir = options.rootDir || process.cwd();
+    const configPath = path.join(rootDir, 'ai-first.config.json');
+    if (fs.existsSync(configPath)) {
+      try {
+        const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+        if (config.output?.directory && !options.outputDir) {
+          options.outputDir = path.join(rootDir, config.output.directory);
+        }
+        if (config.preset && !preset) {
+          preset = config.preset;
+        }
+      } catch {}
+    }
+    
+    if (preset) {
+      console.log(`\n🎛️  Using preset: ${preset}\n`);
     }
 
     runAIFirst(options).then((result) => {

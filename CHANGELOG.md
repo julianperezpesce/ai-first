@@ -6,6 +6,83 @@ All notable changes to `ai-first` will be documented in this file.
 
 ## [Unreleased]
 
+## [1.3.8] - 2026-03-29
+
+### 🚀 Major Features & Architecture Improvements
+
+**Branch:** `feature/v1.3.8-improvements`
+
+#### ✨ New Features
+
+- **Configuration System** - Full support for `ai-first.config.json`
+  - Load and validate configuration from JSON files
+  - 4 built-in presets: `full`, `quick`, `api`, `docs`
+  - Custom preset support
+  - Configuration merging and validation
+
+- **Library/API Mode** - Use ai-first as a Node.js library
+  - Full TypeScript support with exported types
+  - Programmatic access to all core functions
+  - Perfect for building tools on top of ai-first
+
+- **Content Compression** - Reduce tokens by up to 70%
+  - **Inclusion Levels**: `full`, `compress`, `directory`, `exclude`
+  - **Detail Levels**: `full`, `signatures`, `skeleton`
+  - Smart content processing preserves imports, exports, and signatures
+  - Language-aware compression for TypeScript, Python, Go, Rust
+
+- **Git Blame Integration** - Track code authorship
+  - Get blame information for any file
+  - Format options: `inline` (per line) or `block` (grouped by author)
+  - Shows author, date, and commit hash
+  - Helps identify who wrote what and when
+
+- **MCP Server Support** - Model Context Protocol integration
+  - Native MCP server for AI agent integration
+  - 3 built-in tools:
+    - `generate_context` - Generate AI context for repository
+    - `query_symbols` - Search symbols in indexed repository
+    - `get_architecture` - Get architecture analysis
+  - Works with Cursor, Claude Code, and other MCP-compatible agents
+
+- **RAG Vector Search** - Semantic search for your codebase
+  - Local vector index (no cloud required)
+  - Search with natural language queries
+  - Find related code by meaning, not just text matching
+  - Perfect for large codebases and onboarding
+
+- **Multi-Repository Support** - Handle monorepos and microservices
+  - Scan multiple repositories in one command
+  - Git submodule detection and support
+  - Cross-repository dependency tracking
+  - Unified context across services
+
+#### 🔧 Technical Improvements
+
+- New modular architecture with separate packages:
+  - `src/config/` - Configuration management
+  - `src/core/content/` - Content processing and compression
+  - `src/core/rag/` - Vector search and semantic indexing
+  - `src/core/multiRepo/` - Multi-repository support
+  - `src/mcp/` - Model Context Protocol server
+
+- Added `@modelcontextprotocol/sdk` dependency for MCP support
+- Comprehensive test suite for configuration system
+- Benchmark scripts for token reduction measurement
+
+#### 📚 Documentation
+
+- New "Programmatic API" section in README
+- Complete FEATURES_GUIDE.md for developers
+- Implementation planning documents
+- Configuration file examples
+
+#### 📦 New Dependencies
+
+```json
+"@modelcontextprotocol/sdk": "^1.0.4"
+```
+
 ## [1.3.7] - 2026-03-28
 
 ### 🎯 AI Context Quality Evaluator
