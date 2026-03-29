@@ -1,11 +1,18 @@
 {
   "name": "django-app",
   "rootDir": "test-projects/django-app",
-  "features": [],
+  "features": [
+    "blog",
+    "django_app",
+    "users"
+  ],
   "flows": [
+    "admin",
+    "init",
+    "serializers",
     "views"
   ],
   "languages": [],
   "frameworks": [],
-  "generatedAt": "2026-03-18T19:21:48.620Z"
+  "generatedAt": "2026-03-29T21:17:32.629Z"
 }

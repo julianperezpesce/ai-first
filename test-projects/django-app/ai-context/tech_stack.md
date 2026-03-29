@@ -1,14 +1,15 @@
 # Technology Stack
 
-**Languages**: Markdown, JSON, Python
+**Languages**: Markdown, Python
+
+**Frameworks**: Django
 
 ## Languages
 - Markdown
-- JSON
 - Python
 
 ## Frameworks
-- None detected
+- Django
 
 ## Key Libraries
 - None detected

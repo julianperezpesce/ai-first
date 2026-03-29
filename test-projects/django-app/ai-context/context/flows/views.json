@@ -5,6 +5,8 @@
     "blog/views.py",
     "users/views.py"
   ],
-  "depth": 0,
-  "layers": []
+  "depth": 1,
+  "layers": [
+    "api"
+  ]
 }

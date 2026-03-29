@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "lastIndexed": "2026-03-29T16:22:02.985Z",
-  "totalFiles": 39,
+  "lastIndexed": "2026-03-29T21:17:41.328Z",
+  "totalFiles": 50,
   "files": {
     "ai-context/ai_context.md": {
       "path": "ai-context/ai_context.md",
@@ -159,24 +159,24 @@
     },
     "dist/analyzers/techStack.d.ts.map": {
       "path": "dist/analyzers/techStack.d.ts.map",
-      "hash": "0ca1ce00962bd605d855e300a3253370",
-      "mtime": 1774224353524.042,
-      "size": 1038,
-      "indexedAt": "2026-03-23T00:06:12.947Z"
+      "hash": "35272a1f1a0d69f6dffbcbce9894e663",
+      "mtime": 1774819051938.6917,
+      "size": 1039,
+      "indexedAt": "2026-03-29T21:17:41.326Z"
     },
     "dist/analyzers/techStack.js": {
       "path": "dist/analyzers/techStack.js",
-      "hash": "6132b57cccc044c414f3785afaaf873e",
-      "mtime": 1774224353524.042,
-      "size": 22651,
-      "indexedAt": "2026-03-23T00:06:12.947Z"
+      "hash": "c82523be5067034404b0cc42098dd36c",
+      "mtime": 1774819051937.6917,
+      "size": 27537,
+      "indexedAt": "2026-03-29T21:17:41.326Z"
     },
     "dist/analyzers/techStack.js.map": {
       "path": "dist/analyzers/techStack.js.map",
-      "hash": "b4fced12fd2d2dd1f842c64855233c5f",
-      "mtime": 1774224353523.042,
-      "size": 21632,
-      "indexedAt": "2026-03-23T00:06:12.947Z"
+      "hash": "1f50558a9011e5f577edc75c2b4a3cc7",
+      "mtime": 1774819051937.6917,
+      "size": 26369,
+      "indexedAt": "2026-03-29T21:17:41.326Z"
     },
     "src/analyzers/symbols.ts": {
       "path": "src/analyzers/symbols.ts",
@@ -194,10 +194,10 @@
     },
     "ai-context/index-state.json": {
       "path": "ai-context/index-state.json",
-      "hash": "0d74158513149407f8d2045141feaf91",
-      "mtime": 1774801170286.9082,
-      "size": 9204,
-      "indexedAt": "2026-03-29T16:22:02.984Z"
+      "hash": "524a3f209c228984d4aec570709b4d93",
+      "mtime": 1774818988286.677,
+      "size": 9449,
+      "indexedAt": "2026-03-29T21:17:41.326Z"
     },
     "CHANGELOG.md": {
       "path": "CHANGELOG.md",
@@ -275,6 +275,83 @@
       "mtime": 1774801303603.294,
       "size": 480,
       "indexedAt": "2026-03-29T16:22:02.984Z"
+    },
+    "test-projects/django-app/ai-context/ai_context.md": {
+      "path": "test-projects/django-app/ai-context/ai_context.md",
+      "hash": "9eb3eb430882dd30c2e18de9ce988d77",
+      "mtime": 1774819052624.7026,
+      "size": 1517,
+      "indexedAt": "2026-03-29T21:17:41.326Z"
+    },
+    "test-projects/django-app/ai-context/ai_rules.md": {
+      "path": "test-projects/django-app/ai-context/ai_rules.md",
+      "hash": "944575471875d5850405b8f28fbeb1a5",
+      "mtime": 1774819052624.7026,
+      "size": 811,
+      "indexedAt": "2026-03-29T21:17:41.327Z"
+    },
+    "test-projects/django-app/ai-context/architecture.md": {
+      "path": "test-projects/django-app/ai-context/architecture.md",
+      "hash": "525cbf6020315b2f9e566c6619efb4f6",
+      "mtime": 1774819052614.7024,
+      "size": 724,
+      "indexedAt": "2026-03-29T21:17:41.327Z"
+    },
+    "test-projects/django-app/ai-context/context/flows/views.json": {
+      "path": "test-projects/django-app/ai-context/context/flows/views.json",
+      "hash": "7f26820e5ddfa9aaa614d9320aca3ffa",
+      "mtime": 1774819052628.7026,
+      "size": 157,
+      "indexedAt": "2026-03-29T21:17:41.327Z"
+    },
+    "test-projects/django-app/ai-context/project.json": {
+      "path": "test-projects/django-app/ai-context/project.json",
+      "hash": "b7f83aad3bcca477b2d81bb526f3caa9",
+      "mtime": 1774819052628.7026,
+      "size": 288,
+      "indexedAt": "2026-03-29T21:17:41.327Z"
+    },
+    "test-projects/django-app/ai-context/repo_map.json": {
+      "path": "test-projects/django-app/ai-context/repo_map.json",
+      "hash": "48a394eef511541f59f79a9f77900dbe",
+      "mtime": 1774819052613.7024,
+      "size": 3653,
+      "indexedAt": "2026-03-29T21:17:41.327Z"
+    },
+    "test-projects/django-app/ai-context/repo_map.md": {
+      "path": "test-projects/django-app/ai-context/repo_map.md",
+      "hash": "9e1e333f34d5b4166d3fca576c2c77b9",
+      "mtime": 1774819052612.7024,
+      "size": 891,
+      "indexedAt": "2026-03-29T21:17:41.327Z"
+    },
+    "test-projects/django-app/ai-context/schema.json": {
+      "path": "test-projects/django-app/ai-context/schema.json",
+      "hash": "93521bd10246454256c15cffbbae3ac9",
+      "mtime": 1774819052628.7026,
+      "size": 102,
+      "indexedAt": "2026-03-29T21:17:41.327Z"
+    },
+    "test-projects/django-app/ai-context/summary.md": {
+      "path": "test-projects/django-app/ai-context/summary.md",
+      "hash": "21d8172f53214fcb4765fdbfc60783ca",
+      "mtime": 1774819052613.7024,
+      "size": 189,
+      "indexedAt": "2026-03-29T21:17:41.327Z"
+    },
+    "test-projects/django-app/ai-context/symbols.json": {
+      "path": "test-projects/django-app/ai-context/symbols.json",
+      "hash": "3cdd94e5152060a7be0a5e8a17d5e163",
+      "mtime": 1774819052621.7026,
+      "size": 22583,
+      "indexedAt": "2026-03-29T21:17:41.327Z"
+    },
+    "test-projects/django-app/ai-context/tech_stack.md": {
+      "path": "test-projects/django-app/ai-context/tech_stack.md",
+      "hash": "3575bf390691d17c0d0902aa343c3465",
+      "mtime": 1774819052617.7024,
+      "size": 359,
+      "indexedAt": "2026-03-29T21:17:41.328Z"
     }
   }
 }
