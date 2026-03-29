@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "lastIndexed": "2026-03-28T18:44:33.810Z",
-  "totalFiles": 27,
+  "lastIndexed": "2026-03-29T16:22:02.985Z",
+  "totalFiles": 39,
   "files": {
     "ai-context/ai_context.md": {
       "path": "ai-context/ai_context.md",
@@ -191,6 +191,90 @@
       "mtime": 1774223797696.0662,
       "size": 22516,
       "indexedAt": "2026-03-23T00:06:12.947Z"
+    },
+    "ai-context/index-state.json": {
+      "path": "ai-context/index-state.json",
+      "hash": "0d74158513149407f8d2045141feaf91",
+      "mtime": 1774801170286.9082,
+      "size": 9204,
+      "indexedAt": "2026-03-29T16:22:02.984Z"
+    },
+    "CHANGELOG.md": {
+      "path": "CHANGELOG.md",
+      "hash": "a99aa9ff95bb348d930c602ad9286d5a",
+      "mtime": 1774800256611.2012,
+      "size": 30812,
+      "indexedAt": "2026-03-29T16:10:02.228Z"
+    },
+    "dist/commands/ai-first.js": {
+      "path": "dist/commands/ai-first.js",
+      "hash": "9d2ea4f9697a0ba2b95a83d8bfcb4f48",
+      "mtime": 1774801303602.294,
+      "size": 61097,
+      "indexedAt": "2026-03-29T16:22:02.984Z"
+    },
+    "dist/commands/ai-first.js.map": {
+      "path": "dist/commands/ai-first.js.map",
+      "hash": "a0587b484fe51212a37ec8819c01d99b",
+      "mtime": 1774801303601.294,
+      "size": 50906,
+      "indexedAt": "2026-03-29T16:22:02.984Z"
+    },
+    "dist/core/gitAnalyzer.d.ts": {
+      "path": "dist/core/gitAnalyzer.d.ts",
+      "hash": "250a62200196c045bd6fbeaa2a4a1728",
+      "mtime": 1774800594072.5566,
+      "size": 2516,
+      "indexedAt": "2026-03-29T16:10:02.229Z"
+    },
+    "dist/core/gitAnalyzer.d.ts.map": {
+      "path": "dist/core/gitAnalyzer.d.ts.map",
+      "hash": "931e7ec9b582a69881d1f710120ed274",
+      "mtime": 1774800594071.5566,
+      "size": 2103,
+      "indexedAt": "2026-03-29T16:10:02.229Z"
+    },
+    "dist/core/gitAnalyzer.js": {
+      "path": "dist/core/gitAnalyzer.js",
+      "hash": "e5be2b391b7f13b2bd6154eb6ec2d798",
+      "mtime": 1774800594070.5566,
+      "size": 13007,
+      "indexedAt": "2026-03-29T16:10:02.229Z"
+    },
+    "dist/core/gitAnalyzer.js.map": {
+      "path": "dist/core/gitAnalyzer.js.map",
+      "hash": "9333c5a3f0f31e6a08d3046c394facd7",
+      "mtime": 1774800594070.5566,
+      "size": 12951,
+      "indexedAt": "2026-03-29T16:10:02.229Z"
+    },
+    "package.json": {
+      "path": "package.json",
+      "hash": "23c4a299913c43724593050a66348e37",
+      "mtime": 1774800203952.9775,
+      "size": 2471,
+      "indexedAt": "2026-03-29T16:10:02.229Z"
+    },
+    "src/commands/ai-first.ts": {
+      "path": "src/commands/ai-first.ts",
+      "hash": "f511373d2b4ff5a09a3d4f7e571714a6",
+      "mtime": 1774801296509.2107,
+      "size": 55577,
+      "indexedAt": "2026-03-29T16:22:02.985Z"
+    },
+    "src/core/gitAnalyzer.ts": {
+      "path": "src/core/gitAnalyzer.ts",
+      "hash": "19c44cdcef1a8ad0d4867f85b5c3c030",
+      "mtime": 1774800584963.2427,
+      "size": 13635,
+      "indexedAt": "2026-03-29T16:10:02.229Z"
+    },
+    "dist/commands/ai-first.d.ts.map": {
+      "path": "dist/commands/ai-first.d.ts.map",
+      "hash": "6f1ddd2700e9d1c6ddb19a6a896c1cf2",
+      "mtime": 1774801303603.294,
+      "size": 480,
+      "indexedAt": "2026-03-29T16:22:02.984Z"
     }
   }
 }

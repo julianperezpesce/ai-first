@@ -46,6 +46,15 @@ STATUS_*
 docs/planning/
 !docs/planning/README.md
 
+# Internal handoff docs (not for public)
+docs/handoff/
+
+# Evaluator config (has absolute paths)
+evaluator.config.json
+
+# Internal simulation results
+PHASE*_USER_SIMULATION.md
+
 # OpenCode / AI Assistant internal files
 HANDOFF*.md
 AI_RECOMMENDATIONS*.md

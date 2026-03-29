@@ -389,3 +389,133 @@ export function generateGitContext(rootDir: string, aiDir?: string): {
     activity
   };
 }
+
+export interface GitBlameLine {
+  line: number;
+  content: string;
+  author: string;
+  date: string;
+  hash: string;
+}
+
+export interface GitBlameResult {
+  filePath: string;
+  lines: GitBlameLine[];
+  authors: Map<string, number>;
+}
+
+export function getGitBlame(rootDir: string, filePath: string): GitBlameResult {
+  const fullPath = path.join(rootDir, filePath);
+  
+  if (!fs.existsSync(fullPath)) {
+    return {
+      filePath,
+      lines: [],
+      authors: new Map()
+    };
+  }
+
+  if (!detectGitRepository(rootDir)) {
+    const content = fs.readFileSync(fullPath, 'utf-8');
+    const lines = content.split('\n');
+    return {
+      filePath,
+      lines: lines.map((content, idx) => ({
+        line: idx + 1,
+        content,
+        author: 'unknown',
+        date: '',
+        hash: ''
+      })),
+      authors: new Map([['unknown', lines.length]])
+    };
+  }
+
+  const blameOutput = gitExec(rootDir, `git blame --line-porcelain "${filePath}"`);
+  
+  if (!blameOutput) {
+    return {
+      filePath,
+      lines: [],
+      authors: new Map()
+    };
+  }
+
+  const lines: GitBlameLine[] = [];
+  const authors = new Map<string, number>();
+  const lineData: { hash?: string; author?: string; date?: string; content?: string } = {};
+  let lineNumber = 0;
+
+  const blameLines = blameOutput.split('\n');
+  
+  for (const blameLine of blameLines) {
+    if (blameLine.startsWith('\t')) {
+      lineData.content = blameLine.slice(1);
+      lineNumber++;
+      
+      const author = lineData.author || 'unknown';
+      const date = lineData.date || '';
+      const hash = lineData.hash || '';
+      
+      lines.push({
+        line: lineNumber,
+        content: lineData.content,
+        author,
+        date,
+        hash
+      });
+      
+      authors.set(author, (authors.get(author) || 0) + 1);
+      
+      lineData.hash = undefined;
+      lineData.author = undefined;
+      lineData.date = undefined;
+      lineData.content = undefined;
+    } else if (blameLine.startsWith('author ')) {
+      lineData.author = blameLine.slice(7);
+    } else if (blameLine.startsWith('author-time ')) {
+      const timestamp = parseInt(blameLine.slice(12), 10);
+      lineData.date = new Date(timestamp * 1000).toISOString().split('T')[0];
+    } else if (!blameLine.startsWith(' ') && blameLine.length >= 40) {
+      lineData.hash = blameLine.split(' ')[0];
+    }
+  }
+
+  return {
+    filePath,
+    lines,
+    authors
+  };
+}
+
+export function formatGitBlame(
+  blameResult: GitBlameResult,
+  format: 'inline' | 'block' = 'inline'
+): string {
+  if (format === 'block') {
+    const sections: string[] = [];
+    let currentAuthor = '';
+    let currentSection: string[] = [];
+    
+    for (const line of blameResult.lines) {
+      if (line.author !== currentAuthor) {
+        if (currentSection.length > 0) {
+          sections.push(`// ${currentAuthor}\n${currentSection.join('\n')}`);
+        }
+        currentAuthor = line.author;
+        currentSection = [];
+      }
+      currentSection.push(line.content);
+    }
+    
+    if (currentSection.length > 0) {
+      sections.push(`// ${currentAuthor}\n${currentSection.join('\n')}`);
+    }
+    
+    return sections.join('\n\n');
+  }
+  
+  return blameResult.lines
+    .map(line => `[${line.author} ${line.date}] ${line.content}`)
+    .join('\n');
+}
