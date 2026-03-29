@@ -71,4 +71,18 @@ export declare function generateGitContext(rootDir: string, aiDir?: string): {
     recentFlows: string[];
     activity: GitActivity | null;
 };
+export interface GitBlameLine {
+    line: number;
+    content: string;
+    author: string;
+    date: string;
+    hash: string;
+}
+export interface GitBlameResult {
+    filePath: string;
+    lines: GitBlameLine[];
+    authors: Map<string, number>;
+}
+export declare function getGitBlame(rootDir: string, filePath: string): GitBlameResult;
+export declare function formatGitBlame(blameResult: GitBlameResult, format?: 'inline' | 'block'): string;
 //# sourceMappingURL=gitAnalyzer.d.ts.map
