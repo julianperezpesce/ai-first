@@ -19,16 +19,22 @@ hero:
 features:
   - title: ⚡ Instant Context
     details: Generate comprehensive context files in seconds. AI understands your project in ~500 tokens instead of 50,000.
-  - title: 🔌 Multi-Agent Support
-    details: Works with OpenCode, Cursor, Claude Code, Windsurf, GitHub Copilot, and any AI coding assistant.
+  - title: 🔌 MCP Server
+    details: Native Model Context Protocol integration. Use AI-First as a tool in Cursor, Claude Code, and other AI agents.
+  - title: ⚙️ Config Presets
+    details: 4 built-in presets (full, quick, api, docs) to customize context generation for your use case.
   - title: 🗄️ SQLite Index
     details: Fast symbol queries with indexed database. Search functions, classes, and imports instantly.
   - title: 🧠 Semantic Search
-    details: Vector embeddings for intelligent code search. Find relevant code by meaning, not just keywords.
+    details: RAG vector embeddings for intelligent code search. Find relevant code by meaning, not just keywords.
   - title: 📊 Module Graph
     details: Visualize your codebase architecture. Understand dependencies and module relationships.
+  - title: 🔍 Git Blame
+    details: Track code authorship directly in your AI context. Know who wrote what and when.
   - title: 🌐 Multi-Language
     details: Supports TypeScript, Python, Go, Rust, Java, C#, Ruby, PHP, and more.
+  - title: 📦 Multi-Repo
+    details: Handle monorepos and microservices. Scan multiple repositories in one command.
 ---
 
 <script setup>

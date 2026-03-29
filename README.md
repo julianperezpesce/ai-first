@@ -23,17 +23,14 @@
 
 **MCP Server & Configuration System**
 
-- ✅ **MCP Server Support**: Native Model Context Protocol server for AI agent integration
-- ✅ **Configuration System**: Full `ai-first.config.json` support with 4 presets (`full`, `quick`, `api`, `docs`)
-- ✅ **Content Compression**: Reduce tokens by up to 70% with smart content processing
-- ✅ **Git Blame Integration**: Track code authorship with inline/block formatting
-- ✅ **RAG Vector Search**: Semantic search for your codebase (no cloud required)
-- ✅ **Multi-Repository Support**: Handle monorepos and microservices
-- ✅ **1061 Tests Passing**: All tests passing with comprehensive coverage
+- ✅ **MCP Server**: Native Model Context Protocol for Cursor, Claude Code, and other AI agents
+- ✅ **Configuration Presets**: 4 presets (`full`, `quick`, `api`, `docs`) via `ai-first.config.json`
+- ✅ **Content Compression**: Reduce tokens by up to 70%
+- ✅ **Git Blame**: Track code authorship directly in your context
+- ✅ **RAG Vector Search**: Semantic code search (no cloud required)
+- ✅ **Multi-Repo Support**: Handle monorepos and microservices
 
-### Previous: v1.3.7
-
-**AI Context Quality Evaluator**
+**[Read the guides →](/guide/mcp)**
 
 - ✅ **Go Entrypoints**: Automatic detection of `main.go`, HTTP handlers, and service ports
 - ✅ **Rust Entrypoints**: Support for `main.rs`, `Cargo.toml`, and struct implementations  

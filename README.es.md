@@ -25,17 +25,14 @@
 
 **Servidor MCP y Sistema de Configuración**
 
-- ✅ **Soporte MCP Server**: Servidor nativo Model Context Protocol para integración con agentes IA
-- ✅ **Sistema de Configuración**: Soporte completo de `ai-first.config.json` con 4 presets (`full`, `quick`, `api`, `docs`)
-- ✅ **Compresión de Contenido**: Reduce tokens hasta 70% con procesamiento inteligente
-- ✅ **Integración Git Blame**: Rastrea autoría del código con formato inline/block
-- ✅ **Búsqueda Vectorial RAG**: Busca en tu codebase por significado (sin nube requerida)
-- ✅ **Soporte Multi-Repositorio**: Maneja monorepos y microservicios
-- ✅ **1061 Tests Pasando**: Todos los tests pasando con cobertura integral
+- ✅ **Servidor MCP**: Model Context Protocol nativo para Cursor, Claude Code y otros agentes IA
+- ✅ **Presets de Configuración**: 4 presets (`full`, `quick`, `api`, `docs`) vía `ai-first.config.json`
+- ✅ **Compresión de Contenido**: Reduce tokens hasta 70%
+- ✅ **Git Blame**: Rastrea autoría del código directamente en tu contexto
+- ✅ **Búsqueda RAG**: Busca código por significado (sin nube requerida)
+- ✅ **Soporte Multi-Repo**: Maneja monorepos y microservicios
 
-### Anterior: v1.3.7
-
-**Evaluador de Calidad de Contexto IA**
+**[Leer las guías →](/guide/mcp)**
 
 - ✅ **Entrypoints Go**: Detección automática de `main.go`, handlers HTTP y puertos de servicio
 - ✅ **Entrypoints Rust**: Soporte para `main.rs`, `Cargo.toml` e implementaciones de structs
