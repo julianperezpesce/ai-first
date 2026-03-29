@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "lastIndexed": "2026-03-29T16:10:02.230Z",
-  "totalFiles": 38,
+  "lastIndexed": "2026-03-29T16:22:02.985Z",
+  "totalFiles": 39,
   "files": {
     "ai-context/ai_context.md": {
       "path": "ai-context/ai_context.md",
@@ -194,10 +194,10 @@
     },
     "ai-context/index-state.json": {
       "path": "ai-context/index-state.json",
-      "hash": "f58ea3d4b05f26e6aca13ad680a6470d",
-      "mtime": 1774747448324.0137,
-      "size": 6871,
-      "indexedAt": "2026-03-29T16:10:02.228Z"
+      "hash": "0d74158513149407f8d2045141feaf91",
+      "mtime": 1774801170286.9082,
+      "size": 9204,
+      "indexedAt": "2026-03-29T16:22:02.984Z"
     },
     "CHANGELOG.md": {
       "path": "CHANGELOG.md",
@@ -208,17 +208,17 @@
     },
     "dist/commands/ai-first.js": {
       "path": "dist/commands/ai-first.js",
-      "hash": "2b4b832284848d399650c551705976a9",
-      "mtime": 1774800594130.5588,
-      "size": 59399,
-      "indexedAt": "2026-03-29T16:10:02.228Z"
+      "hash": "9d2ea4f9697a0ba2b95a83d8bfcb4f48",
+      "mtime": 1774801303602.294,
+      "size": 61097,
+      "indexedAt": "2026-03-29T16:22:02.984Z"
     },
     "dist/commands/ai-first.js.map": {
       "path": "dist/commands/ai-first.js.map",
-      "hash": "8a868b1b8f8bd7e5ea305f1695110430",
-      "mtime": 1774800594129.5588,
-      "size": 50066,
-      "indexedAt": "2026-03-29T16:10:02.228Z"
+      "hash": "a0587b484fe51212a37ec8819c01d99b",
+      "mtime": 1774801303601.294,
+      "size": 50906,
+      "indexedAt": "2026-03-29T16:22:02.984Z"
     },
     "dist/core/gitAnalyzer.d.ts": {
       "path": "dist/core/gitAnalyzer.d.ts",
@@ -257,10 +257,10 @@
     },
     "src/commands/ai-first.ts": {
       "path": "src/commands/ai-first.ts",
-      "hash": "e283c2e7201c761082c9dd76df9eb919",
-      "mtime": 1774800517030.941,
-      "size": 53948,
-      "indexedAt": "2026-03-29T16:10:02.229Z"
+      "hash": "f511373d2b4ff5a09a3d4f7e571714a6",
+      "mtime": 1774801296509.2107,
+      "size": 55577,
+      "indexedAt": "2026-03-29T16:22:02.985Z"
     },
     "src/core/gitAnalyzer.ts": {
       "path": "src/core/gitAnalyzer.ts",
@@ -268,6 +268,13 @@
       "mtime": 1774800584963.2427,
       "size": 13635,
       "indexedAt": "2026-03-29T16:10:02.229Z"
+    },
+    "dist/commands/ai-first.d.ts.map": {
+      "path": "dist/commands/ai-first.d.ts.map",
+      "hash": "6f1ddd2700e9d1c6ddb19a6a896c1cf2",
+      "mtime": 1774801303603.294,
+      "size": 480,
+      "indexedAt": "2026-03-29T16:22:02.984Z"
     }
   }
 }
