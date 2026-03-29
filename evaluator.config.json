@@ -1,0 +1,45 @@
+{
+  "projects": [
+    {
+      "name": "express-api",
+      "path": "test-projects/express-api",
+      "priority": "medium",
+      "description": "Express API for testing"
+    }
+  ],
+  "evaluation": {
+    "useAI": false,
+    "aiModels": [],
+    "aiThreshold": 3.5,
+    "useRubric": false,
+    "useHierarchical": true,
+    "cacheEnabled": true,
+    "cacheTTL": 86400000,
+    "maxRetries": 3,
+    "timeout": 30000
+  },
+  "thresholds": {
+    "minimumScore": 3.5,
+    "failOnRegression": false,
+    "regressionDelta": 0.5,
+    "criticalRegressionDelta": 1.0
+  },
+  "baseline": {
+    "enabled": false,
+    "directory": ".sisyphus/baselines",
+    "autoSave": false,
+    "compareOnRun": false
+  },
+  "reporting": {
+    "format": "markdown",
+    "includeDetails": true,
+    "includeTrends": false,
+    "maxImprovements": 10,
+    "outputDirectory": "."
+  },
+  "synthesis": {
+    "useLLM": false,
+    "maxRecommendations": 10,
+    "groupByCategory": true
+  }
+}
