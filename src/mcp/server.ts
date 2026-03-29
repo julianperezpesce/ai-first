@@ -5,9 +5,12 @@ import {
   ListToolsRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js';
 import { runAIFirst } from '../commands/ai-first.js';
-import { generateIndex } from '../core/indexer.js';
-import { buildKnowledgeGraph } from '../core/knowledgeGraphBuilder.js';
+import { generateIndex, EXAMPLE_QUERIES } from '../core/indexer.js';
+import { scanRepo } from '../core/repoScanner.js';
 import { analyzeArchitecture } from '../analyzers/architecture.js';
+import initSqlJs from 'sql.js';
+import fs from 'fs';
+import path from 'path';
 
 interface MCPServerOptions {
   rootDir?: string;
@@ -21,7 +24,7 @@ export function startMCPServer(options: MCPServerOptions = {}): void {
   const server = new Server(
     {
       name: 'ai-first-cli',
-      version: '1.4.0',
+      version: '1.3.8',
     },
     {
       capabilities: {
@@ -118,7 +121,41 @@ export function startMCPServer(options: MCPServerOptions = {}): void {
           const query = args?.query as string;
           const symbolType = (args?.type as string) || 'all';
           
-          const index = generateIndex(rootDir, aiDir);
+          // Ensure index exists
+          const dbPath = path.join(aiDir, 'index.db');
+          if (!fs.existsSync(dbPath)) {
+            // Generate index if it doesn't exist
+            await generateIndex(rootDir, dbPath);
+          }
+          
+          // Query symbols from SQLite
+          const SQL = await initSqlJs();
+          const fileBuffer = fs.readFileSync(dbPath);
+          const db = new SQL.Database(fileBuffer);
+          
+          // Build query based on type filter
+          let sqlQuery = EXAMPLE_QUERIES.searchSymbols;
+          if (symbolType !== 'all') {
+            sqlQuery = `SELECT s.name, s.type, f.path, s.line FROM symbols s JOIN files f ON s.file_id = f.id WHERE s.name LIKE ? AND s.type = ? LIMIT 50`;
+          }
+          
+          const searchPattern = `%${query}%`;
+          const results = symbolType !== 'all'
+            ? db.exec(sqlQuery, [searchPattern, symbolType])
+            : db.exec(sqlQuery, [searchPattern]);
+          
+          db.close();
+          
+          // Format results
+          let formattedResults: Array<{name: string; type: string; file: string; line: number}> = [];
+          if (results.length > 0 && results[0].values.length > 0) {
+            formattedResults = results[0].values.map((row: unknown[]) => ({
+              name: row[0] as string,
+              type: row[1] as string,
+              file: row[2] as string,
+              line: row[3] as number,
+            }));
+          }
           
           return {
             content: [
@@ -127,8 +164,9 @@ export function startMCPServer(options: MCPServerOptions = {}): void {
                 text: JSON.stringify({
                   query,
                   type: symbolType,
-                  results: [],
-                  message: `Symbol query executed for "${query}"`,
+                  results: formattedResults,
+                  count: formattedResults.length,
+                  message: `Found ${formattedResults.length} symbols matching "${query}"`,
                 }, null, 2),
               },
             ],
@@ -138,6 +176,22 @@ export function startMCPServer(options: MCPServerOptions = {}): void {
         case 'get_architecture': {
           const format = (args?.format as string) || 'summary';
           
+          const { files } = scanRepo(rootDir);
+          const analysis = analyzeArchitecture(files, rootDir);
+          
+          const output = format === 'detailed'
+            ? {
+                pattern: analysis.pattern,
+                layers: analysis.layers,
+                modules: analysis.modules,
+                description: analysis.description,
+              }
+            : {
+                pattern: analysis.pattern,
+                layers: analysis.layers,
+                moduleCount: analysis.modules.length,
+              };
+          
           return {
             content: [
               {
@@ -145,7 +199,7 @@ export function startMCPServer(options: MCPServerOptions = {}): void {
                 text: JSON.stringify({
                   format,
                   rootDir,
-                  message: 'Architecture analysis available',
+                  ...output,
                 }, null, 2),
               },
             ],
