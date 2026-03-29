@@ -6,6 +6,52 @@ All notable changes to `ai-first` will be documented in this file.
 
 ## [Unreleased]
 
+## [1.3.7] - 2026-03-28
+
+### 🎯 AI Context Quality Evaluator
+
+**Branch:** `feature/migrate-evaluator-to-private-repo`
+
+#### Added
+
+- **Context Quality Evaluation System**
+  - Built-in evaluator to measure AI context quality (score 0-5)
+  - Hierarchical evaluation in 3 levels: Structure, Content, AI Assessment
+  - Conditional scoring that doesn't penalize for optional features
+  - 100% cost savings when quality score ≥ 3.5 (skips AI evaluation)
+  - Categorized improvement suggestions: IMPLEMENTED, USER_ACTION, KNOWN_LIMITATION, IMPROVEMENT
+
+- **New Evaluation Checks**
+  - Entry Point Documentation check (15 pts)
+  - Documentation Completeness check (15 pts)
+  - API Contracts validation (conditional)
+  - Framework Instructions validation (conditional)
+  - Freshness tracking check (conditional)
+
+- **Evaluator Repository Migration**
+  - Extracted evaluator to private repository: `ai-first-evaluator`
+  - Integrated as dev dependency via npm
+  - Added evaluation scripts: `npm run evaluate`, `npm run evaluate:ci`, `npm run evaluate:quick`
+  - Post-install script to auto-build evaluator
+
+#### Changed
+
+- **Improved Scoring Logic**
+  - Fixed bug allowing scores > 5.0 (now properly capped)
+  - Better Spring Boot framework detection
+  - Content Quality scoring increased to 80 points (from 50)
+
+#### Test Results
+
+- **1041 Tests Passing** (+15 new evaluation tests)
+- **31 Test Files**
+- **100% Pass Rate**
+- **11/11 Test Projects Passing**
+- **Average Score: 3.88/5.0**
+- **Cost Savings: 100%**
+
+---
+
 ## [1.3.6] - 2026-03-28
 
 ### 🎯 AI Recommendations Implementation

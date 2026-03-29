@@ -19,7 +19,20 @@
 
 ---
 
-## 🚀 What's New in v1.3.6
+## 🚀 What's New in v1.3.7
+
+**AI Context Quality Evaluator**
+
+- ✅ **Context Quality Evaluation**: Built-in evaluator to measure AI context quality (score 0-5)
+- ✅ **Hierarchical Evaluation**: 3-level assessment (Structure, Content, AI Review)
+- ✅ **Smart Scoring**: Conditional scoring that doesn't penalize for optional features
+- ✅ **Cost Optimization**: 100% cost savings when quality score ≥ 3.5 (skips AI evaluation)
+- ✅ **Improvement Suggestions**: Categorized recommendations (IMPLEMENTED, USER_ACTION, IMPROVEMENT)
+- ✅ **New Evaluation Checks**: Entry point documentation and documentation completeness
+- ✅ **Private Evaluator Repo**: Evaluator extracted to separate private repository
+- ✅ **NPM Integration**: Use as dev dependency with `npm run evaluate`
+
+### Previous: v1.3.6
 
 **Enhanced Language Support & Framework Detection**
 
