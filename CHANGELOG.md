@@ -6,6 +6,37 @@ All notable changes to `ai-first` will be documented in this file.
 
 ## [Unreleased]
 
+## [1.3.9] - 2026-03-30
+
+### 🚀 MCP Server Fixes & Improvements
+
+**Branch:** `feature/v1.3.9-mcp-and-evaluator`
+
+#### 🐛 Bug Fixes
+
+- **query_symbols implementation** - Fixed to actually query SQLite index and return real results
+- **get_architecture implementation** - Fixed to use analyzeArchitecture() with real data
+- **Version correction** - Fixed version from 1.4.0 to 1.3.8 in MCP server
+
+#### ✨ New Features
+
+- **--install-mcp flag** - Auto-configure OpenCode MCP server
+  - Added `--install-mcp` option to `af init` command
+  - Added `--mcp` alias for convenience
+  - Generates `.opencode/mcp.json` with MCP server configuration
+  - Creates `.opencode` directory if it doesn't exist
+
+#### 🧪 Testing
+
+- **New MCP unit tests** - 6 tests added for MCP install functionality
+- **MCP E2E tests** - Added to E2E test suite
+- **All 22 evaluator projects regenerated** - Ensured consistent quality
+
+#### 📊 Evaluator Results
+
+- Average score: 3.64/5.0
+- All 22 projects passing (previously 3 were failing)
+
 ## [1.3.8] - 2026-03-29
 
 ### 🚀 Major Features & Architecture Improvements
