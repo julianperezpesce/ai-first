@@ -569,11 +569,11 @@ export function generateEntrypointsFile(entrypoints: Entrypoint[]): string {
   }
   
   let content = "# Entrypoints\n\n";
-  const labels: Record<string, string> = { cli: "CLI", api: "API", worker: "Workers", server: "Server", client: "Client", library: "Library", test: "Tests", build: "Build", lint: "Lint", formatter: "Formatter", other: "Other" };
+  const labels: Record<string, string> = { cli: "CLI Commands", api: "API Endpoints", worker: "Background Workers", server: "Server Entry Points", client: "Client Apps", library: "Libraries", test: "Test Commands", build: "Build Scripts", lint: "Linting", formatter: "Formatters", other: "Other Entry Points" };
   
   for (const [type, eps] of grouped) {
-    content += `## ${labels[type] || type}\n\n| Name | Path | Command |\n|------|------|--------|\n`;
-    for (const ep of eps) content += `| ${ep.name} | \`${ep.path}\` | ${ep.command || "-"} |\n`;
+    content += `### ${labels[type] || type}\n\n| Name | Path | Description |\n|------|------|-------------|\n`;
+    for (const ep of eps) content += `| ${ep.name} | \`${ep.path}\` | ${ep.description || "-"} |\n`;
     content += "\n";
   }
   

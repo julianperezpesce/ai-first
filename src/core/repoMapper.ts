@@ -145,28 +145,49 @@ function renderTree(node: TreeNode, prefix: string, lines: string[]): void {
  */
 export function generateSummary(files: FileInfo[]): string {
   const lines: string[] = [];
-  lines.push("# Repository Summary\n");
+  lines.push("# Repository Summary\n\n");
 
   const total = files.length;
+  
+  // Overview section
+  lines.push(`## Overview\n\n`);
+  lines.push(`This repository contains **${total} files** organized into a codebase structure. `);
+  
+  // Detect main language
+  const byExt = groupByExtension(files);
+  const sortedExts = Array.from(byExt.entries()).sort((a, b) => b[1].length - a[1].length);
+  if (sortedExts.length > 0) {
+    const mainExt = sortedExts[0][0];
+    const mainCount = sortedExts[0][1].length;
+    lines.push(`The primary language is **${mainExt}** with ${mainCount} files. `);
+  }
+  
+  // Detect main directories
+  const byDir = groupByDirectory(files);
+  const sortedDirs = Array.from(byDir.entries()).sort((a, b) => b[1].length - a[1].length).slice(0, 3);
+  if (sortedDirs.length > 0) {
+    const mainDirs = sortedDirs.map(([d, f]) => `\`${d}\` (${f.length} files)`).join(", ");
+    lines.push(`Key directories: ${mainDirs}.\n`);
+  }
+
+  lines.push(`\n## File Statistics\n\n`);
   lines.push(`- **Total files**: ${total}\n`);
 
   // Count by extension
-  const byExt = groupByExtension(files);
   const extCounts = Array.from(byExt.entries())
     .map(([ext, f]) => `  - .${ext}: ${f.length}`)
     .sort()
     .join("\n");
 
-  lines.push(`\n## Files by Extension\n${extCounts}\n`);
+  lines.push(`\n### Files by Extension\n${extCounts}\n`);
 
   // Count by directory
-  const byDir = groupByDirectory(files);
   const dirCounts = Array.from(byDir.entries())
     .map(([dir, f]) => `  - ${dir === "root" ? "(root)" : dir}: ${f.length}`)
     .sort()
     .join("\n");
 
-  lines.push(`\n## Files by Directory\n${dirCounts}\n`);
+  lines.push(`\n### Files by Directory\n${dirCounts}\n`);
 
   return lines.join("");
 }
