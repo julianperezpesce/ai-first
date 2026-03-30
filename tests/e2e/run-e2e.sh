@@ -134,3 +134,35 @@ if [ -f "test-projects/django-app/.opencode/mcp.json" ]; then
 else
   echo "❌ .opencode/mcp.json NOT created"
 fi
+
+echo ""
+echo "========================================"
+echo "Format Verification Tests"
+echo "========================================"
+
+# Verify entrypoints.md uses ### headers
+echo ""
+echo "--- Verifying entrypoints.md format ---"
+if grep -q "^### " test-projects/express-api/ai-context/entrypoints.md; then
+  echo "✅ entrypoints.md uses ### headers"
+else
+  echo "❌ entrypoints.md does NOT use ### headers"
+fi
+
+# Verify summary.md has Overview section
+echo ""
+echo "--- Verifying summary.md has Overview ---"
+if grep -q "^## Overview" test-projects/express-api/ai-context/summary.md; then
+  echo "✅ summary.md has Overview section"
+else
+  echo "❌ summary.md missing Overview section"
+fi
+
+# Verify architecture.md has functional descriptions
+echo ""
+echo "--- Verifying architecture.md descriptions ---"
+if grep -q "implementation\|handling\|middleware\|logic" test-projects/express-api/ai-context/architecture.md; then
+  echo "✅ architecture.md has functional descriptions"
+else
+  echo "❌ architecture.md may have generic phrases"
+fi
