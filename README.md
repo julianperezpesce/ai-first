@@ -19,9 +19,14 @@
 
 ---
 
-## 🚀 What's New in v1.3.8
+## 🚀 What's New in v1.3.9
 
-**MCP Server & Configuration System**
+**Entrypoint Detection Improvements**
+
+- ✅ **Python Entrypoints**: Automatic detection of `manage.py`, `app.py`, `__init__.py` exports, `pyproject.toml` scripts
+- ✅ **Spring Boot Entrypoints**: Detection of `@SpringBootApplication`, `@RestController`, `pom.xml`, `build.gradle`
+- ✅ **Content-Based Detection**: Re-enabled content signal matching for FastAPI/Flask/Django
+- ✅ **Evaluator Score**: Improved from 3.95 to **4.17/5.0** average
 
 - ✅ **MCP Server**: Native Model Context Protocol for Cursor, Claude Code, and other AI agents
 - ✅ **Configuration Presets**: 4 presets (`full`, `quick`, `api`, `docs`) via `ai-first.config.json`
