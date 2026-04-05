@@ -283,11 +283,12 @@ function inferModuleResponsibility(dir: string, extensions: string[]): string {
     return "Apex/Salesforce implementation";
   }
 
-  // Fallback based on file count
+  // Fallback based on file count and primary language
   if (extensions.length === 1) {
     return "Single file module";
   }
-  return `Module with ${extensions.length} source files`;
+  const primaryExt = uniqueExts[0] || 'code';
+  return `${primaryExt.toUpperCase()} module with ${extensions.length} files`;
 }
 
 /**
