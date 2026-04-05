@@ -1,1 +1,1437 @@
-[]
+{
+  "symbols": {
+    "app/database.py#get_db": {
+      "name": "get_db",
+      "type": "function",
+      "file": "app/database.py",
+      "line": 15,
+      "module": "app",
+      "export": true
+    },
+    "app/dependencies.py#verify_password": {
+      "name": "verify_password",
+      "type": "function",
+      "file": "app/dependencies.py",
+      "line": 20,
+      "module": "app",
+      "export": true
+    },
+    "app/dependencies.py#get_password_hash": {
+      "name": "get_password_hash",
+      "type": "function",
+      "file": "app/dependencies.py",
+      "line": 25,
+      "module": "app",
+      "export": true
+    },
+    "app/dependencies.py#get_user": {
+      "name": "get_user",
+      "type": "function",
+      "file": "app/dependencies.py",
+      "line": 30,
+      "module": "app",
+      "export": true
+    },
+    "app/dependencies.py#get_user_by_email": {
+      "name": "get_user_by_email",
+      "type": "function",
+      "file": "app/dependencies.py",
+      "line": 35,
+      "module": "app",
+      "export": true
+    },
+    "app/dependencies.py#create_access_token": {
+      "name": "create_access_token",
+      "type": "function",
+      "file": "app/dependencies.py",
+      "line": 52,
+      "module": "app",
+      "export": true
+    },
+    "app/main.py#read_root": {
+      "name": "read_root",
+      "type": "function",
+      "file": "app/main.py",
+      "line": 32,
+      "module": "app",
+      "export": true
+    },
+    "app/main.py#health_check": {
+      "name": "health_check",
+      "type": "function",
+      "file": "app/main.py",
+      "line": 38,
+      "module": "app",
+      "export": true
+    },
+    "app/models.py#User": {
+      "name": "User",
+      "type": "class",
+      "file": "app/models.py",
+      "line": 24,
+      "module": "app",
+      "export": true
+    },
+    "app/models.py#Post": {
+      "name": "Post",
+      "type": "class",
+      "file": "app/models.py",
+      "line": 50,
+      "module": "app",
+      "export": true
+    },
+    "app/models.py#Comment": {
+      "name": "Comment",
+      "type": "class",
+      "file": "app/models.py",
+      "line": 92,
+      "module": "app",
+      "export": true
+    },
+    "app/models.py#Category": {
+      "name": "Category",
+      "type": "class",
+      "file": "app/models.py",
+      "line": 117,
+      "module": "app",
+      "export": true
+    },
+    "app/models.py#Tag": {
+      "name": "Tag",
+      "type": "class",
+      "file": "app/models.py",
+      "line": 135,
+      "module": "app",
+      "export": true
+    },
+    "app/routers/auth.py#register": {
+      "name": "register",
+      "type": "function",
+      "file": "app/routers/auth.py",
+      "line": 23,
+      "module": "app",
+      "export": true
+    },
+    "app/routers/auth.py#login": {
+      "name": "login",
+      "type": "function",
+      "file": "app/routers/auth.py",
+      "line": 56,
+      "module": "app",
+      "export": true
+    },
+    "app/routers/auth.py#read_users_me": {
+      "name": "read_users_me",
+      "type": "function",
+      "file": "app/routers/auth.py",
+      "line": 75,
+      "module": "app",
+      "export": true
+    },
+    "app/routers/posts.py#generate_slug": {
+      "name": "generate_slug",
+      "type": "function",
+      "file": "app/routers/posts.py",
+      "line": 12,
+      "module": "app",
+      "export": true
+    },
+    "app/routers/posts.py#get_post": {
+      "name": "get_post",
+      "type": "function",
+      "file": "app/routers/posts.py",
+      "line": 132,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#UserBase": {
+      "name": "UserBase",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 7,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#UserCreate": {
+      "name": "UserCreate",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 14,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#UserUpdate": {
+      "name": "UserUpdate",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 18,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#User": {
+      "name": "User",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 24,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#UserInDB": {
+      "name": "UserInDB",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 35,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#CategoryBase": {
+      "name": "CategoryBase",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 40,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#CategoryCreate": {
+      "name": "CategoryCreate",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 45,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#CategoryUpdate": {
+      "name": "CategoryUpdate",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 49,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#Category": {
+      "name": "Category",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 54,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#TagBase": {
+      "name": "TagBase",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 63,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#TagCreate": {
+      "name": "TagCreate",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 67,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#Tag": {
+      "name": "Tag",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 71,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#CommentBase": {
+      "name": "CommentBase",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 80,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#CommentCreate": {
+      "name": "CommentCreate",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 84,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#CommentUpdate": {
+      "name": "CommentUpdate",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 88,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#Comment": {
+      "name": "Comment",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 92,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#PostBase": {
+      "name": "PostBase",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 107,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#PostCreate": {
+      "name": "PostCreate",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 113,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#PostUpdate": {
+      "name": "PostUpdate",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 119,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#Post": {
+      "name": "Post",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 128,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#PostList": {
+      "name": "PostList",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 145,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#Token": {
+      "name": "Token",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 163,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#TokenData": {
+      "name": "TokenData",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 168,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#LoginRequest": {
+      "name": "LoginRequest",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 172,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#PaginatedResponse": {
+      "name": "PaginatedResponse",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 178,
+      "module": "app",
+      "export": true
+    },
+    "app/schemas.py#PostFilter": {
+      "name": "PostFilter",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 186,
+      "module": "app",
+      "export": true
+    }
+  },
+  "total": 44,
+  "byType": {
+    "function": [
+      {
+        "id": "app/database.py#get_db",
+        "name": "get_db",
+        "type": "function",
+        "file": "app/database.py",
+        "line": 15,
+        "export": true
+      },
+      {
+        "id": "app/dependencies.py#verify_password",
+        "name": "verify_password",
+        "type": "function",
+        "file": "app/dependencies.py",
+        "line": 20,
+        "export": true
+      },
+      {
+        "id": "app/dependencies.py#get_password_hash",
+        "name": "get_password_hash",
+        "type": "function",
+        "file": "app/dependencies.py",
+        "line": 25,
+        "export": true
+      },
+      {
+        "id": "app/dependencies.py#get_user",
+        "name": "get_user",
+        "type": "function",
+        "file": "app/dependencies.py",
+        "line": 30,
+        "export": true
+      },
+      {
+        "id": "app/dependencies.py#get_user_by_email",
+        "name": "get_user_by_email",
+        "type": "function",
+        "file": "app/dependencies.py",
+        "line": 35,
+        "export": true
+      },
+      {
+        "id": "app/dependencies.py#create_access_token",
+        "name": "create_access_token",
+        "type": "function",
+        "file": "app/dependencies.py",
+        "line": 52,
+        "export": true
+      },
+      {
+        "id": "app/main.py#read_root",
+        "name": "read_root",
+        "type": "function",
+        "file": "app/main.py",
+        "line": 32,
+        "export": true
+      },
+      {
+        "id": "app/main.py#health_check",
+        "name": "health_check",
+        "type": "function",
+        "file": "app/main.py",
+        "line": 38,
+        "export": true
+      },
+      {
+        "id": "app/routers/auth.py#register",
+        "name": "register",
+        "type": "function",
+        "file": "app/routers/auth.py",
+        "line": 23,
+        "export": true
+      },
+      {
+        "id": "app/routers/auth.py#login",
+        "name": "login",
+        "type": "function",
+        "file": "app/routers/auth.py",
+        "line": 56,
+        "export": true
+      },
+      {
+        "id": "app/routers/auth.py#read_users_me",
+        "name": "read_users_me",
+        "type": "function",
+        "file": "app/routers/auth.py",
+        "line": 75,
+        "export": true
+      },
+      {
+        "id": "app/routers/posts.py#generate_slug",
+        "name": "generate_slug",
+        "type": "function",
+        "file": "app/routers/posts.py",
+        "line": 12,
+        "export": true
+      },
+      {
+        "id": "app/routers/posts.py#get_post",
+        "name": "get_post",
+        "type": "function",
+        "file": "app/routers/posts.py",
+        "line": 132,
+        "export": true
+      }
+    ],
+    "class": [
+      {
+        "id": "app/models.py#User",
+        "name": "User",
+        "type": "class",
+        "file": "app/models.py",
+        "line": 24,
+        "export": true
+      },
+      {
+        "id": "app/models.py#Post",
+        "name": "Post",
+        "type": "class",
+        "file": "app/models.py",
+        "line": 50,
+        "export": true
+      },
+      {
+        "id": "app/models.py#Comment",
+        "name": "Comment",
+        "type": "class",
+        "file": "app/models.py",
+        "line": 92,
+        "export": true
+      },
+      {
+        "id": "app/models.py#Category",
+        "name": "Category",
+        "type": "class",
+        "file": "app/models.py",
+        "line": 117,
+        "export": true
+      },
+      {
+        "id": "app/models.py#Tag",
+        "name": "Tag",
+        "type": "class",
+        "file": "app/models.py",
+        "line": 135,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#UserBase",
+        "name": "UserBase",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 7,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#UserCreate",
+        "name": "UserCreate",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 14,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#UserUpdate",
+        "name": "UserUpdate",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 18,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#User",
+        "name": "User",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 24,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#UserInDB",
+        "name": "UserInDB",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 35,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#CategoryBase",
+        "name": "CategoryBase",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 40,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#CategoryCreate",
+        "name": "CategoryCreate",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 45,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#CategoryUpdate",
+        "name": "CategoryUpdate",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 49,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#Category",
+        "name": "Category",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 54,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#TagBase",
+        "name": "TagBase",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 63,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#TagCreate",
+        "name": "TagCreate",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 67,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#Tag",
+        "name": "Tag",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 71,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#CommentBase",
+        "name": "CommentBase",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 80,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#CommentCreate",
+        "name": "CommentCreate",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 84,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#CommentUpdate",
+        "name": "CommentUpdate",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 88,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#Comment",
+        "name": "Comment",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 92,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#PostBase",
+        "name": "PostBase",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 107,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#PostCreate",
+        "name": "PostCreate",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 113,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#PostUpdate",
+        "name": "PostUpdate",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 119,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#Post",
+        "name": "Post",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 128,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#PostList",
+        "name": "PostList",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 145,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#Token",
+        "name": "Token",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 163,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#TokenData",
+        "name": "TokenData",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 168,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#LoginRequest",
+        "name": "LoginRequest",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 172,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#PaginatedResponse",
+        "name": "PaginatedResponse",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 178,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#PostFilter",
+        "name": "PostFilter",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 186,
+        "export": true
+      }
+    ]
+  },
+  "byFile": {
+    "app/database.py": [
+      {
+        "id": "app/database.py#get_db",
+        "name": "get_db",
+        "type": "function",
+        "file": "app/database.py",
+        "line": 15,
+        "export": true
+      }
+    ],
+    "app/dependencies.py": [
+      {
+        "id": "app/dependencies.py#verify_password",
+        "name": "verify_password",
+        "type": "function",
+        "file": "app/dependencies.py",
+        "line": 20,
+        "export": true
+      },
+      {
+        "id": "app/dependencies.py#get_password_hash",
+        "name": "get_password_hash",
+        "type": "function",
+        "file": "app/dependencies.py",
+        "line": 25,
+        "export": true
+      },
+      {
+        "id": "app/dependencies.py#get_user",
+        "name": "get_user",
+        "type": "function",
+        "file": "app/dependencies.py",
+        "line": 30,
+        "export": true
+      },
+      {
+        "id": "app/dependencies.py#get_user_by_email",
+        "name": "get_user_by_email",
+        "type": "function",
+        "file": "app/dependencies.py",
+        "line": 35,
+        "export": true
+      },
+      {
+        "id": "app/dependencies.py#create_access_token",
+        "name": "create_access_token",
+        "type": "function",
+        "file": "app/dependencies.py",
+        "line": 52,
+        "export": true
+      }
+    ],
+    "app/main.py": [
+      {
+        "id": "app/main.py#read_root",
+        "name": "read_root",
+        "type": "function",
+        "file": "app/main.py",
+        "line": 32,
+        "export": true
+      },
+      {
+        "id": "app/main.py#health_check",
+        "name": "health_check",
+        "type": "function",
+        "file": "app/main.py",
+        "line": 38,
+        "export": true
+      }
+    ],
+    "app/models.py": [
+      {
+        "id": "app/models.py#User",
+        "name": "User",
+        "type": "class",
+        "file": "app/models.py",
+        "line": 24,
+        "export": true
+      },
+      {
+        "id": "app/models.py#Post",
+        "name": "Post",
+        "type": "class",
+        "file": "app/models.py",
+        "line": 50,
+        "export": true
+      },
+      {
+        "id": "app/models.py#Comment",
+        "name": "Comment",
+        "type": "class",
+        "file": "app/models.py",
+        "line": 92,
+        "export": true
+      },
+      {
+        "id": "app/models.py#Category",
+        "name": "Category",
+        "type": "class",
+        "file": "app/models.py",
+        "line": 117,
+        "export": true
+      },
+      {
+        "id": "app/models.py#Tag",
+        "name": "Tag",
+        "type": "class",
+        "file": "app/models.py",
+        "line": 135,
+        "export": true
+      }
+    ],
+    "app/routers/auth.py": [
+      {
+        "id": "app/routers/auth.py#register",
+        "name": "register",
+        "type": "function",
+        "file": "app/routers/auth.py",
+        "line": 23,
+        "export": true
+      },
+      {
+        "id": "app/routers/auth.py#login",
+        "name": "login",
+        "type": "function",
+        "file": "app/routers/auth.py",
+        "line": 56,
+        "export": true
+      },
+      {
+        "id": "app/routers/auth.py#read_users_me",
+        "name": "read_users_me",
+        "type": "function",
+        "file": "app/routers/auth.py",
+        "line": 75,
+        "export": true
+      }
+    ],
+    "app/routers/posts.py": [
+      {
+        "id": "app/routers/posts.py#generate_slug",
+        "name": "generate_slug",
+        "type": "function",
+        "file": "app/routers/posts.py",
+        "line": 12,
+        "export": true
+      },
+      {
+        "id": "app/routers/posts.py#get_post",
+        "name": "get_post",
+        "type": "function",
+        "file": "app/routers/posts.py",
+        "line": 132,
+        "export": true
+      }
+    ],
+    "app/schemas.py": [
+      {
+        "id": "app/schemas.py#UserBase",
+        "name": "UserBase",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 7,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#UserCreate",
+        "name": "UserCreate",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 14,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#UserUpdate",
+        "name": "UserUpdate",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 18,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#User",
+        "name": "User",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 24,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#UserInDB",
+        "name": "UserInDB",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 35,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#CategoryBase",
+        "name": "CategoryBase",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 40,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#CategoryCreate",
+        "name": "CategoryCreate",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 45,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#CategoryUpdate",
+        "name": "CategoryUpdate",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 49,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#Category",
+        "name": "Category",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 54,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#TagBase",
+        "name": "TagBase",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 63,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#TagCreate",
+        "name": "TagCreate",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 67,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#Tag",
+        "name": "Tag",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 71,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#CommentBase",
+        "name": "CommentBase",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 80,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#CommentCreate",
+        "name": "CommentCreate",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 84,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#CommentUpdate",
+        "name": "CommentUpdate",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 88,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#Comment",
+        "name": "Comment",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 92,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#PostBase",
+        "name": "PostBase",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 107,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#PostCreate",
+        "name": "PostCreate",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 113,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#PostUpdate",
+        "name": "PostUpdate",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 119,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#Post",
+        "name": "Post",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 128,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#PostList",
+        "name": "PostList",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 145,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#Token",
+        "name": "Token",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 163,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#TokenData",
+        "name": "TokenData",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 168,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#LoginRequest",
+        "name": "LoginRequest",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 172,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#PaginatedResponse",
+        "name": "PaginatedResponse",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 178,
+        "export": true
+      },
+      {
+        "id": "app/schemas.py#PostFilter",
+        "name": "PostFilter",
+        "type": "class",
+        "file": "app/schemas.py",
+        "line": 186,
+        "export": true
+      }
+    ]
+  },
+  "exported": [
+    {
+      "id": "app/database.py#get_db",
+      "name": "get_db",
+      "type": "function",
+      "file": "app/database.py",
+      "line": 15,
+      "export": true
+    },
+    {
+      "id": "app/dependencies.py#verify_password",
+      "name": "verify_password",
+      "type": "function",
+      "file": "app/dependencies.py",
+      "line": 20,
+      "export": true
+    },
+    {
+      "id": "app/dependencies.py#get_password_hash",
+      "name": "get_password_hash",
+      "type": "function",
+      "file": "app/dependencies.py",
+      "line": 25,
+      "export": true
+    },
+    {
+      "id": "app/dependencies.py#get_user",
+      "name": "get_user",
+      "type": "function",
+      "file": "app/dependencies.py",
+      "line": 30,
+      "export": true
+    },
+    {
+      "id": "app/dependencies.py#get_user_by_email",
+      "name": "get_user_by_email",
+      "type": "function",
+      "file": "app/dependencies.py",
+      "line": 35,
+      "export": true
+    },
+    {
+      "id": "app/dependencies.py#create_access_token",
+      "name": "create_access_token",
+      "type": "function",
+      "file": "app/dependencies.py",
+      "line": 52,
+      "export": true
+    },
+    {
+      "id": "app/main.py#read_root",
+      "name": "read_root",
+      "type": "function",
+      "file": "app/main.py",
+      "line": 32,
+      "export": true
+    },
+    {
+      "id": "app/main.py#health_check",
+      "name": "health_check",
+      "type": "function",
+      "file": "app/main.py",
+      "line": 38,
+      "export": true
+    },
+    {
+      "id": "app/models.py#User",
+      "name": "User",
+      "type": "class",
+      "file": "app/models.py",
+      "line": 24,
+      "export": true
+    },
+    {
+      "id": "app/models.py#Post",
+      "name": "Post",
+      "type": "class",
+      "file": "app/models.py",
+      "line": 50,
+      "export": true
+    },
+    {
+      "id": "app/models.py#Comment",
+      "name": "Comment",
+      "type": "class",
+      "file": "app/models.py",
+      "line": 92,
+      "export": true
+    },
+    {
+      "id": "app/models.py#Category",
+      "name": "Category",
+      "type": "class",
+      "file": "app/models.py",
+      "line": 117,
+      "export": true
+    },
+    {
+      "id": "app/models.py#Tag",
+      "name": "Tag",
+      "type": "class",
+      "file": "app/models.py",
+      "line": 135,
+      "export": true
+    },
+    {
+      "id": "app/routers/auth.py#register",
+      "name": "register",
+      "type": "function",
+      "file": "app/routers/auth.py",
+      "line": 23,
+      "export": true
+    },
+    {
+      "id": "app/routers/auth.py#login",
+      "name": "login",
+      "type": "function",
+      "file": "app/routers/auth.py",
+      "line": 56,
+      "export": true
+    },
+    {
+      "id": "app/routers/auth.py#read_users_me",
+      "name": "read_users_me",
+      "type": "function",
+      "file": "app/routers/auth.py",
+      "line": 75,
+      "export": true
+    },
+    {
+      "id": "app/routers/posts.py#generate_slug",
+      "name": "generate_slug",
+      "type": "function",
+      "file": "app/routers/posts.py",
+      "line": 12,
+      "export": true
+    },
+    {
+      "id": "app/routers/posts.py#get_post",
+      "name": "get_post",
+      "type": "function",
+      "file": "app/routers/posts.py",
+      "line": 132,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#UserBase",
+      "name": "UserBase",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 7,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#UserCreate",
+      "name": "UserCreate",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 14,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#UserUpdate",
+      "name": "UserUpdate",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 18,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#User",
+      "name": "User",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 24,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#UserInDB",
+      "name": "UserInDB",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 35,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#CategoryBase",
+      "name": "CategoryBase",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 40,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#CategoryCreate",
+      "name": "CategoryCreate",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 45,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#CategoryUpdate",
+      "name": "CategoryUpdate",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 49,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#Category",
+      "name": "Category",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 54,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#TagBase",
+      "name": "TagBase",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 63,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#TagCreate",
+      "name": "TagCreate",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 67,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#Tag",
+      "name": "Tag",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 71,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#CommentBase",
+      "name": "CommentBase",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 80,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#CommentCreate",
+      "name": "CommentCreate",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 84,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#CommentUpdate",
+      "name": "CommentUpdate",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 88,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#Comment",
+      "name": "Comment",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 92,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#PostBase",
+      "name": "PostBase",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 107,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#PostCreate",
+      "name": "PostCreate",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 113,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#PostUpdate",
+      "name": "PostUpdate",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 119,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#Post",
+      "name": "Post",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 128,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#PostList",
+      "name": "PostList",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 145,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#Token",
+      "name": "Token",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 163,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#TokenData",
+      "name": "TokenData",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 168,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#LoginRequest",
+      "name": "LoginRequest",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 172,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#PaginatedResponse",
+      "name": "PaginatedResponse",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 178,
+      "export": true
+    },
+    {
+      "id": "app/schemas.py#PostFilter",
+      "name": "PostFilter",
+      "type": "class",
+      "file": "app/schemas.py",
+      "line": 186,
+      "export": true
+    }
+  ]
+}

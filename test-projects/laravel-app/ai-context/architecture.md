@@ -9,46 +9,32 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `README.md` | Contains 0 files |
-| `ai` | Contains 27 files |
-| `app` | Contains 8 files |
-| `bootstrap` | Contains 1 files |
-| `composer.json` | Contains 0 files |
+| `app` | PHP implementation |
+| `bootstrap` | PHP implementation |
 | `routes` | API endpoints and request handling |
 
 
+## Components
+
+| Component | Type | Path | Files |
+|-----------|------|------|-------|
+| app | module | `app` | 1 |
+| bootstrap | module | `bootstrap` | 1 |
+| routes | module | `routes` | 1 |
+
 ## Module Details
-
-### README.md
-- **Path**: `README.md`
-- **Responsibility**: Contains 0 files
-
-
-### ai
-- **Path**: `ai`
-- **Responsibility**: Contains 27 files
-
 
 ### app
 - **Path**: `app`
-- **Responsibility**: Contains 8 files
-
+- **Responsibility**: PHP implementation
 
 ### bootstrap
 - **Path**: `bootstrap`
-- **Responsibility**: Contains 1 files
-
-
-### composer.json
-- **Path**: `composer.json`
-- **Responsibility**: Contains 0 files
-
+- **Responsibility**: PHP implementation
 
 ### routes
 - **Path**: `routes`
 - **Responsibility**: API endpoints and request handling
-
-
 
 ## Recommendations
 

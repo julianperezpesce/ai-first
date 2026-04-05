@@ -2,160 +2,52 @@
   "files": {
     "README.md": {
       "hash": "63be1b116847a4eacdb95be2aeab72c2",
-      "mtime": 1773847786371.1416
-    },
-    "ai/ai_context.md": {
-      "hash": "d86085a2b3eef3cc32c82e7ce97a97f0",
-      "mtime": 1773861711501.377
-    },
-    "ai/ai_rules.md": {
-      "hash": "5af221d928c5336c36d50512370227e3",
-      "mtime": 1773861711501.377
-    },
-    "ai/architecture.md": {
-      "hash": "975b4cc2773637c327c10fb1c7c488b1",
-      "mtime": 1773861711496.377
-    },
-    "ai/cache.json": {
-      "hash": "b753a30235e999795838c0d5cb154c66",
-      "mtime": 1773854929730.0337
-    },
-    "ai/context/features/app.json": {
-      "hash": "48ed0274a6a81b1c50955d402b3c2695",
-      "mtime": 1773861711503.377
-    },
-    "ai/context/flows/category.json": {
-      "hash": "437bcbd406d6d1288bd16213b6be4767",
-      "mtime": 1773861711503.377
-    },
-    "ai/context/flows/comment.json": {
-      "hash": "c2ebad5e63035bae2fde39e9f863e9cb",
-      "mtime": 1773861711503.377
-    },
-    "ai/context/flows/post.json": {
-      "hash": "f704d1cdb7823ec237964b578e9935b7",
-      "mtime": 1773861711503.377
-    },
-    "ai/context/flows/unnamed.json": {
-      "hash": "0d3ba6968f125bdddd28f7b908d4c9e0",
-      "mtime": 1773854736911.5452
-    },
-    "ai/conventions.md": {
-      "hash": "d11ac646a8916e3c6cc376f610368317",
-      "mtime": 1773861711498.377
-    },
-    "ai/dependencies.json": {
-      "hash": "038f80a99cbcc45991786b645398758e",
-      "mtime": 1773861711500.377
-    },
-    "ai/entrypoints.md": {
-      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
-      "mtime": 1773861711497.377
-    },
-    "ai/files.json": {
-      "hash": "99914b932bd37a50b983c5e7c90ae93b",
-      "mtime": 1773861711587.3784
-    },
-    "ai/graph/module-graph.json": {
-      "hash": "08886f9cf775a3e58668f9c166b6f1ae",
-      "mtime": 1773861711581.3782
-    },
-    "ai/graph/symbol-graph.json": {
-      "hash": "79a11e66d1c9ebdbec716c31b9eb11db",
-      "mtime": 1773861711587.3784
-    },
-    "ai/graph/symbol-references.json": {
-      "hash": "99914b932bd37a50b983c5e7c90ae93b",
-      "mtime": 1773861711587.3784
-    },
-    "ai/index-state.json": {
-      "hash": "e7da95c458fbcbf04c7d84fc58575b42",
-      "mtime": 1773854929730.0337
-    },
-    "ai/modules.json": {
-      "hash": "2a7554702c3a5bcd823e4c634f012bb7",
-      "mtime": 1773861711572.3782
-    },
-    "ai/project.json": {
-      "hash": "be6566712acac8596c31c67859b10b67",
-      "mtime": 1773861711504.377
-    },
-    "ai/repo-map.json": {
-      "hash": "51544ee73ec58dc7f97b3a744757c4b6",
-      "mtime": 1773861711573.3782
-    },
-    "ai/repo_map.json": {
-      "hash": "f47a48aa19e41f4511993fad9befd33a",
-      "mtime": 1773861711494.377
-    },
-    "ai/repo_map.md": {
-      "hash": "3eb00bcd4302149b347a5007060b9929",
-      "mtime": 1773861711494.377
-    },
-    "ai/schema.json": {
-      "hash": "9b5cbdb447d61923413f6a64d7be0935",
-      "mtime": 1773861711503.377
-    },
-    "ai/summary.md": {
-      "hash": "af28a79156d8952da4b7c3970375a4db",
-      "mtime": 1773861711495.377
-    },
-    "ai/symbols.json": {
-      "hash": "6edde050dc3089a9e15bf3934226a7c4",
-      "mtime": 1773861711499.377
-    },
-    "ai/tech_stack.md": {
-      "hash": "698c9093c45a5cd2a2d6433067ee212a",
-      "mtime": 1773861711497.377
-    },
-    "ai/tools.json": {
-      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
-      "mtime": 1773861711504.377
+      "mtime": 1773943380055.9902
     },
     "app/Http/Controllers/Api/CategoryController.php": {
       "hash": "eae63919c19317d673da75fae862ac1b",
-      "mtime": 1773847799280.3206
+      "mtime": 1773943380058.217
     },
     "app/Http/Controllers/Api/CommentController.php": {
       "hash": "6dac8cef07f04ac0b0f20d76f4ca8348",
-      "mtime": 1773847807128.4294
+      "mtime": 1773943380058.3035
     },
     "app/Http/Controllers/Api/PostController.php": {
       "hash": "105dfc4a6f054cd19e4e1b14453c02ac",
-      "mtime": 1773847736086.444
+      "mtime": 1773943380058.3035
     },
     "app/Http/Controllers/Controller.php": {
       "hash": "42517d7dc7e3d0d3045b06ed842b565e",
-      "mtime": 1773847748755.6199
+      "mtime": 1773943380058.3035
     },
     "app/Models/Category.php": {
       "hash": "8982d52ddaad742bd03abfe7ee89cf5c",
-      "mtime": 1773847700804.955
+      "mtime": 1773943380058.3035
     },
     "app/Models/Comment.php": {
       "hash": "9efa05310b8bc1ca407c4db0aaf191f5",
-      "mtime": 1773847664829.4568
+      "mtime": 1773943380058.502
     },
     "app/Models/Post.php": {
       "hash": "235a49b0fb8acb6d27ad0a76f9e67e46",
-      "mtime": 1773847648272.2275
+      "mtime": 1773943380058.502
     },
     "app/Models/User.php": {
       "hash": "20cc08b187ba186031da18582a03c9a9",
-      "mtime": 1773847685326.7407
+      "mtime": 1773943380058.502
     },
     "bootstrap/app.php": {
       "hash": "9ce9c023ef044aa0246244f18202bd9e",
-      "mtime": 1773847620203.8389
+      "mtime": 1773943380058.502
     },
     "composer.json": {
       "hash": "1fd162ecf419a1aa7a24e660429335ee",
-      "mtime": 1773847763470.8237
+      "mtime": 1773943380058.502
     },
     "routes/api.php": {
       "hash": "2ce87617f3fee458e3e5fda64a536495",
-      "mtime": 1773847757081.7354
+      "mtime": 1773943380058.502
     }
   },
-  "lastIndexed": "2026-03-18T19:21:51.588Z"
+  "lastIndexed": "2026-04-05T21:18:16.605Z"
 }

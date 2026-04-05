@@ -1,9 +1,0 @@
-{
-  "name": "list_",
-  "entrypoint": "cli/list_command.py",
-  "files": [
-    "cli/list_command.py"
-  ],
-  "depth": 0,
-  "layers": []
-}

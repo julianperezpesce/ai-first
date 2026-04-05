@@ -1,14 +1,15 @@
 # Technology Stack
 
-**Languages**: Markdown, JSON, Python
+**Languages**: Markdown, Python
+
+**Frameworks**: Flask
 
 ## Languages
 - Markdown
-- JSON
 - Python
 
 ## Frameworks
-- None detected
+- Flask
 
 ## Key Libraries
 - None detected

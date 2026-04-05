@@ -1,5 +1,5 @@
 {
-  "name": "comments_",
+  "name": "comments",
   "entrypoint": "app/controllers/api/comments_controller.rb",
   "files": [
     "app/controllers/api/comments_controller.rb"

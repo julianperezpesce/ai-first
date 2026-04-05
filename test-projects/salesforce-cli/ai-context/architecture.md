@@ -9,13 +9,17 @@
 | `force-app` | Apex/Salesforce implementation |
 
 
+## Components
+
+| Component | Type | Path | Files |
+|-----------|------|------|-------|
+| force-app | module | `force-app` | 1 |
+
 ## Module Details
 
 ### force-app
 - **Path**: `force-app`
 - **Responsibility**: Apex/Salesforce implementation
-
-
 
 ## Recommendations
 

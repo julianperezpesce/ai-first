@@ -1,7 +1,7 @@
 # Architecture
 
 ## Architectural Pattern
-**Primary**: Flat / Simple Structure
+**Primary**: API Server
 
 ## Layers Identified
 - Infrastructure
@@ -10,34 +10,20 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `README.md` | Contains 0 files |
-| `ai` | Contains 24 files |
-| `app` | Contains 12 files |
-| `config.py` | Configuration management |
+| `app` | Python implementation |
 
+
+## Components
+
+| Component | Type | Path | Files |
+|-----------|------|------|-------|
+| app | module | `app` | 1 |
 
 ## Module Details
 
-### README.md
-- **Path**: `README.md`
-- **Responsibility**: Contains 0 files
-
-
-### ai
-- **Path**: `ai`
-- **Responsibility**: Contains 24 files
-
-
 ### app
 - **Path**: `app`
-- **Responsibility**: Contains 12 files
-
-
-### config.py
-- **Path**: `config.py`
-- **Responsibility**: Configuration management
-
-
+- **Responsibility**: Python implementation
 
 ## Recommendations
 

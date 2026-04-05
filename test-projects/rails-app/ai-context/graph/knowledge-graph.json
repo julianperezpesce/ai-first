@@ -10,36 +10,36 @@
       }
     },
     {
-      "id": "config",
-      "type": "feature",
-      "label": "config",
-      "metadata": {
-        "path": "config",
-        "fileCount": 3
-      }
-    },
-    {
-      "id": "application_",
+      "id": "application",
       "type": "flow",
-      "label": "application_",
+      "label": "application",
       "metadata": {
         "entrypoint": "app/controllers/application_controller.rb",
         "fileCount": 1
       }
     },
     {
-      "id": "comments_",
+      "id": "comments",
       "type": "flow",
-      "label": "comments_",
+      "label": "comments",
       "metadata": {
         "entrypoint": "app/controllers/api/comments_controller.rb",
         "fileCount": 1
       }
     },
     {
-      "id": "posts_",
+      "id": "post",
       "type": "flow",
-      "label": "posts_",
+      "label": "post",
+      "metadata": {
+        "entrypoint": "app/services/post_service.rb",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "posts",
+      "type": "flow",
+      "label": "posts",
       "metadata": {
         "entrypoint": "app/controllers/api/posts_controller.rb",
         "fileCount": 1
@@ -55,9 +55,18 @@
       }
     },
     {
-      "id": "users_",
+      "id": "user",
       "type": "flow",
-      "label": "users_",
+      "label": "user",
+      "metadata": {
+        "entrypoint": "app/services/user_service.rb",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "users",
+      "type": "flow",
+      "label": "users",
       "metadata": {
         "entrypoint": "app/controllers/api/users_controller.rb",
         "fileCount": 1
@@ -67,41 +76,51 @@
   "edges": [
     {
       "from": "app",
-      "to": "application_",
+      "to": "application",
       "type": "contains"
     },
     {
       "from": "app",
-      "to": "comments_",
+      "to": "comments",
       "type": "contains"
     },
     {
       "from": "app",
-      "to": "posts_",
-      "type": "contains"
-    },
-    {
-      "from": "config",
-      "to": "routes",
+      "to": "post",
       "type": "contains"
     },
     {
       "from": "app",
-      "to": "users_",
+      "to": "posts",
       "type": "contains"
     },
     {
-      "from": "application_",
+      "from": "app",
+      "to": "user",
+      "type": "contains"
+    },
+    {
+      "from": "app",
+      "to": "users",
+      "type": "contains"
+    },
+    {
+      "from": "application",
       "to": "app/controllers/application_controller.rb",
       "type": "implements"
     },
     {
-      "from": "comments_",
+      "from": "comments",
       "to": "app/controllers/api/comments_controller.rb",
       "type": "implements"
     },
     {
-      "from": "posts_",
+      "from": "post",
+      "to": "app/services/post_service.rb",
+      "type": "implements"
+    },
+    {
+      "from": "posts",
       "to": "app/controllers/api/posts_controller.rb",
       "type": "implements"
     },
@@ -111,20 +130,25 @@
       "type": "implements"
     },
     {
-      "from": "users_",
+      "from": "user",
+      "to": "app/services/user_service.rb",
+      "type": "implements"
+    },
+    {
+      "from": "users",
       "to": "app/controllers/api/users_controller.rb",
       "type": "implements"
     }
   ],
   "metadata": {
-    "generated": "2026-03-18T19:21:54.238Z",
+    "generated": "2026-04-05T21:18:29.674Z",
     "sources": [
       "features",
       "flows",
       "symbols",
       "dependencies"
     ],
-    "nodeCount": 7,
-    "edgeCount": 10
+    "nodeCount": 8,
+    "edgeCount": 13
   }
 }

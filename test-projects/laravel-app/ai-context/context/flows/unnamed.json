@@ -1,9 +1,11 @@
 {
-  "name": "",
+  "name": "unnamed",
   "entrypoint": "app/Http/Controllers/Controller.php",
   "files": [
     "app/Http/Controllers/Controller.php"
   ],
-  "depth": 0,
-  "layers": []
+  "depth": 1,
+  "layers": [
+    "api"
+  ]
 }

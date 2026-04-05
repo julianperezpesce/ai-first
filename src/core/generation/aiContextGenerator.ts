@@ -229,10 +229,38 @@ ${flow.dependencies.slice(0, 5).map((d) => `- ${d}`).join("\n")}
       : [];
     patterns.push(...analysis.architecture.secondary.map((s) => s.name));
 
-    const classes = analysis.symbols.filter((s) => s.type === "class").length;
-    const functions = analysis.symbols.filter((s) => s.type === "function").length;
-
-    return `A ${patterns.join(" / ")} application with ${classes} classes and ${functions} functions organized in ${analysis.architecture.layers.length} architectural layers.`;
+    const entryPoints = analysis.architecture.entryPoints || [];
+    
+    if (entryPoints.length > 0) {
+      const firstEp = entryPoints[0].split("#")[0] || entryPoints[0];
+      const epName = firstEp.split("/").pop() || firstEp;
+      
+      const purposeParts: string[] = [];
+      
+      if (patterns.length > 0) {
+        purposeParts.push(`**${patterns[0]}**`);
+      }
+      
+      if (epName.toLowerCase().includes("auth") || epName.toLowerCase().includes("login")) {
+        purposeParts.push("authentication system");
+      } else if (epName.toLowerCase().includes("api") || epName.toLowerCase().includes("controller")) {
+        purposeParts.push("API endpoints");
+      } else if (epName.toLowerCase().includes("main") || epName.toLowerCase().includes("app")) {
+        purposeParts.push("application");
+      } else if (epName.toLowerCase().includes("cli") || epName.toLowerCase().includes("command")) {
+        purposeParts.push("CLI tool");
+      }
+      
+      if (purposeParts.length > 0) {
+        return `This is a ${purposeParts.join(" ")}.`;
+      }
+    }
+    
+    if (patterns.length > 0) {
+      return `This is a **${patterns.join(" / ")}** application.`;
+    }
+    
+    return "This is a software project.";
   }
 
   private extractLanguages(files: string[]): string[] {

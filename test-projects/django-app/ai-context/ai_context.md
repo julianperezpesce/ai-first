@@ -49,6 +49,9 @@
 
 ## Key Entrypoints
 
+### Cli
+- `manage.py` - Django management commands
+
 ---
 
 ## Code Conventions

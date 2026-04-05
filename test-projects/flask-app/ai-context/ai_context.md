@@ -6,10 +6,10 @@
 
 ## Quick Overview
 
-- **Pattern**: Flat / Simple Structure
-- **Languages**: Markdown, JSON, Python
-- **Frameworks**: None
-- **Total Files**: 38
+- **Pattern**: API Server
+- **Languages**: Markdown, Python
+- **Frameworks**: Flask
+- **Total Files**: 14
 
 ---
 
@@ -26,14 +26,16 @@
 
 ## Tech Stack
 
-**Languages**: Markdown, JSON, Python
+**Languages**: Markdown, Python
+
+**Frameworks**: Flask
 
 ---
 
 ## Architecture
 
 ## Architectural Pattern
-**Primary**: Flat / Simple Structure
+**Primary**: API Server
 
 ## Layers Identified
 - Infrastructure
@@ -42,10 +44,7 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `README.md` | Contains 0 files |
-| `ai` | Contains 24 files |
-| `app` | Contains 12 files |
-| `config.py` | Configuration management |
+| `app` | Python implementation |
 
 
 ---
@@ -69,8 +68,9 @@
 
 ## AI Rules
 
-- Language: Use Markdown, JSON, Python
-- Architecture: Follow Flat / Simple Structure pattern
+- Language: Use Markdown, Python
+- Frameworks: Flask
+- Architecture: Follow API Server pattern
 - File naming: PascalCase
 
 ---

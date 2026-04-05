@@ -9,13 +9,17 @@
 | `src` | Java implementation |
 
 
+## Components
+
+| Component | Type | Path | Files |
+|-----------|------|------|-------|
+| src | module | `src` | 1 |
+
 ## Module Details
 
 ### src
 - **Path**: `src`
 - **Responsibility**: Java implementation
-
-
 
 ## Recommendations
 

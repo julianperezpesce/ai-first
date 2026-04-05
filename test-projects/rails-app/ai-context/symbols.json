@@ -1,1 +1,2853 @@
-[]
+{
+  "symbols": {
+    "app/controllers/api/comments_controller.rb#Api": {
+      "name": "Api",
+      "type": "module",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 3,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/comments_controller.rb#CommentsController": {
+      "name": "CommentsController",
+      "type": "class",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 4,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/comments_controller.rb#index": {
+      "name": "index",
+      "type": "function",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 9,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/comments_controller.rb#show": {
+      "name": "show",
+      "type": "function",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 17,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/comments_controller.rb#create": {
+      "name": "create",
+      "type": "function",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 22,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/comments_controller.rb#update": {
+      "name": "update",
+      "type": "function",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 33,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/comments_controller.rb#destroy": {
+      "name": "destroy",
+      "type": "function",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 42,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/comments_controller.rb#approve": {
+      "name": "approve",
+      "type": "function",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 48,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/comments_controller.rb#reject": {
+      "name": "reject",
+      "type": "function",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 55,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/comments_controller.rb#set_post": {
+      "name": "set_post",
+      "type": "function",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 63,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/comments_controller.rb#set_comment": {
+      "name": "set_comment",
+      "type": "function",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 67,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/comments_controller.rb#comment_params": {
+      "name": "comment_params",
+      "type": "function",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 71,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/posts_controller.rb#Api": {
+      "name": "Api",
+      "type": "module",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 3,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/posts_controller.rb#PostsController": {
+      "name": "PostsController",
+      "type": "class",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 4,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/posts_controller.rb#index": {
+      "name": "index",
+      "type": "function",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 8,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/posts_controller.rb#show": {
+      "name": "show",
+      "type": "function",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 16,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/posts_controller.rb#create": {
+      "name": "create",
+      "type": "function",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 21,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/posts_controller.rb#update": {
+      "name": "update",
+      "type": "function",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 32,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/posts_controller.rb#destroy": {
+      "name": "destroy",
+      "type": "function",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 41,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/posts_controller.rb#publish": {
+      "name": "publish",
+      "type": "function",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 47,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/posts_controller.rb#unpublish": {
+      "name": "unpublish",
+      "type": "function",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 53,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/posts_controller.rb#set_post": {
+      "name": "set_post",
+      "type": "function",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 60,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/posts_controller.rb#post_params": {
+      "name": "post_params",
+      "type": "function",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 64,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/users_controller.rb#Api": {
+      "name": "Api",
+      "type": "module",
+      "file": "app/controllers/api/users_controller.rb",
+      "line": 3,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/users_controller.rb#UsersController": {
+      "name": "UsersController",
+      "type": "class",
+      "file": "app/controllers/api/users_controller.rb",
+      "line": 4,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/users_controller.rb#index": {
+      "name": "index",
+      "type": "function",
+      "file": "app/controllers/api/users_controller.rb",
+      "line": 8,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/users_controller.rb#show": {
+      "name": "show",
+      "type": "function",
+      "file": "app/controllers/api/users_controller.rb",
+      "line": 14,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/users_controller.rb#create": {
+      "name": "create",
+      "type": "function",
+      "file": "app/controllers/api/users_controller.rb",
+      "line": 19,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/users_controller.rb#update": {
+      "name": "update",
+      "type": "function",
+      "file": "app/controllers/api/users_controller.rb",
+      "line": 30,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/users_controller.rb#destroy": {
+      "name": "destroy",
+      "type": "function",
+      "file": "app/controllers/api/users_controller.rb",
+      "line": 39,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/users_controller.rb#set_user": {
+      "name": "set_user",
+      "type": "function",
+      "file": "app/controllers/api/users_controller.rb",
+      "line": 46,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/api/users_controller.rb#user_params": {
+      "name": "user_params",
+      "type": "function",
+      "file": "app/controllers/api/users_controller.rb",
+      "line": 50,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/application_controller.rb#ApplicationController": {
+      "name": "ApplicationController",
+      "type": "class",
+      "file": "app/controllers/application_controller.rb",
+      "line": 3,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/application_controller.rb#record_not_found": {
+      "name": "record_not_found",
+      "type": "function",
+      "file": "app/controllers/application_controller.rb",
+      "line": 11,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/application_controller.rb#record_invalid": {
+      "name": "record_invalid",
+      "type": "function",
+      "file": "app/controllers/application_controller.rb",
+      "line": 15,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/application_controller.rb#internal_error": {
+      "name": "internal_error",
+      "type": "function",
+      "file": "app/controllers/application_controller.rb",
+      "line": 19,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/application_controller.rb#render_success": {
+      "name": "render_success",
+      "type": "function",
+      "file": "app/controllers/application_controller.rb",
+      "line": 24,
+      "module": "app",
+      "export": true
+    },
+    "app/controllers/application_controller.rb#render_error": {
+      "name": "render_error",
+      "type": "function",
+      "file": "app/controllers/application_controller.rb",
+      "line": 28,
+      "module": "app",
+      "export": true
+    },
+    "app/models/comment.rb#Comment": {
+      "name": "Comment",
+      "type": "class",
+      "file": "app/models/comment.rb",
+      "line": 3,
+      "module": "app",
+      "export": true
+    },
+    "app/models/comment.rb#approve": {
+      "name": "approve",
+      "type": "function",
+      "file": "app/models/comment.rb",
+      "line": 19,
+      "module": "app",
+      "export": true
+    },
+    "app/models/comment.rb#reject": {
+      "name": "reject",
+      "type": "function",
+      "file": "app/models/comment.rb",
+      "line": 23,
+      "module": "app",
+      "export": true
+    },
+    "app/models/comment.rb#approved": {
+      "name": "approved",
+      "type": "function",
+      "file": "app/models/comment.rb",
+      "line": 27,
+      "module": "app",
+      "export": true
+    },
+    "app/models/comment.rb#pending": {
+      "name": "pending",
+      "type": "function",
+      "file": "app/models/comment.rb",
+      "line": 31,
+      "module": "app",
+      "export": true
+    },
+    "app/models/post.rb#Post": {
+      "name": "Post",
+      "type": "class",
+      "file": "app/models/post.rb",
+      "line": 3,
+      "module": "app",
+      "export": true
+    },
+    "app/models/post.rb#publish": {
+      "name": "publish",
+      "type": "function",
+      "file": "app/models/post.rb",
+      "line": 21,
+      "module": "app",
+      "export": true
+    },
+    "app/models/post.rb#unpublish": {
+      "name": "unpublish",
+      "type": "function",
+      "file": "app/models/post.rb",
+      "line": 25,
+      "module": "app",
+      "export": true
+    },
+    "app/models/post.rb#published": {
+      "name": "published",
+      "type": "function",
+      "file": "app/models/post.rb",
+      "line": 29,
+      "module": "app",
+      "export": true
+    },
+    "app/models/post.rb#draft": {
+      "name": "draft",
+      "type": "function",
+      "file": "app/models/post.rb",
+      "line": 33,
+      "module": "app",
+      "export": true
+    },
+    "app/models/user.rb#User": {
+      "name": "User",
+      "type": "class",
+      "file": "app/models/user.rb",
+      "line": 3,
+      "module": "app",
+      "export": true
+    },
+    "app/models/user.rb#full_name": {
+      "name": "full_name",
+      "type": "function",
+      "file": "app/models/user.rb",
+      "line": 17,
+      "module": "app",
+      "export": true
+    },
+    "app/models/user.rb#deactivate": {
+      "name": "deactivate",
+      "type": "function",
+      "file": "app/models/user.rb",
+      "line": 21,
+      "module": "app",
+      "export": true
+    },
+    "app/models/user.rb#activate": {
+      "name": "activate",
+      "type": "function",
+      "file": "app/models/user.rb",
+      "line": 25,
+      "module": "app",
+      "export": true
+    },
+    "app/services/post_service.rb#PostService": {
+      "name": "PostService",
+      "type": "class",
+      "file": "app/services/post_service.rb",
+      "line": 3,
+      "module": "app",
+      "export": true
+    },
+    "app/services/post_service.rb#self": {
+      "name": "self",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 88,
+      "module": "app",
+      "export": true
+    },
+    "app/services/post_service.rb#create_post": {
+      "name": "create_post",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 8,
+      "module": "app",
+      "export": true
+    },
+    "app/services/post_service.rb#find_post": {
+      "name": "find_post",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 17,
+      "module": "app",
+      "export": true
+    },
+    "app/services/post_service.rb#update_post": {
+      "name": "update_post",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 26,
+      "module": "app",
+      "export": true
+    },
+    "app/services/post_service.rb#delete_post": {
+      "name": "delete_post",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 36,
+      "module": "app",
+      "export": true
+    },
+    "app/services/post_service.rb#publish": {
+      "name": "publish",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 46,
+      "module": "app",
+      "export": true
+    },
+    "app/services/post_service.rb#unpublish": {
+      "name": "unpublish",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 56,
+      "module": "app",
+      "export": true
+    },
+    "app/services/post_service.rb#published_posts": {
+      "name": "published_posts",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 65,
+      "module": "app",
+      "export": true
+    },
+    "app/services/post_service.rb#draft_posts": {
+      "name": "draft_posts",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 72,
+      "module": "app",
+      "export": true
+    },
+    "app/services/post_service.rb#posts_by_user": {
+      "name": "posts_by_user",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 80,
+      "module": "app",
+      "export": true
+    },
+    "app/services/post_service.rb#search": {
+      "name": "search",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 88,
+      "module": "app",
+      "export": true
+    },
+    "app/services/user_service.rb#UserService": {
+      "name": "UserService",
+      "type": "class",
+      "file": "app/services/user_service.rb",
+      "line": 3,
+      "module": "app",
+      "export": true
+    },
+    "app/services/user_service.rb#self": {
+      "name": "self",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 71,
+      "module": "app",
+      "export": true
+    },
+    "app/services/user_service.rb#create_user": {
+      "name": "create_user",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 8,
+      "module": "app",
+      "export": true
+    },
+    "app/services/user_service.rb#find_by_email": {
+      "name": "find_by_email",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 16,
+      "module": "app",
+      "export": true
+    },
+    "app/services/user_service.rb#find_user": {
+      "name": "find_user",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 25,
+      "module": "app",
+      "export": true
+    },
+    "app/services/user_service.rb#update_user": {
+      "name": "update_user",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 34,
+      "module": "app",
+      "export": true
+    },
+    "app/services/user_service.rb#delete_user": {
+      "name": "delete_user",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 44,
+      "module": "app",
+      "export": true
+    },
+    "app/services/user_service.rb#active_users": {
+      "name": "active_users",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 53,
+      "module": "app",
+      "export": true
+    },
+    "app/services/user_service.rb#deactivate_user": {
+      "name": "deactivate_user",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 61,
+      "module": "app",
+      "export": true
+    },
+    "app/services/user_service.rb#activate_user": {
+      "name": "activate_user",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 71,
+      "module": "app",
+      "export": true
+    },
+    "config/application.rb#RailsApp": {
+      "name": "RailsApp",
+      "type": "module",
+      "file": "config/application.rb",
+      "line": 5,
+      "module": "config",
+      "export": true
+    },
+    "config/application.rb#Application": {
+      "name": "Application",
+      "type": "class",
+      "file": "config/application.rb",
+      "line": 6,
+      "module": "config",
+      "export": true
+    }
+  },
+  "total": 92,
+  "byType": {
+    "module": [
+      {
+        "id": "app/controllers/api/comments_controller.rb#Api",
+        "name": "Api",
+        "type": "module",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 3,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#Api",
+        "name": "Api",
+        "type": "module",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 3,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/users_controller.rb#Api",
+        "name": "Api",
+        "type": "module",
+        "file": "app/controllers/api/users_controller.rb",
+        "line": 3,
+        "export": true
+      },
+      {
+        "id": "config/application.rb#RailsApp",
+        "name": "RailsApp",
+        "type": "module",
+        "file": "config/application.rb",
+        "line": 5,
+        "export": true
+      }
+    ],
+    "class": [
+      {
+        "id": "app/controllers/api/comments_controller.rb#CommentsController",
+        "name": "CommentsController",
+        "type": "class",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 4,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#PostsController",
+        "name": "PostsController",
+        "type": "class",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 4,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/users_controller.rb#UsersController",
+        "name": "UsersController",
+        "type": "class",
+        "file": "app/controllers/api/users_controller.rb",
+        "line": 4,
+        "export": true
+      },
+      {
+        "id": "app/controllers/application_controller.rb#ApplicationController",
+        "name": "ApplicationController",
+        "type": "class",
+        "file": "app/controllers/application_controller.rb",
+        "line": 3,
+        "export": true
+      },
+      {
+        "id": "app/models/comment.rb#Comment",
+        "name": "Comment",
+        "type": "class",
+        "file": "app/models/comment.rb",
+        "line": 3,
+        "export": true
+      },
+      {
+        "id": "app/models/post.rb#Post",
+        "name": "Post",
+        "type": "class",
+        "file": "app/models/post.rb",
+        "line": 3,
+        "export": true
+      },
+      {
+        "id": "app/models/user.rb#User",
+        "name": "User",
+        "type": "class",
+        "file": "app/models/user.rb",
+        "line": 3,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#PostService",
+        "name": "PostService",
+        "type": "class",
+        "file": "app/services/post_service.rb",
+        "line": 3,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#UserService",
+        "name": "UserService",
+        "type": "class",
+        "file": "app/services/user_service.rb",
+        "line": 3,
+        "export": true
+      },
+      {
+        "id": "config/application.rb#Application",
+        "name": "Application",
+        "type": "class",
+        "file": "config/application.rb",
+        "line": 6,
+        "export": true
+      }
+    ],
+    "function": [
+      {
+        "id": "app/controllers/api/comments_controller.rb#index",
+        "name": "index",
+        "type": "function",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 9,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/comments_controller.rb#show",
+        "name": "show",
+        "type": "function",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 17,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/comments_controller.rb#create",
+        "name": "create",
+        "type": "function",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 22,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/comments_controller.rb#update",
+        "name": "update",
+        "type": "function",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 33,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/comments_controller.rb#destroy",
+        "name": "destroy",
+        "type": "function",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 42,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/comments_controller.rb#approve",
+        "name": "approve",
+        "type": "function",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 48,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/comments_controller.rb#reject",
+        "name": "reject",
+        "type": "function",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 55,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/comments_controller.rb#set_post",
+        "name": "set_post",
+        "type": "function",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 63,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/comments_controller.rb#set_comment",
+        "name": "set_comment",
+        "type": "function",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 67,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/comments_controller.rb#comment_params",
+        "name": "comment_params",
+        "type": "function",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 71,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#index",
+        "name": "index",
+        "type": "function",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 8,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#show",
+        "name": "show",
+        "type": "function",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 16,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#create",
+        "name": "create",
+        "type": "function",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 21,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#update",
+        "name": "update",
+        "type": "function",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 32,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#destroy",
+        "name": "destroy",
+        "type": "function",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 41,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#publish",
+        "name": "publish",
+        "type": "function",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 47,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#unpublish",
+        "name": "unpublish",
+        "type": "function",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 53,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#set_post",
+        "name": "set_post",
+        "type": "function",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 60,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#post_params",
+        "name": "post_params",
+        "type": "function",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 64,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/users_controller.rb#index",
+        "name": "index",
+        "type": "function",
+        "file": "app/controllers/api/users_controller.rb",
+        "line": 8,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/users_controller.rb#show",
+        "name": "show",
+        "type": "function",
+        "file": "app/controllers/api/users_controller.rb",
+        "line": 14,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/users_controller.rb#create",
+        "name": "create",
+        "type": "function",
+        "file": "app/controllers/api/users_controller.rb",
+        "line": 19,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/users_controller.rb#update",
+        "name": "update",
+        "type": "function",
+        "file": "app/controllers/api/users_controller.rb",
+        "line": 30,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/users_controller.rb#destroy",
+        "name": "destroy",
+        "type": "function",
+        "file": "app/controllers/api/users_controller.rb",
+        "line": 39,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/users_controller.rb#set_user",
+        "name": "set_user",
+        "type": "function",
+        "file": "app/controllers/api/users_controller.rb",
+        "line": 46,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/users_controller.rb#user_params",
+        "name": "user_params",
+        "type": "function",
+        "file": "app/controllers/api/users_controller.rb",
+        "line": 50,
+        "export": true
+      },
+      {
+        "id": "app/controllers/application_controller.rb#record_not_found",
+        "name": "record_not_found",
+        "type": "function",
+        "file": "app/controllers/application_controller.rb",
+        "line": 11,
+        "export": true
+      },
+      {
+        "id": "app/controllers/application_controller.rb#record_invalid",
+        "name": "record_invalid",
+        "type": "function",
+        "file": "app/controllers/application_controller.rb",
+        "line": 15,
+        "export": true
+      },
+      {
+        "id": "app/controllers/application_controller.rb#internal_error",
+        "name": "internal_error",
+        "type": "function",
+        "file": "app/controllers/application_controller.rb",
+        "line": 19,
+        "export": true
+      },
+      {
+        "id": "app/controllers/application_controller.rb#render_success",
+        "name": "render_success",
+        "type": "function",
+        "file": "app/controllers/application_controller.rb",
+        "line": 24,
+        "export": true
+      },
+      {
+        "id": "app/controllers/application_controller.rb#render_error",
+        "name": "render_error",
+        "type": "function",
+        "file": "app/controllers/application_controller.rb",
+        "line": 28,
+        "export": true
+      },
+      {
+        "id": "app/models/comment.rb#approve",
+        "name": "approve",
+        "type": "function",
+        "file": "app/models/comment.rb",
+        "line": 19,
+        "export": true
+      },
+      {
+        "id": "app/models/comment.rb#reject",
+        "name": "reject",
+        "type": "function",
+        "file": "app/models/comment.rb",
+        "line": 23,
+        "export": true
+      },
+      {
+        "id": "app/models/comment.rb#approved",
+        "name": "approved",
+        "type": "function",
+        "file": "app/models/comment.rb",
+        "line": 27,
+        "export": true
+      },
+      {
+        "id": "app/models/comment.rb#pending",
+        "name": "pending",
+        "type": "function",
+        "file": "app/models/comment.rb",
+        "line": 31,
+        "export": true
+      },
+      {
+        "id": "app/models/post.rb#publish",
+        "name": "publish",
+        "type": "function",
+        "file": "app/models/post.rb",
+        "line": 21,
+        "export": true
+      },
+      {
+        "id": "app/models/post.rb#unpublish",
+        "name": "unpublish",
+        "type": "function",
+        "file": "app/models/post.rb",
+        "line": 25,
+        "export": true
+      },
+      {
+        "id": "app/models/post.rb#published",
+        "name": "published",
+        "type": "function",
+        "file": "app/models/post.rb",
+        "line": 29,
+        "export": true
+      },
+      {
+        "id": "app/models/post.rb#draft",
+        "name": "draft",
+        "type": "function",
+        "file": "app/models/post.rb",
+        "line": 33,
+        "export": true
+      },
+      {
+        "id": "app/models/user.rb#full_name",
+        "name": "full_name",
+        "type": "function",
+        "file": "app/models/user.rb",
+        "line": 17,
+        "export": true
+      },
+      {
+        "id": "app/models/user.rb#deactivate",
+        "name": "deactivate",
+        "type": "function",
+        "file": "app/models/user.rb",
+        "line": 21,
+        "export": true
+      },
+      {
+        "id": "app/models/user.rb#activate",
+        "name": "activate",
+        "type": "function",
+        "file": "app/models/user.rb",
+        "line": 25,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 8,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#create_post",
+        "name": "create_post",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 8,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 17,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#find_post",
+        "name": "find_post",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 17,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 26,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#update_post",
+        "name": "update_post",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 26,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 36,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#delete_post",
+        "name": "delete_post",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 36,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 46,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#publish",
+        "name": "publish",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 46,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 56,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#unpublish",
+        "name": "unpublish",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 56,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 65,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#published_posts",
+        "name": "published_posts",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 65,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 72,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#draft_posts",
+        "name": "draft_posts",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 72,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 80,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#posts_by_user",
+        "name": "posts_by_user",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 80,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 88,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#search",
+        "name": "search",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 88,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 8,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#create_user",
+        "name": "create_user",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 8,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 16,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#find_by_email",
+        "name": "find_by_email",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 16,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 25,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#find_user",
+        "name": "find_user",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 25,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 34,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#update_user",
+        "name": "update_user",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 34,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 44,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#delete_user",
+        "name": "delete_user",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 44,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 53,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#active_users",
+        "name": "active_users",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 53,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 61,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#deactivate_user",
+        "name": "deactivate_user",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 61,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 71,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#activate_user",
+        "name": "activate_user",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 71,
+        "export": true
+      }
+    ]
+  },
+  "byFile": {
+    "app/controllers/api/comments_controller.rb": [
+      {
+        "id": "app/controllers/api/comments_controller.rb#Api",
+        "name": "Api",
+        "type": "module",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 3,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/comments_controller.rb#CommentsController",
+        "name": "CommentsController",
+        "type": "class",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 4,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/comments_controller.rb#index",
+        "name": "index",
+        "type": "function",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 9,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/comments_controller.rb#show",
+        "name": "show",
+        "type": "function",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 17,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/comments_controller.rb#create",
+        "name": "create",
+        "type": "function",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 22,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/comments_controller.rb#update",
+        "name": "update",
+        "type": "function",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 33,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/comments_controller.rb#destroy",
+        "name": "destroy",
+        "type": "function",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 42,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/comments_controller.rb#approve",
+        "name": "approve",
+        "type": "function",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 48,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/comments_controller.rb#reject",
+        "name": "reject",
+        "type": "function",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 55,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/comments_controller.rb#set_post",
+        "name": "set_post",
+        "type": "function",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 63,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/comments_controller.rb#set_comment",
+        "name": "set_comment",
+        "type": "function",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 67,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/comments_controller.rb#comment_params",
+        "name": "comment_params",
+        "type": "function",
+        "file": "app/controllers/api/comments_controller.rb",
+        "line": 71,
+        "export": true
+      }
+    ],
+    "app/controllers/api/posts_controller.rb": [
+      {
+        "id": "app/controllers/api/posts_controller.rb#Api",
+        "name": "Api",
+        "type": "module",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 3,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#PostsController",
+        "name": "PostsController",
+        "type": "class",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 4,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#index",
+        "name": "index",
+        "type": "function",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 8,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#show",
+        "name": "show",
+        "type": "function",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 16,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#create",
+        "name": "create",
+        "type": "function",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 21,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#update",
+        "name": "update",
+        "type": "function",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 32,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#destroy",
+        "name": "destroy",
+        "type": "function",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 41,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#publish",
+        "name": "publish",
+        "type": "function",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 47,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#unpublish",
+        "name": "unpublish",
+        "type": "function",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 53,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#set_post",
+        "name": "set_post",
+        "type": "function",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 60,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/posts_controller.rb#post_params",
+        "name": "post_params",
+        "type": "function",
+        "file": "app/controllers/api/posts_controller.rb",
+        "line": 64,
+        "export": true
+      }
+    ],
+    "app/controllers/api/users_controller.rb": [
+      {
+        "id": "app/controllers/api/users_controller.rb#Api",
+        "name": "Api",
+        "type": "module",
+        "file": "app/controllers/api/users_controller.rb",
+        "line": 3,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/users_controller.rb#UsersController",
+        "name": "UsersController",
+        "type": "class",
+        "file": "app/controllers/api/users_controller.rb",
+        "line": 4,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/users_controller.rb#index",
+        "name": "index",
+        "type": "function",
+        "file": "app/controllers/api/users_controller.rb",
+        "line": 8,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/users_controller.rb#show",
+        "name": "show",
+        "type": "function",
+        "file": "app/controllers/api/users_controller.rb",
+        "line": 14,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/users_controller.rb#create",
+        "name": "create",
+        "type": "function",
+        "file": "app/controllers/api/users_controller.rb",
+        "line": 19,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/users_controller.rb#update",
+        "name": "update",
+        "type": "function",
+        "file": "app/controllers/api/users_controller.rb",
+        "line": 30,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/users_controller.rb#destroy",
+        "name": "destroy",
+        "type": "function",
+        "file": "app/controllers/api/users_controller.rb",
+        "line": 39,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/users_controller.rb#set_user",
+        "name": "set_user",
+        "type": "function",
+        "file": "app/controllers/api/users_controller.rb",
+        "line": 46,
+        "export": true
+      },
+      {
+        "id": "app/controllers/api/users_controller.rb#user_params",
+        "name": "user_params",
+        "type": "function",
+        "file": "app/controllers/api/users_controller.rb",
+        "line": 50,
+        "export": true
+      }
+    ],
+    "app/controllers/application_controller.rb": [
+      {
+        "id": "app/controllers/application_controller.rb#ApplicationController",
+        "name": "ApplicationController",
+        "type": "class",
+        "file": "app/controllers/application_controller.rb",
+        "line": 3,
+        "export": true
+      },
+      {
+        "id": "app/controllers/application_controller.rb#record_not_found",
+        "name": "record_not_found",
+        "type": "function",
+        "file": "app/controllers/application_controller.rb",
+        "line": 11,
+        "export": true
+      },
+      {
+        "id": "app/controllers/application_controller.rb#record_invalid",
+        "name": "record_invalid",
+        "type": "function",
+        "file": "app/controllers/application_controller.rb",
+        "line": 15,
+        "export": true
+      },
+      {
+        "id": "app/controllers/application_controller.rb#internal_error",
+        "name": "internal_error",
+        "type": "function",
+        "file": "app/controllers/application_controller.rb",
+        "line": 19,
+        "export": true
+      },
+      {
+        "id": "app/controllers/application_controller.rb#render_success",
+        "name": "render_success",
+        "type": "function",
+        "file": "app/controllers/application_controller.rb",
+        "line": 24,
+        "export": true
+      },
+      {
+        "id": "app/controllers/application_controller.rb#render_error",
+        "name": "render_error",
+        "type": "function",
+        "file": "app/controllers/application_controller.rb",
+        "line": 28,
+        "export": true
+      }
+    ],
+    "app/models/comment.rb": [
+      {
+        "id": "app/models/comment.rb#Comment",
+        "name": "Comment",
+        "type": "class",
+        "file": "app/models/comment.rb",
+        "line": 3,
+        "export": true
+      },
+      {
+        "id": "app/models/comment.rb#approve",
+        "name": "approve",
+        "type": "function",
+        "file": "app/models/comment.rb",
+        "line": 19,
+        "export": true
+      },
+      {
+        "id": "app/models/comment.rb#reject",
+        "name": "reject",
+        "type": "function",
+        "file": "app/models/comment.rb",
+        "line": 23,
+        "export": true
+      },
+      {
+        "id": "app/models/comment.rb#approved",
+        "name": "approved",
+        "type": "function",
+        "file": "app/models/comment.rb",
+        "line": 27,
+        "export": true
+      },
+      {
+        "id": "app/models/comment.rb#pending",
+        "name": "pending",
+        "type": "function",
+        "file": "app/models/comment.rb",
+        "line": 31,
+        "export": true
+      }
+    ],
+    "app/models/post.rb": [
+      {
+        "id": "app/models/post.rb#Post",
+        "name": "Post",
+        "type": "class",
+        "file": "app/models/post.rb",
+        "line": 3,
+        "export": true
+      },
+      {
+        "id": "app/models/post.rb#publish",
+        "name": "publish",
+        "type": "function",
+        "file": "app/models/post.rb",
+        "line": 21,
+        "export": true
+      },
+      {
+        "id": "app/models/post.rb#unpublish",
+        "name": "unpublish",
+        "type": "function",
+        "file": "app/models/post.rb",
+        "line": 25,
+        "export": true
+      },
+      {
+        "id": "app/models/post.rb#published",
+        "name": "published",
+        "type": "function",
+        "file": "app/models/post.rb",
+        "line": 29,
+        "export": true
+      },
+      {
+        "id": "app/models/post.rb#draft",
+        "name": "draft",
+        "type": "function",
+        "file": "app/models/post.rb",
+        "line": 33,
+        "export": true
+      }
+    ],
+    "app/models/user.rb": [
+      {
+        "id": "app/models/user.rb#User",
+        "name": "User",
+        "type": "class",
+        "file": "app/models/user.rb",
+        "line": 3,
+        "export": true
+      },
+      {
+        "id": "app/models/user.rb#full_name",
+        "name": "full_name",
+        "type": "function",
+        "file": "app/models/user.rb",
+        "line": 17,
+        "export": true
+      },
+      {
+        "id": "app/models/user.rb#deactivate",
+        "name": "deactivate",
+        "type": "function",
+        "file": "app/models/user.rb",
+        "line": 21,
+        "export": true
+      },
+      {
+        "id": "app/models/user.rb#activate",
+        "name": "activate",
+        "type": "function",
+        "file": "app/models/user.rb",
+        "line": 25,
+        "export": true
+      }
+    ],
+    "app/services/post_service.rb": [
+      {
+        "id": "app/services/post_service.rb#PostService",
+        "name": "PostService",
+        "type": "class",
+        "file": "app/services/post_service.rb",
+        "line": 3,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 8,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#create_post",
+        "name": "create_post",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 8,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 17,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#find_post",
+        "name": "find_post",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 17,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 26,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#update_post",
+        "name": "update_post",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 26,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 36,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#delete_post",
+        "name": "delete_post",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 36,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 46,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#publish",
+        "name": "publish",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 46,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 56,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#unpublish",
+        "name": "unpublish",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 56,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 65,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#published_posts",
+        "name": "published_posts",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 65,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 72,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#draft_posts",
+        "name": "draft_posts",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 72,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 80,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#posts_by_user",
+        "name": "posts_by_user",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 80,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 88,
+        "export": true
+      },
+      {
+        "id": "app/services/post_service.rb#search",
+        "name": "search",
+        "type": "function",
+        "file": "app/services/post_service.rb",
+        "line": 88,
+        "export": true
+      }
+    ],
+    "app/services/user_service.rb": [
+      {
+        "id": "app/services/user_service.rb#UserService",
+        "name": "UserService",
+        "type": "class",
+        "file": "app/services/user_service.rb",
+        "line": 3,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 8,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#create_user",
+        "name": "create_user",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 8,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 16,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#find_by_email",
+        "name": "find_by_email",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 16,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 25,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#find_user",
+        "name": "find_user",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 25,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 34,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#update_user",
+        "name": "update_user",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 34,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 44,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#delete_user",
+        "name": "delete_user",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 44,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 53,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#active_users",
+        "name": "active_users",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 53,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 61,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#deactivate_user",
+        "name": "deactivate_user",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 61,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#self",
+        "name": "self",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 71,
+        "export": true
+      },
+      {
+        "id": "app/services/user_service.rb#activate_user",
+        "name": "activate_user",
+        "type": "function",
+        "file": "app/services/user_service.rb",
+        "line": 71,
+        "export": true
+      }
+    ],
+    "config/application.rb": [
+      {
+        "id": "config/application.rb#RailsApp",
+        "name": "RailsApp",
+        "type": "module",
+        "file": "config/application.rb",
+        "line": 5,
+        "export": true
+      },
+      {
+        "id": "config/application.rb#Application",
+        "name": "Application",
+        "type": "class",
+        "file": "config/application.rb",
+        "line": 6,
+        "export": true
+      }
+    ]
+  },
+  "exported": [
+    {
+      "id": "app/controllers/api/comments_controller.rb#Api",
+      "name": "Api",
+      "type": "module",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 3,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/comments_controller.rb#CommentsController",
+      "name": "CommentsController",
+      "type": "class",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 4,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/comments_controller.rb#index",
+      "name": "index",
+      "type": "function",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 9,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/comments_controller.rb#show",
+      "name": "show",
+      "type": "function",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 17,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/comments_controller.rb#create",
+      "name": "create",
+      "type": "function",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 22,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/comments_controller.rb#update",
+      "name": "update",
+      "type": "function",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 33,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/comments_controller.rb#destroy",
+      "name": "destroy",
+      "type": "function",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 42,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/comments_controller.rb#approve",
+      "name": "approve",
+      "type": "function",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 48,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/comments_controller.rb#reject",
+      "name": "reject",
+      "type": "function",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 55,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/comments_controller.rb#set_post",
+      "name": "set_post",
+      "type": "function",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 63,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/comments_controller.rb#set_comment",
+      "name": "set_comment",
+      "type": "function",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 67,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/comments_controller.rb#comment_params",
+      "name": "comment_params",
+      "type": "function",
+      "file": "app/controllers/api/comments_controller.rb",
+      "line": 71,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/posts_controller.rb#Api",
+      "name": "Api",
+      "type": "module",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 3,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/posts_controller.rb#PostsController",
+      "name": "PostsController",
+      "type": "class",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 4,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/posts_controller.rb#index",
+      "name": "index",
+      "type": "function",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 8,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/posts_controller.rb#show",
+      "name": "show",
+      "type": "function",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 16,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/posts_controller.rb#create",
+      "name": "create",
+      "type": "function",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 21,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/posts_controller.rb#update",
+      "name": "update",
+      "type": "function",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 32,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/posts_controller.rb#destroy",
+      "name": "destroy",
+      "type": "function",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 41,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/posts_controller.rb#publish",
+      "name": "publish",
+      "type": "function",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 47,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/posts_controller.rb#unpublish",
+      "name": "unpublish",
+      "type": "function",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 53,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/posts_controller.rb#set_post",
+      "name": "set_post",
+      "type": "function",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 60,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/posts_controller.rb#post_params",
+      "name": "post_params",
+      "type": "function",
+      "file": "app/controllers/api/posts_controller.rb",
+      "line": 64,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/users_controller.rb#Api",
+      "name": "Api",
+      "type": "module",
+      "file": "app/controllers/api/users_controller.rb",
+      "line": 3,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/users_controller.rb#UsersController",
+      "name": "UsersController",
+      "type": "class",
+      "file": "app/controllers/api/users_controller.rb",
+      "line": 4,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/users_controller.rb#index",
+      "name": "index",
+      "type": "function",
+      "file": "app/controllers/api/users_controller.rb",
+      "line": 8,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/users_controller.rb#show",
+      "name": "show",
+      "type": "function",
+      "file": "app/controllers/api/users_controller.rb",
+      "line": 14,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/users_controller.rb#create",
+      "name": "create",
+      "type": "function",
+      "file": "app/controllers/api/users_controller.rb",
+      "line": 19,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/users_controller.rb#update",
+      "name": "update",
+      "type": "function",
+      "file": "app/controllers/api/users_controller.rb",
+      "line": 30,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/users_controller.rb#destroy",
+      "name": "destroy",
+      "type": "function",
+      "file": "app/controllers/api/users_controller.rb",
+      "line": 39,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/users_controller.rb#set_user",
+      "name": "set_user",
+      "type": "function",
+      "file": "app/controllers/api/users_controller.rb",
+      "line": 46,
+      "export": true
+    },
+    {
+      "id": "app/controllers/api/users_controller.rb#user_params",
+      "name": "user_params",
+      "type": "function",
+      "file": "app/controllers/api/users_controller.rb",
+      "line": 50,
+      "export": true
+    },
+    {
+      "id": "app/controllers/application_controller.rb#ApplicationController",
+      "name": "ApplicationController",
+      "type": "class",
+      "file": "app/controllers/application_controller.rb",
+      "line": 3,
+      "export": true
+    },
+    {
+      "id": "app/controllers/application_controller.rb#record_not_found",
+      "name": "record_not_found",
+      "type": "function",
+      "file": "app/controllers/application_controller.rb",
+      "line": 11,
+      "export": true
+    },
+    {
+      "id": "app/controllers/application_controller.rb#record_invalid",
+      "name": "record_invalid",
+      "type": "function",
+      "file": "app/controllers/application_controller.rb",
+      "line": 15,
+      "export": true
+    },
+    {
+      "id": "app/controllers/application_controller.rb#internal_error",
+      "name": "internal_error",
+      "type": "function",
+      "file": "app/controllers/application_controller.rb",
+      "line": 19,
+      "export": true
+    },
+    {
+      "id": "app/controllers/application_controller.rb#render_success",
+      "name": "render_success",
+      "type": "function",
+      "file": "app/controllers/application_controller.rb",
+      "line": 24,
+      "export": true
+    },
+    {
+      "id": "app/controllers/application_controller.rb#render_error",
+      "name": "render_error",
+      "type": "function",
+      "file": "app/controllers/application_controller.rb",
+      "line": 28,
+      "export": true
+    },
+    {
+      "id": "app/models/comment.rb#Comment",
+      "name": "Comment",
+      "type": "class",
+      "file": "app/models/comment.rb",
+      "line": 3,
+      "export": true
+    },
+    {
+      "id": "app/models/comment.rb#approve",
+      "name": "approve",
+      "type": "function",
+      "file": "app/models/comment.rb",
+      "line": 19,
+      "export": true
+    },
+    {
+      "id": "app/models/comment.rb#reject",
+      "name": "reject",
+      "type": "function",
+      "file": "app/models/comment.rb",
+      "line": 23,
+      "export": true
+    },
+    {
+      "id": "app/models/comment.rb#approved",
+      "name": "approved",
+      "type": "function",
+      "file": "app/models/comment.rb",
+      "line": 27,
+      "export": true
+    },
+    {
+      "id": "app/models/comment.rb#pending",
+      "name": "pending",
+      "type": "function",
+      "file": "app/models/comment.rb",
+      "line": 31,
+      "export": true
+    },
+    {
+      "id": "app/models/post.rb#Post",
+      "name": "Post",
+      "type": "class",
+      "file": "app/models/post.rb",
+      "line": 3,
+      "export": true
+    },
+    {
+      "id": "app/models/post.rb#publish",
+      "name": "publish",
+      "type": "function",
+      "file": "app/models/post.rb",
+      "line": 21,
+      "export": true
+    },
+    {
+      "id": "app/models/post.rb#unpublish",
+      "name": "unpublish",
+      "type": "function",
+      "file": "app/models/post.rb",
+      "line": 25,
+      "export": true
+    },
+    {
+      "id": "app/models/post.rb#published",
+      "name": "published",
+      "type": "function",
+      "file": "app/models/post.rb",
+      "line": 29,
+      "export": true
+    },
+    {
+      "id": "app/models/post.rb#draft",
+      "name": "draft",
+      "type": "function",
+      "file": "app/models/post.rb",
+      "line": 33,
+      "export": true
+    },
+    {
+      "id": "app/models/user.rb#User",
+      "name": "User",
+      "type": "class",
+      "file": "app/models/user.rb",
+      "line": 3,
+      "export": true
+    },
+    {
+      "id": "app/models/user.rb#full_name",
+      "name": "full_name",
+      "type": "function",
+      "file": "app/models/user.rb",
+      "line": 17,
+      "export": true
+    },
+    {
+      "id": "app/models/user.rb#deactivate",
+      "name": "deactivate",
+      "type": "function",
+      "file": "app/models/user.rb",
+      "line": 21,
+      "export": true
+    },
+    {
+      "id": "app/models/user.rb#activate",
+      "name": "activate",
+      "type": "function",
+      "file": "app/models/user.rb",
+      "line": 25,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#PostService",
+      "name": "PostService",
+      "type": "class",
+      "file": "app/services/post_service.rb",
+      "line": 3,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#self",
+      "name": "self",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 8,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#create_post",
+      "name": "create_post",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 8,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#self",
+      "name": "self",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 17,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#find_post",
+      "name": "find_post",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 17,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#self",
+      "name": "self",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 26,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#update_post",
+      "name": "update_post",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 26,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#self",
+      "name": "self",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 36,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#delete_post",
+      "name": "delete_post",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 36,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#self",
+      "name": "self",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 46,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#publish",
+      "name": "publish",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 46,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#self",
+      "name": "self",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 56,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#unpublish",
+      "name": "unpublish",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 56,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#self",
+      "name": "self",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 65,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#published_posts",
+      "name": "published_posts",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 65,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#self",
+      "name": "self",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 72,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#draft_posts",
+      "name": "draft_posts",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 72,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#self",
+      "name": "self",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 80,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#posts_by_user",
+      "name": "posts_by_user",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 80,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#self",
+      "name": "self",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 88,
+      "export": true
+    },
+    {
+      "id": "app/services/post_service.rb#search",
+      "name": "search",
+      "type": "function",
+      "file": "app/services/post_service.rb",
+      "line": 88,
+      "export": true
+    },
+    {
+      "id": "app/services/user_service.rb#UserService",
+      "name": "UserService",
+      "type": "class",
+      "file": "app/services/user_service.rb",
+      "line": 3,
+      "export": true
+    },
+    {
+      "id": "app/services/user_service.rb#self",
+      "name": "self",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 8,
+      "export": true
+    },
+    {
+      "id": "app/services/user_service.rb#create_user",
+      "name": "create_user",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 8,
+      "export": true
+    },
+    {
+      "id": "app/services/user_service.rb#self",
+      "name": "self",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 16,
+      "export": true
+    },
+    {
+      "id": "app/services/user_service.rb#find_by_email",
+      "name": "find_by_email",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 16,
+      "export": true
+    },
+    {
+      "id": "app/services/user_service.rb#self",
+      "name": "self",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 25,
+      "export": true
+    },
+    {
+      "id": "app/services/user_service.rb#find_user",
+      "name": "find_user",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 25,
+      "export": true
+    },
+    {
+      "id": "app/services/user_service.rb#self",
+      "name": "self",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 34,
+      "export": true
+    },
+    {
+      "id": "app/services/user_service.rb#update_user",
+      "name": "update_user",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 34,
+      "export": true
+    },
+    {
+      "id": "app/services/user_service.rb#self",
+      "name": "self",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 44,
+      "export": true
+    },
+    {
+      "id": "app/services/user_service.rb#delete_user",
+      "name": "delete_user",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 44,
+      "export": true
+    },
+    {
+      "id": "app/services/user_service.rb#self",
+      "name": "self",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 53,
+      "export": true
+    },
+    {
+      "id": "app/services/user_service.rb#active_users",
+      "name": "active_users",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 53,
+      "export": true
+    },
+    {
+      "id": "app/services/user_service.rb#self",
+      "name": "self",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 61,
+      "export": true
+    },
+    {
+      "id": "app/services/user_service.rb#deactivate_user",
+      "name": "deactivate_user",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 61,
+      "export": true
+    },
+    {
+      "id": "app/services/user_service.rb#self",
+      "name": "self",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 71,
+      "export": true
+    },
+    {
+      "id": "app/services/user_service.rb#activate_user",
+      "name": "activate_user",
+      "type": "function",
+      "file": "app/services/user_service.rb",
+      "line": 71,
+      "export": true
+    },
+    {
+      "id": "config/application.rb#RailsApp",
+      "name": "RailsApp",
+      "type": "module",
+      "file": "config/application.rb",
+      "line": 5,
+      "export": true
+    },
+    {
+      "id": "config/application.rb#Application",
+      "name": "Application",
+      "type": "class",
+      "file": "config/application.rb",
+      "line": 6,
+      "export": true
+    }
+  ]
+}

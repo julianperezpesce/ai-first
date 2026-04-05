@@ -1,14 +1,15 @@
 # Technology Stack
 
-**Languages**: Markdown, JSON, Python
+**Languages**: Markdown, Python
+
+**Frameworks**: FastAPI
 
 ## Languages
 - Markdown
-- JSON
 - Python
 
 ## Frameworks
-- None detected
+- FastAPI
 
 ## Key Libraries
 - None detected

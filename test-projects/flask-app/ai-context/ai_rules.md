@@ -6,8 +6,9 @@
 
 ## Guidelines
 
-- Language: Use Markdown, JSON, Python
-- Architecture: Follow Flat / Simple Structure pattern
+- Language: Use Markdown, Python
+- Frameworks: Flask
+- Architecture: Follow API Server pattern
 - File naming: PascalCase
 
 ## Patterns
@@ -24,9 +25,9 @@
 
 | Category | Value |
 |----------|-------|
-| Language | Markdown, JSON, Python |
-| Framework | N/A |
-| Architecture | Flat / Simple Structure |
+| Language | Markdown, Python |
+| Framework | Flask |
+| Architecture | API Server |
 | Naming | PascalCase |
 | Indentation | unknown |
 

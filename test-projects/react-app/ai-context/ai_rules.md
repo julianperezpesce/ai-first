@@ -6,9 +6,9 @@
 
 ## Guidelines
 
-- Language: Use Markdown, JSON, TypeScript (React), TypeScript
+- Language: Use JSON, TypeScript (React), TypeScript
 - Frameworks: React, Next.js, Remix
-- Architecture: Follow Flat / Simple Structure pattern
+- Architecture: Follow API Server pattern
 - File naming: PascalCase
 - Source directory: src/
 
@@ -26,9 +26,9 @@
 
 | Category | Value |
 |----------|-------|
-| Language | Markdown, JSON, TypeScript (React), TypeScript |
+| Language | JSON, TypeScript (React), TypeScript |
 | Framework | React, Next.js, Remix |
-| Architecture | Flat / Simple Structure |
+| Architecture | API Server |
 | Naming | PascalCase |
 | Indentation | unknown |
 

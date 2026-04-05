@@ -969,6 +969,7 @@ Options:
         if (command === 'init')
             args.shift();
         let preset;
+        let installMcp = false;
         for (let i = 0; i < args.length; i++) {
             const arg = args[i];
             switch (arg) {
@@ -983,6 +984,10 @@ Options:
                 case "--preset":
                 case "-p":
                     preset = args[++i];
+                    break;
+                case "--install-mcp":
+                case "--mcp":
+                    installMcp = true;
                     break;
                 case "--help":
                 case "-h":
@@ -1011,6 +1016,7 @@ Options:
   -r, --root <dir>      Root directory to scan (default: current directory)
   -o, --output <dir>   Output directory (default: ./ai-context)
   -p, --preset <name>  Use preset (full, quick, api, docs)
+  --install-mcp         Configure OpenCode MCP server automatically
   -h, --help           Show help message
 
 Presets:
@@ -1040,6 +1046,29 @@ Presets:
             console.log(`\n🎛️  Using preset: ${preset}\n`);
         }
         runAIFirst(options).then((result) => {
+            if (result.success && installMcp) {
+                const rootDir = options.rootDir || process.cwd();
+                const opencodeDir = path.join(rootDir, '.opencode');
+                const mcpConfigPath = path.join(opencodeDir, 'mcp.json');
+                const mcpConfig = {
+                    mcpServers: {
+                        "ai-first": {
+                            command: "af",
+                            args: ["mcp"],
+                            autoConnect: true
+                        }
+                    }
+                };
+                try {
+                    fs.mkdirSync(opencodeDir, { recursive: true });
+                    fs.writeFileSync(mcpConfigPath, JSON.stringify(mcpConfig, null, 2));
+                    console.log(`\n✅ MCP server configured at ${mcpConfigPath}`);
+                    console.log(`   Restart OpenCode to use the MCP server`);
+                }
+                catch (err) {
+                    console.error(`\n⚠️  Failed to write MCP config:`, err);
+                }
+            }
             process.exit(result.success ? 0 : 1);
         });
     }

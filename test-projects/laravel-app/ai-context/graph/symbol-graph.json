@@ -1,5 +1,888 @@
 {
-  "symbols": [],
-  "relationships": [],
-  "bySymbol": {}
+  "symbols": [
+    {
+      "id": "app/Http/Controllers/Api/CategoryController.php#CategoryController",
+      "name": "CategoryController",
+      "type": "class",
+      "file": "app/Http/Controllers/Api/CategoryController.php",
+      "line": 11,
+      "export": true
+    },
+    {
+      "id": "app/Http/Controllers/Api/CategoryController.php#index",
+      "name": "index",
+      "type": "function",
+      "file": "app/Http/Controllers/Api/CategoryController.php",
+      "line": 16,
+      "export": true
+    },
+    {
+      "id": "app/Http/Controllers/Api/CategoryController.php#store",
+      "name": "store",
+      "type": "function",
+      "file": "app/Http/Controllers/Api/CategoryController.php",
+      "line": 25,
+      "export": true
+    },
+    {
+      "id": "app/Http/Controllers/Api/CategoryController.php#show",
+      "name": "show",
+      "type": "function",
+      "file": "app/Http/Controllers/Api/CategoryController.php",
+      "line": 42,
+      "export": true
+    },
+    {
+      "id": "app/Http/Controllers/Api/CategoryController.php#update",
+      "name": "update",
+      "type": "function",
+      "file": "app/Http/Controllers/Api/CategoryController.php",
+      "line": 50,
+      "export": true
+    },
+    {
+      "id": "app/Http/Controllers/Api/CategoryController.php#destroy",
+      "name": "destroy",
+      "type": "function",
+      "file": "app/Http/Controllers/Api/CategoryController.php",
+      "line": 69,
+      "export": true
+    },
+    {
+      "id": "app/Http/Controllers/Api/CategoryController.php#posts",
+      "name": "posts",
+      "type": "function",
+      "file": "app/Http/Controllers/Api/CategoryController.php",
+      "line": 78,
+      "export": true
+    },
+    {
+      "id": "app/Http/Controllers/Api/CommentController.php#CommentController",
+      "name": "CommentController",
+      "type": "class",
+      "file": "app/Http/Controllers/Api/CommentController.php",
+      "line": 11,
+      "export": true
+    },
+    {
+      "id": "app/Http/Controllers/Api/CommentController.php#index",
+      "name": "index",
+      "type": "function",
+      "file": "app/Http/Controllers/Api/CommentController.php",
+      "line": 16,
+      "export": true
+    },
+    {
+      "id": "app/Http/Controllers/Api/CommentController.php#store",
+      "name": "store",
+      "type": "function",
+      "file": "app/Http/Controllers/Api/CommentController.php",
+      "line": 30,
+      "export": true
+    },
+    {
+      "id": "app/Http/Controllers/Api/CommentController.php#destroy",
+      "name": "destroy",
+      "type": "function",
+      "file": "app/Http/Controllers/Api/CommentController.php",
+      "line": 48,
+      "export": true
+    },
+    {
+      "id": "app/Http/Controllers/Api/PostController.php#PostController",
+      "name": "PostController",
+      "type": "class",
+      "file": "app/Http/Controllers/Api/PostController.php",
+      "line": 12,
+      "export": true
+    },
+    {
+      "id": "app/Http/Controllers/Api/PostController.php#index",
+      "name": "index",
+      "type": "function",
+      "file": "app/Http/Controllers/Api/PostController.php",
+      "line": 17,
+      "export": true
+    },
+    {
+      "id": "app/Http/Controllers/Api/PostController.php#store",
+      "name": "store",
+      "type": "function",
+      "file": "app/Http/Controllers/Api/PostController.php",
+      "line": 52,
+      "export": true
+    },
+    {
+      "id": "app/Http/Controllers/Api/PostController.php#show",
+      "name": "show",
+      "type": "function",
+      "file": "app/Http/Controllers/Api/PostController.php",
+      "line": 81,
+      "export": true
+    },
+    {
+      "id": "app/Http/Controllers/Api/PostController.php#update",
+      "name": "update",
+      "type": "function",
+      "file": "app/Http/Controllers/Api/PostController.php",
+      "line": 89,
+      "export": true
+    },
+    {
+      "id": "app/Http/Controllers/Api/PostController.php#destroy",
+      "name": "destroy",
+      "type": "function",
+      "file": "app/Http/Controllers/Api/PostController.php",
+      "line": 122,
+      "export": true
+    },
+    {
+      "id": "app/Http/Controllers/Api/PostController.php#publish",
+      "name": "publish",
+      "type": "function",
+      "file": "app/Http/Controllers/Api/PostController.php",
+      "line": 134,
+      "export": true
+    },
+    {
+      "id": "app/Http/Controllers/Api/PostController.php#unpublish",
+      "name": "unpublish",
+      "type": "function",
+      "file": "app/Http/Controllers/Api/PostController.php",
+      "line": 149,
+      "export": true
+    },
+    {
+      "id": "app/Http/Controllers/Api/PostController.php#myPosts",
+      "name": "myPosts",
+      "type": "function",
+      "file": "app/Http/Controllers/Api/PostController.php",
+      "line": 164,
+      "export": true
+    },
+    {
+      "id": "app/Http/Controllers/Controller.php#Controller",
+      "name": "Controller",
+      "type": "class",
+      "file": "app/Http/Controllers/Controller.php",
+      "line": 9,
+      "export": true
+    },
+    {
+      "id": "app/Models/Category.php#Category",
+      "name": "Category",
+      "type": "class",
+      "file": "app/Models/Category.php",
+      "line": 9,
+      "export": true
+    },
+    {
+      "id": "app/Models/Category.php#posts",
+      "name": "posts",
+      "type": "function",
+      "file": "app/Models/Category.php",
+      "line": 22,
+      "export": true
+    },
+    {
+      "id": "app/Models/Category.php#getRouteKeyName",
+      "name": "getRouteKeyName",
+      "type": "function",
+      "file": "app/Models/Category.php",
+      "line": 30,
+      "export": true
+    },
+    {
+      "id": "app/Models/Comment.php#Comment",
+      "name": "Comment",
+      "type": "class",
+      "file": "app/Models/Comment.php",
+      "line": 9,
+      "export": true
+    },
+    {
+      "id": "app/Models/Comment.php#post",
+      "name": "post",
+      "type": "function",
+      "file": "app/Models/Comment.php",
+      "line": 23,
+      "export": true
+    },
+    {
+      "id": "app/Models/Comment.php#user",
+      "name": "user",
+      "type": "function",
+      "file": "app/Models/Comment.php",
+      "line": 31,
+      "export": true
+    },
+    {
+      "id": "app/Models/Comment.php#parent",
+      "name": "parent",
+      "type": "function",
+      "file": "app/Models/Comment.php",
+      "line": 39,
+      "export": true
+    },
+    {
+      "id": "app/Models/Comment.php#scopeTopLevel",
+      "name": "scopeTopLevel",
+      "type": "function",
+      "file": "app/Models/Comment.php",
+      "line": 47,
+      "export": true
+    },
+    {
+      "id": "app/Models/Post.php#Post",
+      "name": "Post",
+      "type": "class",
+      "file": "app/Models/Post.php",
+      "line": 11,
+      "export": true
+    },
+    {
+      "id": "app/Models/Post.php#user",
+      "name": "user",
+      "type": "function",
+      "file": "app/Models/Post.php",
+      "line": 42,
+      "export": true
+    },
+    {
+      "id": "app/Models/Post.php#comments",
+      "name": "comments",
+      "type": "function",
+      "file": "app/Models/Post.php",
+      "line": 50,
+      "export": true
+    },
+    {
+      "id": "app/Models/Post.php#categories",
+      "name": "categories",
+      "type": "function",
+      "file": "app/Models/Post.php",
+      "line": 58,
+      "export": true
+    },
+    {
+      "id": "app/Models/Post.php#tags",
+      "name": "tags",
+      "type": "function",
+      "file": "app/Models/Post.php",
+      "line": 66,
+      "export": true
+    },
+    {
+      "id": "app/Models/Post.php#scopePublished",
+      "name": "scopePublished",
+      "type": "function",
+      "file": "app/Models/Post.php",
+      "line": 74,
+      "export": true
+    },
+    {
+      "id": "app/Models/Post.php#scopeDrafts",
+      "name": "scopeDrafts",
+      "type": "function",
+      "file": "app/Models/Post.php",
+      "line": 82,
+      "export": true
+    },
+    {
+      "id": "app/Models/Post.php#publish",
+      "name": "publish",
+      "type": "function",
+      "file": "app/Models/Post.php",
+      "line": 90,
+      "export": true
+    },
+    {
+      "id": "app/Models/Post.php#unpublish",
+      "name": "unpublish",
+      "type": "function",
+      "file": "app/Models/Post.php",
+      "line": 101,
+      "export": true
+    },
+    {
+      "id": "app/Models/User.php#User",
+      "name": "User",
+      "type": "class",
+      "file": "app/Models/User.php",
+      "line": 11,
+      "export": true
+    },
+    {
+      "id": "app/Models/User.php#casts",
+      "name": "casts",
+      "type": "function",
+      "file": "app/Models/User.php",
+      "line": 46,
+      "export": true
+    },
+    {
+      "id": "app/Models/User.php#posts",
+      "name": "posts",
+      "type": "function",
+      "file": "app/Models/User.php",
+      "line": 57,
+      "export": true
+    },
+    {
+      "id": "app/Models/User.php#comments",
+      "name": "comments",
+      "type": "function",
+      "file": "app/Models/User.php",
+      "line": 65,
+      "export": true
+    },
+    {
+      "id": "app/Models/User.php#isAdmin",
+      "name": "isAdmin",
+      "type": "function",
+      "file": "app/Models/User.php",
+      "line": 73,
+      "export": true
+    },
+    {
+      "id": "app/Models/User.php#publishedPostsCount",
+      "name": "publishedPostsCount",
+      "type": "function",
+      "file": "app/Models/User.php",
+      "line": 81,
+      "export": true
+    }
+  ],
+  "relationships": [
+    {
+      "symbolId": "app/Http/Controllers/Api/CategoryController.php#CategoryController",
+      "targetId": "app/Http/Controllers/Api/CategoryController.php#CategoryController",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Http/Controllers/Api/CategoryController.php#index",
+      "targetId": "app/Http/Controllers/Api/CategoryController.php#index",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Http/Controllers/Api/CategoryController.php#store",
+      "targetId": "app/Http/Controllers/Api/CategoryController.php#store",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Http/Controllers/Api/CategoryController.php#show",
+      "targetId": "app/Http/Controllers/Api/CategoryController.php#show",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Http/Controllers/Api/CategoryController.php#update",
+      "targetId": "app/Http/Controllers/Api/CategoryController.php#update",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Http/Controllers/Api/CategoryController.php#destroy",
+      "targetId": "app/Http/Controllers/Api/CategoryController.php#destroy",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Http/Controllers/Api/CategoryController.php#posts",
+      "targetId": "app/Http/Controllers/Api/CategoryController.php#posts",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Http/Controllers/Api/CommentController.php#CommentController",
+      "targetId": "app/Http/Controllers/Api/CommentController.php#CommentController",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Http/Controllers/Api/CommentController.php#index",
+      "targetId": "app/Http/Controllers/Api/CommentController.php#index",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Http/Controllers/Api/CommentController.php#store",
+      "targetId": "app/Http/Controllers/Api/CommentController.php#store",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Http/Controllers/Api/CommentController.php#destroy",
+      "targetId": "app/Http/Controllers/Api/CommentController.php#destroy",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Http/Controllers/Api/PostController.php#PostController",
+      "targetId": "app/Http/Controllers/Api/PostController.php#PostController",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Http/Controllers/Api/PostController.php#index",
+      "targetId": "app/Http/Controllers/Api/PostController.php#index",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Http/Controllers/Api/PostController.php#store",
+      "targetId": "app/Http/Controllers/Api/PostController.php#store",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Http/Controllers/Api/PostController.php#show",
+      "targetId": "app/Http/Controllers/Api/PostController.php#show",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Http/Controllers/Api/PostController.php#update",
+      "targetId": "app/Http/Controllers/Api/PostController.php#update",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Http/Controllers/Api/PostController.php#destroy",
+      "targetId": "app/Http/Controllers/Api/PostController.php#destroy",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Http/Controllers/Api/PostController.php#publish",
+      "targetId": "app/Http/Controllers/Api/PostController.php#publish",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Http/Controllers/Api/PostController.php#unpublish",
+      "targetId": "app/Http/Controllers/Api/PostController.php#unpublish",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Http/Controllers/Api/PostController.php#myPosts",
+      "targetId": "app/Http/Controllers/Api/PostController.php#myPosts",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Http/Controllers/Controller.php#Controller",
+      "targetId": "app/Http/Controllers/Controller.php#Controller",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/Category.php#Category",
+      "targetId": "app/Models/Category.php#Category",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/Category.php#posts",
+      "targetId": "app/Models/Category.php#posts",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/Category.php#getRouteKeyName",
+      "targetId": "app/Models/Category.php#getRouteKeyName",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/Comment.php#Comment",
+      "targetId": "app/Models/Comment.php#Comment",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/Comment.php#post",
+      "targetId": "app/Models/Comment.php#post",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/Comment.php#user",
+      "targetId": "app/Models/Comment.php#user",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/Comment.php#parent",
+      "targetId": "app/Models/Comment.php#parent",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/Comment.php#scopeTopLevel",
+      "targetId": "app/Models/Comment.php#scopeTopLevel",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/Post.php#Post",
+      "targetId": "app/Models/Post.php#Post",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/Post.php#user",
+      "targetId": "app/Models/Post.php#user",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/Post.php#comments",
+      "targetId": "app/Models/Post.php#comments",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/Post.php#categories",
+      "targetId": "app/Models/Post.php#categories",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/Post.php#tags",
+      "targetId": "app/Models/Post.php#tags",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/Post.php#scopePublished",
+      "targetId": "app/Models/Post.php#scopePublished",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/Post.php#scopeDrafts",
+      "targetId": "app/Models/Post.php#scopeDrafts",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/Post.php#publish",
+      "targetId": "app/Models/Post.php#publish",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/Post.php#unpublish",
+      "targetId": "app/Models/Post.php#unpublish",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/User.php#User",
+      "targetId": "app/Models/User.php#User",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/User.php#casts",
+      "targetId": "app/Models/User.php#casts",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/User.php#posts",
+      "targetId": "app/Models/User.php#posts",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/User.php#comments",
+      "targetId": "app/Models/User.php#comments",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/User.php#isAdmin",
+      "targetId": "app/Models/User.php#isAdmin",
+      "type": "exports"
+    },
+    {
+      "symbolId": "app/Models/User.php#publishedPostsCount",
+      "targetId": "app/Models/User.php#publishedPostsCount",
+      "type": "exports"
+    }
+  ],
+  "bySymbol": {
+    "app/Http/Controllers/Api/CategoryController.php#CategoryController": [
+      {
+        "symbolId": "app/Http/Controllers/Api/CategoryController.php#CategoryController",
+        "targetId": "app/Http/Controllers/Api/CategoryController.php#CategoryController",
+        "type": "exports"
+      }
+    ],
+    "app/Http/Controllers/Api/CategoryController.php#index": [
+      {
+        "symbolId": "app/Http/Controllers/Api/CategoryController.php#index",
+        "targetId": "app/Http/Controllers/Api/CategoryController.php#index",
+        "type": "exports"
+      }
+    ],
+    "app/Http/Controllers/Api/CategoryController.php#store": [
+      {
+        "symbolId": "app/Http/Controllers/Api/CategoryController.php#store",
+        "targetId": "app/Http/Controllers/Api/CategoryController.php#store",
+        "type": "exports"
+      }
+    ],
+    "app/Http/Controllers/Api/CategoryController.php#show": [
+      {
+        "symbolId": "app/Http/Controllers/Api/CategoryController.php#show",
+        "targetId": "app/Http/Controllers/Api/CategoryController.php#show",
+        "type": "exports"
+      }
+    ],
+    "app/Http/Controllers/Api/CategoryController.php#update": [
+      {
+        "symbolId": "app/Http/Controllers/Api/CategoryController.php#update",
+        "targetId": "app/Http/Controllers/Api/CategoryController.php#update",
+        "type": "exports"
+      }
+    ],
+    "app/Http/Controllers/Api/CategoryController.php#destroy": [
+      {
+        "symbolId": "app/Http/Controllers/Api/CategoryController.php#destroy",
+        "targetId": "app/Http/Controllers/Api/CategoryController.php#destroy",
+        "type": "exports"
+      }
+    ],
+    "app/Http/Controllers/Api/CategoryController.php#posts": [
+      {
+        "symbolId": "app/Http/Controllers/Api/CategoryController.php#posts",
+        "targetId": "app/Http/Controllers/Api/CategoryController.php#posts",
+        "type": "exports"
+      }
+    ],
+    "app/Http/Controllers/Api/CommentController.php#CommentController": [
+      {
+        "symbolId": "app/Http/Controllers/Api/CommentController.php#CommentController",
+        "targetId": "app/Http/Controllers/Api/CommentController.php#CommentController",
+        "type": "exports"
+      }
+    ],
+    "app/Http/Controllers/Api/CommentController.php#index": [
+      {
+        "symbolId": "app/Http/Controllers/Api/CommentController.php#index",
+        "targetId": "app/Http/Controllers/Api/CommentController.php#index",
+        "type": "exports"
+      }
+    ],
+    "app/Http/Controllers/Api/CommentController.php#store": [
+      {
+        "symbolId": "app/Http/Controllers/Api/CommentController.php#store",
+        "targetId": "app/Http/Controllers/Api/CommentController.php#store",
+        "type": "exports"
+      }
+    ],
+    "app/Http/Controllers/Api/CommentController.php#destroy": [
+      {
+        "symbolId": "app/Http/Controllers/Api/CommentController.php#destroy",
+        "targetId": "app/Http/Controllers/Api/CommentController.php#destroy",
+        "type": "exports"
+      }
+    ],
+    "app/Http/Controllers/Api/PostController.php#PostController": [
+      {
+        "symbolId": "app/Http/Controllers/Api/PostController.php#PostController",
+        "targetId": "app/Http/Controllers/Api/PostController.php#PostController",
+        "type": "exports"
+      }
+    ],
+    "app/Http/Controllers/Api/PostController.php#index": [
+      {
+        "symbolId": "app/Http/Controllers/Api/PostController.php#index",
+        "targetId": "app/Http/Controllers/Api/PostController.php#index",
+        "type": "exports"
+      }
+    ],
+    "app/Http/Controllers/Api/PostController.php#store": [
+      {
+        "symbolId": "app/Http/Controllers/Api/PostController.php#store",
+        "targetId": "app/Http/Controllers/Api/PostController.php#store",
+        "type": "exports"
+      }
+    ],
+    "app/Http/Controllers/Api/PostController.php#show": [
+      {
+        "symbolId": "app/Http/Controllers/Api/PostController.php#show",
+        "targetId": "app/Http/Controllers/Api/PostController.php#show",
+        "type": "exports"
+      }
+    ],
+    "app/Http/Controllers/Api/PostController.php#update": [
+      {
+        "symbolId": "app/Http/Controllers/Api/PostController.php#update",
+        "targetId": "app/Http/Controllers/Api/PostController.php#update",
+        "type": "exports"
+      }
+    ],
+    "app/Http/Controllers/Api/PostController.php#destroy": [
+      {
+        "symbolId": "app/Http/Controllers/Api/PostController.php#destroy",
+        "targetId": "app/Http/Controllers/Api/PostController.php#destroy",
+        "type": "exports"
+      }
+    ],
+    "app/Http/Controllers/Api/PostController.php#publish": [
+      {
+        "symbolId": "app/Http/Controllers/Api/PostController.php#publish",
+        "targetId": "app/Http/Controllers/Api/PostController.php#publish",
+        "type": "exports"
+      }
+    ],
+    "app/Http/Controllers/Api/PostController.php#unpublish": [
+      {
+        "symbolId": "app/Http/Controllers/Api/PostController.php#unpublish",
+        "targetId": "app/Http/Controllers/Api/PostController.php#unpublish",
+        "type": "exports"
+      }
+    ],
+    "app/Http/Controllers/Api/PostController.php#myPosts": [
+      {
+        "symbolId": "app/Http/Controllers/Api/PostController.php#myPosts",
+        "targetId": "app/Http/Controllers/Api/PostController.php#myPosts",
+        "type": "exports"
+      }
+    ],
+    "app/Http/Controllers/Controller.php#Controller": [
+      {
+        "symbolId": "app/Http/Controllers/Controller.php#Controller",
+        "targetId": "app/Http/Controllers/Controller.php#Controller",
+        "type": "exports"
+      }
+    ],
+    "app/Models/Category.php#Category": [
+      {
+        "symbolId": "app/Models/Category.php#Category",
+        "targetId": "app/Models/Category.php#Category",
+        "type": "exports"
+      }
+    ],
+    "app/Models/Category.php#posts": [
+      {
+        "symbolId": "app/Models/Category.php#posts",
+        "targetId": "app/Models/Category.php#posts",
+        "type": "exports"
+      }
+    ],
+    "app/Models/Category.php#getRouteKeyName": [
+      {
+        "symbolId": "app/Models/Category.php#getRouteKeyName",
+        "targetId": "app/Models/Category.php#getRouteKeyName",
+        "type": "exports"
+      }
+    ],
+    "app/Models/Comment.php#Comment": [
+      {
+        "symbolId": "app/Models/Comment.php#Comment",
+        "targetId": "app/Models/Comment.php#Comment",
+        "type": "exports"
+      }
+    ],
+    "app/Models/Comment.php#post": [
+      {
+        "symbolId": "app/Models/Comment.php#post",
+        "targetId": "app/Models/Comment.php#post",
+        "type": "exports"
+      }
+    ],
+    "app/Models/Comment.php#user": [
+      {
+        "symbolId": "app/Models/Comment.php#user",
+        "targetId": "app/Models/Comment.php#user",
+        "type": "exports"
+      }
+    ],
+    "app/Models/Comment.php#parent": [
+      {
+        "symbolId": "app/Models/Comment.php#parent",
+        "targetId": "app/Models/Comment.php#parent",
+        "type": "exports"
+      }
+    ],
+    "app/Models/Comment.php#scopeTopLevel": [
+      {
+        "symbolId": "app/Models/Comment.php#scopeTopLevel",
+        "targetId": "app/Models/Comment.php#scopeTopLevel",
+        "type": "exports"
+      }
+    ],
+    "app/Models/Post.php#Post": [
+      {
+        "symbolId": "app/Models/Post.php#Post",
+        "targetId": "app/Models/Post.php#Post",
+        "type": "exports"
+      }
+    ],
+    "app/Models/Post.php#user": [
+      {
+        "symbolId": "app/Models/Post.php#user",
+        "targetId": "app/Models/Post.php#user",
+        "type": "exports"
+      }
+    ],
+    "app/Models/Post.php#comments": [
+      {
+        "symbolId": "app/Models/Post.php#comments",
+        "targetId": "app/Models/Post.php#comments",
+        "type": "exports"
+      }
+    ],
+    "app/Models/Post.php#categories": [
+      {
+        "symbolId": "app/Models/Post.php#categories",
+        "targetId": "app/Models/Post.php#categories",
+        "type": "exports"
+      }
+    ],
+    "app/Models/Post.php#tags": [
+      {
+        "symbolId": "app/Models/Post.php#tags",
+        "targetId": "app/Models/Post.php#tags",
+        "type": "exports"
+      }
+    ],
+    "app/Models/Post.php#scopePublished": [
+      {
+        "symbolId": "app/Models/Post.php#scopePublished",
+        "targetId": "app/Models/Post.php#scopePublished",
+        "type": "exports"
+      }
+    ],
+    "app/Models/Post.php#scopeDrafts": [
+      {
+        "symbolId": "app/Models/Post.php#scopeDrafts",
+        "targetId": "app/Models/Post.php#scopeDrafts",
+        "type": "exports"
+      }
+    ],
+    "app/Models/Post.php#publish": [
+      {
+        "symbolId": "app/Models/Post.php#publish",
+        "targetId": "app/Models/Post.php#publish",
+        "type": "exports"
+      }
+    ],
+    "app/Models/Post.php#unpublish": [
+      {
+        "symbolId": "app/Models/Post.php#unpublish",
+        "targetId": "app/Models/Post.php#unpublish",
+        "type": "exports"
+      }
+    ],
+    "app/Models/User.php#User": [
+      {
+        "symbolId": "app/Models/User.php#User",
+        "targetId": "app/Models/User.php#User",
+        "type": "exports"
+      }
+    ],
+    "app/Models/User.php#casts": [
+      {
+        "symbolId": "app/Models/User.php#casts",
+        "targetId": "app/Models/User.php#casts",
+        "type": "exports"
+      }
+    ],
+    "app/Models/User.php#posts": [
+      {
+        "symbolId": "app/Models/User.php#posts",
+        "targetId": "app/Models/User.php#posts",
+        "type": "exports"
+      }
+    ],
+    "app/Models/User.php#comments": [
+      {
+        "symbolId": "app/Models/User.php#comments",
+        "targetId": "app/Models/User.php#comments",
+        "type": "exports"
+      }
+    ],
+    "app/Models/User.php#isAdmin": [
+      {
+        "symbolId": "app/Models/User.php#isAdmin",
+        "targetId": "app/Models/User.php#isAdmin",
+        "type": "exports"
+      }
+    ],
+    "app/Models/User.php#publishedPostsCount": [
+      {
+        "symbolId": "app/Models/User.php#publishedPostsCount",
+        "targetId": "app/Models/User.php#publishedPostsCount",
+        "type": "exports"
+      }
+    ]
+  }
 }

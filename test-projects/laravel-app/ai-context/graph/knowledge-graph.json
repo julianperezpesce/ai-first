@@ -10,6 +10,15 @@
       }
     },
     {
+      "id": "api",
+      "type": "flow",
+      "label": "api",
+      "metadata": {
+        "entrypoint": "routes/api.php",
+        "fileCount": 1
+      }
+    },
+    {
       "id": "category",
       "type": "flow",
       "label": "category",
@@ -35,6 +44,15 @@
         "entrypoint": "app/Http/Controllers/Api/PostController.php",
         "fileCount": 2
       }
+    },
+    {
+      "id": "unnamed",
+      "type": "flow",
+      "label": "unnamed",
+      "metadata": {
+        "entrypoint": "app/Http/Controllers/Controller.php",
+        "fileCount": 1
+      }
     }
   ],
   "edges": [
@@ -52,6 +70,21 @@
       "from": "app",
       "to": "post",
       "type": "contains"
+    },
+    {
+      "from": "app",
+      "to": "unnamed",
+      "type": "contains"
+    },
+    {
+      "from": "api",
+      "to": "routes/api.php",
+      "type": "implements"
+    },
+    {
+      "from": "app",
+      "to": "bootstrap/app.php",
+      "type": "implements"
     },
     {
       "from": "category",
@@ -82,17 +115,22 @@
       "from": "post",
       "to": "app/Models/Post.php",
       "type": "implements"
+    },
+    {
+      "from": "unnamed",
+      "to": "app/Http/Controllers/Controller.php",
+      "type": "implements"
     }
   ],
   "metadata": {
-    "generated": "2026-03-18T19:21:52.073Z",
+    "generated": "2026-04-05T21:18:17.886Z",
     "sources": [
       "features",
       "flows",
       "symbols",
       "dependencies"
     ],
-    "nodeCount": 4,
-    "edgeCount": 9
+    "nodeCount": 6,
+    "edgeCount": 13
   }
 }

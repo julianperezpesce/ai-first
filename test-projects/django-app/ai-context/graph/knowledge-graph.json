@@ -1,6 +1,60 @@
 {
   "nodes": [
     {
+      "id": "blog",
+      "type": "feature",
+      "label": "blog",
+      "metadata": {
+        "path": "blog",
+        "fileCount": 6
+      }
+    },
+    {
+      "id": "django_app",
+      "type": "feature",
+      "label": "django_app",
+      "metadata": {
+        "path": "django_app",
+        "fileCount": 4
+      }
+    },
+    {
+      "id": "users",
+      "type": "feature",
+      "label": "users",
+      "metadata": {
+        "path": "users",
+        "fileCount": 6
+      }
+    },
+    {
+      "id": "admin",
+      "type": "flow",
+      "label": "admin",
+      "metadata": {
+        "entrypoint": "blog/admin.py",
+        "fileCount": 2
+      }
+    },
+    {
+      "id": "init",
+      "type": "flow",
+      "label": "init",
+      "metadata": {
+        "entrypoint": "blog/__init__.py",
+        "fileCount": 3
+      }
+    },
+    {
+      "id": "serializers",
+      "type": "flow",
+      "label": "serializers",
+      "metadata": {
+        "entrypoint": "blog/serializers.py",
+        "fileCount": 2
+      }
+    },
+    {
       "id": "views",
       "type": "flow",
       "label": "views",
@@ -11,6 +65,86 @@
     }
   ],
   "edges": [
+    {
+      "from": "blog",
+      "to": "admin",
+      "type": "contains"
+    },
+    {
+      "from": "users",
+      "to": "admin",
+      "type": "contains"
+    },
+    {
+      "from": "blog",
+      "to": "init",
+      "type": "contains"
+    },
+    {
+      "from": "django_app",
+      "to": "init",
+      "type": "contains"
+    },
+    {
+      "from": "users",
+      "to": "init",
+      "type": "contains"
+    },
+    {
+      "from": "blog",
+      "to": "serializers",
+      "type": "contains"
+    },
+    {
+      "from": "users",
+      "to": "serializers",
+      "type": "contains"
+    },
+    {
+      "from": "blog",
+      "to": "views",
+      "type": "contains"
+    },
+    {
+      "from": "users",
+      "to": "views",
+      "type": "contains"
+    },
+    {
+      "from": "admin",
+      "to": "blog/admin.py",
+      "type": "implements"
+    },
+    {
+      "from": "admin",
+      "to": "users/admin.py",
+      "type": "implements"
+    },
+    {
+      "from": "init",
+      "to": "blog/__init__.py",
+      "type": "implements"
+    },
+    {
+      "from": "init",
+      "to": "django_app/__init__.py",
+      "type": "implements"
+    },
+    {
+      "from": "init",
+      "to": "users/__init__.py",
+      "type": "implements"
+    },
+    {
+      "from": "serializers",
+      "to": "blog/serializers.py",
+      "type": "implements"
+    },
+    {
+      "from": "serializers",
+      "to": "users/serializers.py",
+      "type": "implements"
+    },
     {
       "from": "views",
       "to": "blog/views.py",
@@ -23,14 +157,14 @@
     }
   ],
   "metadata": {
-    "generated": "2026-03-18T19:21:49.194Z",
+    "generated": "2026-04-05T21:18:00.170Z",
     "sources": [
       "features",
       "flows",
       "symbols",
       "dependencies"
     ],
-    "nodeCount": 1,
-    "edgeCount": 2
+    "nodeCount": 7,
+    "edgeCount": 18
   }
 }

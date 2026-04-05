@@ -5,7 +5,8 @@
     "app"
   ],
   "flows": [
-    "",
+    "api",
+    "app",
     "category",
     "comment",
     "post",
@@ -13,5 +14,5 @@
   ],
   "languages": [],
   "frameworks": [],
-  "generatedAt": "2026-03-18T19:21:51.505Z"
+  "generatedAt": "2026-04-05T21:18:15.779Z"
 }

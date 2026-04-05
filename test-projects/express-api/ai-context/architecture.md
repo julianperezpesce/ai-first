@@ -17,6 +17,15 @@
 | `services` | Business logic and use cases |
 
 
+## Components
+
+| Component | Type | Path | Files |
+|-----------|------|------|-------|
+| controllers | module | `controllers` | 3 |
+| middleware | module | `middleware` | 1 |
+| models | data | `models` | 1 |
+| services | module | `services` | 3 |
+
 ## Module Details
 
 ### controllers
@@ -28,17 +37,14 @@
 - **Path**: `middleware`
 - **Responsibility**: Request/response middleware
 
-
 ### models
 - **Path**: `models`
 - **Responsibility**: Data models and entities
-
 
 ### services
 - **Path**: `services`
 - **Responsibility**: Business logic and use cases
 - **Depends on**: model, repository
-
 
 ## Recommendations
 

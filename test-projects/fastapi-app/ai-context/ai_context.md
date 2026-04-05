@@ -7,9 +7,9 @@
 ## Quick Overview
 
 - **Pattern**: Flat / Simple Structure
-- **Languages**: Markdown, JSON, Python
-- **Frameworks**: None
-- **Total Files**: 30
+- **Languages**: Markdown, Python
+- **Frameworks**: FastAPI
+- **Total Files**: 8
 
 ---
 
@@ -26,7 +26,9 @@
 
 ## Tech Stack
 
-**Languages**: Markdown, JSON, Python
+**Languages**: Markdown, Python
+
+**Frameworks**: FastAPI
 
 ---
 
@@ -38,14 +40,15 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `README.md` | Contains 0 files |
-| `ai` | Contains 22 files |
-| `app` | Contains 7 files |
+| `app` | Python implementation |
 
 
 ---
 
 ## Key Entrypoints
+
+### Server
+- `app/main.py` - Python application entrypoint
 
 ---
 
@@ -64,9 +67,11 @@
 
 ## AI Rules
 
-- Language: Use Markdown, JSON, Python
+- Language: Use Markdown, Python
+- Frameworks: FastAPI
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
+- Main entry: app/main.py
 
 ---
 

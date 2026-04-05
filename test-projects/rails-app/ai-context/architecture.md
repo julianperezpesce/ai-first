@@ -1,7 +1,7 @@
 # Architecture
 
 ## Architectural Pattern
-**Primary**: Flat / Simple Structure
+**Primary**: API Server
 
 ## Layers Identified
 - Infrastructure
@@ -10,34 +10,26 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `README.md` | Contains 0 files |
-| `ai` | Contains 34 files |
-| `app` | Contains 9 files |
+| `app` | Ruby implementation |
 | `config` | Configuration management |
 
 
+## Components
+
+| Component | Type | Path | Files |
+|-----------|------|------|-------|
+| app | module | `app` | 1 |
+| config | module | `config` | 1 |
+
 ## Module Details
-
-### README.md
-- **Path**: `README.md`
-- **Responsibility**: Contains 0 files
-
-
-### ai
-- **Path**: `ai`
-- **Responsibility**: Contains 34 files
-
 
 ### app
 - **Path**: `app`
-- **Responsibility**: Contains 9 files
-
+- **Responsibility**: Ruby implementation
 
 ### config
 - **Path**: `config`
 - **Responsibility**: Configuration management
-
-
 
 ## Recommendations
 

@@ -1,13 +1,12 @@
 # Technology Stack
 
-**Languages**: Markdown, JSON, TypeScript (React), TypeScript
+**Languages**: JSON, TypeScript (React), TypeScript
 
 **Frameworks**: React, Next.js, Remix
 
 **Package Managers**: npm
 
 ## Languages
-- Markdown
 - JSON
 - TypeScript (React)
 - TypeScript

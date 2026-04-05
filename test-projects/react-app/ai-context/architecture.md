@@ -1,33 +1,25 @@
 # Architecture
 
 ## Architectural Pattern
-**Primary**: Flat / Simple Structure
+**Primary**: API Server
 
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `ai` | Contains 28 files |
-| `package.json` | Contains 0 files |
-| `src` | Contains 8 files |
+| `src` | JavaScript/TypeScript implementation |
 
+
+## Components
+
+| Component | Type | Path | Files |
+|-----------|------|------|-------|
+| src | module | `src` | 1 |
 
 ## Module Details
 
-### ai
-- **Path**: `ai`
-- **Responsibility**: Contains 28 files
-
-
-### package.json
-- **Path**: `package.json`
-- **Responsibility**: Contains 0 files
-
-
 ### src
 - **Path**: `src`
-- **Responsibility**: Contains 8 files
-
-
+- **Responsibility**: JavaScript/TypeScript implementation
 
 ## Recommendations
 

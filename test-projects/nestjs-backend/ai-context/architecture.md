@@ -13,13 +13,17 @@
 | `src` | JavaScript/TypeScript implementation |
 
 
+## Components
+
+| Component | Type | Path | Files |
+|-----------|------|------|-------|
+| src | module | `src` | 1 |
+
 ## Module Details
 
 ### src
 - **Path**: `src`
 - **Responsibility**: JavaScript/TypeScript implementation
-
-
 
 ## Recommendations
 

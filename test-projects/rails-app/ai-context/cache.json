@@ -2,192 +2,56 @@
   "files": {
     "README.md": {
       "hash": "3ef44ec9e999fbbf4cc8576bd9996e24",
-      "mtime": 1773853678950.926
-    },
-    "ai/ai_context.md": {
-      "hash": "75e9a74264fb11c12feb73717697be7f",
-      "mtime": 1773861713657.4111
-    },
-    "ai/ai_rules.md": {
-      "hash": "a1e1af69f2e5e5504d0b57820019d860",
-      "mtime": 1773861713657.4111
-    },
-    "ai/architecture.md": {
-      "hash": "b78228f0a714392c10518c1abeeab102",
-      "mtime": 1773861713651.411
-    },
-    "ai/cache.json": {
-      "hash": "e4d6d1eda920d24846bd61736d855d14",
-      "mtime": 1773854929732.0337
-    },
-    "ai/context/features/app.json": {
-      "hash": "3bf2bb6ca87e997141474e32fa2986fa",
-      "mtime": 1773861713659.4111
-    },
-    "ai/context/features/config.json": {
-      "hash": "db2ab595087aba40287ee15c6d79552c",
-      "mtime": 1773861713659.4111
-    },
-    "ai/context/flows/application.json": {
-      "hash": "b796ad3fa8bca08e15dcbade1439944c",
-      "mtime": 1773854723495.294
-    },
-    "ai/context/flows/application_.json": {
-      "hash": "b796ad3fa8bca08e15dcbade1439944c",
-      "mtime": 1773861713659.4111
-    },
-    "ai/context/flows/comments.json": {
-      "hash": "d90ee6034c82ea59410cc3da7471901d",
-      "mtime": 1773854723495.294
-    },
-    "ai/context/flows/comments_.json": {
-      "hash": "d90ee6034c82ea59410cc3da7471901d",
-      "mtime": 1773861713659.4111
-    },
-    "ai/context/flows/posts.json": {
-      "hash": "a4142ffe2c2908069728bfd86d73d8a3",
-      "mtime": 1773854723495.294
-    },
-    "ai/context/flows/posts_.json": {
-      "hash": "a4142ffe2c2908069728bfd86d73d8a3",
-      "mtime": 1773861713659.4111
-    },
-    "ai/context/flows/routes.json": {
-      "hash": "c63b4ddeccd3090f084d1e090cdc2cad",
-      "mtime": 1773861713659.4111
-    },
-    "ai/context/flows/users.json": {
-      "hash": "6ec4411b509c8d1d063bd0228a9fc186",
-      "mtime": 1773854723495.294
-    },
-    "ai/context/flows/users_.json": {
-      "hash": "6ec4411b509c8d1d063bd0228a9fc186",
-      "mtime": 1773861713659.4111
-    },
-    "ai/conventions.md": {
-      "hash": "271252881dc9d70018eda35db35449ef",
-      "mtime": 1773861713654.4111
-    },
-    "ai/dependencies.json": {
-      "hash": "038f80a99cbcc45991786b645398758e",
-      "mtime": 1773861713656.4111
-    },
-    "ai/entrypoints.md": {
-      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
-      "mtime": 1773861713653.4111
-    },
-    "ai/files.json": {
-      "hash": "99914b932bd37a50b983c5e7c90ae93b",
-      "mtime": 1773861713746.4126
-    },
-    "ai/graph/knowledge-graph.json": {
-      "hash": "69c2e2b44738fe82fa46d5c6da082634",
-      "mtime": 1773854929732.0337
-    },
-    "ai/graph/module-graph.json": {
-      "hash": "1ec6b5cded4704395df625458db3360e",
-      "mtime": 1773861713739.4124
-    },
-    "ai/graph/symbol-graph.json": {
-      "hash": "79a11e66d1c9ebdbec716c31b9eb11db",
-      "mtime": 1773861713745.4126
-    },
-    "ai/graph/symbol-references.json": {
-      "hash": "99914b932bd37a50b983c5e7c90ae93b",
-      "mtime": 1773861713745.4126
-    },
-    "ai/index-state.json": {
-      "hash": "7ec666d7977235df3b8f143c2877d1ca",
-      "mtime": 1773854929733.0337
-    },
-    "ai/modules.json": {
-      "hash": "b86162ee33ceced7d087170aeb03bae5",
-      "mtime": 1773861713730.4124
-    },
-    "ai/project.json": {
-      "hash": "ca3fb987f64737d8dc789dbf875a2507",
-      "mtime": 1773861713660.4111
-    },
-    "ai/repo-map.json": {
-      "hash": "09220b1ee11c39507cf2d246d6f15381",
-      "mtime": 1773861713730.4124
-    },
-    "ai/repo_map.json": {
-      "hash": "7724eb2584f914b12d5535f3e6a2ac1e",
-      "mtime": 1773861713650.411
-    },
-    "ai/repo_map.md": {
-      "hash": "91cc423912107117731781013a72f13e",
-      "mtime": 1773861713649.411
-    },
-    "ai/schema.json": {
-      "hash": "a8520dc4e6d3ebacca068853d4ef9033",
-      "mtime": 1773861713659.4111
-    },
-    "ai/summary.md": {
-      "hash": "8f2b6c851f74d37c034da6cd24772443",
-      "mtime": 1773861713650.411
-    },
-    "ai/symbols.json": {
-      "hash": "6edde050dc3089a9e15bf3934226a7c4",
-      "mtime": 1773861713655.4111
-    },
-    "ai/tech_stack.md": {
-      "hash": "56dc70201b54776b965bead931c3102f",
-      "mtime": 1773861713653.4111
-    },
-    "ai/tools.json": {
-      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
-      "mtime": 1773861713660.4111
+      "mtime": 1773943380060.8787
     },
     "app/controllers/api/comments_controller.rb": {
       "hash": "e3b584186544ce602aad545c965bc2a2",
-      "mtime": 1773853631697.262
+      "mtime": 1773943380063.6743
     },
     "app/controllers/api/posts_controller.rb": {
       "hash": "b1de2ba0bc7c211e7d9835e6774c679b",
-      "mtime": 1773853614445.0198
+      "mtime": 1773943380063.7598
     },
     "app/controllers/api/users_controller.rb": {
       "hash": "af3c6c69f25f83ba384a677b2f1509ff",
-      "mtime": 1773853603625.8682
+      "mtime": 1773943380063.7598
     },
     "app/controllers/application_controller.rb": {
       "hash": "6b9ad7e9ab66ff26949ecd46168804fa",
-      "mtime": 1773853593748.7297
+      "mtime": 1773943380063.7598
     },
     "app/models/comment.rb": {
       "hash": "a4948b0d232cea2dec83a7bea2e94c75",
-      "mtime": 1773853587660.6445
+      "mtime": 1773943380063.7598
     },
     "app/models/post.rb": {
       "hash": "1a970d5c75d2ffcf23b797d8da78018a",
-      "mtime": 1773853581771.5623
+      "mtime": 1773943380063.9429
     },
     "app/models/user.rb": {
       "hash": "c31306e81cef27073eabae95167c2fe9",
-      "mtime": 1773853574668.463
+      "mtime": 1773943380063.9429
     },
     "app/services/post_service.rb": {
       "hash": "8b168ea13fd7490330796c9427513d88",
-      "mtime": 1773853657349.6223
+      "mtime": 1773943380063.9429
     },
     "app/services/user_service.rb": {
       "hash": "ad982de5fd4fb6d6bf56ae11786085eb",
-      "mtime": 1773853643398.4263
+      "mtime": 1773943380064.0999
     },
     "config/application.rb": {
       "hash": "6f483e86399f29d8459f5395025fa916",
-      "mtime": 1773853559786.255
+      "mtime": 1773943380064.0999
     },
     "config/environment.rb": {
       "hash": "591ba809105639f0e8706132656ae120",
-      "mtime": 1773853561174.2742
+      "mtime": 1773943380064.2065
     },
     "config/routes.rb": {
       "hash": "3b60545df1ace195b9ce879b79b6638f",
-      "mtime": 1773853565362.3328
+      "mtime": 1773943380064.2065
     }
   },
-  "lastIndexed": "2026-03-18T19:21:53.747Z"
+  "lastIndexed": "2026-04-05T21:18:28.401Z"
 }

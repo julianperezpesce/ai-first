@@ -12,6 +12,11 @@
     "src/services/userService.ts"
   ],
   "entrypoints": [
+    "src/App.tsx",
+    "src/main.tsx",
+    "src/pages/DashboardPage.tsx",
+    "src/pages/LoginPage.tsx",
+    "src/pages/UsersPage.tsx",
     "src/services/userService.ts"
   ],
   "dependencies": []

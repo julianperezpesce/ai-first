@@ -7,9 +7,9 @@
 ## Quick Overview
 
 - **Pattern**: MVC (Model-View-Controller)
-- **Languages**: Python, Markdown, JSON
+- **Languages**: Python
 - **Frameworks**: None
-- **Total Files**: 36
+- **Total Files**: 9
 
 ---
 
@@ -26,7 +26,7 @@
 
 ## Tech Stack
 
-**Languages**: Python, Markdown, JSON
+**Languages**: Python
 
 ---
 
@@ -42,16 +42,20 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `__init__.py` | Contains 0 files |
-| `ai` | Contains 27 files |
-| `cli` | Contains 4 files |
-| `main.py` | Contains 0 files |
+| `cli` | Python implementation |
 | `models` | Data models and entities |
 
 
 ---
 
 ## Key Entrypoints
+
+### Server
+- `main.py` - Python application entrypoint
+
+### Library
+- `cli/__init__.py` - Package exports: add_command, list_command, remove_command
+- `models/__init__.py` - Package exports: Task, TaskRepository
 
 ---
 
@@ -70,9 +74,10 @@
 
 ## AI Rules
 
-- Language: Use Python, Markdown, JSON
+- Language: Use Python
 - Architecture: Follow MVC (Model-View-Controller) pattern
 - File naming: kebab-case or snake_case
+- Main entry: main.py
 
 ---
 

@@ -11,23 +11,27 @@
 | `users` | Python implementation |
 
 
+## Components
+
+| Component | Type | Path | Files |
+|-----------|------|------|-------|
+| blog | module | `blog` | 1 |
+| django_app | module | `django_app` | 1 |
+| users | module | `users` | 1 |
+
 ## Module Details
 
 ### blog
 - **Path**: `blog`
 - **Responsibility**: Python implementation
 
-
 ### django_app
 - **Path**: `django_app`
 - **Responsibility**: Python implementation
 
-
 ### users
 - **Path**: `users`
 - **Responsibility**: Python implementation
-
-
 
 ## Recommendations
 

@@ -17,6 +17,30 @@
       "export": false
     },
     {
+      "id": "src/context/AuthContext.tsx#User.id",
+      "name": "User.id",
+      "type": "property",
+      "file": "src/context/AuthContext.tsx",
+      "line": 4,
+      "export": false
+    },
+    {
+      "id": "src/context/AuthContext.tsx#User.email",
+      "name": "User.email",
+      "type": "property",
+      "file": "src/context/AuthContext.tsx",
+      "line": 5,
+      "export": false
+    },
+    {
+      "id": "src/context/AuthContext.tsx#User.name",
+      "name": "User.name",
+      "type": "property",
+      "file": "src/context/AuthContext.tsx",
+      "line": 6,
+      "export": false
+    },
+    {
       "id": "src/context/AuthContext.tsx#AuthContextType",
       "name": "AuthContextType",
       "type": "interface",
@@ -25,19 +49,35 @@
       "export": false
     },
     {
-      "id": "src/context/AuthContext.tsx#login",
-      "name": "login",
-      "type": "function",
+      "id": "src/context/AuthContext.tsx#AuthContextType.user",
+      "name": "AuthContextType.user",
+      "type": "property",
+      "file": "src/context/AuthContext.tsx",
+      "line": 10,
+      "export": false
+    },
+    {
+      "id": "src/context/AuthContext.tsx#AuthContextType.login",
+      "name": "AuthContextType.login",
+      "type": "property",
       "file": "src/context/AuthContext.tsx",
       "line": 11,
       "export": false
     },
     {
-      "id": "src/context/AuthContext.tsx#logout",
-      "name": "logout",
-      "type": "function",
+      "id": "src/context/AuthContext.tsx#AuthContextType.logout",
+      "name": "AuthContextType.logout",
+      "type": "property",
       "file": "src/context/AuthContext.tsx",
       "line": 12,
+      "export": false
+    },
+    {
+      "id": "src/context/AuthContext.tsx#AuthContextType.isAuthenticated",
+      "name": "AuthContextType.isAuthenticated",
+      "type": "property",
+      "file": "src/context/AuthContext.tsx",
+      "line": 13,
       "export": false
     },
     {
@@ -55,22 +95,6 @@
       "file": "src/context/AuthContext.tsx",
       "line": 18,
       "export": true
-    },
-    {
-      "id": "src/context/AuthContext.tsx#login",
-      "name": "login",
-      "type": "function",
-      "file": "src/context/AuthContext.tsx",
-      "line": 21,
-      "export": false
-    },
-    {
-      "id": "src/context/AuthContext.tsx#login",
-      "name": "login",
-      "type": "function",
-      "file": "src/context/AuthContext.tsx",
-      "line": 21,
-      "export": false
     },
     {
       "id": "src/context/AuthContext.tsx#login",
@@ -94,22 +118,6 @@
       "type": "const",
       "file": "src/context/AuthContext.tsx",
       "line": 28,
-      "export": false
-    },
-    {
-      "id": "src/context/AuthContext.tsx#logout",
-      "name": "logout",
-      "type": "function",
-      "file": "src/context/AuthContext.tsx",
-      "line": 32,
-      "export": false
-    },
-    {
-      "id": "src/context/AuthContext.tsx#logout",
-      "name": "logout",
-      "type": "function",
-      "file": "src/context/AuthContext.tsx",
-      "line": 32,
       "export": false
     },
     {
@@ -171,22 +179,6 @@
     {
       "id": "src/pages/LoginPage.tsx#handleSubmit",
       "name": "handleSubmit",
-      "type": "function",
-      "file": "src/pages/LoginPage.tsx",
-      "line": 11,
-      "export": false
-    },
-    {
-      "id": "src/pages/LoginPage.tsx#handleSubmit",
-      "name": "handleSubmit",
-      "type": "function",
-      "file": "src/pages/LoginPage.tsx",
-      "line": 11,
-      "export": false
-    },
-    {
-      "id": "src/pages/LoginPage.tsx#handleSubmit",
-      "name": "handleSubmit",
       "type": "const",
       "file": "src/pages/LoginPage.tsx",
       "line": 11,
@@ -199,22 +191,6 @@
       "file": "src/pages/UsersPage.tsx",
       "line": 4,
       "export": true
-    },
-    {
-      "id": "src/pages/UsersPage.tsx#fetchUsers",
-      "name": "fetchUsers",
-      "type": "function",
-      "file": "src/pages/UsersPage.tsx",
-      "line": 12,
-      "export": false
-    },
-    {
-      "id": "src/pages/UsersPage.tsx#fetchUsers",
-      "name": "fetchUsers",
-      "type": "function",
-      "file": "src/pages/UsersPage.tsx",
-      "line": 12,
-      "export": false
     },
     {
       "id": "src/pages/UsersPage.tsx#fetchUsers",
@@ -247,6 +223,30 @@
       "file": "src/services/userService.ts",
       "line": 1,
       "export": true
+    },
+    {
+      "id": "src/services/userService.ts#User.id",
+      "name": "User.id",
+      "type": "property",
+      "file": "src/services/userService.ts",
+      "line": 2,
+      "export": false
+    },
+    {
+      "id": "src/services/userService.ts#User.email",
+      "name": "User.email",
+      "type": "property",
+      "file": "src/services/userService.ts",
+      "line": 3,
+      "export": false
+    },
+    {
+      "id": "src/services/userService.ts#User.name",
+      "name": "User.name",
+      "type": "property",
+      "file": "src/services/userService.ts",
+      "line": 4,
+      "export": false
     },
     {
       "id": "src/services/userService.ts#fetchUsers",
@@ -418,16 +418,6 @@
       "type": "imports"
     },
     {
-      "symbolId": "src/pages/LoginPage.tsx#handleSubmit",
-      "targetId": "src/hooks/useAuth.ts#useAuth",
-      "type": "imports"
-    },
-    {
-      "symbolId": "src/pages/LoginPage.tsx#handleSubmit",
-      "targetId": "src/hooks/useAuth.ts#useAuth",
-      "type": "imports"
-    },
-    {
       "symbolId": "src/pages/LoginPage.tsx#LoginPage",
       "targetId": "src/hooks/useAuth.ts#useAuth",
       "type": "imports"
@@ -443,27 +433,7 @@
       "type": "imports"
     },
     {
-      "symbolId": "src/pages/LoginPage.tsx#handleSubmit",
-      "targetId": "src/hooks/useAuth.ts#useAuth",
-      "type": "imports"
-    },
-    {
-      "symbolId": "src/pages/LoginPage.tsx#handleSubmit",
-      "targetId": "src/hooks/useAuth.ts#useAuth",
-      "type": "imports"
-    },
-    {
       "symbolId": "src/pages/UsersPage.tsx#UsersPage",
-      "targetId": "src/services/userService.ts#User",
-      "type": "imports"
-    },
-    {
-      "symbolId": "src/pages/UsersPage.tsx#fetchUsers",
-      "targetId": "src/services/userService.ts#User",
-      "type": "imports"
-    },
-    {
-      "symbolId": "src/pages/UsersPage.tsx#fetchUsers",
       "targetId": "src/services/userService.ts#User",
       "type": "imports"
     },
@@ -484,16 +454,6 @@
     },
     {
       "symbolId": "src/pages/UsersPage.tsx#UsersPage",
-      "targetId": "src/services/userService.ts#User",
-      "type": "imports"
-    },
-    {
-      "symbolId": "src/pages/UsersPage.tsx#fetchUsers",
-      "targetId": "src/services/userService.ts#User",
-      "type": "imports"
-    },
-    {
-      "symbolId": "src/pages/UsersPage.tsx#fetchUsers",
       "targetId": "src/services/userService.ts#User",
       "type": "imports"
     },
@@ -713,26 +673,6 @@
         "symbolId": "src/pages/LoginPage.tsx#handleSubmit",
         "targetId": "src/hooks/useAuth.ts#useAuth",
         "type": "imports"
-      },
-      {
-        "symbolId": "src/pages/LoginPage.tsx#handleSubmit",
-        "targetId": "src/hooks/useAuth.ts#useAuth",
-        "type": "imports"
-      },
-      {
-        "symbolId": "src/pages/LoginPage.tsx#handleSubmit",
-        "targetId": "src/hooks/useAuth.ts#useAuth",
-        "type": "imports"
-      },
-      {
-        "symbolId": "src/pages/LoginPage.tsx#handleSubmit",
-        "targetId": "src/hooks/useAuth.ts#useAuth",
-        "type": "imports"
-      },
-      {
-        "symbolId": "src/pages/LoginPage.tsx#handleSubmit",
-        "targetId": "src/hooks/useAuth.ts#useAuth",
-        "type": "imports"
       }
     ],
     "src/pages/UsersPage.tsx#UsersPage": [
@@ -753,26 +693,6 @@
       }
     ],
     "src/pages/UsersPage.tsx#fetchUsers": [
-      {
-        "symbolId": "src/pages/UsersPage.tsx#fetchUsers",
-        "targetId": "src/services/userService.ts#User",
-        "type": "imports"
-      },
-      {
-        "symbolId": "src/pages/UsersPage.tsx#fetchUsers",
-        "targetId": "src/services/userService.ts#User",
-        "type": "imports"
-      },
-      {
-        "symbolId": "src/pages/UsersPage.tsx#fetchUsers",
-        "targetId": "src/services/userService.ts#User",
-        "type": "imports"
-      },
-      {
-        "symbolId": "src/pages/UsersPage.tsx#fetchUsers",
-        "targetId": "src/services/userService.ts#User",
-        "type": "imports"
-      },
       {
         "symbolId": "src/pages/UsersPage.tsx#fetchUsers",
         "targetId": "src/services/userService.ts#User",

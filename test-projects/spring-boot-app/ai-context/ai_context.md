@@ -49,6 +49,17 @@
 
 ## Key Entrypoints
 
+### Server
+- `src/main/java/com/example/demo/DemoApplication.java` - Spring Boot Application: DemoApplication
+
+### Api
+- `src/main/java/com/example/demo/controllers/CommentController.java` - Controller with endpoints: /api/comments, /{id}, /post/{postId}...
+- `src/main/java/com/example/demo/controllers/PostController.java` - Controller with endpoints: /api/posts, /{id}, /user/{userId}...
+- `src/main/java/com/example/demo/controllers/UserController.java` - Controller with endpoints: /api/users, /{id}, /email/{email}...
+
+### Config
+- `pom.xml` - Maven project: spring-boot-starter-parent v3.2.5
+
 ---
 
 ## Code Conventions

@@ -7,9 +7,9 @@
 ## Quick Overview
 
 - **Pattern**: Flat / Simple Structure
-- **Languages**: Markdown, JSON, PHP
+- **Languages**: Markdown, PHP, JSON
 - **Frameworks**: None
-- **Total Files**: 39
+- **Total Files**: 12
 
 ---
 
@@ -26,7 +26,7 @@
 
 ## Tech Stack
 
-**Languages**: Markdown, JSON, PHP
+**Languages**: Markdown, PHP, JSON
 
 **Package Managers**: Composer
 
@@ -43,17 +43,17 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `README.md` | Contains 0 files |
-| `ai` | Contains 27 files |
-| `app` | Contains 8 files |
-| `bootstrap` | Contains 1 files |
-| `composer.json` | Contains 0 files |
+| `app` | PHP implementation |
+| `bootstrap` | PHP implementation |
 | `routes` | API endpoints and request handling |
 
 
 ---
 
 ## Key Entrypoints
+
+### Config
+- `composer.json` - PHP project: laravel-app - Laravel Blog API Test Project for ai-first-cli (Laravel)
 
 ---
 
@@ -72,7 +72,7 @@
 
 ## AI Rules
 
-- Language: Use Markdown, JSON, PHP
+- Language: Use Markdown, PHP, JSON
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
 

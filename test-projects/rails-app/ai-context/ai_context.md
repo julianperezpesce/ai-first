@@ -6,10 +6,10 @@
 
 ## Quick Overview
 
-- **Pattern**: Flat / Simple Structure
-- **Languages**: Markdown, JSON, Ruby
+- **Pattern**: API Server
+- **Languages**: Markdown, Ruby
 - **Frameworks**: None
-- **Total Files**: 47
+- **Total Files**: 13
 
 ---
 
@@ -26,14 +26,14 @@
 
 ## Tech Stack
 
-**Languages**: Markdown, JSON, Ruby
+**Languages**: Markdown, Ruby
 
 ---
 
 ## Architecture
 
 ## Architectural Pattern
-**Primary**: Flat / Simple Structure
+**Primary**: API Server
 
 ## Layers Identified
 - Infrastructure
@@ -42,9 +42,7 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `README.md` | Contains 0 files |
-| `ai` | Contains 34 files |
-| `app` | Contains 9 files |
+| `app` | Ruby implementation |
 | `config` | Configuration management |
 
 
@@ -69,8 +67,8 @@
 
 ## AI Rules
 
-- Language: Use Markdown, JSON, Ruby
-- Architecture: Follow Flat / Simple Structure pattern
+- Language: Use Markdown, Ruby
+- Architecture: Follow API Server pattern
 - File naming: PascalCase
 
 ---

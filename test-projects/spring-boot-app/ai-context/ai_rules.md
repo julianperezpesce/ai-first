@@ -11,6 +11,7 @@
 - Architecture: Follow API Server pattern
 - File naming: PascalCase
 - Source directory: src/
+- Main entry: src/main/java/com/example/demo/DemoApplication.java
 
 ## Patterns
 

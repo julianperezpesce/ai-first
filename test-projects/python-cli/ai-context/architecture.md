@@ -10,40 +10,26 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `__init__.py` | Contains 0 files |
-| `ai` | Contains 27 files |
-| `cli` | Contains 4 files |
-| `main.py` | Contains 0 files |
+| `cli` | Python implementation |
 | `models` | Data models and entities |
 
 
+## Components
+
+| Component | Type | Path | Files |
+|-----------|------|------|-------|
+| cli | module | `cli` | 1 |
+| models | data | `models` | 1 |
+
 ## Module Details
-
-### __init__.py
-- **Path**: `__init__.py`
-- **Responsibility**: Contains 0 files
-
-
-### ai
-- **Path**: `ai`
-- **Responsibility**: Contains 27 files
-
 
 ### cli
 - **Path**: `cli`
-- **Responsibility**: Contains 4 files
-
-
-### main.py
-- **Path**: `main.py`
-- **Responsibility**: Contains 0 files
-
+- **Responsibility**: Python implementation
 
 ### models
 - **Path**: `models`
 - **Responsibility**: Data models and entities
-
-
 
 ## Recommendations
 
