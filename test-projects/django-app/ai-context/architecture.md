@@ -6,24 +6,30 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `blog` | Python implementation |
+| `.opencode` | Single file module |
+| `blog` | Blog/Content management |
 | `django_app` | Python implementation |
-| `users` | Python implementation |
+| `users` | User management |
 
 
 ## Components
 
 | Component | Type | Path | Files |
 |-----------|------|------|-------|
+| .opencode | module | `.opencode` | 1 |
 | blog | module | `blog` | 1 |
 | django_app | module | `django_app` | 1 |
 | users | module | `users` | 1 |
 
 ## Module Details
 
+### .opencode
+- **Path**: `.opencode`
+- **Responsibility**: Single file module
+
 ### blog
 - **Path**: `blog`
-- **Responsibility**: Python implementation
+- **Responsibility**: Blog/Content management
 
 ### django_app
 - **Path**: `django_app`
@@ -31,7 +37,7 @@
 
 ### users
 - **Path**: `users`
-- **Responsibility**: Python implementation
+- **Responsibility**: User management
 
 ## Recommendations
 

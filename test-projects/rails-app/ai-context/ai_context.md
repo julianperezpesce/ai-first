@@ -43,7 +43,7 @@
 | Module | Responsibility |
 |--------|----------------|
 | `app` | Ruby implementation |
-| `config` | Configuration management |
+| `config` | Configuration |
 
 
 ---

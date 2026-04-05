@@ -11,7 +11,7 @@
 |--------|----------------|
 | `app` | PHP implementation |
 | `bootstrap` | PHP implementation |
-| `routes` | API endpoints and request handling |
+| `routes` | API API |
 
 
 ## Components
@@ -34,7 +34,7 @@
 
 ### routes
 - **Path**: `routes`
-- **Responsibility**: API endpoints and request handling
+- **Responsibility**: API API
 
 ## Recommendations
 
