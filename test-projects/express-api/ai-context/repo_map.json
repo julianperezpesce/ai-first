@@ -1,7 +1,16 @@
 {
-  "generated": "2026-04-05T21:18:45.289Z",
-  "totalFiles": 8,
+  "generated": "2026-04-05T22:10:03.955Z",
+  "totalFiles": 9,
   "structure": {
+    ".opencode": {
+      "type": "directory",
+      "children": {
+        "mcp.json": {
+          "type": "file",
+          "extension": "json"
+        }
+      }
+    },
     "controllers": {
       "type": "directory",
       "children": {
@@ -56,6 +65,11 @@
     }
   },
   "files": [
+    {
+      "path": ".opencode/mcp.json",
+      "name": "mcp.json",
+      "extension": "json"
+    },
     {
       "path": "controllers/authController.js",
       "name": "authController.js",
