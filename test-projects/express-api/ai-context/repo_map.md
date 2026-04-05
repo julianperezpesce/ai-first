@@ -1,4 +1,7 @@
 # Repository Map
+## .opencode
+  - mcp.json
+
 ## controllers
   - authController.js
   - userController.js
@@ -22,6 +25,8 @@
 
 
 # Repository Structure (Tree View)
+├── .opencode/
+│   └── mcp.json
 ├── controllers/
 │   ├── authController.js
 │   └── userController.js

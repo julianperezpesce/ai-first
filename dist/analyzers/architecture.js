@@ -164,32 +164,106 @@ function detectModules(files, directories) {
  */
 function inferModuleResponsibility(dir, extensions) {
     const name = dir.toLowerCase();
-    if (name.includes("api") || name.includes("controller") || name.includes("route") || name.includes("endpoint")) {
-        return "API endpoints and request handling";
+    // Domain keyword detection - extract business domain from directory name
+    const domainPatterns = [
+        // User management and authentication
+        { keywords: ["user", "users", "account", "accounts", "profile", "profiles"], domain: "User management" },
+        { keywords: ["auth", "authentication", "authorization", "login", "signin", "signup", "password", "credential"], domain: "Authentication" },
+        // Order processing and payments
+        { keywords: ["order", "orders", "purchase", "purchases", "checkout", "cart", "basket"], domain: "Order processing" },
+        { keywords: ["payment", "payments", "invoice", "invoices", "billing", "transaction", "checkout"], domain: "Payment processing" },
+        // Product and inventory
+        { keywords: ["product", "products", "catalog", "catalogs", "item", "items", "sku"], domain: "Product catalog" },
+        { keywords: ["inventory", "stock", "warehouse", "supply", "supplies"], domain: "Inventory management" },
+        // Content management
+        { keywords: ["blog", "blogs", "post", "posts", "article", "articles"], domain: "Blog/Content management" },
+        { keywords: ["cms", "content", "page", "pages"], domain: "Content management" },
+        // Messaging and notifications
+        { keywords: ["message", "messages", "chat", "conversation"], domain: "Messaging" },
+        { keywords: ["notification", "notifications", "alert", "alerts", "push"], domain: "Notifications" },
+        { keywords: ["email", "mail", "smtp"], domain: "Email handling" },
+        { keywords: ["sms", "twilio", "message"], domain: "SMS/Communication" },
+        // Reporting and analytics
+        { keywords: ["report", "reports", "analytics", "dashboard", "dashboards", "metric", "metrics", "stat", "stats", "statistics"], domain: "Reporting and analytics" },
+        // Administration
+        { keywords: ["admin", "administrator", "management"], domain: "Administration" },
+        { keywords: ["settings", "setting", "config", "configuration", "preference", "preferences"], domain: "Configuration" },
+        // File and media management
+        { keywords: ["upload", "uploads", "file", "files", "media", "asset", "assets", "image", "images", "document", "documents"], domain: "File and media management" },
+        // API layer
+        { keywords: ["api", "endpoint", "endpoints", "route", "routes", "rest", "graphql"], domain: "API" },
+        // Background processing
+        { keywords: ["worker", "workers", "job", "jobs", "task", "tasks", "queue", "queues", "cron", "scheduler", "background"], domain: "Background processing" },
+        // Webhooks and integrations
+        { keywords: ["webhook", "webhooks", "integration", "integrations", "callback"], domain: "Webhooks and integrations" },
+        // Session and caching
+        { keywords: ["session", "sessions", "cache", "caching", "redis", "memcached"], domain: "Session and caching" },
+        // Comments and reviews
+        { keywords: ["comment", "comments", "review", "reviews", "rating", "feedback"], domain: "Comments and reviews" },
+        // Search
+        { keywords: ["search", "searchable", "query", "filter"], domain: "Search functionality" },
+    ];
+    let detectedDomain = null;
+    for (const pattern of domainPatterns) {
+        if (pattern.keywords.some(keyword => name.includes(keyword))) {
+            detectedDomain = pattern.domain;
+            break;
+        }
     }
-    if (name.includes("service") || name.includes("usecase") || name.includes("handler")) {
-        return "Business logic and use cases";
+    const technicalPatterns = [
+        { keywords: ["api", "controller", "route", "routes", "endpoint", "endpoints", "rest"], responsibility: "API endpoints and request handling" },
+        { keywords: ["service", "services", "usecase", "usecases", "handler", "handlers", "business"], responsibility: "Business logic and use cases" },
+        { keywords: ["model", "models", "entity", "entities", "schema", "schemas", "domain"], responsibility: "Data models and entities" },
+        { keywords: ["repository", "repositories", "persistence", "db", "database", "dao", "data"], responsibility: "Data persistence and database operations" },
+        { keywords: ["view", "views", "page", "pages", "screen", "screens", "component", "components", "ui"], responsibility: "UI components and views" },
+        { keywords: ["middleware"], responsibility: "Request/response middleware" },
+        { keywords: ["util", "utils", "utility", "helper", "helpers", "lib", "libs", "common", "shared"], responsibility: "Utility functions and helpers" },
+        { keywords: ["test", "tests", "spec", "specs", "mock", "mocks", "fixture", "fixtures", "__tests__"], responsibility: "Testing utilities and mocks" },
+        { keywords: ["types", "type", "interface", "interfaces", "typescript"], responsibility: "Type definitions and interfaces" },
+        { keywords: ["constant", "constants", "const"], responsibility: "Constants and configuration values" },
+    ];
+    let detectedTechnical = null;
+    for (const pattern of technicalPatterns) {
+        if (pattern.keywords.some(keyword => name.includes(keyword))) {
+            detectedTechnical = pattern.responsibility;
+            break;
+        }
     }
-    if (name.includes("model") || name.includes("entity") || name.includes("schema")) {
-        return "Data models and entities";
+    if (detectedDomain && detectedTechnical) {
+        if (detectedTechnical.includes("API") || detectedTechnical.includes("endpoint")) {
+            return `${detectedDomain} API`;
+        }
+        if (detectedTechnical.includes("Business logic") || detectedTechnical.includes("use case")) {
+            return `${detectedDomain} business logic`;
+        }
+        if (detectedTechnical.includes("Data model") || detectedTechnical.includes("entity")) {
+            return `${detectedDomain} models and entities`;
+        }
+        if (detectedTechnical.includes("Data persistence") || detectedTechnical.includes("database")) {
+            return `${detectedDomain} data persistence`;
+        }
+        if (detectedTechnical.includes("UI") || detectedTechnical.includes("view")) {
+            return `${detectedDomain} UI components`;
+        }
+        return `${detectedDomain} - ${detectedTechnical}`;
     }
-    if (name.includes("repository") || name.includes("persistence") || name.includes("db")) {
-        return "Data persistence and database operations";
+    if (detectedDomain) {
+        if (name.includes("service") || name.includes("handler")) {
+            return `${detectedDomain} services`;
+        }
+        if (name.includes("model") || name.includes("entity")) {
+            return `${detectedDomain} models`;
+        }
+        if (name.includes("controller") || name.includes("api")) {
+            return `${detectedDomain} API`;
+        }
+        if (name.includes("repository") || name.includes("db")) {
+            return `${detectedDomain} data layer`;
+        }
+        return detectedDomain;
     }
-    if (name.includes("view") || name.includes("page") || name.includes("screen") || name.includes("component")) {
-        return "UI components and views";
-    }
-    if (name.includes("config") || name.includes("env")) {
-        return "Configuration management";
-    }
-    if (name.includes("util") || name.includes("helper") || name.includes("lib")) {
-        return "Utility functions and helpers";
-    }
-    if (name.includes("test") || name.includes("spec") || name.includes("mock")) {
-        return "Testing utilities and mocks";
-    }
-    if (name.includes("middleware")) {
-        return "Request/response middleware";
+    if (detectedTechnical) {
+        return detectedTechnical;
     }
     if (name.includes("auth") || name.includes("security") || name.includes("login")) {
         return "Authentication and authorization";

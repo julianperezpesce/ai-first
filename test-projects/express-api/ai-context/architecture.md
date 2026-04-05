@@ -11,6 +11,7 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
+| `.opencode` | Single file module |
 | `controllers` | API endpoints and request handling |
 | `middleware` | Request/response middleware |
 | `models` | Data models and entities |
@@ -21,12 +22,17 @@
 
 | Component | Type | Path | Files |
 |-----------|------|------|-------|
+| .opencode | module | `.opencode` | 1 |
 | controllers | module | `controllers` | 3 |
 | middleware | module | `middleware` | 1 |
 | models | data | `models` | 1 |
 | services | module | `services` | 3 |
 
 ## Module Details
+
+### .opencode
+- **Path**: `.opencode`
+- **Responsibility**: Single file module
 
 ### controllers
 - **Path**: `controllers`

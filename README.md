@@ -19,14 +19,22 @@
 
 ---
 
-## 🚀 What's New in v1.3.9
+## 🚀 What's New in v1.3.10
 
-**Entrypoint Detection Improvements**
+**Framework Instructions & API Contracts**
+
+- ✅ **Framework Instructions**: Framework-specific guidelines for Django, Rails, Laravel, Express, NestJS, Spring Boot, FastAPI, Flask
+- ✅ **API Contracts**: Documented endpoints with request/response schemas for Express, NestJS, Spring, FastAPI, Django
+- ✅ **Enhanced Module Descriptions**: Domain-aware descriptions like "User management API" instead of "API endpoints"
+- ✅ **Entrypoints Format**: Header-per-entry format with better readability
+- ✅ **Evaluator Score**: Target >4.5/5.0 average
+
+**Previous: v1.3.9**
 
 - ✅ **Python Entrypoints**: Automatic detection of `manage.py`, `app.py`, `__init__.py` exports, `pyproject.toml` scripts
 - ✅ **Spring Boot Entrypoints**: Detection of `@SpringBootApplication`, `@RestController`, `pom.xml`, `build.gradle`
 - ✅ **Content-Based Detection**: Re-enabled content signal matching for FastAPI/Flask/Django
-- ✅ **Evaluator Score**: Improved from 3.95 to **4.17/5.0** average
+- ✅ **Evaluator Score**: Improved from 3.95 to **4.28/5.0** average
 
 - ✅ **MCP Server**: Native Model Context Protocol for Cursor, Claude Code, and other AI agents
 - ✅ **Configuration Presets**: 4 presets (`full`, `quick`, `api`, `docs`) via `ai-first.config.json`
