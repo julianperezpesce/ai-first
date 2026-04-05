@@ -1,6 +1,6 @@
 {
   "name": "python-cli",
-  "rootDir": "test-projects/python-cli",
+  "rootDir": "test-projects/python-cli/",
   "features": [
     "cli"
   ],
@@ -14,5 +14,5 @@
   ],
   "languages": [],
   "frameworks": [],
-  "generatedAt": "2026-04-05T21:18:24.615Z"
+  "generatedAt": "2026-04-05T22:21:52.573Z"
 }

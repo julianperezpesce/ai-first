@@ -45,7 +45,7 @@
 |--------|----------------|
 | `app` | PHP implementation |
 | `bootstrap` | PHP implementation |
-| `routes` | API endpoints and request handling |
+| `routes` | API API |
 
 
 ---

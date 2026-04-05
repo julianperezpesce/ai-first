@@ -1,6 +1,6 @@
 {
   "name": "flask-app",
-  "rootDir": "test-projects/flask-app",
+  "rootDir": "test-projects/flask-app/",
   "features": [
     "app"
   ],
@@ -10,5 +10,5 @@
   ],
   "languages": [],
   "frameworks": [],
-  "generatedAt": "2026-04-05T21:18:06.906Z"
+  "generatedAt": "2026-04-05T22:21:49.995Z"
 }

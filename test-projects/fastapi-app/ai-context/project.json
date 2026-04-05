@@ -1,6 +1,6 @@
 {
   "name": "fastapi-app",
-  "rootDir": "test-projects/fastapi-app",
+  "rootDir": "test-projects/fastapi-app/",
   "features": [
     "app"
   ],
@@ -11,5 +11,5 @@
   ],
   "languages": [],
   "frameworks": [],
-  "generatedAt": "2026-04-05T21:18:03.986Z"
+  "generatedAt": "2026-04-05T22:21:49.562Z"
 }

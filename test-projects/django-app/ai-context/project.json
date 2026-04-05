@@ -1,6 +1,6 @@
 {
   "name": "django-app",
-  "rootDir": "test-projects/django-app",
+  "rootDir": "test-projects/django-app/",
   "features": [
     "blog",
     "django_app",
@@ -14,5 +14,5 @@
   ],
   "languages": [],
   "frameworks": [],
-  "generatedAt": "2026-04-05T21:18:45.745Z"
+  "generatedAt": "2026-04-05T22:21:48.691Z"
 }
