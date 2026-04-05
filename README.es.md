@@ -21,9 +21,14 @@
 
 ---
 
-## 🚀 Novedades en v1.3.8
+## 🚀 Novedades en v1.3.9
 
-**Servidor MCP y Sistema de Configuración**
+**Mejoras en Detección de Entrypoints**
+
+- ✅ **Entrypoints Python**: Detección automática de `manage.py`, `app.py`, exports de `__init__.py`, scripts de `pyproject.toml`
+- ✅ **Entrypoints Spring Boot**: Detección de `@SpringBootApplication`, `@RestController`, `pom.xml`, `build.gradle`
+- ✅ **Detección por Contenido**: Re-habilitada la búsqueda de patrones de contenido para FastAPI/Flask/Django
+- ✅ **Puntuación Evaluador**: Mejorada de 3.95 a **4.17/5.0** promedio
 
 - ✅ **Servidor MCP**: Model Context Protocol nativo para Cursor, Claude Code y otros agentes IA
 - ✅ **Presets de Configuración**: 4 presets (`full`, `quick`, `api`, `docs`) vía `ai-first.config.json`

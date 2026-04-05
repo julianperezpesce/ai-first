@@ -6,6 +6,59 @@ All notable changes to `ai-first` will be documented in this file.
 
 ## [Unreleased]
 
+## [1.3.9-1] - 2026-04-05
+
+### 🐛 Entrypoint Detection Fixes
+
+**Branch:** `1.3.9-1`
+
+#### 🐛 Bug Fixes
+
+- **Content-based detection** - Re-enabled content signal matching in adapterRegistry
+  - Previously returned `false` for all content signals
+  - Now implements `matchContentSignal()` to search file contents
+  - Performance: Limited to 100 files and 3 directory depth
+
+#### ✨ New Features
+
+- **FastAPI adapter signals** - Added detection signals to FastAPI adapter
+  - `from fastapi import` - Content pattern
+  - `import fastapi` - Content pattern
+  - `FastAPI(` - Content pattern
+  - `pyproject.toml` - File pattern
+  - `requirements.txt` - File pattern
+
+- **Python entrypoint detection** - New `discoverPythonEntrypoints()` function
+  - `manage.py` → Django CLI entrypoint
+  - `app.py` → Flask/FastAPI server entrypoint
+  - `main.py` → Python application entrypoint
+  - `__init__.py` → Library exports detection
+  - `pyproject.toml` → Poetry/uv CLI scripts
+  - `setup.py` → Console scripts entry points
+
+- **Spring Boot entrypoint detection** - New `discoverSpringBootEntrypoints()` function
+  - `@SpringBootApplication` → Main application class
+  - `@RestController` / `@Controller` → API endpoints
+  - `pom.xml` → Maven project metadata
+  - `build.gradle` → Gradle project with Spring Boot detection
+
+#### 🧪 Testing
+
+- **9 new unit tests** for Python and Spring Boot entrypoint detection
+- All 1076 tests passing
+
+#### 📊 Evaluator Results
+
+| Project | Before | After | Δ |
+|---------|--------|-------|---|
+| fastapi-framework | 3.63 | 4.13 | +0.50 |
+| spring-petclinic | 3.64 | 4.18 | +0.54 |
+| filament-laravel | 3.64 | 4.27 | +0.63 |
+| go-zero-framework | 3.67 | 4.25 | +0.58 |
+| **Average** | **3.95** | **4.17** | **+0.22** |
+
+All 22 projects passing with score ≥ 3.5
+
 ## [1.3.9] - 2026-03-30
 
 ### 🚀 MCP Server Fixes & Improvements
