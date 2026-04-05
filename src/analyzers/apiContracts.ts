@@ -538,7 +538,7 @@ function extractViewSetMethods(content: string, matchIndex: number): Array<{ met
   const actionPattern = /@action\s*\([^)]*(?:methods\s*=\s*\[(['"`](\w+)['"`]))/g;
   let match;
   while ((match = actionPattern.exec(classContent)) !== null) {
-    const method = match[2];
+    const method = match[2].toUpperCase();
     const actionMatch = classContent.slice(match.index).match(/def\s+(\w+)/);
     if (actionMatch) {
       methods.push({ method, action: actionMatch[1], description: `Custom ${method} action` });
