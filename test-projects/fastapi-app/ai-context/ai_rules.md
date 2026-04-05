@@ -6,9 +6,11 @@
 
 ## Guidelines
 
-- Language: Use Markdown, JSON, Python
+- Language: Use Markdown, Python
+- Frameworks: FastAPI
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
+- Main entry: app/main.py
 
 ## Patterns
 
@@ -24,8 +26,8 @@
 
 | Category | Value |
 |----------|-------|
-| Language | Markdown, JSON, Python |
-| Framework | N/A |
+| Language | Markdown, Python |
+| Framework | FastAPI |
 | Architecture | Flat / Simple Structure |
 | Naming | PascalCase |
 | Indentation | unknown |

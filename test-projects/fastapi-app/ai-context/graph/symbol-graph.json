@@ -1,40 +1,12 @@
 {
   "symbols": [
     {
-      "id": "app/database.py#SQLALCHEMY_DATABASE_URL",
-      "name": "SQLALCHEMY_DATABASE_URL",
-      "type": "const",
-      "file": "app/database.py",
-      "line": 5
-    },
-    {
       "id": "app/database.py#get_db",
       "name": "get_db",
       "type": "function",
       "file": "app/database.py",
       "line": 15,
       "export": true
-    },
-    {
-      "id": "app/dependencies.py#SECRET_KEY",
-      "name": "SECRET_KEY",
-      "type": "const",
-      "file": "app/dependencies.py",
-      "line": 12
-    },
-    {
-      "id": "app/dependencies.py#ALGORITHM",
-      "name": "ALGORITHM",
-      "type": "const",
-      "file": "app/dependencies.py",
-      "line": 13
-    },
-    {
-      "id": "app/dependencies.py#ACCESS_TOKEN_EXPIRE_MINUTES",
-      "name": "ACCESS_TOKEN_EXPIRE_MINUTES",
-      "type": "const",
-      "file": "app/dependencies.py",
-      "line": 14
     },
     {
       "id": "app/dependencies.py#verify_password",
@@ -69,14 +41,6 @@
       "export": true
     },
     {
-      "id": "app/dependencies.py#authenticate_user",
-      "name": "authenticate_user",
-      "type": "function",
-      "file": "app/dependencies.py",
-      "line": 40,
-      "export": true
-    },
-    {
       "id": "app/dependencies.py#create_access_token",
       "name": "create_access_token",
       "type": "function",
@@ -89,7 +53,7 @@
       "name": "read_root",
       "type": "function",
       "file": "app/main.py",
-      "line": 33,
+      "line": 32,
       "export": true
     },
     {
@@ -97,7 +61,7 @@
       "name": "health_check",
       "type": "function",
       "file": "app/main.py",
-      "line": 39,
+      "line": 38,
       "export": true
     },
     {
@@ -109,43 +73,11 @@
       "export": true
     },
     {
-      "id": "app/models.py#__repr__",
-      "name": "__repr__",
-      "type": "function",
-      "file": "app/models.py",
-      "line": 46,
-      "export": true
-    },
-    {
       "id": "app/models.py#Post",
       "name": "Post",
       "type": "class",
       "file": "app/models.py",
       "line": 50,
-      "export": true
-    },
-    {
-      "id": "app/models.py#__repr__",
-      "name": "__repr__",
-      "type": "function",
-      "file": "app/models.py",
-      "line": 76,
-      "export": true
-    },
-    {
-      "id": "app/models.py#publish",
-      "name": "publish",
-      "type": "function",
-      "file": "app/models.py",
-      "line": 79,
-      "export": true
-    },
-    {
-      "id": "app/models.py#unpublish",
-      "name": "unpublish",
-      "type": "function",
-      "file": "app/models.py",
-      "line": 86,
       "export": true
     },
     {
@@ -157,14 +89,6 @@
       "export": true
     },
     {
-      "id": "app/models.py#__repr__",
-      "name": "__repr__",
-      "type": "function",
-      "file": "app/models.py",
-      "line": 113,
-      "export": true
-    },
-    {
       "id": "app/models.py#Category",
       "name": "Category",
       "type": "class",
@@ -173,27 +97,11 @@
       "export": true
     },
     {
-      "id": "app/models.py#__repr__",
-      "name": "__repr__",
-      "type": "function",
-      "file": "app/models.py",
-      "line": 131,
-      "export": true
-    },
-    {
       "id": "app/models.py#Tag",
       "name": "Tag",
       "type": "class",
       "file": "app/models.py",
       "line": 135,
-      "export": true
-    },
-    {
-      "id": "app/models.py#__repr__",
-      "name": "__repr__",
-      "type": "function",
-      "file": "app/models.py",
-      "line": 148,
       "export": true
     },
     {
@@ -209,7 +117,7 @@
       "name": "login",
       "type": "function",
       "file": "app/routers/auth.py",
-      "line": 57,
+      "line": 56,
       "export": true
     },
     {
@@ -217,23 +125,7 @@
       "name": "read_users_me",
       "type": "function",
       "file": "app/routers/auth.py",
-      "line": 76,
-      "export": true
-    },
-    {
-      "id": "app/routers/auth.py#update_user_me",
-      "name": "update_user_me",
-      "type": "function",
-      "file": "app/routers/auth.py",
-      "line": 82,
-      "export": true
-    },
-    {
-      "id": "app/routers/auth.py#change_password",
-      "name": "change_password",
-      "type": "function",
-      "file": "app/routers/auth.py",
-      "line": 100,
+      "line": 75,
       "export": true
     },
     {
@@ -245,59 +137,11 @@
       "export": true
     },
     {
-      "id": "app/routers/posts.py#list_posts",
-      "name": "list_posts",
-      "type": "function",
-      "file": "app/routers/posts.py",
-      "line": 22,
-      "export": true
-    },
-    {
-      "id": "app/routers/posts.py#create_post",
-      "name": "create_post",
-      "type": "function",
-      "file": "app/routers/posts.py",
-      "line": 87,
-      "export": true
-    },
-    {
       "id": "app/routers/posts.py#get_post",
       "name": "get_post",
       "type": "function",
       "file": "app/routers/posts.py",
-      "line": 133,
-      "export": true
-    },
-    {
-      "id": "app/routers/posts.py#update_post",
-      "name": "update_post",
-      "type": "function",
-      "file": "app/routers/posts.py",
-      "line": 150,
-      "export": true
-    },
-    {
-      "id": "app/routers/posts.py#delete_post",
-      "name": "delete_post",
-      "type": "function",
-      "file": "app/routers/posts.py",
-      "line": 201,
-      "export": true
-    },
-    {
-      "id": "app/routers/posts.py#publish_post",
-      "name": "publish_post",
-      "type": "function",
-      "file": "app/routers/posts.py",
-      "line": 228,
-      "export": true
-    },
-    {
-      "id": "app/routers/posts.py#get_my_posts",
-      "name": "get_my_posts",
-      "type": "function",
-      "file": "app/routers/posts.py",
-      "line": 256,
+      "line": 132,
       "export": true
     },
     {
@@ -511,21 +355,6 @@
   ],
   "relationships": [
     {
-      "symbolId": "app/dependencies.py#SECRET_KEY",
-      "targetId": "app/database.py#get_db",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/dependencies.py#ALGORITHM",
-      "targetId": "app/database.py#get_db",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/dependencies.py#ACCESS_TOKEN_EXPIRE_MINUTES",
-      "targetId": "app/database.py#get_db",
-      "type": "imports"
-    },
-    {
       "symbolId": "app/dependencies.py#verify_password",
       "targetId": "app/database.py#get_db",
       "type": "imports"
@@ -542,11 +371,6 @@
     },
     {
       "symbolId": "app/dependencies.py#get_user_by_email",
-      "targetId": "app/database.py#get_db",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/dependencies.py#authenticate_user",
       "targetId": "app/database.py#get_db",
       "type": "imports"
     },
@@ -571,27 +395,7 @@
       "type": "imports"
     },
     {
-      "symbolId": "app/models.py#__repr__",
-      "targetId": "app/database.py#get_db",
-      "type": "imports"
-    },
-    {
       "symbolId": "app/models.py#Post",
-      "targetId": "app/database.py#get_db",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/models.py#__repr__",
-      "targetId": "app/database.py#get_db",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/models.py#publish",
-      "targetId": "app/database.py#get_db",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/models.py#unpublish",
       "targetId": "app/database.py#get_db",
       "type": "imports"
     },
@@ -601,17 +405,7 @@
       "type": "imports"
     },
     {
-      "symbolId": "app/models.py#__repr__",
-      "targetId": "app/database.py#get_db",
-      "type": "imports"
-    },
-    {
       "symbolId": "app/models.py#Category",
-      "targetId": "app/database.py#get_db",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/models.py#__repr__",
       "targetId": "app/database.py#get_db",
       "type": "imports"
     },
@@ -621,11 +415,6 @@
       "type": "imports"
     },
     {
-      "symbolId": "app/models.py#__repr__",
-      "targetId": "app/database.py#get_db",
-      "type": "imports"
-    },
-    {
       "symbolId": "app/routers/auth.py#register",
       "targetId": "app/database.py#get_db",
       "type": "imports"
@@ -637,16 +426,6 @@
     },
     {
       "symbolId": "app/routers/auth.py#read_users_me",
-      "targetId": "app/database.py#get_db",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/routers/auth.py#update_user_me",
-      "targetId": "app/database.py#get_db",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/routers/auth.py#change_password",
       "targetId": "app/database.py#get_db",
       "type": "imports"
     },
@@ -666,27 +445,7 @@
       "type": "imports"
     },
     {
-      "symbolId": "app/routers/auth.py#update_user_me",
-      "targetId": "app/dependencies.py#verify_password",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/routers/auth.py#change_password",
-      "targetId": "app/dependencies.py#verify_password",
-      "type": "imports"
-    },
-    {
       "symbolId": "app/routers/posts.py#generate_slug",
-      "targetId": "app/database.py#get_db",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/routers/posts.py#list_posts",
-      "targetId": "app/database.py#get_db",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/routers/posts.py#create_post",
       "targetId": "app/database.py#get_db",
       "type": "imports"
     },
@@ -696,62 +455,12 @@
       "type": "imports"
     },
     {
-      "symbolId": "app/routers/posts.py#update_post",
-      "targetId": "app/database.py#get_db",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/routers/posts.py#delete_post",
-      "targetId": "app/database.py#get_db",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/routers/posts.py#publish_post",
-      "targetId": "app/database.py#get_db",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/routers/posts.py#get_my_posts",
-      "targetId": "app/database.py#get_db",
-      "type": "imports"
-    },
-    {
       "symbolId": "app/routers/posts.py#generate_slug",
       "targetId": "app/dependencies.py#verify_password",
       "type": "imports"
     },
     {
-      "symbolId": "app/routers/posts.py#list_posts",
-      "targetId": "app/dependencies.py#verify_password",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/routers/posts.py#create_post",
-      "targetId": "app/dependencies.py#verify_password",
-      "type": "imports"
-    },
-    {
       "symbolId": "app/routers/posts.py#get_post",
-      "targetId": "app/dependencies.py#verify_password",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/routers/posts.py#update_post",
-      "targetId": "app/dependencies.py#verify_password",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/routers/posts.py#delete_post",
-      "targetId": "app/dependencies.py#verify_password",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/routers/posts.py#publish_post",
-      "targetId": "app/dependencies.py#verify_password",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/routers/posts.py#get_my_posts",
       "targetId": "app/dependencies.py#verify_password",
       "type": "imports"
     },
@@ -781,11 +490,6 @@
       "type": "exports"
     },
     {
-      "symbolId": "app/dependencies.py#authenticate_user",
-      "targetId": "app/dependencies.py#authenticate_user",
-      "type": "exports"
-    },
-    {
       "symbolId": "app/dependencies.py#create_access_token",
       "targetId": "app/dependencies.py#create_access_token",
       "type": "exports"
@@ -806,28 +510,8 @@
       "type": "exports"
     },
     {
-      "symbolId": "app/models.py#__repr__",
-      "targetId": "app/models.py#__repr__",
-      "type": "exports"
-    },
-    {
       "symbolId": "app/models.py#Post",
       "targetId": "app/models.py#Post",
-      "type": "exports"
-    },
-    {
-      "symbolId": "app/models.py#__repr__",
-      "targetId": "app/models.py#__repr__",
-      "type": "exports"
-    },
-    {
-      "symbolId": "app/models.py#publish",
-      "targetId": "app/models.py#publish",
-      "type": "exports"
-    },
-    {
-      "symbolId": "app/models.py#unpublish",
-      "targetId": "app/models.py#unpublish",
       "type": "exports"
     },
     {
@@ -836,28 +520,13 @@
       "type": "exports"
     },
     {
-      "symbolId": "app/models.py#__repr__",
-      "targetId": "app/models.py#__repr__",
-      "type": "exports"
-    },
-    {
       "symbolId": "app/models.py#Category",
       "targetId": "app/models.py#Category",
       "type": "exports"
     },
     {
-      "symbolId": "app/models.py#__repr__",
-      "targetId": "app/models.py#__repr__",
-      "type": "exports"
-    },
-    {
       "symbolId": "app/models.py#Tag",
       "targetId": "app/models.py#Tag",
-      "type": "exports"
-    },
-    {
-      "symbolId": "app/models.py#__repr__",
-      "targetId": "app/models.py#__repr__",
       "type": "exports"
     },
     {
@@ -876,53 +545,13 @@
       "type": "exports"
     },
     {
-      "symbolId": "app/routers/auth.py#update_user_me",
-      "targetId": "app/routers/auth.py#update_user_me",
-      "type": "exports"
-    },
-    {
-      "symbolId": "app/routers/auth.py#change_password",
-      "targetId": "app/routers/auth.py#change_password",
-      "type": "exports"
-    },
-    {
       "symbolId": "app/routers/posts.py#generate_slug",
       "targetId": "app/routers/posts.py#generate_slug",
       "type": "exports"
     },
     {
-      "symbolId": "app/routers/posts.py#list_posts",
-      "targetId": "app/routers/posts.py#list_posts",
-      "type": "exports"
-    },
-    {
-      "symbolId": "app/routers/posts.py#create_post",
-      "targetId": "app/routers/posts.py#create_post",
-      "type": "exports"
-    },
-    {
       "symbolId": "app/routers/posts.py#get_post",
       "targetId": "app/routers/posts.py#get_post",
-      "type": "exports"
-    },
-    {
-      "symbolId": "app/routers/posts.py#update_post",
-      "targetId": "app/routers/posts.py#update_post",
-      "type": "exports"
-    },
-    {
-      "symbolId": "app/routers/posts.py#delete_post",
-      "targetId": "app/routers/posts.py#delete_post",
-      "type": "exports"
-    },
-    {
-      "symbolId": "app/routers/posts.py#publish_post",
-      "targetId": "app/routers/posts.py#publish_post",
-      "type": "exports"
-    },
-    {
-      "symbolId": "app/routers/posts.py#get_my_posts",
-      "targetId": "app/routers/posts.py#get_my_posts",
       "type": "exports"
     },
     {
@@ -1057,27 +686,6 @@
     }
   ],
   "bySymbol": {
-    "app/dependencies.py#SECRET_KEY": [
-      {
-        "symbolId": "app/dependencies.py#SECRET_KEY",
-        "targetId": "app/database.py#get_db",
-        "type": "imports"
-      }
-    ],
-    "app/dependencies.py#ALGORITHM": [
-      {
-        "symbolId": "app/dependencies.py#ALGORITHM",
-        "targetId": "app/database.py#get_db",
-        "type": "imports"
-      }
-    ],
-    "app/dependencies.py#ACCESS_TOKEN_EXPIRE_MINUTES": [
-      {
-        "symbolId": "app/dependencies.py#ACCESS_TOKEN_EXPIRE_MINUTES",
-        "targetId": "app/database.py#get_db",
-        "type": "imports"
-      }
-    ],
     "app/dependencies.py#verify_password": [
       {
         "symbolId": "app/dependencies.py#verify_password",
@@ -1123,18 +731,6 @@
       {
         "symbolId": "app/dependencies.py#get_user_by_email",
         "targetId": "app/dependencies.py#get_user_by_email",
-        "type": "exports"
-      }
-    ],
-    "app/dependencies.py#authenticate_user": [
-      {
-        "symbolId": "app/dependencies.py#authenticate_user",
-        "targetId": "app/database.py#get_db",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/dependencies.py#authenticate_user",
-        "targetId": "app/dependencies.py#authenticate_user",
         "type": "exports"
       }
     ],
@@ -1186,58 +782,6 @@
         "type": "exports"
       }
     ],
-    "app/models.py#__repr__": [
-      {
-        "symbolId": "app/models.py#__repr__",
-        "targetId": "app/database.py#get_db",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/models.py#__repr__",
-        "targetId": "app/database.py#get_db",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/models.py#__repr__",
-        "targetId": "app/database.py#get_db",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/models.py#__repr__",
-        "targetId": "app/database.py#get_db",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/models.py#__repr__",
-        "targetId": "app/database.py#get_db",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/models.py#__repr__",
-        "targetId": "app/models.py#__repr__",
-        "type": "exports"
-      },
-      {
-        "symbolId": "app/models.py#__repr__",
-        "targetId": "app/models.py#__repr__",
-        "type": "exports"
-      },
-      {
-        "symbolId": "app/models.py#__repr__",
-        "targetId": "app/models.py#__repr__",
-        "type": "exports"
-      },
-      {
-        "symbolId": "app/models.py#__repr__",
-        "targetId": "app/models.py#__repr__",
-        "type": "exports"
-      },
-      {
-        "symbolId": "app/models.py#__repr__",
-        "targetId": "app/models.py#__repr__",
-        "type": "exports"
-      }
-    ],
     "app/models.py#Post": [
       {
         "symbolId": "app/models.py#Post",
@@ -1247,30 +791,6 @@
       {
         "symbolId": "app/models.py#Post",
         "targetId": "app/models.py#Post",
-        "type": "exports"
-      }
-    ],
-    "app/models.py#publish": [
-      {
-        "symbolId": "app/models.py#publish",
-        "targetId": "app/database.py#get_db",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/models.py#publish",
-        "targetId": "app/models.py#publish",
-        "type": "exports"
-      }
-    ],
-    "app/models.py#unpublish": [
-      {
-        "symbolId": "app/models.py#unpublish",
-        "targetId": "app/database.py#get_db",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/models.py#unpublish",
-        "targetId": "app/models.py#unpublish",
         "type": "exports"
       }
     ],
@@ -1361,40 +881,6 @@
         "type": "exports"
       }
     ],
-    "app/routers/auth.py#update_user_me": [
-      {
-        "symbolId": "app/routers/auth.py#update_user_me",
-        "targetId": "app/database.py#get_db",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/routers/auth.py#update_user_me",
-        "targetId": "app/dependencies.py#verify_password",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/routers/auth.py#update_user_me",
-        "targetId": "app/routers/auth.py#update_user_me",
-        "type": "exports"
-      }
-    ],
-    "app/routers/auth.py#change_password": [
-      {
-        "symbolId": "app/routers/auth.py#change_password",
-        "targetId": "app/database.py#get_db",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/routers/auth.py#change_password",
-        "targetId": "app/dependencies.py#verify_password",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/routers/auth.py#change_password",
-        "targetId": "app/routers/auth.py#change_password",
-        "type": "exports"
-      }
-    ],
     "app/routers/posts.py#generate_slug": [
       {
         "symbolId": "app/routers/posts.py#generate_slug",
@@ -1412,40 +898,6 @@
         "type": "exports"
       }
     ],
-    "app/routers/posts.py#list_posts": [
-      {
-        "symbolId": "app/routers/posts.py#list_posts",
-        "targetId": "app/database.py#get_db",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/routers/posts.py#list_posts",
-        "targetId": "app/dependencies.py#verify_password",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/routers/posts.py#list_posts",
-        "targetId": "app/routers/posts.py#list_posts",
-        "type": "exports"
-      }
-    ],
-    "app/routers/posts.py#create_post": [
-      {
-        "symbolId": "app/routers/posts.py#create_post",
-        "targetId": "app/database.py#get_db",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/routers/posts.py#create_post",
-        "targetId": "app/dependencies.py#verify_password",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/routers/posts.py#create_post",
-        "targetId": "app/routers/posts.py#create_post",
-        "type": "exports"
-      }
-    ],
     "app/routers/posts.py#get_post": [
       {
         "symbolId": "app/routers/posts.py#get_post",
@@ -1460,74 +912,6 @@
       {
         "symbolId": "app/routers/posts.py#get_post",
         "targetId": "app/routers/posts.py#get_post",
-        "type": "exports"
-      }
-    ],
-    "app/routers/posts.py#update_post": [
-      {
-        "symbolId": "app/routers/posts.py#update_post",
-        "targetId": "app/database.py#get_db",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/routers/posts.py#update_post",
-        "targetId": "app/dependencies.py#verify_password",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/routers/posts.py#update_post",
-        "targetId": "app/routers/posts.py#update_post",
-        "type": "exports"
-      }
-    ],
-    "app/routers/posts.py#delete_post": [
-      {
-        "symbolId": "app/routers/posts.py#delete_post",
-        "targetId": "app/database.py#get_db",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/routers/posts.py#delete_post",
-        "targetId": "app/dependencies.py#verify_password",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/routers/posts.py#delete_post",
-        "targetId": "app/routers/posts.py#delete_post",
-        "type": "exports"
-      }
-    ],
-    "app/routers/posts.py#publish_post": [
-      {
-        "symbolId": "app/routers/posts.py#publish_post",
-        "targetId": "app/database.py#get_db",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/routers/posts.py#publish_post",
-        "targetId": "app/dependencies.py#verify_password",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/routers/posts.py#publish_post",
-        "targetId": "app/routers/posts.py#publish_post",
-        "type": "exports"
-      }
-    ],
-    "app/routers/posts.py#get_my_posts": [
-      {
-        "symbolId": "app/routers/posts.py#get_my_posts",
-        "targetId": "app/database.py#get_db",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/routers/posts.py#get_my_posts",
-        "targetId": "app/dependencies.py#verify_password",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/routers/posts.py#get_my_posts",
-        "targetId": "app/routers/posts.py#get_my_posts",
         "type": "exports"
       }
     ],

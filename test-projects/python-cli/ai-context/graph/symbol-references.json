@@ -1,11 +1,5 @@
 {
   "models/task.py#Task": [
-    "models/task_repository.py#TaskRepository",
-    "models/task_repository.py#__init__",
-    "models/task_repository.py#create",
-    "models/task_repository.py#find_all",
-    "models/task_repository.py#find_by_id",
-    "models/task_repository.py#update",
-    "models/task_repository.py#delete"
+    "models/task_repository.py#TaskRepository"
   ]
 }

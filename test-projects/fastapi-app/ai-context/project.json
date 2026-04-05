@@ -1,9 +1,15 @@
 {
   "name": "fastapi-app",
   "rootDir": "test-projects/fastapi-app",
-  "features": [],
-  "flows": [],
+  "features": [
+    "app"
+  ],
+  "flows": [
+    "auth",
+    "main",
+    "posts"
+  ],
   "languages": [],
   "frameworks": [],
-  "generatedAt": "2026-03-18T19:21:50.069Z"
+  "generatedAt": "2026-04-05T21:18:03.986Z"
 }

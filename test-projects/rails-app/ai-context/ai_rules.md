@@ -6,8 +6,8 @@
 
 ## Guidelines
 
-- Language: Use Markdown, JSON, Ruby
-- Architecture: Follow Flat / Simple Structure pattern
+- Language: Use Markdown, Ruby
+- Architecture: Follow API Server pattern
 - File naming: PascalCase
 
 ## Patterns
@@ -24,9 +24,9 @@
 
 | Category | Value |
 |----------|-------|
-| Language | Markdown, JSON, Ruby |
+| Language | Markdown, Ruby |
 | Framework | N/A |
-| Architecture | Flat / Simple Structure |
+| Architecture | API Server |
 | Naming | PascalCase |
 | Indentation | unknown |
 

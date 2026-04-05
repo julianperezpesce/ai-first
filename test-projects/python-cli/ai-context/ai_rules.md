@@ -6,9 +6,10 @@
 
 ## Guidelines
 
-- Language: Use Python, Markdown, JSON
+- Language: Use Python
 - Architecture: Follow MVC (Model-View-Controller) pattern
 - File naming: kebab-case or snake_case
+- Main entry: main.py
 
 ## Patterns
 
@@ -24,7 +25,7 @@
 
 | Category | Value |
 |----------|-------|
-| Language | Python, Markdown, JSON |
+| Language | Python |
 | Framework | N/A |
 | Architecture | MVC (Model-View-Controller) |
 | Naming | kebab-case or snake_case |

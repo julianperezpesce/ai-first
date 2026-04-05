@@ -41,111 +41,17 @@
       "export": true
     },
     {
-      "id": "models/task.py#__init__",
-      "name": "__init__",
-      "type": "function",
-      "file": "models/task.py",
-      "line": 5,
-      "export": true
-    },
-    {
-      "id": "models/task.py#to_dict",
-      "name": "to_dict",
-      "type": "function",
-      "file": "models/task.py",
-      "line": 12,
-      "export": true
-    },
-    {
       "id": "models/task_repository.py#TaskRepository",
       "name": "TaskRepository",
       "type": "class",
       "file": "models/task_repository.py",
       "line": 5,
       "export": true
-    },
-    {
-      "id": "models/task_repository.py#__init__",
-      "name": "__init__",
-      "type": "function",
-      "file": "models/task_repository.py",
-      "line": 6,
-      "export": true
-    },
-    {
-      "id": "models/task_repository.py#create",
-      "name": "create",
-      "type": "function",
-      "file": "models/task_repository.py",
-      "line": 10,
-      "export": true
-    },
-    {
-      "id": "models/task_repository.py#find_all",
-      "name": "find_all",
-      "type": "function",
-      "file": "models/task_repository.py",
-      "line": 16,
-      "export": true
-    },
-    {
-      "id": "models/task_repository.py#find_by_id",
-      "name": "find_by_id",
-      "type": "function",
-      "file": "models/task_repository.py",
-      "line": 21,
-      "export": true
-    },
-    {
-      "id": "models/task_repository.py#update",
-      "name": "update",
-      "type": "function",
-      "file": "models/task_repository.py",
-      "line": 27,
-      "export": true
-    },
-    {
-      "id": "models/task_repository.py#delete",
-      "name": "delete",
-      "type": "function",
-      "file": "models/task_repository.py",
-      "line": 39,
-      "export": true
     }
   ],
   "relationships": [
     {
       "symbolId": "models/task_repository.py#TaskRepository",
-      "targetId": "models/task.py#Task",
-      "type": "imports"
-    },
-    {
-      "symbolId": "models/task_repository.py#__init__",
-      "targetId": "models/task.py#Task",
-      "type": "imports"
-    },
-    {
-      "symbolId": "models/task_repository.py#create",
-      "targetId": "models/task.py#Task",
-      "type": "imports"
-    },
-    {
-      "symbolId": "models/task_repository.py#find_all",
-      "targetId": "models/task.py#Task",
-      "type": "imports"
-    },
-    {
-      "symbolId": "models/task_repository.py#find_by_id",
-      "targetId": "models/task.py#Task",
-      "type": "imports"
-    },
-    {
-      "symbolId": "models/task_repository.py#update",
-      "targetId": "models/task.py#Task",
-      "type": "imports"
-    },
-    {
-      "symbolId": "models/task_repository.py#delete",
       "targetId": "models/task.py#Task",
       "type": "imports"
     },
@@ -175,48 +81,8 @@
       "type": "exports"
     },
     {
-      "symbolId": "models/task.py#__init__",
-      "targetId": "models/task.py#__init__",
-      "type": "exports"
-    },
-    {
-      "symbolId": "models/task.py#to_dict",
-      "targetId": "models/task.py#to_dict",
-      "type": "exports"
-    },
-    {
       "symbolId": "models/task_repository.py#TaskRepository",
       "targetId": "models/task_repository.py#TaskRepository",
-      "type": "exports"
-    },
-    {
-      "symbolId": "models/task_repository.py#__init__",
-      "targetId": "models/task_repository.py#__init__",
-      "type": "exports"
-    },
-    {
-      "symbolId": "models/task_repository.py#create",
-      "targetId": "models/task_repository.py#create",
-      "type": "exports"
-    },
-    {
-      "symbolId": "models/task_repository.py#find_all",
-      "targetId": "models/task_repository.py#find_all",
-      "type": "exports"
-    },
-    {
-      "symbolId": "models/task_repository.py#find_by_id",
-      "targetId": "models/task_repository.py#find_by_id",
-      "type": "exports"
-    },
-    {
-      "symbolId": "models/task_repository.py#update",
-      "targetId": "models/task_repository.py#update",
-      "type": "exports"
-    },
-    {
-      "symbolId": "models/task_repository.py#delete",
-      "targetId": "models/task_repository.py#delete",
       "type": "exports"
     }
   ],
@@ -230,78 +96,6 @@
       {
         "symbolId": "models/task_repository.py#TaskRepository",
         "targetId": "models/task_repository.py#TaskRepository",
-        "type": "exports"
-      }
-    ],
-    "models/task_repository.py#__init__": [
-      {
-        "symbolId": "models/task_repository.py#__init__",
-        "targetId": "models/task.py#Task",
-        "type": "imports"
-      },
-      {
-        "symbolId": "models/task_repository.py#__init__",
-        "targetId": "models/task_repository.py#__init__",
-        "type": "exports"
-      }
-    ],
-    "models/task_repository.py#create": [
-      {
-        "symbolId": "models/task_repository.py#create",
-        "targetId": "models/task.py#Task",
-        "type": "imports"
-      },
-      {
-        "symbolId": "models/task_repository.py#create",
-        "targetId": "models/task_repository.py#create",
-        "type": "exports"
-      }
-    ],
-    "models/task_repository.py#find_all": [
-      {
-        "symbolId": "models/task_repository.py#find_all",
-        "targetId": "models/task.py#Task",
-        "type": "imports"
-      },
-      {
-        "symbolId": "models/task_repository.py#find_all",
-        "targetId": "models/task_repository.py#find_all",
-        "type": "exports"
-      }
-    ],
-    "models/task_repository.py#find_by_id": [
-      {
-        "symbolId": "models/task_repository.py#find_by_id",
-        "targetId": "models/task.py#Task",
-        "type": "imports"
-      },
-      {
-        "symbolId": "models/task_repository.py#find_by_id",
-        "targetId": "models/task_repository.py#find_by_id",
-        "type": "exports"
-      }
-    ],
-    "models/task_repository.py#update": [
-      {
-        "symbolId": "models/task_repository.py#update",
-        "targetId": "models/task.py#Task",
-        "type": "imports"
-      },
-      {
-        "symbolId": "models/task_repository.py#update",
-        "targetId": "models/task_repository.py#update",
-        "type": "exports"
-      }
-    ],
-    "models/task_repository.py#delete": [
-      {
-        "symbolId": "models/task_repository.py#delete",
-        "targetId": "models/task.py#Task",
-        "type": "imports"
-      },
-      {
-        "symbolId": "models/task_repository.py#delete",
-        "targetId": "models/task_repository.py#delete",
         "type": "exports"
       }
     ],
@@ -337,20 +131,6 @@
       {
         "symbolId": "models/task.py#Task",
         "targetId": "models/task.py#Task",
-        "type": "exports"
-      }
-    ],
-    "models/task.py#__init__": [
-      {
-        "symbolId": "models/task.py#__init__",
-        "targetId": "models/task.py#__init__",
-        "type": "exports"
-      }
-    ],
-    "models/task.py#to_dict": [
-      {
-        "symbolId": "models/task.py#to_dict",
-        "targetId": "models/task.py#to_dict",
         "type": "exports"
       }
     ]

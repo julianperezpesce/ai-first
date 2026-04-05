@@ -99,27 +99,224 @@ function renderTree(node, prefix, lines) {
     }
 }
 /**
+ * Detect frameworks and technologies from file names
+ */
+function detectFrameworksFromFiles(files) {
+    const fileNames = new Set(files.map(f => f.name.toLowerCase()));
+    const filePaths = files.map(f => f.relativePath.toLowerCase());
+    const frameworks = [];
+    // Python frameworks
+    if (fileNames.has("manage.py") || fileNames.has("wsgi.py") || fileNames.has("asgi.py")) {
+        frameworks.push("Django");
+    }
+    if (fileNames.has("app.py") || fileNames.has("main.py")) {
+        frameworks.push("Flask");
+    }
+    if (fileNames.has("__init__.py")) {
+        const pyFiles = files.filter(f => f.extension === "py");
+        if (pyFiles.some(f => f.relativePath.includes("routers") || f.relativePath.includes("routes"))) {
+            frameworks.push("FastAPI");
+        }
+    }
+    // JavaScript/TypeScript frameworks
+    if (fileNames.has("package.json")) {
+        const pkgContent = files.find(f => f.name === "package.json");
+        if (pkgContent) {
+            try {
+                const content = pkgContent.path; // Would need to read file
+            }
+            catch {
+                // Ignore
+            }
+        }
+    }
+    if (fileNames.has("next.config.js") || fileNames.has("next.config.ts")) {
+        frameworks.push("Next.js");
+    }
+    if (fileNames.has("gatsby-config.js") || fileNames.has("gatsby-config.ts")) {
+        frameworks.push("Gatsby");
+    }
+    // Java frameworks
+    if (fileNames.has("pom.xml")) {
+        frameworks.push("Spring Boot");
+    }
+    if (fileNames.has("build.gradle") || fileNames.has("build.gradle.kts")) {
+        frameworks.push("Gradle");
+    }
+    // Go
+    if (fileNames.has("go.mod")) {
+        frameworks.push("Go");
+    }
+    // Ruby
+    if (fileNames.has("gemfile")) {
+        frameworks.push("Ruby on Rails");
+    }
+    // PHP
+    if (fileNames.has("composer.json")) {
+        frameworks.push("PHP/Laravel");
+    }
+    // .NET
+    if (fileNames.has("project.csproj") || fileNames.has("*.csproj")) {
+        frameworks.push(".NET");
+    }
+    // Rust
+    if (fileNames.has("cargo.toml")) {
+        frameworks.push("Rust");
+    }
+    // Salesforce/Apex
+    if (fileNames.has("sfdx-project.json") || fileNames.has("package.xml")) {
+        frameworks.push("Salesforce");
+    }
+    // Check for specific directories
+    if (filePaths.some(p => p.includes("/controllers/") || p.includes("/controller/"))) {
+        if (!frameworks.includes("Express")) {
+            frameworks.push("Express");
+        }
+    }
+    if (filePaths.some(p => p.includes("/services/") || p.includes("/handlers/"))) {
+        if (!frameworks.includes("NestJS")) {
+            frameworks.push("NestJS");
+        }
+    }
+    if (filePaths.some(p => p.includes("/components/") || p.includes("/pages/"))) {
+        if (!frameworks.includes("React")) {
+            frameworks.push("React");
+        }
+    }
+    return frameworks;
+}
+/**
+ * Infer project purpose from detected frameworks and structure
+ */
+function inferProjectPurpose(files, frameworks) {
+    const filePaths = files.map(f => f.relativePath.toLowerCase());
+    const purposes = [];
+    // Detect project type based on frameworks
+    const hasAPI = filePaths.some(p => p.includes("/api/") || p.includes("/controllers/") ||
+        p.includes("/routes/") || p.includes("/endpoints/"));
+    const hasAuth = filePaths.some(p => p.includes("/auth/") || p.includes("/login/") ||
+        p.includes("/jwt/") || p.includes("/session/"));
+    const hasDB = filePaths.some(p => p.includes("/models/") || p.includes("/schemas/") ||
+        p.includes("/repositories/") || p.includes("/db/"));
+    const hasUI = filePaths.some(p => p.includes("/views/") || p.includes("/components/") ||
+        p.includes("/pages/") || p.includes("/screens/"));
+    const isCLI = filePaths.some(p => p.includes("/commands/") || p.includes("/cli/") ||
+        filePaths.some(f => f.endsWith("/main.ts") || f.endsWith("/main.go")));
+    // Build purpose description
+    if (isCLI) {
+        purposes.push("CLI tool");
+    }
+    if (frameworks.includes("Django") || frameworks.includes("Flask") || frameworks.includes("FastAPI")) {
+        if (hasAPI) {
+            purposes.push("REST API");
+        }
+        if (hasAuth) {
+            purposes.push("with JWT authentication");
+        }
+    }
+    if (frameworks.includes("Express") || frameworks.includes("NestJS")) {
+        if (hasAPI) {
+            purposes.push("API server");
+        }
+        if (hasAuth) {
+            purposes.push("with authentication");
+        }
+    }
+    if (frameworks.includes("React") || frameworks.includes("Next.js") || frameworks.includes("Gatsby")) {
+        if (hasAPI) {
+            purposes.push("web application with API backend");
+        }
+        else {
+            purposes.push("web application");
+        }
+    }
+    if (frameworks.includes("Spring Boot")) {
+        purposes.push("Spring Boot application");
+        if (hasAPI) {
+            purposes.push("REST API");
+        }
+    }
+    if (frameworks.includes("Salesforce")) {
+        purposes.push("Salesforce application");
+        if (hasAPI) {
+            purposes.push("with Apex REST endpoints");
+        }
+    }
+    if (frameworks.includes("Ruby on Rails")) {
+        purposes.push("Rails application");
+    }
+    if (frameworks.includes("Go")) {
+        purposes.push("Go service");
+    }
+    if (frameworks.includes("Rust")) {
+        purposes.push("Rust application");
+    }
+    if (frameworks.includes(".NET")) {
+        purposes.push(".NET application");
+    }
+    if (purposes.length === 0) {
+        // Fallback: generic description based on structure
+        if (hasUI) {
+            purposes.push("web application");
+        }
+        else if (hasAPI) {
+            purposes.push("API service");
+        }
+        else {
+            purposes.push("software project");
+        }
+    }
+    // Add framework list
+    const uniqueFrameworks = [...new Set(frameworks)];
+    if (uniqueFrameworks.length > 0) {
+        return `This is a **${uniqueFrameworks.join(", ")}** ${purposes.join(" ")}.`;
+    }
+    return `This is a ${purposes.join(" ")}.`;
+}
+/**
  * Generate summary statistics
  */
 export function generateSummary(files) {
     const lines = [];
-    lines.push("# Repository Summary\n");
+    lines.push("# Repository Summary\n\n");
     const total = files.length;
+    // Detect frameworks
+    const frameworks = detectFrameworksFromFiles(files);
+    // Purpose section - NEW!
+    const purpose = inferProjectPurpose(files, frameworks);
+    lines.push(`## Purpose\n\n${purpose}\n\n`);
+    // Overview section
+    lines.push(`## Overview\n\n`);
+    lines.push(`This repository contains **${total} files** organized into a codebase structure. `);
+    // Detect main language
+    const byExt = groupByExtension(files);
+    const sortedExts = Array.from(byExt.entries()).sort((a, b) => b[1].length - a[1].length);
+    if (sortedExts.length > 0) {
+        const mainExt = sortedExts[0][0];
+        const mainCount = sortedExts[0][1].length;
+        lines.push(`The primary language is **${mainExt}** with ${mainCount} files. `);
+    }
+    // Detect main directories
+    const byDir = groupByDirectory(files);
+    const sortedDirs = Array.from(byDir.entries()).sort((a, b) => b[1].length - a[1].length).slice(0, 3);
+    if (sortedDirs.length > 0) {
+        const mainDirs = sortedDirs.map(([d, f]) => `\`${d}\` (${f.length} files)`).join(", ");
+        lines.push(`Key directories: ${mainDirs}.\n`);
+    }
+    lines.push(`\n## File Statistics\n\n`);
     lines.push(`- **Total files**: ${total}\n`);
     // Count by extension
-    const byExt = groupByExtension(files);
     const extCounts = Array.from(byExt.entries())
         .map(([ext, f]) => `  - .${ext}: ${f.length}`)
         .sort()
         .join("\n");
-    lines.push(`\n## Files by Extension\n${extCounts}\n`);
+    lines.push(`\n### Files by Extension\n${extCounts}\n`);
     // Count by directory
-    const byDir = groupByDirectory(files);
     const dirCounts = Array.from(byDir.entries())
         .map(([dir, f]) => `  - ${dir === "root" ? "(root)" : dir}: ${f.length}`)
         .sort()
         .join("\n");
-    lines.push(`\n## Files by Directory\n${dirCounts}\n`);
+    lines.push(`\n### Files by Directory\n${dirCounts}\n`);
     return lines.join("");
 }
 //# sourceMappingURL=repoMapper.js.map

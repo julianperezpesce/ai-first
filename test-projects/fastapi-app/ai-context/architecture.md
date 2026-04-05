@@ -6,28 +6,20 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `README.md` | Contains 0 files |
-| `ai` | Contains 22 files |
-| `app` | Contains 7 files |
+| `app` | Python implementation |
 
+
+## Components
+
+| Component | Type | Path | Files |
+|-----------|------|------|-------|
+| app | module | `app` | 1 |
 
 ## Module Details
 
-### README.md
-- **Path**: `README.md`
-- **Responsibility**: Contains 0 files
-
-
-### ai
-- **Path**: `ai`
-- **Responsibility**: Contains 22 files
-
-
 ### app
 - **Path**: `app`
-- **Responsibility**: Contains 7 files
-
-
+- **Responsibility**: Python implementation
 
 ## Recommendations
 

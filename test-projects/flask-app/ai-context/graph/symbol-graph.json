@@ -13,7 +13,7 @@
       "name": "api_get_posts",
       "type": "function",
       "file": "app/api/routes.py",
-      "line": 11,
+      "line": 10,
       "export": true
     },
     {
@@ -21,7 +21,7 @@
       "name": "api_get_post",
       "type": "function",
       "file": "app/api/routes.py",
-      "line": 62,
+      "line": 61,
       "export": true
     },
     {
@@ -29,7 +29,7 @@
       "name": "api_get_categories",
       "type": "function",
       "file": "app/api/routes.py",
-      "line": 87,
+      "line": 86,
       "export": true
     },
     {
@@ -37,7 +37,7 @@
       "name": "api_get_tags",
       "type": "function",
       "file": "app/api/routes.py",
-      "line": 107,
+      "line": 106,
       "export": true
     },
     {
@@ -57,27 +57,11 @@
       "export": true
     },
     {
-      "id": "app/auth/forms.py#validate_username",
-      "name": "validate_username",
-      "type": "function",
-      "file": "app/auth/forms.py",
-      "line": 42,
-      "export": true
-    },
-    {
-      "id": "app/auth/forms.py#validate_email",
-      "name": "validate_email",
-      "type": "function",
-      "file": "app/auth/forms.py",
-      "line": 48,
-      "export": true
-    },
-    {
       "id": "app/auth/routes.py#login",
       "name": "login",
       "type": "function",
       "file": "app/auth/routes.py",
-      "line": 14,
+      "line": 13,
       "export": true
     },
     {
@@ -85,7 +69,7 @@
       "name": "logout",
       "type": "function",
       "file": "app/auth/routes.py",
-      "line": 36,
+      "line": 35,
       "export": true
     },
     {
@@ -93,7 +77,7 @@
       "name": "register",
       "type": "function",
       "file": "app/auth/routes.py",
-      "line": 43,
+      "line": 42,
       "export": true
     },
     {
@@ -101,7 +85,7 @@
       "name": "profile",
       "type": "function",
       "file": "app/auth/routes.py",
-      "line": 66,
+      "line": 64,
       "export": true
     },
     {
@@ -110,14 +94,6 @@
       "type": "class",
       "file": "app/blog/forms.py",
       "line": 8,
-      "export": true
-    },
-    {
-      "id": "app/blog/forms.py#__init__",
-      "name": "__init__",
-      "type": "function",
-      "file": "app/blog/forms.py",
-      "line": 19,
       "export": true
     },
     {
@@ -141,7 +117,7 @@
       "name": "create_post",
       "type": "function",
       "file": "app/blog/routes.py",
-      "line": 23,
+      "line": 21,
       "export": true
     },
     {
@@ -149,7 +125,7 @@
       "name": "edit_post",
       "type": "function",
       "file": "app/blog/routes.py",
-      "line": 65,
+      "line": 63,
       "export": true
     },
     {
@@ -157,7 +133,7 @@
       "name": "delete_post",
       "type": "function",
       "file": "app/blog/routes.py",
-      "line": 95,
+      "line": 93,
       "export": true
     },
     {
@@ -165,7 +141,7 @@
       "name": "post",
       "type": "function",
       "file": "app/blog/routes.py",
-      "line": 110,
+      "line": 109,
       "export": true
     },
     {
@@ -173,7 +149,7 @@
       "name": "add_comment",
       "type": "function",
       "file": "app/blog/routes.py",
-      "line": 127,
+      "line": 125,
       "export": true
     },
     {
@@ -181,7 +157,7 @@
       "name": "index",
       "type": "function",
       "file": "app/main/routes.py",
-      "line": 11,
+      "line": 10,
       "export": true
     },
     {
@@ -189,7 +165,7 @@
       "name": "about",
       "type": "function",
       "file": "app/main/routes.py",
-      "line": 25,
+      "line": 24,
       "export": true
     },
     {
@@ -197,7 +173,7 @@
       "name": "post",
       "type": "function",
       "file": "app/main/routes.py",
-      "line": 31,
+      "line": 30,
       "export": true
     },
     {
@@ -205,7 +181,7 @@
       "name": "category",
       "type": "function",
       "file": "app/main/routes.py",
-      "line": 39,
+      "line": 38,
       "export": true
     },
     {
@@ -213,7 +189,7 @@
       "name": "tag",
       "type": "function",
       "file": "app/main/routes.py",
-      "line": 54,
+      "line": 53,
       "export": true
     },
     {
@@ -221,7 +197,7 @@
       "name": "search",
       "type": "function",
       "file": "app/main/routes.py",
-      "line": 69,
+      "line": 68,
       "export": true
     },
     {
@@ -233,75 +209,11 @@
       "export": true
     },
     {
-      "id": "app/models.py#set_password",
-      "name": "set_password",
-      "type": "function",
-      "file": "app/models.py",
-      "line": 36,
-      "export": true
-    },
-    {
-      "id": "app/models.py#check_password",
-      "name": "check_password",
-      "type": "function",
-      "file": "app/models.py",
-      "line": 40,
-      "export": true
-    },
-    {
-      "id": "app/models.py#update_last_seen",
-      "name": "update_last_seen",
-      "type": "function",
-      "file": "app/models.py",
-      "line": 44,
-      "export": true
-    },
-    {
-      "id": "app/models.py#__repr__",
-      "name": "__repr__",
-      "type": "function",
-      "file": "app/models.py",
-      "line": 49,
-      "export": true
-    },
-    {
       "id": "app/models.py#Post",
       "name": "Post",
       "type": "class",
       "file": "app/models.py",
       "line": 53,
-      "export": true
-    },
-    {
-      "id": "app/models.py#__repr__",
-      "name": "__repr__",
-      "type": "function",
-      "file": "app/models.py",
-      "line": 83,
-      "export": true
-    },
-    {
-      "id": "app/models.py#publish",
-      "name": "publish",
-      "type": "function",
-      "file": "app/models.py",
-      "line": 86,
-      "export": true
-    },
-    {
-      "id": "app/models.py#unpublish",
-      "name": "unpublish",
-      "type": "function",
-      "file": "app/models.py",
-      "line": 92,
-      "export": true
-    },
-    {
-      "id": "app/models.py#increment_view",
-      "name": "increment_view",
-      "type": "function",
-      "file": "app/models.py",
-      "line": 98,
       "export": true
     },
     {
@@ -313,27 +225,11 @@
       "export": true
     },
     {
-      "id": "app/models.py#__repr__",
-      "name": "__repr__",
-      "type": "function",
-      "file": "app/models.py",
-      "line": 130,
-      "export": true
-    },
-    {
       "id": "app/models.py#Category",
       "name": "Category",
       "type": "class",
       "file": "app/models.py",
       "line": 134,
-      "export": true
-    },
-    {
-      "id": "app/models.py#__repr__",
-      "name": "__repr__",
-      "type": "function",
-      "file": "app/models.py",
-      "line": 148,
       "export": true
     },
     {
@@ -345,19 +241,11 @@
       "export": true
     },
     {
-      "id": "app/models.py#__repr__",
-      "name": "__repr__",
-      "type": "function",
-      "file": "app/models.py",
-      "line": 162,
-      "export": true
-    },
-    {
       "id": "app/models.py#load_user",
       "name": "load_user",
       "type": "function",
       "file": "app/models.py",
-      "line": 175,
+      "line": 174,
       "export": true
     },
     {
@@ -369,90 +257,12 @@
       "export": true
     },
     {
-      "id": "config.py#SECRET_KEY",
-      "name": "SECRET_KEY",
-      "type": "const",
-      "file": "config.py",
-      "line": 13
-    },
-    {
-      "id": "config.py#SQLALCHEMY_DATABASE_URI",
-      "name": "SQLALCHEMY_DATABASE_URI",
-      "type": "const",
-      "file": "config.py",
-      "line": 14
-    },
-    {
-      "id": "config.py#SQLALCHEMY_TRACK_MODIFICATIONS",
-      "name": "SQLALCHEMY_TRACK_MODIFICATIONS",
-      "type": "const",
-      "file": "config.py",
-      "line": 17
-    },
-    {
-      "id": "config.py#MAIL_SERVER",
-      "name": "MAIL_SERVER",
-      "type": "const",
-      "file": "config.py",
-      "line": 20
-    },
-    {
-      "id": "config.py#MAIL_PORT",
-      "name": "MAIL_PORT",
-      "type": "const",
-      "file": "config.py",
-      "line": 21
-    },
-    {
-      "id": "config.py#MAIL_USE_TLS",
-      "name": "MAIL_USE_TLS",
-      "type": "const",
-      "file": "config.py",
-      "line": 22
-    },
-    {
-      "id": "config.py#MAIL_USERNAME",
-      "name": "MAIL_USERNAME",
-      "type": "const",
-      "file": "config.py",
-      "line": 27
-    },
-    {
-      "id": "config.py#MAIL_PASSWORD",
-      "name": "MAIL_PASSWORD",
-      "type": "const",
-      "file": "config.py",
-      "line": 28
-    },
-    {
-      "id": "config.py#POSTS_PER_PAGE",
-      "name": "POSTS_PER_PAGE",
-      "type": "const",
-      "file": "config.py",
-      "line": 31
-    },
-    {
-      "id": "config.py#init_app",
-      "name": "init_app",
-      "type": "function",
-      "file": "config.py",
-      "line": 34,
-      "export": true
-    },
-    {
       "id": "config.py#DevelopmentConfig",
       "name": "DevelopmentConfig",
       "type": "class",
       "file": "config.py",
       "line": 39,
       "export": true
-    },
-    {
-      "id": "config.py#DEBUG",
-      "name": "DEBUG",
-      "type": "const",
-      "file": "config.py",
-      "line": 42
     },
     {
       "id": "config.py#TestingConfig",
@@ -463,40 +273,12 @@
       "export": true
     },
     {
-      "id": "config.py#TESTING",
-      "name": "TESTING",
-      "type": "const",
-      "file": "config.py",
-      "line": 48
-    },
-    {
-      "id": "config.py#SQLALCHEMY_DATABASE_URI",
-      "name": "SQLALCHEMY_DATABASE_URI",
-      "type": "const",
-      "file": "config.py",
-      "line": 49
-    },
-    {
-      "id": "config.py#WTF_CSRF_ENABLED",
-      "name": "WTF_CSRF_ENABLED",
-      "type": "const",
-      "file": "config.py",
-      "line": 50
-    },
-    {
       "id": "config.py#ProductionConfig",
       "name": "ProductionConfig",
       "type": "class",
       "file": "config.py",
       "line": 53,
       "export": true
-    },
-    {
-      "id": "config.py#DEBUG",
-      "name": "DEBUG",
-      "type": "const",
-      "file": "config.py",
-      "line": 56
     }
   ],
   "relationships": [
@@ -532,16 +314,6 @@
     },
     {
       "symbolId": "app/auth/forms.py#RegistrationForm",
-      "targetId": "app/models.py#User",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/auth/forms.py#validate_username",
-      "targetId": "app/models.py#User",
-      "type": "imports"
-    },
-    {
-      "symbolId": "app/auth/forms.py#validate_email",
       "targetId": "app/models.py#User",
       "type": "imports"
     },
@@ -711,16 +483,6 @@
       "type": "exports"
     },
     {
-      "symbolId": "app/auth/forms.py#validate_username",
-      "targetId": "app/auth/forms.py#validate_username",
-      "type": "exports"
-    },
-    {
-      "symbolId": "app/auth/forms.py#validate_email",
-      "targetId": "app/auth/forms.py#validate_email",
-      "type": "exports"
-    },
-    {
       "symbolId": "app/auth/routes.py#login",
       "targetId": "app/auth/routes.py#login",
       "type": "exports"
@@ -743,11 +505,6 @@
     {
       "symbolId": "app/blog/forms.py#PostForm",
       "targetId": "app/blog/forms.py#PostForm",
-      "type": "exports"
-    },
-    {
-      "symbolId": "app/blog/forms.py#__init__",
-      "targetId": "app/blog/forms.py#__init__",
       "type": "exports"
     },
     {
@@ -821,48 +578,8 @@
       "type": "exports"
     },
     {
-      "symbolId": "app/models.py#set_password",
-      "targetId": "app/models.py#set_password",
-      "type": "exports"
-    },
-    {
-      "symbolId": "app/models.py#check_password",
-      "targetId": "app/models.py#check_password",
-      "type": "exports"
-    },
-    {
-      "symbolId": "app/models.py#update_last_seen",
-      "targetId": "app/models.py#update_last_seen",
-      "type": "exports"
-    },
-    {
-      "symbolId": "app/models.py#__repr__",
-      "targetId": "app/models.py#__repr__",
-      "type": "exports"
-    },
-    {
       "symbolId": "app/models.py#Post",
       "targetId": "app/models.py#Post",
-      "type": "exports"
-    },
-    {
-      "symbolId": "app/models.py#__repr__",
-      "targetId": "app/models.py#__repr__",
-      "type": "exports"
-    },
-    {
-      "symbolId": "app/models.py#publish",
-      "targetId": "app/models.py#publish",
-      "type": "exports"
-    },
-    {
-      "symbolId": "app/models.py#unpublish",
-      "targetId": "app/models.py#unpublish",
-      "type": "exports"
-    },
-    {
-      "symbolId": "app/models.py#increment_view",
-      "targetId": "app/models.py#increment_view",
       "type": "exports"
     },
     {
@@ -871,28 +588,13 @@
       "type": "exports"
     },
     {
-      "symbolId": "app/models.py#__repr__",
-      "targetId": "app/models.py#__repr__",
-      "type": "exports"
-    },
-    {
       "symbolId": "app/models.py#Category",
       "targetId": "app/models.py#Category",
       "type": "exports"
     },
     {
-      "symbolId": "app/models.py#__repr__",
-      "targetId": "app/models.py#__repr__",
-      "type": "exports"
-    },
-    {
       "symbolId": "app/models.py#Tag",
       "targetId": "app/models.py#Tag",
-      "type": "exports"
-    },
-    {
-      "symbolId": "app/models.py#__repr__",
-      "targetId": "app/models.py#__repr__",
       "type": "exports"
     },
     {
@@ -903,11 +605,6 @@
     {
       "symbolId": "config.py#Config",
       "targetId": "config.py#Config",
-      "type": "exports"
-    },
-    {
-      "symbolId": "config.py#init_app",
-      "targetId": "config.py#init_app",
       "type": "exports"
     },
     {
@@ -1008,30 +705,6 @@
       {
         "symbolId": "app/auth/forms.py#RegistrationForm",
         "targetId": "app/auth/forms.py#RegistrationForm",
-        "type": "exports"
-      }
-    ],
-    "app/auth/forms.py#validate_username": [
-      {
-        "symbolId": "app/auth/forms.py#validate_username",
-        "targetId": "app/models.py#User",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/auth/forms.py#validate_username",
-        "targetId": "app/auth/forms.py#validate_username",
-        "type": "exports"
-      }
-    ],
-    "app/auth/forms.py#validate_email": [
-      {
-        "symbolId": "app/auth/forms.py#validate_email",
-        "targetId": "app/models.py#User",
-        "type": "imports"
-      },
-      {
-        "symbolId": "app/auth/forms.py#validate_email",
-        "targetId": "app/auth/forms.py#validate_email",
         "type": "exports"
       }
     ],
@@ -1284,13 +957,6 @@
         "type": "exports"
       }
     ],
-    "app/blog/forms.py#__init__": [
-      {
-        "symbolId": "app/blog/forms.py#__init__",
-        "targetId": "app/blog/forms.py#__init__",
-        "type": "exports"
-      }
-    ],
     "app/blog/forms.py#CommentForm": [
       {
         "symbolId": "app/blog/forms.py#CommentForm",
@@ -1305,79 +971,10 @@
         "type": "exports"
       }
     ],
-    "app/models.py#set_password": [
-      {
-        "symbolId": "app/models.py#set_password",
-        "targetId": "app/models.py#set_password",
-        "type": "exports"
-      }
-    ],
-    "app/models.py#check_password": [
-      {
-        "symbolId": "app/models.py#check_password",
-        "targetId": "app/models.py#check_password",
-        "type": "exports"
-      }
-    ],
-    "app/models.py#update_last_seen": [
-      {
-        "symbolId": "app/models.py#update_last_seen",
-        "targetId": "app/models.py#update_last_seen",
-        "type": "exports"
-      }
-    ],
-    "app/models.py#__repr__": [
-      {
-        "symbolId": "app/models.py#__repr__",
-        "targetId": "app/models.py#__repr__",
-        "type": "exports"
-      },
-      {
-        "symbolId": "app/models.py#__repr__",
-        "targetId": "app/models.py#__repr__",
-        "type": "exports"
-      },
-      {
-        "symbolId": "app/models.py#__repr__",
-        "targetId": "app/models.py#__repr__",
-        "type": "exports"
-      },
-      {
-        "symbolId": "app/models.py#__repr__",
-        "targetId": "app/models.py#__repr__",
-        "type": "exports"
-      },
-      {
-        "symbolId": "app/models.py#__repr__",
-        "targetId": "app/models.py#__repr__",
-        "type": "exports"
-      }
-    ],
     "app/models.py#Post": [
       {
         "symbolId": "app/models.py#Post",
         "targetId": "app/models.py#Post",
-        "type": "exports"
-      }
-    ],
-    "app/models.py#publish": [
-      {
-        "symbolId": "app/models.py#publish",
-        "targetId": "app/models.py#publish",
-        "type": "exports"
-      }
-    ],
-    "app/models.py#unpublish": [
-      {
-        "symbolId": "app/models.py#unpublish",
-        "targetId": "app/models.py#unpublish",
-        "type": "exports"
-      }
-    ],
-    "app/models.py#increment_view": [
-      {
-        "symbolId": "app/models.py#increment_view",
-        "targetId": "app/models.py#increment_view",
         "type": "exports"
       }
     ],
@@ -1413,13 +1010,6 @@
       {
         "symbolId": "config.py#Config",
         "targetId": "config.py#Config",
-        "type": "exports"
-      }
-    ],
-    "config.py#init_app": [
-      {
-        "symbolId": "config.py#init_app",
-        "targetId": "config.py#init_app",
         "type": "exports"
       }
     ],

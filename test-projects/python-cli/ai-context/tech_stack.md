@@ -1,11 +1,9 @@
 # Technology Stack
 
-**Languages**: Python, Markdown, JSON
+**Languages**: Python
 
 ## Languages
 - Python
-- Markdown
-- JSON
 
 ## Frameworks
 - None detected

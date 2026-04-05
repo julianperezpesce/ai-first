@@ -1,6 +1,12 @@
 {
   "modules": [
     {
+      "name": ".opencode",
+      "paths": [
+        ".opencode/mcp.json"
+      ]
+    },
+    {
       "name": "blog",
       "paths": [
         "blog/__init__.py",

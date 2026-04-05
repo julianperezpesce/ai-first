@@ -5,8 +5,9 @@
     "app/Http/Controllers/Api/CommentController.php",
     "app/Models/Comment.php"
   ],
-  "depth": 1,
+  "depth": 2,
   "layers": [
-    "api"
+    "api",
+    "domain"
   ]
 }

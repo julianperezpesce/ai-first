@@ -1,169 +1,81 @@
 {
   "files": {
+    ".opencode/mcp.json": {
+      "hash": "7f343480cd000d2c0b90ed583b9cd330",
+      "mtime": 1775423177385.0525
+    },
     "README.md": {
       "hash": "2b099275e8f719d2a008071b600752a7",
-      "mtime": 1773847503082.22
-    },
-    "ai/ai_context.md": {
-      "hash": "80d8f629165bedf465c5a4c6f835331f",
-      "mtime": 1773861708617.3313
-    },
-    "ai/ai_rules.md": {
-      "hash": "d2b7ddc70e63ad287b892635b384f5ae",
-      "mtime": 1773861708617.3313
-    },
-    "ai/architecture.md": {
-      "hash": "83ecb99ada1f854a47092136f1e3375a",
-      "mtime": 1773861708608.3313
-    },
-    "ai/cache.json": {
-      "hash": "29106f930a901a1723c2c25d22e43f31",
-      "mtime": 1773847532764.63
-    },
-    "ai/context/flows/views.json": {
-      "hash": "a914f6473aa639c9261d9491913a5440",
-      "mtime": 1773861708619.3315
-    },
-    "ai/conventions.md": {
-      "hash": "d11ac646a8916e3c6cc376f610368317",
-      "mtime": 1773861708611.3313
-    },
-    "ai/dependencies.json": {
-      "hash": "ef1c6db344eea60efd35525d7edfbdc5",
-      "mtime": 1773861708615.3313
-    },
-    "ai/entrypoints.md": {
-      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
-      "mtime": 1773861708610.3313
-    },
-    "ai/files.json": {
-      "hash": "41fa4833d5f289c1eeb59d8cf9a39e47",
-      "mtime": 1773861708707.3328
-    },
-    "ai/graph/module-graph.json": {
-      "hash": "b226564aa5093d79889b9d70969a7018",
-      "mtime": 1773861708697.3328
-    },
-    "ai/graph/symbol-graph.json": {
-      "hash": "b1bd34e7d1007ce43b7fe133c1c2ba93",
-      "mtime": 1773861708707.3328
-    },
-    "ai/graph/symbol-references.json": {
-      "hash": "99914b932bd37a50b983c5e7c90ae93b",
-      "mtime": 1773861708707.3328
-    },
-    "ai/index-state.json": {
-      "hash": "bfc0668aa599dec27819bd72c7bfe674",
-      "mtime": 1773854929728.3672
-    },
-    "ai/modules.json": {
-      "hash": "cba831f3ad2e9f04973d35fad2f07b55",
-      "mtime": 1773861708687.3325
-    },
-    "ai/project.json": {
-      "hash": "4998af676768b4699bde7b0f13a209bb",
-      "mtime": 1773861708619.3315
-    },
-    "ai/repo-map.json": {
-      "hash": "aebfe0546551a708a7d16f89c5da2c7b",
-      "mtime": 1773861708688.3325
-    },
-    "ai/repo_map.json": {
-      "hash": "71959a6f4c6326dc065661e0ee89bd43",
-      "mtime": 1773861708607.3313
-    },
-    "ai/repo_map.md": {
-      "hash": "3a12588f63d086c3f93d5a1c559e6b1b",
-      "mtime": 1773861708606.3313
-    },
-    "ai/schema.json": {
-      "hash": "64d7066e2b581ecad488b78bf5f2a248",
-      "mtime": 1773861708619.3315
-    },
-    "ai/summary.md": {
-      "hash": "456491ddfdf18af4e2258c280a63fc8d",
-      "mtime": 1773861708607.3313
-    },
-    "ai/symbols.json": {
-      "hash": "a5f3112d44cfa4dc256b75bda253df0e",
-      "mtime": 1773861708613.3313
-    },
-    "ai/tech_stack.md": {
-      "hash": "876902a6b64c33c4d65f658e9fd2bb27",
-      "mtime": 1773861708610.3313
-    },
-    "ai/tools.json": {
-      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
-      "mtime": 1773861708619.3315
+      "mtime": 1773943380046.4495
     },
     "blog/__init__.py": {
       "hash": "d41d8cd98f00b204e9800998ecf8427e",
-      "mtime": 1773847262320.9067
+      "mtime": 1773943380048.4495
     },
     "blog/admin.py": {
       "hash": "ef8b15c55e00e9ef835b4cc1a3ae8307",
-      "mtime": 1773847452965.5286
+      "mtime": 1773943380049.3984
     },
     "blog/models.py": {
       "hash": "11cf32800211bc954798a3775a0c1429",
-      "mtime": 1773847281082.164
+      "mtime": 1773943380049.3984
     },
     "blog/serializers.py": {
       "hash": "efb817010fdd412250c980c9d7b738a2",
-      "mtime": 1773847304708.4883
+      "mtime": 1773943380049.3984
     },
     "blog/urls.py": {
       "hash": "235d6b0d52e581825c76a37dba5d46f4",
-      "mtime": 1773847343339.019
+      "mtime": 1773943380049.3984
     },
     "blog/views.py": {
       "hash": "b51bcfc62e8a9cc4e36d6e04d0d66ac2",
-      "mtime": 1773847331379.8545
+      "mtime": 1773943380049.3984
     },
     "django_app/__init__.py": {
       "hash": "d41d8cd98f00b204e9800998ecf8427e",
-      "mtime": 1773847262320.9067
+      "mtime": 1773943380049.3984
     },
     "django_app/settings.py": {
       "hash": "ec0ff12dd114d0f70b04dee4e6753ded",
-      "mtime": 1773847230399.4692
+      "mtime": 1773943380049.6467
     },
     "django_app/urls.py": {
       "hash": "646e11e6cbfc20b5a1c457bd04058b6f",
-      "mtime": 1773847241419.62
+      "mtime": 1773943380049.6467
     },
     "django_app/wsgi.py": {
       "hash": "8997e7b6236b6d5cc5ab76625293b138",
-      "mtime": 1773847252217.768
+      "mtime": 1773943380049.6467
     },
     "manage.py": {
       "hash": "557480f24dd7cddb10ad7fdcf39b6c79",
-      "mtime": 1773847204930.1206
+      "mtime": 1773943380049.6467
     },
     "users/__init__.py": {
       "hash": "d41d8cd98f00b204e9800998ecf8427e",
-      "mtime": 1773847262320.9067
+      "mtime": 1773943380049.6467
     },
     "users/admin.py": {
       "hash": "3a42200ccb8543463198e6df6bbf3601",
-      "mtime": 1773847468180.7383
+      "mtime": 1773943380049.8777
     },
     "users/models.py": {
       "hash": "861e708ed26ccbcb76365faf6d540ac6",
-      "mtime": 1773847363660.2983
+      "mtime": 1773943380049.8777
     },
     "users/serializers.py": {
       "hash": "709f852da00f6f58d0b9cdb84bb7fe24",
-      "mtime": 1773847389572.655
+      "mtime": 1773943380049.8777
     },
     "users/urls.py": {
       "hash": "c331ed123fa4e1121d48eead9befbb0d",
-      "mtime": 1773847438434.3281
+      "mtime": 1773943380049.8777
     },
     "users/views.py": {
       "hash": "91fa1403cd82ec70898d487250d9673b",
-      "mtime": 1773847426896.1692
+      "mtime": 1773943380049.8777
     }
   },
-  "lastIndexed": "2026-03-18T19:21:48.709Z"
+  "lastIndexed": "2026-04-05T21:17:58.867Z"
 }

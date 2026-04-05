@@ -9,8 +9,6 @@
     "app/api/routes.py#api_get_tags",
     "app/auth/forms.py#LoginForm",
     "app/auth/forms.py#RegistrationForm",
-    "app/auth/forms.py#validate_username",
-    "app/auth/forms.py#validate_email",
     "app/auth/routes.py#login",
     "app/auth/routes.py#logout",
     "app/auth/routes.py#register",

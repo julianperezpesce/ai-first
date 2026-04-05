@@ -10,74 +10,136 @@
       }
     },
     {
-      "id": "add_",
+      "id": "add",
       "type": "flow",
-      "label": "add_",
+      "label": "add",
       "metadata": {
         "entrypoint": "cli/add_command.py",
         "fileCount": 1
       }
     },
     {
-      "id": "list_",
+      "id": "init",
       "type": "flow",
-      "label": "list_",
+      "label": "init",
+      "metadata": {
+        "entrypoint": "cli/__init__.py",
+        "fileCount": 2
+      }
+    },
+    {
+      "id": "list",
+      "type": "flow",
+      "label": "list",
       "metadata": {
         "entrypoint": "cli/list_command.py",
         "fileCount": 1
       }
     },
     {
-      "id": "remove_",
+      "id": "remove",
       "type": "flow",
-      "label": "remove_",
+      "label": "remove",
       "metadata": {
         "entrypoint": "cli/remove_command.py",
         "fileCount": 1
+      }
+    },
+    {
+      "id": "task",
+      "type": "flow",
+      "label": "task",
+      "metadata": {
+        "entrypoint": "models/task.py",
+        "fileCount": 1
+      }
+    },
+    {
+      "id": "task_repository",
+      "type": "flow",
+      "label": "task_repository",
+      "metadata": {
+        "entrypoint": "models/task_repository.py",
+        "fileCount": 3
       }
     }
   ],
   "edges": [
     {
       "from": "cli",
-      "to": "add_",
+      "to": "add",
       "type": "contains"
     },
     {
       "from": "cli",
-      "to": "list_",
+      "to": "init",
       "type": "contains"
     },
     {
       "from": "cli",
-      "to": "remove_",
+      "to": "list",
       "type": "contains"
     },
     {
-      "from": "add_",
+      "from": "cli",
+      "to": "remove",
+      "type": "contains"
+    },
+    {
+      "from": "add",
       "to": "cli/add_command.py",
       "type": "implements"
     },
     {
-      "from": "list_",
+      "from": "init",
+      "to": "cli/__init__.py",
+      "type": "implements"
+    },
+    {
+      "from": "init",
+      "to": "models/__init__.py",
+      "type": "implements"
+    },
+    {
+      "from": "list",
       "to": "cli/list_command.py",
       "type": "implements"
     },
     {
-      "from": "remove_",
+      "from": "remove",
       "to": "cli/remove_command.py",
+      "type": "implements"
+    },
+    {
+      "from": "task",
+      "to": "models/task.py",
+      "type": "implements"
+    },
+    {
+      "from": "task_repository",
+      "to": "models/task_repository.py",
+      "type": "implements"
+    },
+    {
+      "from": "task_repository",
+      "to": "models/task.py",
+      "type": "implements"
+    },
+    {
+      "from": "task_repository",
+      "to": "datetime.py",
       "type": "implements"
     }
   ],
   "metadata": {
-    "generated": "2026-03-18T19:21:53.508Z",
+    "generated": "2026-04-05T21:18:26.717Z",
     "sources": [
       "features",
       "flows",
       "symbols",
       "dependencies"
     ],
-    "nodeCount": 4,
-    "edgeCount": 6
+    "nodeCount": 7,
+    "edgeCount": 13
   }
 }

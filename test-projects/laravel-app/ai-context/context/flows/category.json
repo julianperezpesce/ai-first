@@ -5,8 +5,9 @@
     "app/Http/Controllers/Api/CategoryController.php",
     "app/Models/Category.php"
   ],
-  "depth": 1,
+  "depth": 2,
   "layers": [
-    "api"
+    "api",
+    "domain"
   ]
 }

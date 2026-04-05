@@ -2,124 +2,36 @@
   "files": {
     "README.md": {
       "hash": "bf26100b42bb769b5067306a5fb0a830",
-      "mtime": 1773848160010.3352
-    },
-    "ai/ai_context.md": {
-      "hash": "ae75965ab10eb1908719b0785e40e1a1",
-      "mtime": 1773861710066.3542
-    },
-    "ai/ai_rules.md": {
-      "hash": "d2b7ddc70e63ad287b892635b384f5ae",
-      "mtime": 1773861710065.3542
-    },
-    "ai/architecture.md": {
-      "hash": "fd551b5672ab8b719e06455a85718066",
-      "mtime": 1773861710058.3542
-    },
-    "ai/cache.json": {
-      "hash": "429adfe1177228af3779a24147bc7e1b",
-      "mtime": 1773848188957.7383
-    },
-    "ai/conventions.md": {
-      "hash": "d11ac646a8916e3c6cc376f610368317",
-      "mtime": 1773861710060.3542
-    },
-    "ai/dependencies.json": {
-      "hash": "246c5a632d3afd7fd186dc0f028157f6",
-      "mtime": 1773861710064.3542
-    },
-    "ai/entrypoints.md": {
-      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
-      "mtime": 1773861710060.3542
-    },
-    "ai/files.json": {
-      "hash": "734d13fa206aea9e736eb50badde4c23",
-      "mtime": 1773861710144.3555
-    },
-    "ai/graph/module-graph.json": {
-      "hash": "dccb5b1211bf9c438fefd949ef8d280d",
-      "mtime": 1773861710135.3555
-    },
-    "ai/graph/symbol-graph.json": {
-      "hash": "dacfe5d47c55c042e7a83e970b975fd2",
-      "mtime": 1773861710144.3555
-    },
-    "ai/graph/symbol-references.json": {
-      "hash": "1cac27d66672fe0c2cf2c0f030e38795",
-      "mtime": 1773861710144.3555
-    },
-    "ai/index-state.json": {
-      "hash": "140a19ce26a2a62352b6eb6457d91fc5",
-      "mtime": 1773854929729.0337
-    },
-    "ai/modules.json": {
-      "hash": "1c7630ab9b91c57c6cb9ccb384cc3f4e",
-      "mtime": 1773861710133.3555
-    },
-    "ai/project.json": {
-      "hash": "29b067d118acceb17e83694360d27fe6",
-      "mtime": 1773861710068.3542
-    },
-    "ai/repo-map.json": {
-      "hash": "c64c668b71846bc29a16100539b84548",
-      "mtime": 1773861710133.3555
-    },
-    "ai/repo_map.json": {
-      "hash": "61358628f0bbd8e108fdca092a8a09cc",
-      "mtime": 1773861710057.3542
-    },
-    "ai/repo_map.md": {
-      "hash": "9a522402572988daf8913fe6ad4fed1b",
-      "mtime": 1773861710056.3542
-    },
-    "ai/schema.json": {
-      "hash": "2b1eabb6aae9b5fe6431d4bcff158d4a",
-      "mtime": 1773861710068.3542
-    },
-    "ai/summary.md": {
-      "hash": "2599e048b52f161bbe99c102fa0cc7db",
-      "mtime": 1773861710057.3542
-    },
-    "ai/symbols.json": {
-      "hash": "a89ac8114a5482c6128299186c367207",
-      "mtime": 1773861710062.3542
-    },
-    "ai/tech_stack.md": {
-      "hash": "876902a6b64c33c4d65f658e9fd2bb27",
-      "mtime": 1773861710059.3542
-    },
-    "ai/tools.json": {
-      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
-      "mtime": 1773861710068.3542
+      "mtime": 1773943380050.1243
     },
     "app/database.py": {
       "hash": "119e69e1cbb98dd5dbad6dd6667c31c8",
-      "mtime": 1773847938779.2578
+      "mtime": 1773943380051.48
     },
     "app/dependencies.py": {
       "hash": "a4bcf7c973d54dfba67718f52c0d1e9b",
-      "mtime": 1773848033913.5806
+      "mtime": 1773943380052.9202
     },
     "app/main.py": {
       "hash": "19a812c3ee021a6e96bdf3aee822ac95",
-      "mtime": 1773848130927.9304
+      "mtime": 1773943380052.9202
     },
     "app/models.py": {
       "hash": "a246bcc28f34e2ea398115358f06ec1e",
-      "mtime": 1773847967580.6582
+      "mtime": 1773943380052.9202
     },
     "app/routers/auth.py": {
       "hash": "7f51218c007b8f521b149f0801d8b145",
-      "mtime": 1773848061086.9585
+      "mtime": 1773943380052.9202
     },
     "app/routers/posts.py": {
       "hash": "f8db1a2d760c7e611af7c610dbab4162",
-      "mtime": 1773848113520.6882
+      "mtime": 1773943380053.1409
     },
     "app/schemas.py": {
       "hash": "4049102356e992bc2c4442d589cd2ced",
-      "mtime": 1773848005561.1863
+      "mtime": 1773943380053.1409
     }
   },
-  "lastIndexed": "2026-03-18T19:21:50.145Z"
+  "lastIndexed": "2026-04-05T21:18:04.804Z"
 }

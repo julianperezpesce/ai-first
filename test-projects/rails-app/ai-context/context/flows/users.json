@@ -1,5 +1,5 @@
 {
-  "name": "users_",
+  "name": "users",
   "entrypoint": "app/controllers/api/users_controller.rb",
   "files": [
     "app/controllers/api/users_controller.rb"

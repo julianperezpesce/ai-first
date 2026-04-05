@@ -4,6 +4,8 @@
   "files": [
     "src/pages/UsersPage.tsx"
   ],
-  "depth": 0,
-  "layers": []
+  "depth": 1,
+  "layers": [
+    "api"
+  ]
 }
