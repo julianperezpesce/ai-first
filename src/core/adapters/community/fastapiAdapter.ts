@@ -4,13 +4,18 @@
  * Community adapter for Python FastAPI projects
  */
 
-import { createAdapter, fileSignal, directorySignal, layerRule } from '../sdk.js';
+import { createAdapter, fileSignal, contentSignal, layerRule } from '../sdk.js';
 
 export const fastapiAdapter = createAdapter({
   name: 'fastapi',
   displayName: 'FastAPI',
   
   detectionSignals: [
+    contentSignal('*.py', 'from fastapi import'),
+    contentSignal('*.py', 'import fastapi'),
+    contentSignal('*.py', 'FastAPI('),
+    fileSignal('pyproject.toml'),
+    fileSignal('requirements.txt')
   ],
   
   featureRoots: [
