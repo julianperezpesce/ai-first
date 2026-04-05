@@ -59,6 +59,47 @@ All notable changes to `ai-first` will be documented in this file.
 
 All 22 projects passing with score ≥ 3.5
 
+## [1.3.9-2] - 2026-04-05
+
+### 📝 Content Quality Improvements
+
+**Branch:** `1.3.9-2`
+
+#### ✨ New Features
+
+- **Purpose section in summary.md** - `generateSummary()` now adds `## Purpose` section
+  - Detects frameworks from file names (manage.py → Django, app.py → Flask, etc.)
+  - Infers project purpose based on detected frameworks and structure
+  - Example output: "This is a **Django** REST API for blog posts with JWT authentication"
+
+- **Components section in architecture.md** - `generateArchitectureFile()` now adds `## Components` table
+  - Table format: Component | Type | Path | Files
+  - Provides quick overview of all modules before detailed section
+
+- **Improved generateDescription()** - Avoids generic phrases like "A REST API application with X classes"
+  - Uses entrypoints to infer specific project purpose
+  - Falls back to architectural pattern if no entrypoints available
+
+#### 📊 Evaluator Results
+
+| Project | Before | After | Δ |
+|---------|--------|-------|---|
+| django-app | 4.41 | 4.55 | +0.14 |
+| fastapi-app | 4.18 | 4.32 | +0.14 |
+| flask-app | 3.64 | 3.77 | +0.13 |
+| laravel-app | 4.35 | 4.50 | +0.15 |
+| rails-app | 3.75 | 3.90 | +0.15 |
+| **Average** | **4.17** | **4.28** | **+0.11** |
+
+#### 📋 Pending Suggestions (for v1.3.10)
+
+- API contracts feature (Express/NestJS/Spring/FastAPI/Django)
+- Framework-specific instructions (Django, Rails, Laravel, Express, NestJS, Spring, FastAPI)
+- Entry points with ### headers
+- Generic module descriptions replacement
+
+See [docs/planning/done/evaluator-suggestions-1.3.9.md](./docs/planning/done/evaluator-suggestions-1.3.9.md) for full list.
+
 ## [1.3.9] - 2026-03-30
 
 ### 🚀 MCP Server Fixes & Improvements
