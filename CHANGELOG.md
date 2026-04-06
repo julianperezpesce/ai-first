@@ -6,6 +6,43 @@ All notable changes to `ai-first` will be documented in this file.
 
 ## [Unreleased]
 
+## [1.3.10] - 2026-04-05
+
+### 🎯 Framework Instructions & API Contracts
+
+**Branch:** `1.3.10`
+
+#### ✨ New Features
+
+- **Framework Instructions Generator** - New `src/analyzers/frameworkInstructions.ts`
+  - Generates framework-specific instructions for ai_rules.md
+  - Supports: Django, Rails, Laravel, Express.js, NestJS, Spring Boot, FastAPI, Flask
+  - Includes: management commands, ORM patterns, routing conventions, DI patterns, testing guidelines
+
+- **API Contracts Generator** - New `src/analyzers/apiContracts.ts`
+  - Documents API endpoints with request/response schemas
+  - Supports: Express, NestJS, Spring Boot, FastAPI, Django REST Framework
+  - Extracts: HTTP methods, paths, handlers, schemas
+
+- **Enhanced Module Descriptions** - Improved `inferModuleResponsibility()` in `src/analyzers/architecture.ts`
+  - Detects domain keywords (user, auth, order, product, payment, etc.)
+  - Generates specific descriptions: "User management API" instead of "API endpoints"
+  - 17 domain pattern categories added
+
+- **Entrypoints Format Upgrade** - Updated `generateEntrypointsFile()` in `src/analyzers/entrypoints.ts`
+  - Changed from table format to header-per-entry format
+  - Each entry now uses `####` header with bullet points
+  - Better readability and AI parsing
+
+#### 🧪 Testing
+
+- **All 1089 tests passing** (+13 new tests for new features)
+- Build compiles without errors
+
+#### 📋 Target
+
+- Evaluator score target: >4.5/5.0
+
 ## [1.3.9-1] - 2026-04-05
 
 ### 🐛 Entrypoint Detection Fixes

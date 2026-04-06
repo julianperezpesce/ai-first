@@ -1,6 +1,6 @@
 {
   "name": "laravel-app",
-  "rootDir": "test-projects/laravel-app",
+  "rootDir": "test-projects/laravel-app/",
   "features": [
     "app"
   ],
@@ -14,5 +14,5 @@
   ],
   "languages": [],
   "frameworks": [],
-  "generatedAt": "2026-04-05T21:18:15.779Z"
+  "generatedAt": "2026-04-05T23:59:34.671Z"
 }

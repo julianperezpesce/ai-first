@@ -1,6 +1,6 @@
 {
   "name": "nestjs-backend",
-  "rootDir": "test-projects/nestjs-backend",
+  "rootDir": "test-projects/nestjs-backend/",
   "features": [
     "src"
   ],
@@ -12,5 +12,5 @@
   ],
   "languages": [],
   "frameworks": [],
-  "generatedAt": "2026-04-05T21:18:18.732Z"
+  "generatedAt": "2026-04-05T23:59:35.107Z"
 }

@@ -11,7 +11,7 @@
 | Module | Responsibility |
 |--------|----------------|
 | `app` | Ruby implementation |
-| `config` | Configuration management |
+| `config` | Configuration |
 
 
 ## Components
@@ -29,7 +29,7 @@
 
 ### config
 - **Path**: `config`
-- **Responsibility**: Configuration management
+- **Responsibility**: Configuration
 
 ## Recommendations
 

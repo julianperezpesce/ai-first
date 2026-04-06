@@ -90,9 +90,7 @@ function matchSignal(rootDir, signal) {
         case 'directory':
             return matchDirectorySignal(rootDir, signal.pattern);
         case 'content':
-            // Content signals require more complex implementation
-            // For now, we skip content-based detection
-            return false;
+            return matchContentSignal(rootDir, signal.pattern, signal.contentPattern);
         default:
             return false;
     }
@@ -119,6 +117,64 @@ function matchDirectorySignal(rootDir, pattern) {
         return false;
     const entries = fs.readdirSync(rootDir, { withFileTypes: true });
     return entries.some(e => e.isDirectory() && e.name === pattern);
+}
+function matchContentSignal(rootDir, filePattern, contentPattern) {
+    if (!fs.existsSync(rootDir))
+        return false;
+    if (!contentPattern)
+        return false;
+    try {
+        const files = findFilesByPattern(rootDir, filePattern, 100);
+        for (const file of files) {
+            try {
+                const content = fs.readFileSync(file, 'utf-8');
+                if (content.includes(contentPattern)) {
+                    return true;
+                }
+            }
+            catch {
+                continue;
+            }
+        }
+    }
+    catch {
+        return false;
+    }
+    return false;
+}
+function findFilesByPattern(rootDir, pattern, maxFiles) {
+    const files = [];
+    const ext = pattern.startsWith('*') ? pattern.slice(1) : null;
+    const skipDirs = ['node_modules', '.git', 'venv', '.venv', '__pycache__', '.pytest_cache', 'dist', 'build', '.next', 'target'];
+    function scanDirectory(dir, depth = 0) {
+        if (depth > 3 || files.length >= maxFiles)
+            return;
+        try {
+            const entries = fs.readdirSync(dir, { withFileTypes: true });
+            for (const entry of entries) {
+                if (files.length >= maxFiles)
+                    break;
+                const fullPath = path.join(dir, entry.name);
+                if (entry.isDirectory()) {
+                    if (!skipDirs.includes(entry.name)) {
+                        scanDirectory(fullPath, depth + 1);
+                    }
+                }
+                else if (entry.isFile()) {
+                    if (ext && entry.name.endsWith(ext)) {
+                        files.push(fullPath);
+                    }
+                    else if (!ext && entry.name === pattern) {
+                        files.push(fullPath);
+                    }
+                }
+            }
+        }
+        catch {
+        }
+    }
+    scanDirectory(rootDir);
+    return files;
 }
 /**
  * Get weight for a signal type

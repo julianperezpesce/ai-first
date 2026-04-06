@@ -1,7 +1,16 @@
 {
-  "generated": "2026-04-05T21:18:45.729Z",
-  "totalFiles": 18,
+  "generated": "2026-04-05T23:59:32.104Z",
+  "totalFiles": 19,
   "structure": {
+    ".opencode": {
+      "type": "directory",
+      "children": {
+        "mcp.json": {
+          "type": "file",
+          "extension": "json"
+        }
+      }
+    },
     "README.md": {
       "type": "file",
       "extension": "md"
@@ -91,6 +100,11 @@
     }
   },
   "files": [
+    {
+      "path": ".opencode/mcp.json",
+      "name": "mcp.json",
+      "extension": "json"
+    },
     {
       "path": "README.md",
       "name": "README.md",

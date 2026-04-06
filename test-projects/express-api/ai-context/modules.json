@@ -1,5 +1,11 @@
 {
   "modules": {
+    ".opencode": {
+      "path": ".opencode",
+      "files": [
+        ".opencode/mcp.json"
+      ]
+    },
     "controllers": {
       "path": "controllers",
       "files": [

@@ -1,6 +1,6 @@
 {
   "name": "spring-boot-app",
-  "rootDir": "test-projects/spring-boot-app",
+  "rootDir": "test-projects/spring-boot-app/",
   "features": [
     "src"
   ],
@@ -17,5 +17,5 @@
   ],
   "languages": [],
   "frameworks": [],
-  "generatedAt": "2026-04-05T21:18:42.369Z"
+  "generatedAt": "2026-04-05T23:59:38.499Z"
 }

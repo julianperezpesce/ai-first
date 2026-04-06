@@ -1,4 +1,7 @@
 # Repository Map
+## .opencode
+  - mcp.json
+
 ## README.md
   - README.md
 
@@ -30,6 +33,8 @@
 
 
 # Repository Structure (Tree View)
+├── .opencode/
+│   └── mcp.json
 ├── blog/
 │   ├── __init__.py
 │   ├── admin.py

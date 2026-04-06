@@ -7,6 +7,7 @@
 ## Guidelines
 
 - Language: Use Markdown, PHP, JSON
+- Frameworks: Laravel
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
 
@@ -25,7 +26,7 @@
 | Category | Value |
 |----------|-------|
 | Language | Markdown, PHP, JSON |
-| Framework | N/A |
+| Framework | Laravel |
 | Architecture | Flat / Simple Structure |
 | Naming | PascalCase |
 | Indentation | unknown |
@@ -41,6 +42,35 @@
 5. Keep the architecture consistent
 6. Document complex logic
 7. Review code before committing
+
+
+---
+
+## Framework Instructions
+
+### Laravel
+
+- **Artisan Commands**: Use `php artisan <command>` for all Laravel operations
+- **Migrations**: Create and run migrations:
+  ```bash
+  php artisan make:migration create_table_name
+  php artisan migrate
+  ```
+- **Models**: Use Eloquent ORM, models in `app/Models/` directory
+- **Controllers**: Create controllers with `php artisan make:controller`
+- **Routes**: Define routes in `routes/web.php` (web) or `routes/api.php` (API)
+- **Views**: Use Blade templating engine (`.blade.php` files)
+- **Middleware**: Register middleware in `app/Http/Kernel.php`
+- **Validation**: Use form requests or validate method on controller
+- **Eloquent**: Use Eloquent ORM for database operations:
+  - `Model::all()`, `Model::find($id)`, `Model::where()`
+  - Relationships: `hasMany`, `belongsTo`, `belongsToMany`
+- **Service Container**: Use dependency injection for services
+- **Config**: Store configuration in `config/` directory
+- **Environment**: Use `.env` file for environment variables
+- **Testing**: Use PHPUnit with Laravel's testing helpers
+- **Queues**: Use queues for background jobs with `php artisan queue:work`
+
 
 ---
 

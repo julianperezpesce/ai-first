@@ -1,6 +1,6 @@
 {
   "name": "rails-app",
-  "rootDir": "test-projects/rails-app",
+  "rootDir": "test-projects/rails-app/",
   "features": [
     "app"
   ],
@@ -15,5 +15,5 @@
   ],
   "languages": [],
   "frameworks": [],
-  "generatedAt": "2026-04-05T21:18:27.554Z"
+  "generatedAt": "2026-04-05T23:59:36.351Z"
 }

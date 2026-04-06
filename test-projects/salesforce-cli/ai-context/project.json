@@ -1,9 +1,9 @@
 {
   "name": "salesforce-cli",
-  "rootDir": "test-projects/salesforce-cli",
+  "rootDir": "test-projects/salesforce-cli/",
   "features": [],
   "flows": [],
   "languages": [],
   "frameworks": [],
-  "generatedAt": "2026-04-05T21:18:36.343Z"
+  "generatedAt": "2026-04-05T23:59:37.622Z"
 }
