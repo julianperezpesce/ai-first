@@ -1,5 +1,6 @@
 import { readJsonFile, readFile } from "../utils/fileUtils.js";
 import path from "path";
+import fs from "fs";
 export function discoverEntrypoints(files, rootDir) {
     const entrypoints = [];
     try {
@@ -96,6 +97,26 @@ export function discoverEntrypoints(files, rootDir) {
         try {
             const phpEntrypoints = discoverPHPEntrypoints(phpFiles, rootDir);
             entrypoints.push(...phpEntrypoints);
+        }
+        catch { }
+    }
+    const pyFiles = files.filter(f => f.extension === "py");
+    if (pyFiles.length > 0) {
+        try {
+            const pythonEntrypoints = discoverPythonEntrypoints(pyFiles, rootDir);
+            entrypoints.push(...pythonEntrypoints);
+        }
+        catch { }
+    }
+    const javaFiles = files.filter(f => f.extension === "java" || f.extension === "kt");
+    const pomPath = path.join(rootDir, "pom.xml");
+    const gradlePath = path.join(rootDir, "build.gradle");
+    const gradleKtsPath = path.join(rootDir, "build.gradle.kts");
+    const hasPomOrGradle = fs.existsSync(pomPath) || fs.existsSync(gradlePath) || fs.existsSync(gradleKtsPath);
+    if (javaFiles.length > 0 && hasPomOrGradle) {
+        try {
+            const springEntrypoints = discoverSpringBootEntrypoints(javaFiles, rootDir);
+            entrypoints.push(...springEntrypoints);
         }
         catch { }
     }
@@ -489,6 +510,189 @@ function discoverPHPEntrypoints(phpFiles, rootDir) {
     catch { }
     return entrypoints;
 }
+function discoverPythonEntrypoints(pyFiles, rootDir) {
+    const entrypoints = [];
+    const managePy = pyFiles.find(f => f.name === "manage.py");
+    if (managePy) {
+        entrypoints.push({
+            name: "manage.py",
+            path: managePy.relativePath,
+            type: "cli",
+            description: "Django management commands",
+            command: "python manage.py"
+        });
+    }
+    const appPy = pyFiles.find(f => f.name === "app.py");
+    if (appPy) {
+        entrypoints.push({
+            name: "app.py",
+            path: appPy.relativePath,
+            type: "server",
+            description: "Flask/FastAPI application entrypoint"
+        });
+    }
+    const mainPy = pyFiles.find(f => f.name === "main.py");
+    if (mainPy && !managePy) {
+        entrypoints.push({
+            name: "main.py",
+            path: mainPy.relativePath,
+            type: "server",
+            description: "Python application entrypoint"
+        });
+    }
+    const initFiles = pyFiles.filter(f => f.name === "__init__.py");
+    for (const initFile of initFiles) {
+        try {
+            const content = readFile(path.join(rootDir, initFile.relativePath));
+            const exports = extractPythonExports(content);
+            if (exports.length > 0) {
+                const packageName = initFile.relativePath.replace(/\/__init__\.py$/, '').split('/').pop() || "package";
+                entrypoints.push({
+                    name: `${packageName} package`,
+                    path: initFile.relativePath,
+                    type: "library",
+                    description: `Package exports: ${exports.slice(0, 3).join(", ")}${exports.length > 3 ? '...' : ''}`
+                });
+            }
+        }
+        catch { }
+    }
+    const pyprojectPath = path.join(rootDir, "pyproject.toml");
+    try {
+        const pyprojectContent = readFile(pyprojectPath);
+        const scriptsMatch = pyprojectContent.match(/\[project\.scripts\]([^[]*)/);
+        if (scriptsMatch) {
+            const scriptsSection = scriptsMatch[1];
+            const scriptMatches = scriptsSection.matchAll(/^(\w+)\s*=/gm);
+            for (const match of scriptMatches) {
+                entrypoints.push({
+                    name: match[1],
+                    path: "pyproject.toml",
+                    type: "cli",
+                    description: `CLI command: ${match[1]}`,
+                    command: match[1]
+                });
+            }
+        }
+    }
+    catch { }
+    const setupPyPath = path.join(rootDir, "setup.py");
+    try {
+        const setupContent = readFile(setupPyPath);
+        const entryPointsMatch = setupContent.match(/entry_points\s*=\s*\{[^}]*['"]console_scripts['"]\s*:\s*\[([^\]]*)\]/s);
+        if (entryPointsMatch) {
+            const scriptsSection = entryPointsMatch[1];
+            const scriptMatches = scriptsSection.matchAll(/['"](\w+)\s*=/g);
+            for (const match of scriptMatches) {
+                if (!entrypoints.some(e => e.name === match[1])) {
+                    entrypoints.push({
+                        name: match[1],
+                        path: "setup.py",
+                        type: "cli",
+                        description: `CLI command: ${match[1]}`,
+                        command: match[1]
+                    });
+                }
+            }
+        }
+    }
+    catch { }
+    return entrypoints;
+}
+function extractPythonExports(content) {
+    const exports = [];
+    const patterns = [
+        /from\s+\.[\w.]*\s+import\s+([^\n]+)/g,
+        /__all__\s*=\s*\[([^\]]*)\]/g
+    ];
+    for (const pattern of patterns) {
+        let match;
+        while ((match = pattern.exec(content)) !== null) {
+            if (pattern === patterns[1]) {
+                const items = match[1].split(',').map(s => s.trim().replace(/['"]/g, '')).filter(s => s);
+                exports.push(...items);
+            }
+            else {
+                const items = match[1].split(',').map(s => s.trim()).filter(s => s);
+                exports.push(...items);
+            }
+        }
+    }
+    return [...new Set(exports)].filter(e => !e.startsWith('_'));
+}
+function discoverSpringBootEntrypoints(javaFiles, rootDir) {
+    const entrypoints = [];
+    for (const file of javaFiles) {
+        try {
+            const content = readFile(path.join(rootDir, file.relativePath));
+            const springBootAppMatch = content.match(/@SpringBootApplication/);
+            if (springBootAppMatch) {
+                const classMatch = content.match(/public\s+class\s+(\w+)/);
+                if (classMatch) {
+                    entrypoints.push({
+                        name: classMatch[1],
+                        path: file.relativePath,
+                        type: "server",
+                        description: `Spring Boot Application: ${classMatch[1]}`
+                    });
+                }
+            }
+            const restControllerMatch = content.match(/@RestController|@Controller/);
+            if (restControllerMatch) {
+                const classMatch = content.match(/public\s+class\s+(\w+)/);
+                const requestMappingMatches = content.matchAll(/@(?:Get|Post|Put|Delete|Patch|Request)Mapping\s*\(\s*["']([^"']+)["']/g);
+                const endpoints = [];
+                for (const match of requestMappingMatches) {
+                    endpoints.push(match[1]);
+                }
+                if (classMatch) {
+                    const type = content.includes("@RestController") ? "api" : "server";
+                    const description = endpoints.length > 0
+                        ? `Controller with endpoints: ${endpoints.slice(0, 3).join(", ")}${endpoints.length > 3 ? '...' : ''}`
+                        : `Spring ${content.includes("@RestController") ? 'REST ' : ''}Controller`;
+                    entrypoints.push({
+                        name: classMatch[1],
+                        path: file.relativePath,
+                        type,
+                        description
+                    });
+                }
+            }
+        }
+        catch { }
+    }
+    const pomPath = path.join(rootDir, "pom.xml");
+    try {
+        const pomContent = readFile(pomPath);
+        const artifactMatch = pomContent.match(/<artifactId>([^<]+)<\/artifactId>/);
+        const versionMatch = pomContent.match(/<version>([^<$]+)<\/version>/);
+        if (artifactMatch) {
+            entrypoints.push({
+                name: "pom.xml",
+                path: "pom.xml",
+                type: "config",
+                description: `Maven project: ${artifactMatch[1]}${versionMatch ? ` v${versionMatch[1]}` : ''}`
+            });
+        }
+    }
+    catch { }
+    const gradlePath = path.join(rootDir, "build.gradle");
+    const gradleKtsPath = path.join(rootDir, "build.gradle.kts");
+    try {
+        const gradleContent = readFile(fs.existsSync(gradlePath) ? gradlePath : gradleKtsPath);
+        const appMatch = gradleContent.match(/id\s*['"]org\.springframework\.boot['"]|org\.springframework\.boot/);
+        if (appMatch) {
+            entrypoints.push({
+                name: fs.existsSync(gradlePath) ? "build.gradle" : "build.gradle.kts",
+                path: fs.existsSync(gradlePath) ? "build.gradle" : "build.gradle.kts",
+                type: "config",
+                description: "Gradle project with Spring Boot"
+            });
+        }
+    }
+    catch { }
+    return entrypoints;
+}
 export function generateEntrypointsFile(entrypoints) {
     const grouped = new Map();
     for (const ep of entrypoints) {
@@ -497,12 +701,20 @@ export function generateEntrypointsFile(entrypoints) {
         grouped.get(ep.type)?.push(ep);
     }
     let content = "# Entrypoints\n\n";
-    const labels = { cli: "CLI", api: "API", worker: "Workers", server: "Server", client: "Client", library: "Library", test: "Tests", build: "Build", lint: "Lint", formatter: "Formatter", other: "Other" };
+    const labels = { cli: "CLI Commands", api: "API Endpoints", worker: "Background Workers", server: "Server Entry Points", client: "Client Apps", library: "Libraries", test: "Test Commands", build: "Build Scripts", lint: "Linting", formatter: "Formatters", other: "Other Entry Points" };
     for (const [type, eps] of grouped) {
-        content += `## ${labels[type] || type}\n\n| Name | Path | Command |\n|------|------|--------|\n`;
-        for (const ep of eps)
-            content += `| ${ep.name} | \`${ep.path}\` | ${ep.command || "-"} |\n`;
-        content += "\n";
+        content += `### ${labels[type] || type}\n\n`;
+        for (const ep of eps) {
+            content += `#### ${ep.name}\n\n`;
+            content += `- **Path**: \`${ep.path}\`\n`;
+            if (ep.description) {
+                content += `- **Description**: ${ep.description}\n`;
+            }
+            if (ep.command) {
+                content += `- **Command**: \`${ep.command}\`\n`;
+            }
+            content += "\n";
+        }
     }
     return content + "---\n*Generated by ai-first*\n";
 }

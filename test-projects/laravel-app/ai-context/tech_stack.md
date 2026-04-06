@@ -2,6 +2,8 @@
 
 **Languages**: Markdown, PHP, JSON
 
+**Frameworks**: Laravel
+
 **Package Managers**: Composer
 
 ## Languages
@@ -10,7 +12,7 @@
 - JSON
 
 ## Frameworks
-- None detected
+- Laravel
 
 ## Key Libraries
 - None detected

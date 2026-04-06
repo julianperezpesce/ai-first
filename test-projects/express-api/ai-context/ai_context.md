@@ -7,9 +7,9 @@
 ## Quick Overview
 
 - **Pattern**: MVC (Model-View-Controller)
-- **Languages**: JavaScript, JSON
+- **Languages**: JSON, JavaScript
 - **Frameworks**: Express.js
-- **Total Files**: 8
+- **Total Files**: 9
 
 ---
 
@@ -26,7 +26,7 @@
 
 ## Tech Stack
 
-**Languages**: JavaScript, JSON
+**Languages**: JSON, JavaScript
 
 **Frameworks**: Express.js
 
@@ -49,6 +49,7 @@
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
+| `.opencode` | Single file module |
 | `controllers` | API endpoints and request handling |
 | `middleware` | Request/response middleware |
 | `models` | Data models and entities |
@@ -83,7 +84,7 @@
 
 ## AI Rules
 
-- Language: Use JavaScript, JSON
+- Language: Use JSON, JavaScript
 - Frameworks: Express.js
 - Architecture: Follow MVC (Model-View-Controller) pattern
 - File naming: camelCase
