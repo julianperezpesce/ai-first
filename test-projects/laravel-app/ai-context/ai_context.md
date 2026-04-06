@@ -8,7 +8,7 @@
 
 - **Pattern**: Flat / Simple Structure
 - **Languages**: Markdown, PHP, JSON
-- **Frameworks**: None
+- **Frameworks**: Laravel
 - **Total Files**: 12
 
 ---
@@ -27,6 +27,8 @@
 ## Tech Stack
 
 **Languages**: Markdown, PHP, JSON
+
+**Frameworks**: Laravel
 
 **Package Managers**: Composer
 
@@ -73,6 +75,7 @@
 ## AI Rules
 
 - Language: Use Markdown, PHP, JSON
+- Frameworks: Laravel
 - Architecture: Follow Flat / Simple Structure pattern
 - File naming: PascalCase
 
