@@ -149,6 +149,7 @@ function detectFastAPIEndpoints(content: string, filePath: string): ApiEndpoint[
 function detectDjangoEndpoints(content: string, filePath: string): ApiEndpoint[] {
   const endpoints: ApiEndpoint[] = [];
   
+  // Detect function-based views with @api_view decorator
   const apiViewPattern = /@api_view\s*\(\s*\[\s*['"`](GET|POST|PUT|DELETE|PATCH)['"`]\s*\]\s*\)/gi;
   let match;
   
@@ -161,6 +162,53 @@ function detectDjangoEndpoints(content: string, filePath: string): ApiEndpoint[]
       handler: filePath,
       description: `Django ${method} endpoint`,
     });
+  }
+  
+  // Detect ViewSet classes (class-based views from rest_framework)
+  const viewsetPattern = /class\s+(\w+ViewSet)\(.*viewsets\.(ModelViewSet|ReadOnlyModelViewSet|ViewSet)/gi;
+  while ((match = viewsetPattern.exec(content)) !== null) {
+    // ModelViewSet provides: list, create, retrieve, update, partial_update, destroy
+    const viewsetName = match[1];
+    endpoints.push({
+      method: "GET",
+      path: "/",
+      handler: filePath,
+      description: `Django ViewSet ${viewsetName} - list/retrieve`,
+    });
+    endpoints.push({
+      method: "POST",
+      path: "/",
+      handler: filePath,
+      description: `Django ViewSet ${viewsetName} - create`,
+    });
+    endpoints.push({
+      method: "PUT",
+      path: "/:id",
+      handler: filePath,
+      description: `Django ViewSet ${viewsetName} - update`,
+    });
+    endpoints.push({
+      method: "DELETE",
+      path: "/:id",
+      handler: filePath,
+      description: `Django ViewSet ${viewsetName} - destroy`,
+    });
+  }
+  
+  // Detect @action decorators on ViewSets for custom actions
+  const actionPattern = /@action\([^)]*methods\s*=\s*\[\s*['"`]([\w,]+)['"`][^\]]*\]\s*\)[^}]*def\s+(\w+)/gi;
+  while ((match = actionPattern.exec(content)) !== null) {
+    const methods = match[1].split(",").map(m => m.trim().toUpperCase());
+    const actionName = match[2];
+    
+    for (const method of methods) {
+      endpoints.push({
+        method,
+        path: `/${actionName}`,
+        handler: filePath,
+        description: `Django ViewSet action ${actionName}`,
+      });
+    }
   }
   
   return endpoints;

@@ -165,6 +165,18 @@ function detectFrameworks(files, fileNames, rootDir) {
         }
     }
     catch { }
+    // Detect Laravel from composer.json
+    try {
+        const composerPath = path.join(rootDir, "composer.json");
+        if (fs.existsSync(composerPath)) {
+            const composerContent = readFile(composerPath);
+            // Check for laravel/framework or illuminate packages
+            if ((composerContent.includes("laravel/framework") || composerContent.includes("illuminate/")) && !frameworks.includes("Laravel")) {
+                frameworks.push("Laravel");
+            }
+        }
+    }
+    catch { }
     // Detect Python frameworks from requirements.txt, Pipfile, pyproject.toml
     try {
         const pythonFrameworkMap = {
