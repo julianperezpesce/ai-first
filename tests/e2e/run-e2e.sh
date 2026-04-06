@@ -6,7 +6,7 @@
 set -e
 
 CLI="node dist/commands/ai-first.js"
-PROJECTS=(
+TEST_PROJECTS=(
   "android-kotlin-app"
   "django-app"
   "express-api"
@@ -26,6 +26,16 @@ PROJECTS=(
   "spring-boot-app"
 )
 
+REAL_PROJECTS=(
+  "django-rest-framework"
+  "fastapi"
+  "spring-petclinic"
+  "go-zero"
+  "filament"
+)
+
+REAL_PROJECTS_BASE="/home/julian/proyectos/ai-first-evaluator/real-projects"
+
 echo "========================================"
 echo "ai-first-cli E2E Test Suite"
 echo "========================================"
@@ -34,8 +44,8 @@ echo "========================================"
 echo "Building..."
 npm run build
 
-# Test each command on each project
-for project in "${PROJECTS[@]}"; do
+# Test each command on each test project
+for project in "${TEST_PROJECTS[@]}"; do
   echo ""
   echo "========================================"
   echo "Testing: $project"
@@ -95,6 +105,62 @@ for project in "${PROJECTS[@]}"; do
        FLOWS=$(ls -1 "test-projects/$project/ai-context/context/flows/" 2>/dev/null | wc -l)
        echo "Flows: $FLOWS"
      fi
+    else
+      echo "ERROR: No ai-context directory created"
+    fi
+done
+
+# Test each command on each REAL project
+for project in "${REAL_PROJECTS[@]}"; do
+  echo ""
+  echo "========================================"
+  echo "Testing REAL: $project"
+  echo "========================================"
+  
+  # Clean ai-context directory
+  rm -rf "$REAL_PROJECTS_BASE/$project/ai-context"
+   
+   # Test init
+   echo ""
+   echo "--- init ---"
+   $CLI init --root "$REAL_PROJECTS_BASE/$project" || true
+   
+   # Test doctor
+   echo ""
+   echo "--- doctor ---"
+   $CLI doctor --root "$REAL_PROJECTS_BASE/$project" || true
+   
+   # Test map
+   echo ""
+   echo "--- map ---"
+   $CLI map --root "$REAL_PROJECTS_BASE/$project" || true
+   
+   # Test index
+   echo ""
+   echo "--- index ---"
+   $CLI index --root "$REAL_PROJECTS_BASE/$project" || true
+   
+   # Test explore
+   echo ""
+   echo "--- explore ---"
+   $CLI explore all --root "$REAL_PROJECTS_BASE/$project" || true
+   
+   # Test graph
+   echo ""
+   echo "--- graph ---"
+   $CLI graph --root "$REAL_PROJECTS_BASE/$project" || true
+   
+   # Test git
+   echo ""
+   echo "--- git ---"
+   $CLI git --root "$REAL_PROJECTS_BASE/$project" || true
+   
+   # Check results
+   echo ""
+   echo "--- Results ---"
+   if [ -d "$REAL_PROJECTS_BASE/$project/ai-context" ]; then
+     echo "Files generated:"
+     ls "$REAL_PROJECTS_BASE/$project/ai-context/"
    else
      echo "ERROR: No ai-context directory created"
    fi
@@ -215,4 +281,55 @@ if grep -q "@Get\|@Post\|@Controller" test-projects/nestjs-backend/ai-context/ai
   echo "✅ NestJS API contracts detected"
 else
   echo "❌ NestJS API contracts missing"
+fi
+
+# Verify REAL PROJECTS ai_context was generated
+echo ""
+echo "========================================"
+echo "REAL Projects Verification"
+echo "========================================"
+
+# Verify django-rest-framework
+echo ""
+echo "--- Verifying django-rest-framework ---"
+if [ -f "$REAL_PROJECTS_BASE/django-rest-framework/ai-context/ai_context.md" ]; then
+  echo "✅ django-rest-framework ai_context generated"
+else
+  echo "❌ django-rest-framework ai_context missing"
+fi
+
+# Verify fastapi
+echo ""
+echo "--- Verifying fastapi ---"
+if [ -f "$REAL_PROJECTS_BASE/fastapi/ai-context/ai_context.md" ]; then
+  echo "✅ fastapi ai_context generated"
+else
+  echo "❌ fastapi ai_context missing"
+fi
+
+# Verify spring-petclinic
+echo ""
+echo "--- Verifying spring-petclinic ---"
+if [ -f "$REAL_PROJECTS_BASE/spring-petclinic/ai-context/ai_context.md" ]; then
+  echo "✅ spring-petclinic ai_context generated"
+else
+  echo "❌ spring-petclinic ai_context missing"
+fi
+
+# Verify go-zero
+echo ""
+echo "--- Verifying go-zero ---"
+if [ -f "$REAL_PROJECTS_BASE/go-zero/ai-context/ai_context.md" ]; then
+  echo "✅ go-zero ai_context generated"
+else
+  echo "❌ go-zero ai_context missing"
+fi
+
+# Verify filament
+echo ""
+echo "--- Verifying filament ---"
+if [ -f "$REAL_PROJECTS_BASE/filament/ai-context/ai_context.md" ]; then
+  echo "✅ filament ai_context generated"
+else
+  echo "❌ filament ai_context missing"
 fi
