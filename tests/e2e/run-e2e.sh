@@ -166,3 +166,53 @@ if grep -q "implementation\|handling\|middleware\|logic" test-projects/express-a
 else
   echo "❌ architecture.md may have generic phrases"
 fi
+
+# Verify ai_rules.md has framework instructions
+echo ""
+echo "--- Verifying ai_rules.md has framework instructions ---"
+if grep -q "Framework.*Instructions\|Express.*middleware\|NestJS.*decorators" test-projects/express-api/ai-context/ai_rules.md; then
+  echo "✅ ai_rules.md has framework instructions for Express"
+else
+  echo "❌ ai_rules.md missing framework instructions"
+fi
+
+# Verify ai_rules.md has framework instructions for NestJS
+if grep -q "NestJS.*module\|@Controller\|@Injectable" test-projects/nestjs-backend/ai-context/ai_rules.md; then
+  echo "✅ ai_rules.md has framework instructions for NestJS"
+else
+  echo "❌ ai_rules.md missing NestJS framework instructions"
+fi
+
+# Verify ai_rules.md has framework instructions for Django
+if grep -q "Django.*Models\|Framework Instructions" test-projects/django-app/ai-context/ai_rules.md; then
+  echo "✅ ai_rules.md has framework instructions for Django"
+else
+  echo "❌ ai_rules.md missing Django framework instructions"
+fi
+
+# Verify API contracts for Express
+echo ""
+echo "--- Verifying API contracts for Express ---"
+if grep -q "GET\|POST\|PUT\|DELETE" test-projects/express-api/ai-context/ai_rules.md; then
+  echo "✅ Express API contracts detected"
+else
+  echo "❌ Express API contracts missing"
+fi
+
+# Verify API contracts for Django (ViewSets)
+echo ""
+echo "--- Verifying API contracts for Django ---"
+if grep -q "ViewSet\|@action" test-projects/django-app/ai-context/ai_rules.md; then
+  echo "✅ Django API contracts (ViewSets) detected"
+else
+  echo "❌ Django API contracts missing"
+fi
+
+# Verify API contracts for NestJS
+echo ""
+echo "--- Verifying API contracts for NestJS ---"
+if grep -q "@Get\|@Post\|@Controller" test-projects/nestjs-backend/ai-context/ai_rules.md; then
+  echo "✅ NestJS API contracts detected"
+else
+  echo "❌ NestJS API contracts missing"
+fi
