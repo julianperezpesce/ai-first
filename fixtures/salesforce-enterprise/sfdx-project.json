@@ -1,0 +1,16 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true,
+      "package": "SalesforceEnterprise",
+      "versionName": "ver 1.0",
+      "versionNumber": "1.0.0.NEXT"
+    }
+  ],
+  "name": "SalesforceEnterprise",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "singlePackage": false,
+  "sourceApiVersion": "59.0"
+}

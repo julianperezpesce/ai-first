@@ -5,7 +5,7 @@ import path from "path";
 import os from "os";
 import { extractSymbols } from "../src/analyzers/symbols";
 
-const SALESFORCE_ENTERPRISE_PATH = path.join(process.cwd(), "test-projects/salesforce-enterprise");
+const SALESFORCE_ENTERPRISE_PATH = path.join(process.cwd(), "fixtures/salesforce-enterprise");
 
 describe("Salesforce Flows Detection", () => {
   let tempDir: string;

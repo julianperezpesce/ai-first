@@ -255,7 +255,7 @@ describe("Architecture Detection - Microservices vs API Server", () => {
 
 describe("Framework Detection - Integration Tests", () => {
   it("should detect NestJS in nestjs-backend test project", () => {
-    const testProjectPath = path.join(process.cwd(), "test-projects/nestjs-backend");
+    const testProjectPath = path.join(process.cwd(), "fixtures/nestjs-backend");
     
     const files: FileInfo[] = [
       createFileInfo("package.json", "package.json", ""),
@@ -268,7 +268,7 @@ describe("Framework Detection - Integration Tests", () => {
   });
 
   it("should detect Spring Boot in spring-boot-app test project", () => {
-    const testProjectPath = path.join(process.cwd(), "test-projects/spring-boot-app");
+    const testProjectPath = path.join(process.cwd(), "fixtures/spring-boot-app");
     
     const files: FileInfo[] = [
       createFileInfo("pom.xml", "pom.xml", ""),
@@ -280,7 +280,7 @@ describe("Framework Detection - Integration Tests", () => {
   });
 
   it("should detect API Server for express-api test project", () => {
-    const testProjectPath = path.join(process.cwd(), "test-projects/express-api");
+    const testProjectPath = path.join(process.cwd(), "fixtures/express-api");
     
     const files: FileInfo[] = [
       createFileInfo("src/routes/index.js", "index.js", "js"),
@@ -292,5 +292,103 @@ describe("Framework Detection - Integration Tests", () => {
     // Should detect API Server, not Microservices
     expect(architecture.description).not.toContain("Microservices");
     expect(architecture.description).toContain("API Server");
+  });
+});
+
+describe("Framework Detection - Python Content-Based", () => {
+  it("should detect Django from Python imports", () => {
+    const tempDir = createTempProjectDir({
+      "blog/models.py": "from django.db import models\nclass Post(models.Model):\n    title = models.CharField(max_length=200)",
+      "blog/views.py": "from django.http import JsonResponse\nfrom django.views import View",
+    });
+
+    const files: FileInfo[] = [
+      createFileInfo("blog/models.py", "models.py", "py"),
+      createFileInfo("blog/views.py", "views.py", "py"),
+    ];
+
+    const techStack = detectTechStack(files, tempDir);
+    
+    // Django detected from content
+    expect(techStack.frameworks.some(f => f.toLowerCase() === "django")).toBe(true);
+
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  });
+
+  it("should detect Flask from Python imports", () => {
+    const tempDir = createTempProjectDir({
+      "app.py": "from flask import Flask, jsonify, request\napp = Flask(__name__)",
+      "routes.py": "from flask import Blueprint, jsonify",
+    });
+
+    const files: FileInfo[] = [
+      createFileInfo("app.py", "app.py", "py"),
+      createFileInfo("routes.py", "routes.py", "py"),
+    ];
+
+    const techStack = detectTechStack(files, tempDir);
+    
+    expect(techStack.frameworks.some(f => f.toLowerCase() === "flask")).toBe(true);
+
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  });
+
+  it("should detect FastAPI from Python imports", () => {
+    const tempDir = createTempProjectDir({
+      "main.py": "from fastapi import FastAPI, Depends\napp = FastAPI()",
+      "schemas.py": "from fastapi import Body, Query\nfrom pydantic import BaseModel",
+    });
+
+    const files: FileInfo[] = [
+      createFileInfo("main.py", "main.py", "py"),
+      createFileInfo("schemas.py", "schemas.py", "py"),
+    ];
+
+    const techStack = detectTechStack(files, tempDir);
+    
+    expect(techStack.frameworks.some(f => f.toLowerCase() === "fastapi")).toBe(true);
+
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  });
+});
+
+describe("Architecture Detection - API vs MVC", () => {
+  it("should detect API Server for controllers without views", () => {
+    const files: FileInfo[] = [
+      createFileInfo("src/controllers/userController.js", "userController.js", "js"),
+      createFileInfo("src/services/userService.js", "userService.js", "js"),
+      createFileInfo("src/repositories/userRepository.js", "userRepository.js", "js"),
+    ];
+
+    const architecture = analyzeArchitecture(files, "/tmp");
+    
+    // Should detect API Server when no views/templates exist (not MVC)
+    expect(architecture.description).toContain("API Server");
+    expect(architecture.description).not.toContain("MVC");
+  });
+
+  it("should not detect MVC for simple directory structures", () => {
+    const files: FileInfo[] = [
+      createFileInfo("src/controllers/userController.js", "userController.js", "js"),
+      createFileInfo("src/models/userModel.js", "userModel.js", "js"),
+      createFileInfo("src/views/userView.js", "userView.js", "js"),
+    ];
+
+    const architecture = analyzeArchitecture(files, "/tmp");
+    
+    // MVC requires specific directory structure (controllers/, views/, models/)
+    // Not just files with "view" in name
+    expect(architecture.description).not.toContain("MVC");
+  });
+
+  it("should detect CLI Application for commands directory", () => {
+    const files: FileInfo[] = [
+      createFileInfo("commands/init.js", "init.js", "js"),
+      createFileInfo("commands/deploy.js", "deploy.js", "js"),
+    ];
+
+    const architecture = analyzeArchitecture(files, "/tmp");
+    
+    expect(architecture.description).toContain("CLI");
   });
 });

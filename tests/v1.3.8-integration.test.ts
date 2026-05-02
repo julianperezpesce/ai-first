@@ -247,7 +247,7 @@ export interface CartItem {
   });
 
   describe('Django Detection (v1.3.8)', () => {
-    const DJANGO_PROJECT = path.join(__dirname, '..', 'test-projects', 'django-app');
+    const DJANGO_PROJECT = path.join(__dirname, '..', 'fixtures', 'django-app');
 
     it('should detect Django framework from Python project', () => {
       const files: FileInfo[] = [

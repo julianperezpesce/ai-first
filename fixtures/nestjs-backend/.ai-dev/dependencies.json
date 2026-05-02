@@ -1,0 +1,152 @@
+{
+  "totalDependencies": 22,
+  "totalModules": 6,
+  "dependencies": [
+    {
+      "source": "src/app.module.ts",
+      "target": "src/auth/auth.module",
+      "type": "import"
+    },
+    {
+      "source": "src/app.module.ts",
+      "target": "src/users/users.module",
+      "type": "import"
+    },
+    {
+      "source": "src/app.module.ts",
+      "target": "src/auth/auth.module",
+      "type": "import"
+    },
+    {
+      "source": "src/app.module.ts",
+      "target": "src/users/users.module",
+      "type": "import"
+    },
+    {
+      "source": "src/auth/auth.controller.ts",
+      "target": "src/auth/auth.service",
+      "type": "import"
+    },
+    {
+      "source": "src/auth/auth.controller.ts",
+      "target": "src/auth/dto/login.dto",
+      "type": "import"
+    },
+    {
+      "source": "src/auth/auth.controller.ts",
+      "target": "src/auth/auth.service",
+      "type": "import"
+    },
+    {
+      "source": "src/auth/auth.controller.ts",
+      "target": "src/auth/dto/login.dto",
+      "type": "import"
+    },
+    {
+      "source": "src/auth/auth.module.ts",
+      "target": "src/auth/auth.controller",
+      "type": "import"
+    },
+    {
+      "source": "src/auth/auth.module.ts",
+      "target": "src/auth/auth.service",
+      "type": "import"
+    },
+    {
+      "source": "src/auth/auth.module.ts",
+      "target": "src/auth/strategies/jwt.strategy",
+      "type": "import"
+    },
+    {
+      "source": "src/auth/auth.module.ts",
+      "target": "src/auth/auth.controller",
+      "type": "import"
+    },
+    {
+      "source": "src/auth/auth.module.ts",
+      "target": "src/auth/auth.service",
+      "type": "import"
+    },
+    {
+      "source": "src/auth/auth.module.ts",
+      "target": "src/auth/strategies/jwt.strategy",
+      "type": "import"
+    },
+    {
+      "source": "src/main.ts",
+      "target": "src/app.module",
+      "type": "import"
+    },
+    {
+      "source": "src/main.ts",
+      "target": "src/app.module",
+      "type": "import"
+    },
+    {
+      "source": "src/users/users.controller.ts",
+      "target": "src/users/users.service",
+      "type": "import"
+    },
+    {
+      "source": "src/users/users.controller.ts",
+      "target": "src/users/users.service",
+      "type": "import"
+    },
+    {
+      "source": "src/users/users.module.ts",
+      "target": "src/users/users.controller",
+      "type": "import"
+    },
+    {
+      "source": "src/users/users.module.ts",
+      "target": "src/users/users.service",
+      "type": "import"
+    },
+    {
+      "source": "src/users/users.module.ts",
+      "target": "src/users/users.controller",
+      "type": "import"
+    },
+    {
+      "source": "src/users/users.module.ts",
+      "target": "src/users/users.service",
+      "type": "import"
+    }
+  ],
+  "byFile": {
+    "src/app.module.ts": [
+      "src/auth/auth.module",
+      "src/users/users.module",
+      "src/auth/auth.module",
+      "src/users/users.module"
+    ],
+    "src/auth/auth.controller.ts": [
+      "src/auth/auth.service",
+      "src/auth/dto/login.dto",
+      "src/auth/auth.service",
+      "src/auth/dto/login.dto"
+    ],
+    "src/auth/auth.module.ts": [
+      "src/auth/auth.controller",
+      "src/auth/auth.service",
+      "src/auth/strategies/jwt.strategy",
+      "src/auth/auth.controller",
+      "src/auth/auth.service",
+      "src/auth/strategies/jwt.strategy"
+    ],
+    "src/main.ts": [
+      "src/app.module",
+      "src/app.module"
+    ],
+    "src/users/users.controller.ts": [
+      "src/users/users.service",
+      "src/users/users.service"
+    ],
+    "src/users/users.module.ts": [
+      "src/users/users.controller",
+      "src/users/users.service",
+      "src/users/users.controller",
+      "src/users/users.service"
+    ]
+  }
+}

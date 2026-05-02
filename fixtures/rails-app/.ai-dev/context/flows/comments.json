@@ -1,0 +1,11 @@
+{
+  "name": "comments_",
+  "entrypoint": "app/controllers/api/comments_controller.rb",
+  "files": [
+    "app/controllers/api/comments_controller.rb"
+  ],
+  "depth": 1,
+  "layers": [
+    "api"
+  ]
+}

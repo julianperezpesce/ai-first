@@ -1,0 +1,12 @@
+{
+  "name": "post",
+  "entrypoint": "app/Http/Controllers/Api/PostController.php",
+  "files": [
+    "app/Http/Controllers/Api/PostController.php",
+    "app/Models/Post.php"
+  ],
+  "depth": 1,
+  "layers": [
+    "api"
+  ]
+}

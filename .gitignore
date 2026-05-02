@@ -4,7 +4,7 @@ package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
-# AI Context directories (generated)
+# AI Context directories (generated at root level only)
 ai/
 ai-context/
 
@@ -31,16 +31,11 @@ Thumbs.db
 
 # Internal development files (not for public repo)
 .sisyphus/
-PLAN*.md
-PROMPT*.md
-BUGS.md
 *.private.md
 .internal/
-ANALISIS*.md
-TEST_RESULTS*.md
-SIMULATION_RESULTS.md
-STATUS_*
-*.sh
+
+# Internal docs (development, planning, reports)
+docs/internal/
 
 # Internal planning docs (not for public)
 docs/planning/
@@ -52,15 +47,14 @@ docs/handoff/
 # Evaluator config (has absolute paths)
 evaluator.config.json
 
-# Internal simulation results
-PHASE*_USER_SIMULATION.md
+# Evaluator scripts (internal)
+scripts/run-evaluator*.cjs
 
 # OpenCode / AI Assistant internal files
 HANDOFF*.md
 AI_RECOMMENDATIONS*.md
 BETA_EVALUATION*.md
 MASTER_VERIFICATION*.md
-*evaluation-report*.md
 quick-evaluator.ts
 scripts/ai-context-evaluator.ts
 
@@ -82,7 +76,3 @@ temp/
 *.db
 *.sqlite
 *.sqlite3
-
-# Node
-path
-url

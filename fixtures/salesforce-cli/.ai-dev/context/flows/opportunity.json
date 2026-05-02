@@ -1,0 +1,9 @@
+{
+  "name": "opportunity",
+  "entrypoint": "force-app/main/default/classes/OpportunityController.cls",
+  "files": [
+    "force-app/main/default/classes/OpportunityController.cls"
+  ],
+  "depth": 0,
+  "layers": []
+}

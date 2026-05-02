@@ -6,10 +6,10 @@ This directory contains end-to-end tests for ai-first-cli across different proje
 
 | Project | Path | Type | Framework |
 |---------|------|------|-----------|
-| Express API | `test-projects/express-api` | Backend | Express.js |
-| NestJS Backend | `test-projects/nestjs-backend` | Backend | NestJS |
-| Python CLI | `test-projects/python-cli` | CLI | Python |
-| React App | `test-projects/react-app` | Frontend | React + Vite |
+| Express API | `fixtures/express-api` | Backend | Express.js |
+| NestJS Backend | `fixtures/nestjs-backend` | Backend | NestJS |
+| Python CLI | `fixtures/python-cli` | CLI | Python |
+| React App | `fixtures/react-app` | Frontend | React + Vite |
 
 ## Test Commands
 
@@ -20,10 +20,10 @@ This directory contains end-to-end tests for ai-first-cli across different proje
 npm run test:e2e:init
 
 # Individual project tests
-node dist/commands/ai-first.js init --root test-projects/express-api
-node dist/commands/ai-first.js init --root test-projects/nestjs-backend
-node dist/commands/ai-first.js init --root test-projects/python-cli
-node dist/commands/ai-first.js init --root test-projects/react-app
+node dist/commands/ai-first.js init --root fixtures/express-api
+node dist/commands/ai-first.js init --root fixtures/nestjs-backend
+node dist/commands/ai-first.js init --root fixtures/python-cli
+node dist/commands/ai-first.js init --root fixtures/react-app
 ```
 
 ### Map Command Tests
@@ -33,10 +33,10 @@ node dist/commands/ai-first.js init --root test-projects/react-app
 npm run test:e2e:map
 
 # Individual project tests
-node dist/commands/ai-first.js map --root test-projects/express-api
-node dist/commands/ai-first.js map --root test-projects/nestjs-backend
-node dist/commands/ai-first.js map --root test-projects/python-cli
-node dist/commands/ai-first.js map --root test-projects/react-app
+node dist/commands/ai-first.js map --root fixtures/express-api
+node dist/commands/ai-first.js map --root fixtures/nestjs-backend
+node dist/commands/ai-first.js map --root fixtures/python-cli
+node dist/commands/ai-first.js map --root fixtures/react-app
 ```
 
 ## Expected Results
@@ -73,13 +73,13 @@ npm run build
 
 # Run init tests
 for project in express-api nestjs-backend python-cli react-app; do
-  rm -rf test-projects/$project/ai-context test-projects/$project/ai
-  node dist/commands/ai-first.js init --root test-projects/$project
+  rm -rf fixtures/$project/ai-context fixtures/$project/ai
+  node dist/commands/ai-first.js init --root fixtures/$project
 done
 
 # Run map tests
 for project in express-api nestjs-backend python-cli react-app; do
-  rm -rf test-projects/$project/ai-context test-projects/$project/ai
-  node dist/commands/ai-first.js map --root test-projects/$project
+  rm -rf fixtures/$project/ai-context fixtures/$project/ai
+  node dist/commands/ai-first.js map --root fixtures/$project
 done
 ```

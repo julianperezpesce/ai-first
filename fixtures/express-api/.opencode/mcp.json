@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "ai-first": {
+      "command": "af",
+      "args": [
+        "mcp"
+      ],
+      "autoConnect": true
+    }
+  }
+}

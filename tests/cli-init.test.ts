@@ -9,7 +9,7 @@ const execAsync = promisify(exec);
 
 const PROJECT_ROOT = process.cwd();
 const CLI_PATH = path.join(PROJECT_ROOT, "dist/commands/ai-first.js");
-const EXPRESS_API_PATH = path.join(PROJECT_ROOT, "test-projects/express-api");
+const EXPRESS_API_PATH = path.join(PROJECT_ROOT, "fixtures/express-api");
 
 /**
  * Creates a temporary project directory with some source files

@@ -1,0 +1,259 @@
+{
+  "version": "1.0.0",
+  "lastIndexed": "2026-03-18T19:21:53.508Z",
+  "totalFiles": 36,
+  "files": {
+    "__init__.py": {
+      "path": "__init__.py",
+      "hash": "b8e919564af9b6e38c79d449bb77a7b5",
+      "mtime": 1773777152897.4336,
+      "size": 27,
+      "indexedAt": "2026-03-18T19:21:53.151Z"
+    },
+    "ai/ai_context.md": {
+      "path": "ai/ai_context.md",
+      "hash": "d0800a3667801289b2a5af7211c67dc6",
+      "mtime": 1773861712940.3997,
+      "size": 1646,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/ai_rules.md": {
+      "path": "ai/ai_rules.md",
+      "hash": "50ada89dc1c9d56765cd1a1a9e52c0de",
+      "mtime": 1773861712940.3997,
+      "size": 841,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/architecture.md": {
+      "path": "ai/architecture.md",
+      "hash": "9fea3a721185697f8798c296a826014a",
+      "mtime": 1773861712933.3997,
+      "size": 982,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/cache.json": {
+      "path": "ai/cache.json",
+      "hash": "4e42639ed8add488d3975f9bd0255a40",
+      "mtime": 1773861713025.4011,
+      "size": 4338,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/context/features/cli.json": {
+      "path": "ai/context/features/cli.json",
+      "hash": "db233eedf90a4de1cbb42f260b4ec159",
+      "mtime": 1773861713027.4011,
+      "size": 285,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/context/flows/add_.json": {
+      "path": "ai/context/flows/add_.json",
+      "hash": "8fd1b0ccd628661384b1982917527e10",
+      "mtime": 1773861713027.4011,
+      "size": 131,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/context/flows/list_.json": {
+      "path": "ai/context/flows/list_.json",
+      "hash": "2307454625174d3b69e727acf6e10261",
+      "mtime": 1773861713027.4011,
+      "size": 134,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/context/flows/remove_.json": {
+      "path": "ai/context/flows/remove_.json",
+      "hash": "12bece7cdabce999d2430fee0b316b3b",
+      "mtime": 1773861713027.4011,
+      "size": 140,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/conventions.md": {
+      "path": "ai/conventions.md",
+      "hash": "9c37d280c1cab6899447a58aa03b0f44",
+      "mtime": 1773861712936.3997,
+      "size": 841,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/dependencies.json": {
+      "path": "ai/dependencies.json",
+      "hash": "b1333fe58b2dddfa6ecb8c53292f442f",
+      "mtime": 1773861712938.3997,
+      "size": 1239,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/entrypoints.md": {
+      "path": "ai/entrypoints.md",
+      "hash": "34c8965a66697d9f1d428bb0904f5d8d",
+      "mtime": 1773861712935.3997,
+      "size": 43,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/files.json": {
+      "path": "ai/files.json",
+      "hash": "0f2192be1a404dcc27edabd74cec2adf",
+      "mtime": 1773861713095.402,
+      "size": 3596,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/graph/knowledge-graph.json": {
+      "path": "ai/graph/knowledge-graph.json",
+      "hash": "5d94d536f0ab84a5a66d96a16f3e10aa",
+      "mtime": 1773861713507.4087,
+      "size": 1457,
+      "indexedAt": "2026-03-18T19:21:53.508Z"
+    },
+    "ai/graph/module-graph.json": {
+      "path": "ai/graph/module-graph.json",
+      "hash": "54539a6536c57542d107b5e587852d21",
+      "mtime": 1773861713017.401,
+      "size": 501,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/graph/symbol-graph.json": {
+      "path": "ai/graph/symbol-graph.json",
+      "hash": "d142e1a1a55b23200fe02b7aee7472df",
+      "mtime": 1773861713023.4011,
+      "size": 9226,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/graph/symbol-references.json": {
+      "path": "ai/graph/symbol-references.json",
+      "hash": "de6f7fd1e3fb7cc19d8ec0efd2ac8d57",
+      "mtime": 1773861713023.4011,
+      "size": 329,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/index-state.json": {
+      "path": "ai/index-state.json",
+      "hash": "0c373d037443df5d461e6cd0cb5970be",
+      "mtime": 1773861713152.403,
+      "size": 8089,
+      "indexedAt": "2026-03-18T19:21:53.508Z"
+    },
+    "ai/modules.json": {
+      "path": "ai/modules.json",
+      "hash": "366ccb4be2fcb4b7098548e68cee7a06",
+      "mtime": 1773861713095.402,
+      "size": 371,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/project.json": {
+      "path": "ai/project.json",
+      "hash": "38788d3e810561337eb26aeec511bb2f",
+      "mtime": 1773861712942.4,
+      "size": 239,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/repo-map.json": {
+      "path": "ai/repo-map.json",
+      "hash": "fe4076a85b7cf737896ea51705e819ce",
+      "mtime": 1773861713009.401,
+      "size": 8054,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/repo_map.json": {
+      "path": "ai/repo_map.json",
+      "hash": "90797f90b1f95bc11e215d6dbccf5868",
+      "mtime": 1773861712932.3997,
+      "size": 8054,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/repo_map.md": {
+      "path": "ai/repo_map.md",
+      "hash": "36db09c801bf6474469bc9fbc5160393",
+      "mtime": 1773861712932.3997,
+      "size": 2036,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/schema.json": {
+      "path": "ai/schema.json",
+      "hash": "9d44be6b19a72b186150a70e30d5fbca",
+      "mtime": 1773861712942.4,
+      "size": 102,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/summary.md": {
+      "path": "ai/summary.md",
+      "hash": "d0de787a3249dec53c9d879c8a39b636",
+      "mtime": 1773861712932.3997,
+      "size": 195,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/symbols.json": {
+      "path": "ai/symbols.json",
+      "hash": "cd04c4c359d5fdffb6f49d080ee81749",
+      "mtime": 1773861712937.3997,
+      "size": 11325,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/tech_stack.md": {
+      "path": "ai/tech_stack.md",
+      "hash": "896df6d750a2773f4dd10c0882995767",
+      "mtime": 1773861712935.3997,
+      "size": 355,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "ai/tools.json": {
+      "path": "ai/tools.json",
+      "hash": "b1356e52c74e9b3b6a0d397b790a4968",
+      "mtime": 1773861712942.4,
+      "size": 138,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "cli/__init__.py": {
+      "path": "cli/__init__.py",
+      "hash": "a3b6d5054e9628836636cf4d6927e33a",
+      "mtime": 1773777227193.3157,
+      "size": 56,
+      "indexedAt": "2026-03-18T19:21:53.152Z"
+    },
+    "cli/add_command.py": {
+      "path": "cli/add_command.py",
+      "hash": "d9b48d790c714aebf7b29db0f8aa3464",
+      "mtime": 1773777196493.9478,
+      "size": 218,
+      "indexedAt": "2026-03-18T19:21:53.153Z"
+    },
+    "cli/list_command.py": {
+      "path": "cli/list_command.py",
+      "hash": "fd7ca8830013f013e16afd191e6c5c75",
+      "mtime": 1773777202889.024,
+      "size": 247,
+      "indexedAt": "2026-03-18T19:21:53.153Z"
+    },
+    "cli/remove_command.py": {
+      "path": "cli/remove_command.py",
+      "hash": "1209f465970ad86ef87ed6c0409cef50",
+      "mtime": 1773777208836.0952,
+      "size": 167,
+      "indexedAt": "2026-03-18T19:21:53.153Z"
+    },
+    "main.py": {
+      "path": "main.py",
+      "hash": "8e7d98c3b644a2b27f760c017100e886",
+      "mtime": 1773777186036.8235,
+      "size": 1117,
+      "indexedAt": "2026-03-18T19:21:53.153Z"
+    },
+    "models/__init__.py": {
+      "path": "models/__init__.py",
+      "hash": "a99db8f336d72b5c5700545705baf7de",
+      "mtime": 1773777266541.7935,
+      "size": 67,
+      "indexedAt": "2026-03-18T19:21:53.153Z"
+    },
+    "models/task.py": {
+      "path": "models/task.py",
+      "hash": "95274739cbb686a2f8c661836623c692",
+      "mtime": 1773777234068.3987,
+      "size": 544,
+      "indexedAt": "2026-03-18T19:21:53.153Z"
+    },
+    "models/task_repository.py": {
+      "path": "models/task_repository.py",
+      "hash": "68215671f3b74e5dbd6fdc06671b08b1",
+      "mtime": 1773777261367.7302,
+      "size": 1318,
+      "indexedAt": "2026-03-18T19:21:53.153Z"
+    }
+  }
+}

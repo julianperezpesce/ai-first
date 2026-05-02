@@ -330,7 +330,7 @@ $router->add('GET', '/users', function() {});`,
 
 describe("Entrypoints - Integration with Test Projects", () => {
   it("should detect Go microservice entrypoints", () => {
-    const testProjectPath = path.join(process.cwd(), "test-projects/go-microservice");
+    const testProjectPath = path.join(process.cwd(), "fixtures/go-microservice");
     
     const files: FileInfo[] = [
       createFileInfo("main.go", "main.go", "go"),
@@ -344,7 +344,7 @@ describe("Entrypoints - Integration with Test Projects", () => {
   });
 
   it("should detect Rust CLI entrypoints", () => {
-    const testProjectPath = path.join(process.cwd(), "test-projects/rust-cli");
+    const testProjectPath = path.join(process.cwd(), "fixtures/rust-cli");
     
     const files: FileInfo[] = [
       createFileInfo("src/main.rs", "main.rs", "rs"),
@@ -358,7 +358,7 @@ describe("Entrypoints - Integration with Test Projects", () => {
   });
 
   it("should detect PHP vanilla entrypoints", () => {
-    const testProjectPath = path.join(process.cwd(), "test-projects/php-vanilla");
+    const testProjectPath = path.join(process.cwd(), "fixtures/php-vanilla");
     
     const files: FileInfo[] = [
       createFileInfo("index.php", "index.php", "php"),

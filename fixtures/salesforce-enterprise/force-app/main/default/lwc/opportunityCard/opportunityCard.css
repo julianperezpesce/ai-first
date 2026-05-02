@@ -1,0 +1,76 @@
+.opportunity-card {
+    border: 1px solid #d8dde6;
+    border-radius: 4px;
+}
+
+.opportunity-name {
+    font-weight: 700;
+    margin-right: 12px;
+}
+
+.info-label {
+    font-size: 0.75rem;
+    color: #706e6b;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.info-value {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.info-value.amount {
+    color: #04844b;
+    font-size: 1.25rem;
+}
+
+.slds-theme_warning {
+    background-color: #fff4e5;
+    color: #ea8500;
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+
+.slds-theme_info {
+    background-color: #e6f7ff;
+    color: #0070d2;
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+
+.slds-theme_success {
+    background-color: #e3fdeb;
+    color: #04844b;
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+
+.slds-theme_error {
+    background-color: #ffe0e0;
+    color: #c23934;
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+
+.urgency-past {
+    color: #c23934;
+    font-weight: 600;
+}
+
+.urgency-critical {
+    color: #ea8500;
+    font-weight: 600;
+}
+
+.urgency-warning {
+    color: #0070d2;
+}
+
+.urgency-normal {
+    color: #706e6b;
+}
+
+.slds-m-top_small {
+    margin-top: 12px;
+}

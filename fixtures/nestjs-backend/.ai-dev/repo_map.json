@@ -1,0 +1,427 @@
+{
+  "generated": "2026-03-18T19:21:52.219Z",
+  "totalFiles": 41,
+  "structure": {
+    "ai": {
+      "type": "directory",
+      "children": {
+        "ai_context.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "ai_rules.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "architecture.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "cache.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "context": {
+          "type": "directory",
+          "children": {
+            "features": {
+              "type": "directory",
+              "children": {
+                "src.json": {
+                  "type": "file",
+                  "extension": "json"
+                }
+              }
+            },
+            "flows": {
+              "type": "directory",
+              "children": {
+                "auth..json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "auth.controller.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "auth.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "users..json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "users.controller.json": {
+                  "type": "file",
+                  "extension": "json"
+                },
+                "users.json": {
+                  "type": "file",
+                  "extension": "json"
+                }
+              }
+            }
+          }
+        },
+        "conventions.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "dependencies.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "entrypoints.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "files.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "graph": {
+          "type": "directory",
+          "children": {
+            "module-graph.json": {
+              "type": "file",
+              "extension": "json"
+            },
+            "symbol-graph.json": {
+              "type": "file",
+              "extension": "json"
+            },
+            "symbol-references.json": {
+              "type": "file",
+              "extension": "json"
+            }
+          }
+        },
+        "index-state.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "modules.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "project.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "repo-map.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "repo_map.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "repo_map.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "schema.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "summary.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "symbols.json": {
+          "type": "file",
+          "extension": "json"
+        },
+        "tech_stack.md": {
+          "type": "file",
+          "extension": "md"
+        },
+        "tools.json": {
+          "type": "file",
+          "extension": "json"
+        }
+      }
+    },
+    "package.json": {
+      "type": "file",
+      "extension": "json"
+    },
+    "src": {
+      "type": "directory",
+      "children": {
+        "app.module.ts": {
+          "type": "file",
+          "extension": "ts"
+        },
+        "auth": {
+          "type": "directory",
+          "children": {
+            "auth.controller.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "auth.module.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "auth.service.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "dto": {
+              "type": "directory",
+              "children": {
+                "login.dto.ts": {
+                  "type": "file",
+                  "extension": "ts"
+                }
+              }
+            },
+            "strategies": {
+              "type": "directory",
+              "children": {
+                "jwt.strategy.ts": {
+                  "type": "file",
+                  "extension": "ts"
+                }
+              }
+            }
+          }
+        },
+        "main.ts": {
+          "type": "file",
+          "extension": "ts"
+        },
+        "users": {
+          "type": "directory",
+          "children": {
+            "users.controller.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "users.module.ts": {
+              "type": "file",
+              "extension": "ts"
+            },
+            "users.service.ts": {
+              "type": "file",
+              "extension": "ts"
+            }
+          }
+        }
+      }
+    },
+    "tsconfig.json": {
+      "type": "file",
+      "extension": "json"
+    }
+  },
+  "files": [
+    {
+      "path": "ai/ai_context.md",
+      "name": "ai_context.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/ai_rules.md",
+      "name": "ai_rules.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/architecture.md",
+      "name": "architecture.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/cache.json",
+      "name": "cache.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/features/src.json",
+      "name": "src.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/auth..json",
+      "name": "auth..json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/auth.controller.json",
+      "name": "auth.controller.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/auth.json",
+      "name": "auth.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/users..json",
+      "name": "users..json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/users.controller.json",
+      "name": "users.controller.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/context/flows/users.json",
+      "name": "users.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/conventions.md",
+      "name": "conventions.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/dependencies.json",
+      "name": "dependencies.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/entrypoints.md",
+      "name": "entrypoints.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/files.json",
+      "name": "files.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/graph/module-graph.json",
+      "name": "module-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/graph/symbol-graph.json",
+      "name": "symbol-graph.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/graph/symbol-references.json",
+      "name": "symbol-references.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/index-state.json",
+      "name": "index-state.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/modules.json",
+      "name": "modules.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/project.json",
+      "name": "project.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/repo-map.json",
+      "name": "repo-map.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/repo_map.json",
+      "name": "repo_map.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/repo_map.md",
+      "name": "repo_map.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/schema.json",
+      "name": "schema.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/summary.md",
+      "name": "summary.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/symbols.json",
+      "name": "symbols.json",
+      "extension": "json"
+    },
+    {
+      "path": "ai/tech_stack.md",
+      "name": "tech_stack.md",
+      "extension": "md"
+    },
+    {
+      "path": "ai/tools.json",
+      "name": "tools.json",
+      "extension": "json"
+    },
+    {
+      "path": "package.json",
+      "name": "package.json",
+      "extension": "json"
+    },
+    {
+      "path": "src/app.module.ts",
+      "name": "app.module.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/auth/auth.controller.ts",
+      "name": "auth.controller.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/auth/auth.module.ts",
+      "name": "auth.module.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/auth/auth.service.ts",
+      "name": "auth.service.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/auth/dto/login.dto.ts",
+      "name": "login.dto.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/auth/strategies/jwt.strategy.ts",
+      "name": "jwt.strategy.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/main.ts",
+      "name": "main.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/users/users.controller.ts",
+      "name": "users.controller.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/users/users.module.ts",
+      "name": "users.module.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "src/users/users.service.ts",
+      "name": "users.service.ts",
+      "extension": "ts"
+    },
+    {
+      "path": "tsconfig.json",
+      "name": "tsconfig.json",
+      "extension": "json"
+    }
+  ]
+}
