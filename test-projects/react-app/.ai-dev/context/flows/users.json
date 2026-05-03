@@ -1,9 +1,0 @@
-{
-  "name": "users",
-  "entrypoint": "src/pages/UsersPage.tsx",
-  "files": [
-    "src/pages/UsersPage.tsx"
-  ],
-  "depth": 0,
-  "layers": []
-}

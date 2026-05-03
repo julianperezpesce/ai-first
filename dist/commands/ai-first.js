@@ -27,6 +27,10 @@ import { detectGitRepository, generateGitContext } from "../core/gitAnalyzer.js"
 import { buildKnowledgeGraph } from "../core/knowledgeGraphBuilder.js";
 import { runIncrementalUpdate } from "../core/incrementalAnalyzer.js";
 import { generateAllSchema } from "../core/schema.js";
+import { extractProjectSetup } from "../utils/projectSetupExtractor.js";
+import { extractDependencyVersions } from "../utils/dependencyVersionExtractor.js";
+import { mapTestFiles } from "../utils/testFileMapper.js";
+import { extractDataModels } from "../utils/dataModelExtractor.js";
 import { startMCP } from "../mcp/index.js";
 import process from "process";
 const __filename = fileURLToPath(import.meta.url);
@@ -115,10 +119,38 @@ export async function runAIFirst(options = {}) {
         writeFile(aiRulesPath, generateAIRulesFile(aiRules, scanResult.files, rootDir));
         filesCreated.push(aiRulesPath);
         console.log("   ✅ Created ai_rules.md");
+        // Step 12b: Extract project setup
+        console.log("🚀 Extracting project setup...");
+        const projectSetup = extractProjectSetup(rootDir);
+        const setupPath = path.join(outputDir, "setup.json");
+        writeFile(setupPath, JSON.stringify(projectSetup, null, 2));
+        filesCreated.push(setupPath);
+        console.log("   ✅ Created setup.json");
+        // Step 12c: Extract dependency versions
+        console.log("📦 Extracting dependency versions...");
+        const depVersions = extractDependencyVersions(rootDir);
+        const depVersionsPath = path.join(outputDir, "dependency-versions.json");
+        writeFile(depVersionsPath, JSON.stringify(depVersions, null, 2));
+        filesCreated.push(depVersionsPath);
+        console.log("   ✅ Created dependency-versions.json");
+        // Step 12d: Map test files
+        console.log("🧪 Mapping test files...");
+        const testMapping = mapTestFiles(rootDir);
+        const testMappingPath = path.join(outputDir, "test-mapping.json");
+        writeFile(testMappingPath, JSON.stringify(testMapping, null, 2));
+        filesCreated.push(testMappingPath);
+        console.log("   ✅ Created test-mapping.json");
+        // Step 12e: Extract data models
+        console.log("📊 Extracting data models...");
+        const dataModels = extractDataModels(rootDir);
+        const dataModelsPath = path.join(outputDir, "data-models.json");
+        writeFile(dataModelsPath, JSON.stringify(dataModels, null, 2));
+        filesCreated.push(dataModelsPath);
+        console.log("   ✅ Created data-models.json");
         // Step 13: Generate unified ai_context.md
         console.log("📋 Generating unified AI context...");
         const aiContextPath = path.join(outputDir, "ai_context.md");
-        const aiContext = generateUnifiedContext(repoMap, summary, architecture, techStack, entrypoints, conventions, aiRules);
+        const aiContext = generateUnifiedContext(repoMap, summary, architecture, techStack, entrypoints, conventions, aiRules, projectSetup, depVersions, testMapping, dataModels);
         writeFile(aiContextPath, aiContext);
         filesCreated.push(aiContextPath);
         console.log("   ✅ Created ai_context.md");
@@ -209,7 +241,7 @@ function generateRepoMapJson(files) {
 /**
  * Generate unified AI context file
  */
-function generateUnifiedContext(repoMap, summary, architecture, techStack, entrypoints, conventions, aiRules) {
+function generateUnifiedContext(repoMap, summary, architecture, techStack, entrypoints, conventions, aiRules, projectSetup, depVersions, testMapping, dataModels) {
     const lines = [];
     lines.push("# AI Context");
     lines.push("");
@@ -271,6 +303,83 @@ function generateUnifiedContext(repoMap, summary, architecture, techStack, entry
         lines.push(`- ${guideline}`);
     }
     lines.push("");
+    if (projectSetup && (projectSetup.installCommand || projectSetup.devCommand || projectSetup.testCommand)) {
+        lines.push("---\n");
+        lines.push("## Quick Start");
+        lines.push("");
+        lines.push("| Command | Value |");
+        lines.push("|---------|-------|");
+        if (projectSetup.installCommand)
+            lines.push(`| Install | \`${projectSetup.installCommand}\` |`);
+        if (projectSetup.devCommand)
+            lines.push(`| Dev | \`${projectSetup.devCommand}\` |`);
+        if (projectSetup.buildCommand)
+            lines.push(`| Build | \`${projectSetup.buildCommand}\` |`);
+        if (projectSetup.testCommand)
+            lines.push(`| Test | \`${projectSetup.testCommand}\` |`);
+        if (projectSetup.startCommand)
+            lines.push(`| Start | \`${projectSetup.startCommand}\` |`);
+        lines.push("");
+        if (projectSetup.requirements.length > 0) {
+            lines.push("**Requirements**: " + projectSetup.requirements.join(", "));
+            lines.push("");
+        }
+        if (projectSetup.envVars.length > 0) {
+            lines.push("**Environment Variables**:");
+            lines.push("");
+            lines.push("| Variable | Required | Default |");
+            lines.push("|----------|----------|---------|");
+            for (const envVar of projectSetup.envVars.slice(0, 10)) {
+                lines.push(`| ${envVar.name} | ${envVar.required ? "Yes" : "No"} | ${envVar.defaultValue || "-"} |`);
+            }
+            lines.push("");
+        }
+    }
+    if (depVersions && depVersions.length > 0) {
+        lines.push("---\n");
+        lines.push("## Key Dependencies");
+        lines.push("");
+        const runtimeDeps = depVersions.filter(d => d.type === "runtime").slice(0, 15);
+        if (runtimeDeps.length > 0) {
+            lines.push("| Package | Version | Source |");
+            lines.push("|---------|---------|--------|");
+            for (const dep of runtimeDeps) {
+                lines.push(`| ${dep.name} | ${dep.version} | ${dep.source} |`);
+            }
+            lines.push("");
+        }
+    }
+    if (dataModels && dataModels.length > 0) {
+        lines.push("---\n");
+        lines.push("## Data Models");
+        lines.push("");
+        for (const model of dataModels.slice(0, 5)) {
+            lines.push(`### ${model.name} (${model.framework})`);
+            lines.push("");
+            if (model.fields.length > 0) {
+                lines.push("| Field | Type | Required | Unique |");
+                lines.push("|-------|------|----------|--------|");
+                for (const field of model.fields.slice(0, 10)) {
+                    lines.push(`| ${field.name} | ${field.type} | ${field.required ? "Yes" : "No"} | ${field.unique ? "Yes" : "No"} |`);
+                }
+                lines.push("");
+            }
+            if (model.relationships.length > 0) {
+                lines.push("**Relationships**: " + model.relationships.map(r => `${r.type} ${r.target}`).join(", "));
+                lines.push("");
+            }
+        }
+    }
+    if (testMapping && testMapping.length > 0) {
+        lines.push("---\n");
+        lines.push("## Test Coverage Map");
+        lines.push("");
+        const topMappings = testMapping.slice(0, 10);
+        for (const mapping of topMappings) {
+            lines.push(`- \`${mapping.sourceFile}\` → ${mapping.testFiles.map(t => `\`${t}\``).join(", ")}`);
+        }
+        lines.push("");
+    }
     lines.push("---\n");
     lines.push("## Repository Map");
     lines.push("");

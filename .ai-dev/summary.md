@@ -1,42 +1,48 @@
 # Repository Summary
 - **Total files**: 565
+- **Main project files**: ~160 (excluding test-projects)
+- **Test project files**: ~404 (in test-projects/)
 
-## Files by Extension
-  - .cls: 2
-  - .css: 1
-  - .java: 12
-  - .js: 7
-  - .json: 248
-  - .md: 150
-  - .php: 10
-  - .py: 46
-  - .rb: 12
-  - .trigger: 1
-  - .ts: 70
-  - .tsx: 6
+## Files by Extension (Main Project Only)
+  - .ts: 70 (TypeScript - main language)
+  - .json: 20 (config files)
+  - .md: 30 (documentation)
+  - .js: 7 (JavaScript - CLI output)
+  - .css: 1 (docs styling)
+  - .test.ts: 8 (tests)
 
-## Files by Directory
-  - .netlify: 1
-  - ANALISIS_COMPLETO.md: 1
-  - ANALISIS_MEJORAS.md: 1
-  - BUGS.md: 1
-  - CHANGELOG.md: 1
-  - CONTRIBUTING.md: 1
-  - FLOW.md: 1
-  - PLAN_MEJORAS.md: 1
-  - README.es.md: 1
-  - README.md: 1
-  - TEST_RESULTS.md: 1
-  - TEST_RESULTS_COMPARATIVE.md: 1
-  - TEST_RESULTS_COMPLETE.md: 1
-  - TEST_RESULTS_COMPREHENSIVE.md: 1
-  - TEST_RESULTS_PHASE1.md: 1
-  - ai: 50
-  - docs: 32
-  - examples: 4
-  - package-lock.json: 1
-  - package.json: 1
-  - src: 49
-  - test-projects: 404
-  - tests: 8
-  - tsconfig.json: 1
+## Main Directories
+| Directory | Files | Purpose |
+|-----------|-------|---------|
+| `src/` | 49 | Main source code (TypeScript) |
+| `src/commands/` | 3 | CLI commands |
+| `src/core/` | 20 | Core business logic |
+| `src/core/adapters/` | 12 | Framework adapters |
+| `src/analyzers/` | 9 | Code analyzers |
+| `tests/` | 8 | Unit tests |
+| `docs/` | 32 | VitePress documentation |
+| `examples/` | 4 | Usage examples |
+| `test-projects/` | 404 | Sample projects for testing |
+
+## Project Structure
+```
+ai-first/
+├── src/                    # Main source (TypeScript)
+│   ├── commands/           # CLI commands
+│   ├── core/               # Business logic
+│   │   └── adapters/       # Framework plugins
+│   ├── analyzers/          # Code analysis
+│   └── utils/              # Shared utilities
+├── tests/                  # Unit tests
+├── docs/                   # Documentation (VitePress)
+├── examples/               # Usage examples
+├── test-projects/          # Sample projects (excluded from analysis)
+└── package.json            # Project config
+```
+
+## Key Files
+- `src/commands/ai-first.ts` - CLI entry point
+- `src/core/aiContextGenerator.ts` - Main context generator
+- `src/core/repoScanner.ts` - Repository scanner
+- `src/index.ts` - Library exports
+- `package.json` - Project configuration

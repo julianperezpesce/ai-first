@@ -213,19 +213,27 @@ function findFilesByPattern(rootDir: string, pattern: string, maxFiles: number):
 
 /**
  * Get weight for a signal type
+ * Uses custom weight if provided, otherwise falls back to type-based defaults
  */
-function getSignalWeight(signal: { type: string; pattern: string }): number {
-  // Higher weight for more specific signals
+function getSignalWeight(signal: { type: string; pattern: string; weight?: number }): number {
+  // Use custom weight if specified
+  if (signal.weight !== undefined) {
+    return signal.weight;
+  }
+  
+  // Default weights by type (higher = more specific)
   switch (signal.type) {
     case 'content':
       return 3;
     case 'directory':
       return 2;
     case 'file':
-    default:
-      // Higher weight for more specific file patterns
+      // Higher weight for more specific file patterns (e.g., manage.py, pom.xml)
+      // Lower weight for generic files (e.g., requirements.txt, package.json without specifics)
       if (signal.pattern.startsWith('*')) return 1;
       if (signal.pattern.includes('.')) return 2;
+      return 1;
+    default:
       return 1;
   }
 }

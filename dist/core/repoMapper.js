@@ -191,7 +191,6 @@ function detectFrameworksFromFiles(files) {
 function inferProjectPurpose(files, frameworks) {
     const filePaths = files.map(f => f.relativePath.toLowerCase());
     const purposes = [];
-    // Detect project type based on frameworks
     const hasAPI = filePaths.some(p => p.includes("/api/") || p.includes("/controllers/") ||
         p.includes("/routes/") || p.includes("/endpoints/"));
     const hasAuth = filePaths.some(p => p.includes("/auth/") || p.includes("/login/") ||
@@ -202,7 +201,7 @@ function inferProjectPurpose(files, frameworks) {
         p.includes("/pages/") || p.includes("/screens/"));
     const isCLI = filePaths.some(p => p.includes("/commands/") || p.includes("/cli/") ||
         filePaths.some(f => f.endsWith("/main.ts") || f.endsWith("/main.go")));
-    // Build purpose description
+    const domainInfo = extractDomainFromPaths(filePaths);
     if (isCLI) {
         purposes.push("CLI tool");
     }
@@ -255,23 +254,52 @@ function inferProjectPurpose(files, frameworks) {
         purposes.push(".NET application");
     }
     if (purposes.length === 0) {
-        // Fallback: generic description based on structure
         if (hasUI) {
             purposes.push("web application");
         }
         else if (hasAPI) {
             purposes.push("API service");
         }
+        else if (isCLI) {
+            purposes.push("CLI tool");
+        }
+        else if (domainInfo) {
+            purposes.push(domainInfo);
+        }
         else {
             purposes.push("software project");
         }
     }
-    // Add framework list
+    else if (domainInfo && !isCLI) {
+        purposes.push(`for ${domainInfo}`);
+    }
     const uniqueFrameworks = [...new Set(frameworks)];
     if (uniqueFrameworks.length > 0) {
         return `This is a **${uniqueFrameworks.join(", ")}** ${purposes.join(" ")}.`;
     }
     return `This is a ${purposes.join(" ")}.`;
+}
+function extractDomainFromPaths(filePaths) {
+    const domainPatterns = [
+        { keywords: ["auth", "login", "signup", "credential"], domain: "authentication" },
+        { keywords: ["user", "account", "profile"], domain: "user management" },
+        { keywords: ["order", "cart", "checkout", "purchase"], domain: "e-commerce" },
+        { keywords: ["product", "catalog", "inventory"], domain: "product management" },
+        { keywords: ["blog", "post", "article", "cms", "content"], domain: "content management" },
+        { keywords: ["message", "chat", "notification", "email"], domain: "communication" },
+        { keywords: ["payment", "invoice", "billing", "transaction"], domain: "payments" },
+        { keywords: ["report", "analytics", "dashboard", "metric"], domain: "analytics" },
+        { keywords: ["admin", "setting", "config", "preference"], domain: "administration" },
+        { keywords: ["file", "upload", "media", "asset"], domain: "file management" },
+        { keywords: ["search", "query", "filter"], domain: "search" },
+        { keywords: ["pet", "vet", "owner", "clinic"], domain: "pet clinic" },
+    ];
+    for (const pattern of domainPatterns) {
+        if (pattern.keywords.some(kw => filePaths.some(p => p.includes("/" + kw + "/") || p.includes("/" + kw + ".")))) {
+            return pattern.domain;
+        }
+    }
+    return null;
 }
 /**
  * Generate summary statistics

@@ -21,7 +21,7 @@ export const DEFAULT_EXCLUDE_PATTERNS = [
     "target",
     ".cache",
     ".DS_Store",
-    "test-projects",
+    "fixtures",
     ".ai-dev",
     ".ai-dev-out",
     "ai-context",

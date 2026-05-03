@@ -46,6 +46,13 @@ export interface DetectionSignal {
   
   /** Optional: content to match inside file */
   contentPattern?: string;
+  
+  /** 
+   * Optional: custom weight for this signal (default based on type)
+   * Higher = more specific = more confident framework detection
+   * Examples: manage.py=5, requirements.txt=1, package.json=2
+   */
+  weight?: number;
 }
 
 export interface LayerRule {

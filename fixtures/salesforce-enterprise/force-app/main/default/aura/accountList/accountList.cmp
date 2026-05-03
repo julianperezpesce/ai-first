@@ -1,0 +1,56 @@
+<aura:component controller="AccountController" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" description="Account list component for displaying and managing accounts">
+    
+    <aura:attribute name="accounts" type="Account[]" description="List of accounts"/>
+    <aura:attribute name="searchTerm" type="String" default="" description="Search filter term"/>
+    <aura:attribute name="industryFilter" type="String" default="" description="Industry filter"/>
+    <aura:attribute name="selectedAccount" type="Account" description="Currently selected account"/>
+    <aura:attribute name="isLoading" type="Boolean" default="true" description="Loading state"/>
+    <aura:attribute name="columns" type="List" description="Table columns configuration"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:method name="refreshAccounts" action="{!c.loadAccounts}" description="Refreshes the account list"/>
+    
+    <force:recordData recordId="{!v.recordId}" 
+                      fields="['Name', 'Industry', 'AnnualRevenue']"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simpleRecord}"
+                      recordUpdated="{!c.handleRecordUpdated}"/>
+    
+    <div class="slds-box">
+        <!-- Search Bar -->
+        <lightning:input name="searchInput" 
+                         label="Search Accounts" 
+                         value="{!v.searchTerm}"
+                         onchange="{!c.handleSearchChange}"
+                         placeholder="Enter account name..."/>
+        
+        <!-- Industry Filter -->
+        <lightning:select name="industrySelect" label="Filter by Industry" value="{!v.industryFilter}" onchange="{!c.handleIndustryChange}">
+            <option value="">All Industries</option>
+            <option value="Technology">Technology</option>
+            <option value="Finance">Finance</option>
+            <option value="Healthcare">Healthcare</option>
+        </lightning:select>
+        
+        <!-- Loading Spinner -->
+        <aura:if isTrue="{!v.isLoading}">
+            <lightning:spinner alternativeText="Loading" size="small"/>
+        </aura:if>
+        
+        <!-- Account List -->
+        <aura:if isTrue="{!v.accounts.length > 0}">
+            <aura:iteration items="{!v.accounts}" var="account">
+                <c:accountListItem account="{!account}" onselect="{!c.handleAccountSelect}"/>
+            </aura:iteration>
+        </aura:if>
+        
+        <!-- Empty State -->
+        <aura:if isTrue="{!empty(v.accounts)}">
+            <div class="slds-illustration slds-illustration_small">
+                <p>No accounts found matching your criteria.</p>
+            </div>
+        </aura:if>
+    </div>
+    
+</aura:component>

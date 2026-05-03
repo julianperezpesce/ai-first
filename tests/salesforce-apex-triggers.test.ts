@@ -40,8 +40,9 @@ describe("Salesforce Apex Triggers Detection", () => {
       const triggersDir = path.join(SALESFORCE_ENTERPRISE_PATH, "force-app/main/default/triggers");
       const files = fs.readdirSync(triggersDir).filter(f => f.endsWith(".trigger"));
 
-      expect(files).toHaveLength(1);
+      expect(files).toHaveLength(2);
       expect(files).toContain("OpportunityTrigger.trigger");
+      expect(files).toContain("OrderEventTrigger.trigger");
     });
 
     it("should extract OpportunityTrigger symbol from real file", () => {

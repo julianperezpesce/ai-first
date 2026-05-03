@@ -6,6 +6,66 @@ All notable changes to `ai-first` will be documented in this file.
 
 ## [Unreleased]
 
+### 🚀 Content Quality Improvements
+
+#### ✨ Framework Detection Enhancements
+- **Weighted Detection Signals** - Added custom `weight` property to `DetectionSignal` interface
+  - Enables more specific framework detection (manage.py=5 vs requirements.txt=1)
+  - Updated `baseAdapter.ts` and `adapterRegistry.ts`
+  - Better scoring for framework-specific files
+
+- **Content-Based Python Framework Detection** - Enhanced `src/analyzers/techStack.ts`
+  - Analyzes actual Python imports to distinguish Django/Flask/FastAPI
+  - Scans up to 50 Python files for framework-specific imports
+  - Resolves conflicts from package-based detection
+
+#### 🔧 Architecture Detection Fixes
+- **API vs MVC Pattern Detection** - Updated `src/analyzers/architecture.ts`
+  - Now requires views/templates for MVC pattern (not just controllers)
+  - APIs without views are correctly labeled "Layered Architecture (REST API)"
+  - CLI tools get appropriate pattern without generic DI advice
+
+- **Context-Aware Recommendations** - Updated `src/core/generation/architectureGenerator.ts`
+  - CLI projects: recommends command parser libraries
+  - REST APIs: recommends layered separation
+  - No more generic DI advice for inappropriate project types
+
+#### 📝 Description Quality Improvements
+- **Better Project Purpose Inference** - Updated `src/core/repoMapper.ts`
+  - Extracts domain from directory names (auth → authentication, order → e-commerce)
+  - Fallback descriptions are more specific (e.g., "service-oriented application")
+  - 12 domain pattern categories
+
+- **Improved Project Type Detection** - Updated `src/core/generation/aiContextGenerator.ts`
+  - No more "Generic Application" or "software project" generic fallbacks
+  - Uses architecture pattern info when available
+  - Maps to: REST API, Microservices, Frontend Application, Backend Service, etc.
+
+- **Enhanced Entry Point Descriptions** - Updated `describeEntryPoint()`
+  - Now recognizes: CLI commands, workers, schedulers, consumers/producers
+  - More specific handlers: auth, middleware, services, repositories
+  - 15+ entry point type categories
+
+#### 🛠️ New Utilities
+- **FileStatsCalculator** - `src/utils/fileStatsCalculator.ts`
+  - Centralized file counting logic
+  - Consistent statistics across generators
+  - Validation for count consistency
+
+- **README Parser** - `src/utils/readmeParser.ts`
+  - Extracts title and description from README.md
+  - Detects documentation sections (installation, usage, examples)
+
+- **Text Utils** - `src/utils/textUtils.ts`
+  - Description deduplication
+  - Removes redundant phrases ("API API" → "API")
+
+#### ✅ Testing
+- All 1138 tests passing
+- Build compiles without errors
+
+---
+
 ## [1.3.10] - 2026-04-05
 
 ### 🎯 Framework Instructions & API Contracts

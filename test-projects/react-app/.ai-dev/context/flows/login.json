@@ -1,9 +1,0 @@
-{
-  "name": "login",
-  "entrypoint": "src/pages/LoginPage.tsx",
-  "files": [
-    "src/pages/LoginPage.tsx"
-  ],
-  "depth": 0,
-  "layers": []
-}

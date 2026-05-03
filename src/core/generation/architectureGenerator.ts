@@ -168,31 +168,47 @@ ${this.generateRecommendations(analysis)}
 
   private generateRecommendations(analysis: ArchitectureAnalysis): string {
     const recommendations: string[] = [];
-
+    
+    const pattern = analysis.primary?.name || "";
+    const isAPI = pattern.includes("REST API") || pattern.includes("Layered Architecture");
+    const isCLI = pattern.includes("CLI");
+    const isMicroservice = pattern.includes("Microservices");
+    
     if (!analysis.primary) {
       recommendations.push("- Consider adopting a well-defined architectural pattern");
     }
-
-    if (analysis.layers.length === 0) {
-      recommendations.push("- No clear layer separation detected. Consider organizing code into layers");
-    } else if (analysis.layers.length < 3) {
-      recommendations.push("- Consider adding more separation of concerns (currently only " + analysis.layers.length + " layers)");
+    
+    if (isCLI) {
+      recommendations.push("- CLI tools benefit from clear command structure and error handling");
+      recommendations.push("- Consider using a command parser library (clap, argparse, etc.)");
+    } else if (isAPI) {
+      if (analysis.layers.length === 0) {
+        recommendations.push("- No clear layer separation detected. Consider organizing code into layers (API → Service → Data)");
+      } else if (analysis.layers.length < 3) {
+        recommendations.push("- Consider adding more separation of concerns (API, Service, Data layers)");
+      }
+    } else if (!isMicroservice) {
+      if (analysis.layers.length === 0) {
+        recommendations.push("- No clear layer separation detected. Consider organizing code into layers");
+      } else if (analysis.layers.length < 3) {
+        recommendations.push("- Consider adding more separation of concerns (currently only " + analysis.layers.length + " layers)");
+      }
     }
-
+    
     if (analysis.entryPoints.length === 0) {
       recommendations.push("- No clear entry points found. Define main functions or controllers");
     } else if (analysis.entryPoints.length > 10) {
       recommendations.push("- Many entry points detected. Consider consolidating");
     }
-
+    
     if (analysis.secondary.length > 2) {
       recommendations.push("- Multiple patterns detected. Consider simplifying architecture");
     }
-
+    
     if (recommendations.length === 0) {
       return "- Architecture looks well-structured. Keep the consistency as the project grows.";
     }
-
+    
     return recommendations.join("\n");
   }
 }

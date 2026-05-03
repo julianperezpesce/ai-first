@@ -205,19 +205,27 @@ ${flow.dependencies.slice(0, 5).map((d) => `- ${d}`).join("\n")}
 
   private detectProjectType(analysis: {
     symbols: Array<{ type: string; file: string }>;
+    architecture: ArchitectureAnalysis;
   }): string {
-    const hasControllers = analysis.symbols.some(
-      (s) => s.type === "class" && s.file.includes("controller")
-    );
     const hasComponents = analysis.symbols.some(
       (s) => s.type === "class" && s.file.includes("component")
     );
     const hasRoutes = analysis.symbols.some((s) => s.file.includes("route"));
-
-    if (hasComponents) return "Frontend Application (React/Vue/Angular)";
-    if (hasControllers && hasRoutes) return "REST API / Web Service";
-    if (hasControllers) return "MVC Web Application";
-    return "Generic Application";
+    const hasModels = analysis.symbols.some((s) => s.file.includes("model") || s.file.includes("entity"));
+    const hasServices = analysis.symbols.some((s) => s.file.includes("service"));
+    
+    const archPattern = analysis.architecture.primary?.name || "";
+    const isAPIPattern = archPattern.includes("REST") || archPattern.includes("Layered") || archPattern.includes("API");
+    const isMicroservice = archPattern.includes("Microservice");
+    
+    if (isMicroservice) return "Microservices Architecture";
+    if (isAPIPattern && hasServices) return "REST API Service";
+    if (isAPIPattern) return "REST API";
+    if (hasComponents) return "Frontend Application";
+    if (hasRoutes && hasModels) return "MVC Web Application";
+    if (hasRoutes) return "API Application";
+    if (archPattern) return archPattern.replace(/\s*\([^)]*\)/g, "").trim() + " Application";
+    return "Backend Service";
   }
 
   private generateDescription(analysis: {
@@ -249,6 +257,8 @@ ${flow.dependencies.slice(0, 5).map((d) => `- ${d}`).join("\n")}
         purposeParts.push("application");
       } else if (epName.toLowerCase().includes("cli") || epName.toLowerCase().includes("command")) {
         purposeParts.push("CLI tool");
+      } else if (epName.toLowerCase().includes("worker") || epName.toLowerCase().includes("job")) {
+        purposeParts.push("background worker");
       }
       
       if (purposeParts.length > 0) {
@@ -260,7 +270,7 @@ ${flow.dependencies.slice(0, 5).map((d) => `- ${d}`).join("\n")}
       return `This is a **${patterns.join(" / ")}** application.`;
     }
     
-    return "This is a software project.";
+    return "This is a service-oriented application.";
   }
 
   private extractLanguages(files: string[]): string[] {
@@ -315,13 +325,26 @@ ${flow.dependencies.slice(0, 5).map((d) => `- ${d}`).join("\n")}
   private describeEntryPoint(entryPoint: string): string {
     const name = entryPoint.split("#")[1] || entryPoint;
     const file = entryPoint.split("#")[0] || entryPoint;
+    const lowerName = name.toLowerCase();
+    const lowerFile = file.toLowerCase();
 
-    if (name.toLowerCase().includes("main")) return "Application entry point";
-    if (name.toLowerCase().includes("server")) return "Server bootstrap";
-    if (name.toLowerCase().includes("app")) return "Main application setup";
-    if (file.includes("controller")) return "API endpoint handler";
-    if (file.includes("route")) return "Route definition";
-    return "Entry point";
+    if (lowerName.includes("main") || lowerName.includes("bootstrap")) return "Application entry point";
+    if (lowerName.includes("server") || lowerName.includes("listen")) return "HTTP server bootstrap";
+    if (lowerName.includes("app") && lowerName.includes("init")) return "Application initialization";
+    if (lowerName.includes("index")) return "Module entry point / exports";
+    if (lowerFile.includes("controller")) return "API endpoint handler";
+    if (lowerFile.includes("route") || lowerFile.includes("router")) return "Route definition";
+    if (lowerFile.includes("handler") || lowerFile.includes("action")) return "Request handler";
+    if (lowerName.includes("cli") || lowerName.includes("command") || lowerName.includes("run")) return "CLI command";
+    if (lowerName.includes("worker") || lowerName.includes("job") || lowerName.includes("task")) return "Background worker";
+    if (lowerName.includes("consumer") || lowerName.includes("producer")) return "Message queue consumer/producer";
+    if (lowerName.includes("scheduler") || lowerName.includes("cron")) return "Scheduled job";
+    if (lowerName.includes("auth") || lowerName.includes("login") || lowerName.includes("signup")) return "Authentication handler";
+    if (lowerFile.includes("middleware")) return "Request middleware";
+    if (lowerFile.includes("service")) return "Business logic service";
+    if (lowerFile.includes("model") || lowerFile.includes("entity")) return "Data model";
+    if (lowerFile.includes("repository") || lowerFile.includes("dao")) return "Data access layer";
+    return "Application entry point";
   }
 
   private extractFlows(analysis: {

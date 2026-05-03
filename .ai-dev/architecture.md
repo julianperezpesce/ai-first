@@ -1,136 +1,95 @@
 # Architecture
 
 ## Architectural Pattern
-**Primary**: Flat / Simple Structure
+**Primary**: CLI Application with Plugin Architecture
 
 ## Layers Identified
-- Infrastructure
-- Tests
-- Config
+1. **CLI Layer** - User interface and command parsing
+2. **Core Layer** - Business logic and orchestration
+3. **Adapter Layer** - Framework-specific plugins
+4. **Analyzer Layer** - Code analysis and extraction
+5. **Utils Layer** - Shared utilities
 
 ## Key Modules
 | Module | Responsibility |
 |--------|----------------|
-| `.netlify` | Contains 1 files |
-| `ANALISIS_COMPLETO.md` | Contains 0 files |
-| `ANALISIS_MEJORAS.md` | Contains 0 files |
-| `BUGS.md` | Contains 0 files |
-| `CHANGELOG.md` | Contains 0 files |
-| `CONTRIBUTING.md` | Contains 0 files |
-| `FLOW.md` | Contains 0 files |
-| `PLAN_MEJORAS.md` | Contains 0 files |
-| `README.es.md` | Contains 0 files |
-| `README.md` | Contains 0 files |
-
+| `src/commands/` | CLI interface - parses arguments, invokes core logic |
+| `src/core/` | Business logic - context generation, scanning, indexing |
+| `src/core/adapters/` | Framework-specific adapters (Django, Rails, NestJS, etc.) |
+| `src/analyzers/` | Code analysis - tech stack, architecture, symbols, dependencies |
+| `src/utils/` | Shared utilities - file operations, text processing |
+| `tests/` | Unit and integration tests |
+| `docs/` | VitePress documentation site |
 
 ## Module Details
 
-### .netlify
-- **Path**: `.netlify`
-- **Responsibility**: Contains 1 files
+### src/commands/
+- **Path**: `src/commands/`
+- **Responsibility**: CLI command implementations (init, index, doctor, explore, etc.)
+- **Key Files**: `ai-first.ts` (main entry), `doctor.ts`, `explore.ts`
 
+### src/core/
+- **Path**: `src/core/`
+- **Responsibility**: Core business logic for context generation
+- **Key Files**: `aiContextGenerator.ts`, `repoScanner.ts`, `indexer.ts`, `repoMapper.ts`
 
-### ANALISIS_COMPLETO.md
-- **Path**: `ANALISIS_COMPLETO.md`
-- **Responsibility**: Contains 0 files
+### src/core/adapters/
+- **Path**: `src/core/adapters/`
+- **Responsibility**: Framework-specific adapters that extract context from different tech stacks
+- **Pattern**: Adapter Pattern - each adapter implements `BaseAdapter` interface
+- **Adapters**: JavaScript, Python, Rails, Salesforce, .NET, + community (FastAPI, NestJS, Laravel, Spring Boot, Phoenix)
 
+### src/analyzers/
+- **Path**: `src/analyzers/`
+- **Responsibility**: Code analysis modules that extract different aspects of the codebase
+- **Key Files**: `techStack.ts`, `architecture.ts`, `symbols.ts`, `dependencies.ts`, `entrypoints.ts`, `conventions.ts`
 
-### ANALISIS_MEJORAS.md
-- **Path**: `ANALISIS_MEJORAS.md`
-- **Responsibility**: Contains 0 files
+## Architecture Diagram
 
+```
+┌─────────────────────────────────────────────────────────┐
+│                    CLI Layer                            │
+│              src/commands/ai-first.ts                   │
+└─────────────────────┬───────────────────────────────────┘
+                      │
+┌─────────────────────▼───────────────────────────────────┐
+│                    Core Layer                           │
+│  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐       │
+│  │   Scanner   │ │  Generator  │ │   Indexer   │       │
+│  │ repoScanner │ │ aiContext   │ │   indexer   │       │
+│  └──────┬──────┘ └──────┬──────┘ └──────┬──────┘       │
+└─────────┼───────────────┼───────────────┼───────────────┘
+          │               │               │
+┌─────────▼───────────────▼───────────────▼───────────────┐
+│                  Adapter Layer                          │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐   │
+│  │ JavaScript│ │  Python  │ │   Rails  │ │Salesforce│   │
+│  └──────────┘ └──────────┘ └──────────┘ └──────────┘   │
+└─────────────────────────────────────────────────────────┘
+          │
+┌─────────▼───────────────────────────────────────────────┐
+│                 Analyzer Layer                          │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐   │
+│  │ TechStack│ │   Arch   │ │  Symbols │ │  Deps    │   │
+│  └──────────┘ └──────────┘ └──────────┘ └──────────┘   │
+└─────────────────────────────────────────────────────────┘
+```
 
-### BUGS.md
-- **Path**: `BUGS.md`
-- **Responsibility**: Contains 0 files
+## Data Flow
 
-
-### CHANGELOG.md
-- **Path**: `CHANGELOG.md`
-- **Responsibility**: Contains 0 files
-
-
-### CONTRIBUTING.md
-- **Path**: `CONTRIBUTING.md`
-- **Responsibility**: Contains 0 files
-
-
-### FLOW.md
-- **Path**: `FLOW.md`
-- **Responsibility**: Contains 0 files
-
-
-### PLAN_MEJORAS.md
-- **Path**: `PLAN_MEJORAS.md`
-- **Responsibility**: Contains 0 files
-
-
-### README.es.md
-- **Path**: `README.es.md`
-- **Responsibility**: Contains 0 files
-
-
-### README.md
-- **Path**: `README.md`
-- **Responsibility**: Contains 0 files
-
-
-### TEST_RESULTS.md
-- **Path**: `TEST_RESULTS.md`
-- **Responsibility**: Testing utilities and mocks
-
-
-### TEST_RESULTS_COMPARATIVE.md
-- **Path**: `TEST_RESULTS_COMPARATIVE.md`
-- **Responsibility**: Testing utilities and mocks
-
-
-### TEST_RESULTS_COMPLETE.md
-- **Path**: `TEST_RESULTS_COMPLETE.md`
-- **Responsibility**: Testing utilities and mocks
-
-
-### TEST_RESULTS_COMPREHENSIVE.md
-- **Path**: `TEST_RESULTS_COMPREHENSIVE.md`
-- **Responsibility**: Testing utilities and mocks
-
-
-### TEST_RESULTS_PHASE1.md
-- **Path**: `TEST_RESULTS_PHASE1.md`
-- **Responsibility**: Testing utilities and mocks
-
-
-### ai
-- **Path**: `ai`
-- **Responsibility**: Contains 50 files
-
-
-### docs
-- **Path**: `docs`
-- **Responsibility**: Contains 32 files
-
-
-### examples
-- **Path**: `examples`
-- **Responsibility**: Contains 4 files
-
-
-### package-lock.json
-- **Path**: `package-lock.json`
-- **Responsibility**: Contains 0 files
-
-
-### package.json
-- **Path**: `package.json`
-- **Responsibility**: Contains 0 files
-
-
+1. **CLI Command** → Parses arguments, invokes core
+2. **Repo Scanner** → Discovers files, categorizes by language
+3. **Adapter Selection** → Picks appropriate adapter(s)
+4. **Analyzer Chain** → Runs tech stack, architecture, symbols analysis
+5. **Context Generator** → Combines results into structured output
+6. **Output** → Writes ai-context/ files
 
 ## Recommendations
 
-- Keep the architecture consistent as the project grows
-- Follow the established layer structure
-- Use dependency injection to manage module relationships
+- Follow the Adapter Pattern when adding new framework support
+- Keep analyzers independent and composable
+- Use the existing `BaseAdapter` interface for consistency
+- Test new adapters against test-projects/
 
 ---
-*Generated by ai-first*
+*Generated by ai-first (corrected)*

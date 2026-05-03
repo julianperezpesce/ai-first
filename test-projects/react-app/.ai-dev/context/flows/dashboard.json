@@ -1,9 +1,0 @@
-{
-  "name": "dashboard",
-  "entrypoint": "src/pages/DashboardPage.tsx",
-  "files": [
-    "src/pages/DashboardPage.tsx"
-  ],
-  "depth": 0,
-  "layers": []
-}

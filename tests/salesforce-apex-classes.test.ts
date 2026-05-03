@@ -42,11 +42,11 @@ describe("Salesforce Apex Classes Detection", () => {
       expect(adapter.name).toBe("salesforce");
     });
 
-    it("should detect all 8 Apex classes in the enterprise project", () => {
+    it("should detect all 14 Apex classes in the enterprise project", () => {
       const classesDir = path.join(SALESFORCE_ENTERPRISE_PATH, "force-app/main/default/classes");
       const files = fs.readdirSync(classesDir).filter(f => f.endsWith(".cls"));
 
-      expect(files).toHaveLength(8);
+      expect(files).toHaveLength(14);
       expect(files).toContain("AccountController.cls");
       expect(files).toContain("AccountControllerTest.cls");
       expect(files).toContain("OpportunityBatch.cls");
@@ -55,6 +55,12 @@ describe("Salesforce Apex Classes Detection", () => {
       expect(files).toContain("OpportunityTriggerHelper.cls");
       expect(files).toContain("TriggerManagement.cls");
       expect(files).toContain("Logger.cls");
+      expect(files).toContain("OrderEventPublisher.cls");
+      expect(files).toContain("OrderEventTriggerHandler.cls");
+      expect(files).toContain("AccountMergeService.cls");
+      expect(files).toContain("OpportunityBatchProcessor.cls");
+      expect(files).toContain("NotificationQueueable.cls");
+      expect(files).toContain("AccountDashboardController.cls");
     });
 
     it("should extract symbols from all 8 Apex classes", () => {

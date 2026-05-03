@@ -53,16 +53,20 @@ function detectPatterns(directories: string[], extensions: string[], files: File
   const patterns: string[] = [];
   const dirs = directories.filter(d => d && d !== "root");
   
-  // Check for common patterns
-  const hasSrc = dirs.some(d => d === "src" || d.startsWith("src/"));
-  const hasTest = dirs.some(d => d === "test" || d.startsWith("test/") || d === "__tests__");
-  const hasLib = dirs.some(d => d === "lib" || d.startsWith("lib/"));
-  const hasInternal = dirs.some(d => d === "internal" || d.startsWith("internal/"));
-  const hasPackages = dirs.some(d => d === "packages" || d.startsWith("packages/"));
-  const hasApps = dirs.some(d => d === "apps" || d.startsWith("apps/"));
+  const hasViews = dirs.some(d => d.includes("views") || d.includes("templates") || d.includes("pages"));
+  const hasControllers = dirs.some(d => d.includes("controllers") || d.includes("handlers") || d.includes("api"));
+  const hasModels = dirs.some(d => d.includes("models") || d.includes("entities") || d.includes("schemas"));
+  const hasServices = dirs.some(d => d.includes("services") || d.includes("usecases") || d.includes("business"));
+  const hasRepositories = dirs.some(d => d.includes("repositories") || d.includes("dao") || d.includes("persistence"));
   
-  // MVC patterns
-  if (dirs.some(d => d.includes("controllers") || d.includes("views") || d.includes("models"))) {
+  const isAPIProject = hasControllers && !hasViews && (hasServices || hasRepositories);
+  
+  if (isAPIProject) {
+    patterns.push("Layered Architecture (REST API)");
+  }
+  
+  // Strict MVC - requires views/templates
+  else if (dirs.some(d => d.includes("controllers")) && hasViews && hasModels) {
     patterns.push("MVC (Model-View-Controller)");
   }
   
@@ -76,13 +80,14 @@ function detectPatterns(directories: string[], extensions: string[], files: File
     patterns.push("Clean Architecture");
   }
   
-  // Layered
-  if (dirs.some(d => d.includes("layers") || d.includes("services") || d.includes("repositories") || d.includes("controllers"))) {
+  // Layered (for projects that don't qualify as REST API)
+  if (!isAPIProject && dirs.some(d => d.includes("layers") || d.includes("services") || d.includes("repositories") || d.includes("controllers"))) {
     patterns.push("Layered Architecture");
   }
   
   // Monorepo
-  if (hasPackages || hasApps) {
+  if (dirs.some(d => d === "packages" || d.startsWith("packages/")) ||
+      dirs.some(d => d === "apps" || d.startsWith("apps/"))) {
     patterns.push("Monorepo");
   }
   
@@ -93,18 +98,14 @@ function detectPatterns(directories: string[], extensions: string[], files: File
   
   for (const file of files) {
     const parts = file.relativePath.split("/");
-    // Check for services/*/ pattern (must be an actual subdirectory, not a file)
     const servicesIndex = parts.indexOf("services");
     if (servicesIndex >= 0 && servicesIndex < parts.length - 2) {
-      // parts.length - 2 ensures there's at least one directory after 'services' before the file
       const subdir = parts[servicesIndex + 1];
       if (!versionPattern.test(subdir)) {
         serviceSubdirs.add(subdir);
       }
     }
-    // Check for api/*/ pattern at root level (must be an actual subdirectory)
     if (parts[0] === "api" && parts.length > 2) {
-      // parts.length > 2 ensures there's at least one directory after 'api' before the file
       const subdir = parts[1];
       if (!versionPattern.test(subdir)) {
         apiSubdirs.add(subdir);
@@ -114,9 +115,9 @@ function detectPatterns(directories: string[], extensions: string[], files: File
   
   if (serviceSubdirs.size >= 2 || apiSubdirs.size >= 2) {
     patterns.push("Microservices");
-  } else if (dirs.some(d => d === "services" || d === "api") ||
+  } else if (!isAPIProject && (dirs.some(d => d === "services" || d === "api") ||
              files.some(f => f.relativePath.includes("/services/") || f.relativePath.includes("/api/")) ||
-             serviceSubdirs.size === 1 || apiSubdirs.size === 1) {
+             serviceSubdirs.size === 1 || apiSubdirs.size === 1)) {
     patterns.push("API Server");
   }
   
@@ -132,12 +133,11 @@ function detectPatterns(directories: string[], extensions: string[], files: File
     }
   }
   
-  // CLI Tool
+  // CLI Tool - skip DI advice for CLI
   if (dirs.some(d => d.includes("commands") || d.includes("cli"))) {
     patterns.push("CLI Application");
   }
   
-  // Default if no pattern detected
   if (patterns.length === 0) {
     patterns.push("Flat / Simple Structure");
   }

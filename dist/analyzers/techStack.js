@@ -237,6 +237,41 @@ function detectFrameworks(files, fileNames, rootDir) {
         }
         catch { }
     }
+    // Content-based Python framework detection (highest priority)
+    const pythonFrameworkCounts = {
+        django: 0,
+        flask: 0,
+        fastapi: 0,
+    };
+    const pythonFiles = files.filter(f => f.extension === "py");
+    for (const pyFile of pythonFiles.slice(0, 50)) {
+        try {
+            const content = readFile(path.join(rootDir, pyFile.relativePath));
+            const lowerContent = content.toLowerCase();
+            if (lowerContent.includes("from django") || lowerContent.includes("import django")) {
+                pythonFrameworkCounts.django++;
+            }
+            if (lowerContent.includes("from flask") || lowerContent.includes("import flask")) {
+                pythonFrameworkCounts.flask++;
+            }
+            if (lowerContent.includes("from fastapi") || lowerContent.includes("import fastapi")) {
+                pythonFrameworkCounts.fastapi++;
+            }
+        }
+        catch { }
+    }
+    // If content analysis found a clear winner, use it to resolve conflicts
+    const contentWinner = Object.entries(pythonFrameworkCounts)
+        .filter(([_, count]) => count > 0)
+        .sort((a, b) => b[1] - a[1])[0];
+    if (contentWinner) {
+        const [framework] = contentWinner;
+        const frameworkName = framework.charAt(0).toUpperCase() + framework.slice(1);
+        // Only override package-based detection if content strongly disagrees
+        if (!frameworks.includes(frameworkName)) {
+            frameworks.push(frameworkName);
+        }
+    }
     return [...new Set(frameworks)];
 }
 /**
