@@ -352,7 +352,7 @@ function extractDefault(fieldLine: string): string | null {
 
 function findFiles(rootDir: string, patterns: string[]): string[] {
   const files: string[] = [];
-  const excludeDirs = ["node_modules", ".git", "dist", "build", "__pycache__", "vendor", ".venv", "venv"];
+  const excludeDirs = ["node_modules", ".git", "dist", "build", "__pycache__", "vendor", ".venv", "venv", "fixtures"];
 
   function walk(dir: string) {
     try {

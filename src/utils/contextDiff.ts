@@ -169,7 +169,7 @@ function buildDiffSummary(diff: ContextDiff): string {
 function findSourceFiles(rootDir: string, maxFiles: number): string[] {
   const files: string[] = [];
   const extensions = [".ts", ".js", ".py", ".go", ".rs", ".java", ".rb", ".php"];
-  const excludeDirs = ["node_modules", ".git", "dist", "build", "__pycache__", "vendor", ".venv", "venv", "ai-context", ".ai-dev"];
+  const excludeDirs = ["node_modules", ".git", "dist", "build", "__pycache__", "vendor", ".venv", "venv", "fixtures", "ai-context", ".ai-dev"];
 
   function walk(dir: string) {
     if (files.length >= maxFiles) return;

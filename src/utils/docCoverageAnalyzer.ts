@@ -143,7 +143,7 @@ function checkForPythonDoc(lines: string[], currentIndex: number): boolean {
 function findSourceFiles(rootDir: string, maxFiles: number): string[] {
   const files: string[] = [];
   const extensions = [".ts", ".js", ".py", ".go", ".rs", ".java", ".rb", ".php"];
-  const excludeDirs = ["node_modules", ".git", "dist", "build", "__pycache__", "vendor", ".venv", "venv"];
+  const excludeDirs = ["node_modules", ".git", "dist", "build", "__pycache__", "vendor", ".venv", "venv", "fixtures"];
 
   function walk(dir: string) {
     if (files.length >= maxFiles) return;
