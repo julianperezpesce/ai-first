@@ -19,17 +19,33 @@
 
 ---
 
-## 🚀 What's New in v1.3.10
+## 🚀 What's New in v1.4.0
 
-**Framework Instructions & API Contracts**
+**Smart Context & Deep Analysis** - 26 new analysis modules
 
-- ✅ **Framework Instructions**: Framework-specific guidelines for Django, Rails, Laravel, Express, NestJS, Spring Boot, FastAPI, Flask
-- ✅ **API Contracts**: Documented endpoints with request/response schemas for Express, NestJS, Spring, FastAPI, Django
-- ✅ **Enhanced Module Descriptions**: Domain-aware descriptions like "User management API" instead of "API endpoints"
-- ✅ **Entrypoints Format**: Header-per-entry format with better readability
-- ✅ **Evaluator Score**: Target >4.5/5.0 average
+- ✅ **Auto Quick Start**: Detects install/dev/test/start commands from package.json, Makefile, requirements.txt, etc.
+- ✅ **Dependency Versions**: Extracts exact versions from npm, pip, Bundler, Maven, Gradle, Cargo, Go modules
+- ✅ **Source → Test Mapping**: Links each source file to its corresponding test files
+- ✅ **Data Model Extraction**: Schemas from Django, SQLAlchemy, TypeORM, Mongoose, Prisma, GORM
+- ✅ **Environment Variables**: Detects .env.example and process.env usage
+- ✅ **Cross-Cutting Concerns**: Auth, logging, error handling, validation, caching patterns
+- ✅ **Configuration Analysis**: TypeScript, ESLint, Prettier, testing framework, Docker
+- ✅ **Recent Activity**: Git log, commits, active contributors
+- ✅ **Code Patterns**: Real examples of controllers, services, tests extracted from code
+- ✅ **Security Audit**: SQL injection, XSS, hardcoded credentials, weak crypto
+- ✅ **Performance Analysis**: Nested loops, sequential awaits, unbounded queries
+- ✅ **CI/CD Pipeline**: GitHub Actions, GitLab CI, Jenkins, CircleCI, Azure Pipelines
+- ✅ **DB Migrations**: Django, Knex, Prisma, Flyway, Alembic, Rails
+- ✅ **Task-Specific Context**: `af context --task "add-endpoint"` generates focused context
+- ✅ **Context Diff**: Track what changed between runs
+- ✅ **Doc Coverage**: JSDoc/docstring analysis
+- ✅ **Dead Code Detection**: Unused functions/classes
+- ✅ **Improved Salesforce**: 4 features (apex-classes, apex-triggers, lwc, aura) + 163 new tests
+- ✅ **1330 Tests Passing**: 44 test files, 100% success rate
 
-**Previous: v1.3.9**
+**[Read the docs →](./docs/NEW_FEATURES.md)**
+
+**Previous: v1.3.10**
 
 - ✅ **Python Entrypoints**: Automatic detection of `manage.py`, `app.py`, `__init__.py` exports, `pyproject.toml` scripts
 - ✅ **Spring Boot Entrypoints**: Detection of `@SpringBootApplication`, `@RestController`, `pom.xml`, `build.gradle`

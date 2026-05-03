@@ -4,6 +4,72 @@ All notable changes to `ai-first` will be documented in this file.
 
 ---
 
+## [1.4.0] - 2026-05-02
+
+### 🧠 Smart Context & Deep Analysis
+
+**Branch:** `master`
+
+#### ✨ New Features
+
+**High Impact:**
+- **Auto Quick Start** - Detect install/dev/test/start commands from package.json, Makefile, requirements.txt, pyproject.toml, Gemfile, pom.xml, build.gradle, Cargo.toml, go.mod
+- **Dependency Versions** - Extract exact versions from npm, pip, Bundler, Maven, Gradle, Cargo, Go modules
+- **Source → Test Mapping** - Link each source file to its corresponding test files
+- **Data Model Extraction** - Schemas from Django, SQLAlchemy, TypeORM, Mongoose, Prisma, GORM
+- **Environment Variables** - Detect .env.example and process.env usage in code
+
+**Medium Impact:**
+- **Cross-Cutting Concerns** - Auth (JWT/Passport/Django), logging (Winston/Pino), error handling, validation (Joi/Zod/Pydantic), caching (Redis/Memcached)
+- **Configuration Analysis** - TypeScript, ESLint, Prettier, testing framework, Docker
+- **Recent Activity** - Git log, commits, active contributors, recently modified files
+- **Code Gotchas** - Extract TODO, FIXME, HACK, WARNING comments from code
+
+**Innovative:**
+- **Code Patterns** - Extract real controller, service, model, test examples from codebase
+- **Security Audit** - SQL injection, XSS, hardcoded credentials, weak crypto, command injection, CORS misconfiguration
+- **Performance Analysis** - Nested loops, unbounded queries, sequential awaits, sync file reads, regex in loop
+- **Impact Analysis** - Show which files are affected when changing a file
+- **Anti-Patterns** - console.log, empty catch, type suppression, promise hell, long functions
+
+**Advanced:**
+- **Context Diff** - Track what changed between runs (new/removed/modified files, dependencies, symbols)
+- **Dead Code Detection** - Find unused functions, classes, and files
+- **Documentation Coverage** - Analyze JSDoc/Python docstring coverage
+- **CI/CD Detection** - GitHub Actions, GitLab CI, Jenkins, CircleCI, Azure Pipelines
+- **Database Migrations** - Django, Knex, Prisma, Flyway, Alembic, Rails
+
+#### 🎯 Task-Specific Context
+- New `af context --task <task>` command
+- Supports: add-endpoint, add-model, fix-auth, fix-bug, refactor, test
+- Output formats: json, markdown, text
+- Save to file with `--save` flag
+
+#### 🔄 Salesforce Improvements
+- **Feature Detection**: 4 features instead of 1 (apex-classes, apex-triggers, lwc, aura)
+- **New Metadata Support**: Platform Events, Custom Metadata Types, Aura Components, Visualforce Pages, Permission Sets
+- **Async Patterns**: Batch (Database.Batchable/Stateful), Schedulable, Queueable with chaining
+- **Invocable Methods**: @InvocableMethod/@InvocableVariable detection with inner classes
+- **163 new tests**: 6 new test files for Salesforce metadata types
+
+#### 🏗️ Project Structure
+- Renamed `test-projects/` → `fixtures/`
+- Moved internal docs to `docs/internal/`
+- Moved evaluator scripts to `scripts/`
+- Cleaned root directory (30+ files → 4 essential files)
+- Modularized CLI: extracted `generateUnifiedContext()` to `contextGenerator.ts`
+- Added GitHub Actions CI/CD pipeline (test on Node 18/20/22, lint, e2e)
+
+#### 🧪 Testing
+- 1330 tests passing (44 test files)
+- 186 new tests added
+- 25 new utility modules with test coverage
+
+#### 📚 Documentation
+- Added `docs/NEW_FEATURES.md` with comprehensive feature documentation
+
+---
+
 ## [Unreleased]
 
 ### 🚀 Content Quality Improvements

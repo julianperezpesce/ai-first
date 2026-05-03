@@ -21,17 +21,33 @@
 
 ---
 
-## 🚀 Novedades en v1.3.10
+## 🚀 Novedades en v1.4.0
 
-**Instrucciones de Framework & Contratos API**
+**Contexto Inteligente & Análisis Profundo** - 26 nuevos módulos de análisis
 
-- ✅ **Instrucciones de Framework**: Guías específicas por framework para Django, Rails, Laravel, Express, NestJS, Spring Boot, FastAPI, Flask
-- ✅ **Contratos API**: Endpoints documentados con schemas de request/response para Express, NestJS, Spring, FastAPI, Django
-- ✅ **Descripciones de Módulos Mejoradas**: Descripciones basadas en dominio como "API de gestión de usuarios" en lugar de "Endpoints API"
-- ✅ **Formato de Entrypoints**: Formato header-por-entrada con mejor legibilidad
-- ✅ **Puntuación Evaluador**: Objetivo >4.5/5.0 promedio
+- ✅ **Quick Start Automático**: Detecta comandos install/dev/test/start de package.json, Makefile, requirements.txt, etc.
+- ✅ **Versiones de Dependencias**: Extrae versiones exactas de npm, pip, Bundler, Maven, Gradle, Cargo, Go modules
+- ✅ **Mapeo Source → Test**: Vincula cada archivo fuente con sus tests correspondientes
+- ✅ **Extracción de Modelos**: Schemas de Django, SQLAlchemy, TypeORM, Mongoose, Prisma, GORM
+- ✅ **Variables de Entorno**: Detecta .env.example y process.env en el código
+- ✅ **Preocupaciones Transversales**: Patrones de auth, logging, error handling, validación, caching
+- ✅ **Análisis de Configuración**: TypeScript, ESLint, Prettier, testing framework, Docker
+- ✅ **Cambios Recientes**: Actividad de git, commits, autores activos
+- ✅ **Patrones de Código**: Ejemplos reales de controllers, services, tests extraídos del código
+- ✅ **Auditoría de Seguridad**: SQL injection, XSS, hardcoded credentials, weak crypto
+- ✅ **Análisis de Performance**: Nested loops, sequential awaits, unbounded queries
+- ✅ **CI/CD Pipeline**: GitHub Actions, GitLab CI, Jenkins, CircleCI, Azure Pipelines
+- ✅ **Migraciones de BD**: Django, Knex, Prisma, Flyway, Alembic, Rails
+- ✅ **Contexto por Tarea**: `af context --task "add-endpoint"` genera contexto específico
+- ✅ **Context Diff**: Cambios entre ejecuciones del contexto
+- ✅ **Cobertura de Docs**: Análisis de JSDoc/docstrings
+- ✅ **Detección de Código Muerto**: Funciones/clases no utilizadas
+- ✅ **Salesforce Mejorado**: 4 features (apex-classes, apex-triggers, lwc, aura) + 163 tests nuevos
+- ✅ **1330 Tests Pasando**: 44 archivos de test, 100% éxito
 
-**Anterior: v1.3.9**
+**[Leer la documentación →](./docs/NEW_FEATURES.md)**
+
+**Anterior: v1.3.10**
 
 - ✅ **Entrypoints Python**: Detección automática de `manage.py`, `app.py`, exports de `__init__.py`, scripts de `pyproject.toml`
 - ✅ **Entrypoints Spring Boot**: Detección de `@SpringBootApplication`, `@RestController`, `pom.xml`, `build.gradle`
