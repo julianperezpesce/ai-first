@@ -1,6 +1,8 @@
 import fs from "fs";
 import path from "path";
 import { scanRepo } from "../core/repoScanner.js";
+import { mapTestFiles } from "../utils/testFileMapper.js";
+import { extractDependencyVersions } from "../utils/dependencyVersionExtractor.js";
 
 export interface DoctorResult {
   success: boolean;
@@ -35,6 +37,29 @@ export async function runDoctor(rootDir: string, fixMode: boolean): Promise<Doct
   checks.push({ name: 'Semantic index', status: fs.existsSync(path.join(aiDir, "index")) ? 'pass' : 'warn', message: fs.existsSync(path.join(aiDir, "index")) ? 'Found' : 'Not found' });
   checks.push({ name: 'Module graph', status: fs.existsSync(path.join(aiDir, "graph", "module-graph.json")) ? 'pass' : 'warn', message: 'Run ai-first explore all' });
   checks.push({ name: 'SQLite index', status: fs.existsSync(path.join(aiDir, "index.db")) ? 'pass' : 'warn', message: fs.existsSync(path.join(aiDir, "index.db")) ? 'Found' : 'Not found' });
+
+  const gitignorePath = path.join(rootDir, ".gitignore");
+  if (fs.existsSync(gitignorePath)) {
+    const gitignore = fs.readFileSync(gitignorePath, "utf-8");
+    const missing: string[] = [];
+    if (!gitignore.includes("ai-context") && !gitignore.includes("ai-context/")) missing.push("ai-context/");
+    if (!gitignore.includes("node_modules")) missing.push("node_modules/");
+    checks.push({ name: '.gitignore', status: missing.length ? 'warn' : 'pass', message: missing.length ? `Missing: ${missing.join(', ')}` : 'OK' });
+  }
+
+  const testMapping = mapTestFiles(rootDir);
+  const sourcesWithoutTests = scanResult.files
+    .filter(f => ['.ts', '.js', '.py'].includes('.' + f.extension))
+    .filter(f => !f.relativePath.includes('test') && !f.relativePath.includes('spec'))
+    .filter(f => !testMapping.some(m => m.sourceFile === f.relativePath))
+    .slice(0, 10);
+  checks.push({ name: 'Test coverage', status: sourcesWithoutTests.length > 3 ? 'warn' : 'pass', message: sourcesWithoutTests.length > 3 ? `${sourcesWithoutTests.length}+ files need tests` : 'Good coverage' });
+
+  const deps = extractDependencyVersions(rootDir);
+  checks.push({ name: 'Dependencies', status: 'pass', message: `${deps.filter(d => d.type === 'runtime').length} runtime, ${deps.filter(d => d.type === 'dev').length} dev` });
+
+  const readmeExists = fs.existsSync(path.join(rootDir, "README.md"));
+  checks.push({ name: 'README', status: readmeExists ? 'pass' : 'warn', message: readmeExists ? 'Found' : 'Not found' });
 
   console.log("\n" + "=".repeat(50));
   console.log("AI-First Doctor Report");

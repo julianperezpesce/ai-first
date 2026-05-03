@@ -52,6 +52,7 @@ import { generateUnifiedContext, type UnifiedContextParams } from "./contextGene
 import { Database } from "sql.js";
 import ora from "ora";
 import { startMCP } from "../mcp/index.js";
+import { cloneAndInit, isLargeRepo } from "../utils/remoteUtils.js";
 import process from "process";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -1198,6 +1199,7 @@ Options:
     let diffMode = false;
     let jsonMode = false; 
     let watchMode = false;
+    let smartMode = false;
 
     for (let i = 0; i < args.length; i++) {
       const arg = args[i];
@@ -1226,6 +1228,9 @@ Options:
         case "-j":
           jsonMode = true;
           break;
+        case "--smart": smartMode = true; break;
+        case "--repo": options.rootDir = await cloneAndInit(args[++i]); break;
+        case "--plugin": try { await import(path.resolve(args[++i])); console.log("✅ Plugin loaded"); } catch(_) { console.error("❌ Plugin error:", (_ as Error).message); } break;
         case "--watch":
         case "-w":
           watchMode = true;
@@ -1271,6 +1276,13 @@ Presets:
     }
     
     const rootDir = options.rootDir || process.cwd();
+    if (smartMode) {
+      const { isLargeRepo: checkRepo } = await import("../utils/remoteUtils.js");
+      if (checkRepo(rootDir)) {
+        console.log("\n🧠 Smart mode: optimizing for large repository...");
+        options.excludePatterns = [...(options.excludePatterns || []), "*.generated.*", "*.min.*", "*.bundle.*"];
+      }
+    }
     const configPath = path.join(rootDir, 'ai-first.config.json');
     if (fs.existsSync(configPath)) {
       try {

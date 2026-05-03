@@ -47,6 +47,7 @@ import { detectCICD } from "../utils/cicdDetector.js";
 import { detectMigrations } from "../utils/migrationDetector.js";
 import { generateUnifiedContext } from "./contextGenerator.js";
 import { startMCP } from "../mcp/index.js";
+import { cloneAndInit } from "../utils/remoteUtils.js";
 import process from "process";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -1094,6 +1095,7 @@ Options:
         let diffMode = false;
         let jsonMode = false;
         let watchMode = false;
+        let smartMode = false;
         for (let i = 0; i < args.length; i++) {
             const arg = args[i];
             switch (arg) {
@@ -1120,6 +1122,21 @@ Options:
                 case "--json":
                 case "-j":
                     jsonMode = true;
+                    break;
+                case "--smart":
+                    smartMode = true;
+                    break;
+                case "--repo":
+                    options.rootDir = await cloneAndInit(args[++i]);
+                    break;
+                case "--plugin":
+                    try {
+                        await import(path.resolve(args[++i]));
+                        console.log("✅ Plugin loaded");
+                    }
+                    catch (_) {
+                        console.error("❌ Plugin error:", _.message);
+                    }
                     break;
                 case "--watch":
                 case "-w":
@@ -1165,6 +1182,13 @@ Presets:
             }
         }
         const rootDir = options.rootDir || process.cwd();
+        if (smartMode) {
+            const { isLargeRepo: checkRepo } = await import("../utils/remoteUtils.js");
+            if (checkRepo(rootDir)) {
+                console.log("\n🧠 Smart mode: optimizing for large repository...");
+                options.excludePatterns = [...(options.excludePatterns || []), "*.generated.*", "*.min.*", "*.bundle.*"];
+            }
+        }
         const configPath = path.join(rootDir, 'ai-first.config.json');
         if (fs.existsSync(configPath)) {
             try {
