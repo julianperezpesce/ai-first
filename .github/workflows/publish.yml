@@ -1,58 +1,36 @@
-name: Publish to npm
+name: Publish
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version to publish (e.g., 1.2.0)'
-        required: false
-        default: 'patch'
+  release:
+    types: [published]
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      contents: read
+      id-token: write
 
-      - name: Setup Node.js
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 20
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 20
+          cache: 'npm'
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: npm test || true
+        run: npm ci
 
       - name: Build
         run: npm run build
 
-      - name: Run adapter tests
-        run: node test_adapters.mjs
+      - name: Run tests
+        run: npm test
 
       - name: Publish to npm
-        if: success()
-        run: npm publish
+        run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Create GitHub Release
-        if: success()
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: v${{ github.event.inputs.version || 'patch' }}
-          name: Release v${{ github.event.inputs.version || 'patch' }}
-          generate_release_notes: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
