@@ -165,7 +165,6 @@ function getFeatureDependencies(featurePath, modules) {
  */
 export function generateFeatures(modulesJsonPath, _symbolsJsonPath) {
     const features = [];
-    // Load modules
     let modules = {};
     try {
         if (fs.existsSync(modulesJsonPath)) {
@@ -173,30 +172,99 @@ export function generateFeatures(modulesJsonPath, _symbolsJsonPath) {
             modules = data.modules || {};
         }
     }
-    catch (e) {
-        // Ignore errors, return empty
+    catch (e) { }
+    const isSalesforce = Object.keys(modules).some(k => k === "force-app") ||
+        Object.values(modules).some(m => m.files?.some(f => f.includes("force-app")));
+    if (isSalesforce) {
+        return generateSalesforceFeatures(modules);
     }
-    // Use modules directly from modules.json
     for (const [moduleName, mod] of Object.entries(modules)) {
         const files = mod.files || [];
-        // Filter to source files only
         const sourceFiles = files.filter(isSourceFile);
-        // Must have at least 2 source files (relaxed from 3 for smaller projects)
         if (sourceFiles.length < 2)
             continue;
-        // Must have at least one entrypoint
         const entrypoints = sourceFiles.filter(isEntrypoint);
         if (entrypoints.length === 0)
             continue;
-        // Extract feature name from path - get the last segment
         const featureName = mod.path.split("/").pop() || moduleName;
-        // Skip ignored folders (utils, helpers, types, etc.)
         if (isIgnoredFolder(featureName))
             continue;
         features.push({
             name: featureName,
             path: mod.path,
             files: sourceFiles.slice(0, 50),
+            entrypoints: entrypoints.slice(0, 10),
+            dependencies: []
+        });
+    }
+    return features;
+}
+function generateSalesforceFeatures(modules) {
+    const features = [];
+    const allFiles = Object.values(modules).flatMap(m => m.files || []);
+    const salesforceExtensions = new Set(['.cls', '.trigger', '.apex', '.js', '.html', '.css', '.xml', '.meta.xml', '.page', '.component', '.evt', '.md-meta.xml']);
+    const metadataGroups = {
+        "apex-classes": [],
+        "apex-triggers": [],
+        "lwc": [],
+        "aura": [],
+        "flows": [],
+        "custom-objects": [],
+        "permission-sets": [],
+        "visualforce": [],
+        "platform-events": [],
+        "custom-metadata": [],
+    };
+    for (const file of allFiles) {
+        const lower = file.toLowerCase();
+        const ext = path.extname(file).toLowerCase();
+        if (!salesforceExtensions.has(ext) && !lower.endsWith('.flow-meta.xml'))
+            continue;
+        if (lower.includes("/classes/") && (ext === ".cls" || ext === ".apex")) {
+            metadataGroups["apex-classes"].push(file);
+        }
+        else if (lower.includes("/triggers/") && ext === ".trigger") {
+            metadataGroups["apex-triggers"].push(file);
+        }
+        else if (lower.includes("/lwc/")) {
+            metadataGroups["lwc"].push(file);
+        }
+        else if (lower.includes("/aura/")) {
+            metadataGroups["aura"].push(file);
+        }
+        else if (lower.includes("/flows/") && lower.endsWith(".flow-meta.xml")) {
+            metadataGroups["flows"].push(file);
+        }
+        else if (lower.includes("/objects/") && (ext === ".xml" || ext === ".object-meta.xml")) {
+            metadataGroups["custom-objects"].push(file);
+        }
+        else if (lower.includes("/permissionsets/") || lower.includes("/permissionset")) {
+            metadataGroups["permission-sets"].push(file);
+        }
+        else if (lower.includes("/pages/") && ext === ".page") {
+            metadataGroups["visualforce"].push(file);
+        }
+        else if (lower.includes("/platformevents/") || lower.includes("/platform_events/")) {
+            metadataGroups["platform-events"].push(file);
+        }
+        else if (lower.includes("/custommetadata/") || lower.includes("/custom_metadata/")) {
+            metadataGroups["custom-metadata"].push(file);
+        }
+    }
+    for (const [groupName, groupFiles] of Object.entries(metadataGroups)) {
+        if (groupFiles.length === 0)
+            continue;
+        const entrypoints = groupFiles.filter(f => {
+            const basename = path.basename(f).toLowerCase();
+            return basename.includes("controller") || basename.includes("trigger") ||
+                basename.includes("batch") || basename.includes("queueable") ||
+                basename.includes("service") || basename.includes("handler") ||
+                basename.includes("publisher");
+        });
+        features.push({
+            name: groupName,
+            path: `force-app/main/default/${groupName}`,
+            files: groupFiles.slice(0, 50),
             entrypoints: entrypoints.slice(0, 10),
             dependencies: []
         });

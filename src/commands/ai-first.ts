@@ -1085,11 +1085,11 @@ Features:
       process.exit(1);
 });
   } else if (command === 'context') {
-    // Context command - generate AI context files OR symbol-specific context packet
     args.shift();
     let rootDir = process.cwd();
     let outputDir = path.join(rootDir, "ai-context");
     let symbolArg: string | undefined;
+    let taskArg: string | undefined;
     let depth = 1;
     let maxSymbols = 50;
     let format: "json" | "markdown" | "text" = "json";
@@ -1123,6 +1123,10 @@ Features:
               format = fmt as "json" | "markdown" | "text";
             }
             break;
+          case "--task":
+          case "-t":
+            taskArg = args[++i];
+            break;
           case "--help":
           case "-h":
             console.log(`
@@ -1139,6 +1143,7 @@ Options:
   -d, --depth <n>        Graph traversal depth (default: 1)
   -m, --max-symbols <n>  Max related symbols (default: 50)
   -f, --format <fmt>      Output format: json, markdown, text (default: json)
+  -t, --task <task>       Generate task-specific context (e.g., "add-endpoint", "fix-bug")
   -s, --save              Save context packet to file
   -h, --help              Show help message
 
@@ -1146,7 +1151,9 @@ Examples:
   ai-first context loginUser
   ai-first context loginUser --depth 2
   ai-first context loginUser --format markdown
-  ai-first context loginUser -d 2 -m 100 -f markdown
+  ai-first context --task "add-endpoint"
+  ai-first context --task "fix-auth-bug" --format markdown
+  ai-first context -t "add-model" -s
 `);
             process.exit(0);
           case "--save":
@@ -1159,7 +1166,48 @@ Examples:
       }
     }
 
-    if (symbolArg) {
+    if (taskArg) {
+      console.log(`\n🎯 Generating task-specific context: ${taskArg}`);
+      
+      import("../utils/taskContextGenerator.js").then(({ generateTaskContext }) => {
+        const taskContext = generateTaskContext(rootDir, taskArg!);
+        
+        if (format === "json") {
+          console.log(JSON.stringify(taskContext, null, 2));
+        } else if (format === "markdown") {
+          console.log(`# Task Context: ${taskArg}\n`);
+          console.log(`## Relevant Files\n`);
+          for (const file of taskContext.relevantFiles) {
+            console.log(`- \`${file}\``);
+          }
+          console.log(`\n## Code Patterns\n`);
+          for (const pattern of taskContext.relevantPatterns) {
+            console.log(`### ${pattern.description}`);
+            console.log(`\`\`\`\n${pattern.code.slice(0, 500)}\n\`\`\`\n`);
+          }
+          console.log(`## Suggestions\n`);
+          for (const suggestion of taskContext.suggestions) {
+            console.log(`- ${suggestion}`);
+          }
+        } else {
+          console.log(`Task: ${taskContext.task}`);
+          console.log(`\nRelevant files:`);
+          for (const file of taskContext.relevantFiles) {
+            console.log(`  - ${file}`);
+          }
+          console.log(`\nSuggestions:`);
+          for (const suggestion of taskContext.suggestions) {
+            console.log(`  - ${suggestion}`);
+          }
+        }
+        
+        if (save) {
+          const savePath = path.join(outputDir, `task-${taskArg!.replace(/\s+/g, "-")}.json`);
+          ensureDir(outputDir);
+          writeFile(savePath, JSON.stringify(taskContext, null, 2));
+          console.log(`\n✅ Saved to: ${savePath}`);
+        }
+      });
       console.log(`\n🎯 Generating context for symbol: ${symbolArg}`);
       console.log(`   Depth: ${depth}, Max: ${maxSymbols}, Format: ${format}\n`);
 
