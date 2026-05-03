@@ -35,6 +35,11 @@ import { extractRecentChanges } from "../utils/recentChangesExtractor.js";
 import { extractCrossCuttingConcerns } from "../utils/crossCuttingExtractor.js";
 import { extractConfigAnalysis } from "../utils/configAnalyzer.js";
 import { extractCodeGotchas } from "../utils/gotchaExtractor.js";
+import { analyzeDependencyImpact } from "../utils/impactAnalyzer.js";
+import { extractCodePatterns } from "../utils/patternExtractor.js";
+import { detectAntiPatterns } from "../utils/antiPatternDetector.js";
+import { detectSecurityIssues } from "../utils/securityAuditor.js";
+import { detectPerformanceIssues } from "../utils/performanceAnalyzer.js";
 import { startMCP } from "../mcp/index.js";
 import process from "process";
 const __filename = fileURLToPath(import.meta.url);
@@ -179,10 +184,45 @@ export async function runAIFirst(options = {}) {
         writeFile(gotchasPath, JSON.stringify(gotchas, null, 2));
         filesCreated.push(gotchasPath);
         console.log("   ✅ Created gotchas.json");
+        // Step 12j: Analyze dependency impact
+        console.log("🔗 Analyzing dependency impact...");
+        const impactAnalysis = analyzeDependencyImpact(rootDir);
+        const impactPath = path.join(outputDir, "impact-analysis.json");
+        writeFile(impactPath, JSON.stringify(impactAnalysis, null, 2));
+        filesCreated.push(impactPath);
+        console.log("   ✅ Created impact-analysis.json");
+        // Step 12k: Extract code patterns
+        console.log("📝 Extracting code patterns...");
+        const codePatterns = extractCodePatterns(rootDir);
+        const patternsPath = path.join(outputDir, "code-patterns.json");
+        writeFile(patternsPath, JSON.stringify(codePatterns, null, 2));
+        filesCreated.push(patternsPath);
+        console.log("   ✅ Created code-patterns.json");
+        // Step 12l: Detect anti-patterns
+        console.log("🚫 Detecting anti-patterns...");
+        const antiPatterns = detectAntiPatterns(rootDir);
+        const antiPatternsPath = path.join(outputDir, "anti-patterns.json");
+        writeFile(antiPatternsPath, JSON.stringify(antiPatterns, null, 2));
+        filesCreated.push(antiPatternsPath);
+        console.log("   ✅ Created anti-patterns.json");
+        // Step 12m: Security audit
+        console.log("🔒 Running security audit...");
+        const securityIssues = detectSecurityIssues(rootDir);
+        const securityPath = path.join(outputDir, "security-audit.json");
+        writeFile(securityPath, JSON.stringify(securityIssues, null, 2));
+        filesCreated.push(securityPath);
+        console.log("   ✅ Created security-audit.json");
+        // Step 12n: Performance analysis
+        console.log("⚡ Analyzing performance...");
+        const performanceIssues = detectPerformanceIssues(rootDir);
+        const perfPath = path.join(outputDir, "performance.json");
+        writeFile(perfPath, JSON.stringify(performanceIssues, null, 2));
+        filesCreated.push(perfPath);
+        console.log("   ✅ Created performance.json");
         // Step 13: Generate unified ai_context.md
         console.log("📋 Generating unified AI context...");
         const aiContextPath = path.join(outputDir, "ai_context.md");
-        const aiContext = generateUnifiedContext(repoMap, summary, architecture, techStack, entrypoints, conventions, aiRules, projectSetup, depVersions, testMapping, dataModels, recentChanges, crossCutting, configAnalysis, gotchas);
+        const aiContext = generateUnifiedContext(repoMap, summary, architecture, techStack, entrypoints, conventions, aiRules, projectSetup, depVersions, testMapping, dataModels, recentChanges, crossCutting, configAnalysis, gotchas, impactAnalysis, codePatterns, antiPatterns, securityIssues, performanceIssues);
         writeFile(aiContextPath, aiContext);
         filesCreated.push(aiContextPath);
         console.log("   ✅ Created ai_context.md");
@@ -273,7 +313,7 @@ function generateRepoMapJson(files) {
 /**
  * Generate unified AI context file
  */
-function generateUnifiedContext(repoMap, summary, architecture, techStack, entrypoints, conventions, aiRules, projectSetup, depVersions, testMapping, dataModels, recentChanges, crossCutting, configAnalysis, gotchas) {
+function generateUnifiedContext(repoMap, summary, architecture, techStack, entrypoints, conventions, aiRules, projectSetup, depVersions, testMapping, dataModels, recentChanges, crossCutting, configAnalysis, gotchas, impactAnalysis, codePatterns, antiPatterns, securityIssues, performanceIssues) {
     const lines = [];
     lines.push("# AI Context");
     lines.push("");
@@ -483,6 +523,53 @@ function generateUnifiedContext(repoMap, summary, architecture, techStack, entry
             }
             lines.push("");
         }
+    }
+    if (codePatterns) {
+        const patterns = [codePatterns.controllerPattern, codePatterns.servicePattern, codePatterns.testPattern].filter(Boolean);
+        if (patterns.length > 0) {
+            lines.push("---\n");
+            lines.push("## Code Patterns");
+            lines.push("");
+            for (const pattern of patterns) {
+                if (pattern) {
+                    lines.push(`### ${pattern.description}`);
+                    lines.push("```" + pattern.language);
+                    lines.push(pattern.code.slice(0, 500));
+                    lines.push("```");
+                    lines.push("");
+                }
+            }
+        }
+    }
+    if (securityIssues && securityIssues.length > 0) {
+        lines.push("---\n");
+        lines.push("## Security Notes");
+        lines.push("");
+        const criticals = securityIssues.filter(i => i.severity === "critical");
+        const warnings = securityIssues.filter(i => i.severity === "warning");
+        if (criticals.length > 0) {
+            lines.push("**Critical**:");
+            for (const issue of criticals.slice(0, 3)) {
+                lines.push(`- \`${issue.file}:${issue.line}\`: ${issue.description}`);
+            }
+            lines.push("");
+        }
+        if (warnings.length > 0) {
+            lines.push("**Warnings**:");
+            for (const issue of warnings.slice(0, 3)) {
+                lines.push(`- \`${issue.file}:${issue.line}\`: ${issue.description}`);
+            }
+            lines.push("");
+        }
+    }
+    if (performanceIssues && performanceIssues.length > 0) {
+        lines.push("---\n");
+        lines.push("## Performance Notes");
+        lines.push("");
+        for (const issue of performanceIssues.slice(0, 5)) {
+            lines.push(`- \`${issue.file}:${issue.line}\`: ${issue.description}`);
+        }
+        lines.push("");
     }
     lines.push("---\n");
     lines.push("## Repository Map");
