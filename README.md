@@ -19,7 +19,24 @@
 
 ---
 
-## 🚀 What's New in v1.4.0
+## 🚀 What's New in v1.4.1
+
+**12 new commands and flags** - Productivity & automation
+
+- ✅ `af init --watch`: Auto-regenerate context on file changes
+- ✅ `af init --diff`: Show only changes since last run
+- ✅ `af init --json`: Machine-readable output for CI/CD
+- ✅ `af init --smart`: Adaptive analysis based on repo size
+- ✅ `af init --repo <url>`: Generate context from a remote repository
+- ✅ `af pr-description`: Auto-generate PR description from git changes
+- ✅ `af install-hook`: Install pre-commit hook for auto context update
+- ✅ `af doctor` enhanced: Detect .gitignore, tests, dependencies, README
+- ✅ `af history`: Show context evolution over time
+- ✅ `.ai-first-ignore`: Custom per-project exclusion file
+- ✅ `af init --plugin`: Plugin system for custom analyzers
+- ✅ **VS Code Extension**: `Ctrl+Shift+A` to generate context
+
+**Previous: v1.4.0**
 
 **Smart Context & Deep Analysis** - 26 new analysis modules
 

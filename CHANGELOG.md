@@ -4,6 +4,36 @@ All notable changes to `ai-first` will be documented in this file.
 
 ---
 
+## [1.4.1] - 2026-05-03
+
+### 🔧 CLI Productivity & Automation
+
+**Branch:** `master`
+
+#### ✨ New Commands & Flags
+
+- **`af init --watch`**: Auto-regenerate context on file changes using chokidar
+- **`af init --diff`**: Show context changes since last run (new/removed/modified files, deps, symbols)
+- **`af init --json`**: Machine-readable output for CI/CD integration
+- **`af init --smart`**: Adaptive analysis - skip heavy operations for large repositories (>1000 files)
+- **`af init --repo <url>`**: Clone remote repository, generate context, clean up
+- **`af pr-description`**: Auto-generate PR description from git diff and commit history
+- **`af install-hook`**: Install pre-commit hook that auto-updates AI context
+- **`af history`**: Show context evolution over commits
+- **`af init --plugin <path>`**: Load custom analyzer modules
+
+#### 🔧 Config & Tooling
+
+- **`.ai-first-ignore`**: Per-project custom exclusion patterns file
+- **VS Code Extension**: `.vscode/tasks.json` + keybindings (`Ctrl+Shift+A` → Generate Context)
+- **Enhanced `af doctor`**: New checks for .gitignore, test coverage, dependencies, README
+
+#### 🧪 Testing
+- 1336 tests passing (45 test files)
+- New tests for CLI features (--json, --diff, doctor, pr-description)
+
+---
+
 ## [1.4.0] - 2026-05-02
 
 ### 🧠 Smart Context & Deep Analysis

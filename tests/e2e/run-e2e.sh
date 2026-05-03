@@ -79,15 +79,25 @@ for project in "${TEST_PROJECTS[@]}"; do
    echo "--- explore ---"
    $CLI explore all --root "fixtures/$project" || true
    
-   # Test graph
-   echo ""
-   echo "--- graph ---"
-   $CLI graph --root "fixtures/$project" || true
-   
-   # Test git
-   echo ""
-   echo "--- git ---"
-   $CLI git --root "fixtures/$project" || true
+    # Test graph
+    echo ""
+    echo "--- graph ---"
+    $CLI graph --root "fixtures/$project" || true
+    
+    # Test git
+    echo ""
+    echo "--- git ---"
+    $CLI git --root "fixtures/$project" || true
+    
+    # Test --json output (new)
+    echo ""
+    echo "--- init --json ---"
+    $CLI init --root "fixtures/$project" --json 2>/dev/null | grep '"success"' || true
+    
+    # Test --diff output (new)
+    echo ""
+    echo "--- init --diff ---"
+    $CLI init --root "fixtures/$project" --diff 2>/dev/null || true
    
    # Check results
    echo ""

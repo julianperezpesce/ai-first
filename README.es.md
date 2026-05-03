@@ -21,7 +21,24 @@
 
 ---
 
-## 🚀 Novedades en v1.4.0
+## 🚀 Novedades en v1.4.1
+
+**12 nuevos comandos y flags** - Productividad y automatización
+
+- ✅ `af init --watch`: Regenera contexto automáticamente al guardar archivos
+- ✅ `af init --diff`: Muestra solo los cambios desde la última ejecución
+- ✅ `af init --json`: Output machine-readable para CI/CD
+- ✅ `af init --smart`: Análisis adaptativo según tamaño del repo
+- ✅ `af init --repo <url>`: Genera contexto de un repositorio remoto
+- ✅ `af pr-description`: Genera descripción de PR automática desde git
+- ✅ `af install-hook`: Instala hook pre-commit para auto-actualizar contexto
+- ✅ `af doctor` mejorado: Detecta .gitignore, tests, dependencias, README
+- ✅ `af history`: Muestra evolución del contexto en el tiempo
+- ✅ `.ai-first-ignore`: Archivo de exclusión personalizable por proyecto
+- ✅ `af init --plugin`: Sistema de plugins para analyzers custom
+- ✅ **Extensión VS Code**: `Ctrl+Shift+A` para generar contexto
+
+**Anterior: v1.4.0**
 
 **Contexto Inteligente & Análisis Profundo** - 26 nuevos módulos de análisis
 
