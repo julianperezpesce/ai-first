@@ -40,6 +40,11 @@ import { extractCodePatterns } from "../utils/patternExtractor.js";
 import { detectAntiPatterns } from "../utils/antiPatternDetector.js";
 import { detectSecurityIssues } from "../utils/securityAuditor.js";
 import { detectPerformanceIssues } from "../utils/performanceAnalyzer.js";
+import { generateContextDiff } from "../utils/contextDiff.js";
+import { detectDeadCode } from "../utils/deadCodeDetector.js";
+import { analyzeDocCoverage } from "../utils/docCoverageAnalyzer.js";
+import { detectCICD } from "../utils/cicdDetector.js";
+import { detectMigrations } from "../utils/migrationDetector.js";
 import { startMCP } from "../mcp/index.js";
 import process from "process";
 const __filename = fileURLToPath(import.meta.url);
@@ -219,10 +224,45 @@ export async function runAIFirst(options = {}) {
         writeFile(perfPath, JSON.stringify(performanceIssues, null, 2));
         filesCreated.push(perfPath);
         console.log("   ✅ Created performance.json");
+        // Step 12o: Generate context diff
+        console.log("📊 Generating context diff...");
+        const contextDiff = generateContextDiff(outputDir);
+        const diffPath = path.join(outputDir, "context-diff.json");
+        writeFile(diffPath, JSON.stringify(contextDiff, null, 2));
+        filesCreated.push(diffPath);
+        console.log("   ✅ Created context-diff.json");
+        // Step 12p: Detect dead code
+        console.log("💀 Detecting dead code...");
+        const deadCode = detectDeadCode(rootDir);
+        const deadCodePath = path.join(outputDir, "dead-code.json");
+        writeFile(deadCodePath, JSON.stringify(deadCode, null, 2));
+        filesCreated.push(deadCodePath);
+        console.log("   ✅ Created dead-code.json");
+        // Step 12q: Analyze documentation coverage
+        console.log("📚 Analyzing documentation coverage...");
+        const docCoverage = analyzeDocCoverage(rootDir);
+        const docCovPath = path.join(outputDir, "doc-coverage.json");
+        writeFile(docCovPath, JSON.stringify(docCoverage, null, 2));
+        filesCreated.push(docCovPath);
+        console.log("   ✅ Created doc-coverage.json");
+        // Step 12r: Detect CI/CD
+        console.log("🔄 Detecting CI/CD pipeline...");
+        const cicdConfig = detectCICD(rootDir);
+        const cicdPath = path.join(outputDir, "cicd.json");
+        writeFile(cicdPath, JSON.stringify(cicdConfig, null, 2));
+        filesCreated.push(cicdPath);
+        console.log("   ✅ Created cicd.json");
+        // Step 12s: Detect migrations
+        console.log("🗄️  Detecting database migrations...");
+        const migrations = detectMigrations(rootDir);
+        const migrationsPath = path.join(outputDir, "migrations.json");
+        writeFile(migrationsPath, JSON.stringify(migrations, null, 2));
+        filesCreated.push(migrationsPath);
+        console.log("   ✅ Created migrations.json");
         // Step 13: Generate unified ai_context.md
         console.log("📋 Generating unified AI context...");
         const aiContextPath = path.join(outputDir, "ai_context.md");
-        const aiContext = generateUnifiedContext(repoMap, summary, architecture, techStack, entrypoints, conventions, aiRules, projectSetup, depVersions, testMapping, dataModels, recentChanges, crossCutting, configAnalysis, gotchas, impactAnalysis, codePatterns, antiPatterns, securityIssues, performanceIssues);
+        const aiContext = generateUnifiedContext(repoMap, summary, architecture, techStack, entrypoints, conventions, aiRules, projectSetup, depVersions, testMapping, dataModels, recentChanges, crossCutting, configAnalysis, gotchas, impactAnalysis, codePatterns, antiPatterns, securityIssues, performanceIssues, contextDiff, deadCode, docCoverage, cicdConfig, migrations);
         writeFile(aiContextPath, aiContext);
         filesCreated.push(aiContextPath);
         console.log("   ✅ Created ai_context.md");
@@ -313,7 +353,7 @@ function generateRepoMapJson(files) {
 /**
  * Generate unified AI context file
  */
-function generateUnifiedContext(repoMap, summary, architecture, techStack, entrypoints, conventions, aiRules, projectSetup, depVersions, testMapping, dataModels, recentChanges, crossCutting, configAnalysis, gotchas, impactAnalysis, codePatterns, antiPatterns, securityIssues, performanceIssues) {
+function generateUnifiedContext(repoMap, summary, architecture, techStack, entrypoints, conventions, aiRules, projectSetup, depVersions, testMapping, dataModels, recentChanges, crossCutting, configAnalysis, gotchas, impactAnalysis, codePatterns, antiPatterns, securityIssues, performanceIssues, contextDiff, deadCode, docCoverage, cicdConfig, migrations) {
     const lines = [];
     lines.push("# AI Context");
     lines.push("");
@@ -569,6 +609,52 @@ function generateUnifiedContext(repoMap, summary, architecture, techStack, entry
         for (const issue of performanceIssues.slice(0, 5)) {
             lines.push(`- \`${issue.file}:${issue.line}\`: ${issue.description}`);
         }
+        lines.push("");
+    }
+    if (cicdConfig && cicdConfig.workflows.length > 0) {
+        lines.push("---\n");
+        lines.push("## CI/CD Pipeline");
+        lines.push("");
+        lines.push(`**Platform**: ${cicdConfig.platform}`);
+        lines.push("");
+        for (const workflow of cicdConfig.workflows) {
+            lines.push(`- **${workflow.name}**: ${workflow.triggers.join(", ")} → ${workflow.jobs.join(", ")}`);
+        }
+        lines.push("");
+    }
+    if (migrations && migrations.hasMigrations) {
+        lines.push("---\n");
+        lines.push("## Database Migrations");
+        lines.push("");
+        lines.push(`**Framework**: ${migrations.framework}`);
+        lines.push(`**Migrations**: ${migrations.migrations.length}`);
+        lines.push(`**Tables**: ${migrations.tables.join(", ") || "N/A"}`);
+        lines.push("");
+    }
+    if (docCoverage && docCoverage.totalFunctions > 0) {
+        lines.push("---\n");
+        lines.push("## Documentation Coverage");
+        lines.push("");
+        lines.push(`${docCoverage.summary}`);
+        lines.push("");
+    }
+    if (deadCode && (deadCode.unusedFunctions.length > 0 || deadCode.unusedClasses.length > 0)) {
+        lines.push("---\n");
+        lines.push("## Potentially Unused Code");
+        lines.push("");
+        if (deadCode.unusedFunctions.length > 0) {
+            lines.push("**Functions**: " + deadCode.unusedFunctions.slice(0, 5).map(f => `\`${f.name}\``).join(", "));
+        }
+        if (deadCode.unusedClasses.length > 0) {
+            lines.push("**Classes**: " + deadCode.unusedClasses.slice(0, 3).map(c => `\`${c.name}\``).join(", "));
+        }
+        lines.push("");
+    }
+    if (contextDiff && contextDiff.hasPreviousContext) {
+        lines.push("---\n");
+        lines.push("## Context Changes");
+        lines.push("");
+        lines.push(contextDiff.summary);
         lines.push("");
     }
     lines.push("---\n");
