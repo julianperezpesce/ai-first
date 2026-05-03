@@ -63,6 +63,30 @@ export const DEFAULT_INCLUDE_EXTENSIONS = [
     ".object",
 ];
 /**
+ * Read .ai-first-ignore file and merge with default patterns
+ */
+export function loadIgnorePatterns(rootDir) {
+    const patterns = [...DEFAULT_EXCLUDE_PATTERNS];
+    const ignorePath = path.join(rootDir, ".ai-first-ignore");
+    if (fs.existsSync(ignorePath)) {
+        try {
+            const lines = fs.readFileSync(ignorePath, "utf-8").split("\n");
+            for (const line of lines) {
+                const trimmed = line.trim();
+                if (trimmed && !trimmed.startsWith("#") && !trimmed.startsWith("!")) {
+                    if (!patterns.includes(trimmed)) {
+                        patterns.push(trimmed);
+                    }
+                }
+            }
+        }
+        catch (e) {
+            console.warn(`Warning: could not read .ai-first-ignore: ${e}`);
+        }
+    }
+    return patterns;
+}
+/**
  * Get all files in a directory recursively
  */
 export function getAllFiles(dir, excludePatterns = DEFAULT_EXCLUDE_PATTERNS, includeExtensions = DEFAULT_INCLUDE_EXTENSIONS) {

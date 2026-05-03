@@ -1,9 +1,10 @@
-import { getAllFiles, getRelativePath } from "../utils/fileUtils.js";
+import { getAllFiles, getRelativePath, loadIgnorePatterns } from "../utils/fileUtils.js";
 /**
  * Scan a repository and return its structure
  */
 export function scanRepo(rootDir, excludePatterns, includeExtensions) {
-    const absoluteFiles = getAllFiles(rootDir, excludePatterns, includeExtensions);
+    const mergedPatterns = [...new Set([...(excludePatterns || []), ...loadIgnorePatterns(rootDir)])];
+    const absoluteFiles = getAllFiles(rootDir, mergedPatterns, includeExtensions);
     const files = [];
     const directoryStructure = new Map();
     for (const filePath of absoluteFiles) {

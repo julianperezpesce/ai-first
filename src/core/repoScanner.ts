@@ -1,4 +1,4 @@
-import { getAllFiles, getRelativePath } from "../utils/fileUtils.js";
+import { getAllFiles, getRelativePath, loadIgnorePatterns } from "../utils/fileUtils.js";
 
 export interface FileInfo {
   path: string;
@@ -22,7 +22,8 @@ export function scanRepo(
   excludePatterns?: string[],
   includeExtensions?: string[]
 ): ScanResult {
-  const absoluteFiles = getAllFiles(rootDir, excludePatterns, includeExtensions);
+  const mergedPatterns = [...new Set([...(excludePatterns || []), ...loadIgnorePatterns(rootDir)])];
+  const absoluteFiles = getAllFiles(rootDir, mergedPatterns, includeExtensions);
 
   const files: FileInfo[] = [];
   const directoryStructure = new Map<string, string[]>();

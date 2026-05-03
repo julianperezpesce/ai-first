@@ -7,6 +7,10 @@ export declare const DEFAULT_EXCLUDE_PATTERNS: string[];
  */
 export declare const DEFAULT_INCLUDE_EXTENSIONS: string[];
 /**
+ * Read .ai-first-ignore file and merge with default patterns
+ */
+export declare function loadIgnorePatterns(rootDir: string): string[];
+/**
  * Get all files in a directory recursively
  */
 export declare function getAllFiles(dir: string, excludePatterns?: string[], includeExtensions?: string[]): string[];

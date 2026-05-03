@@ -1195,6 +1195,9 @@ Options:
     let preset: string | undefined;
 
     let installMcp = false;
+    let diffMode = false;
+    let jsonMode = false; 
+    let watchMode = false;
 
     for (let i = 0; i < args.length; i++) {
       const arg = args[i];
@@ -1214,6 +1217,18 @@ Options:
         case "--install-mcp":
         case "--mcp":
           installMcp = true;
+          break;
+        case "--diff":
+        case "-d":
+          diffMode = true;
+          break;
+        case "--json":
+        case "-j":
+          jsonMode = true;
+          break;
+        case "--watch":
+        case "-w":
+          watchMode = true;
           break;
         case "--help":
         case "-h":
@@ -1273,7 +1288,7 @@ Presets:
       console.log(`\n🎛️  Using preset: ${preset}\n`);
     }
 
-    runAIFirst(options).then((result) => {
+    runAIFirst(options).then(async (result) => {
       if (result.success && installMcp) {
         const rootDir = options.rootDir || process.cwd();
         const opencodeDir = path.join(rootDir, '.opencode');
@@ -1298,6 +1313,41 @@ Presets:
           console.error(`\n⚠️  Failed to write MCP config:`, err);
         }
       }
+
+      if (result.success && diffMode) {
+        const rootDir = options.rootDir || process.cwd();
+        const outputDir = options.outputDir || path.join(rootDir, "ai-context");
+        const { generateContextDiff } = await import("../utils/contextDiff.js");
+        const diff = generateContextDiff(outputDir);
+        console.log(`\n📊 Context Diff: ${diff.summary}`);
+      }
+
+      if (result.success && jsonMode) {
+        const rootDir = options.rootDir || process.cwd();
+        const summary = { success: true, filesCreated: result.filesCreated.map((f: string) => path.relative(rootDir, f)) };
+        console.log(JSON.stringify(summary));
+        process.exit(0);
+      }
+
+      if (watchMode) {
+        const rootDir = options.rootDir || process.cwd();
+        console.log(`\n👁️  Watching for changes. Press Ctrl+C to stop.\n`);
+        const chokidar = await import("chokidar");
+        const watcher = chokidar.watch(rootDir, {
+          ignored: ["**/node_modules/**", "**/.git/**", "**/dist/**", "**/ai-context/**"],
+          ignoreInitial: true,
+        });
+        let debounce: ReturnType<typeof setTimeout> | null = null;
+        watcher.on("change", (p: string) => {
+          if (debounce) clearTimeout(debounce);
+          debounce = setTimeout(() => {
+            console.log(`\n🔄 File changed: ${path.relative(rootDir, p)}`);
+            runAIFirst(options);
+          }, 1000);
+        });
+        return; // don't exit in watch mode
+      }
+
       process.exit(result.success ? 0 : 1);
     });
   } else if (command === 'map') {
@@ -1715,6 +1765,46 @@ Examples:
     console.log("   Use Ctrl+C to stop.\n");
     
     startMCP({ rootDir });
+  } else if (command === 'pr-description') {
+    args.shift();
+    let rootDir = process.cwd();
+    let fromBranch = "HEAD~5";
+    for (let i = 0; i < args.length; i++) {
+      const arg = args[i];
+      if (arg === "--root" || arg === "-r") rootDir = args[++i];
+      else if (arg === "--from" || arg === "-f") fromBranch = args[++i];
+      else if (arg === "--help" || arg === "-h") {
+        console.log(`ai-first pr-description - Generate PR description from git changes\nUsage: ai-first pr-description [options]\nOptions:\n  -r, --root <dir>\n  -f, --from <ref>\n`);
+        process.exit(0);
+      }
+    }
+    console.log(`\n📝 Generating PR description since ${fromBranch}...\n`);
+    try {
+      const { execSync } = await import("child_process");
+      const filesChanged = execSync(`git diff --name-only ${fromBranch}..HEAD`, { cwd: rootDir, encoding: "utf-8" }).trim().split("\n").filter(Boolean);
+      const commits = execSync(`git log --oneline ${fromBranch}..HEAD`, { cwd: rootDir, encoding: "utf-8" }).trim().split("\n");
+      console.log("# Commits");
+      for (const c of commits.slice(0, 10)) console.log(`- ${c}`);
+      console.log(`\n# Files Changed (${filesChanged.length} files)`);
+      for (const f of filesChanged.slice(0, 15)) console.log(`- ${f}`);
+    } catch (e) { console.error("Error:", e instanceof Error ? e.message : e); }
+    process.exit(0);
+  } else if (command === 'install-hook') {
+    args.shift();
+    let rootDir = process.cwd();
+    for (let i = 0; i < args.length; i++) {
+      if (args[i] === "--root" || args[i] === "-r") rootDir = args[++i];
+    }
+    const hooksDir = path.join(rootDir, ".git", "hooks");
+    const hookPath = path.join(hooksDir, "pre-commit");
+    ensureDir(hooksDir);
+    fs.writeFileSync(hookPath, `#!/bin/bash
+# AI context auto-update
+af init --root "$(git rev-parse --show-toplevel)" --json 2>/dev/null
+`);
+    fs.chmodSync(hookPath, 0o755);
+    console.log(`\n✅ Pre-commit hook installed: ${hookPath}`);
+    process.exit(0);
   } else {
     console.log(`Unknown command: ${command}`);
     console.log(`Use 'ai-first --help' for usage information`);
