@@ -43,6 +43,9 @@ function detectAuthPattern(files: string[], rootDir: string): PatternInfo | null
     try {
       const content = fs.readFileSync(file, "utf-8");
       const relativePath = path.relative(rootDir, file);
+      
+      // Skip detector files themselves
+      if (relativePath.startsWith("src/utils/") || relativePath.startsWith("src/analyzers/")) continue;
 
       if (content.includes("passport") || content.includes("jwt") || content.includes("jsonwebtoken")) {
         authFiles.push(relativePath);
@@ -79,6 +82,8 @@ function detectLoggingPattern(files: string[], rootDir: string): PatternInfo | n
     try {
       const content = fs.readFileSync(file, "utf-8");
       const relativePath = path.relative(rootDir, file);
+      
+      if (relativePath.startsWith("src/utils/") || relativePath.startsWith("src/analyzers/")) continue;
 
       if (content.includes("winston") || content.includes("pino") || content.includes("bunyan")) {
         loggingFiles.push(relativePath);
@@ -116,6 +121,8 @@ function detectErrorHandlingPattern(files: string[], rootDir: string): PatternIn
     try {
       const content = fs.readFileSync(file, "utf-8");
       const relativePath = path.relative(rootDir, file);
+      
+      if (relativePath.startsWith("src/utils/") || relativePath.startsWith("src/analyzers/")) continue;
 
       if (content.includes("AppError") || content.includes("HttpException") || content.includes("CustomException")) {
         errorFiles.push(relativePath);
@@ -153,6 +160,8 @@ function detectValidationPattern(files: string[], rootDir: string): PatternInfo 
     try {
       const content = fs.readFileSync(file, "utf-8");
       const relativePath = path.relative(rootDir, file);
+      
+      if (relativePath.startsWith("src/utils/") || relativePath.startsWith("src/analyzers/")) continue;
 
       if (content.includes("joi") || content.includes("@hapi/joi")) {
         validationFiles.push(relativePath);
@@ -194,6 +203,8 @@ function detectCachingPattern(files: string[], rootDir: string): PatternInfo | n
     try {
       const content = fs.readFileSync(file, "utf-8");
       const relativePath = path.relative(rootDir, file);
+      
+      if (relativePath.startsWith("src/utils/") || relativePath.startsWith("src/analyzers/")) continue;
 
       if (content.includes("redis") || content.includes("ioredis") || content.includes("Redis")) {
         cachingFiles.push(relativePath);

@@ -78,19 +78,26 @@ function detectLanguages(extensions: Set<string>): string[] {
     php: "PHP", swift: "Swift", kt: "Kotlin", scala: "Scala", vue: "Vue",
     svelte: "Svelte", html: "HTML", css: "CSS", scss: "SCSS", less: "LESS",
     sql: "SQL", sh: "Shell", bash: "Bash", zsh: "Zsh", ps1: "PowerShell",
-    yaml: "YAML", yml: "YAML", toml: "TOML", xml: "XML", json: "JSON",
-    md: "Markdown", tex: "LaTeX", r: "R", lua: "Lua", pl: "Perl",
-    hs: "Haskell", ex: "Elixir", erl: "Erlang", clj: "Clojure", dart: "Dart",
-    cls: "Apex", trigger: "Apex Trigger",
+    dockerfile: "Docker", yaml: "YAML", yml: "YAML", json: "JSON", xml: "XML",
+    md: "Markdown", mdx: "Markdown",
   };
   
-  const detected: string[] = [];
-  for (const ext of extensions) {
-    if (langMap[ext]) {
-      detected.push(langMap[ext]);
-    }
+  const langs = Array.from(extensions).map(ext => langMap[ext]).filter(Boolean);
+  
+  // Filter out non-primary languages that are typically config/docs
+  const primaryLangs = langs.filter(l => 
+    !["YAML", "JSON", "XML", "Markdown", "Shell", "Bash", "Docker", "CSS", "SCSS", "LESS"].includes(l)
+  );
+  
+  if (primaryLangs.length > 0) {
+    // Add Markdown for docs, JSON for config files
+    const allLangs = [...new Set(primaryLangs)];
+    if (extensions.has("md") || extensions.has("mdx")) allLangs.push("Markdown");
+    if (extensions.has("json")) allLangs.push("JSON");
+    return allLangs;
   }
-  return detected;
+  
+  return [...new Set(langs)];
 }
 
 /**

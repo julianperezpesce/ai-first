@@ -32,6 +32,18 @@ function detectPatterns(directories, extensions, files) {
     const hasServices = dirs.some(d => d.includes("services") || d.includes("usecases") || d.includes("business"));
     const hasRepositories = dirs.some(d => d.includes("repositories") || d.includes("dao") || d.includes("persistence"));
     const isAPIProject = hasControllers && !hasViews && (hasServices || hasRepositories);
+    const hasCommands = files.some(f => f.relativePath.includes("/commands/") || f.relativePath.includes("/cmd/") || f.relativePath.includes("/cli/"));
+    const hasAnalyzers = files.some(f => f.relativePath.includes("/analyzers/") || f.relativePath.includes("/analysis/"));
+    const hasCore = files.some(f => f.relativePath.includes("/core/") || f.relativePath.includes("/engine/"));
+    const hasAdapters = files.some(f => f.relativePath.includes("/adapters/") || f.relativePath.includes("/plugins/") || f.relativePath.includes("/extensions/"));
+    if (hasCommands || hasCore) {
+        if (hasAdapters) {
+            patterns.push("CLI Application with Plugin Architecture");
+        }
+        else {
+            patterns.push("CLI Application");
+        }
+    }
     if (isAPIProject) {
         patterns.push("Layered Architecture (REST API)");
     }

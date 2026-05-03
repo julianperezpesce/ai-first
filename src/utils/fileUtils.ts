@@ -23,6 +23,8 @@ export const DEFAULT_EXCLUDE_PATTERNS = [
   ".cache",
   ".DS_Store",
   "fixtures",
+  "test-projects",
+  "homebrew",
   ".ai-dev",
   ".ai-dev-out",
   "ai-context",

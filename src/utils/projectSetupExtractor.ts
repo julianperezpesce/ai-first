@@ -203,7 +203,7 @@ function findSourceFiles(rootDir: string, maxFiles: number): string[] {
       for (const entry of entries) {
         if (files.length >= maxFiles) return;
         const fullPath = path.join(dir, entry.name);
-        if (entry.isDirectory() && !["node_modules", ".git", "dist", "build", "__pycache__", "vendor"].includes(entry.name)) {
+        if (entry.isDirectory() && !["node_modules", ".git", "dist", "build", "__pycache__", "vendor", "fixtures", "test-projects"].includes(entry.name)) {
           walk(fullPath);
         } else if (entry.isFile() && extensions.some(ext => entry.name.endsWith(ext))) {
           files.push(fullPath);

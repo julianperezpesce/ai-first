@@ -225,7 +225,7 @@ function findTestFiles(rootDir: string, maxFiles: number): string[] {
         if (files.length >= maxFiles) return;
         const fullPath = path.join(dir, entry.name);
         if (entry.isDirectory()) {
-          if (testDirs.includes(entry.name) || !["node_modules", ".git", "dist", "build"].includes(entry.name)) {
+          if (testDirs.includes(entry.name) || !["node_modules", ".git", "dist", "build", "fixtures"].includes(entry.name)) {
             walk(fullPath);
           }
         } else if (entry.isFile() && testPatterns.some(p => entry.name.includes(p))) {

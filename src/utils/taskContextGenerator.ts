@@ -476,7 +476,7 @@ function findFiles(dir: string, extensions: string[], maxFiles: number): string[
       for (const entry of entries) {
         if (files.length >= maxFiles) return;
         const fullPath = path.join(currentDir, entry.name);
-        if (entry.isDirectory() && !["node_modules", ".git", "dist", "build"].includes(entry.name)) {
+        if (entry.isDirectory() && !["node_modules", ".git", "dist", "build", "fixtures"].includes(entry.name)) {
           walk(fullPath);
         } else if (entry.isFile() && extensions.some(ext => entry.name.endsWith(ext))) {
           files.push(fullPath);
