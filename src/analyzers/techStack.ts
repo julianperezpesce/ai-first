@@ -112,9 +112,9 @@ function detectFrameworks(files: FileInfo[], fileNames: Set<string>, rootDir: st
     const deps = { ...(pkg.dependencies || {}), ...(pkg.devDependencies || {}) };
     
     const frameworkMap: Record<string, string[]> = {
-      "react": ["React", "Next.js", "Remix"],
-      "vue": ["Vue.js", "Nuxt.js"],
-      "svelte": ["Svelte", "SvelteKit"],
+      "react": ["React"],
+      "vue": ["Vue.js"],
+      "svelte": ["Svelte"],
       "angular": ["Angular"],
       "express": ["Express.js"],
       "fastify": ["Fastify"],
@@ -138,6 +138,7 @@ function detectFrameworks(files: FileInfo[], fileNames: Set<string>, rootDir: st
     
     for (const [dep, names] of Object.entries(frameworkMap)) {
       if (deps[dep]) {
+        if (dep === "vue" && !(pkg.dependencies || {})[dep]) continue;
         frameworks.push(...names);
       }
     }
@@ -167,7 +168,7 @@ function detectFrameworks(files: FileInfo[], fileNames: Set<string>, rootDir: st
     "tailwind.config": "Tailwind CSS",
     "postcss.config": "PostCSS",
     "babel.config": "Babel",
-    "tsconfig": "TypeScript",
+
     "build.gradle": "Android",
     "build.gradle.kts": "Android",
     "settings.gradle": "Android",

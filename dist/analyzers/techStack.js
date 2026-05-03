@@ -69,9 +69,9 @@ function detectFrameworks(files, fileNames, rootDir) {
         const pkg = readJsonFile(pkgPath);
         const deps = { ...(pkg.dependencies || {}), ...(pkg.devDependencies || {}) };
         const frameworkMap = {
-            "react": ["React", "Next.js", "Remix"],
-            "vue": ["Vue.js", "Nuxt.js"],
-            "svelte": ["Svelte", "SvelteKit"],
+            "react": ["React"],
+            "vue": ["Vue.js"],
+            "svelte": ["Svelte"],
             "angular": ["Angular"],
             "express": ["Express.js"],
             "fastify": ["Fastify"],
@@ -94,6 +94,8 @@ function detectFrameworks(files, fileNames, rootDir) {
         };
         for (const [dep, names] of Object.entries(frameworkMap)) {
             if (deps[dep]) {
+                if (dep === "vue" && !(pkg.dependencies || {})[dep])
+                    continue;
                 frameworks.push(...names);
             }
         }
@@ -121,7 +123,6 @@ function detectFrameworks(files, fileNames, rootDir) {
         "tailwind.config": "Tailwind CSS",
         "postcss.config": "PostCSS",
         "babel.config": "Babel",
-        "tsconfig": "TypeScript",
         "build.gradle": "Android",
         "build.gradle.kts": "Android",
         "settings.gradle": "Android",

@@ -120,7 +120,7 @@ export function discoverEntrypoints(files, rootDir) {
         }
         catch { }
     }
-    return entrypoints;
+    return entrypoints.filter(ep => !ep.path.startsWith("dist/") && !ep.path.startsWith("build/"));
 }
 /**
  * Parse AndroidManifest.xml to extract entrypoints

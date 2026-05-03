@@ -48,6 +48,7 @@ export interface UnifiedContextParams {
   docCoverage?: ReturnType<typeof analyzeDocCoverage>;
   cicdConfig?: ReturnType<typeof detectCICD>;
   migrations?: ReturnType<typeof detectMigrations>;
+  projectDescription?: string;
 }
 
 export function generateUnifiedContext(params: UnifiedContextParams): string {
@@ -73,6 +74,11 @@ export function generateUnifiedContext(params: UnifiedContextParams): string {
   lines.push(`- **Frameworks**: ${techStack.frameworks.join(", ") || "None"}`);
   lines.push(`- **Total Files**: ${summary.match(/\*\*Total files\*\*: (\d+)/)?.[1] || "Unknown"}`);
   lines.push("");
+
+  if (params.projectDescription) {
+    lines.push(`**What it does**: ${params.projectDescription}`);
+    lines.push("");
+  }
 
   lines.push("---\n");
   lines.push("## Table of Contents");

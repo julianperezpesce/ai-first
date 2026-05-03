@@ -267,7 +267,14 @@ export async function runAIFirst(options = {}) {
             repoMap, summary, architecture, techStack, entrypoints, conventions, aiRules,
             projectSetup, depVersions, testMapping, dataModels, recentChanges, crossCutting,
             configAnalysis, gotchas, impactAnalysis, codePatterns, antiPatterns, securityIssues,
-            performanceIssues, contextDiff, deadCode, docCoverage, cicdConfig, migrations
+            performanceIssues, contextDiff, deadCode, docCoverage, cicdConfig, migrations,
+            projectDescription: (() => { try {
+                const p = JSON.parse(fs.readFileSync(path.join(rootDir, "package.json"), "utf-8"));
+                return p.description;
+            }
+            catch {
+                return undefined;
+            } })()
         });
         writeFile(aiContextPath, aiContext);
         filesCreated.push(aiContextPath);

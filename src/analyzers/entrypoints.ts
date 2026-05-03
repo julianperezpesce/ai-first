@@ -145,7 +145,7 @@ export function discoverEntrypoints(files: FileInfo[], rootDir: string): Entrypo
     } catch {}
   }
 
-  return entrypoints;
+  return entrypoints.filter(ep => !ep.path.startsWith("dist/") && !ep.path.startsWith("build/"));
 }
 
 /**

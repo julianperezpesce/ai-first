@@ -113,6 +113,8 @@ export function detectSecurityIssues(rootDir: string): SecurityIssue[] {
         }
 
         if (line.match(/exec\s*\(\s*['"]/) || line.match(/system\s*\(\s*['"]/)) {
+          if (line.includes("execSync") || line.includes("execCommand") || line.includes("execFile")) continue;
+          
           issues.push({
             type: "command-injection",
             severity: "critical",

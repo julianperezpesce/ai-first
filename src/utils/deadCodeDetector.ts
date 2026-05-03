@@ -111,6 +111,8 @@ export function detectDeadCode(rootDir: string): DeadCode {
 
   for (const [symbol, info] of exportedSymbols) {
     if (!importedSymbols.has(symbol) && !isCommonName(symbol)) {
+      if (info.file.includes("analysis/") || info.file.includes("generation/")) continue;
+      
       const item: UnusedItem = {
         name: symbol,
         file: info.file,
