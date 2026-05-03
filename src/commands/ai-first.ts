@@ -33,6 +33,10 @@ import { extractProjectSetup } from "../utils/projectSetupExtractor.js";
 import { extractDependencyVersions } from "../utils/dependencyVersionExtractor.js";
 import { mapTestFiles } from "../utils/testFileMapper.js";
 import { extractDataModels } from "../utils/dataModelExtractor.js";
+import { extractRecentChanges } from "../utils/recentChangesExtractor.js";
+import { extractCrossCuttingConcerns } from "../utils/crossCuttingExtractor.js";
+import { extractConfigAnalysis } from "../utils/configAnalyzer.js";
+import { extractCodeGotchas } from "../utils/gotchaExtractor.js";
 import { Database } from "sql.js";
 import ora from "ora";
 import { startMCP } from "../mcp/index.js";
@@ -188,10 +192,42 @@ export async function runAIFirst(options: AIFirstOptions = {}): Promise<AIFirstR
     filesCreated.push(dataModelsPath);
     console.log("   ✅ Created data-models.json");
 
+    // Step 12f: Extract recent changes
+    console.log("📅 Extracting recent changes...");
+    const recentChanges = extractRecentChanges(rootDir);
+    const recentChangesPath = path.join(outputDir, "recent-changes.json");
+    writeFile(recentChangesPath, JSON.stringify(recentChanges, null, 2));
+    filesCreated.push(recentChangesPath);
+    console.log("   ✅ Created recent-changes.json");
+
+    // Step 12g: Extract cross-cutting concerns
+    console.log("🔍 Extracting cross-cutting concerns...");
+    const crossCutting = extractCrossCuttingConcerns(rootDir);
+    const crossCuttingPath = path.join(outputDir, "cross-cutting.json");
+    writeFile(crossCuttingPath, JSON.stringify(crossCutting, null, 2));
+    filesCreated.push(crossCuttingPath);
+    console.log("   ✅ Created cross-cutting.json");
+
+    // Step 12h: Analyze configuration files
+    console.log("⚙️  Analyzing configuration files...");
+    const configAnalysis = extractConfigAnalysis(rootDir);
+    const configPath = path.join(outputDir, "config-analysis.json");
+    writeFile(configPath, JSON.stringify(configAnalysis, null, 2));
+    filesCreated.push(configPath);
+    console.log("   ✅ Created config-analysis.json");
+
+    // Step 12i: Extract code gotchas
+    console.log("⚠️  Extracting code gotchas...");
+    const gotchas = extractCodeGotchas(rootDir);
+    const gotchasPath = path.join(outputDir, "gotchas.json");
+    writeFile(gotchasPath, JSON.stringify(gotchas, null, 2));
+    filesCreated.push(gotchasPath);
+    console.log("   ✅ Created gotchas.json");
+
     // Step 13: Generate unified ai_context.md
     console.log("📋 Generating unified AI context...");
     const aiContextPath = path.join(outputDir, "ai_context.md");
-    const aiContext = generateUnifiedContext(repoMap, summary, architecture, techStack, entrypoints, conventions, aiRules, projectSetup, depVersions, testMapping, dataModels);
+    const aiContext = generateUnifiedContext(repoMap, summary, architecture, techStack, entrypoints, conventions, aiRules, projectSetup, depVersions, testMapping, dataModels, recentChanges, crossCutting, configAnalysis, gotchas);
     writeFile(aiContextPath, aiContext);
     filesCreated.push(aiContextPath);
     console.log("   ✅ Created ai_context.md");
@@ -301,7 +337,11 @@ function generateUnifiedContext(
   projectSetup?: ReturnType<typeof extractProjectSetup>,
   depVersions?: ReturnType<typeof extractDependencyVersions>,
   testMapping?: ReturnType<typeof mapTestFiles>,
-  dataModels?: ReturnType<typeof extractDataModels>
+  dataModels?: ReturnType<typeof extractDataModels>,
+  recentChanges?: ReturnType<typeof extractRecentChanges>,
+  crossCutting?: ReturnType<typeof extractCrossCuttingConcerns>,
+  configAnalysis?: ReturnType<typeof extractConfigAnalysis>,
+  gotchas?: ReturnType<typeof extractCodeGotchas>
 ): string {
   const lines: string[] = [];
 
@@ -450,6 +490,78 @@ function generateUnifiedContext(
       lines.push(`- \`${mapping.sourceFile}\` → ${mapping.testFiles.map(t => `\`${t}\``).join(", ")}`);
     }
     lines.push("");
+  }
+
+  if (crossCutting) {
+    const concerns = [crossCutting.auth, crossCutting.logging, crossCutting.errorHandling, crossCutting.validation, crossCutting.caching].filter(Boolean);
+    if (concerns.length > 0) {
+      lines.push("---\n");
+      lines.push("## Cross-Cutting Concerns");
+      lines.push("");
+      for (const concern of concerns) {
+        if (concern) {
+          lines.push(`- **${concern.pattern}**: ${concern.description} (${concern.files.slice(0, 3).map(f => `\`${f}\``).join(", ")})`);
+        }
+      }
+      lines.push("");
+    }
+  }
+
+  if (configAnalysis) {
+    const configs = [];
+    if (configAnalysis.typescript) configs.push(`TypeScript: strict=${configAnalysis.typescript.strict}, target=${configAnalysis.typescript.target}`);
+    if (configAnalysis.eslint) configs.push(`ESLint: ${configAnalysis.eslint.extends.join(", ") || "custom"}`);
+    if (configAnalysis.prettier) configs.push(`Prettier: semi=${configAnalysis.prettier.semi}, singleQuote=${configAnalysis.prettier.singleQuote}`);
+    if (configAnalysis.testing) configs.push(`Testing: ${configAnalysis.testing.framework}`);
+    if (configAnalysis.docker?.hasDockerfile) configs.push(`Docker: ${configAnalysis.docker.baseImage || "Dockerfile"}`);
+
+    if (configs.length > 0) {
+      lines.push("---\n");
+      lines.push("## Configuration");
+      lines.push("");
+      for (const config of configs) {
+        lines.push(`- ${config}`);
+      }
+      lines.push("");
+    }
+  }
+
+  if (recentChanges && recentChanges.isGitRepo) {
+    lines.push("---\n");
+    lines.push("## Recent Activity");
+    lines.push("");
+    if (recentChanges.lastCommit) {
+      lines.push(`**Last commit**: ${recentChanges.lastCommit.message} (${recentChanges.lastCommit.author}, ${recentChanges.lastCommit.date.split("T")[0]})`);
+      lines.push("");
+    }
+    if (recentChanges.activeAuthors.length > 0) {
+      lines.push("**Active contributors**: " + recentChanges.activeAuthors.map(a => `${a.name} (${a.commits} commits)`).join(", "));
+      lines.push("");
+    }
+    if (recentChanges.activeFiles.length > 0) {
+      lines.push("**Recently modified**: " + recentChanges.activeFiles.slice(0, 5).map(f => `\`${f}\``).join(", "));
+      lines.push("");
+    }
+  }
+
+  if (gotchas && (gotchas.todos.length > 0 || gotchas.fixmes.length > 0 || gotchas.hacks.length > 0)) {
+    lines.push("---\n");
+    lines.push("## Code Notes");
+    lines.push("");
+    if (gotchas.todos.length > 0) {
+      lines.push("**TODOs**:");
+      for (const todo of gotchas.todos.slice(0, 5)) {
+        lines.push(`- \`${todo.file}:${todo.line}\`: ${todo.text}`);
+      }
+      lines.push("");
+    }
+    if (gotchas.fixmes.length > 0) {
+      lines.push("**FIXMEs**:");
+      for (const fixme of gotchas.fixmes.slice(0, 3)) {
+        lines.push(`- \`${fixme.file}:${fixme.line}\`: ${fixme.text}`);
+      }
+      lines.push("");
+    }
   }
 
   lines.push("---\n");
