@@ -27,10 +27,27 @@ All notable changes to `ai-first` will be documented in this file.
 - **`.ai-first-ignore`**: Per-project custom exclusion patterns file
 - **VS Code Extension**: `.vscode/tasks.json` + keybindings (`Ctrl+Shift+A` → Generate Context)
 - **Enhanced `af doctor`**: New checks for .gitignore, test coverage, dependencies, README
+- **GitHub Action** (`action.yml`): Official CI/CD action for marketplace
+- **Docker Image** (`Dockerfile`): `docker run -v $(pwd):/repo julianperezpesce/ai-first af init`
+- **Shell Completions**: Added zsh (`completions/_af.zsh`) and fish (`completions/af.fish`)
+- **JSON Schema**: `schema/ai-first-config.schema.json` for IDE autocompletion
+- **i18n Module**: Spanish/English message support (`src/utils/i18n.ts`)
+- **Semantic Release**: `.releaserc.json` for automated versioning
+
+#### 🧠 MCP Server Enhanced (8 tools)
+- `generate_context` - Generate full AI context
+- `query_symbols` - Search symbols by name/type
+- `get_architecture` - Architecture analysis
+- `get_context_for_file` - Context for specific files (NEW)
+- `analyze_changes` - Git diff analysis (NEW)
+- `suggest_tests` - Test file suggestions (NEW)
+- `run_security_audit` - Security scan (NEW)
+- `af serve` - Local web dashboard (NEW)
+- `af send-context` - Export context for LLM tools (NEW)
+- `af history` - Context evolution timeline (NEW)
 
 #### 🧪 Testing
 - 1336 tests passing (45 test files)
-- New tests for CLI features (--json, --diff, doctor, pr-description)
 
 ---
 
@@ -97,68 +114,6 @@ All notable changes to `ai-first` will be documented in this file.
 
 #### 📚 Documentation
 - Added `docs/NEW_FEATURES.md` with comprehensive feature documentation
-
----
-
-## [Unreleased]
-
-### 🚀 Content Quality Improvements
-
-#### ✨ Framework Detection Enhancements
-- **Weighted Detection Signals** - Added custom `weight` property to `DetectionSignal` interface
-  - Enables more specific framework detection (manage.py=5 vs requirements.txt=1)
-  - Updated `baseAdapter.ts` and `adapterRegistry.ts`
-  - Better scoring for framework-specific files
-
-- **Content-Based Python Framework Detection** - Enhanced `src/analyzers/techStack.ts`
-  - Analyzes actual Python imports to distinguish Django/Flask/FastAPI
-  - Scans up to 50 Python files for framework-specific imports
-  - Resolves conflicts from package-based detection
-
-#### 🔧 Architecture Detection Fixes
-- **API vs MVC Pattern Detection** - Updated `src/analyzers/architecture.ts`
-  - Now requires views/templates for MVC pattern (not just controllers)
-  - APIs without views are correctly labeled "Layered Architecture (REST API)"
-  - CLI tools get appropriate pattern without generic DI advice
-
-- **Context-Aware Recommendations** - Updated `src/core/generation/architectureGenerator.ts`
-  - CLI projects: recommends command parser libraries
-  - REST APIs: recommends layered separation
-  - No more generic DI advice for inappropriate project types
-
-#### 📝 Description Quality Improvements
-- **Better Project Purpose Inference** - Updated `src/core/repoMapper.ts`
-  - Extracts domain from directory names (auth → authentication, order → e-commerce)
-  - Fallback descriptions are more specific (e.g., "service-oriented application")
-  - 12 domain pattern categories
-
-- **Improved Project Type Detection** - Updated `src/core/generation/aiContextGenerator.ts`
-  - No more "Generic Application" or "software project" generic fallbacks
-  - Uses architecture pattern info when available
-  - Maps to: REST API, Microservices, Frontend Application, Backend Service, etc.
-
-- **Enhanced Entry Point Descriptions** - Updated `describeEntryPoint()`
-  - Now recognizes: CLI commands, workers, schedulers, consumers/producers
-  - More specific handlers: auth, middleware, services, repositories
-  - 15+ entry point type categories
-
-#### 🛠️ New Utilities
-- **FileStatsCalculator** - `src/utils/fileStatsCalculator.ts`
-  - Centralized file counting logic
-  - Consistent statistics across generators
-  - Validation for count consistency
-
-- **README Parser** - `src/utils/readmeParser.ts`
-  - Extracts title and description from README.md
-  - Detects documentation sections (installation, usage, examples)
-
-- **Text Utils** - `src/utils/textUtils.ts`
-  - Description deduplication
-  - Removes redundant phrases ("API API" → "API")
-
-#### ✅ Testing
-- All 1138 tests passing
-- Build compiles without errors
 
 ---
 
