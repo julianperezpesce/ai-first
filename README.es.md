@@ -21,7 +21,24 @@
 
 ---
 
-## 🚀 Novedades en v1.4.1
+## 🚀 Novedades en v1.5.0
+
+**Búsqueda Semántica & Comprensión de Código** - Inspirado en Graphify, ChromaDB y FAISS
+
+- ✅ `af search "query"`: Búsqueda de código por palabras clave en todo el repo
+- ✅ `af ask "pregunta"`: Responde preguntas con contexto + snippets de código
+- ✅ `af understand "tema"`: Contexto + grafo + código + tests en una sola respuesta
+- ✅ `af chat`: Modo interactivo REPL para preguntas sobre la codebase
+
+**Ejemplos**:
+```bash
+af search "authentication" --root ./my-project
+af ask "how does login work" --root ./my-project
+af understand "payment flow"
+af chat
+```
+
+**Anterior: v1.4.1**
 
 **12 nuevos comandos y flags** - Productividad y automatización
 

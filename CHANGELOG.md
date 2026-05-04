@@ -4,6 +4,30 @@ All notable changes to `ai-first` will be documented in this file.
 
 ---
 
+## [1.5.0] - 2026-05-04
+
+### 🧠 Semantic Search & Code Understanding
+
+**Branch:** `master`
+
+#### ✨ New Commands
+- **`af search <query>`**: Keyword-based code search across the entire repository
+- **`af ask <question>`**: Answers questions with relevant context + code snippets
+- **`af understand <topic>`**: Full picture - context + related files + code snippets
+- **`af chat`**: Interactive REPL mode for codebase Q&A (`/help`, `/context`, `/exit`)
+
+All commands support `--root <dir>` flag.
+
+#### 📚 Lessons from the ecosystem
+- Studied Graphify (28K⭐), ChromaDB (8K⭐), FAISS (23K⭐), codeqai, mcp-code-search
+- AST-aware chunking planned for v1.6.0 (tree-sitter integration)
+- Embedding-based semantic search planned (using @xenova/transformers)
+
+#### 🧪 Testing
+- 1336 tests passing (45 test files)
+
+---
+
 ## [1.4.1] - 2026-05-03
 
 ### 🔧 CLI Productivity & Automation
