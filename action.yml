@@ -1,0 +1,65 @@
+name: 'AI-First - Generate AI Context'
+description: 'Generate AI-optimized context for your repository'
+author: 'Julian Perez Pesce'
+branding:
+  color: 'purple'
+  icon: 'zap'
+
+inputs:
+  root:
+    description: 'Root directory to scan'
+    default: '.'
+  output:
+    description: 'Output directory for context files'
+    default: './ai-context'
+  preset:
+    description: 'Analysis preset (full, quick, api, docs)'
+    default: 'full'
+  diff:
+    description: 'Show context diff from last run'
+    default: 'false'
+  json:
+    description: 'Output in JSON format'
+    default: 'false'
+
+outputs:
+  context-dir:
+    description: 'Directory where context was generated'
+    value: ${{ steps.generate.outputs.context-dir }}
+  files-count:
+    description: 'Number of context files generated'
+    value: ${{ steps.generate.outputs.files-count }}
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install ai-first-cli
+      run: npm install -g ai-first-cli@latest
+      shell: bash
+
+    - name: Generate AI context
+      id: generate
+      run: |
+        AF_ARGS="init --root ${{ inputs.root }} --output ${{ inputs.output }} --preset ${{ inputs.preset }}"
+        if [ "${{ inputs.diff }}" = "true" ]; then AF_ARGS="$AF_ARGS --diff"; fi
+        if [ "${{ inputs.json }}" = "true" ]; then AF_ARGS="$AF_ARGS --json"; fi
+        af $AF_ARGS
+        echo "context-dir=${{ inputs.output }}" >> $GITHUB_OUTPUT
+        echo "files-count=$(ls ${{ inputs.output }} | wc -l)" >> $GITHUB_OUTPUT
+      shell: bash
+
+    - name: Upload context as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ai-context
+        path: ${{ inputs.output }}
