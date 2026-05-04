@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI-First Dependency Graph</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,sans-serif;background:#0d1117;color:#c9d1d9;overflow:hidden}
+#graph{width:100vw;height:100vh}
+.tooltip{position:absolute;background:#161b22;border:1px solid #30363d;border-radius:6px;padding:10px;font-size:12px;pointer-events:none;max-width:300px}
+.legend{position:fixed;bottom:20px;right:20px;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px;font-size:11px}
+.legend-item{display:flex;align-items:center;gap:6px;margin:4px 0}
+.legend-color{width:10px;height:10px;border-radius:50%}
+</style>
+</head>
+<body>
+<div id="graph"></div>
+<div class="legend" id="legend"></div>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+const width=window.innerWidth,height=window.innerHeight;
+
+const colors={api:'#58a6ff',service:'#3fb950',data:'#d29922',domain:'#f0883e',util:'#8b949e',unknown:'#6e7681'};
+
+fetch('module-graph.json').then(r=>r.json()).then(data=>{
+  const nodes=data.nodes||[],edges=data.edges||[];
+  if(!nodes.length){
+    const mods=data.modules||data;
+    const nodeArr=Object.entries(mods||{}).map(([k,v])=>({id:k,group:v.path?.split('/')[0]||'root',files:(v.files||[]).length}));
+    if(nodeArr.length){render(nodeArr,[]);return}
+    document.getElementById('graph').innerHTML='<p style="padding:40px">No module graph found. Run af map first.</p>';return
+  }
+  render(nodes,edges);
+});
+
+function render(nodes,edges){
+  const svg=d3.select('#graph').append('svg').attr('width',width).attr('height',height);
+  const g=svg.append('g');
+  const zoom=d3.zoom().on('zoom',e=>g.attr('transform',e.transform));
+  svg.call(zoom);
+
+  const simulation=d3.forceSimulation(nodes)
+    .force('link',d3.forceLink(edges).id(d=>d.id).distance(80))
+    .force('charge',d3.forceManyBody().strength(-200))
+    .force('center',d3.forceCenter(width/2,height/2));
+
+  const link=g.append('g').selectAll('line').data(edges).join('line')
+    .attr('stroke','#30363d').attr('stroke-width',d=>Math.min(3,d.weight||1));
+
+  const node=g.append('g').selectAll('circle').data(nodes).join('circle')
+    .attr('r',d=>Math.max(8,Math.sqrt(d.files||d.size||1)*5))
+    .attr('fill',d=>colors[d.group]||colors.unknown)
+    .call(d3.drag().on('start',(e,d)=>{if(!e.active)simulation.alphaTarget(0.3).restart();d.fx=d.x;d.fy=d.y})
+      .on('drag',(e,d)=>{d.fx=e.x;d.fy=e.y}).on('end',(e,d)=>{if(!e.active)simulation.alphaTarget(0);d.fx=null;d.fy=null}));
+
+  const label=g.append('g').selectAll('text').data(nodes).join('text')
+    .text(d=>d.id||d.name).attr('font-size',10).attr('fill','#c9d1d9').attr('dx',12).attr('dy',4);
+
+  node.append('title').text(d=>`${d.id||d.name}\nFiles: ${d.files||d.size||0}`);
+
+  simulation.on('tick',()=>{link.attr('x1',d=>d.source.x).attr('y1',d=>d.source.y).attr('x2',d=>d.target.x).attr('y2',d=>d.target.y);node.attr('cx',d=>d.x).attr('cy',d=>d.y);label.attr('x',d=>d.x).attr('y',d=>d.y)});
+
+  const legend=Object.entries(colors).map(([k,v])=>`<div class="legend-item"><div class="legend-color" style="background:${v}"></div>${k}</div>`).join('');
+  document.getElementById('legend').innerHTML=legend;
+}
+</script>
+</body>
+</html>

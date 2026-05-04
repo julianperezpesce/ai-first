@@ -1576,6 +1576,7 @@ Examples:
     let aiDir = path.join(rootDir, "ai-context");
     let showJson = false;
     let showStats = false;
+    let showHtml = false;
     
     for (let i = 0; i < args.length; i++) {
       const arg = args[i];
@@ -1588,11 +1589,9 @@ Examples:
         case "--json":
           showJson = true;
           break;
-        case "--stats":
-        case "-s":
-          showStats = true;
-          break;
-        case "--no-git":
+        case "--stats": case "-s": showStats = true; break;
+        case "--html": showHtml = true; break;
+        case "--no-git": break;
           break;
         case "--help":
         case "-h":
@@ -1649,6 +1648,18 @@ Examples:
       
       console.log("\n✅ Generated:");
       console.log("   - ai/graph/knowledge-graph.json");
+    }
+    if (showHtml) {
+      const htmlPath = path.join(aiDir, "graph.html");
+      const templatePath = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "web", "graph.html");
+      let html = "";
+      if (fs.existsSync(templatePath)) {
+        html = fs.readFileSync(templatePath, "utf-8");
+      } else {
+        html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>AI Graph</title></head><body><h1>Dependency Graph</h1><p>Open in browser to see D3 visualization</p><script>fetch('module-graph.json').then(r=>r.json()).then(d=>document.body.innerHTML+='<pre>'+JSON.stringify(d,null,2)+'</pre>')</script></body></html>`;
+      }
+      fs.writeFileSync(htmlPath, html);
+      console.log(`   ✅ graph.html (open in browser for interactive D3 view)`);
     }
     process.exit(0);
   } else if (command === 'update') {
@@ -1848,6 +1859,30 @@ af init --root "$(git rev-parse --show-toplevel)" --json 2>/dev/null
     const content = fs.readFileSync(ctxPath, "utf-8");
     console.log(`\n📤 Context ready (${content.length} chars)`);
     console.log(`   Copy/paste into your AI tool\n`);
+    process.exit(0);
+  } else if (command === 'install') {
+    args.shift();
+    let platform = "opencode";
+    for (let i = 0; i < args.length; i++) {
+      if (args[i] === "--platform" || args[i] === "-p") platform = args[++i];
+    }
+    const rootDir = process.cwd();
+    if (platform === "opencode") {
+      const opencodeDir = path.join(rootDir, ".opencode");
+      ensureDir(opencodeDir);
+      const mcpPath = path.join(opencodeDir, "mcp.json");
+      fs.writeFileSync(mcpPath, JSON.stringify({ mcpServers: { "ai-first": { command: "af", args: ["mcp"], autoConnect: true } } }, null, 2));
+      console.log(`\n✅ AI-First installed for OpenCode at ${mcpPath}`);
+    } else if (platform === "cursor") {
+      console.log(`\n✅ For Cursor: add "ai-context/ai_context.md" to your .cursorrules file`);
+    } else if (platform === "claude") {
+      const claudePath = path.join(rootDir, "CLAUDE.md");
+      const entry = `\n## AI Context\nRead ai-context/ai_context.md before answering questions about this codebase.\n`;
+      fs.appendFileSync(claudePath, entry);
+      console.log(`\n✅ AI-First installed for Claude Code at ${claudePath}`);
+    } else {
+      console.log(`Platform "${platform}" not supported. Try: opencode, cursor, claude`);
+    }
     process.exit(0);
   } else if (command === 'search') {
     args.shift();
