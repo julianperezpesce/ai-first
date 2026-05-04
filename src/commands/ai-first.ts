@@ -1849,7 +1849,100 @@ af init --root "$(git rev-parse --show-toplevel)" --json 2>/dev/null
     console.log(`\n📤 Context ready (${content.length} chars)`);
     console.log(`   Copy/paste into your AI tool\n`);
     process.exit(0);
-  } else {
+  } else if (command === 'search') {
+    args.shift();
+    let rootDir = process.cwd();
+    let query = "";
+    for (let i = 0; i < args.length; i++) {
+      if (args[i] === "--root" || args[i] === "-r") rootDir = args[++i];
+      else query += args[i] + " ";
+    }
+    query = query.trim();
+    if (!query) { console.log("Usage: af search <query> [--root dir]"); process.exit(1); }
+    const { semanticSearch } = await import("../utils/semanticSearch.js");
+    const results = semanticSearch(rootDir, query);
+    console.log(`\n🔍 "${query}" → ${results.results.length} results in ${results.totalFiles} files\n`);
+    for (const r of results.results) {
+      console.log(`  📄 ${r.file}:${r.line} (${r.function || 'top'})`);
+      console.log(`     ${r.code.split('\n').slice(0, 2).join('\n     ')}`);
+      console.log();
+    }
+    process.exit(0);
+  } else if (command === 'ask') {
+    args.shift();
+    let rootDir = process.cwd();
+    let question = "";
+    for (let i = 0; i < args.length; i++) {
+      if (args[i] === "--root" || args[i] === "-r") rootDir = args[++i];
+      else question += args[i] + " ";
+    }
+    question = question.trim();
+    if (!question) { console.log("Usage: af ask <question> [--root dir]"); process.exit(1); }
+    console.log(`\n🧠 "${question}"\n`);
+    const { semanticSearch } = await import("../utils/semanticSearch.js");
+    const results = semanticSearch(rootDir, question, 5);
+    const ctxPath = path.join(rootDir, "ai-context", "ai_context.md");
+    if (fs.existsSync(ctxPath)) {
+      const ctx = fs.readFileSync(ctxPath, "utf-8").match(/## Quick Overview\s*\n([\s\S]*?)\n---/)?.[1] || "";
+      console.log("--- Context ---");
+      console.log(ctx.trim());
+    }
+    console.log("\n--- Relevant Code ---");
+    for (const r of results.results) {
+      console.log(`\n📄 ${r.file}:${r.line} (${r.function || 'top-level'})`);
+      console.log(`\`\`\`\n${r.code.slice(0, 400)}\n\`\`\``);
+    }
+    console.log("\n💡 Tip: Run 'af chat' for interactive mode");
+    process.exit(0);
+  } else if (command === 'understand') {
+    args.shift();
+    let rootDir = process.cwd();
+    let topic = "";
+    for (let i = 0; i < args.length; i++) {
+      if (args[i] === "--root" || args[i] === "-r") rootDir = args[++i];
+      else topic += args[i] + " ";
+    }
+    topic = topic.trim();
+    if (!topic) { console.log("Usage: af understand <topic> [--root dir]"); process.exit(1); }
+    console.log(`\n🧠 Understanding: "${topic}"\n`);
+    const { semanticSearch } = await import("../utils/semanticSearch.js");
+    const results = semanticSearch(rootDir, topic, 8);
+    console.log(`📊 ${results.results.length} relevant code locations found\n`);
+    console.log("## Context");
+    const ctxPath = path.join(rootDir, "ai-context", "ai_context.md");
+    if (fs.existsSync(ctxPath)) console.log(fs.readFileSync(ctxPath, "utf-8").match(/## Cross-Cutting.*?\n([\s\S]*?)\n---/)?.[1]?.trim() || "Run af init for full context");
+    console.log("\n## Related Files");
+    const files = [...new Set(results.results.map(r => r.file))];
+    for (const f of files) console.log(`- ${f}`);
+    console.log("\n## Code Snippets");
+    for (const r of results.results.slice(0, 5)) {
+      console.log(`\n### ${r.file}:${r.line} - ${r.function}`);
+      console.log(`\`\`\`\n${r.code.slice(0, 500)}\n\`\`\``);
+    }
+    console.log(`\n✅ Full context in ai-context/ | Graph: af graph | Search: af search`);
+    process.exit(0);
+  } else if (command === 'chat') {
+    console.log(`\n💬 AI-First Chat Mode (type /exit to quit, /help for commands)\n`);
+    const rootDir = process.cwd();
+    const readline = (await import("readline")).default;
+    const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+    const { semanticSearch } = await import("../utils/semanticSearch.js");
+    const ask = (q: string) => {
+      const results = semanticSearch(rootDir, q, 3);
+      for (const r of results.results) {
+        console.log(`\n  📄 ${r.file}:${r.line} (${r.function})`);
+      }
+      console.log(`  ${results.results.length} results\n`);
+    };
+    const prompt = () => { rl.question("af> ", (input: string) => {
+      if (input === "/exit") { console.log("👋 Bye!"); rl.close(); process.exit(0); }
+      if (input === "/help") { console.log("/exit quit | /help | /context show context\nAsk any question about your codebase"); prompt(); return; }
+      if (input === "/context") { const cp = path.join(rootDir, "ai-context", "ai_context.md"); if (fs.existsSync(cp)) console.log(fs.readFileSync(cp, "utf-8").split("\n").slice(0, 20).join("\n")); else console.log("Run af init first"); prompt(); return; }
+    if (input.startsWith("/")) { console.log("Unknown command"); prompt(); return; }
+    ask(input); prompt();
+  });};
+  prompt();
+} else {
     console.log(`Unknown command: ${command}`);
     console.log(`Use 'ai-first --help' for usage information`);
     process.exit(1);
