@@ -1096,6 +1096,7 @@ Options:
         let jsonMode = false;
         let watchMode = false;
         let smartMode = false;
+        let templateFile;
         for (let i = 0; i < args.length; i++) {
             const arg = args[i];
             switch (arg) {
@@ -1125,6 +1126,9 @@ Options:
                     break;
                 case "--smart":
                     smartMode = true;
+                    break;
+                case "--template":
+                    templateFile = args[++i];
                     break;
                 case "--repo":
                     options.rootDir = await cloneAndInit(args[++i]);
@@ -1693,6 +1697,51 @@ af init --root "$(git rev-parse --show-toplevel)" --json 2>/dev/null
 `);
         fs.chmodSync(hookPath, 0o755);
         console.log(`\n✅ Pre-commit hook installed: ${hookPath}`);
+        process.exit(0);
+    }
+    else if (command === 'history') {
+        args.shift();
+        let rootDir = process.cwd();
+        let limit = 5;
+        for (let i = 0; i < args.length; i++) {
+            if (args[i] === "--root" || args[i] === "-r")
+                rootDir = args[++i];
+            else if (args[i] === "--limit" || args[i] === "-n")
+                limit = parseInt(args[++i]) || 5;
+        }
+        console.log(`\n📜 Context history (last ${limit} commits):`);
+        try {
+            const { execSync } = await import("child_process");
+            const commits = execSync(`git log --oneline -${limit}`, { cwd: rootDir, encoding: "utf-8" }).trim().split("\n");
+            for (const c of commits)
+                console.log(`  ${c}`);
+        }
+        catch (e) {
+            console.error("Error:", e.message);
+        }
+        process.exit(0);
+    }
+    else if (command === 'serve') {
+        const rootDir = process.cwd();
+        const ctxPath = path.join(rootDir, "ai-context", "ai_context.md");
+        if (!fs.existsSync(ctxPath)) {
+            console.log("❌ No context. Run af init first.");
+            process.exit(1);
+        }
+        console.log(`\n🌐 Dashboard: open ai-context/ai_context.md`);
+        console.log(`   Or serve: python3 -m http.server 8341 -d ai-context/\n`);
+        process.exit(0);
+    }
+    else if (command === 'send-context') {
+        const rootDir = process.cwd();
+        const ctxPath = path.join(rootDir, "ai-context", "ai_context.md");
+        if (!fs.existsSync(ctxPath)) {
+            console.log("❌ No context. Run af init first.");
+            process.exit(1);
+        }
+        const content = fs.readFileSync(ctxPath, "utf-8");
+        console.log(`\n📤 Context ready (${content.length} chars)`);
+        console.log(`   Copy/paste into your AI tool\n`);
         process.exit(0);
     }
     else {

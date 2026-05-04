@@ -11,6 +11,8 @@ import { analyzeArchitecture } from '../analyzers/architecture.js';
 import initSqlJs from 'sql.js';
 import fs from 'fs';
 import path from 'path';
+import { mapTestFiles } from '../utils/testFileMapper.js';
+import { detectSecurityIssues } from '../utils/securityAuditor.js';
 
 interface MCPServerOptions {
   rootDir?: string;
@@ -86,6 +88,26 @@ export function startMCPServer(options: MCPServerOptions = {}): void {
               },
             },
           },
+        },
+        {
+          name: 'get_context_for_file',
+          description: 'Get AI context for a specific file',
+          inputSchema: { type: 'object', properties: { file: { type: 'string' } }, required: ['file'] },
+        },
+        {
+          name: 'analyze_changes',
+          description: 'Analyze recent git changes',
+          inputSchema: { type: 'object', properties: { since: { type: 'string' } } },
+        },
+        {
+          name: 'suggest_tests',
+          description: 'Suggest test files for a source file',
+          inputSchema: { type: 'object', properties: { file: { type: 'string' } }, required: ['file'] },
+        },
+        {
+          name: 'run_security_audit',
+          description: 'Run security analysis',
+          inputSchema: { type: 'object', properties: {} },
         },
       ],
     };
@@ -175,39 +197,40 @@ export function startMCPServer(options: MCPServerOptions = {}): void {
 
         case 'get_architecture': {
           const format = (args?.format as string) || 'summary';
-          
           const { files } = scanRepo(rootDir);
           const analysis = analyzeArchitecture(files, rootDir);
-          
-          const output = format === 'detailed'
-            ? {
-                pattern: analysis.pattern,
-                layers: analysis.layers,
-                modules: analysis.modules,
-                description: analysis.description,
-              }
-            : {
-                pattern: analysis.pattern,
-                layers: analysis.layers,
-                moduleCount: analysis.modules.length,
-              };
-          
-          return {
-            content: [
-              {
-                type: 'text',
-                text: JSON.stringify({
-                  format,
-                  rootDir,
-                  ...output,
-                }, null, 2),
-              },
-            ],
-          };
+          return { content: [{ type: 'text', text: JSON.stringify({ pattern: analysis.pattern, layers: analysis.layers, moduleCount: analysis.modules.length }, null, 2) }] };
+        }
+
+        case 'get_context_for_file': {
+          const file = args?.file as string;
+          const mapping = mapTestFiles(rootDir);
+          const fileMapping = mapping.find(m => m.sourceFile === file);
+          return { content: [{ type: 'text', text: JSON.stringify({ file, hasTests: !!fileMapping?.testFiles?.length, tests: fileMapping?.testFiles || [] }, null, 2) }] };
+        }
+
+        case 'analyze_changes': {
+          const since = (args?.since as string) || 'HEAD~5';
+          const { execSync } = await import('child_process');
+          const files = execSync(`git diff --name-only ${since}..HEAD`, { cwd: rootDir, encoding: 'utf-8' }).trim().split('\n').filter(Boolean);
+          return { content: [{ type: 'text', text: JSON.stringify({ since, filesChanged: files.length, files: files.slice(0, 15) }, null, 2) }] };
+        }
+
+        case 'suggest_tests': {
+          const file = args?.file as string;
+          const mapping = mapTestFiles(rootDir);
+          const fileMapping = mapping.find(m => m.sourceFile === file);
+          return { content: [{ type: 'text', text: JSON.stringify({ file, existingTests: fileMapping?.testFiles || [], suggestion: fileMapping?.testFiles?.length ? 'Tests exist' : 'Create a test file' }, null, 2) }] };
+        }
+
+        case 'run_security_audit': {
+          const issues = detectSecurityIssues(rootDir);
+          const criticals = issues.filter(i => i.severity === 'critical');
+          return { content: [{ type: 'text', text: JSON.stringify({ total: issues.length, critical: criticals.length, top: issues.slice(0, 5) }, null, 2) }] };
         }
 
         default:
-          throw new Error(`Unknown tool: ${name}`);
+          return { content: [{ type: 'text', text: `Unknown tool: ${name}` }] };
       }
     } catch (error) {
       return {
