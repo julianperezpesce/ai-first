@@ -3,7 +3,7 @@
 # Usage: curl -fsSL https://raw.githubusercontent.com/julianperezpesce/ai-first/master/install.sh | bash
 set -e
 
-AF_VERSION="${AF_VERSION:-1.2.2}"
+AF_VERSION="${AF_VERSION:-1.5.1}"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'

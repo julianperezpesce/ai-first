@@ -60,6 +60,15 @@ For semantic search with embeddings:
 npm install @xenova/transformers
 ```
 
+For running AI-powered evaluation tests (contributors only — requires GitHub access to the private evaluator repo):
+
+```bash
+# Clone and install the evaluator
+git clone git@github.com:julianperezpesce/ai-first-evaluator.git
+cd ai-first-evaluator
+npm install && npm run build
+```
+
 ## Update AI-First
 
 ```bash
