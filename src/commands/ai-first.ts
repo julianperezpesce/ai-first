@@ -51,6 +51,7 @@ import { isContextFresh, verifyAIContext } from "../core/services/doctorService.
 import { generateContext } from "../core/services/contextService.js";
 import { getContextForTask } from "../core/services/taskContextService.js";
 import { getMcpCompatibilityProfiles, getMcpDoctor, installMcpProfile, normalizeMcpPlatform } from "../core/services/mcpCompatibilityService.js";
+import { understandTopic } from "../core/services/understandService.js";
 import { Database } from "sql.js";
 import ora from "ora";
 import { startMCP, startMCPHttpServer } from "../mcp/index.js";
@@ -1622,6 +1623,7 @@ The server provides these tools:
   - query_symbols: Look up symbols by name/type
   - get_architecture: Get architecture analysis
   - get_context_for_file: Get tests and evidence for a source file
+  - understand_topic: Hybrid understanding for a repo topic
   - get_project_brief: Get the short agent-facing project brief
   - is_context_fresh: Check whether ai-context is fresh
   - run_doctor: Run freshness and trust checks
@@ -1928,28 +1930,72 @@ Examples:
     args.shift();
     let rootDir = process.cwd();
     let topic = "";
+    let format = "markdown";
     for (let i = 0; i < args.length; i++) {
       if (args[i] === "--root" || args[i] === "-r") rootDir = args[++i];
+      else if (args[i] === "--format" || args[i] === "-f") format = args[++i];
+      else if (args[i] === "--json") format = "json";
       else topic += args[i] + " ";
     }
     topic = topic.trim();
-    if (!topic) { console.log("Usage: af understand <topic> [--root dir]"); process.exit(1); }
-    console.log(`\n🧠 Understanding: "${topic}"\n`);
-    const { semanticSearch } = await import("../utils/semanticSearch.js");
-    const results = semanticSearch(rootDir, topic, 8);
-    console.log(`📊 ${results.results.length} relevant code locations found\n`);
-    console.log("## Context");
-    const ctxPath = path.join(rootDir, "ai-context", "ai_context.md");
-    if (fs.existsSync(ctxPath)) console.log(fs.readFileSync(ctxPath, "utf-8").match(/## Cross-Cutting.*?\n([\s\S]*?)\n---/)?.[1]?.trim() || "Run af init for full context");
-    console.log("\n## Related Files");
-    const files = [...new Set(results.results.map(r => r.file))];
-    for (const f of files) console.log(`- ${f}`);
-    console.log("\n## Code Snippets");
-    for (const r of results.results.slice(0, 5)) {
-      console.log(`\n### ${r.file}:${r.line} - ${r.function}`);
-      console.log(`\`\`\`\n${r.code.slice(0, 500)}\n\`\`\``);
+    if (!topic) { console.log("Usage: af understand <topic> [--root dir] [--format json|markdown]"); process.exit(1); }
+    const result = understandTopic(rootDir, topic);
+
+    if (format === "json") {
+      console.log(JSON.stringify(result, null, 2));
+      process.exit(0);
     }
-    console.log(`\n✅ Full context in ai-context/ | Graph: af graph | Search: af search`);
+
+    console.log(`# Understanding: ${topic}\n`);
+    console.log(`${result.summary}\n`);
+    console.log(`**Context freshness**: ${result.contextFresh.fresh ? "fresh" : "not fresh"} - ${result.contextFresh.reason}`);
+    console.log(`**Architecture**: ${result.architecture.pattern}\n`);
+
+    if (result.architecture.modules.length > 0) {
+      console.log("## Relevant Modules");
+      for (const module of result.architecture.modules) {
+        console.log(`- ${module.path}: ${module.responsibility}`);
+      }
+      console.log();
+    }
+
+    console.log("## Relevant Files");
+    for (const file of result.files) {
+      console.log(`- ${file.path} (${file.confidence}) - ${file.reason}`);
+      for (const evidence of file.evidence.slice(0, 2)) {
+        console.log(`  evidence: ${evidence}`);
+      }
+    }
+
+    if (result.tests.length > 0) {
+      console.log("\n## Related Tests");
+      for (const test of result.tests) {
+        console.log(`- ${test.path} (${test.confidence}) - ${test.reason}`);
+      }
+    }
+
+    console.log("\n## Code Evidence");
+    for (const snippet of result.snippets.slice(0, 5)) {
+      console.log(`\n### ${snippet.file}:${snippet.line} - ${snippet.symbol}`);
+      console.log(`\`\`\`\n${snippet.code.slice(0, 600)}\n\`\`\``);
+    }
+
+    if (result.commands.length > 0) {
+      console.log("\n## Verification Commands");
+      for (const command of result.commands) {
+        console.log(`- \`${command.command}\` - ${command.reason}`);
+      }
+    }
+
+    console.log("\n## Risks");
+    for (const risk of result.risks.slice(0, 8)) {
+      console.log(`- ${risk}`);
+    }
+
+    console.log("\n## Evidence");
+    for (const evidence of result.evidence) {
+      console.log(`- ${evidence}`);
+    }
     process.exit(0);
   } else if (command === 'chat') {
     console.log(`\n💬 AI-First Chat Mode (type /exit to quit, /help for commands)\n`);

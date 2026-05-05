@@ -44,6 +44,10 @@ export function evaluateQualityGates(options: QualityGateOptions): QualityGateRe
   gates.push(checkTypeScriptConfig(rootDir));
   gates.push(checkCiWorkflow(rootDir));
   gates.push(checkDocsBuildScript(scripts));
+  gates.push(checkEvaluatorSetup(rootDir, packageJson, scripts));
+  gates.push(checkReleaseConfig(rootDir, packageJson));
+  gates.push(checkPublishWorkflow(rootDir));
+  gates.push(checkReadmeVersion(rootDir, packageJson));
   gates.push(checkReadme(rootDir));
   gates.push(checkMcpServer(rootDir));
   gates.push(checkNoMcpShellInterpolation(rootDir));
@@ -53,6 +57,7 @@ export function evaluateQualityGates(options: QualityGateOptions): QualityGateRe
     if (scripts.build) gates.push(runNpmScript(rootDir, "build"));
     if (scripts.test) gates.push(runNpmScript(rootDir, "test"));
     if (scripts["docs:build"]) gates.push(runNpmScript(rootDir, "docs:build"));
+    if (scripts["evaluate:quick"]) gates.push(runNpmScript(rootDir, "evaluate:quick"));
   }
 
   const summary = {
@@ -150,6 +155,147 @@ function checkReadme(rootDir: string): QualityGate {
   };
 }
 
+function checkEvaluatorSetup(rootDir: string, packageJson: PackageJson | null, scripts: Record<string, string>): QualityGate {
+  const configPath = path.join(rootDir, "evaluator.config.json");
+  if (!fs.existsSync(configPath)) {
+    return warn("evaluator-setup", "evaluator.config.json is missing", ["evaluator.config.json"]);
+  }
+
+  let config: EvaluatorConfig;
+  try {
+    config = JSON.parse(fs.readFileSync(configPath, "utf-8")) as EvaluatorConfig;
+  } catch {
+    return fail("evaluator-setup", "evaluator.config.json is not valid JSON", ["evaluator.config.json"]);
+  }
+
+  const requiredScripts = ["evaluate", "evaluate:quick"];
+  const missingScripts = requiredScripts.filter(script => !scripts[script]);
+  const hasEvaluatorDependency = Boolean(packageJson?.dependencies?.["ai-first-evaluator"] || packageJson?.devDependencies?.["ai-first-evaluator"] || packageJson?.optionalDependencies?.["ai-first-evaluator"]);
+  const projects = Array.isArray(config.projects) ? config.projects : [];
+  const highPriorityProjects = projects.filter(project => project.priority === "high");
+  const threshold = config.thresholds?.minimumScore;
+
+  const evidence = [
+    "evaluator.config.json",
+    `projects=${projects.length}`,
+    `highPriorityProjects=${highPriorityProjects.length}`,
+    `minimumScore=${threshold ?? "missing"}`,
+    hasEvaluatorDependency ? "ai-first-evaluator dependency declared" : "ai-first-evaluator dependency missing",
+    ...requiredScripts.map(script => scripts[script] ? `scripts.${script}=${scripts[script]}` : `scripts.${script}=missing`),
+  ];
+
+  if (missingScripts.length > 0 || !hasEvaluatorDependency || projects.length === 0 || typeof threshold !== "number") {
+    return {
+      id: "evaluator-setup",
+      status: missingScripts.length > 0 || projects.length === 0 ? "fail" : "warn",
+      message: `Evaluator setup incomplete${missingScripts.length > 0 ? `; missing scripts: ${missingScripts.join(", ")}` : ""}`,
+      evidence,
+    };
+  }
+
+  return {
+    id: "evaluator-setup",
+    status: highPriorityProjects.length > 0 ? "pass" : "warn",
+    message: highPriorityProjects.length > 0 ? "Evaluator config and scripts are present" : "Evaluator has no high-priority projects",
+    evidence,
+  };
+}
+
+function checkReleaseConfig(rootDir: string, packageJson: PackageJson | null): QualityGate {
+  const releaseConfigPath = path.join(rootDir, ".releaserc.json");
+  const packageJsonPath = path.join(rootDir, "package.json");
+  if (!fs.existsSync(releaseConfigPath)) {
+    return warn("release-config", ".releaserc.json is missing", [".releaserc.json"]);
+  }
+
+  let releaseConfig: ReleaseConfig;
+  try {
+    releaseConfig = JSON.parse(fs.readFileSync(releaseConfigPath, "utf-8")) as ReleaseConfig;
+  } catch {
+    return fail("release-config", ".releaserc.json is not valid JSON", [".releaserc.json"]);
+  }
+
+  const plugins = releaseConfig.plugins || [];
+  const requiredPlugins = ["@semantic-release/npm", "@semantic-release/github"];
+  const missingPlugins = requiredPlugins.filter(plugin => !plugins.includes(plugin));
+  const version = packageJson?.version;
+  const publishedFiles = packageJson?.files || [];
+  const includesDist = publishedFiles.some(file => file === "dist" || file === "dist/");
+  const evidence = [
+    ".releaserc.json",
+    packageJsonPath,
+    `version=${version || "missing"}`,
+    includesDist ? "package files include dist/" : "package files missing dist/",
+    `branches=${(releaseConfig.branches || []).join(",") || "missing"}`,
+    ...requiredPlugins.map(plugin => plugins.includes(plugin) ? `plugin ${plugin}` : `missing plugin ${plugin}`),
+  ];
+
+  if (!version || !/^\d+\.\d+\.\d+/.test(version)) {
+    return fail("release-config", "package.json version is missing or not semver-like", evidence);
+  }
+  if (!includesDist) {
+    return fail("release-config", "package.json files must include dist/ because the CLI bin points to dist", evidence);
+  }
+
+  return {
+    id: "release-config",
+    status: missingPlugins.length === 0 ? "pass" : "warn",
+    message: missingPlugins.length === 0 ? "Semantic release config is present" : `Semantic release config missing plugins: ${missingPlugins.join(", ")}`,
+    evidence,
+  };
+}
+
+function checkPublishWorkflow(rootDir: string): QualityGate {
+  const workflowsDir = path.join(rootDir, ".github", "workflows");
+  if (!fs.existsSync(workflowsDir)) {
+    return warn("publish-workflow", "No GitHub Actions workflow directory found", [workflowsDir]);
+  }
+
+  const workflows = fs.readdirSync(workflowsDir).filter(file => file.endsWith(".yml") || file.endsWith(".yaml"));
+  const publishWorkflows = workflows.filter(file => {
+    const content = fs.readFileSync(path.join(workflowsDir, file), "utf-8");
+    return content.includes("npm publish") || content.includes("semantic-release");
+  });
+  const content = publishWorkflows.map(file => fs.readFileSync(path.join(workflowsDir, file), "utf-8")).join("\n");
+  const hasBuild = content.includes("npm run build");
+  const hasTest = content.includes("npm test") || content.includes("vitest");
+  const hasProvenance = content.includes("--provenance") || content.includes("id-token: write");
+
+  return {
+    id: "publish-workflow",
+    status: publishWorkflows.length > 0 && hasBuild && hasTest ? "pass" : "warn",
+    message: publishWorkflows.length > 0 && hasBuild && hasTest ? "Publish workflow builds and tests before publish" : "Publish workflow is missing or build/test coverage is unclear",
+    evidence: [
+      ...publishWorkflows.map(file => path.join(".github/workflows", file)),
+      hasBuild ? "publish workflow runs build" : "publish workflow build missing",
+      hasTest ? "publish workflow runs tests" : "publish workflow tests missing",
+      hasProvenance ? "publish workflow uses provenance/id-token" : "publish workflow provenance unclear",
+    ],
+  };
+}
+
+function checkReadmeVersion(rootDir: string, packageJson: PackageJson | null): QualityGate {
+  const readmePath = path.join(rootDir, "README.md");
+  if (!fs.existsSync(readmePath)) {
+    return warn("readme-version", "README.md is missing", [readmePath]);
+  }
+  const version = packageJson?.version;
+  if (!version) {
+    return warn("readme-version", "package.json version is missing", ["package.json"]);
+  }
+
+  const readme = fs.readFileSync(readmePath, "utf-8");
+  const majorMinor = version.split(".").slice(0, 2).join(".");
+  const mentionsVersion = readme.includes(`v${version}`) || readme.includes(`v${majorMinor}`);
+
+  return {
+    id: "readme-version",
+    status: mentionsVersion ? "pass" : "warn",
+    message: mentionsVersion ? "README mentions the current release train" : `README does not mention v${version} or v${majorMinor}`,
+    evidence: ["README.md", `package.json version=${version}`],
+  };
+}
+
 function checkMcpServer(rootDir: string): QualityGate {
   const serverPath = path.join(rootDir, "src", "mcp", "server.ts");
   return {
@@ -230,4 +376,21 @@ function warn(id: string, message: string, evidence: string[]): QualityGate {
 interface PackageJson {
   bin?: string | Record<string, string>;
   scripts?: Record<string, string>;
+  version?: string;
+  dependencies?: Record<string, string>;
+  devDependencies?: Record<string, string>;
+  optionalDependencies?: Record<string, string>;
+  files?: string[];
+}
+
+interface EvaluatorConfig {
+  projects?: Array<{ priority?: string }>;
+  thresholds?: {
+    minimumScore?: number;
+  };
+}
+
+interface ReleaseConfig {
+  branches?: string[];
+  plugins?: string[];
 }

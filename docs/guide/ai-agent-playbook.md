@@ -6,6 +6,26 @@ This guide is written for AI coding agents using AI-First through generated file
 
 Do not treat generated context as automatically true. First verify freshness, then choose the smallest task-specific context that can answer the current task.
 
+## When To Use AI-First
+
+Use AI-First at the start of a repository session, before broad edits, and whenever the task depends on project conventions, architecture, tests, entrypoints, or generated context.
+
+Good fits:
+
+- Understanding an unfamiliar repository.
+- Planning a code change across multiple files.
+- Finding the right command, handler, analyzer, service, or test file.
+- Checking whether generated context is fresh before using it.
+- Explaining repo structure to a human or another agent.
+- Preparing CI, release, or documentation changes.
+
+Poor fits:
+
+- Replacing direct source inspection.
+- Making final security claims without manual review.
+- Trusting low-confidence findings without evidence.
+- Regenerating full context for a one-file edit when current context is already fresh.
+
 ## First Tool Calls
 
 When connected through MCP, start every new repository session with:
@@ -40,6 +60,7 @@ Use the smallest context that matches the job:
 | Task | Prefer |
 |------|--------|
 | Understand the repo | `get_project_brief` or `ai-context/agent_brief.md` |
+| Understand a topic or flow | `understand_topic` or `af understand` |
 | Add or change a feature | `get_context_for_task` |
 | Edit one known file | `get_context_for_file` |
 | Find a function/class | `query_symbols` |
@@ -112,6 +133,9 @@ Good agent behavior:
 # Verify generated context before using it
 af verify ai-context
 
+# Understand a topic with source, tests, architecture and freshness evidence
+af understand "auth login" --format json
+
 # Get task-specific guidance
 af context --task "fix MCP tool" --format markdown
 
@@ -123,6 +147,15 @@ af context --task "add analyzer" --format json --save
 
 ```json
 { "name": "get_project_brief", "input": {} }
+```
+
+```json
+{
+  "name": "understand_topic",
+  "input": {
+    "topic": "auth login"
+  }
+}
 ```
 
 ```json
@@ -194,6 +227,8 @@ MCP:
 ```
 
 Use `runCommands: true` only when the agent is allowed to run build/test/docs scripts.
+
+Quality gates also check release readiness: evaluator config/scripts, semantic-release config, publish workflow, README/package version alignment, and context trust. When `runCommands: true` is enabled, AI-First also runs `npm run evaluate:quick` if the script exists.
 
 ## MCP Client Setup
 

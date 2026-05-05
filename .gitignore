@@ -55,6 +55,8 @@ HANDOFF*.md
 AI_RECOMMENDATIONS*.md
 BETA_EVALUATION*.md
 MASTER_VERIFICATION*.md
+.ai-dev/ECOSYSTEM_PLAN.md
+.ai-first-ignore
 quick-evaluator.ts
 scripts/ai-context-evaluator.ts
 

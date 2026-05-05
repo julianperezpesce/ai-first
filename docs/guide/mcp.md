@@ -246,6 +246,21 @@ Return task-specific context for an agent workflow: classified task kind, releva
 
 Use this before editing when the agent needs to know where to work and how to verify the change.
 
+### `understand_topic`
+
+Return hybrid understanding for a repository topic or flow. This combines source search, task classification, architecture modules, source-to-test mapping, context freshness, recent git changes, risks, commands, confidence, and evidence.
+
+```json
+{
+  "name": "understand_topic",
+  "input": {
+    "topic": "auth login"
+  }
+}
+```
+
+Use this before broad questions such as "how does auth work?" or "where is payment flow implemented?".
+
 ### `is_context_fresh`
 
 Check whether generated `ai-context/` still matches the current repository state.
@@ -285,7 +300,7 @@ Evaluate repository quality gates for CI and agent trust. By default this perfor
 }
 ```
 
-**Returns:** overall status, pass/warn/fail summary, and gates such as package bin validity, build/test scripts, TypeScript config, CI workflow coverage, MCP shell safety, docs build script, and context trust.
+**Returns:** overall status, pass/warn/fail summary, and gates such as package bin validity, build/test scripts, TypeScript config, CI workflow coverage, MCP shell safety, docs build script, evaluator setup, release config, publish workflow, README/package version alignment, and context trust.
 
 ### `get_mcp_compatibility`
 
@@ -402,11 +417,12 @@ When your AI agent needs to understand code:
 
 1. Agent calls `is_context_fresh` or `run_doctor` before trusting generated context
 2. Agent calls `get_project_brief` for the short operational brief
-3. Agent calls `get_context_for_task` to identify files, tests, commands, risks, and contracts
-4. Agent calls `query_symbols` to find specific functions
-5. Agent calls `get_context_for_file` or `suggest_tests` before editing
-6. Agent calls `generate_context` only when context is missing or stale
-7. Agent calls `get_mcp_compatibility` when it needs to explain or debug MCP setup for another client
+3. Agent calls `understand_topic` for broad topic/flow understanding
+4. Agent calls `get_context_for_task` to identify files, tests, commands, risks, and contracts
+5. Agent calls `query_symbols` to find specific functions
+6. Agent calls `get_context_for_file` or `suggest_tests` before editing
+7. Agent calls `generate_context` only when context is missing or stale
+8. Agent calls `get_mcp_compatibility` when it needs to explain or debug MCP setup for another client
 
 ## Configuration
 
@@ -430,6 +446,7 @@ Create `ai-first.config.json` to customize MCP behavior:
 | Architecture queries | Read files | Tool call |
 | Context freshness | Guess | `is_context_fresh` |
 | Trust score | Manual review | `verify_ai_context` |
+| Topic understanding | Keyword search | `understand_topic` |
 | Task planning | Read many files | `get_context_for_task` |
 | CI readiness | Manual checks | `get_quality_gates` |
 | Integration | Paste content | Native |

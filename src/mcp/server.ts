@@ -21,6 +21,7 @@ import { isContextFresh, runContextDoctor, verifyAIContext } from '../core/servi
 import { getContextForTask } from '../core/services/taskContextService.js';
 import { evaluateQualityGates } from '../core/services/qualityGateService.js';
 import { evaluateMcpHttpSafety, getMcpCompatibilityProfiles, getMcpDoctor } from '../core/services/mcpCompatibilityService.js';
+import { understandTopic } from '../core/services/understandService.js';
 
 interface MCPServerOptions {
   rootDir?: string;
@@ -115,6 +116,11 @@ export function createMCPServer(options: MCPServerOptions = {}): Server {
           name: 'get_context_for_task',
           description: 'Get task-specific context with relevant files, tests, commands, risks and evidence',
           inputSchema: { type: 'object', properties: { task: { type: 'string' } }, required: ['task'] },
+        },
+        {
+          name: 'understand_topic',
+          description: 'Understand a repository topic using hybrid source, task, architecture, tests, freshness and git evidence',
+          inputSchema: { type: 'object', properties: { topic: { type: 'string' } }, required: ['topic'] },
         },
         {
           name: 'get_project_brief',
@@ -306,6 +312,12 @@ export function createMCPServer(options: MCPServerOptions = {}): Server {
           const task = args?.task as string;
           const taskContext = getContextForTask(rootDir, task);
           return { content: [{ type: 'text', text: JSON.stringify(taskContext, null, 2) }] };
+        }
+
+        case 'understand_topic': {
+          const topic = args?.topic as string;
+          const result = understandTopic(rootDir, topic);
+          return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
         }
 
         case 'get_project_brief': {

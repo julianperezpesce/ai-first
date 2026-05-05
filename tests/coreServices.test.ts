@@ -9,6 +9,7 @@ import { getContextForTask } from "../src/core/services/taskContextService.js";
 import { evaluateQualityGates } from "../src/core/services/qualityGateService.js";
 import { evaluateMcpHttpSafety, getMcpCompatibilityProfiles, getMcpDoctor, installMcpProfile } from "../src/core/services/mcpCompatibilityService.js";
 import { isMcpHttpRequestAuthorized, startMCPHttpServer } from "../src/mcp/server.js";
+import { understandTopic } from "../src/core/services/understandService.js";
 
 const tempDirs: string[] = [];
 
@@ -122,17 +123,46 @@ describe("core services", () => {
     expect(context.evidence).toEqual(expect.arrayContaining(["classified task as cli-command"]));
   });
 
+  it("understands a topic using search, task context, architecture, tests and evidence", () => {
+    const rootDir = createTempRepo({
+      "package.json": JSON.stringify({ name: "understand-demo", scripts: { build: "tsc", test: "vitest run" } }),
+      "src/services/authService.ts": "export function loginUser(token: string) {\n  return token.startsWith('jwt');\n}\n",
+      "tests/authService.test.ts": "import { expect, it } from 'vitest';\nit('login', () => expect(true).toBe(true));\n",
+    });
+
+    const result = understandTopic(rootDir, "auth login");
+
+    expect(result.topic).toBe("auth login");
+    expect(result.files).toEqual(expect.arrayContaining([
+      expect.objectContaining({ path: "src/services/authService.ts" }),
+    ]));
+    expect(result.snippets).toEqual(expect.arrayContaining([
+      expect.objectContaining({ file: "src/services/authService.ts" }),
+    ]));
+    expect(result.commands.map(command => command.command)).toContain("npm run build");
+    expect(result.evidence).toEqual(expect.arrayContaining([
+      expect.stringContaining("semantic search returned"),
+      expect.stringContaining("task context classified"),
+    ]));
+  });
+
   it("evaluates quality gates for CI without running commands by default", () => {
     const rootDir = createTempRepo({
       "package.json": JSON.stringify({
         name: "quality-demo",
+        version: "1.5.0",
         bin: { af: "dist/commands/ai-first.js" },
-        scripts: { build: "tsc", test: "vitest run", "docs:build": "vitepress build docs" },
+        files: ["dist/", "README.md"],
+        scripts: { build: "tsc", test: "vitest run", "docs:build": "vitepress build docs", evaluate: "node evaluator", "evaluate:quick": "node evaluator --skip-ai" },
+        optionalDependencies: { "ai-first-evaluator": "github:test/evaluator" },
       }),
       "dist/commands/ai-first.js": "#!/usr/bin/env node\n",
       "tsconfig.json": JSON.stringify({ compilerOptions: {} }),
       "README.md": "# Quality Demo\n",
       ".github/workflows/ci.yml": "steps:\n  - run: npm ci\n  - run: npm run build\n  - run: npm test\n",
+      ".github/workflows/publish.yml": "permissions:\n  id-token: write\nsteps:\n  - run: npm run build\n  - run: npm test\n  - run: npm publish --provenance --access public\n",
+      ".releaserc.json": JSON.stringify({ branches: ["master"], plugins: ["@semantic-release/npm", "@semantic-release/github"] }),
+      "evaluator.config.json": JSON.stringify({ projects: [{ priority: "high" }], thresholds: { minimumScore: 3.5 } }),
       "src/mcp/server.ts": "export const server = true;\n",
     });
 
@@ -143,8 +173,37 @@ describe("core services", () => {
       expect.objectContaining({ id: "script-build", status: "pass" }),
       expect.objectContaining({ id: "script-test", status: "pass" }),
       expect.objectContaining({ id: "ci-workflow", status: "pass" }),
+      expect.objectContaining({ id: "evaluator-setup", status: "pass" }),
+      expect.objectContaining({ id: "release-config", status: "pass" }),
+      expect.objectContaining({ id: "publish-workflow", status: "pass" }),
     ]));
     expect(result.gates.some(gate => gate.id.startsWith("run-"))).toBe(false);
+  });
+
+  it("flags incomplete evaluator and release setup", () => {
+    const rootDir = createTempRepo({
+      "package.json": JSON.stringify({
+        name: "quality-demo",
+        version: "invalid",
+        bin: { af: "dist/commands/ai-first.js" },
+        files: ["src/"],
+        scripts: { build: "tsc", test: "vitest run", "docs:build": "vitepress build docs" },
+      }),
+      "dist/commands/ai-first.js": "#!/usr/bin/env node\n",
+      "tsconfig.json": JSON.stringify({ compilerOptions: {} }),
+      "README.md": "# Quality Demo\n",
+      "src/mcp/server.ts": "export const server = true;\n",
+      "evaluator.config.json": JSON.stringify({ projects: [], thresholds: {} }),
+      ".releaserc.json": JSON.stringify({ branches: ["master"], plugins: [] }),
+    });
+
+    const result = evaluateQualityGates({ rootDir });
+
+    expect(result.gates).toEqual(expect.arrayContaining([
+      expect.objectContaining({ id: "evaluator-setup", status: "fail" }),
+      expect.objectContaining({ id: "release-config", status: "fail" }),
+      expect.objectContaining({ id: "publish-workflow", status: "warn" }),
+    ]));
   });
 
   it("lists MCP compatibility profiles for common agent clients", () => {

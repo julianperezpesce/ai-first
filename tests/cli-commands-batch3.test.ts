@@ -167,6 +167,36 @@ describe("CLI Commands Batch 3 - git, graph, update, help", () => {
   });
 
   // =========================================================================
+  // UNDERSTAND COMMAND TESTS
+  // =========================================================================
+
+  describe("Understand Command", () => {
+    it("should return hybrid understanding as JSON", async () => {
+      const tempDir = createTempProjectDir({
+        "package.json": JSON.stringify({ name: "understand-cli-demo", scripts: { build: "tsc", test: "vitest run" } }),
+        "src/services/authService.ts": "export function loginUser(token: string) {\n  return token.startsWith('jwt');\n}\n",
+        "tests/authService.test.ts": "import { expect, it } from 'vitest';\nit('login', () => expect(true).toBe(true));\n",
+      });
+      tempDirs.push(tempDir);
+
+      const result = await runCLICommand("understand", ["auth login", "--format", "json"], tempDir);
+
+      expect(result.exitCode).toBe(0);
+      const parsed = JSON.parse(result.stdout);
+      expect(parsed.topic).toBe("auth login");
+      expect(parsed.files).toEqual(expect.arrayContaining([
+        expect.objectContaining({ path: "src/services/authService.ts" }),
+      ]));
+      expect(parsed.snippets).toEqual(expect.arrayContaining([
+        expect.objectContaining({ file: "src/services/authService.ts" }),
+      ]));
+      expect(parsed.evidence).toEqual(expect.arrayContaining([
+        expect.stringContaining("semantic search returned"),
+      ]));
+    });
+  });
+
+  // =========================================================================
   // GIT COMMAND TESTS
   // =========================================================================
 

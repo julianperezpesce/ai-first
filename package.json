@@ -1,12 +1,20 @@
 {
   "name": "ai-first-cli",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "CLI tool that prepares any repository to be used effectively by AI coding agents",
   "main": "dist/index.js",
   "type": "module",
   "bin": {
     "af": "dist/commands/ai-first.js"
   },
+  "files": [
+    "dist/",
+    "schema/",
+    "completions/",
+    "README.md",
+    "README.es.md",
+    "CHANGELOG.md"
+  ],
   "scripts": {
     "build": "tsc",
     "run": "node dist/commands/ai-first.js",

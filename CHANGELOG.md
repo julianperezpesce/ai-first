@@ -20,6 +20,11 @@ All notable changes to `ai-first` will be documented in this file.
 - MCP setup diagnostics via `af mcp doctor` and MCP `get_mcp_compatibility`.
 - MCP Streamable HTTP transport via `af mcp --transport http` with `/mcp` and `/health` endpoints.
 - HTTP MCP hardening with `AI_FIRST_MCP_TOKEN`, `--token`, bearer authorization, unsafe bind protection, and HTTP safety doctor checks.
+- `af understand` v2 with hybrid source search, task context, architecture modules, test mapping, freshness, git evidence, risks, and verification commands.
+- MCP `understand_topic` for agent-facing repository topic understanding.
+- Release hardening gates in `af doctor --ci`: evaluator setup, semantic-release config, publish workflow, and README/package version alignment.
+- NPM package allowlist via `package.json files` to keep generated context, fixtures, tests, and internal `.ai-dev` artifacts out of published tarballs.
+- AI adoption guidance in the AI Agent Playbook explaining when agents should use AI-First and when source inspection is still required.
 
 ### Changed
 - MCP `analyze_changes` now uses safe git argument arrays instead of interpolated shell commands.
@@ -29,13 +34,19 @@ All notable changes to `ai-first` will be documented in this file.
 - `af init --install-mcp` keeps writing the legacy OpenCode config, while new `af install --platform opencode` writes the current OpenCode config plus legacy compatibility.
 - MCP server tool registration is now created through a shared server factory used by both stdio and HTTP transports.
 - `af mcp --transport http --host 0.0.0.0` now refuses to start without a token unless `--allow-unsafe` is explicitly provided.
+- `af understand` now returns evidence-backed structured output with `--format json` instead of only keyword snippets.
+- `af doctor --ci --run` now also runs `npm run evaluate:quick` when that script exists.
+- Release config gate now requires `package.json files` to include `dist/`, matching the CLI bin target.
+- Rebuilt `README.md` and `README.es.md` around current CLI, MCP, trust, quality-gate, and agent workflows instead of old release-note blocks.
 
 ### Fixed
 - Reduced false positives in generated security, performance, dead-code, architecture, setup, and tech stack outputs.
 - Isolated shared Express fixture init tests to avoid parallel test races.
 
 ### Testing
-- Full suite baseline before this compatibility slice: 1365 passing. Latest targeted MCP/core validation: 19 passing.
+- Current full suite baseline: 1381 passing, 51 passed test files.
+- Context verification baseline: `af verify ai-context --json` returns 100/100 trusted.
+- CI gate baseline: `af doctor --ci --json` returns 14/14 passing gates.
 
 ---
 
