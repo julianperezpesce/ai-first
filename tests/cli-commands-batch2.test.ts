@@ -204,6 +204,14 @@ describe("CLI Commands Batch 2 - doctor, explore, map, adapters", () => {
         expect(result.stdout).toMatch(/Status:/);
         expect(result.stdout).toMatch(/READY|PARTIALLY READY|NOT READY/);
       });
+
+      it("should run quality gates in CI JSON mode", async () => {
+        const result = await runDoctorCommand(["--ci", "--json"], EXPRESS_API_PATH);
+
+        expect([0, 1]).toContain(result.exitCode);
+        expect(result.stdout).toContain('"gates"');
+        expect(result.stdout).toContain('"summary"');
+      });
     });
 
     describe("--root Flag", () => {

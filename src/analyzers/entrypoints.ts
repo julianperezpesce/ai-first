@@ -1,5 +1,6 @@
 import { FileInfo } from "../core/repoScanner.js";
 import { readJsonFile, readFile } from "../utils/fileUtils.js";
+import { confidence } from "../utils/findingMetadata.js";
 import path from "path";
 import fs from "fs";
 
@@ -9,6 +10,9 @@ export interface Entrypoint {
   type: "cli" | "api" | "worker" | "server" | "client" | "library" | "config" | "test" | "build" | "lint" | "formatter" | "other";
   description: string;
   command?: string;
+  confidence?: number;
+  evidence?: string[];
+  reason?: string;
 }
 
 export function discoverEntrypoints(files: FileInfo[], rootDir: string): Entrypoint[] {
@@ -145,7 +149,58 @@ export function discoverEntrypoints(files: FileInfo[], rootDir: string): Entrypo
     } catch {}
   }
 
-  return entrypoints.filter(ep => !ep.path.startsWith("dist/") && !ep.path.startsWith("build/"));
+  return entrypoints
+    .filter(ep => !ep.path.startsWith("dist/") && !ep.path.startsWith("build/"))
+    .map(ep => enrichEntrypointEvidence(ep));
+}
+
+function enrichEntrypointEvidence(entrypoint: Entrypoint): Entrypoint {
+  if (entrypoint.confidence !== undefined && entrypoint.evidence && entrypoint.reason) {
+    return entrypoint;
+  }
+
+  if (entrypoint.path.startsWith("package.json#scripts.")) {
+    return {
+      ...entrypoint,
+      confidence: confidence(0.95),
+      evidence: [entrypoint.path, entrypoint.description],
+      reason: "Entrypoint declared explicitly in package.json scripts",
+    };
+  }
+
+  if (entrypoint.type === "cli" && entrypoint.command?.startsWith("npx ")) {
+    return {
+      ...entrypoint,
+      confidence: confidence(0.95),
+      evidence: ["package.json bin", entrypoint.path],
+      reason: "CLI entrypoint declared explicitly in package.json bin",
+    };
+  }
+
+  if (entrypoint.name === "Main" || entrypoint.name === "Types") {
+    return {
+      ...entrypoint,
+      confidence: confidence(0.9),
+      evidence: ["package.json", entrypoint.path],
+      reason: "Library entrypoint declared explicitly in package.json metadata",
+    };
+  }
+
+  if (["index.ts", "main.ts", "server.ts", "api.ts", "cli.ts", "worker.ts"].includes(entrypoint.name)) {
+    return {
+      ...entrypoint,
+      confidence: confidence(0.75),
+      evidence: [entrypoint.path],
+      reason: "Entrypoint inferred from conventional file name",
+    };
+  }
+
+  return {
+    ...entrypoint,
+    confidence: confidence(0.7),
+    evidence: [entrypoint.path],
+    reason: "Entrypoint inferred from framework or language-specific analyzer",
+  };
 }
 
 /**
@@ -801,6 +856,15 @@ export function generateEntrypointsFile(entrypoints: Entrypoint[]): string {
       }
       if (ep.command) {
         content += `- **Command**: \`${ep.command}\`\n`;
+      }
+      if (ep.confidence !== undefined) {
+        content += `- **Confidence**: ${ep.confidence}\n`;
+      }
+      if (ep.reason) {
+        content += `- **Reason**: ${ep.reason}\n`;
+      }
+      if (ep.evidence && ep.evidence.length > 0) {
+        content += `- **Evidence**: ${ep.evidence.join("; ")}\n`;
       }
       content += "\n";
     }

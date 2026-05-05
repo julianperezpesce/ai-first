@@ -1,9 +1,13 @@
 import fs from "fs";
 import path from "path";
+import { confidence } from "./findingMetadata.js";
 
 export interface TestMapping {
   sourceFile: string;
   testFiles: string[];
+  confidence?: number;
+  reason?: string;
+  evidence?: string[];
 }
 
 export function mapTestFiles(rootDir: string): TestMapping[] {
@@ -18,7 +22,10 @@ export function mapTestFiles(rootDir: string): TestMapping[] {
     if (relatedTests.length > 0) {
       mappings.push({
         sourceFile: relativeSource,
-        testFiles: relatedTests,
+        testFiles: relatedTests.map(test => test.testFile),
+        confidence: confidence(Math.max(...relatedTests.map(test => test.confidence))),
+        reason: Array.from(new Set(relatedTests.map(test => test.reason))).join("; "),
+        evidence: relatedTests.map(test => `${relativeSource} -> ${test.testFile}: ${test.reason}`),
       });
     }
   }
@@ -89,8 +96,14 @@ function isTestFile(filename: string): boolean {
   return testPatterns.some(pattern => filename.includes(pattern));
 }
 
-function findRelatedTests(sourceFile: string, testFiles: string[], rootDir: string): string[] {
-  const related: string[] = [];
+interface RelatedTest {
+  testFile: string;
+  confidence: number;
+  reason: string;
+}
+
+function findRelatedTests(sourceFile: string, testFiles: string[], rootDir: string): RelatedTest[] {
+  const related: RelatedTest[] = [];
   const sourceBase = path.basename(sourceFile).replace(/\.(ts|js|py|go|rs|java|rb|php)$/, "");
   const sourceDir = path.dirname(sourceFile);
 
@@ -99,14 +112,22 @@ function findRelatedTests(sourceFile: string, testFiles: string[], rootDir: stri
     const testBase = path.basename(testFile).replace(/\.(test|spec)\.(ts|js)$/, "").replace(/_test\.(go|py|rb)$/, "").replace(/Test\.java$/, "").replace(/Spec\.java$/, "");
 
     if (testBase === sourceBase) {
-      related.push(relativeTest);
+      related.push({
+        testFile: relativeTest,
+        confidence: 0.92,
+        reason: "test basename matches source basename",
+      });
       continue;
     }
 
     const testDir = path.dirname(relativeTest);
     if (testDir.includes(sourceDir) || sourceDir.includes(testDir)) {
       if (testBase.includes(sourceBase) || sourceBase.includes(testBase)) {
-        related.push(relativeTest);
+        related.push({
+          testFile: relativeTest,
+          confidence: 0.68,
+          reason: "test path and basename are similar to source path",
+        });
       }
     }
   }

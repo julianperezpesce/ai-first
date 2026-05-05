@@ -1,7 +1,15 @@
 import { FileInfo } from "../core/repoScanner.js";
 import { readFile, readJsonFile } from "../utils/fileUtils.js";
+import { confidence } from "../utils/findingMetadata.js";
 import path from "path";
 import fs from "fs";
+
+export interface TechStackEvidence {
+  category: "language" | "framework" | "library" | "tool" | "packageManager" | "testing" | "linter" | "formatter";
+  name: string;
+  confidence: number;
+  evidence: string[];
+}
 
 export interface TechStack {
   languages: string[];
@@ -13,6 +21,7 @@ export interface TechStack {
   linters: string[];
   formatters: string[];
   description: string;
+  evidence?: TechStackEvidence[];
   android?: {
     minSdk?: string;
     targetSdk?: string;
@@ -28,6 +37,12 @@ export interface TechStack {
     apexClasses?: number;
     triggers?: number;
   };
+}
+
+interface PackageJsonEvidenceSource {
+  scripts?: Record<string, string>;
+  dependencies?: Record<string, string>;
+  devDependencies?: Record<string, string>;
 }
 
 /**
@@ -52,6 +67,18 @@ export function detectTechStack(files: FileInfo[], rootDir: string): TechStack {
   
   const android = detectAndroidSDK(files, rootDir);
   const salesforce = detectSalesforceInfo(files, rootDir);
+  const evidence = collectTechStackEvidence({
+    languages,
+    frameworks,
+    libraries,
+    tools,
+    packageManagers,
+    testing,
+    linters,
+    formatters,
+    rootDir,
+    files,
+  });
   
   return {
     languages,
@@ -63,9 +90,165 @@ export function detectTechStack(files: FileInfo[], rootDir: string): TechStack {
     linters,
     formatters,
     description,
+    evidence,
     android,
     salesforce,
   };
+}
+
+function collectTechStackEvidence(input: {
+  languages: string[];
+  frameworks: string[];
+  libraries: string[];
+  tools: string[];
+  packageManagers: string[];
+  testing: string[];
+  linters: string[];
+  formatters: string[];
+  rootDir: string;
+  files: FileInfo[];
+}): TechStackEvidence[] {
+  const evidence: TechStackEvidence[] = [];
+  const packageJsonPath = path.join(input.rootDir, "package.json");
+  let pkg: PackageJsonEvidenceSource | null = null;
+
+  try {
+    if (fs.existsSync(packageJsonPath)) {
+      pkg = readJsonFile(packageJsonPath) as PackageJsonEvidenceSource;
+    }
+  } catch {}
+
+  const deps = { ...(pkg?.dependencies || {}), ...(pkg?.devDependencies || {}) };
+  const scripts = pkg?.scripts || {};
+  const fileNames = new Set(input.files.map(file => file.name));
+  const relativePaths = new Set(input.files.map(file => file.relativePath));
+
+  const add = (entry: TechStackEvidence) => {
+    if (!evidence.some(existing => existing.category === entry.category && existing.name === entry.name)) {
+      evidence.push(entry);
+    }
+  };
+
+  const languageExtensions: Record<string, string[]> = {
+    TypeScript: ["ts"],
+    "TypeScript (React)": ["tsx"],
+    JavaScript: ["js"],
+    "JavaScript (React)": ["jsx"],
+    Python: ["py"],
+    Go: ["go"],
+    Rust: ["rs"],
+    Java: ["java"],
+    Markdown: ["md", "mdx"],
+    JSON: ["json"],
+  };
+
+  for (const language of input.languages) {
+    const extensions = languageExtensions[language] || [];
+    const matches = input.files
+      .filter(file => extensions.includes(file.extension))
+      .slice(0, 3)
+      .map(file => file.relativePath);
+    add({
+      category: "language",
+      name: language,
+      confidence: confidence(matches.length > 0 ? 0.9 : 0.55),
+      evidence: matches.length > 0 ? matches : ["detected from repository file extensions"],
+    });
+  }
+
+  const packageSignals: Record<string, string[]> = {
+    "Express.js": ["express"],
+    "React": ["react"],
+    "Vue.js": ["vue"],
+    "VitePress": ["vitepress"],
+    "NestJS": ["@nestjs/core", "@nestjs/common"],
+    "Model Context Protocol SDK": ["@modelcontextprotocol/sdk"],
+    "sql.js": ["sql.js"],
+    "Chokidar": ["chokidar"],
+    "Ora": ["ora"],
+    "Xenova Transformers": ["@xenova/transformers"],
+    "Vitest": ["vitest"],
+    "Jest": ["jest"],
+    "Mocha": ["mocha"],
+    "ESLint": ["eslint"],
+    "Prettier": ["prettier"],
+  };
+
+  const scriptSignals: Record<string, string[]> = {
+    "VitePress": ["vitepress"],
+    "Vitest": ["vitest"],
+    "Jest": ["jest"],
+    "Mocha": ["mocha"],
+  };
+
+  const addPackageEvidence = (
+    category: TechStackEvidence["category"],
+    names: string[],
+    fallbackConfidence: number,
+  ) => {
+    for (const name of names) {
+      const packageNames = packageSignals[name] || [];
+      const packageEvidence = packageNames
+        .filter(packageName => deps[packageName])
+        .map(packageName => `package.json dependency ${packageName}`);
+      const scriptEvidence = (scriptSignals[name] || [])
+        .flatMap(signal => Object.entries(scripts)
+          .filter(([, command]) => command.includes(signal))
+          .map(([scriptName, command]) => `package.json scripts.${scriptName} = ${command}`));
+      const collected = [...packageEvidence, ...scriptEvidence];
+      add({
+        category,
+        name,
+        confidence: confidence(collected.length > 0 ? 0.95 : fallbackConfidence),
+        evidence: collected.length > 0 ? collected : ["detected from repository files or config naming"],
+      });
+    }
+  };
+
+  addPackageEvidence("framework", input.frameworks, 0.7);
+  addPackageEvidence("library", input.libraries, 0.8);
+  addPackageEvidence("testing", input.testing, 0.75);
+  addPackageEvidence("linter", input.linters, 0.7);
+  addPackageEvidence("formatter", input.formatters, 0.7);
+
+  const fileSignalEvidence = (name: string): string[] => {
+    const lowerName = name.toLowerCase();
+    return Array.from(new Set([...fileNames, ...relativePaths]))
+      .filter(fileName => fileName.toLowerCase().includes(lowerName.replace(/\s+/g, "").replace(".js", "")))
+      .slice(0, 3);
+  };
+
+  for (const tool of input.tools) {
+    const matches = fileSignalEvidence(tool);
+    add({
+      category: "tool",
+      name: tool,
+      confidence: confidence(matches.length > 0 ? 0.85 : 0.65),
+      evidence: matches.length > 0 ? matches : ["detected from tool-specific config files"],
+    });
+  }
+
+  for (const manager of input.packageManagers) {
+    const managerFiles: Record<string, string[]> = {
+      npm: ["package.json"],
+      pnpm: ["pnpm-lock.yaml"],
+      Yarn: ["yarn.lock"],
+      pip: ["requirements.txt", "Pipfile"],
+      Poetry: ["poetry.lock"],
+      Cargo: ["Cargo.toml"],
+      Composer: ["composer.json"],
+    };
+    const matches = (managerFiles[manager] || [])
+      .filter(fileName => fileNames.has(fileName) || relativePaths.has(fileName));
+    add({
+      category: "packageManager",
+      name: manager,
+      confidence: confidence(matches.length > 0 ? 0.95 : 0.65),
+      evidence: matches.length > 0 ? matches : ["detected from dependency metadata"],
+    });
+  }
+
+  return evidence;
 }
 
 /**
@@ -129,6 +312,7 @@ function detectFrameworks(files: FileInfo[], fileNames: Set<string>, rootDir: st
       "nuxt": ["Nuxt.js"],
       "sveltekit": ["SvelteKit"],
       "astro": ["Astro"],
+      "vitepress": ["VitePress"],
       "electron": ["Electron"],
       "cordova": ["Cordova"],
       "cap": ["Capacitor"],
@@ -357,6 +541,11 @@ function detectNodeLibraries(rootDir: string): string[] {
       "stripe": "Stripe", "nodemailer": "Nodemailer", "multer": "Multer",
       "sharp": "Sharp", "puppeteer": "Puppeteer", "playwright": "Playwright",
       "winston": "Winston", "pino": "Pino", "dotenv": "dotenv",
+      "@modelcontextprotocol/sdk": "Model Context Protocol SDK",
+      "sql.js": "sql.js",
+      "chokidar": "Chokidar",
+      "ora": "Ora",
+      "@xenova/transformers": "Xenova Transformers",
     };
     
     for (const [dep, name] of Object.entries(libMap)) {
@@ -508,6 +697,28 @@ function detectTesting(files: FileInfo[], fileNames: Set<string>): string[] {
       testing.push(framework);
     }
   }
+
+  try {
+    const pkgFile = files.find(f => f.name === "package.json");
+    if (pkgFile) {
+      const pkg = readJsonFile(pkgFile.path) as {
+        scripts?: Record<string, string>;
+        dependencies?: Record<string, string>;
+        devDependencies?: Record<string, string>;
+      };
+      const deps = { ...(pkg.dependencies || {}), ...(pkg.devDependencies || {}) };
+      const scripts = pkg.scripts || {};
+      if ((deps.vitest || Object.values(scripts).some(script => script.includes("vitest"))) && !testing.includes("Vitest")) {
+        testing.push("Vitest");
+      }
+      if ((deps.jest || Object.values(scripts).some(script => script.includes("jest"))) && !testing.includes("Jest")) {
+        testing.push("Jest");
+      }
+      if ((deps.mocha || Object.values(scripts).some(script => script.includes("mocha"))) && !testing.includes("Mocha")) {
+        testing.push("Mocha");
+      }
+    }
+  } catch {}
   
   return testing;
 }
@@ -830,6 +1041,14 @@ export function generateTechStackFile(stack: TechStack): string {
   content += "## Testing\n" + (stack.testing.map(t => `- ${t}`).join("\n") || "- None detected") + "\n\n";
   content += "## Linters\n" + (stack.linters.map(l => `- ${l}`).join("\n") || "- None detected") + "\n\n";
   content += "## Formatters\n" + (stack.formatters.map(f => `- ${f}`).join("\n") || "- None detected") + "\n\n";
+
+  if (stack.evidence && stack.evidence.length > 0) {
+    content += "## Evidence\n";
+    for (const item of stack.evidence) {
+      content += `- **${item.name}** (${item.category}, confidence ${item.confidence}): ${item.evidence.join("; ")}\n`;
+    }
+    content += "\n";
+  }
   
   // Add Salesforce section if applicable
   if (stack.salesforce) {

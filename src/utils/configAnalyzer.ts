@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { confidence } from "./findingMetadata.js";
 
 export interface ConfigAnalysis {
   typescript: TypeScriptConfig | null;
@@ -7,6 +8,14 @@ export interface ConfigAnalysis {
   prettier: PrettierConfig | null;
   testing: TestingConfig | null;
   docker: DockerConfig | null;
+  evidence?: ConfigEvidence[];
+}
+
+export interface ConfigEvidence {
+  area: "typescript" | "eslint" | "prettier" | "testing" | "docker";
+  confidence: number;
+  evidence: string[];
+  reason: string;
 }
 
 export interface TypeScriptConfig {
@@ -43,13 +52,93 @@ export interface DockerConfig {
 }
 
 export function extractConfigAnalysis(rootDir: string): ConfigAnalysis {
-  return {
+  const analysis: ConfigAnalysis = {
     typescript: extractTypeScriptConfig(rootDir),
     eslint: extractESLintConfig(rootDir),
     prettier: extractPrettierConfig(rootDir),
     testing: extractTestingConfig(rootDir),
     docker: extractDockerConfig(rootDir),
   };
+  analysis.evidence = collectConfigEvidence(rootDir, analysis);
+  return analysis;
+}
+
+function collectConfigEvidence(rootDir: string, analysis: ConfigAnalysis): ConfigEvidence[] {
+  const evidence: ConfigEvidence[] = [];
+  const add = (entry: ConfigEvidence) => evidence.push(entry);
+  const exists = (filePath: string) => fs.existsSync(path.join(rootDir, filePath));
+
+  if (analysis.typescript) {
+    add({
+      area: "typescript",
+      confidence: confidence(0.98),
+      evidence: ["tsconfig.json"],
+      reason: "TypeScript compiler options were parsed from tsconfig.json",
+    });
+  }
+
+  if (analysis.eslint) {
+    const eslintFiles = [".eslintrc.js", ".eslintrc.json", ".eslintrc.yml", ".eslintrc.yaml", ".eslintrc", "package.json"]
+      .filter(file => exists(file));
+    add({
+      area: "eslint",
+      confidence: confidence(eslintFiles.some(file => file !== "package.json") ? 0.9 : 0.75),
+      evidence: eslintFiles.length > 0 ? eslintFiles : ["ESLint config detected"],
+      reason: "ESLint configuration was detected from config files or package.json",
+    });
+  }
+
+  if (analysis.prettier) {
+    const prettierFiles = [".prettierrc", ".prettierrc.json", ".prettierrc.js", ".prettierrc.yml", ".prettierrc.yaml", "package.json"]
+      .filter(file => exists(file));
+    add({
+      area: "prettier",
+      confidence: confidence(prettierFiles.some(file => file !== "package.json") ? 0.9 : 0.75),
+      evidence: prettierFiles.length > 0 ? prettierFiles : ["Prettier config detected"],
+      reason: "Prettier configuration was detected from config files or package.json",
+    });
+  }
+
+  if (analysis.testing) {
+    const testingEvidence = ["vitest.config.ts", "jest.config.js", "pytest.ini"]
+      .filter(file => exists(file));
+    const packageJsonPath = path.join(rootDir, "package.json");
+    if (fs.existsSync(packageJsonPath)) {
+      try {
+        const pkg = JSON.parse(fs.readFileSync(packageJsonPath, "utf-8")) as {
+          scripts?: Record<string, string>;
+          dependencies?: Record<string, string>;
+          devDependencies?: Record<string, string>;
+        };
+        const deps = { ...(pkg.dependencies || {}), ...(pkg.devDependencies || {}) };
+        if (deps.vitest) testingEvidence.push("package.json dependency vitest");
+        if (deps.jest) testingEvidence.push("package.json dependency jest");
+        for (const [scriptName, script] of Object.entries(pkg.scripts || {})) {
+          if (script.includes("vitest") || script.includes("jest") || script.includes("pytest")) {
+            testingEvidence.push(`package.json scripts.${scriptName} = ${script}`);
+          }
+        }
+      } catch {}
+    }
+    add({
+      area: "testing",
+      confidence: confidence(testingEvidence.length > 0 ? 0.95 : 0.7),
+      evidence: testingEvidence.length > 0 ? testingEvidence : [`framework=${analysis.testing.framework}`],
+      reason: "Testing framework was detected from test config, dependencies, or scripts",
+    });
+  }
+
+  if (analysis.docker?.hasDockerfile || analysis.docker?.hasDockerCompose) {
+    const dockerEvidence = ["Dockerfile", "docker-compose.yml", "docker-compose.yaml"].filter(file => exists(file));
+    add({
+      area: "docker",
+      confidence: confidence(0.95),
+      evidence: dockerEvidence,
+      reason: "Docker configuration files were found in the repository root",
+    });
+  }
+
+  return evidence;
 }
 
 function extractTypeScriptConfig(rootDir: string): TypeScriptConfig | null {
@@ -170,9 +259,9 @@ function extractTestingConfig(rootDir: string): TestingConfig | null {
   const jestConfigPath = path.join(rootDir, "jest.config.js");
   const vitestConfigPath = path.join(rootDir, "vitest.config.ts");
   const pytestIniPath = path.join(rootDir, "pytest.ini");
+  const packageJsonPath = path.join(rootDir, "package.json");
 
   if (fs.existsSync(jestConfigPath) || fs.existsSync(vitestConfigPath)) {
-    const packageJsonPath = path.join(rootDir, "package.json");
     let coverageThreshold: number | null = null;
 
     if (fs.existsSync(packageJsonPath)) {
@@ -197,6 +286,35 @@ function extractTestingConfig(rootDir: string): TestingConfig | null {
       coverageThreshold: null,
       testMatch: ["test_*.py", "*_test.py"],
     };
+  }
+
+  if (fs.existsSync(packageJsonPath)) {
+    try {
+      const pkg = JSON.parse(fs.readFileSync(packageJsonPath, "utf-8")) as {
+        scripts?: Record<string, string>;
+        dependencies?: Record<string, string>;
+        devDependencies?: Record<string, string>;
+      };
+      const deps = { ...(pkg.dependencies || {}), ...(pkg.devDependencies || {}) };
+      const scripts = pkg.scripts || {};
+      const scriptValues = Object.values(scripts);
+
+      if (deps.vitest || scriptValues.some(script => script.includes("vitest"))) {
+        return {
+          framework: "Vitest",
+          coverageThreshold: null,
+          testMatch: ["**/*.test.ts", "**/*.test.js", "**/*.spec.ts", "**/*.spec.js"],
+        };
+      }
+
+      if (deps.jest || scriptValues.some(script => script.includes("jest"))) {
+        return {
+          framework: "Jest",
+          coverageThreshold: null,
+          testMatch: ["**/*.test.ts", "**/*.test.js", "**/*.spec.ts", "**/*.spec.js"],
+        };
+      }
+    } catch {}
   }
 
   return null;

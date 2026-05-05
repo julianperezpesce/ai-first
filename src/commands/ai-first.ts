@@ -25,7 +25,7 @@ import { generateSemanticContexts } from "../core/semanticContexts.js";
 import { doctorMain } from "./doctor.js";
 import { exploreMain } from "./explore.js";
 import { listAdapters } from "../core/adapters/index.js";
-import { detectGitRepository, generateGitContext, analyzeGitActivity, getRecentFiles } from "../core/gitAnalyzer.js";
+import { detectGitRepository, generateGitContext, analyzeGitActivity, getRecentFiles, getRecentCommits } from "../core/gitAnalyzer.js";
 import { buildKnowledgeGraph, loadKnowledgeGraph } from "../core/knowledgeGraphBuilder.js";
 import { runIncrementalUpdate, detectChangedFiles } from "../core/incrementalAnalyzer.js";
 import { generateAllSchema } from "../core/schema.js";
@@ -47,13 +47,16 @@ import { detectDeadCode } from "../utils/deadCodeDetector.js";
 import { analyzeDocCoverage } from "../utils/docCoverageAnalyzer.js";
 import { detectCICD } from "../utils/cicdDetector.js";
 import { detectMigrations } from "../utils/migrationDetector.js";
-import { generateTaskContext } from "../utils/taskContextGenerator.js";
-import { generateUnifiedContext, type UnifiedContextParams } from "./contextGenerator.js";
+import { isContextFresh, verifyAIContext } from "../core/services/doctorService.js";
+import { generateContext } from "../core/services/contextService.js";
+import { getContextForTask } from "../core/services/taskContextService.js";
+import { getMcpCompatibilityProfiles, getMcpDoctor, installMcpProfile, normalizeMcpPlatform } from "../core/services/mcpCompatibilityService.js";
 import { Database } from "sql.js";
 import ora from "ora";
-import { startMCP } from "../mcp/index.js";
+import { startMCP, startMCPHttpServer } from "../mcp/index.js";
 import { cloneAndInit, isLargeRepo } from "../utils/remoteUtils.js";
 import process from "process";
+import util from "util";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -71,318 +74,36 @@ export interface AIFirstResult {
   error?: string;
 }
 
+function getAIFirstVersion(): string {
+  try {
+    const packagePath = path.resolve(__dirname, "..", "..", "package.json");
+    const pkg = JSON.parse(fs.readFileSync(packagePath, "utf-8")) as { version?: string };
+    return pkg.version || "unknown";
+  } catch {
+    return "unknown";
+  }
+}
+
+function installSynchronousConsoleForPipedOutput(): void {
+  if (process.stdout.isTTY && process.stderr.isTTY) return;
+
+  console.log = (...args: unknown[]) => {
+    fs.writeSync(1, util.format(...args) + "\n");
+  };
+  console.error = (...args: unknown[]) => {
+    fs.writeSync(2, util.format(...args) + "\n");
+  };
+}
+
 /**
  * Main function to run ai-first command
  */
 export async function runAIFirst(options: AIFirstOptions = {}): Promise<AIFirstResult> {
-  const {
-    rootDir = process.cwd(),
-    outputDir = path.join(rootDir, "ai-context"),
-  } = options;
-
-  const filesCreated: string[] = [];
-
-  try {
-    console.log(`\n🔍 Scanning repository: ${rootDir}\n`);
-
-    // Step 1: Scan repository
-    const scanResult = scanRepo(rootDir);
-    console.log(`   Found ${scanResult.totalFiles} files\n`);
-
-    // Step 2: Create output directory
-    console.log(`📁 Creating output directory: ${outputDir}`);
-    ensureDir(outputDir);
-
-    // Step 3: Generate repo_map.md
-    console.log("📊 Generating repository map...");
-    const repoMap = generateRepoMap(scanResult.files, { sortBy: "directory" });
-    const compactMap = generateCompactRepoMap(scanResult.files);
-    const repoMapPath = path.join(outputDir, "repo_map.md");
-    writeFile(repoMapPath, repoMap + "\n\n" + compactMap);
-    filesCreated.push(repoMapPath);
-    console.log("   ✅ Created repo_map.md");
-
-    // Step 4: Generate repo_map.json
-    console.log("📊 Generating machine-readable repo map...");
-    const repoMapJson = generateRepoMapJson(scanResult.files);
-    const repoMapJsonPath = path.join(outputDir, "repo_map.json");
-    writeFile(repoMapJsonPath, repoMapJson);
-    filesCreated.push(repoMapJsonPath);
-    console.log("   ✅ Created repo_map.json");
-
-    // Step 5: Generate summary
-    const summary = generateSummary(scanResult.files);
-    const summaryPath = path.join(outputDir, "summary.md");
-    writeFile(summaryPath, summary);
-    filesCreated.push(summaryPath);
-    console.log("   ✅ Created summary.md");
-
-    // Step 6: Analyze architecture
-    console.log("🏗️  Analyzing architecture...");
-    const architecture = analyzeArchitecture(scanResult.files, rootDir);
-    const architecturePath = path.join(outputDir, "architecture.md");
-    writeFile(architecturePath, generateArchitectureFile(architecture));
-    filesCreated.push(architecturePath);
-    console.log("   ✅ Created architecture.md");
-
-    // Step 7: Detect tech stack
-    console.log("🛠️  Detecting tech stack...");
-    const techStack = detectTechStack(scanResult.files, rootDir);
-    const techStackPath = path.join(outputDir, "tech_stack.md");
-    writeFile(techStackPath, generateTechStackFile(techStack));
-    filesCreated.push(techStackPath);
-    console.log("   ✅ Created tech_stack.md");
-
-    // Step 8: Discover entrypoints
-    console.log("🚪 Discovering entrypoints...");
-    const entrypoints = discoverEntrypoints(scanResult.files, rootDir);
-    const entrypointsPath = path.join(outputDir, "entrypoints.md");
-    writeFile(entrypointsPath, generateEntrypointsFile(entrypoints));
-    filesCreated.push(entrypointsPath);
-    console.log("   ✅ Created entrypoints.md");
-
-    // Step 9: Detect conventions
-    console.log("📝 Detecting conventions...");
-    const conventions = detectConventions(scanResult.files, rootDir);
-    const conventionsPath = path.join(outputDir, "conventions.md");
-    writeFile(conventionsPath, generateConventionsFile(conventions));
-    filesCreated.push(conventionsPath);
-    console.log("   ✅ Created conventions.md");
-
-    // Step 10: Extract symbols
-    console.log("🔎 Extracting symbols...");
-    const symbols = extractSymbols(scanResult.files);
-    const symbolsPath = path.join(outputDir, "symbols.json");
-    writeFile(symbolsPath, generateSymbolsJson(symbols));
-    filesCreated.push(symbolsPath);
-    console.log("   ✅ Created symbols.json");
-
-    // Step 11: Analyze dependencies
-    console.log("🔗 Analyzing dependencies...");
-    const dependencies = analyzeDependencies(scanResult.files);
-    const depsPath = path.join(outputDir, "dependencies.json");
-    writeFile(depsPath, generateDependenciesJson(dependencies));
-    filesCreated.push(depsPath);
-    console.log("   ✅ Created dependencies.json");
-
-    // Step 12: Generate AI rules
-    console.log("🤖 Generating AI rules...");
-    const aiRules = generateAIRules(scanResult.files, rootDir);
-    const aiRulesPath = path.join(outputDir, "ai_rules.md");
-    writeFile(aiRulesPath, generateAIRulesFile(aiRules, scanResult.files, rootDir));
-    filesCreated.push(aiRulesPath);
-    console.log("   ✅ Created ai_rules.md");
-
-    // Step 12b: Extract project setup
-    console.log("🚀 Extracting project setup...");
-    const projectSetup = extractProjectSetup(rootDir);
-    const setupPath = path.join(outputDir, "setup.json");
-    writeFile(setupPath, JSON.stringify(projectSetup, null, 2));
-    filesCreated.push(setupPath);
-    console.log("   ✅ Created setup.json");
-
-    // Step 12c: Extract dependency versions
-    console.log("📦 Extracting dependency versions...");
-    const depVersions = extractDependencyVersions(rootDir);
-    const depVersionsPath = path.join(outputDir, "dependency-versions.json");
-    writeFile(depVersionsPath, JSON.stringify(depVersions, null, 2));
-    filesCreated.push(depVersionsPath);
-    console.log("   ✅ Created dependency-versions.json");
-
-    // Step 12d: Map test files
-    console.log("🧪 Mapping test files...");
-    const testMapping = mapTestFiles(rootDir);
-    const testMappingPath = path.join(outputDir, "test-mapping.json");
-    writeFile(testMappingPath, JSON.stringify(testMapping, null, 2));
-    filesCreated.push(testMappingPath);
-    console.log("   ✅ Created test-mapping.json");
-
-    // Step 12e: Extract data models
-    console.log("📊 Extracting data models...");
-    const dataModels = extractDataModels(rootDir);
-    const dataModelsPath = path.join(outputDir, "data-models.json");
-    writeFile(dataModelsPath, JSON.stringify(dataModels, null, 2));
-    filesCreated.push(dataModelsPath);
-    console.log("   ✅ Created data-models.json");
-
-    // Step 12f: Extract recent changes
-    console.log("📅 Extracting recent changes...");
-    const recentChanges = extractRecentChanges(rootDir);
-    const recentChangesPath = path.join(outputDir, "recent-changes.json");
-    writeFile(recentChangesPath, JSON.stringify(recentChanges, null, 2));
-    filesCreated.push(recentChangesPath);
-    console.log("   ✅ Created recent-changes.json");
-
-    // Step 12g: Extract cross-cutting concerns
-    console.log("🔍 Extracting cross-cutting concerns...");
-    const crossCutting = extractCrossCuttingConcerns(rootDir);
-    const crossCuttingPath = path.join(outputDir, "cross-cutting.json");
-    writeFile(crossCuttingPath, JSON.stringify(crossCutting, null, 2));
-    filesCreated.push(crossCuttingPath);
-    console.log("   ✅ Created cross-cutting.json");
-
-    // Step 12h: Analyze configuration files
-    console.log("⚙️  Analyzing configuration files...");
-    const configAnalysis = extractConfigAnalysis(rootDir);
-    const configPath = path.join(outputDir, "config-analysis.json");
-    writeFile(configPath, JSON.stringify(configAnalysis, null, 2));
-    filesCreated.push(configPath);
-    console.log("   ✅ Created config-analysis.json");
-
-    // Step 12i: Extract code gotchas
-    console.log("⚠️  Extracting code gotchas...");
-    const gotchas = extractCodeGotchas(rootDir);
-    const gotchasPath = path.join(outputDir, "gotchas.json");
-    writeFile(gotchasPath, JSON.stringify(gotchas, null, 2));
-    filesCreated.push(gotchasPath);
-    console.log("   ✅ Created gotchas.json");
-
-    // Step 12j: Analyze dependency impact
-    console.log("🔗 Analyzing dependency impact...");
-    const impactAnalysis = analyzeDependencyImpact(rootDir);
-    const impactPath = path.join(outputDir, "impact-analysis.json");
-    writeFile(impactPath, JSON.stringify(impactAnalysis, null, 2));
-    filesCreated.push(impactPath);
-    console.log("   ✅ Created impact-analysis.json");
-
-    // Step 12k: Extract code patterns
-    console.log("📝 Extracting code patterns...");
-    const codePatterns = extractCodePatterns(rootDir);
-    const patternsPath = path.join(outputDir, "code-patterns.json");
-    writeFile(patternsPath, JSON.stringify(codePatterns, null, 2));
-    filesCreated.push(patternsPath);
-    console.log("   ✅ Created code-patterns.json");
-
-    // Step 12l: Detect anti-patterns
-    console.log("🚫 Detecting anti-patterns...");
-    const antiPatterns = detectAntiPatterns(rootDir);
-    const antiPatternsPath = path.join(outputDir, "anti-patterns.json");
-    writeFile(antiPatternsPath, JSON.stringify(antiPatterns, null, 2));
-    filesCreated.push(antiPatternsPath);
-    console.log("   ✅ Created anti-patterns.json");
-
-    // Step 12m: Security audit
-    console.log("🔒 Running security audit...");
-    const securityIssues = detectSecurityIssues(rootDir);
-    const securityPath = path.join(outputDir, "security-audit.json");
-    writeFile(securityPath, JSON.stringify(securityIssues, null, 2));
-    filesCreated.push(securityPath);
-    console.log("   ✅ Created security-audit.json");
-
-    // Step 12n: Performance analysis
-    console.log("⚡ Analyzing performance...");
-    const performanceIssues = detectPerformanceIssues(rootDir);
-    const perfPath = path.join(outputDir, "performance.json");
-    writeFile(perfPath, JSON.stringify(performanceIssues, null, 2));
-    filesCreated.push(perfPath);
-    console.log("   ✅ Created performance.json");
-
-    // Step 12o: Generate context diff
-    console.log("📊 Generating context diff...");
-    const contextDiff = generateContextDiff(outputDir);
-    const diffPath = path.join(outputDir, "context-diff.json");
-    writeFile(diffPath, JSON.stringify(contextDiff, null, 2));
-    filesCreated.push(diffPath);
-    console.log("   ✅ Created context-diff.json");
-
-    // Step 12p: Detect dead code
-    console.log("💀 Detecting dead code...");
-    const deadCode = detectDeadCode(rootDir);
-    const deadCodePath = path.join(outputDir, "dead-code.json");
-    writeFile(deadCodePath, JSON.stringify(deadCode, null, 2));
-    filesCreated.push(deadCodePath);
-    console.log("   ✅ Created dead-code.json");
-
-    // Step 12q: Analyze documentation coverage
-    console.log("📚 Analyzing documentation coverage...");
-    const docCoverage = analyzeDocCoverage(rootDir);
-    const docCovPath = path.join(outputDir, "doc-coverage.json");
-    writeFile(docCovPath, JSON.stringify(docCoverage, null, 2));
-    filesCreated.push(docCovPath);
-    console.log("   ✅ Created doc-coverage.json");
-
-    // Step 12r: Detect CI/CD
-    console.log("🔄 Detecting CI/CD pipeline...");
-    const cicdConfig = detectCICD(rootDir);
-    const cicdPath = path.join(outputDir, "cicd.json");
-    writeFile(cicdPath, JSON.stringify(cicdConfig, null, 2));
-    filesCreated.push(cicdPath);
-    console.log("   ✅ Created cicd.json");
-
-    // Step 12s: Detect migrations
-    console.log("🗄️  Detecting database migrations...");
-    const migrations = detectMigrations(rootDir);
-    const migrationsPath = path.join(outputDir, "migrations.json");
-    writeFile(migrationsPath, JSON.stringify(migrations, null, 2));
-    filesCreated.push(migrationsPath);
-    console.log("   ✅ Created migrations.json");
-
-    // Step 13: Generate unified ai_context.md
-    console.log("📋 Generating unified AI context...");
-    const aiContextPath = path.join(outputDir, "ai_context.md");
-    const aiContext = generateUnifiedContext({
-      repoMap, summary, architecture, techStack, entrypoints, conventions, aiRules,
-      projectSetup, depVersions, testMapping, dataModels, recentChanges, crossCutting,
-      configAnalysis, gotchas, impactAnalysis, codePatterns, antiPatterns, securityIssues,
-      performanceIssues, contextDiff, deadCode, docCoverage, cicdConfig, migrations,
-      projectDescription: (() => { try { const p = JSON.parse(fs.readFileSync(path.join(rootDir, "package.json"), "utf-8")); return p.description; } catch { return undefined; } })()
-    });
-    writeFile(aiContextPath, aiContext);
-    filesCreated.push(aiContextPath);
-    console.log("   ✅ Created ai_context.md");
-
-    // Generate semantic contexts (features and flows)
-    // First generate modules.json which is required for feature/flow detection
-    console.log("📦 Generating modules...");
-    const modules: Record<string, { path: string; files: string[] }> = {};
-    for (const file of scanResult.files) {
-      const parts = file.relativePath.split('/');
-      if (parts.length > 1 && parts[0] !== 'ai') {
-        if (!modules[parts[0]]) modules[parts[0]] = { path: parts[0], files: [] };
-        modules[parts[0]].files.push(file.relativePath);
-      }
-    }
-    const modulesPath = path.join(outputDir, "modules.json");
-    fs.writeFileSync(modulesPath, JSON.stringify({ modules }, null, 2));
-    console.log("   ✅ modules.json");
-    
-    try {
-      const { features, flows } = generateSemanticContexts(outputDir);
-      console.log(`   ✅ Created ${features.length} features, ${flows.length} flows`);
-    } catch (e: any) {
-      console.log("   ⚠️  Semantic contexts: " + (e.message || e));
-    }
-
-    // Generate AI Repository Schema (schema.json, project.json, tools.json)
-    try {
-      generateAllSchema(rootDir, outputDir);
-      console.log("   ✅ Created schema.json, project.json, tools.json");
-    } catch (e: any) {
-      console.log("   ⚠️  Schema generation: " + (e.message || e));
-    }
-
-    console.log("\n✨ Done! Created the following files:");
-
-    console.log("\n✨ Done! Created the following files:");
-
-    console.log("\n✨ Done! Created the following files:");
-    for (const file of filesCreated) {
-      console.log(`   - ${path.relative(rootDir, file)}`);
-    }
-
-    return {
-      success: true,
-      filesCreated,
-    };
-  } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : String(error);
-    console.error("\n❌ Error:", errorMessage);
-    return {
-      success: false,
-      filesCreated,
-      error: errorMessage,
-    };
-  }
+  return generateContext({
+    ...options,
+    onProgress: (message) => console.log(message),
+    onError: (message) => console.error(message),
+  });
 }
 
 /**
@@ -422,6 +143,47 @@ function generateRepoMapJson(files: { relativePath: string; name: string; extens
   }, null, 2);
 }
 
+function printFreshnessReport(rootDir: string, outputDir: string, jsonMode: boolean): void {
+  const freshness = isContextFresh(rootDir, outputDir);
+  if (jsonMode) {
+    console.log(JSON.stringify(freshness, null, 2));
+    return;
+  }
+
+  console.log("\n🧾 AI Context Freshness\n");
+  console.log(`Status: ${freshness.fresh ? "fresh" : "stale"}`);
+  console.log(`Reason: ${freshness.reason}`);
+  console.log(`Manifest: ${freshness.manifestPath}`);
+  if (freshness.generatedAt) console.log(`Generated: ${freshness.generatedAt}`);
+  console.log(`Commit: ${freshness.manifestCommit || "unknown"} → ${freshness.currentCommit || "unknown"}`);
+  console.log(`Dirty worktree: ${freshness.dirty ? "yes" : "no"}`);
+
+  const changed = [...freshness.changedFiles, ...freshness.missingFiles, ...freshness.addedFiles].slice(0, 15);
+  if (changed.length > 0) {
+    console.log("\nChanged files:");
+    for (const file of changed) console.log(`  - ${file}`);
+  }
+}
+
+function printVerificationReport(rootDir: string, outputDir: string, jsonMode: boolean): number {
+  const result = verifyAIContext(rootDir, outputDir);
+  if (jsonMode) {
+    console.log(JSON.stringify(result, null, 2));
+    return result.status === "trusted" ? 0 : 1;
+  }
+
+  console.log("\n🧪 AI Context Verification\n");
+  console.log(`Truth Score: ${result.score}/100 (${result.status})`);
+  console.log(`Context: ${result.outputDir}\n`);
+
+  for (const check of result.checks) {
+    const icon = check.status === "pass" ? "✔" : check.status === "warn" ? "⚠" : "✖";
+    console.log(`${icon} ${check.id}: ${check.message}`);
+  }
+
+  return result.status === "trusted" ? 0 : 1;
+}
+
 // CLI entry point
 // Check if run directly (not imported as module)
 const isMain = !import.meta.url || 
@@ -430,6 +192,8 @@ const isMain = !import.meta.url ||
   process.argv[1] === undefined;
 
 if (isMain) {
+  installSynchronousConsoleForPipedOutput();
+
   const args = process.argv.slice(2);
   const options: AIFirstOptions = {};
 
@@ -802,46 +566,55 @@ Examples:
 
     if (taskArg) {
       console.log(`\n🎯 Generating task-specific context: ${taskArg}`);
-      
-      import("../utils/taskContextGenerator.js").then(({ generateTaskContext }) => {
-        const taskContext = generateTaskContext(rootDir, taskArg!);
+      const taskContext = getContextForTask(rootDir, taskArg);
         
-        if (format === "json") {
-          console.log(JSON.stringify(taskContext, null, 2));
-        } else if (format === "markdown") {
-          console.log(`# Task Context: ${taskArg}\n`);
-          console.log(`## Relevant Files\n`);
-          for (const file of taskContext.relevantFiles) {
-            console.log(`- \`${file}\``);
-          }
-          console.log(`\n## Code Patterns\n`);
-          for (const pattern of taskContext.relevantPatterns) {
-            console.log(`### ${pattern.description}`);
-            console.log(`\`\`\`\n${pattern.code.slice(0, 500)}\n\`\`\`\n`);
-          }
-          console.log(`## Suggestions\n`);
-          for (const suggestion of taskContext.suggestions) {
-            console.log(`- ${suggestion}`);
-          }
-        } else {
-          console.log(`Task: ${taskContext.task}`);
-          console.log(`\nRelevant files:`);
-          for (const file of taskContext.relevantFiles) {
-            console.log(`  - ${file}`);
-          }
-          console.log(`\nSuggestions:`);
-          for (const suggestion of taskContext.suggestions) {
-            console.log(`  - ${suggestion}`);
-          }
+      if (format === "json") {
+        console.log(JSON.stringify(taskContext, null, 2));
+      } else if (format === "markdown") {
+        console.log(`# Task Context: ${taskArg}\n`);
+        console.log(`**Kind**: ${taskContext.kind}`);
+        console.log(`\n${taskContext.summary}\n`);
+        console.log(`## Relevant Files\n`);
+        for (const file of taskContext.relevantFiles) {
+          console.log(`- \`${file.path}\` (${file.confidence}) - ${file.reason}`);
         }
-        
-        if (save) {
-          const savePath = path.join(outputDir, `task-${taskArg!.replace(/\s+/g, "-")}.json`);
-          ensureDir(outputDir);
-          writeFile(savePath, JSON.stringify(taskContext, null, 2));
-          console.log(`\n✅ Saved to: ${savePath}`);
+        console.log(`\n## Related Tests\n`);
+        for (const test of taskContext.relatedTests) {
+          console.log(`- \`${test.path}\` (${test.confidence}) - ${test.reason}`);
         }
-      });
+        console.log(`\n## Commands\n`);
+        for (const command of taskContext.commands) {
+          console.log(`- \`${command.command}\` - ${command.reason}`);
+        }
+        console.log(`\n## Risks\n`);
+        for (const risk of taskContext.risks) {
+          console.log(`- ${risk}`);
+        }
+        console.log(`\n## Contracts\n`);
+        for (const contract of taskContext.contracts) {
+          console.log(`- ${contract}`);
+        }
+      } else {
+        console.log(`Task: ${taskContext.task}`);
+        console.log(`Kind: ${taskContext.kind}`);
+        console.log(`\nRelevant files:`);
+        for (const file of taskContext.relevantFiles) {
+          console.log(`  - ${file.path} (${file.confidence}) ${file.reason}`);
+        }
+        console.log(`\nCommands:`);
+        for (const command of taskContext.commands) {
+          console.log(`  - ${command.command} (${command.reason})`);
+        }
+      }
+
+      if (save) {
+        const savePath = path.join(outputDir, `task-${taskArg.replace(/\s+/g, "-")}.json`);
+        ensureDir(outputDir);
+        writeFile(savePath, JSON.stringify(taskContext, null, 2));
+        console.log(`\n✅ Saved to: ${savePath}`);
+      }
+      process.exit(0);
+    } else if (symbolArg) {
       console.log(`\n🎯 Generating context for symbol: ${symbolArg}`);
       console.log(`   Depth: ${depth}, Max: ${maxSymbols}, Format: ${format}\n`);
 
@@ -1252,6 +1025,9 @@ Commands:
   summarize            Generate hierarchical repository summaries
   query                Query the index (symbol, dependents, imports, exports, stats)
   doctor               Check repository health and AI readiness
+  doctor --ci          Run quality gates for CI/agents
+  doctor context       Check whether generated AI context is fresh
+  verify ai-context    Audit generated AI context for agent trust
   explore <module>     Explore module dependencies
   map                  Generate repository map (files, modules, graph)
   adapters             List available adapters
@@ -1305,22 +1081,13 @@ Presets:
     runAIFirst(options).then(async (result) => {
       if (result.success && installMcp) {
         const rootDir = options.rootDir || process.cwd();
-        const opencodeDir = path.join(rootDir, '.opencode');
-        const mcpConfigPath = path.join(opencodeDir, 'mcp.json');
-        
-        const mcpConfig = {
-          mcpServers: {
-            "ai-first": {
-              command: "af",
-              args: ["mcp"],
-              autoConnect: true
-            }
-          }
-        };
-        
         try {
-          fs.mkdirSync(opencodeDir, { recursive: true });
-          fs.writeFileSync(mcpConfigPath, JSON.stringify(mcpConfig, null, 2));
+          const mcpInstall = installMcpProfile({
+            rootDir,
+            platform: "opencode-legacy",
+            command: "af",
+          });
+          const mcpConfigPath = mcpInstall.filesWritten[0] || path.join(rootDir, ".opencode", "mcp.json");
           console.log(`\n✅ MCP server configured at ${mcpConfigPath}`);
           console.log(`   Restart OpenCode to use the MCP server`);
         } catch (err) {
@@ -1421,7 +1188,87 @@ Presets:
     
     process.exit(0);
   } else if (command === 'doctor') {
+    if (args[1] === "context") {
+      const doctorArgs = args.slice(2);
+      let rootDir = process.cwd();
+      let outputDir = path.join(rootDir, "ai-context");
+      let jsonMode = false;
+      let strictMode = false;
+
+      for (let i = 0; i < doctorArgs.length; i++) {
+        const arg = doctorArgs[i];
+        if (arg === "--root" || arg === "-r") {
+          rootDir = doctorArgs[++i];
+          outputDir = path.join(rootDir, "ai-context");
+        } else if (arg === "--output" || arg === "-o") {
+          outputDir = doctorArgs[++i];
+        } else if (arg === "--json" || arg === "-j") {
+          jsonMode = true;
+        } else if (arg === "--strict") {
+          strictMode = true;
+        } else if (arg === "--help" || arg === "-h") {
+          console.log(`
+ai-first doctor context - Check whether generated AI context is fresh
+
+Usage: ai-first doctor context [options]
+
+Options:
+  -r, --root <dir>      Root directory (default: current directory)
+  -o, --output <dir>   Context directory (default: ./ai-context)
+  --strict             Include Context Truth Score checks
+  -j, --json           Output JSON
+  -h, --help           Show help message
+`);
+          process.exit(0);
+        }
+      }
+
+      if (strictMode) {
+        process.exit(printVerificationReport(rootDir, outputDir, jsonMode));
+      }
+      printFreshnessReport(rootDir, outputDir, jsonMode);
+      process.exit(isContextFresh(rootDir, outputDir).fresh ? 0 : 1);
+    }
+
     doctorMain(args.slice(1));
+  } else if (command === 'verify') {
+    args.shift();
+    const target = args.shift();
+    if (target !== "ai-context") {
+      console.log("Usage: ai-first verify ai-context [--root dir] [--output dir] [--json]");
+      process.exit(1);
+    }
+
+    let rootDir = process.cwd();
+    let outputDir = path.join(rootDir, "ai-context");
+    let jsonMode = false;
+
+    for (let i = 0; i < args.length; i++) {
+      const arg = args[i];
+      if (arg === "--root" || arg === "-r") {
+        rootDir = args[++i];
+        outputDir = path.join(rootDir, "ai-context");
+      } else if (arg === "--output" || arg === "-o") {
+        outputDir = args[++i];
+      } else if (arg === "--json" || arg === "-j") {
+        jsonMode = true;
+      } else if (arg === "--help" || arg === "-h") {
+        console.log(`
+ai-first verify ai-context - Audit generated AI context for agent trust
+
+Usage: ai-first verify ai-context [options]
+
+Options:
+  -r, --root <dir>      Root directory (default: current directory)
+  -o, --output <dir>   Context directory (default: ./ai-context)
+  -j, --json           Output JSON
+  -h, --help           Show help message
+`);
+        process.exit(0);
+      }
+    }
+
+    process.exit(printVerificationReport(rootDir, outputDir, jsonMode));
   } else if (command === 'explore') {
     exploreMain(args.slice(1));
   } else if (command === 'adapters') {
@@ -1753,9 +1600,17 @@ Examples:
 ai-first mcp - Start Model Context Protocol server
 
 Usage: ai-first mcp [options]
+       ai-first mcp doctor [options]
 
 Options:
   -r, --root <dir>    Root directory to scan (default: current directory)
+  --transport <name>  stdio or http (default: stdio)
+  --host <host>       HTTP host (default: 127.0.0.1)
+  --port <port>       HTTP port (default: 3847)
+  --path <path>       HTTP MCP endpoint path (default: /mcp)
+  --token <token>     Require Authorization: Bearer token for HTTP MCP
+  --allow-unsafe      Allow non-local HTTP bind without token
+  --json              Print machine-readable output for doctor
   -h, --help          Show help message
 
 Description:
@@ -1764,32 +1619,107 @@ Description:
 
 The server provides these tools:
   - generate_context: Generate AI context for the repository
-  - index_repo: Create SQLite index for fast queries
-  - query_symbol: Look up symbols by name
+  - query_symbols: Look up symbols by name/type
   - get_architecture: Get architecture analysis
-  - get_tech_stack: Get technology stack information
+  - get_context_for_file: Get tests and evidence for a source file
+  - get_project_brief: Get the short agent-facing project brief
+  - is_context_fresh: Check whether ai-context is fresh
+  - run_doctor: Run freshness and trust checks
+  - get_quality_gates: Evaluate CI/agent quality gates
+  - get_mcp_compatibility: Explain supported MCP client profiles
+  - verify_ai_context: Return Context Truth Score
+  - analyze_changes: Analyze recent git changes
+  - suggest_tests: Suggest tests for a source file
+  - run_security_audit: Run security analysis
 
 Examples:
   ai-first mcp                    # Start MCP server in current directory
   ai-first mcp --root ./my-project # Start with specific root directory
+  ai-first mcp --transport http --port 3847
+  AI_FIRST_MCP_TOKEN=secret ai-first mcp --transport http --host 0.0.0.0
+  ai-first mcp doctor --json       # Check MCP compatibility setup
 `);
       process.exit(0);
     }
     
     let rootDir = process.cwd();
+    let showJson = false;
+    let transportMode = "stdio";
+    let host = "127.0.0.1";
+    let port = 3847;
+    let endpointPath = "/mcp";
+    let authToken = process.env.AI_FIRST_MCP_TOKEN;
+    let allowUnsafe = false;
     
     for (let i = 0; i < args.length; i++) {
       const arg = args[i];
       if (arg === "--root" || arg === "-r") rootDir = args[++i];
+      else if (arg === "--json" || arg === "-j") showJson = true;
+      else if (arg === "--transport") transportMode = args[++i];
+      else if (arg === "--host") host = args[++i];
+      else if (arg === "--port") port = parseInt(args[++i], 10) || 3847;
+      else if (arg === "--path") endpointPath = args[++i];
+      else if (arg === "--token") authToken = args[++i];
+      else if (arg === "--allow-unsafe") allowUnsafe = true;
     }
-    
-    console.log("\n🚀 Starting MCP server...\n");
-    console.log(`   Root directory: ${rootDir}`);
-    console.log("   Protocol: stdio");
-    console.log("\n   The server is now running and ready to accept MCP requests.");
-    console.log("   Use Ctrl+C to stop.\n");
-    
-    startMCP({ rootDir });
+
+    if (args[0] === "doctor") {
+      const result = getMcpDoctor({
+        rootDir,
+        transport: transportMode === "http" || transportMode === "streamable-http" ? "streamable-http" : "stdio",
+        host,
+        port,
+        authToken,
+        allowUnsafe,
+      });
+      if (showJson) {
+        console.log(JSON.stringify(result, null, 2));
+      } else {
+        console.log(`\n🩺 MCP Doctor: ${result.ok ? "pass" : "needs attention"}\n`);
+        console.log(`Root: ${result.rootDir}`);
+        console.log(`Transport: ${result.transport}\n`);
+        for (const check of result.checks) {
+          const icon = check.status === "pass" ? "✅" : check.status === "warn" ? "⚠️" : "❌";
+          console.log(`${icon} ${check.id}: ${check.message}`);
+        }
+      }
+      process.exit(result.ok ? 0 : 1);
+    }
+
+    if (transportMode === "http" || transportMode === "streamable-http") {
+      try {
+        await startMCPHttpServer({
+          rootDir,
+          host,
+          port,
+          path: endpointPath,
+          authToken,
+          allowUnsafe,
+        });
+        console.log("\n🚀 Starting MCP server...\n");
+        console.log(`   Root directory: ${rootDir}`);
+        console.log("   Protocol: streamable-http");
+        console.log(`   Endpoint: http://${host}:${port}${endpointPath}`);
+        console.log(`   Health: http://${host}:${port}/health`);
+        console.log(`   Auth: ${authToken ? "enabled" : "disabled"}`);
+        console.log("\n   The server is now running and ready to accept MCP requests.");
+        console.log("   Use Ctrl+C to stop.\n");
+      } catch (error) {
+        console.error("Error starting MCP HTTP server:", error instanceof Error ? error.message : String(error));
+        process.exit(1);
+      }
+    } else if (transportMode !== "stdio") {
+      console.error(`Unknown MCP transport "${transportMode}". Use: stdio, http`);
+      process.exit(1);
+    } else {
+      console.log("\n🚀 Starting MCP server...\n");
+      console.log(`   Root directory: ${rootDir}`);
+      console.log("   Protocol: stdio");
+      console.log("\n   The server is now running and ready to accept MCP requests.");
+      console.log("   Use Ctrl+C to stop.\n");
+
+      startMCP({ rootDir });
+    }
   } else if (command === 'pr-description') {
     args.shift();
     let rootDir = process.cwd();
@@ -1805,14 +1735,22 @@ Examples:
     }
     console.log(`\n📝 Generating PR description since ${fromBranch}...\n`);
     try {
-      const { execSync } = await import("child_process");
-      const filesChanged = execSync(`git diff --name-only ${fromBranch}..HEAD`, { cwd: rootDir, encoding: "utf-8" }).trim().split("\n").filter(Boolean);
-      const commits = execSync(`git log --oneline ${fromBranch}..HEAD`, { cwd: rootDir, encoding: "utf-8" }).trim().split("\n");
+      const { execFileSync } = await import("child_process");
+      const range = `${fromBranch}..HEAD`;
+      const filesChanged = execFileSync("git", ["diff", "--name-only", range], { cwd: rootDir, encoding: "utf-8" }).trim().split("\n").filter(Boolean);
+      const commits = execFileSync("git", ["log", "--oneline", range], { cwd: rootDir, encoding: "utf-8" }).trim().split("\n").filter(Boolean);
       console.log("# Commits");
       for (const c of commits.slice(0, 10)) console.log(`- ${c}`);
       console.log(`\n# Files Changed (${filesChanged.length} files)`);
       for (const f of filesChanged.slice(0, 15)) console.log(`- ${f}`);
-    } catch (e) { console.error("Error:", e instanceof Error ? e.message : e); }
+    } catch (e) {
+      const commits = getRecentCommits(rootDir, 3);
+      const filesChanged = [...new Set(commits.flatMap(commit => commit.files))];
+      console.log("# Commits");
+      for (const c of commits.slice(0, 10)) console.log(`- ${c.hash.slice(0, 7)} ${c.message}`);
+      console.log(`\n# Files Changed (${filesChanged.length} files)`);
+      for (const f of filesChanged.slice(0, 15)) console.log(`- ${f}`);
+    }
     process.exit(0);
   } else if (command === 'install-hook') {
     args.shift();
@@ -1863,25 +1801,82 @@ af init --root "$(git rev-parse --show-toplevel)" --json 2>/dev/null
   } else if (command === 'install') {
     args.shift();
     let platform = "opencode";
+    let rootDir = process.cwd();
+    let showJson = false;
+    let commandName = "af";
+    let listProfiles = false;
     for (let i = 0; i < args.length; i++) {
       if (args[i] === "--platform" || args[i] === "-p") platform = args[++i];
+      else if (args[i] === "--root" || args[i] === "-r") rootDir = args[++i];
+      else if (args[i] === "--json" || args[i] === "-j") showJson = true;
+      else if (args[i] === "--command") commandName = args[++i];
+      else if (args[i] === "--list") listProfiles = true;
+      else if (args[i] === "--help" || args[i] === "-h") {
+        console.log(`
+ai-first install - Install AI-First agent integrations
+
+Usage: ai-first install [options]
+
+Options:
+  -p, --platform <name>  opencode, codex, claude-code, cursor, remote-http, generic-stdio
+  -r, --root <dir>      Project root (default: current directory)
+  --command <command>   MCP server command (default: af)
+  --list                List compatibility profiles
+  --json                Print machine-readable output
+  -h, --help            Show help
+
+Examples:
+  ai-first install --platform opencode
+  ai-first install --platform codex --json
+  ai-first install --list
+`);
+        process.exit(0);
+      }
     }
-    const rootDir = process.cwd();
-    if (platform === "opencode") {
-      const opencodeDir = path.join(rootDir, ".opencode");
-      ensureDir(opencodeDir);
-      const mcpPath = path.join(opencodeDir, "mcp.json");
-      fs.writeFileSync(mcpPath, JSON.stringify({ mcpServers: { "ai-first": { command: "af", args: ["mcp"], autoConnect: true } } }, null, 2));
-      console.log(`\n✅ AI-First installed for OpenCode at ${mcpPath}`);
-    } else if (platform === "cursor") {
-      console.log(`\n✅ For Cursor: add "ai-context/ai_context.md" to your .cursorrules file`);
-    } else if (platform === "claude") {
-      const claudePath = path.join(rootDir, "CLAUDE.md");
-      const entry = `\n## AI Context\nRead ai-context/ai_context.md before answering questions about this codebase.\n`;
-      fs.appendFileSync(claudePath, entry);
-      console.log(`\n✅ AI-First installed for Claude Code at ${claudePath}`);
+
+    if (listProfiles) {
+      const profiles = getMcpCompatibilityProfiles();
+      if (showJson) {
+        console.log(JSON.stringify({ profiles }, null, 2));
+      } else {
+        console.log("\n🔌 MCP compatibility profiles\n");
+        for (const profile of profiles) {
+          console.log(`- ${profile.platform}: ${profile.label} (${profile.status}, ${profile.transport})`);
+          console.log(`  config: ${profile.configPath || "manual"}`);
+        }
+      }
+      process.exit(0);
+    }
+
+    const normalizedPlatform = normalizeMcpPlatform(platform);
+    if (!normalizedPlatform) {
+      console.error(`Platform "${platform}" not supported. Try: opencode, codex, claude-code, cursor, generic-stdio`);
+      process.exit(1);
+    }
+
+    const result = installMcpProfile({
+      rootDir,
+      platform: normalizedPlatform,
+      command: commandName,
+    });
+
+    if (showJson) {
+      console.log(JSON.stringify(result, null, 2));
+    } else if (result.success) {
+      console.log(`\n✅ AI-First MCP profile installed for ${normalizedPlatform}`);
+      for (const file of result.filesWritten) {
+        console.log(`   wrote: ${file}`);
+      }
+      if (result.warnings.length > 0) {
+        console.log("\n⚠️  Warnings:");
+        for (const warning of result.warnings) console.log(`   - ${warning}`);
+      }
+      console.log("\nNext steps:");
+      for (const step of result.nextSteps) console.log(`   - ${step}`);
     } else {
-      console.log(`Platform "${platform}" not supported. Try: opencode, cursor, claude`);
+      console.error(`\n⚠️  Could not install profile for ${normalizedPlatform}`);
+      for (const warning of result.warnings) console.error(`   - ${warning}`);
+      process.exit(1);
     }
     process.exit(0);
   } else if (command === 'search') {

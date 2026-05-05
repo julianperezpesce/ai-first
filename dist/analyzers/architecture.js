@@ -143,7 +143,7 @@ function detectLayers(directories) {
  */
 function detectModules(files, directories) {
     const modules = [];
-    const dirs = directories.filter(d => d && d !== "root");
+    const dirs = collectModuleDirectories(files, directories);
     for (const dir of dirs.slice(0, 20)) { // Limit to 20 modules
         // Skip root-level files (entries without "/" that are not real directories)
         // A proper directory should have files under it with path "dir/file"
@@ -169,11 +169,47 @@ function detectModules(files, directories) {
     }
     return modules;
 }
+function collectModuleDirectories(files, directories) {
+    const dirs = new Set(directories.filter(d => d && d !== "root"));
+    const expandableRoots = new Set(["src", "app", "lib", "packages", "apps"]);
+    for (const file of files) {
+        const parts = file.relativePath.split("/");
+        if (parts.length >= 3 && expandableRoots.has(parts[0])) {
+            dirs.add(`${parts[0]}/${parts[1]}`);
+        }
+    }
+    return [...dirs].sort((a, b) => {
+        const depth = a.split("/").length - b.split("/").length;
+        return depth || a.localeCompare(b);
+    });
+}
 /**
  * Infer module responsibility from its name and file types
  */
 function inferModuleResponsibility(dir, extensions) {
     const name = dir.toLowerCase();
+    const normalizedDir = dir.toLowerCase().replace(/\\/g, "/");
+    const knownResponsibilities = {
+        "src": "TypeScript source for CLI commands, context generation, analyzers, MCP tools, indexing, parsers and repository services",
+        "src/commands": "CLI command routing, argument parsing, human-readable output and process exit handling",
+        "src/core": "Reusable analysis engine for scanning, indexing, context generation, graphs, parsers, adapters and shared services",
+        "src/analyzers": "Repository analyzers that detect tech stack, architecture, entrypoints, symbols, dependencies and agent rules",
+        "src/utils": "Heuristic extractors for setup, config, security, performance, test mapping, patterns and generated context sections",
+        "src/mcp": "Model Context Protocol server and agent-facing tool handlers",
+        "src/config": "Configuration schema, defaults and config file loading",
+        "src/web": "Static dashboard and graph visualization assets",
+        "src/types": "Local TypeScript declaration shims for optional dependencies",
+        "tests": "Vitest test suite covering CLI behavior, analyzers, parsers, adapters, Salesforce support and integration flows",
+        "docs": "VitePress documentation, guides, examples and planning notes",
+        "schema": "JSON schema definitions for ai-first configuration and repository metadata",
+        "examples": "Example project analyses and usage documentation",
+        "fixtures": "Sample projects used by tests to validate framework and language detection",
+        ".github": "GitHub Actions workflows and repository automation",
+        "completions": "Shell completion scripts for fish and zsh",
+    };
+    if (knownResponsibilities[normalizedDir]) {
+        return knownResponsibilities[normalizedDir];
+    }
     // Domain keyword detection - extract business domain from directory name
     const domainPatterns = [
         // User management and authentication
@@ -284,7 +320,7 @@ function inferModuleResponsibility(dir, extensions) {
         if (uniqueExts.includes("css") || uniqueExts.includes("scss") || uniqueExts.includes("less")) {
             return "Frontend components and styling";
         }
-        return "JavaScript/TypeScript implementation";
+        return "Application code and TypeScript modules";
     }
     if (uniqueExts.includes("py")) {
         return "Python implementation";
@@ -315,10 +351,21 @@ function inferModuleResponsibility(dir, extensions) {
     }
     // Fallback based on file count and primary language
     if (extensions.length === 1) {
-        return "Single file module";
+        return `${primaryName(name)} support file`;
     }
     const primaryExt = uniqueExts[0] || 'code';
     return `${primaryExt.toUpperCase()} module with ${extensions.length} files`;
+}
+function primaryName(name) {
+    if (name.includes("github"))
+        return "Repository automation";
+    if (name.includes("netlify"))
+        return "Deployment configuration";
+    if (name.includes("schema"))
+        return "Schema";
+    if (name.includes("config"))
+        return "Configuration";
+    return "Project";
 }
 /**
  * Infer module dependencies
@@ -405,12 +452,23 @@ export function generateArchitectureFile(analysis) {
     }
     lines.push(`## Recommendations`);
     lines.push("");
-    lines.push(`- Keep the architecture consistent as the project grows`);
-    lines.push(`- Follow the established layer structure`);
-    lines.push(`- Use dependency injection to manage module relationships`);
+    if (analysisIsCli(analysis)) {
+        lines.push(`- Keep CLI argument parsing and process exits in command modules; move reusable behavior into core services.`);
+        lines.push(`- Keep MCP handlers thin and reuse the same core services as the CLI.`);
+        lines.push(`- Add analyzers with evidence and confidence metadata so generated context remains auditable.`);
+    }
+    else {
+        lines.push(`- Keep module responsibilities explicit as the project grows.`);
+        lines.push(`- Keep shared behavior in stable service modules instead of duplicating command-specific logic.`);
+        lines.push(`- Document cross-module contracts where generated context depends on them.`);
+    }
     lines.push("");
     lines.push(`---`);
     lines.push(`*Generated by ai-first*`);
     return lines.join("\n");
+}
+function analysisIsCli(analysis) {
+    return analysis.pattern.toLowerCase().includes("cli") ||
+        analysis.modules.some(mod => mod.path === "src/commands" || mod.path === "src/mcp");
 }
 //# sourceMappingURL=architecture.js.map

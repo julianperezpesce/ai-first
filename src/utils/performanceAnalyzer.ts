@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
+import { confidence, createEvidence, type FindingMetadata } from "./findingMetadata.js";
 
-export interface PerformanceIssue {
+export interface PerformanceIssue extends FindingMetadata {
   type: string;
   severity: "high" | "medium" | "low";
   file: string;
@@ -32,6 +33,9 @@ export function detectPerformanceIssues(rootDir: string): PerformanceIssue[] {
             line: lineNum,
             description: "Potential nested loops detected",
             suggestion: "Consider using a Map or Set for O(1) lookups",
+            confidence: confidence(0.58),
+            evidence: createEvidence(relativePath, lineNum, line),
+            whyFlagged: "Two forEach calls appear close together; this may indicate nested iteration but needs review.",
           });
         }
 
@@ -43,6 +47,9 @@ export function detectPerformanceIssues(rootDir: string): PerformanceIssue[] {
             line: lineNum,
             description: "SELECT * without LIMIT",
             suggestion: "Add LIMIT clause or select specific columns",
+            confidence: confidence(0.82),
+            evidence: createEvidence(relativePath, lineNum, line),
+            whyFlagged: "An unbounded SELECT * can return excessive data.",
           });
         }
 
@@ -54,17 +61,23 @@ export function detectPerformanceIssues(rootDir: string): PerformanceIssue[] {
             line: lineNum,
             description: "Nested array operations",
             suggestion: "Combine into single pass or use a Map",
+            confidence: confidence(0.7),
+            evidence: createEvidence(relativePath, lineNum, line),
+            whyFlagged: "Nested array operations can become O(n^2) on large inputs.",
           });
         }
 
-        if (line.match(/fs\.readFileSync/) && !relativePath.includes("test") && !relativePath.includes("config")) {
+        if (line.match(/fs\.readFileSync/) && !relativePath.includes("test") && !relativePath.includes("config") && isLikelyAsyncContext(lines, i)) {
           issues.push({
             type: "sync-file-read",
-            severity: "medium",
+            severity: "low",
             file: relativePath,
             line: lineNum,
             description: "Synchronous file read in potentially async context",
             suggestion: "Use fs.promises.readFile for async operations",
+            confidence: confidence(0.55),
+            evidence: createEvidence(relativePath, lineNum, line),
+            whyFlagged: "A synchronous file read appears near async code; this may block the event loop.",
           });
         }
 
@@ -76,10 +89,13 @@ export function detectPerformanceIssues(rootDir: string): PerformanceIssue[] {
             line: lineNum,
             description: "Deep clone via JSON.parse/stringify",
             suggestion: "Use structuredClone() or a dedicated library for better performance",
+            confidence: confidence(0.65),
+            evidence: createEvidence(relativePath, lineNum, line),
+            whyFlagged: "JSON cloning can be slow and loses non-JSON values.",
           });
         }
 
-        if (line.match(/new\s+RegExp\s*\(/) && line.includes("loop") || line.match(/for\s*\(.*new\s+RegExp/)) {
+        if ((line.match(/new\s+RegExp\s*\(/) && line.includes("loop")) || line.match(/for\s*\(.*new\s+RegExp/)) {
           issues.push({
             type: "regex-in-loop",
             severity: "medium",
@@ -87,6 +103,9 @@ export function detectPerformanceIssues(rootDir: string): PerformanceIssue[] {
             line: lineNum,
             description: "RegExp created inside loop",
             suggestion: "Move regex creation outside the loop",
+            confidence: confidence(0.7),
+            evidence: createEvidence(relativePath, lineNum, line),
+            whyFlagged: "Repeated RegExp construction inside loops can waste CPU.",
           });
         }
 
@@ -98,6 +117,9 @@ export function detectPerformanceIssues(rootDir: string): PerformanceIssue[] {
             line: lineNum,
             description: "Multiple sorts on same array",
             suggestion: "Combine into single sort with composite comparator",
+            confidence: confidence(0.55),
+            evidence: createEvidence(relativePath, lineNum, line),
+            whyFlagged: "Multiple sort calls can do avoidable repeated O(n log n) work.",
           });
         }
 
@@ -109,6 +131,9 @@ export function detectPerformanceIssues(rootDir: string): PerformanceIssue[] {
             line: lineNum,
             description: "Multiple sequential awaits",
             suggestion: "Use Promise.all() for independent async operations",
+            confidence: confidence(0.5),
+            evidence: createEvidence(relativePath, lineNum, line),
+            whyFlagged: "Several awaits appear close together; use Promise.all only if operations are independent.",
           });
         }
 
@@ -120,6 +145,9 @@ export function detectPerformanceIssues(rootDir: string): PerformanceIssue[] {
             line: lineNum,
             description: "Magic number for buffer/size calculation",
             suggestion: "Use named constants for clarity",
+            confidence: confidence(0.45),
+            evidence: createEvidence(relativePath, lineNum, line),
+            whyFlagged: "A size calculation uses a literal; this is a readability/performance hint, not a defect.",
           });
         }
       }
@@ -127,6 +155,11 @@ export function detectPerformanceIssues(rootDir: string): PerformanceIssue[] {
   }
 
   return issues.slice(0, 25);
+}
+
+function isLikelyAsyncContext(lines: string[], index: number): boolean {
+  const window = lines.slice(Math.max(0, index - 8), Math.min(lines.length, index + 8)).join("\n");
+  return /\basync\b|\bawait\b|Promise\.|\.then\s*\(/.test(window);
 }
 
 function findSourceFiles(rootDir: string, maxFiles: number): string[] {

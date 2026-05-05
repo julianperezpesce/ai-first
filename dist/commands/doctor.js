@@ -3,6 +3,7 @@ import path from "path";
 import { scanRepo } from "../core/repoScanner.js";
 import { mapTestFiles } from "../utils/testFileMapper.js";
 import { extractDependencyVersions } from "../utils/dependencyVersionExtractor.js";
+import { evaluateQualityGates } from "../core/services/qualityGateService.js";
 export async function runDoctor(rootDir, fixMode) {
     const checks = [];
     const issues = [];
@@ -67,16 +68,44 @@ export async function runDoctor(rootDir, fixMode) {
 export function doctorMain(args) {
     let rootDir = process.cwd();
     let fixMode = false;
+    let ciMode = false;
+    let jsonMode = false;
+    let runCommands = false;
+    let outputDir;
     for (let i = 0; i < args.length; i++) {
         const arg = args[i];
         if (arg === "--root" || arg === "-r")
             rootDir = args[++i];
+        else if (arg === "--output" || arg === "-o")
+            outputDir = args[++i];
         else if (arg === "--fix" || arg === "-f")
             fixMode = true;
+        else if (arg === "--ci")
+            ciMode = true;
+        else if (arg === "--json" || arg === "-j")
+            jsonMode = true;
+        else if (arg === "--run")
+            runCommands = true;
         else if (arg === "--help" || arg === "-h") {
-            console.log("\nai-first doctor - Check repository health\nUsage: ai-first doctor [options]\nOptions: -r, --root <dir> -f, --fix\n");
+            console.log("\nai-first doctor - Check repository health\nUsage: ai-first doctor [options]\nOptions: -r, --root <dir> -o, --output <dir> -f, --fix --ci --json --run\n");
             process.exit(0);
         }
+    }
+    if (ciMode) {
+        const result = evaluateQualityGates({ rootDir, outputDir, runCommands });
+        if (jsonMode) {
+            console.log(JSON.stringify(result, null, 2));
+        }
+        else {
+            console.log("\n🚦 AI-First Quality Gates\n");
+            for (const gate of result.gates) {
+                const icon = gate.status === "pass" ? "✔" : gate.status === "warn" ? "⚠" : "✖";
+                console.log(`${icon} ${gate.id}: ${gate.message}`);
+            }
+            console.log(`\nSummary: ${result.summary.pass} passed, ${result.summary.warn} warnings, ${result.summary.fail} failed`);
+            console.log(`Status: ${result.status.toUpperCase()}`);
+        }
+        process.exit(result.status === "fail" ? 1 : 0);
     }
     runDoctor(rootDir, fixMode).then(r => process.exit(r.success ? 0 : 1));
 }

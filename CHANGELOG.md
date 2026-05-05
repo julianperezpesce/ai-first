@@ -4,6 +4,41 @@ All notable changes to `ai-first` will be documented in this file.
 
 ---
 
+## [Unreleased]
+
+### Added
+- Context trust hardening with `context_manifest.json`, `agent_brief.md`, Context Truth Score, `af doctor context`, and `af verify ai-context`.
+- Evidence and confidence metadata for tech stack, entrypoints, configuration analysis, source-to-test mapping, security findings, performance findings, and dead-code findings.
+- MCP trust tools: `get_project_brief`, `is_context_fresh`, `run_doctor`, and `verify_ai_context`.
+- Shared core services for context brief, context doctor checks, and git change analysis.
+- Shared context generation service used by both CLI `af init` and MCP `generate_context`.
+- Task-specific context v2 with classified task kind, relevant files, tests, commands, risks, contracts, confidence, and evidence.
+- MCP `get_context_for_task` for agent-oriented task planning.
+- AI Agent Playbook documenting when agents should verify, regenerate, use task context, and trust generated outputs.
+- Quality gates for CI and agents via `af doctor --ci` and MCP `get_quality_gates`.
+- MCP compatibility profiles for OpenCode, Codex, Claude Code, Cursor, and generic stdio clients via `af install --platform ...`.
+- MCP setup diagnostics via `af mcp doctor` and MCP `get_mcp_compatibility`.
+- MCP Streamable HTTP transport via `af mcp --transport http` with `/mcp` and `/health` endpoints.
+- HTTP MCP hardening with `AI_FIRST_MCP_TOKEN`, `--token`, bearer authorization, unsafe bind protection, and HTTP safety doctor checks.
+
+### Changed
+- MCP `analyze_changes` now uses safe git argument arrays instead of interpolated shell commands.
+- CLI and MCP now share context generation, freshness, and verification services.
+- `af context --task` now returns structured task guidance instead of only heuristic file lists.
+- `af doctor --ci --json` returns structured quality gate results for automation.
+- `af init --install-mcp` keeps writing the legacy OpenCode config, while new `af install --platform opencode` writes the current OpenCode config plus legacy compatibility.
+- MCP server tool registration is now created through a shared server factory used by both stdio and HTTP transports.
+- `af mcp --transport http --host 0.0.0.0` now refuses to start without a token unless `--allow-unsafe` is explicitly provided.
+
+### Fixed
+- Reduced false positives in generated security, performance, dead-code, architecture, setup, and tech stack outputs.
+- Isolated shared Express fixture init tests to avoid parallel test races.
+
+### Testing
+- Full suite baseline before this compatibility slice: 1365 passing. Latest targeted MCP/core validation: 19 passing.
+
+---
+
 ## [1.5.0] - 2026-05-04
 
 ### 🧠 Semantic Search & Code Understanding

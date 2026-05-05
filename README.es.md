@@ -21,7 +21,39 @@
 
 ---
 
-## 🚀 Novedades en v1.5.0
+## 🚀 Novedades en v1.5.1
+
+**Contexto IA Confiable** - Contexto fresco, verificable y respaldado por evidencia para agentes y CI
+
+- ✅ `af verify ai-context`: Context Truth Score con checks pass/warn/fail
+- ✅ `af doctor context`: Verifica si `ai-context/` está fresco
+- ✅ `ai-context/context_manifest.json`: generatedAt, versión, estado git y hashes de archivos
+- ✅ `ai-context/agent_brief.md`: brief operativo corto para agentes de código
+- ✅ Metadata de evidencia/confianza en tech stack, entrypoints, config, test mapping, seguridad, performance y dead-code
+- ✅ Tools MCP para agentes: `get_project_brief`, `is_context_fresh`, `run_doctor`, `verify_ai_context`
+- ✅ Contexto por tarea v2: archivos relevantes, tests, comandos, riesgos, contratos, confianza y evidencia
+- ✅ Quality gates para CI/agentes con `af doctor --ci` y MCP `get_quality_gates`
+- ✅ Perfiles de compatibilidad MCP para OpenCode, Codex, Claude Code, Cursor y clientes stdio genéricos
+- ✅ Transporte MCP Streamable HTTP para agentes que se conectan por URL
+- ✅ Hardening HTTP MCP con bearer token y protección contra binds inseguros
+
+**Ejemplos**:
+```bash
+af doctor context
+af verify ai-context --json
+af context --task "add CLI command" --format markdown
+af doctor --ci --json
+af doctor --ci --output /tmp/ai-context
+af install --platform opencode
+af mcp doctor --json
+af mcp --transport http --port 3847
+AI_FIRST_MCP_TOKEN=secret af mcp --transport http --host 0.0.0.0 --port 3847
+af init && af verify ai-context
+```
+
+**Para agentes IA:** usa el [AI Agent Playbook](./docs/guide/ai-agent-playbook.md) para decidir cuándo verificar contexto, cuándo regenerarlo y qué tool MCP/CLI usar para cada tarea.
+
+**Anterior: v1.5.0**
 
 **Búsqueda Semántica & Comprensión de Código** - Inspirado en Graphify, ChromaDB y FAISS
 
@@ -131,9 +163,13 @@ af chat
 | `af update` | Actualiza incrementally el contexto cuando archivos cambian |
 | `af watch` | Observa cambios y actualiza el índice automáticamente |
 | `af context` | Extrae contexto alrededor de un símbolo o función específica |
+| `af context --task <task>` | Genera contexto específico por tarea para flujos con agentes |
 | `af explore` | Explora dependencias de módulos interactivamente |
 | `af map` | Genera mapa del repositorio con todas las relaciones |
 | `af doctor` | Verifica salud del repositorio y preparación para IA |
+| `af doctor --ci` | Ejecuta quality gates para CI y agentes IA |
+| `af doctor context` | Verifica si el contexto generado está fresco |
+| `af verify ai-context` | Audita el contexto generado con Context Truth Score |
 | `af query` | Consulta el índice (símbolos, imports, exports, stats) |
 | `af adapters` | Lista adaptadores de lenguajes/frameworks soportados |
 | `af git` | Muestra actividad reciente de git y archivos cambiados |
@@ -355,6 +391,8 @@ ai-context/
 ├── architecture.md    # Patrón de arquitectura
 ├── tech_stack.md      # Lenguajes y frameworks
 ├── entrypoints.md     # Puntos de entrada
+├── agent_brief.md     # Brief corto para agentes IA
+├── context_manifest.json # Metadata de frescura, git y hashes
 ├── conventions.md     # Convenciones de código
 ├── index.db           # Índice SQLite (generado por `af index`)
 ├── graph/             # Grafos de dependencias (generado por `af map`)
@@ -390,12 +428,37 @@ af init
 # Generar índice SQLite
 af index
 
+# Verificar frescura y confianza del contexto
+af doctor context
+af verify ai-context
+af doctor --ci --json
+
+# Contexto específico por tarea
+af context --task "add CLI command" --format markdown
+
 # Directorio de salida personalizado
 af init --output ./docs/ai
 
 # Directorio raíz personalizado
 af init --root ./my-project
 ```
+
+---
+
+## 🩺 Comando Doctor
+
+Verifica salud del repositorio y preparación para IA:
+
+```bash
+af doctor
+af doctor context
+af doctor context --strict
+af verify ai-context --json
+```
+
+`af verify ai-context` devuelve un Context Truth Score de 0 a 100 y termina con código distinto de cero cuando el contexto está stale, incompleto o inconsistente.
+
+`af doctor --ci` evalúa quality gates como bin válido en package.json, scripts build/test, tsconfig, cobertura de CI, seguridad de shell en MCP, docs build y confianza del contexto. Usa `--output` cuando CI genera contexto fuera del directorio `ai-context/` por defecto.
 
 ---
 

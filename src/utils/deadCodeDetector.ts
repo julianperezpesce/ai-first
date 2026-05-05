@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { confidence, createEvidence, type FindingMetadata } from "./findingMetadata.js";
 
 export interface DeadCode {
   unusedFunctions: UnusedItem[];
@@ -8,7 +9,7 @@ export interface DeadCode {
   summary: string;
 }
 
-export interface UnusedItem {
+export interface UnusedItem extends FindingMetadata {
   name: string;
   file: string;
   line: number;
@@ -51,12 +52,12 @@ export function detectDeadCode(rootDir: string): DeadCode {
           exportedSymbols.set(exportConstMatch[1], { file: relativePath, line: i + 1, type: "function" });
         }
 
-        const defFuncMatch = line.match(/def\s+(\w+)\s*\(/);
+        const defFuncMatch = line.match(/^\s*def\s+(\w+)\s*\(/);
         if (defFuncMatch && !defFuncMatch[1].startsWith("_")) {
           exportedSymbols.set(defFuncMatch[1], { file: relativePath, line: i + 1, type: "function" });
         }
 
-        const classMatch = line.match(/class\s+(\w+)/);
+        const classMatch = line.match(/^\s*(?:export\s+)?class\s+(\w+)/);
         if (classMatch) {
           exportedSymbols.set(classMatch[1], { file: relativePath, line: i + 1, type: "class" });
         }
@@ -118,6 +119,9 @@ export function detectDeadCode(rootDir: string): DeadCode {
         file: info.file,
         line: info.line,
         type: info.type as "function" | "class",
+        confidence: confidence(0.52),
+        evidence: createEvidence(info.file, info.line, `${symbol} exported but not referenced by scanned imports/usages`),
+        whyFlagged: "The symbol is exported or public-looking, but no reference was found in scanned source and test files. Dynamic usage may still exist.",
       };
 
       if (info.type === "function") {
@@ -163,6 +167,9 @@ export function detectDeadCode(rootDir: string): DeadCode {
         file: relativePath,
         line: 0,
         type: "file",
+        confidence: confidence(0.46),
+        evidence: [relativePath],
+        whyFlagged: "No textual import/reference to this file basename or path was found in scanned source files. Entry points, dynamic imports, or tooling may still use it.",
       });
     }
   }
@@ -203,7 +210,7 @@ function findSourceFiles(rootDir: string, maxFiles: number): string[] {
         const fullPath = path.join(dir, entry.name);
         if (entry.isDirectory() && !excludeDirs.includes(entry.name)) {
           walk(fullPath);
-        } else if (entry.isFile() && extensions.some(ext => entry.name.endsWith(ext))) {
+    } else if (entry.isFile() && !entry.name.endsWith(".d.ts") && extensions.some(ext => entry.name.endsWith(ext))) {
           files.push(fullPath);
         }
       }

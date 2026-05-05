@@ -27,6 +27,18 @@ function createTempProjectDir(files: Record<string, string>): string {
   return tempDir;
 }
 
+function createExpressFixtureCopy(): string {
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "cli-init-express-"));
+  fs.cpSync(EXPRESS_API_PATH, tempDir, {
+    recursive: true,
+    filter: (source) => {
+      const relativePath = path.relative(EXPRESS_API_PATH, source);
+      return !relativePath.startsWith("ai-context") && !relativePath.startsWith(".opencode");
+    },
+  });
+  return tempDir;
+}
+
 /**
  * Run the CLI init command
  */
@@ -104,21 +116,21 @@ describe("CLI Init Command", () => {
 
   describe("Default Options", () => {
     it("should run init command successfully on express-api project", async () => {
-      const result = await runInitCommand([], EXPRESS_API_PATH);
+      const expressCopy = createExpressFixtureCopy();
+      tempDirs.push(expressCopy);
+
+      const result = await runInitCommand([], expressCopy);
 
       expect(result.exitCode).toBe(0);
       expect(result.stdout).toContain("Created");
     });
 
     it("should create ai-context directory with default options", async () => {
-      const aiContextDir = path.join(EXPRESS_API_PATH, "ai-context");
+      const expressCopy = createExpressFixtureCopy();
+      tempDirs.push(expressCopy);
+      const aiContextDir = path.join(expressCopy, "ai-context");
 
-      // Clean up if exists
-      if (fs.existsSync(aiContextDir)) {
-        fs.rmSync(aiContextDir, { recursive: true, force: true });
-      }
-
-      const result = await runInitCommand([], EXPRESS_API_PATH);
+      const result = await runInitCommand([], expressCopy);
 
       expect(result.exitCode).toBe(0);
       expect(fs.existsSync(aiContextDir)).toBe(true);

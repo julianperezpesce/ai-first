@@ -175,6 +175,17 @@ describe("CLI Commands Batch 1 - watch, context, summarize, query", () => {
       });
     });
 
+    describe("Task-Specific Context", () => {
+      it("should generate enriched task context as JSON", async () => {
+        const result = await runCLICommand("context", ["--task", "add CLI command", "--format", "json"], PROJECT_ROOT);
+
+        expect(result.exitCode).toBe(0);
+        expect(result.stdout).toContain('"kind": "cli-command"');
+        expect(result.stdout).toContain('"confidence"');
+        expect(result.stdout).toContain('"contracts"');
+      });
+    });
+
     describe("Generate AI Context (without symbol)", () => {
       it("should generate AI context without symbol argument", async () => {
         const testProject = createTempProjectDir({

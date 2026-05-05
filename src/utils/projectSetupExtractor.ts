@@ -131,6 +131,20 @@ export function extractProjectSetup(rootDir: string): ProjectSetup {
 function detectEnvVars(rootDir: string): EnvVar[] {
   const vars: EnvVar[] = [];
   const seen = new Set<string>();
+  const ambientVars = new Set([
+    "HOME",
+    "PATH",
+    "PWD",
+    "OLDPWD",
+    "SHELL",
+    "USER",
+    "USERNAME",
+    "TMP",
+    "TEMP",
+    "TMPDIR",
+    "CI",
+    "NODE_ENV",
+  ]);
 
   const envExampleFiles = [".env.example", ".env.template", ".env.local.example", ".env.sample"];
 
@@ -170,15 +184,14 @@ function detectEnvVars(rootDir: string): EnvVar[] {
     for (const file of sourceFiles) {
       try {
         const content = fs.readFileSync(file, "utf-8");
-        const envRefs = content.match(/process\.env\.([A-Z_][A-Z0-9_]*)/g) || [];
-        const osEnvs = content.match(/os\.environ\.get\(["']([A-Z_][A-Z0-9_]*)/g) || [];
+        const envRefs = [...content.matchAll(/process\.env\.([A-Z_][A-Z0-9_]*)/g)].map(match => match[1]);
+        const osEnvs = [...content.matchAll(/os\.environ\.get\(["']([A-Z_][A-Z0-9_]*)/g)].map(match => match[1]);
 
-        for (const ref of [...envRefs, ...osEnvs]) {
-          const match = ref.match(/([A-Z_][A-Z0-9_]*)/);
-          if (match && !seen.has(match[1])) {
-            seen.add(match[1]);
+        for (const name of [...envRefs, ...osEnvs]) {
+          if (!ambientVars.has(name) && !seen.has(name)) {
+            seen.add(name);
             vars.push({
-              name: match[1],
+              name,
               required: true,
               defaultValue: null,
               description: null,

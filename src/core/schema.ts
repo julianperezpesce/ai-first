@@ -79,16 +79,22 @@ export function generateProject(rootDir: string, aiDir: string, options: {
   if (fs.existsSync(techStackPath)) {
     try {
       const content = fs.readFileSync(techStackPath, "utf-8");
-      const langMatch = content.match(/Languages?:\s*([^\n]+)/i);
-      if (langMatch) languages = langMatch[1].split(",").map(s => s.trim()).filter(Boolean);
-      const fwMatch = content.match(/Frameworks?:\s*([^\n]+)/i);
-      if (fwMatch) frameworks = fwMatch[1].split(",").map(s => s.trim()).filter(Boolean);
+      const langMatch = content.match(/^\*\*Languages\*\*:\s*([^\n]+)/im) || content.match(/^Languages?:\s*([^\n]+)/im);
+      if (langMatch) languages = parseMarkdownListValue(langMatch[1]);
+      const fwMatch = content.match(/^\*\*Frameworks\*\*:\s*([^\n]+)/im) || content.match(/^Frameworks?:\s*([^\n]+)/im);
+      if (fwMatch) frameworks = parseMarkdownListValue(fwMatch[1]);
     } catch { /* ignore */ }
   }
   
   const project: ProjectInfo = { name, rootDir, features, flows, languages, frameworks, generatedAt: new Date().toISOString() };
   writeFile(path.join(aiDir, "project.json"), JSON.stringify(project, null, 2));
   return project;
+}
+
+function parseMarkdownListValue(value: string): string[] {
+  const normalized = value.replace(/\*\*/g, "").trim();
+  if (!normalized || /^(none detected|unknown|n\/a)$/i.test(normalized)) return [];
+  return normalized.split(",").map(s => s.trim()).filter(Boolean);
 }
 
 export function generateTools(aiDir: string): ToolsInfo {

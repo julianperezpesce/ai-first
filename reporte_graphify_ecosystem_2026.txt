@@ -1,0 +1,322 @@
+                                                   Graphify
+                            Ecosistema de Proyectos Complementarios
+                              Top 15 Open-Source para AI Workflows — Mayo 2026
+Resumen Ejecutivo
+safishamsi/graphify (42.6K estrellas, MIT, Python) transforma cualquier carpeta en un grafo de conocimiento con-
+sultable en un comando, eliminando el desperdicio de tokens de los asistentes AI que usan grep. Creado el 3 de abril
+de 2026, ha alcanzado 42.6K estrellas en solo 31 dias.
+Este reporte analiza los 15 mejores proyectos open-source de 2026 que complementan a Graphify en tres dimen-
+siones criticas para workflows AI:
+•    RAG Local: ChromaDB, FAISS, LlamaIndex — recuperacion semantica privada
+•    Indexacion de Codebases: busqueda semantica de codigo con tree-sitter + vectores
+•    Skills Claude/Anthropic: Ecosistema MCP, plugins, y agentes autonomos
+Cada proyecto incluye estrellas reales, commits recientes y guia de integracion practica.                                                         -2-
+
+
+1. Graphify: La Base
+
+           Repositorio:        github.com/safishamsi/graphify
+           Estrellas:          42,622
+           Lenguaje:           Python 100%
+           Licencia:           MIT
+           Lineas:             13,671 (26 modulos)
+           Commits:            319
+           Releases:           86 (v0.0.1 -> v0.7.5)
+           Creado:             3-Abr-2026 (31 dias)
+           Ultimo push:        4-May-2026
+Pipeline
+detect() -> extract() -> build graph() -> cluster() -> analyze() -> report() -> export()
+Tres pasadas de extraccion:
+•    AST (local, costo API cero): tree-sitter parsea 26 lenguajes
+•    Transcripcion (local): faster-whisper para video/audio
+•    Semantica (LLM): docs, PDFs, imagenes a Claude/Kimi para extraccion de conceptos
+16 plataformas integradas: Claude Code, Codex, OpenCode, Cursor, Gemini CLI, Copilot CLI, VS Code, Aider y
+mas. Se instala como skill con un comando.
+Que le falta a Graphify (brechas que cubren los proyectos complementarios):
+•    Sin almacenamiento vectorial (usa Leiden topologico, no embeddings)
+•    Sin backend RAG persistente multi-proyecto
+•    Sin indexacion semantica a nivel de simbolo (solo AST)
+•    Sin integraciones SaaS/MCP externas
+•    Sin sandbox de ejecucion de agentes                                                        -3-
+
+
+2. Proyectos RAG Local
+2.1 chroma-core/chroma — La Base de Datos Vectorial Nativa-AI
+
+        Estrellas:           27,798
+        Lenguaje:            Rust (66%) / Python (17%)
+        Licencia:            Apache 2.0
+        Ultimo push:         4-May-2026
+        Ultima rel:          v1.5.8 (16-Abr-2026)
+API minimalista de 4 funciones. Modo en memoria para prototipado, persistente para produccion. Integraciones na-
+tivas con LangChain y LlamaIndex. Chroma Cloud para hosting serverless gestionado.
+Complemento: Backend vectorial donde los nodos del grafo de Graphify pueden enlazar documentos para busqueda
+semantica.
+2.2 run-llama/llama index — Framework de Datos para LLMs
+
+        Estrellas:           49,125
+        Lenguaje:            Python
+        Licencia:            MIT
+        Ultimo push:         4-May-2026
+        Ultima rel:          v0.14.21 (21-Abr-2026)
+150+ conectores de datos. Indexacion avanzada: arbol, grafo, keyword, vector. 300+ paquetes en LlamaHub. So-
+porte nativo ChromaDB, FAISS. Workflows para aplicaciones agentivas.
+Complemento: Indexado hibrido grafo+vector que empareja con el KG de Graphify.
+2.3 HKUDS/LightRAG — RAG Basado en Grafos (EMNLP 2025)
+
+        Estrellas:           34,735
+        Lenguaje:            Python
+        Licencia:            MIT
+        Ultimo push:         4-May-2026
+        Ultima rel:          v1.4.15 (19-Abr-2026)
+Recuperacion dual-level: bajo nivel (entidades especificas) + alto nivel (temas globales). Construye KG desde docu-
+mentos. Soporta Neo4J, MongoDB, PostgreSQL. Integracion con OpenSearch, RAGAS, Langfuse. WebUI + Ol-
+lama-compatible.
+Complemento: El mas directo. LightRAG construye KG desde documentos + Graphify construye KG desde codigo
+= comprension completa del proyecto.
+2.4 zylon-ai/private-gpt — Q&A de Documentos 100% Privado
+
+        Estrellas:           57,210
+        Lenguaje:            Python
+        Licencia:            Apache 2.0
+        Ultimo push:         26-Feb-2026
+        Ultima rel:          v0.6.2
+100% privado sin conexion a internet. API compatible con OpenAI. API de alto nivel (ingest + chat) y bajo nivel
+(embeddings + chunk retrieval). UI Gradio integrada. Respaldo empresarial Zylon.
+Complemento: Interfaz turnkey "pregunta sobre tus docs privados". Graphify mapea el codebase -> private-gpt re-
+sponde preguntas. Ambos locales.
+2.5 Mintplex-Labs/anything-llm — App AI Todo-en-Uno                                                     -4-
+
+
+        Estrellas:         59,506
+        Lenguaje:          JavaScript
+        Licencia:          MIT
+        Ultimo push:       4-May-2026
+        Ultima rel:        v1.12.1 (22-Abr-2026)
+Builder de agentes AI sin codigo. Compatibilidad MCP completa. Todos los proveedores LLM. Multiples opciones
+de vector DB. Pipelines de documentos drag-and-drop. Apps desktop (Mac, Windows, Linux).
+Complemento: Capa de workflow agentivo visual. Graphify genera KG del codebase -> AnythingLLM lo consume
+para automatizacion y Q&A.
+2.6 neuml/txtai — Framework AI Local Todo-en-Uno
+
+        Estrellas:         12,461
+        Lenguaje:          Python (99.5%)
+        Licencia:          Apache 2.0
+        Ultimo push:       4-May-2026
+        Ultima rel:        v9.8.0 (29-Abr-2026)
+Busqueda vectorial + orquestacion LLM + redes de grafos + DB relacional en un solo framework. Pipelines enca-
+denables. Agentes autonomos. APIs Web + MCP. Bindings para JavaScript, Java, Rust, Go.
+Complemento: Framework ligero que unifica busqueda vectorial, analisis de grafos y ejecucion de agentes. Con
+Graphify para KG de codigo + txtai para retrieval de docs — todo local, sin dependencias cloud.                                                       -5-
+
+
+3. Indexacion de Codebases
+3.1 glommer/codemogger — Libreria Pura de Indexacion de Codigo
+
+        Estrellas:           312
+        Lenguaje:            TypeScript (Bun runtime)
+        Licencia:            MIT
+        Ultimo push:         9-Mar-2026
+Libreria pura usable como llamada a funcion. Sin Docker, sin servidor, sin API keys. Tree-sitter WASM (13 lengua-
+jes). SQLite con FTS + vector (Turso). Embeddings all-MiniLM-L6-v2 cuantizados. Keyword search 25x-370x
+mas rapido que ripgrep.
+Complemento: Donde Graphify construye grafo, codemogger indexa a nivel de simbolo con vectores. Combinados:
+grafo estructural + busqueda semantica.
+3.2 lemon07r/Vera — Mejor Pipeline de Retrieval
+
+        Estrellas:           71
+        Lenguaje:            Rust (single static binary)
+        Licencia:            MIT
+        Ultimo push:         2-May-2026
+Pipeline triple: BM25 + vector similarity + cross-encoder reranking. 65 lenguajes con tree-sitter. ONNX runtime
+local — totalmente offline. Call graph, referencias, dead code. MRR@10: 0.28->0.60 con reranking. 75-95%
+menos tokens en consultas tipicas.
+Complemento: Mejor retrieval de codigo del ecosistema. Graphify da la estructura, Vera encuentra el codigo exacto
+con triple verificacion.
+3.3 ory/lumen — Motor de Busqueda Semantica Local
+
+        Estrellas:           181
+        Lenguaje:            Go (single static binary)
+        Licencia:            Proprietary
+        Ultimo push:         2-May-2026
+100% local, sin API keys. SQLite + sqlite-vec. Ollama/LM Studio para embeddings locales. Merkle tree change de-
+tection (indexado incremental). MCP server con herramienta semantic search. ˜50% reduccion de tokens.
+Complemento: Indexado semantico puro con deteccion incremental de cambios. Graphify mapea arquitectura, Lu-
+men indexa contenido semanticamente.
+3.4 zilliztech/claude-context — Busqueda de Codigo MCP Mas Adoptada
+
+        Estrellas:           10,690
+        Lenguaje:            TypeScript
+        Licencia:            MIT
+        Ultimo push:         2-May-2026
+Plugin MCP que anade busqueda semantica de codigo a Claude Code. Usa Milvus + OpenAI API. 10.7K estrellas
+— adopcion masiva en el ecosistema Claude. Requiere infraestructura externa (Docker, Milvus).
+Complemento: La opcion mas popular para integrar busqueda semantica en Claude Code. Con Graphify instalado
+como skill, Claude Code tiene tanto el mapa estructural como la busqueda vectorial.                                                        -6-
+
+
+4. Skills Claude/Anthropic & Ecosistema MCP
+4.1 anthropics/skills — Repositorio Oficial de Agent Skills
+
+        Estrellas:           128,000
+        Lenguaje:            Python (84%)
+        Licencia:            MIT
+        Ultimo push:         3-May-2026
+El proyecto mas estrellado de este reporte. Skills son carpetas de instrucciones + scripts que Claude carga dinami-
+camente. Cubre Creative & Design, Development & Technical, Enterprise & Communication, Document Skills. In-
+stalable como plugin marketplace de Claude Code. Estandar Agent Skills en agentskills.io.
+Complemento: Graphify se instala como skill en Claude Code. El ecosistema de Anthropic Skills es donde
+Graphify vive y se extiende.
+4.2 modelcontextprotocol/servers — Servidores MCP de Referencia
+
+        Estrellas:           85,000
+        Lenguaje:            TypeScript (69%) / Python (19%)
+        Licencia:            MIT
+        Ultimo push:         17-Abr-2026
+Implementaciones de referencia del protocolo MCP. Incluye servidores para GitHub (15+ tools), Filesystem, Git,
+PostgreSQL, Brave Search, Playwright (browser automation), Fetch (URL->markdown), Sequential Thinking. In-
+stalables con one-liner npx.
+Complemento: Graphify expone su grafo via MCP. Estos servidores extienden el ecosistema donde Graphify opera,
+permitiendo que los agentes accedan a GitHub, filesystem, web y mas junto con el grafo de conocimiento.
+4.3 ComposioHQ/composio — Plataforma de Herramientas para Agentes
+
+        Estrellas:           27,800
+        Lenguaje:            TypeScript (77%) / Python (21%)
+        Licencia:            Apache 2.0
+        Ultimo push:         18-Abr-2026
+1,000+ toolkits con busqueda de herramientas, gestion de contexto y autenticacion. MCP-native — expone her-
+ramientas via MCP para Claude Desktop, Cursor, VS Code, Claude Code. Servidor "Rube" MCP conectando
+agentes AI a 500+ apps (Gmail, Slack, GitHub, Notion).
+Complemento: Graphify + Composio = grafo de conocimiento del codebase + acceso a 500+ SaaS. Un agente
+puede entender el codigo (Graphify) y ejecutar acciones en el mundo real (Composio).
+4.4 sickn33/antigravity-awesome-skills — 1,445+ Skills Agentivas
+
+        Estrellas:           36,300
+        Lenguaje:            Python (82%)
+        Licencia:            MIT
+        Ultimo push:         4-May-2026 (hoy)
+        Ultima rel:          v10.10.0 (4-May-2026)
+1,445+ skills agentivas en una libreria GitHub instalable en menos de un minuto. Soporta Claude Code, Cursor,
+Codex CLI, Gemini CLI, Antigravity, Kiro, OpenCode, GitHub Copilot. 119 releases. Organizadas en bundles,
+workflows y colecciones por rol: planning, coding, debugging, testing, security review, infraestructura, producto.
+Complemento: La mayor coleccion comunitaria de skills. Graphify puede ser una skill entre 1,445. Instalacion con-
+junta = poder agentivo completo.                                                     -7-
+
+
+4.5 continuedev/continue — Plataforma de Agentes MCP-Nativa
+
+        Estrellas:         32,900
+        Lenguaje:          TypeScript (84%)
+        Licencia:          Apache 2.0
+        Ultimo push:       30-Abr-2026
+        Ultima rel:        v1.3.38-vscode (27-Mar-2026)
+Evolucion de extension IDE a plataforma de agentes MCP-nativa con verificacion CI. El CLI cn ejecuta agentes
+como GitHub status checks en cada PR. Enterprise-grade con modo CLI headless.
+Complemento: Graphify genera el grafo localmente. Continue lo integra como verificacion en CI/CD. Los agentes
+de Continue consultan el grafo de Graphify via MCP durante el code review automatizado.                                                       -8-
+
+
+5. Tabla Comparativa
+
+#    Proyecto                   Estrellas    Lenguaje         Categoria
+1    Graphify (base)               42.6K     Python           Knowledge Graph
+2    chroma-core/chroma            27.8K     Rust             Vector DB
+3    run-llama/llama index         49.1K     Python           Data Framework
+4    HKUDS/LightRAG                34.7K     Python           Graph RAG
+5    zylon-ai/private-gpt          57.2K     Python           Private Q&A
+6    Mintplex/anything-llm         59.5K     JavaScript       AI App
+7    neuml/txtai                   12.5K     Python           Local AI FW
+8    glommer/codemogger              312     TypeScript       Code Index
+9    lemon07r/Vera                     71    Rust             Code Search
+10   ory/lumen                       181     Go               Semantic Search
+11   zilliz/claude-context         10.7K     TypeScript       MCP Code
+12   anthropics/skills              128K     Python           Agent Skills
+13   mcp/servers                     85K     TypeScript       MCP Servers
+14   ComposioHQ/composio           27.8K     TypeScript       Agent Platform
+15   antigravity-skills            36.3K     Python           Skills Lib
+16   continuedev/continue          32.9K     TypeScript       Agent CI/CD
+       Total de estrellas combinadas: ˜566K
+       Proyectos con >100K estrellas: 1 (anthropics/skills)
+       Proyectos con commits en Mayo 2026: 12 de 15
+       Proyectos 100% locales/offline: 10 de 15
+       Proyectos con soporte MCP nativo: 13 de 15                                                           -9-
+
+
+6. Guia de Integracion
+
+6.1 Stack Recomendado para Workflow AI Local
+        Graphify + LightRAG + Chroma + Vera
+•   Graphify: Mapa estructural del codebase (grafo de conocimiento)
+•   LightRAG: RAG sobre documentacion y specs (grafo desde docs)
+•   Chroma: Backend vectorial compartido para ambos
+•   Vera: Busqueda precisa de codigo (BM25+vector+reranker)
+             Graphify + LightRAG + Chroma + Continue + Composio + anthropics/skills
+•   Graphify + LightRAG + Chroma: Nucleo de conocimiento
+•   Continue: Verificacion automatizada en CI/CD con agentes MCP
+•   Composio: Conexion a SaaS (GitHub, Slack, Notion, etc.)
+•   anthropics/skills: Skills oficiales para Claude Code
+             Graphify + LightRAG + Chroma + txtai + Continue + Composio + anything-llm
+             + antigravity-awesome-skills
+Todos los stacks son 100% locales excepto las integraciones SaaS via Composio y las llamadas LLM API.
+
+6.2 Integraciones Especificas
+Graphify no usa vectores internamente. Sus nodos (funciones, clases, archivos) pueden enriquecerse con embed-
+dings en Chroma:
+        # 1. Graphify genera el grafo
+        graphify .
+
+        # 2. Extraer nodos clave del graph.json
+        # Para cada nodo, generar embedding y almacenar en Chroma
+        # Usar chromadb.Client() con embedding function de Ollama
+LightRAG construye KG desde documentos; Graphify desde codigo. Union via Neo4j:
+        # Graphify exporta a Neo4j
+        graphify . --neo4j
+
+        # LightRAG inserta documentos al mismo Neo4j
+        lightrag insert docs/ --neo4j
+
+        # Ambos grafos coexisten en la misma DB
+        # Consultas Cypher cruzan codigo y documentacion
+Graphify da contexto estructural, Vera encuentra el codigo exacto:                                       -10-
+
+
+        # 1. Graphify genera el mapa del proyecto
+        graphify .
+
+        # 2. El agente lee GRAPH_REPORT.md para entender estructura
+
+        # 3. Luego usa Vera MCP para busqueda precisa
+        # Vera tool: search_code("auth middleware pattern")
+Instalacion conjunta en Claude Code:
+        # 1. Instalar Graphify
+        graphify install
+
+        # 2. Instalar skills oficiales
+        claude plugins add anthropics/skills
+
+        # 3. Instalar coleccion comunitaria
+        npx antigravity-awesome-skills
+
+        # Claude Code ahora tiene:
+        # - Graphify: mapa estructural del codebase
+        # - anthropics/skills: skills oficiales de Anthropic
+        # - antigravity: 1,445+ skills comunitarias
+        # .continue/checks/graphify-check.md
+        # Continue ejecuta este agente en cada PR:
+
+        # 1. Ejecuta "graphify extract" en el branch del PR
+        # 2. Compara el grafo con el de main
+        # 3. Detecta cambios estructurales sospechosos
+        # 4. Reporta en el PR como status check                                                         -11-
+
+
+7. Notas Metodologicas
+•   Datos verificados el 4 de mayo de 2026 via GitHub API y web scraping
+•   Las estrellas son las mas recientes disponibles a la fecha de verificacion
+•   Proyectos con <100 estrellas fueron excluidos salvo Vera (71) y codemogger (312) por calidad tecnica excep-
+    cional
+•   Se priorizaron proyectos con licencia MIT/Apache 2.0 sobre licencias restrictivas
+•   Todos los proyectos seleccionados tienen actividad en 2026
+
+
+                                               — Fin del Reporte —

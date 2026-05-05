@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeAll } from "vitest";
 import fs from "fs";
 import path from "path";
+import os from "os";
 
 const EXPRESS_API_PATH = path.join(process.cwd(), "fixtures/express-api");
 const DJANGO_APP_PATH = path.join(process.cwd(), "fixtures/django-app");
@@ -58,6 +59,29 @@ describe("Utility Extractors", () => {
       
       expect(mapping).toBeDefined();
       expect(Array.isArray(mapping)).toBe(true);
+    });
+
+    it("should include confidence, reason, and evidence for mapped tests", async () => {
+      const rootDir = fs.mkdtempSync(path.join(os.tmpdir(), "ai-first-test-mapping-"));
+      try {
+        fs.mkdirSync(path.join(rootDir, "src"), { recursive: true });
+        fs.mkdirSync(path.join(rootDir, "tests"), { recursive: true });
+        fs.writeFileSync(path.join(rootDir, "src", "authService.ts"), "export function login() { return true; }\n");
+        fs.writeFileSync(path.join(rootDir, "tests", "authService.test.ts"), "import '../src/authService.js';\n");
+
+        const { mapTestFiles } = await import("../src/utils/testFileMapper.js");
+        const mapping = mapTestFiles(rootDir);
+        const authMapping = mapping.find(item => item.sourceFile === path.join("src", "authService.ts"));
+
+        expect(authMapping).toEqual(expect.objectContaining({
+          testFiles: [path.join("tests", "authService.test.ts")],
+          confidence: 0.92,
+          reason: "test basename matches source basename",
+        }));
+        expect(authMapping?.evidence?.[0]).toContain("authService.ts");
+      } finally {
+        fs.rmSync(rootDir, { recursive: true, force: true });
+      }
     });
   });
 

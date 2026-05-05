@@ -5,6 +5,9 @@ export interface Entrypoint {
     type: "cli" | "api" | "worker" | "server" | "client" | "library" | "config" | "test" | "build" | "lint" | "formatter" | "other";
     description: string;
     command?: string;
+    confidence?: number;
+    evidence?: string[];
+    reason?: string;
 }
 export declare function discoverEntrypoints(files: FileInfo[], rootDir: string): Entrypoint[];
 export declare function generateEntrypointsFile(entrypoints: Entrypoint[]): string;

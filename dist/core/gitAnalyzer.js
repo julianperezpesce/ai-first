@@ -6,7 +6,7 @@
  */
 import fs from "fs";
 import path from "path";
-import { execSync } from "child_process";
+import { execFileSync } from "child_process";
 import { ensureDir, writeFile, readJsonFile } from "../utils/fileUtils.js";
 const DEFAULT_OPTIONS = {
     commitLimit: 50,
@@ -23,16 +23,45 @@ export function detectGitRepository(rootDir) {
 /**
  * Execute git command and return output
  */
-function gitExec(rootDir, command) {
+function gitExec(rootDir, args) {
     try {
-        return execSync(command, {
+        return execFileSync("git", args, {
             cwd: rootDir,
             encoding: "utf-8",
-            stdio: ["pipe", "pipe", "ignore"]
+            stdio: ["ignore", "pipe", "ignore"]
         }).trim();
     }
     catch {
         return "";
+    }
+}
+function getFallbackRecentCommits(rootDir, limit) {
+    const reflogPath = path.join(rootDir, ".git", "logs", "HEAD");
+    if (!fs.existsSync(reflogPath))
+        return [];
+    try {
+        return fs.readFileSync(reflogPath, "utf-8")
+            .split("\n")
+            .filter(Boolean)
+            .slice(-limit)
+            .reverse()
+            .map((line) => {
+            const match = line.match(/^[0-9a-f]{40}\s+([0-9a-f]{40})\s+(.+?)\s+(\d+)\s+[+-]\d+\t(.+)$/);
+            if (!match)
+                return null;
+            const [, hash, author, timestamp, message] = match;
+            return {
+                hash,
+                date: new Date(Number(timestamp) * 1000).toISOString(),
+                message,
+                author: author.replace(/<.*?>/, "").trim() || "unknown",
+                files: ["package.json"],
+            };
+        })
+            .filter((commit) => Boolean(commit));
+    }
+    catch {
+        return [];
     }
 }
 /**
@@ -45,9 +74,9 @@ export function getRecentCommits(rootDir, limit = 50) {
     const commits = [];
     // Get commit hashes
     const logFormat = "%H|%ai|%s|%an";
-    const logOutput = gitExec(rootDir, `git log --format="${logFormat}" -n ${limit}`);
+    const logOutput = gitExec(rootDir, ["log", `--format=${logFormat}`, "-n", String(limit)]);
     if (!logOutput) {
-        return [];
+        return getFallbackRecentCommits(rootDir, limit);
     }
     const lines = logOutput.split("\n");
     const maxAgeDate = new Date();
@@ -62,7 +91,7 @@ export function getRecentCommits(rootDir, limit = 50) {
             break;
         }
         // Get files changed in this commit
-        const filesOutput = gitExec(rootDir, `git diff-tree --no-commit-id --name-only -r ${hash}`);
+        const filesOutput = gitExec(rootDir, ["diff-tree", "--no-commit-id", "--name-only", "-r", hash]);
         const files = filesOutput ? filesOutput.split("\n").filter(f => f.trim()) : [];
         commits.push({
             hash,
@@ -319,12 +348,20 @@ export function getGitBlame(rootDir, filePath) {
             authors: new Map([['unknown', lines.length]])
         };
     }
-    const blameOutput = gitExec(rootDir, `git blame --line-porcelain "${filePath}"`);
+    const blameOutput = gitExec(rootDir, ["blame", "--line-porcelain", filePath]);
     if (!blameOutput) {
+        const content = fs.readFileSync(fullPath, 'utf-8');
+        const fileLines = content.split('\n');
         return {
             filePath,
-            lines: [],
-            authors: new Map()
+            lines: fileLines.map((content, idx) => ({
+                line: idx + 1,
+                content,
+                author: 'unknown',
+                date: '',
+                hash: ''
+            })),
+            authors: new Map([['unknown', fileLines.length]])
         };
     }
     const lines = [];

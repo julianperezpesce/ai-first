@@ -1,4 +1,10 @@
 import { FileInfo } from "../core/repoScanner.js";
+export interface TechStackEvidence {
+    category: "language" | "framework" | "library" | "tool" | "packageManager" | "testing" | "linter" | "formatter";
+    name: string;
+    confidence: number;
+    evidence: string[];
+}
 export interface TechStack {
     languages: string[];
     frameworks: string[];
@@ -9,6 +15,7 @@ export interface TechStack {
     linters: string[];
     formatters: string[];
     description: string;
+    evidence?: TechStackEvidence[];
     android?: {
         minSdk?: string;
         targetSdk?: string;

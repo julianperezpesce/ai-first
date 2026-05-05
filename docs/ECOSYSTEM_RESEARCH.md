@@ -1,115 +1,95 @@
-# Investigación de Ecosistema - Mayo 2026
+# Ecosistema Graphify - Reporte Completo
 
-> Lecciones de proyectos y sus issues para mejorar ai-first-cli
-
----
-
-## 🔍 Nuevos Proyectos Descubiertos
-
-| Proyecto | ⭐ | Lección para ai-first |
-|----------|----|----------------------|
-| **GitNexus** | 34K | Zero-server, browser-based. Issue: 200s para grafos grandes → **necesitamos paginación** |
-| **ast-grep** | 13K | AST structural search como grep → **`af ast-search`** |
-| **code-review-graph** | 9K | 6.8× menos tokens. Issue: auto-collapse oculta edges → **configurable threshold** |
-| **Understand-Anything** | 8K | Knowledge graph interactivo. Issue: dashboard freezes → **Web Workers** |
-| **cymbal** | ~300 | Tree-sitter SQLite, 9-33ms queries, 81-99% token savings → **inspiración directa** |
-| **srclight** | ~100 | 42 MCP tools, GPU embeddings, hybrid search → **expandir MCP** |
-| **code-memory** | 28 | 3 search modes (code/docs/history), local-first → **separar búsquedas** |
-| **tree-sitter-analyzer** | ~50 | 17 langs, TOON format (56% token reduction) → **formato eficiente** |
-| **grafema** | 25 | 30+ MCP tools, columnar graph DB → **grafo más eficiente** |
-| **elastic/semantic-search** | ~200 | Production-grade, incremental updates → **indexado incremental** |
+> Basado en el reporte "Graphify Ecosystem 2026" + investigación propia
+> 566K estrellas combinadas en 16 proyectos
 
 ---
 
-## 🐛 Issues que revelan problemas comunes
+## 🔑 Hallazgos Clave del Reporte
 
-### Problema 1: Grafos grandes rompen todo
-- **GitNexus #705**: 70MB response, 200s timeout para 58K símbolos
-- **Understand-Anything #14**: 2,747 nodos → browser freezes
-- **code-review-graph #132**: >300 nodos → auto-collapse rompe edges
+### 1. Proyectos que no había descubierto
 
-**Solución para ai-first**: Implementar paginación/lazy loading en `af graph --html`.
-Threshold configurable: mostrar resumen si >500 nodos, expandir on-demand.
+| Proyecto | ⭐ | Dato impactante |
+|----------|----|-----------------|
+| **anthropics/skills** | 128K | Skills oficiales de Anthropic - EL estándar |
+| **mcp/servers** | 85K | Implementaciones MCP de referencia |
+| **anything-llm** | 59.5K | Builder de agentes sin código |
+| **private-gpt** | 57.2K | Q&A 100% privado, API OpenAI-compatible |
+| **antigravity-skills** | 36.3K | **1,445+ skills** comunitarias |
+| **LightRAG** | 34.7K | Graph-RAG, EMNLP 2025, dual-level retrieval |
+| **continue** | 32.9K | CI/CD con agentes MCP |
+| **Composio** | 27.8K | 1,000+ toolkits, 500+ SaaS |
+| **txtai** | 12.5K | Framework local todo-en-uno |
+| **claude-context (zilliz)** | 10.7K | MCP code search más adoptado |
+| **codemogger** | 312 | **25x-370x más rápido que ripgrep** |
+| **Vera** | 71 | **MRR@10: 0.28→0.60** con reranking |
 
-### Problema 2: Tokens excesivos en AI agents
-- **Understand-Anything #14**: 40% del quota en UN solo `/understand`
-- **code-review-graph**: 6.8× token savings con grafo local
+### 2. Lo que Graphify NO hace (brechas)
 
-**Solución para ai-first**: 
-- `af ask` ya devuelve snippets en vez de archivos completos
-- Agregar TOON format (tree-sitter-analyzer: 56% token reduction)
-- Implementar `af outline <file>` → estructura sin contenido
+| Brecha | Quién la cubre |
+|--------|---------------|
+| Sin almacenamiento vectorial | ChromaDB, FAISS |
+| Sin RAG persistente multi-proyecto | LightRAG, txtai |
+| Sin indexación semántica a nivel símbolo | codemogger, Vera |
+| Sin integraciones SaaS/MCP externas | Composio, continue |
+| Sin sandbox de agentes | anything-llm |
 
-### Problema 3: Multi-repo manejo
-- **GitNexus #635**: "Code not available" con múltiples repos
+### 3. Stacks recomendados
 
-**Solución para ai-first**: Cada repo su propio `ai-context/`, 
-soporte multi-repo con `af workspace`
+**Stack local**: Graphify + LightRAG + Chroma + Vera
+**Stack CI/CD**: Graphify + LightRAG + Chroma + Continue + Composio + anthropics/skills
+**Stack completo**: Todos los anteriores + anything-llm + antigravity-skills
 
-### Problema 4: Embeddings rotos en UI
-- **GitNexus #609**: Web UI reloads por embedding endpoint failure
+### 4. Stack de skills para Claude Code
 
-**Solución para ai-first**: Mejorar `af serve` con health checks y graceful degradation.
-
----
-
-## 💡 Mejoras concretas para ai-first
-
-### 1. `af outline <file>` (de tree-sitter-analyzer)
 ```bash
-af outline src/commands/ai-first.ts
-# Devuelve estructura jerárquica sin el contenido:
-# - runAIFirst() [async function, line 76]
-#   - init flow [steps 1-15]
-# - generateUnifiedContext() [function, line 419]
-# 56% menos tokens que enviar el archivo completo
+# 1. Graphify (mapa estructural)
+graphify install
+
+# 2. Skills oficiales
+claude plugins add anthropics/skills
+
+# 3. Colección comunitaria (1,445+ skills)
+npx antigravity-awesome-skills
 ```
 
-### 2. `af workspace` (de srclight)
-```bash
-af workspace add ./frontend ./backend ./shared
-af workspace search "authentication"
-af workspace index --all
-```
+### 5. Continue + Graphify en CI/CD
 
-### 3. `af ast-search` (de ast-grep)
-```bash
-af ast-search "function $NAME($$$) { $$$ }" --lang typescript
-# Búsqueda estructural en vez de textual
-```
-
-### 4. Paginación en `af graph --html` (de GitNexus #705)
-- Si >500 nodos: mostrar summary + search
-- Expandir por comunidad/directorio on click
-- Web Worker para layout computation
-
-### 5. `af tldr <file>` (de grafema)
-```bash
-af tldr src/commands/ai-first.ts
-# "CLI entry point. 1722 lines. 20+ commands handled via if/else chain.
-#  Main flows: init → scan → analyze → generate. Key functions: runAIFirst(), generateUnifiedContext()"
-```
-
-### 6. Token budget tracking (de code-review-graph)
-```bash
-af init --budget 5000
-# Limita el contexto generado a ~5000 tokens
-# Prioriza secciones más útiles primero
+```yaml
+# .continue/checks/graphify-check.md
+# Continue ejecuta en cada PR:
+# 1. graphify extract en el branch del PR
+# 2. Compara el grafo con main
+# 3. Detecta cambios estructurales sospechosos
+# 4. Reporta como status check
 ```
 
 ---
 
-## 📊 Matriz de priorización
+## 📊 Lecciones para ai-first
 
-| # | Mejora | Inspiración | Esfuerzo | Impacto |
-|---|--------|------------|----------|---------|
-| 1 | `af outline <file>` | tree-sitter-analyzer | Bajo | Alto (56% token savings) |
-| 2 | Paginación en graph HTML | GitNexus #705 | Medio | Alto |
-| 3 | `af workspace` | srclight | Medio | Alto |
-| 4 | `af ast-search` | ast-grep | Alto | Medio |
-| 5 | `af tldr <file>` | grafema | Bajo | Alto |
-| 6 | `--budget` flag | code-review-graph | Bajo | Medio |
+### Lo que podemos adoptar directamente
+
+| Feature | De quién | Cómo |
+|---------|----------|------|
+| **Pipeline triple retrieval** | Vera | BM25 + vector + reranker → `af search` |
+| **25x-370x keyword speed** | codemogger | SQLite FTS + tree-sitter → `af index` |
+| **Skills marketplace** | anthropics/antigravity | `af install --platform` |
+| **Graph RAG dual-level** | LightRAG | Entidades + temas globales |
+| **Agent CI/CD checks** | continue | `.ai-first/checks/` |
+| **100% privado Q&A** | private-gpt | `af chat` local |
+
+### Lo que podemos hacer único
+
+Ninguna herramienta combina:
+1. **Contexto estructurado** (ai-first)
+2. **Grafo de conocimiento** (como Graphify)
+3. **Búsqueda semántica** (como ChromaDB/Vera)
+4. **Skills marketplace** (como antigravity)
+5. **CI/CD checks** (como Continue)
+
+**ai-first puede ser el "one-stop shop" para AI context.** Posicionamiento: "Contexto + Grafo + Búsqueda + Skills + CI/CD — todo en un CLI."
 
 ---
 
-*Investigación basada en análisis de GitHub issues y repos, mayo 2026*
+*Investigación finalizada, mayo 2026*

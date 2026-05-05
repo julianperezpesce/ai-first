@@ -58,6 +58,25 @@ describe("Entrypoints - Generate File Format", () => {
     expect(output).toContain("### CLI Commands");
     expect(output).toContain("### Server Entry Points");
   });
+
+  it("should include confidence and evidence when available", () => {
+    const output = generateEntrypointsFile([
+      {
+        name: "ai-first-cli",
+        path: "dist/commands/ai-first.js",
+        type: "cli",
+        description: "CLI entrypoint",
+        command: "npx ai-first-cli",
+        confidence: 0.95,
+        reason: "CLI entrypoint declared explicitly in package.json bin",
+        evidence: ["package.json bin", "dist/commands/ai-first.js"],
+      },
+    ]);
+
+    expect(output).toContain("**Confidence**: 0.95");
+    expect(output).toContain("**Reason**: CLI entrypoint declared explicitly in package.json bin");
+    expect(output).toContain("**Evidence**: package.json bin; dist/commands/ai-first.js");
+  });
 });
 
 describe("Entrypoints - API Endpoints", () => {
